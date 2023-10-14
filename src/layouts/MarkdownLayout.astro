@@ -1,0 +1,24 @@
+---
+import { Main_about } from '@btakita/ui--server--blog'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { SITE } from '../config'
+import Layout from './Layout.astro'
+import {server__ctx__new } from '../lib'
+export interface Props {
+	frontmatter:{
+		title:string
+		description?:string
+	}
+}
+const ctx = server__ctx__new(Astro)
+const { title, description, active } = Astro.props.frontmatter
+---
+
+<Layout title={`${title} | ${SITE.title}`}>
+	<Header ctx={ctx} active={active}/>
+	<Main_about ctx={ctx} title={title} description={description}>
+		<slot/>
+	</Main_about>
+	<Footer ctx={ctx}/>
+</Layout>

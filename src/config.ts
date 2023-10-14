@@ -6,7 +6,7 @@ export const SITE_DESCRIPTION = 'Welcome to my website!'
 export const SITE:Site = {
 	website: 'https://briantakita.me/', // replace this with your deployed domain
 	author: 'Brian Takita',
-	desc: 'A minimal, responsive and SEO-friendly Astro blog theme.',
+	description: 'Contextual Full Stack Systems Development',
 	title: 'Brian Takita',
 	og_image: 'briantakita-og.jpg',
 	light_and_dark_mode: true,

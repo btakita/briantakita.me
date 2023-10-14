@@ -15,7 +15,7 @@ export interface Props {
 const {
 	title = SITE.title,
 	author = SITE.author,
-	description = SITE.desc,
+	description = SITE.description,
 	og_image = SITE.og_image,
 	canonical_url = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props
