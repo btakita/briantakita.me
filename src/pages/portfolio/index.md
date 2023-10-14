@@ -19,6 +19,8 @@ Stack:
 - [Astrojs](https://astro.build/)
 - [nanostores](https://github.com/nanostores/nanostores)
 - [solidjs](https://www.solidjs.com/)
+- [docker](https://www.docker.com/)
+- VPS
 
 ## [Martin Investments](https://www.martin-investments.com/)
 
@@ -39,6 +41,7 @@ Stack:
 - [nanostores](https://github.com/nanostores/nanostores)
 - [solidjs](https://www.solidjs.com/)
 - [redis](https://redis.io/)
+- [docker](https://www.docker.com/)
 - VPS
 
 ## [Censible](http://censible.co/)
@@ -55,7 +58,7 @@ Stack:
 - [solid-start](https://start.solidjs.com/getting-started/what-is-solidstart)
 - [postgres](https://www.postgresql.org/)
 - [redis](https://redis.io/)
-- VPS
+- [heroku](https://www.heroku.com/)
 
 ## [menu.com](https://menu.com)
 
@@ -71,6 +74,16 @@ Stack:
 - [cordova](https://cordova.apache.org/)
 - [AWS](https://aws.amazon.com/)
 
+[cloud.foresight.host](https://cloud.foresight.host)
+
+Private NextCloud groupware site with some custom plugins.
+
+Stack:
+
+- [nextcloud](https://nextcloud.com/)
+- [docker](https://www.docker.com/)
+- VPS
+
 ## [Stargate Event 2022](https://www.stargateevent.com/)
 
 Quick site developed for the Stargate Event in Luxor, Egypt. Developed a google docs backed contact list.
@@ -83,6 +96,7 @@ Stack:
 - [nanostores](https://github.com/nanostores/nanostores)
 - [solidjs](https://www.solidjs.com/)
 - [google docs api](https://developers.google.com/docs/api/reference/rest)
+- [AWS](https://aws.amazon.com/)
 
 ## Rundavoo
 
@@ -92,6 +106,7 @@ Stack:
 
 - [riot.js](https://riot.js.org/)
 - [backbonejs](https://backbonejs.org/)
+- [heroku](https://www.heroku.com/)
 
 ## [Milyoni](http://www.milyoni.com/)
 
@@ -104,6 +119,7 @@ Stack:
 - [node.js](https://nodejs.org)
 - [postgres](https://www.postgresql.org/)
 - [redis](https://redis.io/)
+- [heroku](https://www.heroku.com/)
 
 ## [honk.com](https://honk.com)
 
@@ -117,3 +133,4 @@ Stack:
 - [backbonejs](https://backbonejs.org/)
 - [postgres](https://www.postgresql.org/)
 - [lucene](https://lucene.apache.org/)
+- [heroku](https://www.heroku.com/)
