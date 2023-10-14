@@ -5,9 +5,9 @@ description: Contextual full stack systems developer
 active: about
 ---
 
-I create full stack software solutions. My current preferred tooling is, & I'm always interested in adding arrows to 
-my quiver:
+I create full stack software solutions. My current preferred tooling is::
 
+- monorepos
 - [ctx-core](https://github.com/ctx-core/ctx-core)
 - [Bunjs](https://github.com/ctx-core/ctx-core)
 - [Astrojs](https://astro.build/)
