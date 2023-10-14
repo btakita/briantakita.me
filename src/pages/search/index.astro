@@ -1,0 +1,44 @@
+---
+import type { SearchItem } from '@btakita/domain--all--blog'
+import { UI_search } from '@btakita/ui--all--blog'
+import { Main_search } from '@btakita/ui--server--blog'
+import { getCollection } from 'astro:content'
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import { SITE } from '../../config'
+import Layout from '../../layouts/Layout.astro'
+import { server__ctx__new } from '../../lib'
+const ctx = server__ctx__new(Astro)
+const posts = await getCollection('posts',
+	({ data })=>
+		!data.draft)
+// List of items to search in
+const search_item_a = posts.map(post=>({
+	title: post.data.title,
+	description: post.data.description,
+	post__data: post.data,
+} as SearchItem))
+---
+
+<Layout title={`Search | ${SITE.title}`}>
+	<Header ctx={ctx} active="search"/>
+	<Main_search ctx={ctx} title="Search" desc="Search any article ..."/>
+	<Footer ctx={ctx}/>
+</Layout>
+
+<search-hydrate data-search_item_a={JSON.stringify(search_item_a)}/>
+<script>
+	import { search_item_a__set } from '@btakita/domain--all--blog'
+	import { Main_search__onbind } from '@btakita/ui--all--blog'
+	import { dom__bind, dom__onbind__register, dom__onbind__validate } from '@ctx-core/dom'
+	import { browser__ctx__ensure } from '../../lib'
+	class HTMLElement_search_hydrate extends HTMLElement {
+		constructor() {
+			super()
+			const ctx = browser__ctx__ensure()
+			search_item_a__set(ctx, JSON.parse(this.dataset.search_item_a))
+			dom__onbind__register(ctx, Main_search__onbind)
+		}
+	}
+	customElements.define('search-hydrate', HTMLElement_search_hydrate)
+</script>

@@ -1,0 +1,37 @@
+---
+import { sorted__posts__new, tag__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
+import { Main_tag } from '@btakita/ui--server--blog'
+import { CollectionEntry, getCollection } from 'astro:content'
+import Footer from '../../../components/Footer.astro'
+import Header from '../../../components/Header.astro'
+import { SITE } from '../../../config'
+import Layout from '../../../layouts/Layout.astro'
+import { server__ctx__new } from '../../../lib'
+export interface Props {
+	post:CollectionEntry<'posts'>
+	tag:string
+}
+export async function getStaticPaths() {
+	const posts = await getCollection('posts')
+	const tags = unique__tags__new(posts)
+	return tags.map(tag=>{
+		return {
+			params: { tag },
+			props: { tag },
+		}
+	})
+}
+const ctx = server__ctx__new(Astro)
+const { tag } = Astro.props
+const posts =
+	await getCollection('posts', ({ data })=>
+		!data.draft)
+const tag__posts = tag__posts__new(posts, tag)
+const sorted__tag__posts = sorted__posts__new(tag__posts)
+---
+
+<Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>
+	<Header ctx={ctx} active="tags"/>
+	<Main_tag ctx={ctx} tag={tag} posts={sorted__tag__posts}/>
+	<Footer ctx={ctx}/>
+</Layout>

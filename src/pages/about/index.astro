@@ -1,0 +1,54 @@
+---
+import { Main_about } from '@btakita/ui--server--blog'
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import { SITE } from '../../config'
+import Layout from '../../layouts/Layout.astro'
+import {server__ctx__new } from '../../lib'
+const ctx = server__ctx__new(Astro)
+const title = 'About'
+---
+
+<Layout title={`${title} | ${SITE.title}`}>
+	<Header ctx={ctx} active="about"/>
+	<Main_about ctx={ctx} title={title}>
+		<p>
+			AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme.
+			I designed and crafted this based on <a href="https://satnaing.dev/blog">my personal blog</a>.
+		</p>
+		<p>
+			This theme is aimed to be accessible out of the box. Light and dark mode are supported by
+			default and additional color schemes can also be configured.
+		</p>
+		<p>
+			This theme is self-documented &mdash; which means articles/posts in this theme can also be considered as
+			documentations. So, see the documentation for more info.
+		</p>
+		<div>
+			<img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+		</div>
+		<h2>Tech Stack</h2>
+		<p>
+			This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some
+			interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+		</p>
+		<h2>Features</h2>
+		<p>Here are certain features of this site.</p>
+		<ul>
+			<li>fully responsive and accessible</li>
+			<li>SEO-friendly</li>
+			<li>light &amp; dark mode</li>
+			<li>fuzzy search</li>
+			<li>super fast performance</li>
+			<li>draft posts</li>
+			<li>pagination</li>
+			<li>sitemap &amp; rss feed</li>
+			<li>highly customizable</li>
+		</ul>
+		<p>
+			If you like this theme, you can star/contribute to the <a href="https://github.com/satnaing/astro-paper">repo</a>.
+			Or you can even give any feedback via my <a href="mailto:briantakita.me">email</a>.
+		</p>
+	</Main_about>
+	<Footer ctx={ctx}/>
+</Layout>

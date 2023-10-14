@@ -1,0 +1,19 @@
+---
+import { unique__tags__new } from '@btakita/domain--server--blog'
+import { Main_tags } from '@btakita/ui--server--blog'
+import { getCollection } from 'astro:content'
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import { SITE } from '../../config'
+import Layout from '../../layouts/Layout.astro'
+import { server__ctx__new } from '../../lib'
+const ctx = server__ctx__new(Astro)
+const posts = await getCollection('posts')
+const tags = unique__tags__new(posts)
+---
+
+<Layout title={`Tags | ${SITE.title}`}>
+	<Header ctx={ctx} active="tags"/>
+	<Main_tags ctx={ctx} tags={tags}/>
+	<Footer ctx={ctx}/>
+</Layout>

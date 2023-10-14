@@ -1,0 +1,52 @@
+---
+import { Post, post__slug__new } from '@btakita/domain--all--blog'
+import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
+import { Main_post, Main_posts } from '@btakita/ui--server--blog'
+import { type CollectionEntry, getCollection } from 'astro:content'
+import Footer from '../../../components/Footer.astro'
+import Header from '../../../components/Header.astro'
+import { SITE } from '../../../config'
+import Layout from '../../../layouts/Layout.astro'
+import { server__ctx__new } from '../../../lib'
+export interface Props {
+	post:CollectionEntry<'posts'>
+}
+export async function getStaticPaths() {
+	const ctx = server__ctx__new(Astro)
+	const posts =
+		await getCollection(
+			'posts',
+			({ data })=>
+				!data.draft) as Post[]
+	const postResult = posts.map(post=>({
+		params: { slug: post__slug__new(post) },
+		props: { post },
+	}))
+	const pagePaths = page_number_a__new(ctx, posts.length).map(pageNum=>({
+		params: { slug: String(pageNum) },
+	}))
+	return [...postResult, ...pagePaths]
+}
+const ctx = server__ctx__new(Astro)
+const { slug } = Astro.params
+const { post } = Astro.props
+const posts = await getCollection('posts')
+const sorted__posts = sorted__posts__new(posts)
+const page_numbers = page_number_a__new(ctx, sorted__posts.length)
+const total_pages = page_numbers.length
+const current_page =
+	slug && !isNaN(Number(slug)) && page_numbers.includes(Number(slug))
+		? Number(slug)
+		: 0
+const last_post = current_page * SITE.post_per_page
+const start_post = last_post - SITE.post_per_page
+const { Content } = await post.render()
+---
+
+<Layout title={`Posts | ${SITE.title}`}>
+	<Header ctx={ctx} active="posts"/>
+	<Main_post ctx={ctx} post={post}>
+		<Content/>
+	</Main_post>
+	<Footer ctx={ctx}/>
+</Layout>

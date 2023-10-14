@@ -1,0 +1,29 @@
+---
+import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
+import { getCollection } from 'astro:content'
+import { Main_posts, Nav_posts } from '@btakita/ui--server--blog'
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import { SITE } from '../../config'
+import Layout from '../../layouts/Layout.astro'
+import { server__ctx__new } from '../../lib'
+const ctx = server__ctx__new(Astro)
+const posts = (await getCollection('posts'))
+	.sort((a, b)=>
+		b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const sorted__posts = sorted__posts__new(posts)
+const page_count = page_number_a__new(ctx, sorted__posts.length).length
+const sorted__paginated__posts =
+	sorted__posts.slice(0, SITE.post_per_page)
+---
+
+<Layout title={`Posts | ${SITE.title}`}>
+	<Header ctx={ctx} active="posts"/>
+	<Main_posts ctx={ctx} posts={sorted__paginated__posts}/>
+	<Nav_posts
+		ctx={ctx}
+		page_num={1}
+		page_count={page_count}
+	/>
+	<Footer ctx={ctx}/>
+</Layout>
