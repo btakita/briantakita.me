@@ -1,0 +1,24 @@
+---
+import { Main_post } from '@btakita/ui--server--blog'
+import { type CollectionEntry } from 'astro:content'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { SITE } from '../config'
+import Layout from '../layouts/Layout.astro'
+import { server__ctx__new } from '../lib'
+const { slug } = Astro.params
+export interface Props {
+	post:CollectionEntry<'posts'>
+	}
+const ctx = server__ctx__new(Astro)
+const { post } = Astro.props
+const { Content } = await post.render()
+---
+
+<Layout title={`Posts | ${SITE.title}`}>
+	<Header ctx={ctx} active="posts"/>
+	<Main_post ctx={ctx} post={post}>
+		<Content/>
+	</Main_post>
+	<Footer ctx={ctx}/>
+</Layout>
