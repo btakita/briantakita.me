@@ -1,0 +1,8 @@
+{
+	"rewrites": [
+		{
+			"source": "/assets/:path*",
+			"destination": "https://assets.briantakita.me/:path*"
+		}
+	]
+}

@@ -79,5 +79,5 @@ The programmer can build on the creations of others, using the interface the oth
 Artists are mostly identified by their creations, drawing the audience to know them. 
 
 <div>
-	<img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
+	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>

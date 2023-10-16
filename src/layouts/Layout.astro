@@ -20,7 +20,7 @@ const {
 	canonical_url = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props
 
-const socialImageURL = new URL(
+const social_image_url = new URL(
 	og_image ?? SITE.og_image ?? 'og.png',
 	Astro.url.origin
 ).href
@@ -46,14 +46,14 @@ const socialImageURL = new URL(
 		<meta property="og:title" content={title}/>
 		<meta property="og:description" content={description}/>
 		<meta property="og:url" content={canonical_url}/>
-		<meta property="og:image" content={socialImageURL}/>
+		<meta property="og:image" content={social_image_url}/>
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image"/>
 		<meta property="twitter:url" content={canonical_url}/>
 		<meta property="twitter:title" content={title}/>
 		<meta property="twitter:description" content={description}/>
-		<meta property="twitter:image" content={socialImageURL}/>
+		<meta property="twitter:image" content={social_image_url}/>
 
 		<!-- Google Font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>

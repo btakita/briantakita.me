@@ -6,7 +6,7 @@ export const SITE:Site = {
 	author: 'Brian Takita',
 	description: 'Contextual Full Stack Systems Development',
 	title: 'Brian Takita',
-	og_image: 'briantakita-og.jpg',
+	og_image: '/assets/images/briantakita-og.jpg',
 	light_and_dark_mode: true,
 	post_per_page: 3,
 }
