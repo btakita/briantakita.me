@@ -17,7 +17,9 @@ I create full stack software solutions. My current preferred tooling is::
 - [Postgres](https://www.postgresql.org/)
 
 With over 20 years of profession development experience, I have been a part of many projects & fantastic teams. See a 
-[portfolio](/portfolio) of some of my work.
+[portfolio](/portfolio) of some of my work. I'm excited about the latest set of tools, as we have a comprehensive, 
+high-performance, full-stack, isomorphic solution stack. We also have the rise of machine learning & vector databases. 
+Over the last few years, I have worked on libraries to take full advantage of this inevitable outcome.
 
 ## Crafting software since 2002 with 💖
 
@@ -52,6 +54,26 @@ engagements. Open source libraries & frameworks are available for developers to 
 that would otherwise need to be built from scratch, saving effort & time. The programmer needs to interface with 
 these libraries.
 
+## 🍯 Development "Secret Sauce"
+
+Just like a library, development methodology, frameworks, & patterns can be used to improve code re-use, 
+maintainability, domain modeling, & enhance general productivity. I will be writing some blog posts on techniques 
+such as:
+
+- Domain Driven Development
+- Flatish Architecture & Name Systems
+- MPA & SPA web app architectures
+- Software prototypes
+- Using Monorepos & Git submodules to maximize code re-use
+
+## 🚀 Software Product Creation & Maintenance
+
+Libraries, frameworks, methodology, & patterns means software products can be created & maintained. As the state of 
+the art improves, software products can be created & maintained with efficiency. With much of the challenges in 
+building with a unified javascript development ecosystem solved, we can focus on efficient product development with 
+maximum code re-use.
+
+<!--
 ## 🗓 Flatish Architecture & Name Systems
 
 Abstraction is used to organize software libraries. 
@@ -77,7 +99,7 @@ The programmer can build on the creations of others, using the interface the oth
 ## Identity
 
 Artists are mostly identified by their creations, drawing the audience to know them. 
-
+-->
 <div>
 	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
 </div>
