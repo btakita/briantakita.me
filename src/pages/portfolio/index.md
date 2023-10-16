@@ -60,7 +60,7 @@ Stack:
 - [redis](https://redis.io/)
 - [heroku](https://www.heroku.com/)
 
-## [menu.com](https://menu.com)
+## [menu.com](https://dev.menu.com)
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office
 Cordova app.
