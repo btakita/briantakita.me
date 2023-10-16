@@ -5,7 +5,7 @@ description: Contextual full stack systems developer
 active: about
 ---
 
-I create full stack software solutions. My current preferred tooling is::
+I create full stack software solutions. My current preferred tooling is:
 
 - monorepos
 - [ctx-core](https://github.com/ctx-core/ctx-core)

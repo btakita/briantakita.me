@@ -12,7 +12,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "assets--download": "./bin/assets--download.sh",
-    "assets--upload": "./bin/assets--upload.sh"
+    "assets--download--sync": "./bin/assets--download--sync.sh",
+    "assets--upload": "./bin/assets--upload.sh",
+    "assets--upload--sync": "./bin/assets--upload--sync.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
