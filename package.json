@@ -10,7 +10,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "assets--download": "./bin/assets--download.sh",
+    "assets--upload": "./bin/assets--upload.sh"
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
