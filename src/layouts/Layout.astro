@@ -1,9 +1,7 @@
 ---
 import { SITE } from '../config'
 import '../styles/base.css'
-
 const google_site_verification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION
-
 export interface Props {
 	title?:string
 	author?:string
@@ -11,7 +9,6 @@ export interface Props {
 	og_image?:string
 	canonical_url?:string
 }
-
 const {
 	title = SITE.title,
 	author = SITE.author,
@@ -19,7 +16,6 @@ const {
 	og_image = SITE.og_image,
 	canonical_url = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props
-
 const social_image_url = new URL(
 	og_image ?? SITE.og_image ?? 'og.png',
 	Astro.url.origin
@@ -88,6 +84,10 @@ const social_image_url = new URL(
 						? 'dark'
 						: 'light')
 		</script>
+		<script>
+			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
 	</head>
 	<body>
 		<slot/>
