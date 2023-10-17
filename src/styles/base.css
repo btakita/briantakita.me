@@ -71,6 +71,9 @@
   .prose a {
     @apply break-words hover:!text-skin-accent;
   }
+  .prose a:hover svg {
+    @apply fill-skin-accent;
+  }
   .prose thead th:first-child,
   tbody td:first-child,
   tfoot td:first-child {
