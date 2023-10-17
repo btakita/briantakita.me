@@ -63,7 +63,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 						{featured__posts.map(post=>(
 							<Card
 								href={`/posts/${post__slug__new(post)}`}
-								post__data={post.data}
+								post={post}
 								secHeading={false}
 							/>
 						))}
@@ -83,7 +83,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 							index < 4 && (
 								<Card
 									href={`/posts/${post__slug__new(post)}`}
-									post__data={post.data}
+									post={post}
 									secHeading={false}
 								/>))
 				}

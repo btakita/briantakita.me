@@ -15,7 +15,8 @@ const posts = await getCollection('posts',
 const search_item_a = posts.map(post=>({
 	title: post.data.title,
 	description: post.data.description,
-	post__data: post.data,
+	slug: post.slug,
+	data: post.data,
 } as SearchItem))
 ---
 

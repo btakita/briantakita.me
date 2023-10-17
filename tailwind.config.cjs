@@ -46,7 +46,9 @@ module.exports = {
 			transparent: 'transparent',
 		},
 		fontFamily: {
-			mono: ['Atkinson Hyperlegible', 'monospace'],
+			sans: ['Atkinson Hyperlegible'],
+			serif: ['Atkinson Hyperlegible'],
+			mono: ['IBM Plex Mono', 'monospace'],
 		},
 		// },
 	},
