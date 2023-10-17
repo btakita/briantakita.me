@@ -50,7 +50,14 @@ module.exports = {
 			serif: ['Atkinson Hyperlegible'],
 			mono: ['IBM Plex Mono', 'monospace'],
 		},
-		// },
+		extend: {
+			colors: {
+				highlight: withOpacity('--color-accent'),
+			},
+			boxShadow: {
+				highlight: `0 0 10px ${withOpacity('--color-accent')}`
+			}
+		},
 	},
 	plugins: [require("@tailwindcss/typography")],
 }
