@@ -11,7 +11,7 @@ export async function GET(Astro:APIContext) {
 	return rss({
 		title: SITE.title,
 		description: SITE.description,
-		site: Astro.site,
+		site: Astro.site!,
 		items: items,
 	})
 }
