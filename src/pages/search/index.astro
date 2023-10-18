@@ -1,5 +1,6 @@
 ---
-import type { SearchItem } from '@btakita/domain--all--blog'
+import type { Post, SearchItem } from '@btakita/domain--all--blog'
+import { sorted__posts__new } from '@btakita/domain--server--blog'
 import { Main_search } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
@@ -8,9 +9,7 @@ import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
 const ctx = server__ctx__new(Astro)
-const posts = await getCollection('posts',
-	({ data })=>
-		!data.draft)
+const posts = sorted__posts__new(await getCollection('posts') as Post[])
 // List of items to search in
 const search_item_a = posts.map(post=>({
 	title: post.data.title,

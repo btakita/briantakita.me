@@ -1,0 +1,145 @@
+---
+author: Brian Takita
+pubDate: 2023-10-17T15:35:28.259Z
+title: My new personal site
+slug: personal-site-written-with-astro-solidjs-ctx-core-nanostores
+description:
+  How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
+---
+import { A_target_blank, Citations, Cite } from '@btakita/ui--server--blog'
+
+I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
+advancement over the past few years to support development from small scale to large scale websites & applications.
+<p>
+	{[
+		'This site is forked from ',
+		<A_target_blank href="https://astro-paper.pages.dev/">AstroPaper</A_target_blank>,
+		' theme. I made some modifications & will go through them in this post.'
+	]}
+</p>
+This is a static site is a monorepo built with:
+<ul>
+	<li><A_target_blank href="https://bun.sh//">Bun</A_target_blank></li>
+	<li><A_target_blank href="https://astro.build/">Astrojs</A_target_blank></li>
+	<li><A_target_blank href="https://github.com/nanostores/nanostores/">Nanostores</A_target_blank></li>
+	<li><A_target_blank href="https://github.com/ctx-core/ctx-core">ctx-core</A_target_blank></li>
+	<li><A_target_blank href="https://www.solidjs.com/">Solidjs</A_target_blank></li>
+	<li><A_target_blank href="https://tailwindcss.com/">TailwindCSS</A_target_blank></li>
+</ul>
+<p>
+	{[
+		'It is deployed to ',
+		<A_target_blank href="https://vercel.com">Vercel</A_target_blank>,
+		'.'
+	]}
+</p>
+
+## Monorepo
+
+<p>
+	{[
+		'For simplicity & ease of distribution, most ',
+		<A_target_blank href="https://astro.build/themes/">Astro Themes</A_target_blank>,
+		' are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken ' +
+		`into separate git repos. This provides structure to where the code is deployed to & how it's used while enabling
+		code re-use for other projects.`,
+	]}
+</p>
+The git repos include:
+<ul>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/briantakita.me-dev">btakita/briantakita.me-dev</A_target_blank>,
+			' — monorepo with ',
+			<A_target_blank href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodules</A_target_blank>,
+			' to other libraries'
+		]}
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/briantakita.me">btakita/briantakita.me</A_target_blank>,
+			' — briantakita.me astro app'
+		]}
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/domain--all--blog">btakita/domain--all--blog</A_target_blank>,
+			' —  domain library targeting the browser & server for blogs',
+		]}
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/domain--server">btakita/domain--server</A_target_blank>,
+			' — domain library targeting the server'
+		]}
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/domain--server--blog">btakita/domain--server--blog
+			</A_target_blank>,
+			' —  domain logic targeting the server for blogs'
+		]}
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/ui--all--blog">btakita/ui--all--blog</A_target_blank>
+		]},
+		' — UI library targeting the browser & server for blogs'
+	</li>
+	<li>
+		{[
+			<A_target_blank href="https://github.com/btakita/ui--server--blog">btakita/ui--server--blog</A_target_blank>,
+			' — UI library targeting the server for blogs'
+		]}
+	</li>
+</ul>
+
+## Tech Stack
+
+### Solidjs provides benefits over other isomorphic component frameworks *(e.g. React)*:
+
+<ul>
+	<li>A more comprehensible API & more natural integration with the DOM API</li>
+	<li>
+		{[
+			'Reactive Signals — ',
+			<A_target_blank href="https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71">
+				cleaner component state management
+			</A_target_blank>
+		]}
+	</li>
+	<li>
+		{[
+			'Smaller payload ',
+			<em>
+				(from
+				<a href="https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck"> Introducing the SolidJS UI Library</a>
+				)
+			</em>,
+			<img width="50%" src="/assets/images/web-framework-realworld-app-sizes.png" alt="Web framework Realword App Sizes"/>
+		]}
+	</li>
+	<li>
+		<A_target_blank children="Fast" href="https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html"/>
+	</li>
+	<li>Less code needed for components</li>
+	<li>JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*</li>
+</ul>
+
+### Full-stack global state management with ctx-core & nanostores
+
+<p>
+	{[
+		'ctx-core with nanostores enables libraries & apps to easily share state management.',
+		<sup><a href="#citation-1">[1]</a></sup>,
+		'.'
+	]}
+</p>
+<p id="citation-1">
+	{[
+		'[1]: ',
+		<A_target_blank href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
+			How I ended up using ctx-core & nanostores…
+		</A_target_blank>
+	]}
+</p>

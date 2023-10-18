@@ -3,6 +3,7 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Portfolio"
 active: portfolio
 ---
+import { A_target_blank } from '@btakita/ui--server--blog'
 
 ## [briantakita.me](https://briantakita.me)
 
@@ -60,7 +61,7 @@ Stack:
 - [redis](https://redis.io/)
 - [heroku](https://www.heroku.com/)
 
-## [menu.com](https://dev.menu.com)
+## [menu.com](https://menu.com)
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office
 Cordova app.
@@ -84,23 +85,20 @@ Stack:
 - [docker](https://www.docker.com/)
 - VPS
 
-## [Stargate Event 2022](https://www.stargateevent.com/)
-
-Quick site developed for the Stargate Event in Luxor, Egypt. Developed a google docs backed contact list.
-
-Stack:
-
-- [nodejs](https://nodejs.org)/[pnpm](https://pnpm.io/)
-- [ctx-core](https://github.com/ctx-core/ctx-core)
-- [astrojs](https://astro.build/)
-- [nanostores](https://github.com/nanostores/nanostores)
-- [solidjs](https://www.solidjs.com/)
-- [google docs api](https://developers.google.com/docs/api/reference/rest)
-- [AWS](https://aws.amazon.com/)
-
 ## Rundavoo
 
-Web front-end development for social planning & decision app for restaurant patrons.
+<p>
+	{[
+		'Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was ',
+		`included in the Google's `,
+		<A_target_blank href="https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm">
+			Best Apps of 2014 List
+		</A_target_blank>,
+		'.'
+	]}
+</p>
+Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was included
+in the
 
 Stack:
 

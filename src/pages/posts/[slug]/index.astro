@@ -10,11 +10,7 @@ export interface Props {
 }
 export async function getStaticPaths() {
 	const ctx = server__ctx__new(Astro)
-	const posts =
-		await getCollection(
-			'posts',
-			({ data })=>
-				!data.draft) as Post[]
+	const posts = await getCollection('posts')
 	const postResult = posts.map(post=>({
 		params: { slug: post__slug__new(post) },
 		props: { post },

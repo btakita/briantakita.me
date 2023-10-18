@@ -9,7 +9,9 @@ import { server__ctx__new } from '../lib'
 const { slug } = Astro.params
 export interface Props {
 	post:CollectionEntry<'posts'>
-	}
+	id:number
+}
+Astro.props.id = 123
 const ctx = server__ctx__new(Astro)
 const { post } = Astro.props
 const { Content } = await post.render()

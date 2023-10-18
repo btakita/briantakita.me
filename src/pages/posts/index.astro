@@ -1,4 +1,5 @@
 ---
+import { type Post } from '@btakita/domain--all--blog'
 import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
 import { Main_posts, Nav_posts } from '@btakita/ui--server--blog'
@@ -8,9 +9,7 @@ import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
 const ctx = server__ctx__new(Astro)
-const posts = (await getCollection('posts'))
-	.sort((a, b)=>
-		b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const sorted__posts = sorted__posts__new(posts)
 const page_count = page_number_a__new(ctx, sorted__posts.length).length
 const sorted__paginated__posts =

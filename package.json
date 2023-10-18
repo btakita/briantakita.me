@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "./bin/dev.sh",
-    "start": "astro dev",
+    "start": "./bin/dev.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",

@@ -1,5 +1,6 @@
 ---
-import { unique__tags__new } from '@btakita/domain--server--blog'
+import { type Post } from '@btakita/domain--all--blog'
+import { sorted__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
 import { Main_tags } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
@@ -8,7 +9,7 @@ import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
 const ctx = server__ctx__new(Astro)
-const posts = await getCollection('posts')
+const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const tags = unique__tags__new(posts)
 ---
 

@@ -1,4 +1,5 @@
 ---
+import { type Post } from '@btakita/domain--all--blog'
 import { sorted__posts__new, tag__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
 import { Main_tag } from '@btakita/ui--server--blog'
 import { CollectionEntry, getCollection } from 'astro:content'
@@ -12,7 +13,7 @@ export interface Props {
 	tag:string
 }
 export async function getStaticPaths() {
-	const posts = await getCollection('posts')
+	const posts = sorted__posts__new(await getCollection('posts') as Post[])
 	const tags = unique__tags__new(posts)
 	return tags.map(tag=>{
 		return {
@@ -23,15 +24,12 @@ export async function getStaticPaths() {
 }
 const ctx = server__ctx__new(Astro)
 const { tag } = Astro.props
-const posts =
-	await getCollection('posts', ({ data })=>
-		!data.draft)
+const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const tag__posts = tag__posts__new(posts, tag)
-const sorted__tag__posts = sorted__posts__new(tag__posts)
 ---
 
 <Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>
 	<Header ctx={ctx} active="tags"/>
-	<Main_tag ctx={ctx} tag={tag} posts={sorted__tag__posts}/>
+	<Main_tag ctx={ctx} tag={tag} posts={tag__posts}/>
 	<Footer ctx={ctx}/>
 </Layout>

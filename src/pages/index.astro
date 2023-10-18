@@ -10,9 +10,8 @@ import { SOCIALS } from '../config'
 import Layout from '../layouts/Layout.astro'
 import { server__ctx__new } from '../lib'
 const ctx = server__ctx__new(Astro)
-const posts:Post[] = await getCollection('posts')
-const sorted__posts = sorted__posts__new(posts)
-const featured__posts = sorted__posts.filter(({ data })=>data.featured)
+const posts = sorted__posts__new(await getCollection('posts') as Post[])
+const featured__posts = posts.filter(({ data })=>data.featured)
 const social__count = SOCIALS.filter(social=>social.active).length
 ---
 
@@ -77,7 +76,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 			<h2>Recent Posts</h2>
 			<ul>
 				{
-					sorted__posts
+					posts
 						.filter(({ data })=>!data.featured)
 						.map((post, index)=>
 							index < 4 && (
