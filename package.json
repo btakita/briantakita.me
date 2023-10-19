@@ -19,19 +19,19 @@
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
+    "@astrojs/sitemap": "^3.0.2",
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/tailwind": "^5.0.2",
     "@btakita/domain--all--blog": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
     "@btakita/ui--server--blog": "workspace:*",
-    "@ctx-core/dom": "^14.2.3",
-    "@ctx-core/object": "^28.2.0",
+    "@ctx-core/dom": "^14.2.4",
+    "@ctx-core/object": "^28.2.1",
     "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.1.1",
-    "astro": "^3.3.1",
-    "solid-js": "^1.8.1",
+    "astro": "^3.3.2",
+    "solid-js": "^1.8.3",
     "tailwindcss": "^3.3.3"
   }
 }
