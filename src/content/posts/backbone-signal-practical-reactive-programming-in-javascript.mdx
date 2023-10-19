@@ -12,18 +12,14 @@ tags:
 description:
   Introducing backbone-signal, which adds Signals to Backbonejs.
 ---
-import { A_target_blank } from '@btakita/ui--server--blog'
+import { Atb } from '@btakita/ui--server--blog'
 
 <p>
 	{[
 		'I have recently released ',
-		<A_target_blank href="https://github.com/btakita/backbone-signal">
-			backbone-signal (github.com)
-		</A_target_blank>,
+		<Atb innerText="backbone-signal (github.com)" href="https://github.com/btakita/backbone-signal"/>,
 		', which is a ',
-		<A_target_blank href="https://en.wikipedia.org/wiki/Reactive_programming">
-			reactive programming (Wikipedia)
-		</A_target_blank>,
+		<Atb innerText="reactive programming (Wikipedia)" href="https://en.wikipedia.org/wiki/Reactive_programming"/>,
 		' library with a practical & javascripty model api.'
 	]}
 </p>
@@ -72,9 +68,7 @@ The console ouput is:
 		' two times, one for ',
 		<code>"Hello " + user.name` and one for `"Nice to see you"</code>,
 		'. The callback is invoked when the value is',
-		<A_target_blank href="http://www.sitepoint.com/javascript-truthy-falsy/">
-			Truthy
-		</A_target_blank>,
+		<Atb innerText="Truthy" href="http://www.sitepoint.com/javascript-truthy-falsy/"/>,
 		'. So when ',
 		<code>userSignal.unset</code>,
 		' is called, the callbacks are not invoked.'
@@ -90,11 +84,11 @@ calling `stopListening` on the listener.
 <p>
 	{[
 		'backbone-signal is being used in ',
-		<A_target_blank href="http://www.rundavoo.com">www.rundavoo.com</A_target_blank>,
+		<Atb innerText="www.rundavoo.com" href="http://www.rundavoo.com"/>,
 		' and has been fun to use, especially with ',
-		<A_target_blank href="http://nodejs.org/">node.js</A_target_blank>,
+		<Atb innerText="node.js" href="http://nodejs.org/"/>,
 			' & ',
-		<A_target_blank href="http://browserify.org/">Browserify</A_target_blank>,
+		<Atb innerText="Browserify" href="http://browserify.org/"/>,
 		`. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.`
 	]}
 </p>

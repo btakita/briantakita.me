@@ -10,16 +10,14 @@ tags:
 description:
   Fixing a DNS-related 404 error with Github Pages.
 ---
-import { A_target_blank } from '@btakita/ui--server--blog'
+import { Atb } from '@btakita/ui--server--blog'
 
 <p>
 	{[
 		'I set up ',
-		<A_target_blank href="http://briantakita.com">
-			briantakita.com
-		</A_target_blank>,
+		<Atb innerText="briantakita.com" href="http://briantakita.com"/>,
 		' using ',
-		<A_target_blank href="http://pages.github.com/">Github Pages</A_target_blank>,
+		<Atb innerText="Github Pages" href="http://pages.github.com/"/>,
 		' to btakita.github.io.'
 	]}
 </p>
@@ -27,13 +25,9 @@ import { A_target_blank } from '@btakita/ui--server--blog'
 <p>
 	{[
 		'To set up the DNS, I followed the ',
-		<A_target_blank href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">
-			official instructions
-		</A_target_blank>,
+		<Atb innerText="official instructions" href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages"/>,
 		' and ',
-		<A_target_blank href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/">
-			github pages with namecheap
-		</A_target_blank>,
+		<Atb innerText="github pages with namecheap" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/>,
 		'.'
 	]}
 </p>

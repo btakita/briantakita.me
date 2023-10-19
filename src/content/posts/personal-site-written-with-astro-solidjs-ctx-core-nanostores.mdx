@@ -6,30 +6,30 @@ slug: personal-site-written-with-astro-solidjs-ctx-core-nanostores
 description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { A_target_blank, Citations, Cite } from '@btakita/ui--server--blog'
+import { Atb } from '@btakita/ui--server--blog'
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
 advancement over the past few years to support development from small scale to large scale websites & applications.
 <p>
 	{[
 		'This site is forked from ',
-		<A_target_blank href="https://astro-paper.pages.dev/">AstroPaper</A_target_blank>,
+		<Atb innerText="AstroPaper" href="https://astro-paper.pages.dev/"/>,
 		' theme. I made some modifications & will go through them in this post.'
 	]}
 </p>
 This is a static site is a monorepo built with:
 <ul>
-	<li><A_target_blank href="https://bun.sh//">Bun</A_target_blank></li>
-	<li><A_target_blank href="https://astro.build/">Astrojs</A_target_blank></li>
-	<li><A_target_blank href="https://github.com/nanostores/nanostores/">Nanostores</A_target_blank></li>
-	<li><A_target_blank href="https://github.com/ctx-core/ctx-core">ctx-core</A_target_blank></li>
-	<li><A_target_blank href="https://www.solidjs.com/">Solidjs</A_target_blank></li>
-	<li><A_target_blank href="https://tailwindcss.com/">TailwindCSS</A_target_blank></li>
+	<li><Atb innerText="Bun" href="https://bun.sh//"/></li>
+	<li><Atb innerText="Astrojs" href="https://astro.build/"/></li>
+	<li><Atb innerText="Nanostores" href="https://github.com/nanostores/nanostores/"/></li>
+	<li><Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/></li>
+	<li><Atb innerText="Solidjs" href="https://www.solidjs.com/"/></li>
+	<li><Atb innerText="TailwindCSS" href="https://tailwindcss.com/"/></li>
 </ul>
 <p>
 	{[
 		'It is deployed to ',
-		<A_target_blank href="https://vercel.com">Vercel</A_target_blank>,
+		<Atb innerText="Vercel" href="https://vercel.com"/>,
 		'.'
 	]}
 </p>
@@ -39,7 +39,7 @@ This is a static site is a monorepo built with:
 <p>
 	{[
 		'For simplicity & ease of distribution, most ',
-		<A_target_blank href="https://astro.build/themes/">Astro Themes</A_target_blank>,
+		<Atb innerText="Astro Themes" href="https://astro.build/themes/"/>,
 		' are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken ' +
 		`into separate git repos. This provides structure to where the code is deployed to & how it's used while enabling
 		code re-use for other projects.`,
@@ -49,46 +49,46 @@ The git repos include:
 <ul>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/briantakita.me-dev">btakita/briantakita.me-dev</A_target_blank>,
+			<Atb innerText="btakita/briantakita.me-dev" href="https://github.com/btakita/briantakita.me-dev"/>,
 			' — monorepo with ',
-			<A_target_blank href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodules</A_target_blank>,
+			<Atb innerText="git submodules" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules"/>,
 			' to other libraries'
 		]}
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/briantakita.me">btakita/briantakita.me</A_target_blank>,
+			<Atb innerText="btakita/briantakita.me" href="https://github.com/btakita/briantakita.me"/>,
 			' — briantakita.me astro app'
 		]}
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/domain--all--blog">btakita/domain--all--blog</A_target_blank>,
+			<Atb innerText="btakita/domain--all--blog" href="https://github.com/btakita/domain--all--blog"/>,
 			' —  domain library targeting the browser & server for blogs',
 		]}
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/domain--server">btakita/domain--server</A_target_blank>,
+			<Atb innerText="btakita/domain--server" href="https://github.com/btakita/domain--server"/>,
 			' — domain library targeting the server'
 		]}
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/domain--server--blog">btakita/domain--server--blog
-			</A_target_blank>,
+			<Atb href="https://github.com/btakita/domain--server--blog">btakita/domain--server--blog
+			</Atb>,
 			' —  domain logic targeting the server for blogs'
 		]}
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/ui--all--blog">btakita/ui--all--blog</A_target_blank>
+			<Atb innerText="btakita/ui--all--blog" href="https://github.com/btakita/ui--all--blog"/>
 		]},
 		' — UI library targeting the browser & server for blogs'
 	</li>
 	<li>
 		{[
-			<A_target_blank href="https://github.com/btakita/ui--server--blog">btakita/ui--server--blog</A_target_blank>,
+			<Atb innerText="btakita/ui--server--blog" href="https://github.com/btakita/ui--server--blog"/>,
 			' — UI library targeting the server for blogs'
 		]}
 	</li>
@@ -103,9 +103,9 @@ The git repos include:
 	<li>
 		{[
 			'Reactive Signals — ',
-			<A_target_blank href="https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71">
+			<Atb href="https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71">
 				cleaner component state management
-			</A_target_blank>
+			</Atb>
 		]}
 	</li>
 	<li>
@@ -120,7 +120,7 @@ The git repos include:
 		]}
 	</li>
 	<li>
-		<A_target_blank children="Fast" href="https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html"/>
+		<Atb children="Fast" href="https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html"/>
 	</li>
 	<li>Less code needed for components</li>
 	<li>JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*</li>
@@ -138,8 +138,8 @@ The git repos include:
 <p id="citation-1">
 	{[
 		'[1]: ',
-		<A_target_blank href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
+		<Atb href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
 			How I ended up using ctx-core & nanostores…
-		</A_target_blank>
+		</Atb>
 	]}
 </p>

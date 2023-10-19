@@ -3,87 +3,132 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Portfolio"
 active: portfolio
 ---
-import { A_target_blank } from '@btakita/ui--server--blog'
+import { Atb } from '@btakita/ui--server--blog'
 
 ## [briantakita.me](https://briantakita.me)
 
 [Open source](https://github.com/btakita/dev) static app with libraries forked
-from [AstroPaper](https://astro-paper.pages.dev). I did some refactoring including converting it to a monorepo, 
-used solidjs instead of react, and added ctx-core & nanostores. These changes improve code re-use to be used in 
-other profile sites which I will soon work on. I plan on adding support for [Strapi](https://strapi.io/) to so 
+from [AstroPaper](https://astro-paper.pages.dev). I did some refactoring including converting it to a monorepo,
+used solidjs instead of react, and added ctx-core & Nano Stores. These changes improve code re-use to be used in
+other profile sites which I will soon work on. I plan on adding support for [Strapi](https://strapi.io/) to so
 people without technical experience can write posts on their own optimized blog.
 
 Stack:
+<ul>
+	<li><Atb innerText="bunjs" href="https://bun.sh/"/></li>
+	<li><Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/></li>
+	<li><Atb innerText="astrojs" href="https://astro.build"/></li>
+	<li><Atb innerText="Nano Stores" href="https://github.com/nanostores/nanostores"/></li>
+	<li><Atb innerText="Docker" href="https://www.docker.com/"/></li>
+	<li>VPS</li>
+</ul>
 
-- [bunjs](https://bun.sh/)
-- [ctx-core](https://github.com/ctx-core/ctx-core)
-- [Astrojs](https://astro.build/)
-- [nanostores](https://github.com/nanostores/nanostores)
-- [solidjs](https://www.solidjs.com/)
-- [docker](https://www.docker.com/)
-- VPS
-
-## [Martin Investments](https://www.martin-investments.com/)
+<h2>
+	<Atb innerText="Martin Investments" href="https://www.martin-investments.com/"/>
+</h2>
 
 Designed & Built an analyst & customer portal for ESG investment funds. Created ESG analysis algorithms to rate
 companies according to Environment & Women in Leadership criteria.
 
-Utilized various financial APIs. Built a XLSX
-exporter spanning > 10000 rows & hundreds of columns using
-[Office Open XML](https://en.wikipedia.org/wiki/Office_Open_XML), replicating the ESG analysis logic & deep linking.
+<p>
+	{[
+		`Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using`,
+		<Atb innerText="Office Open XML" href="https://en.wikipedia.org/wiki/Office_Open_XML"/>,
+		`, replicating the ESG analysis algorithms & deep linking across the document & to relevant web content.`
+	]}
+</p>
 
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
 Stack:
+<ul>
+	<li>
+		<Atb innerText="Node.js" href="https://nodejs.org"/>
+		{', '}
+		<Atb innerText="pnpm" href="https://pnpm.io/"/>
+	</li>
+	<li><Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/></li>
+	<li><Atb innerText="astrojs" href="https://astro.build/"/></li>
+	<li><Atb innerText="Nano Stores" href="https://github.com/nanostores/nanostores"/></li>
+	<li><Atb innerText="solidjs" href="https://www.solidjs.com/"/></li>
+	<li><Atb innerText="redis" href="https://redis.io/"/></li>
+	<li><Atb innerText="Docker" href="https://www.docker.com/"/></li>
+	<li>VPS</li>
+</ul>
 
-- [nodejs](https://nodejs.org)/[pnpm](https://pnpm.io/)
-- [ctx-core](https://github.com/ctx-core/ctx-core)
-- [astrojs](https://astro.build/)
-- [nanostores](https://github.com/nanostores/nanostores)
-- [solidjs](https://www.solidjs.com/)
-- [redis](https://redis.io/)
-- [docker](https://www.docker.com/)
-- VPS
-
-## [Censible](http://censible.co/)
+<h2>
+	<Atb innerText="Censible" href="http://censible.co/"/>
+</h2>
 
 Built the marketing site, company ESG analysis, portfolio rebalance tool, & stock screening tool.
 
 Stack:
+<ul>
+	<li>
+		<Atb innerText="Node.js" href="https://nodejs.org"/>
+		{', '}
+		<Atb innerText="pnpm" href="https://pnpm.io/"/>
+	</li>
+	<li><Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/></li>
+	<li><Atb innerText="astrojs" href="https://astro.build/"/></li>
+	<li><Atb innerText="Nano Stores" href="https://github.com/nanostores/nanostores"/></li>
+	<li><Atb innerText="solidjs" href="https://www.solidjs.com/"/></li>
+	<li><Atb innerText="solid-start" href="https://start.solidjs.com/getting-started/what-is-solidstart"/></li>
+	<li><Atb innerText="postgres" href="https://www.postgresql.org/"/></li>
+	<li><Atb innerText="redis" href="https://redis.io/"/></li>
+	<li><Atb innerText="heroku" href="https://www.heroku.com/"/></li>
+</ul>
 
-- [nodejs](https://nodejs.org)/[pnpm](https://pnpm.io/)
-- [ctx-core](https://github.com/ctx-core/ctx-core)
-- [astrojs](https://astro.build/)
-- [nanostores](https://github.com/nanostores/nanostores)
-- [solidjs](https://www.solidjs.com/)
-- [solid-start](https://start.solidjs.com/getting-started/what-is-solidstart)
-- [postgres](https://www.postgresql.org/)
-- [redis](https://redis.io/)
-- [heroku](https://www.heroku.com/)
-
-## [menu.com](https://menu.com)
+<h2>
+	<Atb innerText="menu.com" href="https://menu.com"/>
+</h2>
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office
 Cordova app.
 
 Stack:
+<ul>
+	<li><Atb innerText="sveltejs" href="https://svelte.dev/"/></li>
+	<li><Atb innerText="ctx-core" href="https://github.com/ctx-core/ctx-core"/></li>
+	<li><Atb innerText="sapper" href="https://sapper.svelte.dev/"/></li>
+	<li><Atb innerText="cordova" href="https://cordova.apache.org/"/></li>
+	<li><Atb innerText="aws" href="https://aws.amazon.com/"/></li>
+</ul>
 
-- [Sveltejs](https://svelte.dev/)
-- [ctx-core](https://github.com/ctx-core/ctx-core)
-- [nanostores](https://github.com/nanostores/nanostores)
-- [sapper](https://sapper.svelte.dev/) *(Customized for Cordova apps)*
-- [cordova](https://cordova.apache.org/)
-- [AWS](https://aws.amazon.com/)
-
-[cloud.foresight.host](https://cloud.foresight.host)
+<h2>
+	<Atb innerText="cloud.foresight.host" href="https://cloud.foresight.host"/>
+</h2>
 
 Private NextCloud groupware site with some custom plugins.
 
 Stack:
+<ul>
+	<li><Atb innerText="NextCloud" href="https://nextcloud.com/"/></li>
+	<li><Atb innerText="Docker" href="https://www.docker.com/"/></li>
+	<li>VPS</li>
+</ul>
 
-- [nextcloud](https://nextcloud.com/)
-- [docker](https://www.docker.com/)
-- VPS
+<h2>
+	<Atb innerText="neo" href="https://neo.com/"/>
+</h2>
+
+<p>
+	{[
+		`Worked with the previous incarnation as an inclubator & consulting firm of Neo before it's acquisition. The
+		client was Tenfore Holdings, an investment fund. The project was a low-code document writer with integrated search into the
+		client's `,
+		<Atb href="https://www.salesforce.com/">Salesforce</Atb>,
+		` using Salesforce cloud.`
+	]}
+</p>
+
+Stack:
+<ul>
+	<li><Atb innerText="Node.js" href="https://nodejs.org"/></li>
+	<li><Atb innerText="riot.js" href="https://riot.js.org/"/></li>
+	<li><Atb innerText="RethinkDB" href="https://rethinkdb.com/"></Atb></li>
+	<li><Atb innerText="heroku" href="https://www.heroku.com/"/></li>
+</ul>
 
 ## Rundavoo
 
@@ -91,9 +136,9 @@ Stack:
 	{[
 		'Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was ',
 		`included in the Google's `,
-		<A_target_blank href="https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm">
+		<Atb href="https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm">
 			Best Apps of 2014 List
-		</A_target_blank>,
+		</Atb>,
 		'.'
 	]}
 </p>
@@ -101,34 +146,87 @@ Web front-end development for social planning & decision app for restaurant patr
 in the
 
 Stack:
+<ul>
+	<li><Atb innerText="riot.js" href="https://riot.js.org/"/></li>
+	<li><Atb innerText="Backbone.js" href="https://backbonejs.org/"/></li>
+	<li><Atb innerText="heroku" href="https://www.heroku.com/"/></li>
+</ul>
 
-- [riot.js](https://riot.js.org/)
-- [backbonejs](https://backbonejs.org/)
-- [heroku](https://www.heroku.com/)
-
-## [Milyoni](http://www.milyoni.com/)
+<h2>
+	<Atb innerText="Milyoni" href="http://www.milyoni.com/"/>
+</h2>
 
 Consulting developer for social entertainment platform. Developed scalable live video events with admin message
 moderation & components, on-demand movies with time-coded chat & interactive components.
 
 Stack:
+<ul>
+	<li><Atb innerText="ruby on rails" href="https://rubyonrails.org/"/></li>
+	<li><Atb innerText="Node.js" href="https://nodejs.org"/></li>
+	<li><Atb innerText="postgres" href="https://www.postgresql.org/"/></li>
+	<li><Atb innerText="redis" href="https://redis.io/"/></li>
+	<li><Atb innerText="heroku" href="https://www.heroku.com/"/></li>
+</ul>
 
-- [ruby on rails](https://rubyonrails.org/)
-- [node.js](https://nodejs.org)
-- [postgres](https://www.postgresql.org/)
-- [redis](https://redis.io/)
-- [heroku](https://www.heroku.com/)
+<h2>
+	<Atb innerText="honk.com" href="https://honk.com"/>
+</h2>
 
-## [honk.com](https://honk.com)
-
-Lead developer for automotive pricing & info startup which was acquired by [Truecar](https://www.truecar.com/). Key
-partnerships include [USAA](https://www.usaa.com/), the [Wall Street Journal](https://www.wsj.com/), &
-[Fox News Corp](https://www.foxcorporation.com/).
+<p>
+	{[
+		`Lead developer for automotive pricing & info startup. `,
+		`Built product from initial concept through acquisition by `,
+		<Atb innerText="Truecar" href="https://www.truecar.com/"/>,
+		`. Key partnerships include `,
+		<Atb innerText="USAA" href="https://www.usaa.com/"/>,
+		`, the `,
+		<Atb innerText="Wall Street Journal" href="https://www.wsj.com/"/>,
+		`, & `,
+		<Atb innerText="Fox News Corp" href="https://www.foxcorporation.com/"/>,
+		`.`
+	]}
+</p>
 
 Stack:
+<ul>
+	<li><Atb innerText="ruby on rails" href="https://rubyonrails.org/"/></li>
+	<li><Atb innerText="sinatra" href="https://sinatrarb.com/"/></li>
+	<li><Atb innerText="erector" href="https://erector.github.io/erector/"/></li>
+	<li><Atb innerText="Backbone.js" href="https://backbonejs.org/"/></li>
+	<li><Atb innerText="postgres" href="https://www.postgresql.org/"/></li>
+	<li><Atb innerText="lucene" href="https://lucene.apache.org/"/></li>
+	<li><Atb innerText="Engine Yard" href="https://www.engineyard.com/"/></li>
+</ul>
 
-- [ruby on rails](https://rubyonrails.org/)
-- [backbonejs](https://backbonejs.org/)
-- [postgres](https://www.postgresql.org/)
-- [lucene](https://lucene.apache.org/)
-- [heroku](https://www.heroku.com/)
+## Pivotal Labs
+
+Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. Pivotal Labs was acquired by EMC &
+became VM Ware Tunzu after I left. At Pivotal, I worked with > 20 startup companies, bootstrapping their product
+development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
+<ul>
+	<li><Atb innerText="rspec" href="https://rspec.info/"/></li>
+	<li><Atb innerText="rr" href="https://github.com/rr/rr"/></li>
+	<li><Atb innerText="erector" href="https://erector.github.io/erector/"/></li>
+	<li><Atb innerText="unison" href="https://github.com/nathansobo/unison"/></li>
+	<li><Atb innerText="cacheable flash" href="https://github.com/pboling/cacheable-flash"/></li>
+</ul>
+<p>
+	{[
+		`I spoke at the `,
+		<Atb innerText="2008 Rails Conf" href="https://www.oreilly.com/pub/pr/1966"/>,
+		`.`
+	]}
+</p>
+Stack:
+<ul>
+	<li><Atb innerText="ruby on rails" href="https://rubyonrails.org/"/></li>
+	<li><Atb innerText="sinatra" href="https://sinatrarb.com/"/></li>
+	<li><Atb innerText="erector" href="https://erector.github.io/erector/"/></li>
+	<li><Atb innerText="Backbone.js" href="https://backbonejs.org/"/></li>
+	<li><Atb innerText="jQuery" href="https://jquery.com//"/></li>
+	<li><Atb innerText="postgres" href="https://www.postgresql.org/"/></li>
+	<li><Atb innerText="lucene" href="https://lucene.apache.org/"/></li>
+	<li><Atb innerText="aws" href="https://aws.amazon.com/"/></li>
+	<li><Atb innerText="heroku" href="https://www.heroku.com/"/></li>
+	<li><Atb innerText="Engine Yard" href="https://www.engineyard.com/"/></li>
+</ul>
