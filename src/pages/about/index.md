@@ -60,7 +60,7 @@ Just like a library, development methodology, frameworks, & patterns can be used
 maintainability, domain modeling, & enhance general productivity. I will be writing some blog posts on techniques 
 such as:
 
-- Domain Driven Development
+- Domain Driven Design
 - Flatish Architecture & Name Systems
 - MPA & SPA web app architectures
 - Software prototypes

@@ -26,6 +26,7 @@
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--all--blog": "workspace:*",
     "@btakita/ui--server--blog": "workspace:*",
+    "@btakita/ui--server--briantakita": "workspace:*",
     "@ctx-core/dom": "^14.2.4",
     "@ctx-core/object": "^28.2.1",
     "@tailwindcss/typography": "^0.5.10",
