@@ -6,8 +6,9 @@ slug: personal-site-written-with-astro-solidjs-ctx-core-nanostores
 description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
 import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
+import { uuid_ } from '@ctx-core/uuid'
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
 advancement over the past few years to support development from small scale to large scale websites & applications.
@@ -132,15 +133,12 @@ The git repos include:
 <p>
 	{[
 		'ctx-core with nanostores enables libraries & apps to easily share state management.',
-		<sup><a href="#citation-1">[1]</a></sup>,
+		<Cite ctx={props.ctx} uuid={uuid_()}>
+			<Atb href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
+				How I ended up using ctx-core & nanostores…
+			</Atb>
+		</Cite>,
 		'.'
 	]}
 </p>
-<p id="citation-1">
-	{[
-		'[1]: ',
-		<Atb href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
-			How I ended up using ctx-core & nanostores…
-		</Atb>
-	]}
-</p>
+<Citation_list ctx={props.ctx}/>

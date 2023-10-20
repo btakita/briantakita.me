@@ -12,8 +12,9 @@ tags:
 description:
   An brief account of my history with state management & the road to building ctx-core & adopting nanostores
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
 import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
+import { uuid_ } from '@ctx-core/uuid'
 
 <p>
 	{[
@@ -82,7 +83,13 @@ import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
 		<Atb innerText="scoped" href="https://github.com/btakita/philosophy/blob/master/src/scope.md"/>,
 		' with ',
 		<Atb innerText="context" href="https://github.com/btakita/philosophy/blob/master/src/context.md"/>,
-		<sup><a href="#citation-1">[1]</a></sup>,
+		<Cite ctx={props.ctx} uuid={uuid_()}>
+			{[
+				'Taking into account that what is spoken & what is heard is defined with the context of the ',
+				<Atb innerText="entity" href="https://github.com/btakita/philosophy/blob/master/src/entity.md"/>,
+				' speaking or hearing'
+			]}
+		</Cite>,
 		'. I learned about ',
 		<Atb innerText="Existence" href="https://github.com/btakita/philosophy/blob/master/src/existence.md"/>,
 		' and in a wierd way, ',
@@ -112,7 +119,10 @@ import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
 		' project to expand on reactive state management with ',
 		<Atb innerText="Domain Driven Design" href="https://en.wikipedia.org/wiki/Domain-driven_design"/>,
 		'. I leaned on my explorations with Ontology create the tag vector Convention',
-		<a href="#citation-2"><sup>[2]</sup></a>,
+		<Cite ctx={props.ctx} uuid={uuid_()}>
+			Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
+			This design has been verified with real-world development since. I will write a formal definition & history soon.
+		</Cite>,
 		' to enable a simple, flat architecture. We also switched from riotjs to ',
 		<Atb innerText="sveltejs" href="https://svelte.dev/"/>,
 		'.'
@@ -146,24 +156,4 @@ import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
 		'.'
 	]}
 </p>
-<p id="citation-1">
-	{[
-		'[1] ',
-		<em>
-			{[
-				'Taking into account that what is spoken & what is heard is defined with the context of the ',
-				<Atb innerText="entity" href="https://github.com/btakita/philosophy/blob/master/src/entity.md"/>,
-				' speaking or hearing'
-			]}
-		</em>
-	]}
-</p>
-<p id="citation-2">
-	{[
-		'[2] ',
-		<em>
-			Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
-			This design has been verified with real-world development since. I will write a formal definition & history soon.
-		</em>
-	]}
-</p>
+<Citation_list ctx={props.ctx}/>

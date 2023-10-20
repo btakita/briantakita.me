@@ -20,7 +20,7 @@ const { Content } = await post.render()
 <Layout title={`Posts | ${SITE.title}`}>
 	<Header ctx={ctx} active="posts"/>
 	<Main_post ctx={ctx} post={post}>
-		<Content/>
+		<Content ctx={ctx}/>
 	</Main_post>
 	<Footer ctx={ctx}/>
 </Layout>
