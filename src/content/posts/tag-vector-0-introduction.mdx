@@ -1,0 +1,70 @@
+---
+author: Brian Takita
+pubDate: 2023-10-19T22:32:13.113Z
+title: 'Tag Vector: Part 0: Introduction'
+slug: tag-vector-0-introduction
+tags:
+  - tag vector
+  - tag graph
+  - domain driven design
+  - software engineering
+  - machine learning
+  - vector database
+description:
+  tag vector is a name convention, & will eventually be a formal name system, where names are composed of tags
+  connected by a 1 dimensional vector. It can be used for naming variables, functions, components, network apis, low
+  code apps, & even in plain text.
+---
+import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import { uuid_ } from '@ctx-core/uuid'
+import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
+
+<p>
+	{[
+		`This series about Tag Vector will go over a technique that I have iterated on since 2016 in `,
+		<Atb innerText="ctx-core" href=""></Atb>,
+		` & in other (mostly client) projects.`
+	]}
+</p>
+
+> There are only two hard things in Computer Schience: cache invalidation and naming things.
+> -- Phil Karlton
+
+Tag Vector aims to be a tool to solve the two hard things in Computed Science by providing a name convention &
+eventually a formalized system with tools to:
+<ul>
+	<li>work with existing source code</li>
+	<li>show how tags are connected by using a 1 dimensional vector</li>
+	<li>understand the context of an abstraction just by looking at the tag vector</li>
+	<li>the data structure shape of the abstraction can be encoded in the tag vector</li>
+	<li>immutable names to allow a simple text search to find all usages of tags & tag vectors</li>
+	<li>compose multi-dimension tag vectors</li>
+	<li>
+		{[
+			`show the directional arrow of a tag vector in source code & text using font ligatures`,
+			<Cite ctx={props.ctx} uuid={uuid_()}>
+				The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts
+			</Cite>
+		]}
+	</li>
+	<li>store the tag vector in a vector database & automate querying tag graphs</li>
+	<li>tag graphs can will enable linking to & a vector search for other usages of the tag, machine leaning algorithms, &
+		domain-specific analysis.</li>
+	<li>
+		{[
+			`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
+			rendering components & performing api calls`,
+			<Cite ctx={props.ctx} uuid={uuid_()}>
+				A prototype of the document editor with Tag Vector is in the works
+			</Cite>
+		]}
+	</li>
+</ul>
+
+The Tag Vector system can provide profound benefits to computer science, programming, api design, domain design,
+low code tooling, machine learning, & even plain text. The Tag Vector convention feels familiar to existing code
+conventions & can be used with existing source code.
+
+<TOC_tag_vector/>
+
+<Citation_list ctx={props.ctx}/>
