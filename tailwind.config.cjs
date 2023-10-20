@@ -48,7 +48,7 @@ module.exports = {
 		fontFamily: {
 			sans: ['Atkinson Hyperlegible'],
 			serif: ['Atkinson Hyperlegible'],
-			mono: ['IBM Plex Mono', 'monospace'],
+			mono: ['JetBrains Mono', 'monospace'],
 		},
 		extend: {
 			colors: {
