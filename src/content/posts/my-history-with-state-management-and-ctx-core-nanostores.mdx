@@ -13,19 +13,26 @@ description:
   An brief account of my history with state management & the road to building ctx-core & adopting nanostores
 ---
 import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
-import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
+import {
+	Atb_backbonejs,
+	Atb_ctx_core, Atb_grockit, Atb_honk,
+	Atb_menu,
+	Atb_pivotal_labs,
+	Atb_sapper,
+	Atb_sveltejs, Atb_truecar, Atb_unison
+} from '@btakita/ui--server--briantakita'
 import { uuid_ } from '@ctx-core/uuid'
 
 <p>
 	{[
 		'The journey starts while I was at ',
-		<Atb innerText="Pivotal Labs" href="https://en.wikipedia.org/wiki/Pivotal_Labs"/>,
+		<Atb_pivotal_labs/>,
 		'. Pivotal Labs had many talented engineers. In particular, Nathan Sobo & Nick Kallen pushed me to become a ' +
 		'better more innovative developer. I started working with reactive programming since collaborating with Nathan ' +
 		'Sobo on a ruby project called ',
-		<Atb innerText="Unison" href="https://github.com/nathansobo/unison/tree/master"/>,
+		<Atb_unison/>,
 		' at ',
-		<Atb innerText="Grokit" href="https://en.wikipedia.org/wiki/Grockit"/>,
+		<Atb_grockit/>,
 		'.'
 	]}
 </p>
@@ -41,9 +48,9 @@ import { uuid_ } from '@ctx-core/uuid'
 <p>
 	{[
 		'While working with ',
-		<Atb innerText="Backbone.js" href="https://backbonejs.org/"/>,
+		<Atb_backbonejs/>,
 		' at ',
-		<Atb innerText="honk.com" href="https://www.honk.com/"/>,
+		<Atb_honk/>,
 		', I found that state management was effective in maintaining complex apps.'
 	]}
 </p>
@@ -53,7 +60,7 @@ import { uuid_ } from '@ctx-core/uuid'
 		<em>
 			{[
 				'(after honk.com was acquired by ',
-				<Atb innerText="TrueCar" href="https://www.truecar.com/"/>,
+				<Atb_truecar/>,
 				')'
 			]}
 		</em>,
@@ -124,7 +131,7 @@ import { uuid_ } from '@ctx-core/uuid'
 			This design has been verified with real-world development since. I will write a formal definition & history soon.
 		</Cite>,
 		' to enable a simple, flat architecture. We also switched from riotjs to ',
-		<Atb innerText="sveltejs" href="https://svelte.dev/"/>,
+		<Atb_sveltejs/>,
 		'.'
 	]}
 </p>
@@ -133,7 +140,7 @@ import { uuid_ } from '@ctx-core/uuid'
 		'I appreciated the design of ',
 		<Atb innerText="svelte stores" href="https://svelte.dev/docs/svelte-store"/>,
 		' & for reactive state management. With the introduction of ',
-		<Atb innerText="Sapper" href="https://sapper.svelte.dev/"/>,
+		<Atb_sapper/>,
 		' the same component code could be run on the browser & the server. Along with ctx-core, svelte stores could ' +
 		'also be run on the browser & server. The server side was tricky with svelte stores alone, as requests woulld be ' +
 		'handled concurrently. To solve the issue, a ',
@@ -152,8 +159,9 @@ import { uuid_ } from '@ctx-core/uuid'
 	{[
 		'The Censible project was off & on for a few years. During this time I picked up ' +
 		'some other projects including ',
-		<Atb innerText="menu.com" href="https://menu.com"/>,
+		<Atb_menu/>,
 		'.'
 	]}
 </p>
+
 <Citation_list ctx={props.ctx}/>

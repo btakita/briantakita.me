@@ -13,7 +13,14 @@ description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
 import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
-import { Atb_ctx_core } from '@btakita/ui--server--briantakita'
+import {
+	Atb_astrojs,
+	Atb_astropaper,
+	Atb_bunjs,
+	Atb_ctx_core,
+	Atb_nanostores,
+	Atb_solidjs, Atb_tailwindcss, Atb_vercel
+} from '@btakita/ui--server--briantakita'
 import { uuid_ } from '@ctx-core/uuid'
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
@@ -21,23 +28,23 @@ advancement over the past few years to support development from small scale to l
 <p>
 	{[
 		'This site is forked from ',
-		<Atb innerText="AstroPaper" href="https://astro-paper.pages.dev/"/>,
+		<Atb_astropaper/>,
 		' theme. I made some modifications & will go through them in this post.'
 	]}
 </p>
 This is a static site is a monorepo built with:
 <ul>
-	<li><Atb innerText="Bun" href="https://bun.sh//"/></li>
-	<li><Atb innerText="Astrojs" href="https://astro.build/"/></li>
-	<li><Atb innerText="Nanostores" href="https://github.com/nanostores/nanostores/"/></li>
+	<li><Atb_bunjs/></li>
+	<li><Atb_astrojs/></li>
+	<li><Atb_nanostores/></li>
 	<li><Atb_ctx_core/></li>
-	<li><Atb innerText="Solidjs" href="https://www.solidjs.com/"/></li>
-	<li><Atb innerText="TailwindCSS" href="https://tailwindcss.com/"/></li>
+	<li><Atb_solidjs/></li>
+	<li><Atb_tailwindcss/></li>
 </ul>
 <p>
 	{[
 		'It is deployed to ',
-		<Atb innerText="Vercel" href="https://vercel.com"/>,
+		<Atb_vercel/>,
 		'.'
 	]}
 </p>
@@ -139,11 +146,12 @@ The git repos include:
 	{[
 		'ctx-core with nanostores enables libraries & apps to easily share state management.',
 		<Cite ctx={props.ctx} uuid={uuid_()}>
-			<Atb href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
+			<a href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
 				How I ended up using ctx-core & nanostores…
-			</Atb>
+			</a>
 		</Cite>,
 		'.'
 	]}
 </p>
+
 <Citation_list ctx={props.ctx}/>

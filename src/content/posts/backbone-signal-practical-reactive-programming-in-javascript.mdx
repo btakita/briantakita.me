@@ -13,11 +13,12 @@ description:
   Introducing backbone-signal, which adds Signals to Backbonejs.
 ---
 import { Atb } from '@btakita/ui--server--blog'
+import { Atb_backbone_signal, Atb_browserify, Atb_nodejs, Atb_rundavoo } from '@btakita/ui--server--briantakita'
 
 <p>
 	{[
 		'I have recently released ',
-		<Atb innerText="backbone-signal (github.com)" href="https://github.com/btakita/backbone-signal"/>,
+		<Atb_backbone_signal/>,
 		', which is a ',
 		<Atb innerText="reactive programming (Wikipedia)" href="https://en.wikipedia.org/wiki/Reactive_programming"/>,
 		' library with a practical & javascripty model api.'
@@ -84,11 +85,11 @@ calling `stopListening` on the listener.
 <p>
 	{[
 		'backbone-signal is being used in ',
-		<Atb innerText="www.rundavoo.com" href="http://www.rundavoo.com"/>,
+		<Atb_rundavoo/>,
 		' and has been fun to use, especially with ',
-		<Atb innerText="node.js" href="http://nodejs.org/"/>,
+		<Atb_nodejs/>,
 			' & ',
-		<Atb innerText="Browserify" href="http://browserify.org/"/>,
+		<Atb_browserify/>,
 		`. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.`
 	]}
 </p>
