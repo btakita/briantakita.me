@@ -1,5 +1,5 @@
 ---
-import { Main_post } from '@btakita/ui--server--blog'
+import { Main_post, Repost } from '@btakita/ui--server--blog'
 import { type CollectionEntry } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -14,13 +14,19 @@ export interface Props {
 Astro.props.id = 123
 const ctx = server__ctx__new(Astro)
 const { post } = Astro.props
+const { canonical_url } = post.data
 const { Content } = await post.render()
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout
+	title={`Posts | ${SITE.title}`}
+	canonical_url={canonical_url}
+>
 	<Header ctx={ctx} active="posts"/>
 	<Main_post ctx={ctx} post={post}>
-		<Content ctx={ctx}/>
+		{post.data.canonical_url &&
+			<Repost href={post.data.canonical_url}/>}
+		<Content ctx={ctx} post={post}/>
 	</Main_post>
 	<Footer ctx={ctx}/>
 </Layout>
