@@ -1,5 +1,5 @@
 ---
-import { Main_about } from '@btakita/ui--server--blog'
+import { Main } from '@btakita/ui--server--blog'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import { SITE } from '../config'
@@ -18,8 +18,10 @@ const { title, description, active } = Astro.props.frontmatter
 
 <Layout title={`${title} | ${SITE.title}`}>
 	<Header ctx={ctx} active={active}/>
-	<Main_about ctx={ctx} title={title} description={description}>
-		<slot/>
-	</Main_about>
+	<Main class="prose" ctx={ctx} title={title} description={description}>
+		<article id={active} class="mb-28 max-w-3xl prose-img:border-0">
+			<slot/>
+		</article>
+	</Main>
 	<Footer ctx={ctx}/>
 </Layout>

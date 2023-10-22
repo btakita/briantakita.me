@@ -1,0 +1,218 @@
+---
+layout: ../../layouts/MarkdownLayout.astro
+title: "Open Source"
+active: open-source
+---
+
+import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import {
+	Atb_astrojs,
+	Atb_backbone_signal,
+	Atb_backbonejs,
+	Atb_ctx_core,
+	Atb_honk,
+	Atb_jasmine_flow,
+	Atb_nanostores, Atb_pivotal_labs,
+	Atb_rr, Atb_rspec, Atb_ruby_on_rails,
+	Atb_rundavoo,
+	Atb_solidjs,
+	Atb_svelte_stores,
+	Atb_sveltejs
+} from '@btakita/ui--server--briantakita'
+import { ctx_ } from '@ctx-core/object'
+import { renderToString } from 'solid-js/web'
+export const ctx = ctx_()
+
+<p>
+	{[
+		`I work on open source projects, licensed with the `,
+		<Atb innerText="Apache 2 license" href="https://www.apache.org/licenses/LICENSE-2.0.html"/>,
+		`. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more
+		open source components & apps in the near future. Here are some notable projects:`
+	]}
+</p>
+
+<h2>
+	<Atb_ctx_core/>
+</h2>
+
+<p>
+	{[
+		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
+		begin an 2016 & continues today`,
+		<Cite ctx={ctx} id="ctx-core--catch-all">
+			ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core. The
+			functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to be more
+			widely used. I have used ctx-core to handle transitions between other component & state management libraries as they
+			emerge & are updated.
+		</Cite>,
+		`.`
+	]}
+</p>
+A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
+begin an 2016 & continues today. I use it to create software with a rich domain model, a flat architecture,
+& reactive programming. While working on ctx-core, I developed the [Tag Vector](/posts/tag-vector-0-introduction)
+convention. The underlying premise is dependency-injection of a `ctx` `MapCtx|NestedMapCtx` & "beings", (a
+function created with the `be_` factory function).
+
+<p>
+	{[
+		`Currently, I favor use ctx-core along with `,
+		<Atb_nanostores/>,
+		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores is also a general purpose library `,
+		` any component library is supported. In my work, I favor `,
+		<Atb_solidjs/>,
+		` to render components on the server & browser. ctx-core also supports `,
+		<Atb_sveltejs/>,
+		` with `,
+		<Atb_svelte_stores/>,
+		` to render components & manage reactive state on the server & browser.`
+	]}
+</p>
+
+<h2>
+	<Atb_nanostores/>
+</h2>
+
+<p>
+	{[
+		`I was introduced to Nano Stores via `,
+		<Atb_astrojs/>,
+		`. Since I was already using `,
+		<Atb_svelte_stores/>,
+		` Nano Stores was a natural replacement to support global reactive state when I began using `,
+		<Atb_solidjs/>,
+		`. I contributed a fix`,
+		<Cite ctx={ctx} id="nanostores-breadth-first-queue" innerHTML={
+			// avoid astro rendering to fix async render order issue
+			renderToString(()=>Atb({
+				innerText: 'Nano Stores breadth first queue',
+				href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
+			}))
+			// The following code block will not render anything in <Citation_list/> due to a race condition
+			/*
+			renderToString(()=><Atb innerText="Nano Stores breadth first queue" href="https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f"/>)
+			 */
+		}/>,
+		` to diamond dependency bugs by using a breadth first queuing algorithm which I
+		previously contributed to svelte stores`,
+		<Cite ctx={ctx} id="nanostores-computed-async" innerHTML={
+			renderToString(()=>Atb({
+				innerText: 'Svelte Cyclic breadth first queue',
+				href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
+			}))
+		}/>,
+		`. I also added soon to be released async support to `,
+		<code>computed</code>,
+		<Cite ctx={ctx} id="nanostores-computed-async" innerHTML={
+			renderToString(()=>Atb({
+				innerText: 'Nano Stores async computed',
+				href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
+			}))
+		}/>,
+		` & am working on autosubsciptions to `,
+		<code>computed</code>,
+		`.`
+	]}
+</p>
+
+<h2>
+	<Atb_backbone_signal/>
+</h2>
+
+<p>
+	{[
+		`I started using global state management with `,
+		<Atb_backbonejs/>,
+		`while Lead Developer at `,
+		<Atb_honk/>,
+		`. I `,
+		<a innerText="created backbone-signal" href="/posts/backbone-signal-practical-reactive-programming-javascript"/>,
+		` to use global state management with Backbone.js across different projects, while working with `,
+		<Atb_rundavoo/>,
+		`.`,
+	]}
+</p>
+
+<h2>
+	<Atb_jasmine_flow/>
+</h2>
+
+<p>
+	{[
+		`While at `,
+		<Atb_rundavoo/>,
+		` I `,
+		<a href="/posts/jasmine-flow-fast-and-thourough-testing">created jasmine-flow</a>,
+		` to facilitate linear flow testing...saving effort in maintaining automated tests. This was hard-learned
+		from maintaining various large apps while at `,
+		<Atb_honk/>,
+		` & `,
+		<Atb_pivotal_labs/>,
+		`.`
+	]}
+</p>
+
+<h2>
+	<Atb_rr/>
+</h2>
+
+<p>
+	{[
+		`RR (double Ruby) is a test double library for the Ruby language. I `,
+		<a href="/posts/introducing-rr">released RR</a>,
+		` back in 2008.
+		It features a terse api to for a high signal to syntax noise ratio for read & write friendly automated testing.
+		I used global state management to manage complex data interactions. I stopped development when I moved to full-stack
+		Javascript development. Maintenance of this project was picked up by `,
+		<Atb innerText="Sutou Kouhei" href="https://github.com/kou"/>,
+		` in 2015.`
+	]}
+</p>
+
+<h2>
+	<Atb_rspec/>
+</h2>
+
+<p>
+	{[
+		`I was an early core maintainer on the rspec team. Rspec is the first DSL (Domain Specific Language)
+		implementation of `,
+		<Atb innerText="BDD (Behavioral Driven Development)" href="https://dannorth.net/introducing-bdd/"/>,
+		`. Key contributions include the first known implementation of nested `,
+		<code>describe</code>,
+		` & `,
+		<code>context</code>,
+		` statements`,
+		<Cite ctx={ctx} id="rspec-nested-describes" innerHTML={
+			`Rspec: Added Nested Describes: Implemented in ` +
+			// avoid astro rendering to fix async render order issue
+			renderToString(()=>Atb({
+				innerText: 'two',
+				href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+			})) +
+			' ' +
+			renderToString(()=>Atb({
+				innerText: 'commits',
+				href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+			})) +
+			'.'
+		}/>,
+		`. The concept of nested describes was controversial at that time as it was thought it would add to the complexity &
+		inhibit readability of the specs. However, nesting `,
+		<code>describe</code>,
+		` & `,
+		<code>context</code>,
+		` enabled contextual nesting with separate usage of `,
+		<code>beforeEach</code>,
+		` & `,
+		<code>afterEach</code>,
+		`. I championed the idea & delivered the implementation. I also integrated Rspec with `,
+		<Atb innerText="Test::Unit" href="https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html"/>,
+		`, worked on the initial mock implementation, & worked on the `,
+		<Atb_ruby_on_rails/>,
+		` integration.`
+	]}
+</p>
+
+<Citation_list ctx={ctx}/>

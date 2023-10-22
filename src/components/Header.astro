@@ -4,7 +4,7 @@ import type { Ctx } from '@ctx-core/object'
 import { SITE } from '../config'
 export interface Props {
 	ctx:Ctx
-	active?:'posts'|'portfolio'|'tags'|'about'|'search'
+	active?:'about'|'portfolio'|'posts'|'open-source'|'search'|'tags'
 }
 const { active, ctx } = Astro.props
 ---
@@ -16,13 +16,18 @@ const { active, ctx } = Astro.props
 		</a>
 	</li>
 	<li>
+		<a href="/posts" class={active === 'posts' ? 'active' : ''}>
+			Posts
+		</a>
+	</li>
+	<li>
 		<a href="/portfolio" class={active === 'portfolio' ? 'active' : ''}>
 			Portfolio
 		</a>
 	</li>
 	<li>
-		<a href="/posts" class={active === 'posts' ? 'active' : ''}>
-			Posts
+		<a href="/open-source" class={active === 'open-source' ? 'active' : ''}>
+			Open Source
 		</a>
 	</li>
 	<li>

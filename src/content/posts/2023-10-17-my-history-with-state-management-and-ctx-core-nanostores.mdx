@@ -12,14 +12,20 @@ tags:
 description:
   An brief account of my history with state management & the road to building ctx-core & adopting nanostores
 ---
+
 import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
 import {
 	Atb_backbonejs,
-	Atb_ctx_core, Atb_grockit, Atb_honk,
+	Atb_ctx_core,
+	Atb_grockit,
+	Atb_honk,
 	Atb_menu,
 	Atb_pivotal_labs,
 	Atb_sapper,
-	Atb_sveltejs, Atb_truecar, Atb_unison
+	Atb_svelte_stores,
+	Atb_sveltejs,
+	Atb_truecar,
+	Atb_unison
 } from '@btakita/ui--server--briantakita'
 import { uuid_ } from '@ctx-core/uuid'
 
@@ -90,7 +96,7 @@ import { uuid_ } from '@ctx-core/uuid'
 		<Atb innerText="scoped" href="https://github.com/btakita/philosophy/blob/master/src/scope.md"/>,
 		' with ',
 		<Atb innerText="context" href="https://github.com/btakita/philosophy/blob/master/src/context.md"/>,
-		<Cite ctx={props.ctx} uuid={uuid_()}>
+		<Cite ctx={props.ctx} id={uuid_()}>
 			{[
 				'Taking into account that what is spoken & what is heard is defined with the context of the ',
 				<Atb innerText="entity" href="https://github.com/btakita/philosophy/blob/master/src/entity.md"/>,
@@ -126,7 +132,7 @@ import { uuid_ } from '@ctx-core/uuid'
 		' project to expand on reactive state management with ',
 		<Atb innerText="Domain Driven Design" href="https://en.wikipedia.org/wiki/Domain-driven_design"/>,
 		'. I leaned on my explorations with Ontology create the tag vector Convention',
-		<Cite ctx={props.ctx} uuid={uuid_()}>
+		<Cite ctx={props.ctx} id={uuid_()}>
 			Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
 			This design has been verified with real-world development since. I will write a formal definition & history soon.
 		</Cite>,
@@ -138,7 +144,7 @@ import { uuid_ } from '@ctx-core/uuid'
 <p>
 	{[
 		'I appreciated the design of ',
-		<Atb innerText="svelte stores" href="https://svelte.dev/docs/svelte-store"/>,
+		<Atb_svelte_stores/>,
 		' & for reactive state management. With the introduction of ',
 		<Atb_sapper/>,
 		' the same component code could be run on the browser & the server. Along with ctx-core, svelte stores could ' +
