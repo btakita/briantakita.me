@@ -91,14 +91,14 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		`. I contributed a fix`,
 		<Cite ctx={ctx} id="nanostores-breadth-first-queue" innerHTML={
 			// avoid astro rendering to fix async render order issue
+			/*
 			renderToString(()=>Atb({
 				innerText: 'Nano Stores breadth first queue',
 				href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
 			}))
+			*/
 			// The following code block will not render anything in <Citation_list/> due to a race condition
-			/*
-			renderToString(()=><Atb innerText="Nano Stores breadth first queue" href="https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f"/>)
-			 */
+			<Atb innerText="Nano Stores breadth first queue" href="https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f"/>
 		}/>,
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I
 		previously contributed to svelte stores`,
