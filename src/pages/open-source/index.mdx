@@ -49,15 +49,20 @@ export const ctx = ctx_()
 		`.`
 	]}
 </p>
-A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
-begin an 2016 & continues today. I use it to create software with a rich domain model, a flat architecture,
-& reactive programming. While working on ctx-core, I developed the [Tag Vector](/posts/tag-vector-0-introduction)
-convention. The underlying premise is dependency-injection of a `ctx` `MapCtx|NestedMapCtx` & "beings", (a
-function created with the `be_` factory function).
+I use ctx-core to maintain software with:
+
+- an accessible domain model
+- a flat architecture
+- active programming
+
+ctx-core uses dependency-injection of a `ctx` `MapCtx|NestedMapCtx` & "beings", (a function created with the `be_`
+factory function). The flat architecture reduces incidental complexity. To manage complex domains, Nested architecture
+provides scoping. The [Tag Vector](/posts/tag-vector-0-introduction) Convention, created while working on ctx-core,
+encodes tags joined by vectors & data structure shapes to express complex domains within a flat architecture.
 
 <p>
 	{[
-		`Currently, I favor use ctx-core along with `,
+		`Currently, I use ctx-core along with `,
 		<Atb_nanostores/>,
 		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores is also a general purpose library `,
 		` any component library is supported. In my work, I favor `,
@@ -76,11 +81,12 @@ function created with the `be_` factory function).
 
 <p>
 	{[
-		`I was introduced to Nano Stores via `,
+		`I learned about Nano Stores via `,
 		<Atb_astrojs/>,
 		`. Since I was already using `,
 		<Atb_svelte_stores/>,
-		` Nano Stores was a natural replacement to support global reactive state when I began using `,
+		`, Nano Stores was a natural replacement to support global reactive state while supporting multiple component
+		libraries, such as `,
 		<Atb_solidjs/>,
 		`. I contributed a fix`,
 		<Cite ctx={ctx} id="nanostores-breadth-first-queue" innerHTML={
@@ -110,7 +116,7 @@ function created with the `be_` factory function).
 				href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
 			}))
 		}/>,
-		` & am working on autosubsciptions to `,
+		` & am working on adding autosubsciptions to `,
 		<code>computed</code>,
 		`.`
 	]}
@@ -124,10 +130,12 @@ function created with the `be_` factory function).
 	{[
 		`I started using global state management with `,
 		<Atb_backbonejs/>,
-		`while Lead Developer at `,
+		` while Lead Developer at `,
 		<Atb_honk/>,
 		`. I `,
-		<a innerText="created backbone-signal" href="/posts/backbone-signal-practical-reactive-programming-javascript"/>,
+		<a href="/posts/backbone-signal-practical-reactive-programming-javascript">
+			created backbone-signal
+		</a>,
 		` to use global state management with Backbone.js across different projects, while working with `,
 		<Atb_rundavoo/>,
 		`.`,
