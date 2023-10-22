@@ -28,6 +28,7 @@ import {
 	Atb_unison
 } from '@btakita/ui--server--briantakita'
 import { uuid_ } from '@ctx-core/uuid'
+import { renderToString } from 'solid-js/web'
 
 <p>
 	{[
@@ -96,13 +97,14 @@ import { uuid_ } from '@ctx-core/uuid'
 		<Atb innerText="scoped" href="https://github.com/btakita/philosophy/blob/master/src/scope.md"/>,
 		' with ',
 		<Atb innerText="context" href="https://github.com/btakita/philosophy/blob/master/src/context.md"/>,
-		<Cite ctx={props.ctx} id={uuid_()}>
-			{[
-				'Taking into account that what is spoken & what is heard is defined with the context of the ',
-				<Atb innerText="entity" href="https://github.com/btakita/philosophy/blob/master/src/entity.md"/>,
-				' speaking or hearing'
-			]}
-		</Cite>,
+		<Cite ctx={props.ctx} id={uuid_()} innerHTML={
+			`Taking into account that what is spoken & what is heard is defined with the context of the ` +
+			renderToString(()=>Atb({
+				innerText: 'entity',
+				href: 'https://github.com/btakita/philosophy/blob/master/src/entity.md'
+			})) +
+        ` speaking or hearing`
+		}/>,
 		'. I learned about ',
 		<Atb innerText="Existence" href="https://github.com/btakita/philosophy/blob/master/src/existence.md"/>,
 		' and in a wierd way, ',
