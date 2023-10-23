@@ -3,24 +3,32 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Open Source"
 active: open-source
 ---
-
 import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
 import {
 	Atb_astrojs,
 	Atb_backbone_signal,
 	Atb_backbonejs,
 	Atb_ctx_core,
+	Atb_desertrb,
 	Atb_honk,
 	Atb_jasmine_flow,
-	Atb_nanostores, Atb_pivotal_labs,
-	Atb_rr, Atb_rspec, Atb_ruby_on_rails,
+	Atb_jellyrb,
+	Atb_nanostores,
+	Atb_pivotal_labs,
+	Atb_poloniumrb,
+	Atb_rr,
+	Atb_rspec,
+	Atb_ruby_on_rails,
 	Atb_rundavoo,
+	Atb_screw_unit,
 	Atb_solidjs,
 	Atb_svelte_stores,
-	Atb_sveltejs
+	Atb_sveltejs,
+	Atb_unison
 } from '@btakita/ui--server--briantakita'
+import { Atb_jasminejs } from '@btakita/ui--server--briantakita/src/anchor/Atb_jasminejs'
+import { Atb_jquery } from '@btakita/ui--server--briantakita/src/anchor/Atb_jquery'
 import { ctx_ } from '@ctx-core/object'
-import { renderToString } from 'solid-js/web'
 export const ctx = ctx_()
 
 <p>
@@ -40,7 +48,7 @@ export const ctx = ctx_()
 	{[
 		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
 		begin an 2016 & continues today`,
-		<Cite ctx={ctx} id="ctx-core--catch-all">
+		<Cite id="ctx-core--catch-all" ctx={ctx}>
 			ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core. The
 			functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to be more
 			widely used. I have used ctx-core to handle transitions between other component & state management libraries as they
@@ -89,32 +97,28 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		libraries, such as `,
 		<Atb_solidjs/>,
 		`. I contributed a fix`,
-		<Cite ctx={ctx} id="nanostores-breadth-first-queue" innerHTML={
+		<Cite id="nanostores-breadth-first-queue" ctx={ctx} innerHTML={
 			// avoid astro rendering to fix async render order issue
-			renderToString(()=>Atb({
+			Atb({
 				innerText: 'Nano Stores breadth first queue',
 				href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
-			}))
-			// The following code block will not render anything in <Citation_list/> due to a race condition
-			/*
-			renderToString(()=><Atb innerText="Nano Stores breadth first queue" href="https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f"/>)
-			 */
+			}).t
 		}/>,
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I
 		previously contributed to svelte stores`,
-		<Cite ctx={ctx} id="nanostores-computed-async" innerHTML={
-			renderToString(()=>Atb({
-				innerText: 'Svelte Cyclic breadth first queue',
-				href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
-			}))
+		<Cite id="nanostores-computed-async" ctx={ctx} innerHTML={
+			Atb({
+					innerText: 'Svelte Cyclic breadth first queue',
+					href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
+			}).t
 		}/>,
 		`. I also added soon to be released async support to `,
 		<code>computed</code>,
-		<Cite ctx={ctx} id="nanostores-computed-async" innerHTML={
-			renderToString(()=>Atb({
-				innerText: 'Nano Stores async computed',
-				href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
-			}))
+		<Cite id="nanostores-computed-async" ctx={ctx} innerHTML={
+			Atb({
+					innerText: 'Nano Stores async computed',
+					href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
+			}).t
 		}/>,
 		` & am working on adding autosubsciptions to `,
 		<code>computed</code>,
@@ -192,20 +196,20 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` & `,
 		<code>context</code>,
 		` statements`,
-		<Cite ctx={ctx} id="rspec-nested-describes" innerHTML={
+		<Cite id="rspec-nested-describes" ctx={ctx} innerHTML={[
 			`Rspec: Added Nested Describes: Implemented in ` +
 			// avoid astro rendering to fix async render order issue
-			renderToString(()=>Atb({
-				innerText: 'two',
-				href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-			})) +
-			' ' +
-			renderToString(()=>Atb({
-				innerText: 'commits',
-				href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-			})) +
+      Atb({
+          innerText: 'two',
+          href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+      }).t,
+			' ',
+			Atb({
+					innerText: 'commits',
+					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+			}).t,
 			'.'
-		}/>,
+		].join('')}/>,
 		`. The concept of nested describes was controversial at that time as it was thought it would add to the complexity &
 		inhibit readability of the specs. However, nesting `,
 		<code>describe</code>,
@@ -222,5 +226,72 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` integration.`
 	]}
 </p>
+
+<h2>
+	<Atb_desertrb/>
+</h2>
+
+Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and
+migrations across your applications.
+
+With Desert, reusability doesn’t come at the cost of extensibility: it’s trivial to extend the functionality of a
+plugin - both in your application and in other plugins.
+
+Classes are automatically mixed in with your own or other plugins’ classes. This allows you to make full featured
+composable components.
+
+<h2>
+	<Atb_jellyrb/>
+</h2>
+
+<p>
+	{[
+		`Jelly is an unobtrusive Javascript framework for `,
+		<Atb_jquery/>,
+		` and `,
+		<Atb_ruby_on_rails/>,
+		`. It provides a set of conventions and tools that help you organize your AJAX and client-side code, while
+		keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery
+		events.`
+	]}
+</p>
+<p>
+	{[
+		`Jelly encourages and enables unit testing your Javascript code. Using a Javascript testing framework such as `,
+		<Atb_jasminejs/>,
+		` or `,
+		<Atb_screw_unit/>,
+		`, Jelly allows you to test AJAX and client-side events independently from your Rails app.`
+	]}
+</p>
+
+<h2>
+	<Atb_poloniumrb/>
+</h2>
+
+<p>
+	{[
+		`Selenium test runner & helpers for Rails. Featured a set of `,
+		<code>wait_for</code>,
+		` helpers to keep the tests in sync with the application.`
+	]}
+</p>
+
+<h2>
+	<Atb_unison/>
+</h2>
+
+Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.
+
+<h2>
+	<Atb_screw_unit/>
+</h2>
+
+Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to
+provide:
+
+- a DSL for elegant, readable, organized specs;
+- an interactive runner that can execute focused specs and describes;
+- and brief, extensible source-code.
 
 <Citation_list ctx={ctx}/>

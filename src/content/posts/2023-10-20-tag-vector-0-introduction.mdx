@@ -11,9 +11,9 @@ tags:
   - machine learning
   - vector database
 description:
-  tag vector is a name convention, & will eventually be a formal name system, where names are composed of tags
+  tag vector is a name convention, will eventually be a formal name system, where names are composed of tags
   connected by a 1 dimensional vector. It can be used for naming variables, functions, components, network apis, low
-  code apps, & even in plain text.
+  code apps, even in plain text.
 ---
 import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
 import { uuid_ } from '@ctx-core/uuid'
@@ -27,7 +27,7 @@ import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 	]}
 </p>
 
-> There are only two hard things in Computer Schience: cache invalidation and naming things.
+> There are only two hard things in Computer Science: cache invalidation and naming things.
 > -- Phil Karlton
 
 Tag Vector aims to be a tool to solve the two hard things in Computed Science by providing a name convention &
@@ -42,7 +42,7 @@ eventually a formalized system with tools to:
 	<li>
 		{[
 			`show the directional arrow of a tag vector in source code & text using font ligatures`,
-			<Cite ctx={props.ctx} id={uuid_()}>
+			<Cite id="font-ligatures" ctx={props.ctx}>
 				The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts
 			</Cite>
 		]}
@@ -54,7 +54,7 @@ eventually a formalized system with tools to:
 		{[
 			`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
 			rendering components & performing api calls`,
-			<Cite ctx={props.ctx} id={uuid_()}>
+			<Cite id="tag-vector-editor-prototype" ctx={props.ctx}>
 				A prototype of the document editor with Tag Vector is in the works
 			</Cite>
 		]}
@@ -62,7 +62,7 @@ eventually a formalized system with tools to:
 </ul>
 
 The Tag Vector system can provide profound benefits to computer science, programming, api design, domain design,
-low code tooling, machine learning, & even plain text. The Tag Vector convention feels familiar to existing code
+low code tooling, machine learning, even plain text. The Tag Vector convention feels familiar to existing code
 conventions & can be used with existing source code.
 
 <TOC_tag_vector/>
