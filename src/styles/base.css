@@ -93,6 +93,8 @@
   }
   .prose code {
     @apply font-mono;
+    display: inline-block;
+    white-space: nowrap;
   }
 
   /* ===== scrollbar ===== */
