@@ -13,7 +13,7 @@ tags:
 description:
   A techincal description of the Tag Name Convention
 ---
-import { Citation_list, Cite } from '@btakita/ui--server--blog'
+import { Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import { uuid_ } from '@ctx-core/uuid'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 
@@ -26,7 +26,7 @@ import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 		<code>↑</code>,
 		` or down `,
 		<code>↓</code>,
-		<Cite id="no-up-down-arrow-ligatures" ctx={props.ctx}>
+		<Footnote id="no-up-down-arrow-ligatures" ctx={props.ctx}>
 			{[
 				`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
 				<code>↑ (0x2191)</code>,
@@ -34,7 +34,7 @@ import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 				<code>↓ (0x2193)</code>,
 				` are used.`
 			]}
-		</Cite>
+		</Footnote>
 	]}
 </p>
 
@@ -146,4 +146,4 @@ concrete. In grammar, the predicate `as->of->2023` has a higher inference level 
 Continuing with inference levels in grammar; an adjective, adverb, preposition, or conjunction `as` would be more
 abstract than a noun `2023`.
 
-<Citation_list ctx={props.ctx}/>
+<Footnote_list ctx={props.ctx}/>

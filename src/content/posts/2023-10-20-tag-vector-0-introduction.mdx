@@ -15,7 +15,7 @@ description:
   connected by a 1 dimensional vector. It can be used for naming variables, functions, components, network apis, low
   code apps, even in plain text.
 ---
-import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import { uuid_ } from '@ctx-core/uuid'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 
@@ -42,9 +42,9 @@ eventually a formalized system with tools to:
 	<li>
 		{[
 			`show the directional arrow of a tag vector in source code & text using font ligatures`,
-			<Cite id="font-ligatures" ctx={props.ctx}>
+			<Footnote id="font-ligatures" ctx={props.ctx}>
 				The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts
-			</Cite>
+			</Footnote>
 		]}
 	</li>
 	<li>store the tag vector in a vector database & automate querying tag graphs</li>
@@ -54,9 +54,9 @@ eventually a formalized system with tools to:
 		{[
 			`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
 			rendering components & performing api calls`,
-			<Cite id="tag-vector-editor-prototype" ctx={props.ctx}>
+			<Footnote id="tag-vector-editor-prototype" ctx={props.ctx}>
 				A prototype of the document editor with Tag Vector is in the works
-			</Cite>
+			</Footnote>
 		]}
 	</li>
 </ul>
@@ -67,4 +67,4 @@ conventions & can be used with existing source code.
 
 <TOC_tag_vector/>
 
-<Citation_list ctx={props.ctx}/>
+<Footnote_list ctx={props.ctx}/>

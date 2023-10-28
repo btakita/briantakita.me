@@ -3,7 +3,7 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Open Source"
 active: open-source
 ---
-import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import {
 	Atb_astrojs,
 	Atb_backbone_signal,
@@ -48,12 +48,12 @@ export const ctx = ctx_()
 	{[
 		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
 		begin an 2016 & continues today`,
-		<Cite id="ctx-core--catch-all" ctx={ctx}>
+		<Footnote id="ctx-core--catch-all" ctx={ctx}>
 			ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core. The
 			functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to be more
 			widely used. I have used ctx-core to handle transitions between other component & state management libraries as they
 			emerge & are updated.
-		</Cite>,
+		</Footnote>,
 		`.`
 	]}
 </p>
@@ -97,7 +97,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		libraries, such as `,
 		<Atb_solidjs/>,
 		`. I contributed a fix`,
-		<Cite id="nanostores-breadth-first-queue" ctx={ctx} innerHTML={
+		<Footnote id="nanostores-breadth-first-queue" ctx={ctx} innerHTML={
 			// avoid astro rendering to fix async render order issue
 			Atb({
 				innerText: 'Nano Stores breadth first queue',
@@ -106,7 +106,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		}/>,
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I
 		previously contributed to svelte stores`,
-		<Cite id="nanostores-computed-async" ctx={ctx} innerHTML={
+		<Footnote id="nanostores-computed-async" ctx={ctx} innerHTML={
 			Atb({
 					innerText: 'Svelte Cyclic breadth first queue',
 					href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
@@ -114,7 +114,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		}/>,
 		`. I also added soon to be released async support to `,
 		<code>computed</code>,
-		<Cite id="nanostores-computed-async" ctx={ctx} innerHTML={
+		<Footnote id="nanostores-computed-async" ctx={ctx} innerHTML={
 			Atb({
 					innerText: 'Nano Stores async computed',
 					href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
@@ -196,7 +196,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` & `,
 		<code>context</code>,
 		` statements`,
-		<Cite id="rspec-nested-describes" ctx={ctx} innerHTML={[
+		<Footnote id="rspec-nested-describes" ctx={ctx} innerHTML={[
 			`Rspec: Added Nested Describes: Implemented in ` +
 			// avoid astro rendering to fix async render order issue
       Atb({
@@ -294,4 +294,4 @@ provide:
 - an interactive runner that can execute focused specs and describes;
 - and brief, extensible source-code.
 
-<Citation_list ctx={ctx}/>
+<Footnote_list ctx={ctx}/>

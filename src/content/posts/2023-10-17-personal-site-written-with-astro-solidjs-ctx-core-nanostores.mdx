@@ -12,7 +12,7 @@ tags:
 description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import {
 	Atb_astrojs,
 	Atb_astropaper,
@@ -144,13 +144,13 @@ The git repos include:
 <p>
 	{[
 		'ctx-core with nanostores enables libraries & apps to easily share state management.',
-		<Cite id="my-history-with-state-management-and-ctx-core-nanostores" ctx={props.ctx}>
+		<Footnote id="my-history-with-state-management-and-ctx-core-nanostores" ctx={props.ctx}>
 			<a href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
 				How I ended up using ctx-core & nanostores…
 			</a>
-		</Cite>,
+		</Footnote>,
 		'.'
 	]}
 </p>
 
-<Citation_list ctx={props.ctx}/>
+<Footnote_list ctx={props.ctx}/>

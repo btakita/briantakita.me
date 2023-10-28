@@ -12,7 +12,7 @@ tags:
 description:
   An brief account of my history with state management & the road to building ctx-core & adopting nanostores
 ---
-import { Atb, Citation_list, Cite } from '@btakita/ui--server--blog'
+import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import {
 	Atb_asp,
 	Atb_astrojs,
@@ -101,7 +101,7 @@ import { Atb_jquery } from '@btakita/ui--server--briantakita/src/anchor/Atb_jque
 	{[
 		`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job
  		freezes, imploding companies everywhere. I picked up any freelance work that I could find`,
-		<Cite id="early-freelance-projects" ctx={props.ctx} innerHTML={[
+		<Footnote id="early-freelance-projects" ctx={props.ctx} innerHTML={[
 			`Some of my favorite projects include a ringtone generator using `,
 			Atb_php().t,
 			` & a CRM using using `,
@@ -177,7 +177,7 @@ Wilmes, Nathan Sobo, Nick Kallen, in particular, pushed me to become a better mo
 		` & championed/developed the first (that I know of) implementation of nested `,
 		<code>describe</code>,
 		` statements`,
-		<Cite id="nested-describe-statements" ctx={props.ctx} innerHTML={[
+		<Footnote id="nested-describe-statements" ctx={props.ctx} innerHTML={[
 			`This pattern is still used in some testing libraries today. It was a practical solution paired along with
 			describing nested context along with <code>beforeEach</code> & <code>afterEach</code>. Given my inclination to
 			flatten architecture, helper functions, the development of
@@ -323,7 +323,7 @@ least I was in LA.
 		<Atb innerText="scoped" href="https://github.com/btakita/philosophy/blob/master/src/scope.md"/>,
 		` with `,
 		<Atb innerText="context" href="https://github.com/btakita/philosophy/blob/master/src/context.md"/>,
-		<Cite id={'context-of-entity'} ctx={props.ctx} innerHTML={[
+		<Footnote id={'context-of-entity'} ctx={props.ctx} innerHTML={[
 			`Taking into account that what is spoken & what is heard is defined with the context of the `,
 			Atb({
 				innerText: 'entity',
@@ -365,10 +365,10 @@ least I was in LA.
 		` project to expand on reactive state management with `,
 		<Atb_domain_driven_design/>,
 		`. I leaned on my explorations with Ontology create the tag vector Convention`,
-		<Cite id="tag-vector-development-continues" ctx={props.ctx}>
+		<Footnote id="tag-vector-development-continues" ctx={props.ctx}>
 			Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
 			This design has been verified with real-world development since. I will write a formal definition & history soon.
-		</Cite>,
+		</Footnote>,
 		` to enable a simple, flat architecture. We also switched from riotjs`,
 		<code>{`-->`}</code>,
 		<Atb_sveltejs/>,
@@ -401,9 +401,9 @@ least I was in LA.
 		` & `,
 		<Atb innerText="an app" href="https://github.com/btakita/iron-henhouse"/>,
 		` to report voter suppression & info on how to exercise the right to vote for the 2016 Democrat primary election`,
-		<Cite id="suppressthis-org" ctx={props.ctx}>
+		<Footnote id="suppressthis-org" ctx={props.ctx}>
 			The app was launched as suppressthis.org. It is no longer online.
-		</Cite>,
+		</Footnote>,
 		`, various other small sites. After Censible, I now collaborate with a related ESG financial advisor `,
 		<Atb_martin_investments/>,
 		`.`
@@ -457,12 +457,12 @@ software stack changed:
 		interested in riot.js (not SSR), sveltejs, solidjs, vanilla js. `,
 		<Atb_vanjs/>,
 		` looks a promising vanilla js library which supports SSR`,
-		<Cite id="vanjs-tradeoff" ctx={props.ctx}>
+		<Footnote id="vanjs-tradeoff" ctx={props.ctx}>
 			VanJS is great for small component trees such as when embedding javascript components. When reactive state
 			changes in VanJS, it re-renders the component by default, allowing custom code to update the existing DOM. For
 			large stateful component trees, a component library with declarative state management (SolidJS, Svelte, React,
 			etc.) is more practical.
-		</Cite>,
+		</Footnote>,
 		`.`
 	]}
 </p>
@@ -486,7 +486,7 @@ software stack changed:
 		<Atb_solid_start/>,
 		` added SSR progressive rendering to a SPA client side router. With the advent of libraries such as `,
 		<Atb_astrojs/>,
-		` isomorphic Java=7[5script MPA development gained prominence. Marko was built almost a decade earlier, but Astro
+		` isomorphic Javascript MPA development gained prominence. Marko was built almost a decade earlier, but Astro
 		has gained significant popularity. Astro files are server-side rendered only. Astro's integration with many
 		SSR + CSR component libraries makes it practical to have a full stack web app project across multiple libraries.`
 	]}
@@ -532,7 +532,7 @@ the component tree.
 		on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails,
 		we saw Web 2.0 startups & the `,
 		<code>{`(a)gile->(A)gile`}</code>,
-		<Cite id="agile_Agile" ctx={props.ctx} innerHTML={[
+		<Footnote id="agile_Agile" ctx={props.ctx} innerHTML={[
 			`<code>agile->Agile</code> lower-case <code>a</code> to capital <code>A</code>. As the agile movement gained
 			success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor
 			with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`
@@ -598,4 +598,4 @@ cohesive libraries under the programmer's control can aid in the transition.
 This post is long & covered more than the original intent. Graphs of detail provide context but add to length &
 create rabbit-holes. I will end this post for now & extract out posts over the next few weeks.
 
-<Citation_list ctx={props.ctx}/>
+<Footnote_list ctx={props.ctx}/>
