@@ -21,11 +21,14 @@ import {
 	Atb_caltrans,
 	Atb_censible,
 	Atb_communitywalk,
+	Atb_context,
 	Atb_craigslist,
 	Atb_ctx_core,
+	Atb_definition,
 	Atb_desertrb,
 	Atb_domain_driven_design,
 	Atb_dot_net,
+	Atb_entity,
 	Atb_esg,
 	Atb_existence,
 	Atb_expressjs,
@@ -50,15 +53,19 @@ import {
 	Atb_neo,
 	Atb_news_corp,
 	Atb_nextjs,
-	Atb_nodejs,
+	Atb_ontology,
+	Atb_philosophy,
 	Atb_php,
 	Atb_pivotal_labs,
 	Atb_reactjs,
 	Atb_redis,
+	Atb_riotjs,
 	Atb_rspec,
 	Atb_ruby,
 	Atb_ruby_on_rails,
+	Atb_rundavoo,
 	Atb_sapper,
+	Atb_scope,
 	Atb_signals_react,
 	Atb_solid_start,
 	Atb_solidjs,
@@ -72,6 +79,7 @@ import {
 	Atb_usaa,
 	Atb_vanjs,
 	Atb_vite,
+	Atb_worldview,
 	Atb_wsj,
 	Atb_yammer
 } from '@btakita/ui--server--briantakita'
@@ -255,9 +263,7 @@ life was starting to fray. I sought to work from home & was not permitted to.
 		<Atb_yammer/>,
 		` led by Davis Sacks. I decided to stay with Honk, feeling sense of loyalty to stay onboard with the acquisition
 		to TrueCar. I told David Sacks I will not be signing the offer; he told me "you are making a mistake". Given the
-		early usage of `,
-		<Atb_nodejs/>,
-		`, `,
+		early usage of node.js, `,
 		<Atb_cassandra/>,
 		`, the eventual acquisition by `,
 		<Atb_microsoft/>,
@@ -299,11 +305,11 @@ least I was in LA.
 <p>
 	{[
 		`I then joined `,
-		<Atb innerText="Rundavoo" href="https://www.crunchbase.com/organization/rundavoo"/>,
+		<Atb_rundavoo/>,
 		` & created `,
 		<Atb innerText="backbone-signal" href="/posts/backbone-signal-practical-reactive-programming-javascript"/>,
 		` as a library for reactive state management, which I used with `,
-		<Atb innerText="riotjs" href="https://riot.js.org/"/>,
+		<Atb_riotjs/>,
 		` to render the front-end. I joined the company fairly late, sadly it was having funding issues. I stayed
 		onboard as everyone else left hoping to help rescue the company with a lean staff.  Sadly, Rundavoo ended up
 		folding & I was owed a sizable outstanding balance.`
@@ -313,22 +319,21 @@ least I was in LA.
 	{[
 		`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this
 		journey, my `,
-		<Atb innerText="worldview" href="https://github.com/btakita/philosophy/blob/master/src/worldview.md"/>,
+		<Atb_worldview innerText="worldview"/>,
 		` expanded with experimenting with the `,
-		<Atb innerText="ontological" href="https://github.com/btakita/philosophy/blob/master/src/ontology.md"/>,
+		<Atb_ontology innerText="ontological"/>,
 		` expression of a `,
-		<Atb innerText="Philosophy" href="https://github.com/btakita/philosophy"/>,
+		<Atb_philosophy/>,
 		`. During this exploration, I explored how word `,
-		<Atb innerText="definitions" href="https://github.com/btakita/philosophy/blob/master/src/definition.md"/>,
+		<Atb_definition innerText="definitions"/>,
 		` can be `,
-		<Atb innerText="scoped" href="https://github.com/btakita/philosophy/blob/master/src/scope.md"/>,
+		<Atb_scope innerText="scoped"/>,
 		` with `,
-		<Atb innerText="context" href="https://github.com/btakita/philosophy/blob/master/src/context.md"/>,
+		<Atb_context innerText="context"/>,
 		<Footnote id={'context-of-entity'} ctx={props.ctx} innerHTML={[
 			`Taking into account that what is spoken & what is heard is defined with the context of the `,
-			Atb({
-				innerText: 'entity',
-				href: 'https://github.com/btakita/philosophy/blob/master/src/entity.md'
+			Atb_entity({
+				innerText: 'entity'
 			}).t,
 			` speaking or hearing.`
 		].join('')}/>,
