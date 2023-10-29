@@ -2,7 +2,7 @@
 author: Brian Takita
 pubDate: 2023-10-20T05:00:00.020Z
 title: 'Tag Vector: Part 1: Tag Vector Convention'
-slug: tag-vector-0-tag-vector-convention
+slug: tag-vector-1-tag-vector-convention
 tags:
   - tag vector
   - tag graph
@@ -46,7 +46,7 @@ const person_name = 'Elon Musk'
 // person & name are connected as a 1 dimensional right-arrow vector: person->name
 ```
 
-### Inferred vectors can also run left `<-`
+# Inferred vectors can also run left `<-`
 
 Is inference, vectors can also be in the left direction:
 
@@ -56,7 +56,7 @@ const name_person = 'Elon Musk'
 // The vector is name<-person
 ```
 
-### Default Direction when tags are on the same inferential level
+# Default Direction when tags are on the same inferential level
 
 If two tags are on the same inferential level, such as `person` & `company`, the vector arrow will be `->` by
 default.
@@ -75,7 +75,7 @@ const company_company = { name: 'SpaceX' }
 // company<-person
 ```
 
-### Overriding the Default Direction
+# Overriding the Default Direction
 
 The default direction can be overridden in code with a comment above or before the statement.
 
@@ -85,7 +85,7 @@ const company_company = { name: 'SpaceX' }
 // company<-person
 ```
 
-### tag vectors with 3 or more tags
+# Tag Vectors with 3 or more tags
 
 A tag vector can be composed of any number of tags. The inference level rules are applied to the first & last tag.
 In the following case:
@@ -145,5 +145,63 @@ concrete. In grammar, the predicate `as->of->2023` has a higher inference level 
 
 Continuing with inference levels in grammar; an adjective, adverb, preposition, or conjunction `as` would be more
 abstract than a noun `2023`.
+
+# Data Structure Shape
+
+The Tag Vector Convention can encode the shape of the data structure.
+
+## Array
+
+```ts
+const company_person_name_a = [
+	'Elon Musk',
+	'Mark Zuckerberg',
+]
+// company->person->name->a(array)
+```
+
+### Multi-dimensional Array
+
+```ts
+const company_a_person_name_aa = [
+	['Elon Musk', 'Zachary Kirkhorn'],
+	['Mark Zuckerberg', 'Susan Li'],
+]
+// company->a->person_name->aa
+// A 2-dimensional array, company x person_name
+```
+
+Higher dimensions can also use a number to express the dimensionality.
+
+```ts
+const d1_a_d2_a2_d3_a3_d4_a4:number[][][][] =
+	[ // d1
+		[ // d2
+			[ // d3
+				[ // d4
+					1
+				]
+			]
+		]
+	]
+```
+
+## Record
+
+```ts
+const company_id_R_ceo_name:Record<string, string> = {
+	'tesla': 'Elon Musk',
+	'facebook': 'Mark Zuckerberg',
+}
+```
+
+## Map
+
+```ts
+const company_id_M_ceo_name:Map<string, string> = new Map([
+	['tesla', 'Elon Musk'],
+	['facebook', 'Mark Zuckerberg'],
+])
+```
 
 <Footnote_list ctx={props.ctx}/>
