@@ -61,11 +61,42 @@ export const ctx = ctx_()
 		`.`
 	]}
 </p>
+
+### Motivation
+
+After maintaining several applications, I ran into the issues of:
+
+- quickly creating & iterating on features
+- extracting code to reuse
+- time to refactor code
+- time to upgrade software
+- gluing together small libraries & snippets
+
+Using existing solutions such as frameworks or libraries provides the benefit of quickly getting started, however
+there is a maintenance burden of:
+
+- large payload size & memory usage
+- extending the underlying software to fulfill requirements
+- time to upgrade the application with the underlying libraries
+- domain language mismatch between the library/framework
+
+<p>
+	{[
+		`I found that there are usually small libraries & code snippets that can be glued together with a `,
+		<Atb innerText="naming convention" href="/posts/naming-conventions"></Atb>,
+		` that utilizes unique, immutable, & composable names. As a result, one could find all usages of an entity or
+		concept by doing a project-wide search. Rename refactorings were more accurate & comprehensive due to the
+		uniqueness of names. Composable naming allows one to understand the context & full description of the entity.`
+	]}
+</p>
+
 I use ctx-core to maintain software with:
 
 - an accessible domain model
 - a flat architecture
 - active programming
+
+### Usage
 
 ctx-core uses dependency-injection of a `ctx` `MapCtx|NestedMapCtx` & "beings", (a function created with the `be_`
 factory function). The flat architecture reduces incidental complexity. To manage complex domains, Nested architecture

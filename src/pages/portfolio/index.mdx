@@ -16,12 +16,14 @@ import {
 	Atb_docker,
 	Atb_engine_yard,
 	Atb_erector,
+	Atb_esg,
 	Atb_heroku,
 	Atb_lucene,
 	Atb_martin_investments,
 	Atb_menu,
 	Atb_milyoni,
-	Atb_nanostores, Atb_news_corp,
+	Atb_nanostores,
+	Atb_news_corp,
 	Atb_nextcloud,
 	Atb_nodejs,
 	Atb_pnpm,
@@ -38,7 +40,9 @@ import {
 	Atb_solidjs,
 	Atb_sveltejs,
 	Atb_truecar,
-	Atb_unison, Atb_usaa, Atb_wsj
+	Atb_unison,
+	Atb_usaa,
+	Atb_wsj
 } from '@btakita/ui--server--briantakita'
 import { Atb_jquery } from '@btakita/ui--server--briantakita/src/anchor/Atb_jquery'
 
@@ -69,7 +73,7 @@ companies according to Environment & Women in Leadership criteria.
 
 <p>
 	{[
-		`Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using`,
+		`Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using `,
 		<Atb innerText="Office Open XML" href="https://en.wikipedia.org/wiki/Office_Open_XML"/>,
 		`, replicating the ESG analysis algorithms & deep linking across the document & to relevant web content.`
 	]}
@@ -97,7 +101,30 @@ Stack:
 	<Atb_censible/>
 </h2>
 
-Built the marketing site, company ESG analysis, portfolio rebalance tool, & stock screening tool.
+<p>
+	{[
+		`Progressive Web App that enables the client to upload their portfolio from a CSV file and rebalance their
+		portfolio based on ESG metrics compared to an Index Fund benchmark. The client can select `,
+		<Atb_esg/>,
+		` Issue criteria (for scoring) & binary restriction criteria to identify securities that that cross ethical
+		boundaries. This app uses a market value weighted color bar, based on segmented scores, to indicate the areas of
+		improvement. Client can search for securities to add or replace based on Name, Industry Peers, Industry Sectors,
+		Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to obtain a desired
+		ESG outcome. Also contains a printable report and industry sector analysis of the portfolio & benchmark fund.`
+	]}
+</p>
+
+<h3>
+	{
+		<Atb href="https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership">
+			Women In Leadership Report
+		</Atb>
+	}
+</h3>
+
+Market survey of Women in corporate leadership positions. Scoring methodology applied to Aggregate analysis, Best
+Performing Companies, Best Performing Large Companies, Worst Performing Companies, Best & Worst Performing Funds,
+Largest Funds, & Socially Responsible Funds.
 
 Stack:
 <ul>
