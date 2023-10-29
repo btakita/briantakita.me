@@ -5,14 +5,18 @@ active: open-source
 ---
 import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
 import {
+	Atb_ado_net,
 	Atb_astrojs,
 	Atb_backbone_signal,
-	Atb_backbonejs,
+	Atb_backbonejs, Atb_c_sharp,
+	Atb_ccrcorp,
 	Atb_ctx_core,
-	Atb_desertrb,
+	Atb_desertrb, Atb_msexcel,
+	Atb_generic_query_analyzer,
 	Atb_honk,
 	Atb_jasmine_flow,
 	Atb_jellyrb,
+	Atb_msaccess,
 	Atb_nanostores,
 	Atb_pivotal_labs,
 	Atb_poloniumrb,
@@ -24,7 +28,7 @@ import {
 	Atb_solidjs,
 	Atb_svelte_stores,
 	Atb_sveltejs,
-	Atb_unison
+	Atb_unison, Atb_winforms, Atb_poof, Atb_smarty
 } from '@btakita/ui--server--briantakita'
 import { Atb_jasminejs } from '@btakita/ui--server--briantakita/src/anchor/Atb_jasminejs'
 import { Atb_jquery } from '@btakita/ui--server--briantakita/src/anchor/Atb_jquery'
@@ -293,5 +297,42 @@ provide:
 - a DSL for elegant, readable, organized specs;
 - an interactive runner that can execute focused specs and describes;
 - and brief, extensible source-code.
+
+<h2>
+	<Atb_generic_query_analyzer/>
+</h2>
+
+<p>
+	{[
+		`A query analyzer using `,
+		<Atb_ado_net/>,
+		`. I built this tool to run SQL queries on the `,
+		<Atb_msaccess/>,
+		` CRM database & `,
+		<Atb_msexcel/>,
+		` @ `,
+		<Atb_ccrcorp/>,
+		`. Written with `,
+		<Atb_c_sharp/>,
+		`, `,
+		<Atb_ado_net/>,
+		`, `,
+		<Atb_winforms/>,
+		`.`
+	]}
+</p>
+
+<h2>
+	<Atb_poof/>
+</h2>
+
+<p>
+	{[
+		`The PHP Object Oriented Framework is a framework library to build components in PHP. It was built as an
+		alternative to using the `,
+		<Atb_smarty/>,
+		`. Poof was written to encapsulate html rendering in components.`
+	]}
+</p>
 
 <Footnote_list ctx={ctx}/>

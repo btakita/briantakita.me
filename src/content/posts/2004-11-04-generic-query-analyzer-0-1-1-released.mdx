@@ -1,0 +1,38 @@
+---
+author: Brian Takita
+pubDate: 2004-11-04T07:15Z
+title: Generic Query Analyzer 0.1.1 released
+slug: generic-query-analyzer-0-1-1-released
+tags:
+  - db
+  - sql
+  - open source
+description:
+  I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
+  Excel spreadsheet or Access database.
+---
+import { Atb } from '@btakita/ui--server--blog'
+import { Post_top_note } from '@btakita/ui--server--blog'
+import { Atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
+
+<Post_top_note innerHTML={[
+	`Originally posted on `,
+	Atb({
+		innerText: 'geekswithblogs.net',
+		href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
+	}).t
+].join('')}/>
+I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
+Excel spreadsheet or Access database.
+
+It requires .NET 2.0.
+
+Despite its version number, it is a beta release and works well.
+
+<p>
+	{[
+		`You can get it on `,
+		<Atb_generic_query_analyzer innerText="Sourceforge"/>,
+		`.`
+	]}
+</p>

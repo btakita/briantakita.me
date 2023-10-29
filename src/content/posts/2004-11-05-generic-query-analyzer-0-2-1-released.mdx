@@ -1,0 +1,40 @@
+---
+author: Brian Takita
+pubDate: 2004-11-05T07:54Z
+title: Generic Query Analyzer 0.2.1 released
+slug: generic-query-analyzer-0-2-1-released
+tags:
+  - db
+  - sql
+  - open source
+description:
+  Follow release of the Generic Query Analyzer. An icon was added & a little-used dll was removed.
+---
+import { Atb } from '@btakita/ui--server--blog'
+import { Post_top_note } from '@btakita/ui--server--blog'
+import { Atb_ado_net, Atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
+
+<Post_top_note innerHTML={[
+	`Originally posted on `,
+	Atb({
+		innerText: 'geekswithblogs.net',
+		href: 'https://web.archive.org/web/20130407190313/http://geekswithblogs.net/btakita/archive/2004/11/05/14411.aspx'
+	}).t
+].join('')}/>
+<p>
+	{[
+		`The Generic Query Analyzer is a Database Independent Query Analyzer that uses `,
+		<Atb_ado_net innerText="ADO.NET (OLEDB)"/>,
+		` technology. This Query Analyzer is run off the .NET 2.0 platform on Windows.`
+	]}
+</p>
+
+<Atb_generic_query_analyzer/>
+
+This release…
+
+- Adds an icon for the Generic Query Analyzer
+- Is refactored to remove a little used dll
+
+I got some positive feedback on it so far. Let me know if you have any suggestions, requests or find some bugs.
+Right now, the GQA implementation is well factored so its in a good position to move forward.
