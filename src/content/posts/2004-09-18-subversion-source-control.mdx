@@ -1,0 +1,73 @@
+---
+title: Subversion Source Control
+author: Brian Takita
+pubDate: 2004-09-18T21:31:00Z
+slug: subversion-source-control
+tags:
+  - version control
+  - software development
+description:
+  I really like Subversion because is it is fast, lightweight, and, when coupled with Tortise, easy to use,
+  administer, and set up.
+---
+import { Atb, Post_top_note } from '@btakita/ui--server--blog'
+import {
+	Atb_apache,
+	Atb_cvs_scm,
+	Atb_ms_source_safe,
+	Atb_subversion,
+	Atb_tortoisesvn,
+	Atb_vault_scm
+} from '@btakita/ui--server--briantakita'
+
+<Post_top_note innerHTML={[
+	`Originally posted on `,
+	Atb({
+		innerText: 'geekswithblogs.net',
+		href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx'
+	}).t
+].join('')}/>
+<p>
+	{[
+		`	I am very impressed with `,
+		<Atb_subversion innerText="Subversion Source Control"/>,
+		`.`
+	]}
+</p>
+<p>
+	{[
+		`I've used `,
+		<Atb_ms_source_safe/>,
+		`, `,
+		<Atb_vault_scm/>,
+		`, `,
+		<Atb_cvs_scm/>,
+		` but none of them matched my needs.`
+	]}
+</p>
+<p>
+	{[
+		`I really like Subversion because is it is fast, lightweight, and, when coupled with `,
+		<Atb_tortoisesvn/>,
+		`, easy to use, administer, and set up. Commits are as easy as going to Windows Explorer, select the folders and
+		files to commit > right click > select Commit. I dont need to integrate the source control with Visual Studio,
+		and suffer the performance hit and a more complicated development environment.`
+	]}
+</p>
+
+Branching, merging, rollbacks, and conflict resolution are easy. Subversion makes source control fun, rather than a
+chore like the other tools I used before.
+
+Now, Im version controlling items that I edit, including my blog posts and articles.
+<p>
+	{[
+		`Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion
+		can be run off of its own svn server or `,
+		<Atb_apache/>,
+		`. If you use the svn server on a Windows server, you may want to consider using `,
+		<Atb href="https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/">
+			SVNService
+		</Atb>,
+		` to register the svn server as a Service.`
+	]}
+</p>

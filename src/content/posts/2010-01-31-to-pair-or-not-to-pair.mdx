@@ -11,21 +11,16 @@ description:
   badly on pair programming. We still do some pair programming. However, our current circumstances steered us away
   from pair programming being our primary development practice.
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { Atb, Post_top_note } from '@btakita/ui--server--blog'
 import { Comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
 
-<p>
-	<em>
-		{[
-			`(Originally posted on `,
-			<Atb
-				innerText={`blog.honk.com`}
-				href="https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/"
-			/>,
-			`)`
-		]}
-	</em>
-</p>
+<Post_top_note innerHTML={[
+	`Originally posted on `,
+	Atb({
+		innerText: 'blog.honk.com',
+		href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/'
+	}).t
+].join('')}/>
 
 Here at Honk, we have been transitioning away from pair programming. I do not think that this necessarily reflects
 badly on pair programming. We still do some pair programming. However, our current circumstances steered us away

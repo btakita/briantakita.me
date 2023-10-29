@@ -93,6 +93,8 @@
   }
   .prose code {
     @apply font-mono;
+  }
+  .prose p code {
     display: inline-block;
     white-space: nowrap;
   }

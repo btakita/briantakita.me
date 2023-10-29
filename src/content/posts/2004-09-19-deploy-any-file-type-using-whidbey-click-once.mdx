@@ -1,0 +1,64 @@
+---
+title: Deploy Any File Type using Whidbey Click Once
+author: Brian Takita
+pubDate: 2004-09-19T03:21:00Z
+slug: deploy-any-file-type-using-whidbey-click-once
+description:
+  ClickOnce can be used to not only deploy .NET applications, but also to deploy files. Yesterday, I deployed an
+  Access adp application to our organization.
+---
+import { Atb, Post_top_note } from '@btakita/ui--server--blog'
+import { Atb_ccrcorp } from '@btakita/ui--server--briantakita'
+
+<Post_top_note innerHTML={[
+	`Originally posted on `,
+	Atb({
+		innerText: 'geekswithblogs.net',
+		href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx'
+	}).t
+].join('')}/>
+<p>
+	{[
+		`One of the great things about Whidbey is ClickOnce Deployment. At `,
+		<Atb_ccrcorp/>,
+		`, I use it to deploy rich client internal applications.`
+	]}
+</p>
+
+ClickOnce can be used to not only deploy .NET applications, but also to deploy files. Yesterday, I deployed an
+Access adp application to our organization. To do so, I simply...
+
+<ul>
+	<li>Create a Console Application</li>
+	<li>Add the adp file to the project and set it as Content</li>
+	<li>Write a bootstrapper application in the Main method</li>
+	<li>
+		{[
+			<Atb href="https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022">
+				Configure
+			</Atb>,
+			` the ClickOnce deployment`
+		]}
+	</li>
+</ul>
+
+Here is the bootstrap&hellip;
+
+```cs
+#region Using directives
+	using System;
+	using System.Diagnostics;
+#endregion
+
+namespace AdpApplication {
+	class Program {
+			static void Main(string[] args) {
+			System.Diagnostics.Process p = new Process();
+			p.StartInfo.FileName = "./file.adp";
+			p.Start();
+		}
+	}
+}
+```
+
+Nice and easy. Also, if you are using a web server to deploy the file, remember to set the MIME type.
