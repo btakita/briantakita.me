@@ -3,6 +3,7 @@ import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
 import { Card } from '@btakita/ui--all--blog'
 import { Hr, LinkButton, Main, Socials } from '@btakita/ui--server--blog'
+import { Atb_uop, Atb_uop_engineering, Atb_uop_engineering_physics } from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -40,7 +41,12 @@ const social__count = SOCIALS.filter(social=>social.active).length
 			</a>
 			<p>
 				Full stack developer with over 20 years experience. Emphasizes efficient product development, consistent domain
-				language, simplicity with flat architectures, & code reuse.
+				language, flat architectures, & code reuse. Graduated with a
+				<Atb_uop_engineering innerText="Bachelor of Science"/>
+				in
+				<Atb_uop_engineering_physics innerText="Engineering Physics"/>
+				from
+				<Atb_uop/>.
 			</p>
 			{
 				// only display if at least one social link is enabled
