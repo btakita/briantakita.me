@@ -1,0 +1,122 @@
+---
+author: Brian Takita
+pubDate: 2023-10-29T08:31:00Z
+title: Log 2023-10-29
+slug: log-2023-10-29
+tags:
+  - cms
+  - astrojs
+  - log
+description:
+  "CMS exploration: Strapi, GrapeJS, CodeMirror, Astrojs, Vite, Vercel, Fly.io"
+---
+import {
+	Atb_astrojs,
+	Atb_aws,
+	Atb_cms,
+	Atb_codemirror, Atb_docker, Atb_flyio,
+	Atb_grapejs, Atb_jamstack,
+	Atb_reactjs,
+	Atb_solidjs, Atb_sqlite,
+	Atb_strapi,
+	Atb_sveltejs,
+	Atb_vercel, Atb_vite,
+	Atb_vue
+} from '@btakita/ui--server--briantakita'
+
+<h1>
+	<Atb_cms/>
+</h1>
+
+Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
+
+<h2>
+	<Atb_strapi/>
+</h2>
+
+Strapi seems like the best option for the headless CRM. I features:
+
+- a flexible model to create content & apis
+- supporting multiple databases to store content
+- a ui to edit content
+
+<h2>
+	<Atb_grapejs/>
+</h2>
+
+A No Code website builder. It features:
+
+- full site design
+- a nice ui that supports components
+- responsive design
+- vanilla js
+- Codemirror editors
+
+<h2>
+	<Atb_codemirror/>
+</h2>
+
+A Rich Text Editor. It features:
+
+- an extensible api
+- good docs
+- modular design
+
+<h2>
+	<Atb_astrojs/>
+</h2>
+
+A MPA web app library. It features:
+<ul>
+	<li>{[
+		`a `,
+		<Atb_vite/>,
+		` core`
+	]}</li>
+	<li>{[
+		`support for multiple component libraries (`,
+		<Atb_solidjs/>,
+		`, `,
+		<Atb_reactjs/>,
+		`, `,
+		<Atb_sveltejs/>,
+		`, `,
+		<Atb_vue/>,
+		`)`
+	]}</li>
+</ul>
+- support for multiple component libraries (SolidJS, React, Svelte, Vue)
+
+<h2>
+	<Atb_vercel/>
+</h2>
+<p>
+	{[
+		`A cloud host on `,
+		<Atb_aws/>
+	]}
+</p>
+
+<h2>
+	<Atb_flyio/>
+</h2>
+<p>
+	{[
+		`An edge-computing cloud service that runs `,
+		<Atb_docker/>,
+		` images.`
+	]}
+</p>
+
+## Approach
+
+<p>
+	{[
+		`I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be
+		saved in Strapi using `,
+		<Atb_sqlite/>,
+		`. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a `,
+		<Atb_jamstack/>,
+		` on Vercel. I may also just use dynamic api requests to Strapi, using sqlite on Fly.io.`
+	]}
+</p>
