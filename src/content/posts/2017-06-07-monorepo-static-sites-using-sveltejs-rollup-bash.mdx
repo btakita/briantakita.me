@@ -1,0 +1,86 @@
+---
+title: Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash
+author: Brian Takita
+pubDate: 6/7/17 5:30
+slug: monorepo-static-sites-using-sveltejs-rollup-bash
+tags:
+  - javascript
+  - ctx-core
+  - sveltejs
+  - monorepo
+  - web development
+  - open source
+description:
+  Building my old site briantakita.com using sveltejs, rollupjs, ctx-core, bash
+---
+import {
+	Atb_briantakita_com,
+	Atb_ctx_core,
+	Atb_domain_driven_design,
+	Atb_jeckyllrb,
+	Atb_metalsmithjs,
+	Atb_rollupjs,
+	Atb_sveltejs,
+	Atb_wintersmithjs
+} from '@btakita/ui--server--briantakita'
+
+<p>
+	{[
+		`BrianTakita.com `,
+		<em>(now briantakita.me)</em>,
+		` is now built using a technology chain consisting of `,
+		<Atb_sveltejs/>,
+		`, `,
+		<Atb_rollupjs/>,
+		`, `,
+		<Atb_ctx_core/>,
+		`, & good ol' Bash.`
+	]}
+</p>
+<p>
+	{[
+		`You can see the source in the `,
+		<Atb_briantakita_com/>,
+		` repo.`
+	]}
+</p>
+<p>
+	{[
+		`I wanted a static site generator that felt like building a custom app, with a `,
+		<Atb_domain_driven_design/>,
+		`, approachable custom build scripts, & isomorphic javascript.`
+	]}
+</p>
+<p>
+	{[
+		`This site was build using existing solutions such as `,
+		<Atb_jeckyllrb/>,
+		`, `,
+		<Atb_wintersmithjs/>,
+		`, & `,
+		<Atb_metalsmithjs/>,
+		`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
+		done my way.`
+	]}
+</p>
+
+Some features that I found essential include:
+
+* a development server with watch/build scripts
+* generate static html files to serve from github.io
+* isomorphic javascript
+
+With these techs, the following is possible:
+
+* static file builds
+* server side rendering
+* client side rendering
+
+This means the entire html page can be rendered using svelte on the server (or static file) & svelte on the client
+side (for dynamic components). This means there's no need for other rendering libraries like pug. Only svelte & raw
+html strings are needed to gain all of the features of dynamic isomorphic components!
+
+With this retooling, I will begin working on components to enhance the experience of authoring & reading
+meaning-dense information.
+
+Stay tuned&hellip;

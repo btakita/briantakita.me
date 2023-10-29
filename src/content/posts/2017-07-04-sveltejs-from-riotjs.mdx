@@ -1,0 +1,86 @@
+---
+title: Svelte JS from Riot JS
+author: Brian Takita
+pubDate: 2017-07-04T00:30Z
+slug: sveltejs-from-riotjs
+tags:
+  - sveltejs
+  - riotjs
+  - web development
+description:
+  Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
+  converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
+  Svelte & a a sample web component using Svelte.
+---
+import { Atb } from '@btakita/ui--server--blog'
+import { Atb_ctx_core, Atb_metalsmithjs, Atb_riotjs, Atb_sveltejs } from '@btakita/ui--server--briantakita'
+
+Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
+converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
+Svelte & a a sample web component using Svelte.
+<p>
+	{[
+		<Atb_sveltejs/>,
+		` is a build-time isomorphic library that utilizes a transpilation process to build completely self-contained
+		web components.`
+	]}
+</p>
+<p>
+	{[
+		<Atb_riotjs/>,
+		` is a runtime isomorphic component library.`
+	]}
+</p>
+<p>
+	{[
+		`I recently `,
+		<Atb innerText="converted this site" href="/posts/monorepo-static-sites-using-sveltejs-rollup-bash"></Atb>,
+		` to svelte from `,
+		<Atb_metalsmithjs/>,
+		`, which is a static site generator.`
+	]}
+</p>
+
+While it's easy to get stuck into the rat race of endless technological upgrades & porting to the latest hyped piece
+of tech&hellip;
+
+## Performance & Memory Usage
+<p>
+	{[
+		`Despite beinga young library, svelte `,
+		<Atb href="https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html">
+			does quite well
+		</Atb>,
+		` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte JS generates optimal
+		javascript while not having the overhead of a runtime library. It's also going to have an advantage in page load
+		time due to not requiring a runtime library to be loaded.`
+	]}
+</p>
+
+## HTML-based Components
+
+HTML is the lingua franca of the world wide web. HTML the lowest common denominator (developers, designers,
+non-technical) can work with. With Svelte, the HTML file is converted to be a Component. Components can use other
+Components.
+
+I feel confident that I will continue to use Svelte for a long time. Since it's design is simple & well thought out
+(all of my use cases were supported with elegance), I don't expect to have upgrade pains that plague some of the
+larger frameworks out there.
+
+## APIs
+
+Svelte's api idioms are well thought out. Development flow was coherent natural during the port from Riot.
+<p>
+	{[
+		`For each of my professional clients, I usea monorepo using the `,
+		<Atb_ctx_core/>,
+		` toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`
+	]}
+</p>
+<p>
+	{[
+		`You can `,
+		<Atb innerText="read more about the features of svelte" href="https://svelte.dev/guide"></Atb>,
+		`.`
+	]}
+</p>
