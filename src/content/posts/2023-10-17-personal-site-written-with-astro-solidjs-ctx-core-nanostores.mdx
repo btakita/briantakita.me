@@ -12,14 +12,14 @@ tags:
 description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { Atb, Footnote_list, Footnote } from '@btakita/ui--server--blog'
+import { Atb, Footnote } from '@btakita/ui--server--blog'
 import {
 	Atb_astrojs,
 	Atb_astropaper,
 	Atb_bunjs,
 	Atb_ctx_core,
 	Atb_nanostores,
-	Atb_solidjs, Atb_tailwindcss, Atb_vercel
+	Atb_solidjs, Atb_tailwindcss, Atb_vercel, Attribution_web_framework_realworld_app_sizes
 } from '@btakita/ui--server--briantakita'
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
@@ -90,7 +90,7 @@ The git repos include:
 	<li>
 		{[
 			<Atb innerText="btakita/domain--server--blog" href="https://github.com/btakita/domain--server--blog"/>,
-			' —  domain logic targeting the server for blogs'
+			' — domain logic targeting the server for blogs'
 		]}
 	</li>
 	<li>
@@ -129,7 +129,12 @@ The git repos include:
 				<a href="https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck"> Introducing the SolidJS UI Library</a>
 				)
 			</em>,
-			<img width="50%" src="/assets/images/web-framework-realworld-app-sizes.png" alt="Web framework Realword App Sizes"/>
+			<figure>
+				<img width="50%" src="/assets/images/web-framework-realworld-app-sizes.png" alt="Web framework Realword App Sizes"/>
+				<figcaption>
+					<Attribution_web_framework_realworld_app_sizes ctx={props.ctx}/>
+				</figcaption>
+			</figure>
 		]}
 	</li>
 	<li>
@@ -152,5 +157,3 @@ The git repos include:
 		'.'
 	]}
 </p>
-
-<Footnote_list ctx={props.ctx}/>

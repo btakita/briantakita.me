@@ -2,23 +2,24 @@
 import { post__slug__new } from '@btakita/domain--all--blog'
 import { page_number_a__new } from '@btakita/domain--server--blog'
 import { type CollectionEntry, getCollection } from 'astro:content'
+import { type GetStaticPathsResult } from 'astro'
 import PostLayout from '../../../layouts/PostLayout.astro'
 import PostsLayout from '../../../layouts/PostsLayout.astro'
 import { server__ctx__new } from '../../../lib'
 export interface Props {
 	post:CollectionEntry<'posts'>
 }
-export async function getStaticPaths() {
+export async function getStaticPaths():Promise<GetStaticPathsResult> {
 	const ctx = server__ctx__new(Astro)
 	const posts = await getCollection('posts')
-	const postResult = posts.map(post=>({
+	const post_result = posts.map(post=>({
 		params: { slug: post__slug__new(post) },
 		props: { post },
 	}))
-	const pagePaths = page_number_a__new(ctx, posts.length).map(pageNum=>({
+	const pagination_result = page_number_a__new(ctx, posts.length).map(pageNum=>({
 		params: { slug: String(pageNum) },
 	}))
-	return [...postResult, ...pagePaths]
+	return [...post_result, ...pagination_result] as GetStaticPathsResult
 }
 const ctx = server__ctx__new(Astro)
 const { slug } = Astro.params

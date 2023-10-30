@@ -26,7 +26,7 @@ const { Content } = await post.render()
 	<Main_post ctx={ctx} post={post}>
 		{post.data.canonical_url &&
 			<Repost href={post.data.canonical_url}/>}
-		<Content ctx={ctx} post={post}/>
+		<Content ctx={ctx} post={post} />
 	</Main_post>
 	<Footer ctx={ctx}/>
 </Layout>

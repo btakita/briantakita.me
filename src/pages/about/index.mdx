@@ -16,7 +16,7 @@ import {
 	Atb_philosophy,
 	Atb_postgres,
 	Atb_redis,
-	Atb_solidjs,
+	Atb_solidjs, Attribution_dev,
 } from '@btakita/ui--server--briantakita'
 
 I create full stack software solutions. My current preferred tooling is:
@@ -158,5 +158,8 @@ bugs. With tools such as type systems, tests, & validations, the software will r
 discovery allows one to explore conceptual systems with a logic feedback loop revealing insights into Existence.
 
 <div>
-	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>
+	{[
+		<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>,
+		<Attribution_dev ctx={props.ctx}/>
+	]}
 </div>
