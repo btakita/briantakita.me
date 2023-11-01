@@ -2,7 +2,7 @@
 import { type Post } from '@btakita/domain--all--blog'
 import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
-import { Main_posts, Nav_posts } from '@btakita/ui--server--blog'
+import { Main_posts, V_nav_posts } from '@btakita/ui--server--blog'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
 import { SITE } from '../../config'
@@ -19,10 +19,10 @@ const sorted__paginated__posts =
 <Layout title={`Posts | ${SITE.title}`}>
 	<Header ctx={ctx} active="posts"/>
 	<Main_posts ctx={ctx} posts={sorted__paginated__posts}/>
-	<Nav_posts
-		ctx={ctx}
-		page_num={1}
-		page_count={page_count}
-	/>
+	<Fragment set:html={V_nav_posts({
+		ctx,
+		page_num: 1,
+		page_count,
+	}).render()}/>
 	<Footer ctx={ctx}/>
 </Layout>

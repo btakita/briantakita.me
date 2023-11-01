@@ -5,17 +5,14 @@ import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import { SITE } from '../config'
 import Layout from '../layouts/Layout.astro'
-import { server__ctx__new } from '../lib'
 const { slug } = Astro.params
 export interface Props {
 	post:CollectionEntry<'posts'>
 	id:number
 }
 Astro.props.id = 123
-const ctx = server__ctx__new(Astro)
-const { post } = Astro.props
+const { ctx, post } = Astro.props
 const { canonical_url } = post.data
-const { Content } = await post.render()
 ---
 
 <Layout
@@ -24,9 +21,8 @@ const { Content } = await post.render()
 >
 	<Header ctx={ctx} active="posts"/>
 	<Main_post ctx={ctx} post={post}>
-		{post.data.canonical_url &&
-			<Repost href={post.data.canonical_url}/>}
-		<Content ctx={ctx} post={post} />
+		{post.data.canonical_url && <Repost href={post.data.canonical_url}/>}
+		<slot/>
 	</Main_post>
 	<Footer ctx={ctx}/>
 </Layout>
