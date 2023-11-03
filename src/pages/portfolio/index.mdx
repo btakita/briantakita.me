@@ -3,8 +3,7 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Portfolio"
 active: portfolio
 ---
-
-import { blog__ctx__new, H_ } from '@btakita/domain--all--blog'
+import { H_ } from '@btakita/domain--all--blog'
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import {
@@ -56,7 +55,8 @@ import {
 	V_atb_wsj
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
-export const ctx = blog__ctx__new()
+import { mdx__ctx__new } from '../../lib'
+export const ctx = mdx__ctx__new()
 export const { li, ul } = H_(ctx)
 
 ## [briantakita.me](https://briantakita.me)

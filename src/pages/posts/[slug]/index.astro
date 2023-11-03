@@ -24,7 +24,7 @@ export async function getStaticPaths():Promise<GetStaticPathsResult> {
 const ctx = server__ctx__new(Astro)
 const { slug } = Astro.params
 const post = Astro.props.post as CollectionEntry<'posts'>
-const { Content } = post ? await post.render() : null
+const Content = post ? await post.render().then($=>$.Content) : null
 ---
 
 {post

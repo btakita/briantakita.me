@@ -10,7 +10,7 @@ description:
   '2019-04-15: Multi Underscore Tag Naming Convention'
 ---
 import { V_fragment } from '@btakita/ui--all--blog'
-import { Atb, V_atb } from '@btakita/ui--server--blog'
+import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
 export let ctx = mdx__ctx__new()
@@ -40,7 +40,10 @@ export let ctx = mdx__ctx__new()
 <p>
 	{[
 		`I also have a previous post with a quick introduction to the `,
-		<Atb href="/posts/naming-conventions">Multi Underscore Tag Naming Convention</Atb>,
+		<Van dom={
+			V_atb({ ctx, href: '/posts/naming-conventions' },
+				`Multi Underscore Tag Naming Convention`)
+		}/>,
 		`.`
 	]}
 </p>

@@ -6,5 +6,5 @@ import tailwind from '@astrojs/tailwind'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://briantakita.me',
-	integrations: [mdx(), sitemap(), solidJs(), tailwind()]
+	integrations: [mdx(), sitemap(), /*solidJs(),*/ tailwind()]
 })

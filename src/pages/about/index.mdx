@@ -4,8 +4,8 @@ title: "About"
 description: Contextual full stack systems developer
 active: about
 ---
-import { blog__ctx__new, H_ } from '@btakita/domain--all--blog'
-import { Atb, V_atb, V_footnote_list } from '@btakita/ui--server--blog'
+import { H_ } from '@btakita/domain--all--blog'
+import { V_atb, V_footnote_list } from '@btakita/ui--server--blog'
 import {
 	V_atb_astrojs,
 	V_atb_bunjs,
@@ -21,7 +21,8 @@ import {
 	V_attribution_dev,
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
-export const ctx = blog__ctx__new()
+import { mdx__ctx__new } from '../../lib'
+export const ctx = mdx__ctx__new()
 export const H = H_(ctx)
 
 I create full stack software solutions. My current preferred tooling is:
@@ -124,9 +125,10 @@ commonly used.
 <p>
 	{[
 		`This Meta-philosophy can be applied via `,
-		<Atb href="/posts/magic-connections-with-the-philosophy-of-language">
-			language
-		</Atb>,
+		<Van dom={
+			V_atb({ ctx, href: '/posts/magic-connections-with-the-philosophy-of-language'},
+				`language`)
+		}/>,
 		` to model any reified entity. Language patterns can be utilized in software & speech to create models of
 		Existence.`
 	]}
