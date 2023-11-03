@@ -4,28 +4,32 @@ pubDate: 2004-09-21T12:32:00Z
 title: The Third Sector
 slug: the-third-sector
 description:
-  Jeremy Rifkin wrote a book about how the private and public sector are unable to support productivity growth caused
-  by technology. There is an abundance unskilled and semiskilled laborers who find that their jobs are made redundant
+  Jeremy Rifkin wrote a book about how the private and public sector is unable to support productivity growth caused
+  by technology. There is an abundance of unskilled and semiskilled laborers who find that their jobs are made redundant
   by advances in machinery and general productivity. There are not enough service and "silicon collared" jobs being
   created to balance the regular loss of jobs in the manufacturing and farming sector.
 ---
-import { Atb, Post_top_note } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
-<Post_top_note innerHTML={[
-	`Originally posted on `,
-	Atb({
-		innerText: 'geekswithblogs.net',
-		href: 'https://web.archive.org/web/20130407190308/http://geekswithblogs.net/btakita/archive/2004/09/21/11444.aspx'
-	}).t
-].join('')}/>
+<Van dom={
+	V_post_top_note(props,
+	V_fragment(props,
+		`Originally posted on `,
+		V_atb({ ctx: props.ctx,
+			innerText: 'geekswithblogs.net',
+			href: 'https://web.archive.org/web/20130407190308/http://geekswithblogs.net/btakita/archive/2004/09/21/11444.aspx'
+		})))
+}/>
 
-Jeremy Rifkin wrote a book about how the private and public sector are unable to support productivity growth caused
-by technology. There is an abundance unskilled and semiskilled laborers who find that their jobs are made redundant
+Jeremy Rifkin wrote a book about how the private and public sector is unable to support productivity growth caused
+by technology. There is an abundance of unskilled and semiskilled laborers who find that their jobs are made redundant
 by advances in machinery and general productivity. There are not enough service and "silicon collared" jobs being
 created to balance the regular loss of jobs in the manufacturing and farming sector.
 
 He proposes strengthening the Third sector, or volunteer organizations, as the means to care for the displaced and
-to create work. Indeed, the third sector is perhaps,  the foundation that brought success to America, yet it is
+to create work. Indeed, the third sector is, perhaps, the foundation that brought success to America, yet it is
 underrated in today's religions of free market capitalism and big government.
 
 Rifkin briefly mentions a "social" economy based on volunteer work where the currency is how much one spends time

@@ -12,17 +12,20 @@ description:
   I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
   Excel spreadsheet or Access database.
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Post_top_note } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { Atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
-<Post_top_note innerHTML={[
-	`Originally posted on `,
-	Atb({
-		innerText: 'geekswithblogs.net',
-		href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
-	}).t
-].join('')}/>
+<Van dom={
+	V_post_top_note(props,
+		V_fragment(props,
+			`Originally posted on `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'geekswithblogs.net',
+				href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
+			})))
+}/>
 I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
 Excel spreadsheet or Access database.
 
@@ -31,9 +34,10 @@ It requires .NET 2.0.
 Despite its version number, it is a beta release and works well.
 
 <p>
-	{[
-		`You can get it on `,
-		<Atb_generic_query_analyzer innerText="Sourceforge"/>,
-		`.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`You can get it on `,
+			<Atb_generic_query_analyzer innerText="Sourceforge"/>,
+			`.`)
+	}/>
 </p>

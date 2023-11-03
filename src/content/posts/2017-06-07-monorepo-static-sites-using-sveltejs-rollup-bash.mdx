@@ -13,55 +13,64 @@ tags:
 description:
   Building my old site briantakita.com using sveltejs, rollupjs, ctx-core, bash
 ---
+import { H_ } from '@btakita/domain--all--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
 import {
-	Atb_briantakita_com,
-	Atb_ctx_core,
-	Atb_domain_driven_design,
-	Atb_jeckyllrb,
-	Atb_metalsmithjs,
-	Atb_rollupjs,
-	Atb_sveltejs,
-	Atb_wintersmithjs
+	V_atb_briantakita_com,
+	V_atb_ctx_core,
+	V_atb_domain_driven_design,
+	V_atb_jeckyllrb,
+	V_atb_metalsmithjs,
+	V_atb_rollupjs,
+	V_atb_sveltejs,
+	V_atb_wintersmithjs
 } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
+export const { em } = H_(props.ctx)
 
 <p>
-	{[
-		`BrianTakita.com `,
-		<em>(now briantakita.me)</em>,
-		` is now built using a technology chain consisting of `,
-		<Atb_sveltejs/>,
-		`, `,
-		<Atb_rollupjs/>,
-		`, `,
-		<Atb_ctx_core/>,
-		`, & good ol' Bash.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`BrianTakita.com `,
+			em('(now briantakita.me)'),
+			` is now built using a technology chain consisting of `,
+			V_atb_sveltejs(props),
+			`, `,
+			V_atb_rollupjs(props),
+			`, `,
+			V_atb_ctx_core(props),
+			`, & good ol' Bash.`
+		)
+	}/>
 </p>
 <p>
-	{[
-		`You can see the source in the `,
-		<Atb_briantakita_com/>,
-		` repo.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`You can see the source in the `,
+			V_atb_briantakita_com(props),
+			` repo.`)
+	}/>
 </p>
 <p>
-	{[
-		`I wanted a static site generator that felt like building a custom app, with a `,
-		<Atb_domain_driven_design/>,
-		`, approachable custom build scripts, & isomorphic javascript.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I wanted a static site generator that felt like building a custom app, with a `,
+			V_atb_domain_driven_design(props),
+			`, approachable custom build scripts, & isomorphic javascript.`)
+	}/>
 </p>
 <p>
-	{[
-		`This site was build using existing solutions such as `,
-		<Atb_jeckyllrb/>,
-		`, `,
-		<Atb_wintersmithjs/>,
-		`, & `,
-		<Atb_metalsmithjs/>,
-		`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
-		done my way.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`This site was build using existing solutions such as `,
+			V_atb_jeckyllrb(props),
+			`, `,
+			V_atb_wintersmithjs(props),
+			`, & `,
+			V_atb_metalsmithjs(props),
+			`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
+			done my way.`)
+	}/>
 </p>
 
 Some features that I found essential include:

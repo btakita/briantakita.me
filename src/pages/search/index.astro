@@ -1,10 +1,11 @@
 ---
 import type { Post, SearchItem } from '@btakita/domain--all--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
-import { Main_search } from '@btakita/ui--server--blog'
+import { V_main_search } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
+import Van from '../../components/Van.astro'
 import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
@@ -21,17 +22,16 @@ const search_item_a = posts.map(post=>({
 
 <Layout title={`Search | ${SITE.title}`}>
 	<Header ctx={ctx} active="search"/>
-	<Main_search
-		ctx={ctx}
-		search_item_a={search_item_a}
-	/>
+	<Van dom={
+		V_main_search({ ctx, search_item_a })
+	}></Van>
 	<Footer ctx={ctx}/>
 </Layout>
 
 <script>
+	import { browser__ctx__ensure } from '../../../../../lib/domain--browser--briantakita2'
 	import { Main_search__onbind } from '@btakita/ui--all--blog'
 	import { dom__onbind__register } from '@ctx-core/dom'
-	import { browser__ctx__ensure } from '../../lib'
 	const ctx = browser__ctx__ensure()
 	dom__onbind__register(ctx, Main_search__onbind)
 </script>

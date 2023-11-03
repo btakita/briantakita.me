@@ -12,16 +12,18 @@ description:
   Introducing RR (Double Ruby) library for testing
 canonical_url: https://tanzu.vmware.com/content/blog/introducing-rr
 ---
-
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_flexmockrb, Atb_mocharb, Atb_rr, Atb_rspec_mocks } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_flexmockrb, V_atb_mocharb, V_atb_rr, V_atb_rspec_mocks } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		`I'm pleased to introduce a new Test Double (or mock) framework named `,
-		<Atb_rr/>,
-		`, which is short for Double Ruby. Why a Double framework and not a Mock framework?`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I'm pleased to introduce a new Test Double (or mock) framework named `,
+			V_atb_rr(props),
+			`, which is short for Double Ruby. Why a Double framework and not a Mock framework?`)
+	}/>
 </p>
 
 A mock is a type of test double. Since RR supports mocks, stubs, and proxies, it makes sense to refer to RR as a
@@ -29,16 +31,17 @@ double framework. The proxy is a new usage pattern that I will introduce later i
 in future articles.
 
 <p>
-	{[
-		`Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's terminology
-tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read more about test
-doubles in `,
-		<Atb href="http://xunitpatterns.com/Test2e.html"/>,
-		` and Martin Fowler's article, `,
-		<Atb href="http://martinfowler.com/articles/mocksArentStubs.html"/>,
-		`. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks.
-		How does RR compare to other Mock frameworks?`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's
+			terminology tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read
+			more about test doubles in `,
+			V_atb({ ctx: props.ctx, href: 'http://xunitpatterns.com/Test2e.html' }),
+			` and Martin Fowler's article, `,
+			V_atb({ ctx: props.ctx, href: 'http://martinfowler.com/articles/mocksArentStubs.html' }),
+			`. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks.
+			How does RR compare to other Mock frameworks?`)
+	}/>
 </p>
 
 Most double frameworks focus mainly on mocks (hence the categorization "mock framework"). RR's focus is on enabling
@@ -49,16 +52,17 @@ other frameworks use are 'stub injection', 'mock object injection', 'partial moc
 use for this is a double injection, since one or many doubles are being injected into an object's method.
 
 <p>
-	{[
-		`I'll use trivial Rails examples to highlight the syntactical differences between RR, `,
-		<Atb_mocharb/>,
-		`, `,
-		<Atb_rspec_mocks/>,
-		`, `,
-		<Atb_flexmockrb/>,
-		`. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely
-		different discussion.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I'll use trivial Rails examples to highlight the syntactical differences between RR, `,
+			V_atb_mocharb(props),
+			`, `,
+			V_atb_rspec_mocks(props),
+			`, `,
+			V_atb_flexmockrb(props),
+			`. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely
+			different discussion.`)
+	}/>
 </p>
 
 If there is better way to do any of the examples, please post a comment and I will gladly replace it.

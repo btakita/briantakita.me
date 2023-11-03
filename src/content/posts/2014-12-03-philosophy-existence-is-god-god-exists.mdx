@@ -10,22 +10,26 @@ description:
   this Philosophy. It’s about how God & Existence is defined.
 canonical_url: https://medium.com/@briantakita/philosophy-existence-is-god-god-exists-b2ec35ea39d2
 ---
+import { V_fragment } from '@btakita/ui--all--blog'
 import {
-	Atb_abstraction,
-	Atb_domain_specific_language,
-	Atb_existence,
-	Atb_god,
-	Atb_scope,
-	Atb_universal_set
+	V_atb_abstraction,
+	V_atb_domain_specific_language,
+	V_atb_existence,
+	V_atb_god,
+	V_atb_scope,
+	V_atb_universal_set
 } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		`Philosophies are conceptual models. Conceptual models have a `,
-		<Atb_domain_specific_language innerText="domain language"/>,
-		`. If we expand the scope of certain definitions, we have the ability to expand consciousness. If we are able to
-		make more associations between concepts, consciousness expands.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`Philosophies are conceptual models. Conceptual models have a `,
+			V_atb_domain_specific_language(props),
+			`. If we expand the scope of certain definitions, we have the ability to expand consciousness. If we are able to
+			make more associations between concepts, consciousness expands.`
+		)
+	}/>
 </p>
 
 I’m evolving a philosophy that has it’s own domain language. The domain language is similar to their common cultural
@@ -33,10 +37,11 @@ definitions, however, I expand the scope of these words. Expanding the scope of 
 patterns to be reused across different scopes in Existence.
 
 <h1>
-	{[
-		`A tool to explore `,
-		<Atb_existence/>
-	]}
+	<Van dom={
+		V_fragment(props,
+			`A tool to explore `,
+			V_atb_existence(props))
+	}/>
 </h1>
 
 My motive is to build a tool that can use everyday terminology to explore the scope of Existence. The domain is
@@ -46,12 +51,13 @@ Since the meanings of words are subjective to the entity’s domain knowledge of
 feel justified in defining the words to match the domain of Existence.
 
 <h1>
-	{[
-		<Atb_abstraction/>,
-		`, `,
-		<Atb_scope/>,
-		`, Zooming In/Out`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb_abstraction(props),
+			`, `,
+			V_atb_scope(props),
+			`, Zooming In/Out`)
+	}/>
 </h1>
 
 We humans can hold a limited amount of information in our head. If we are to focus on all Existence, then the
@@ -62,10 +68,11 @@ For example, if we wish to focus on the Physical Universe, Physical Existence me
 world. Abstract thoughts are not in Physical Existence, so an abstract thought does not physically exist.
 
 <h1>
-	{[
-		<Atb_god/>,
-		` Exists`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb_god(props),
+			` Exists`)
+	}/>
 </h1>
 
 I’m happy to utilize, and prove, God’s existence. Since Existence is God and Existence, well exists, God Exists in
@@ -74,12 +81,16 @@ this Philosophy. It’s about how God & Existence is defined.
 While there has been some critique on Ann Rand’s statement “Existence Exists”, these critiques are based on the
 definition of “exists” being scoped to mean “physical existence”.
 <p>
-	{[
-		`The “Existence is God” Philosophy defines existence as “Everything that ‘is’, or more simply, everything” or the `,
-		<Atb_universal_set/>,
-		` of everything. That includes all thoughts ever thought, all possible concepts, including the notion of
-		Existence being everything. Thus Existence Exists. Everything (even fiction) exists. Thus God Exists.`
-	]}
+	<Van dom={
+		<Van dom={
+			V_fragment(props,
+				`The “Existence is God” Philosophy defines existence as “Everything that ‘is’, or more simply, everything”
+				or the `,
+				V_atb_universal_set(props),
+				` of everything. That includes all thoughts ever thought, all possible concepts, including the notion of
+				Existence being everything. Thus Existence Exists. Everything (even fiction) exists. Thus God Exists.`)
+		}/>
+	}/>
 </p>
 
 I enjoy speaking to atheists because ideas from atheism led to me expanding the scope of God. Also, atheists tend to

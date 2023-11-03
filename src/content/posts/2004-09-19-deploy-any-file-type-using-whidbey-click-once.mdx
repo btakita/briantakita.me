@@ -7,20 +7,24 @@ description:
   ClickOnce can be used to not only deploy .NET applications, but also to deploy files. Yesterday, I deployed an
   Access adp application to our organization.
 ---
-import { Atb, Post_top_note } from '@btakita/ui--server--blog'
-import { Atb_ccrcorp } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
+import { V_atb_ccrcorp } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
-<Post_top_note innerHTML={[
-	`Originally posted on `,
-	Atb({
-		innerText: 'geekswithblogs.net',
-		href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx'
-	}).t
-].join('')}/>
+<Van dom={
+	V_post_top_note(props,
+		`Originally posted on `,
+		V_atb({
+			...props,
+			innerText: 'geekswithblogs.net',
+			href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx'
+		}))
+}/>
 <p>
 	{[
 		`One of the great things about Whidbey is ClickOnce Deployment. At `,
-		<Atb_ccrcorp/>,
+		<Van dom={V_atb_ccrcorp(props)}/>,
 		`, I use it to deploy rich client internal applications.`
 	]}
 </p>
@@ -33,12 +37,14 @@ Access adp application to our organization. To do so, I simply...
 	<li>Add the adp file to the project and set it as Content</li>
 	<li>Write a bootstrapper application in the Main method</li>
 	<li>
-		{[
-			<Atb href="https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022">
-				Configure
-			</Atb>,
-			` the ClickOnce deployment`
-		]}
+		<Van dom={
+			V_fragment(props,
+				V_atb({
+					...props,
+					href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'
+				}, 'Configure'),
+				` the ClickOnce deployment`)
+		}/>
 	</li>
 </ul>
 

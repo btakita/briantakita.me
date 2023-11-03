@@ -12,148 +12,153 @@ tags:
 description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { Atb, Footnote } from '@btakita/ui--server--blog'
+import { H_ } from '@btakita/domain--all--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb, V_footnote } from '@btakita/ui--server--blog'
 import {
-	Atb_astrojs,
-	Atb_astropaper,
-	Atb_bunjs,
-	Atb_ctx_core,
-	Atb_nanostores,
-	Atb_solidjs, Atb_tailwindcss, Atb_vercel, Attribution_web_framework_realworld_app_sizes
+	V_atb_astrojs,
+	V_atb_astropaper,
+	V_atb_bunjs,
+	V_atb_ctx_core,
+	V_atb_nanostores,
+	V_atb_solidjs,
+	V_atb_tailwindcss,
+	V_atb_vercel,
+	V_attribution_web_framework_realworld_app_sizes
 } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
+export const { em, figcaption, figure, img, li, ul } = H_(props.ctx)
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
 advancement over the past few years to support development from small scale to large scale websites & applications.
 <p>
-	{[
-		'This site is forked from ',
-		<Atb_astropaper/>,
-		' theme. I made some modifications & will go through them in this post.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			'This site is forked from ',
+			V_atb_astropaper(props),
+			' theme. I made some modifications & will go through them in this post.')
+	}/>
 </p>
 This is a static site is a monorepo built with:
-<ul>
-	<li><Atb_bunjs/></li>
-	<li><Atb_astrojs/></li>
-	<li><Atb_nanostores/></li>
-	<li><Atb_ctx_core/></li>
-	<li><Atb_solidjs/></li>
-	<li><Atb_tailwindcss/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_bunjs(props)),
+		li(V_atb_astrojs(props)),
+		li(V_atb_nanostores(props)),
+		li(V_atb_ctx_core(props)),
+		li(V_atb_solidjs(props)),
+		li(V_atb_tailwindcss(props))
+	)
+}/>
 <p>
-	{[
-		'It is deployed to ',
-		<Atb_vercel/>,
-		'.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			'It is deployed to ',
+			V_atb_vercel(props),
+			'.')
+	}/>
 </p>
 
 ## Monorepo
 
 <p>
-	{[
-		'For simplicity & ease of distribution, most ',
-		<Atb innerText="Astro Themes" href="https://astro.build/themes/"/>,
-		' are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken ' +
-		`into separate git repos. This provides structure to where the code is deployed to & how it's used while enabling
-		code re-use for other projects.`,
-	]}
+	<Van dom={
+		V_fragment(props,
+			`For simplicity & ease of distribution, most `,
+			V_atb({ ctx: props.ctx, innerText: 'Astro Themes', href: 'https://astro.build/themes/' }),
+			` are built in a single repository. I broke up the project into monorepo, where the libraries & apps are
+			broken into separate git repos. This provides structure to where the code is deployed to & how it's used while
+			enabling code re-use for other projects.`,)
+	}/>
 </p>
 The git repos include:
-<ul>
-	<li>
-		{[
-			<Atb innerText="btakita/briantakita.me-dev" href="https://github.com/btakita/briantakita.me-dev"/>,
+<Van dom={
+	ul(
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/briantakita.me-dev',
+				href: 'https://github.com/btakita/briantakita.me-dev'
+			}),
 			' — monorepo with ',
-			<Atb innerText="git submodules" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules"/>,
-			' to other libraries'
-		]}
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/briantakita.me" href="https://github.com/btakita/briantakita.me"/>,
-			' — briantakita.me astro app'
-		]}
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/domain--all--blog" href="https://github.com/btakita/domain--all--blog"/>,
-			' —  domain library targeting the browser & server for blogs',
-		]}
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/domain--server" href="https://github.com/btakita/domain--server"/>,
-			' — domain library targeting the server'
-		]}
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/domain--server--blog" href="https://github.com/btakita/domain--server--blog"/>,
-			' — domain logic targeting the server for blogs'
-		]}
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/ui--all--blog" href="https://github.com/btakita/ui--all--blog"/>,
-			' — UI library targeting the browser & server for blogs'
-		]},
-	</li>
-	<li>
-		{[
-			<Atb innerText="btakita/ui--server--blog" href="https://github.com/btakita/ui--server--blog"/>,
-			' — UI library targeting the server for blogs'
-		]}
-	</li>
-</ul>
+			V_atb({ ctx: props.ctx,
+				innerText: 'git submodules',
+				href: 'https://git-scm.com/book/en/v2/Git-Tools-Submodules'
+			}),
+			` to other libraries`),
+		li(
+			V_atb({ ctx: props.ctx, innerText: 'btakita/briantakita.me', href: 'https://github.com/btakita/briantakita.me' }),
+			` — briantakita.me astro app`),
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/domain--all--blog', href: 'https://github.com/btakita/domain--all--blog'}),
+			` —  domain library targeting the browser & server for blogs`),
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/domain--server',
+				href: 'https://github.com/btakita/domain--server'
+				` — domain library targeting the server`
+			})),
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/domain--server--blog',
+				href: 'https://github.com/btakita/domain--server--blog'}),
+			` — domain logic targeting the server for blogs`),
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/ui--all--blog',
+				href: 'https://github.com/btakita/ui--all--blog'
+			}),
+			` — UI library targeting the browser & server for blogs`),
+		li(
+			V_atb({ ctx: props.ctx,
+				innerText: 'btakita/ui--server--blog',
+				href: 'https://github.com/btakita/ui--server--blog'
+			}),
+			` — UI library targeting the server for blogs`))
+}/>
 
 ## Tech Stack
 
 ### Solidjs provides benefits over other isomorphic component frameworks *(e.g. React)*:
 
-<ul>
-	<li>A more comprehensible API & more natural integration with the DOM API</li>
-	<li>
-		{[
-			'Reactive Signals — ',
-			<Atb href="https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71">
-				cleaner component state management
-			</Atb>
-		]}
-	</li>
-	<li>
-		{[
-			'Smaller payload ',
-			<em>
-				(from
-				<a href="https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck"> Introducing the SolidJS UI Library</a>
-				)
-			</em>,
-			<figure>
-				<img width="50%" src="/assets/images/web-framework-realworld-app-sizes.png" alt="Web framework Realword App Sizes"/>
-				<figcaption>
-					<Attribution_web_framework_realworld_app_sizes ctx={props.ctx}/>
-				</figcaption>
-			</figure>
-		]}
-	</li>
-	<li>
-		<Atb children="Fast" href="https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html"/>
-	</li>
-	<li>Less code needed for components</li>
-	<li>JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*</li>
-</ul>
+<Van dom={
+	ul(
+		li(`A more comprehensible API & more natural integration with the DOM API`),
+		li(
+			`Reactive Signals — `,
+			V_atb({ ctx: props.ctx, href: 'https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71' },
+				`cleaner component state management`)),
+		li(
+			`Smaller payload `,
+			em(
+				`(from`,
+				V_atb({ ctx: props.ctx, href: 'https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck' },
+					` Introducing the SolidJS UI Library`),
+				`)`),
+			figure(
+				img({
+					width: '50%', src: '/assets/images/web-framework-realworld-app-sizes.png',
+					alt: 'Web framework Realword App Sizes'
+				}),
+				figcaption(
+					V_attribution_web_framework_realworld_app_sizes(props)))),
+		li(
+			V_atb({ ctx: props.ctx,
+				href: 'https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html'
+			}, `Fast`)),
+		li(`Less code needed for components`),
+		li(`JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*`))
+}/>
 
 ### Full-stack global state management with ctx-core & nanostores
 
 <p>
-	{[
-		'ctx-core with nanostores enables libraries & apps to easily share state management.',
-		<Footnote id="my-history-with-state-management-and-ctx-core-nanostores" ctx={props.ctx}>
-			<a href="/posts/my-history-with-state-management-and-ctx-core-nanostores">
-				How I ended up using ctx-core & nanostores…
-			</a>
-		</Footnote>,
-		'.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`ctx-core with nanostores enables libraries & apps to easily share state management`,
+			V_footnote({ ...props, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
+				V_atb({ ctx: props.ctx, href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },
+					`How I ended up using ctx-core & nanostores…`)),
+			'.')
+	}/>
 </p>

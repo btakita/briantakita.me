@@ -12,33 +12,40 @@ description:
   converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
   Svelte & a a sample web component using Svelte.
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_ctx_core, Atb_metalsmithjs, Atb_riotjs, Atb_sveltejs } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_ctx_core, V_atb_metalsmithjs, V_atb_riotjs, V_atb_sveltejs } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
 converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
 Svelte & a a sample web component using Svelte.
 <p>
-	{[
-		<Atb_sveltejs/>,
-		` is a build-time isomorphic library that utilizes a transpilation process to build completely self-contained
-		web components.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb_sveltejs(props),
+			` is a build-time isomorphic library that utilizes a transpilation process to build completely self-contained
+			web components.`)
+	}/>
 </p>
 <p>
-	{[
-		<Atb_riotjs/>,
-		` is a runtime isomorphic component library.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb_riotjs(props),
+			` is a runtime isomorphic component library.`)
+	}/>
 </p>
 <p>
-	{[
-		`I recently `,
-		<Atb innerText="converted this site" href="/posts/monorepo-static-sites-using-sveltejs-rollup-bash"></Atb>,
-		` to svelte from `,
-		<Atb_metalsmithjs/>,
-		`, which is a static site generator.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I recently `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'converted this site',
+				href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}),
+			` to svelte from `,
+			V_atb_metalsmithjs(props),
+			`, which is a static site generator.`)
+	}/>
 </p>
 
 While it's easy to get stuck into the rat race of endless technological upgrades & porting to the latest hyped piece
@@ -46,15 +53,17 @@ of tech&hellip;
 
 ## Performance & Memory Usage
 <p>
-	{[
-		`Despite beinga young library, svelte `,
-		<Atb href="https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html">
-			does quite well
-		</Atb>,
-		` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte JS generates optimal
-		javascript while not having the overhead of a runtime library. It's also going to have an advantage in page load
-		time due to not requiring a runtime library to be loaded.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`Despite beinga young library, svelte `,
+			V_atb({ ctx: props.ctx,
+				href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html'
+			}, 'does quite well'),
+			` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte JS generates
+			optimal javascript while not having the overhead of a runtime library. It's also going to have an advantage in
+			page load time due to not requiring a runtime library to be loaded.`
+		)
+	}/>
 </p>
 
 ## HTML-based Components
@@ -71,16 +80,21 @@ larger frameworks out there.
 
 Svelte's api idioms are well thought out. Development flow was coherent natural during the port from Riot.
 <p>
-	{[
-		`For each of my professional clients, I usea monorepo using the `,
-		<Atb_ctx_core/>,
-		` toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`For each of my professional clients, I usea monorepo using the `,
+			V_atb_ctx_core(props),
+			` toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`)
+	}/>
 </p>
 <p>
-	{[
-		`You can `,
-		<Atb innerText="read more about the features of svelte" href="https://svelte.dev/guide"></Atb>,
-		`.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`You can `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'read more about the features of svelte',
+				href: 'https://svelte.dev/guide'
+			}),
+			`.`)
+	}/>
 </p>

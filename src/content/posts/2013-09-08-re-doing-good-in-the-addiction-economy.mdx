@@ -12,22 +12,23 @@ description:
   success…
 canonical_url: https://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		`From my `,
-		<Atb href="http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/">
-			wordpress blog
-		</Atb>
-	]}
+	<Van dom={
+		V_fragment(props,
+			`From my `,
+			V_atb({ ctx: props.ctx, href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
+				'wordpress blog')
+	}/>
 </p>
 <p>
-	{[
-		<Atb href="http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/">
-			Doing Good in the Addiction Economy
-		</Atb>
-	]}
+	<Van dom={
+		V_atb({ ctx: props.ctx, href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
+			'Doing Good in the Addiction Economy')
+	}/>
 </p>
 
 Interesting but long-winded post, IMO. But then, maybe my impatience toward long posts is telling in the short term

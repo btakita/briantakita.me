@@ -10,27 +10,36 @@ tags:
 description:
   Fixing a DNS-related 404 error with Github Pages.
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_briantakita_com, Atb_github_pages } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_briantakita_com, V_atb_github_pages } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		'I set up ',
-		<Atb_briantakita_com/>,
-		' using ',
-		<Atb_github_pages/>,
-		' to btakita.github.io.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I set up `,
+			V_atb_briantakita_com(props),
+			` using `,
+			V_atb_github_pages(props),
+			` to btakita.github.io.`)
+	}/>
 </p>
 
 <p>
-	{[
-		'To set up the DNS, I followed the ',
-		<Atb innerText="official instructions" href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages"/>,
-		' and ',
-		<Atb innerText="github pages with namecheap" href="http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/"/>,
-		'.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`To set up the DNS, I followed the `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'official instructions',
+				href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
+			}),
+			` and `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'github pages with namecheap',
+				href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }),
+			`.`)
+	}/>
 </p>
 
 I created the CNAME file with:

@@ -23,8 +23,8 @@ export async function getStaticPaths():Promise<GetStaticPathsResult> {
 }
 const ctx = server__ctx__new(Astro)
 const { slug } = Astro.params
-const { post } = Astro.props
-const Content = post ? await post.render() : null
+const post = Astro.props.post as CollectionEntry<'posts'>
+const { Content } = post ? await post.render() : null
 ---
 
 {post
@@ -32,5 +32,4 @@ const Content = post ? await post.render() : null
 		<PostLayout ctx={ctx} post={post}>
 			<Content ctx={ctx} post={post}/>
 		</PostLayout>
-	:
-		<PostsLayout/>}
+	: <PostsLayout/>}

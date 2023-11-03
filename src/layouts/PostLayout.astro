@@ -1,18 +1,23 @@
 ---
-import { Main_post, Repost } from '@btakita/ui--server--blog'
-import { type CollectionEntry } from 'astro:content'
+import { V_raw } from '@btakita/ui--all--blog'
+import { V_main_post } from '@btakita/ui--server--blog'
+import { type CollectionEntry, type Render } from 'astro:content'
+import type { PlateVan } from 'van-type-delegate'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import Van from '../components/Van.astro'
 import { SITE } from '../config'
 import Layout from '../layouts/Layout.astro'
 const { slug } = Astro.params
 export interface Props {
 	post:CollectionEntry<'posts'>
 	id:number
+	// mdx:Awaited<Render['.mdx']>
 }
 Astro.props.id = 123
 const { ctx, post } = Astro.props
 const { canonical_url } = post.data
+const html = await Astro.slots.render('default')
 ---
 
 <Layout
@@ -20,9 +25,9 @@ const { canonical_url } = post.data
 	canonical_url={canonical_url}
 >
 	<Header ctx={ctx} active="posts"/>
-	<Main_post ctx={ctx} post={post}>
-		{post.data.canonical_url && <Repost href={post.data.canonical_url}/>}
-		<slot/>
-	</Main_post>
+	<Van dom={
+		V_main_post({ ctx, post },
+			V_raw<PlateVan>({ ctx, html }))
+	}/>
 	<Footer ctx={ctx}/>
 </Layout>

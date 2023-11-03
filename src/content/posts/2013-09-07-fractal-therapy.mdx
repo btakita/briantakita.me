@@ -10,14 +10,17 @@ tags:
 description:
   Who know that Fractal Zoom videos can be therapeutic?
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_existence } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_existence } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		<Atb_existence/>,
-		` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb_existence(props),
+			` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`)
+	}/>
 </p>
 
 <iframe
@@ -44,25 +47,35 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 ></iframe>
 
 <p>
-	{[
-		'It turns out there are some ',
-		<Atb innerText="therapies" href="https://www.google.com/search?q=fractal+therapy"/>,
-		'that utilize Fractals. An ',
-		<Atb innerText="article in Psychology Today" href="http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals"/>,
-		' suggests spending 20 minutes a day for a week being exposed to fractals. This could mean being in nature, ' +
-		'blowing bubbles, looking at artwork with Fractals…'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`It turns out there are some `,
+			V_atb({
+				...props,
+				innerText: 'therapies',
+				href: 'https://www.google.com/search?q=fractal+therapy'
+			}),
+			`that utilize Fractals. An `,
+			V_atb({
+				...props,
+				innerText: 'article in Psychology Today',
+				href: 'http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals'
+			}),
+			` suggests spending 20 minutes a day for a week being exposed to fractals. This could mean being in nature,
+			blowing bubbles, looking at artwork with Fractals…`)
+	}/>
 </p>
-
 <p>
-	{[
-		'With the success of other techniques like ',
-		<Atb innerText="Binaural Beats (Wikipedia)" href="https://en.wikipedia.org/wiki/Binaural_beats"/>,
-		' and advances in consumer video devices, like the ',
-		<Atb innerText="Oculus Rift" href="http://www.oculusvr.com/"/>,
-		', therapy is about to become more immersive and available to everyone. Many of these therapies are available ' +
-		'free on Youtube.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`With the success of other techniques like `,
+			V_atb({ ctx: props.ctx, innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
+			` and advances in consumer video devices, like the `,
+			V_atb({ ctx: props.ctx, innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
+			`, therapy is about to become more immersive and available to everyone. Many of these therapies are available
+			free on Youtube.`,
+		)
+	}/>
 </p>
 
 The genre of healing audio/video has been around the last few decades and will continue to gain in prevalence as the

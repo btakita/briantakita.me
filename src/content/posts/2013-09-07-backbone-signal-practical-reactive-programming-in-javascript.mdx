@@ -11,19 +11,24 @@ tags:
   - backbonejs
 description:
   Introducing backbone-signal, which adds Signals to Backbonejs.
-
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_backbone_signal, Atb_browserify, Atb_nodejs, Atb_rundavoo } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_backbone_signal, V_atb_browserify, V_atb_nodejs, V_atb_rundavoo } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 <p>
-	{[
-		'I have recently released ',
-		<Atb_backbone_signal/>,
-		', which is a ',
-		<Atb innerText="reactive programming (Wikipedia)" href="https://en.wikipedia.org/wiki/Reactive_programming"/>,
-		' library with a practical & javascripty model api.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I have recently released `,
+			V_atb_backbone_signal(props),
+			`, which is a `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'reactive programming (Wikipedia)',
+				href: 'https://en.wikipedia.org/wiki/Reactive_programming'
+			}),
+			` library with a practical & javascripty model api.`)
+	}/>
 </p>
 
 ```js
@@ -62,19 +67,21 @@ The console ouput is:
 ```
 
 <p>
-	{[
-		'We are calling ',
-		<code>getTruthy</code>,
-		'on the ',
-		<code>userSignal</code>,
-		' two times, one for ',
-		<code>"Hello " + user.name` and one for `"Nice to see you"</code>,
-		'. The callback is invoked when the value is',
-		<Atb innerText="Truthy" href="http://www.sitepoint.com/javascript-truthy-falsy/"/>,
-		'. So when ',
-		<code>userSignal.unset</code>,
-		' is called, the callbacks are not invoked.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`We are calling `,
+			<code>getTruthy</code>,
+			`on the `,
+			<code>userSignal</code>,
+			` two times, one for `,
+			<code>"Hello " + user.name` and one for `"Nice to see you"</code>,
+			`. The callback is invoked when the value is`,
+			V_atb({ ctx: props.ctx, innerText: 'Truthy', href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }),
+			`. So when `,
+			<code>userSignal.unset</code>,
+			` is called, the callbacks are not invoked.`
+		)
+	}/>
 </p>
 
 What is nice about having a dedicated signal object is that you can bind to it even when it's value is undefined,
@@ -84,15 +91,16 @@ backbone-signal also utilizes Backbone's `listenTo` and `listenToOnce` methods, 
 calling `stopListening` on the listener.
 
 <p>
-	{[
-		'backbone-signal is being used in ',
-		<Atb_rundavoo/>,
-		' and has been fun to use, especially with ',
-		<Atb_nodejs/>,
-			' & ',
-		<Atb_browserify/>,
-		`. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`backbone-signal is being used in `,
+			V_atb_rundavoo(props),
+			` and has been fun to use, especially with `,
+			V_atb_nodejs(props),
+			` & `,
+			V_atb_browserify(props),
+			`. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.`)
+	}/>
 </p>
 
 The api includes:

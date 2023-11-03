@@ -2,11 +2,12 @@
 import { type Post, post__slug__new } from '@btakita/domain--all--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
 import { Card } from '@btakita/ui--all--blog'
-import { Hr, LinkButton, Main, Socials } from '@btakita/ui--server--blog'
+import { Hr, LinkButton, Main, Socials, V_socials } from '@btakita/ui--server--blog'
 import { Atb_uop, Atb_uop_engineering, Atb_uop_engineering_physics } from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import Van from '../components/Van.astro'
 import { SOCIALS } from '../config'
 import Layout from '../layouts/Layout.astro'
 import { server__ctx__new } from '../lib'
@@ -53,7 +54,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 				social__count > 0 && (
 					<div class="social-wrapper">
 						<div class="social-links">Social Links:</div>
-						<Socials ctx={ctx}/>
+						<Van dom={V_socials({ ctx })}/>
 					</div>
 				)
 			}

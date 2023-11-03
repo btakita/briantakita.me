@@ -89,8 +89,8 @@ const social_image_url = new URL(
 </html>
 
 <script>
+	import { browser__ctx__ensure } from '../../../../lib/domain--browser--briantakita2'
 	import { dom__bind, dom__onbind__validate } from '@ctx-core/dom'
-	import { browser__ctx__ensure } from '../lib'
 	const ctx = browser__ctx__ensure()
 	window.addEventListener('load', ()=>{
 		dom__bind(ctx)

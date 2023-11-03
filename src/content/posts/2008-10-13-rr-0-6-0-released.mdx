@@ -12,8 +12,9 @@ description:
   RR version 0.6.0 is released
 canonical_url: https://tanzu.vmware.com/content/blog/rr-0-6-0-released
 ---
-
-import { Atb } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
 I’m pleased to announce the 0.6.0 version of RR. The changes include:
 
@@ -103,13 +104,14 @@ RR has a mailing lists at:
 - double-ruby-devel@rubyforge.org
 
 <p>
-	{[
-		`Also, RR’s rubyforge page is at `,
-		<Atb href="http://rubyforge.org/projects/double-ruby"/>,
-		` and of course the github page is at `,
-		<Atb href="http://github.com/btakita/rr"/>,
-		`. Yes, and there is more to come`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`Also, RR’s rubyforge page is at `,
+			V_atb({ ctx: props.ctx, href: 'http://rubyforge.org/projects/double-ruby' }),
+			` and of course the github page is at `,
+			V_atb({ ctx: props.ctx, href: 'http://github.com/btakita/rr' }),
+			`. Yes, and there is more to come`)
+	}/>
 </p>
 
 There are many interesting ideas floating around. Joseph Wilk has been playing around with adding Spies into RR. I’m

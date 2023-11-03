@@ -12,24 +12,29 @@ description:
   On my current project, I will be migrating from Pug to Svelte. The key concepts are Server Side Rendering, Hydration,
   client/server architectural options.
 ---
-import { Atb } from '@btakita/ui--server--blog'
-import { Atb_pugjs, Atb_sveltejs } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import { V_atb_pugjs, V_atb_sveltejs } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
 Now it's time to implement server side rendering (SSR) using SvelteJS.
 
 <p>
-	{[
-		`On my current project, I will be migrating from `,
-		<Atb_pugjs/>,
-		` to `,
-		<Atb_sveltejs/>,
-		`. The key concepts are `,
-		<Atb innerText="Server Side Rendering" href="https://svelte.technology/guide#server-side-rendering"/>,
-		`, `,
-		<Atb innerText="Hydration" href="https://github.com/sveltejs/svelte/pull/649"/>,
-		`,
-		 client/server architectural options.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`On my current project, I will be migrating from `,
+			V_atb_pugjs(props),
+			` to `,
+			V_atb_sveltejs(props),
+			`. The key concepts are `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'Server Side Rendering',
+				href: 'https://svelte.technology/guide#server-side-rendering'
+			}),
+			`, `,
+			V_atb({ ctx: props.ctx, innerText: 'Hydration', href: 'https://github.com/sveltejs/svelte/pull/649' }),
+			`, client/server architectural options.`)
+	}/>
 </p>
 
 SvelteJS allows one to render in dom & server side environments. SSR is simpler than DOM rendering since Svelte does

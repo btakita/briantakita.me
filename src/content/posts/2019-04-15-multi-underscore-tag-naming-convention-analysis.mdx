@@ -10,7 +10,9 @@ tags:
   - domain driven design
 description: Naming Convention that utilizes underscores to articulate relationships to tags.
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a
@@ -38,18 +40,21 @@ left) of read words, generates a graph of progressive contextual development.
 
 This sequence follows the English rules of Grammar for a phrase.
 <p>
-	{[
-		`The object is "`,
-		<Atb innerText="Convention" href="https://en.wiktionary.org/wiki/convention"/>,
-		`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`The object is "`,
+			V_atb({ ctx: props.ctx, innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
+			`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`)
+	}/>
 </p>
 
 The prepositions are:
 <ul>
 	<li>Multi Underscore - implying multiple underscore characters <code>_</code></li>
 	<li>
-		<Atb innerText="Tag" href="https://en.wiktionary.org/wiki/tag"/>
+		<Van dom={
+			V_atb({ ctx: props.ctx, innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
+		}/>
 		<ul>
 			<li>
 				A keyword, term, or phrase associated with or assigned to data, media, and/or information enabling
@@ -58,7 +63,9 @@ The prepositions are:
 		</ul>
 	</li>
 	<li>
-		<Atb innerText="Naming" href="https://en.wiktionary.org/wiki/naming"/>
+		<Van dom={
+			V_atb({ ctx: props.ctx, innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
+		}/>
 		<ul>
 			<li>The process of giving names to things.</li>
 		</ul>

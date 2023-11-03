@@ -10,24 +10,31 @@ tags:
 description:
   Flow testing in Jasmine with Jasmine Flow.
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { H_ } from '@btakita/domain--all--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
+export const { a, b } = H_(props.ctx)
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 
 include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which
 includes a large number of edge cases.
 
 <p>
-	{[
-		`I'm a `,
-		<a href="/posts/automated-black-box-testing">
-			fan of black box
-		</a>,
-		' testing, because it is decoupled from the implementation. The implication is the ',
-		<Atb href="http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/">
-			<b>what</b> is verified, rather than the <b>how</b>
-		</Atb>,
-		'.'
-	]}
+	<Van dom={
+		V_fragment(props,
+			`I'm a `,
+			a({ ...props, href: '/posts/automated-black-box-testing' },
+				'fan of black box'),
+			` testing, because it is decoupled from the implementation. The implication is the `,
+			V_atb({ ctx: props.ctx,
+				href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/'
+			},
+				b('what'),
+				` is verified, rather than the `,
+				b('how')),
+			`.`)
+	}/>
 </p>
 
 Spec frameworks such as rspec and jasmine give you the constructs to perform edge case testing. Unfortunately, the

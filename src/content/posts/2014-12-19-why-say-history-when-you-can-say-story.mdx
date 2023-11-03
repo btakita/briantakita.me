@@ -10,32 +10,43 @@ description:
   In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history
   being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.
 ---
-import { Atb, Footnote } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb, V_footnote } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
-<Footnote id="encyclopedia-britannica-hero-image" ctx={props.ctx} innerHTML={[
-	`From `,
-	<Atb href="http://www.flickr.com/photos/bostontx/4461314652/"/>,
-	` - Licensed under Creative Commons`
-].join('')}/>
+<Van dom={
+	V_footnote({ ...props, id: 'encyclopedia-britannica-hero-image' },
+		`From `,
+		V_atb({ ctx: props.ctx, href: 'http://www.flickr.com/photos/bostontx/4461314652/' }),
+		` - Licensed under Creative Commons`)
+}/>
 
 In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history
 being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.
 
 <h2>
-	<a href="https://github.com/btakita/philosophy/blob/master/src/story.md" target="_blank">Story</a>
+	<Van dom={
+		V_atb({ ctx: props.ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' },
+			'Story')
+	}/>
 </h2>
 
 > Story, a recounting of a sequence of events
 <p>
-	{[
-		`Our `,
-		<Atb innerText="culture" href="https://github.com/btakita/philosophy/blob/master/src/culture.md"></Atb>,
-		` distinguishes a story as being used for entertainment and fiction. Our culture also uses story for an informal
-		narrative for people, animals, etc.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`Our `,
+			V_atb({ ctx: props.ctx,
+				innerText: 'culture',
+				href: 'https://github.com/btakita/philosophy/blob/master/src/culture.md'}),
+			` distinguishes a story as being used for entertainment and fiction. Our culture also uses story for an informal
+			narrative for people, animals, etc.`)
+	}/>
 </p>
 <h2>
-	<a href="https://github.com/btakita/philosophy/blob/master/src/history.md" target="_blank">History</a>
+	<Van dom={
+		V_atb({ ctx: props.ctx, innerText: 'History', href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' })
+	}/>
 </h2>
 
 > History (from Greek ἱστορία, historia, meaning "inquiry, knowledge acquired by investigation") is the study of the past, particularly how it relates to humans. It is an umbrella term that relates to past events as well as the memory, discovery, collection, organization, presentation, and interpretation of information about these events. Scholars who write about history are called historians. Events occurring prior to written record are considered prehistory.
@@ -46,12 +57,13 @@ Our culture says History is the recorded narrative of the sequence of Human even
 The history of human civilization; The history of Mars; The history of the Universe; The history of Middle Earth.
 The vernacular has expanded the definition of history to include all the time and fiction worlds.
 <p>
-	{[
-		<Atb innerText="Biographies" href="http://en.wikipedia.org/wiki/Biography"/>,
-		` & `,
-		<Atb innerText="Autobiographies" href="http://en.wikipedia.org/wiki/Autobiography"/>,
-		` are also considered history.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			V_atb({ ctx: props.ctx, innerText: 'Biographies', href: 'http://en.wikipedia.org/wiki/Biography' }),
+			` & `,
+			V_atb({ ctx: props.ctx, innerText: 'Autobiographies', href: 'http://en.wikipedia.org/wiki/Autobiography' }),
+			` are also considered history.`)
+	}/>
 </p>
 
 ## Story & History can be used Interchangeably

@@ -12,7 +12,9 @@ description:
   Create plugins-based platforms for Rails using Desert
 canonical_url: https://tanzu.vmware.com/content/blog/build-your-own-rails-plugin-platform-with-desert
 ---
-import { Atb } from '@btakita/ui--server--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
 
 While it is easy to include plugins in your Rails projects, it isn't easy to extend and customize the plugin for
 your own application. Desert solves that limitation/complication by making it just as easy to extend or modify a
@@ -201,9 +203,10 @@ require_plugin 'will_paginate'
 This means you no longer need to define plugin load order inside of environment.rb. Your plugins can take care of that. Desert works with practically all plugins. That means you can have a plugin dependency on any existing Rails plugin.
 
 <p>
-	{[
-		`To see more examples & documentation, take a look at the Desert project at `,
-		<Atb href="https://github.com/pivotalexperimental/desert"/>,
-		`.`
-	]}
+	<Van dom={
+		V_fragment(props,
+			`To see more examples & documentation, take a look at the Desert project at `,
+			V_atb({ ctx: props.ctx, href: 'https://github.com/pivotalexperimental/desert'}),
+			`.`)
+	}/>
 </p>

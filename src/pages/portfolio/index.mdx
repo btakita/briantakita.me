@@ -3,123 +3,148 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Portfolio"
 active: portfolio
 ---
-import { Atb } from '@btakita/ui--server--blog'
+
+import { blog__ctx__new, H_ } from '@btakita/domain--all--blog'
+import { V_fragment } from '@btakita/ui--all--blog'
+import { V_atb } from '@btakita/ui--server--blog'
 import {
-	Atb_astrojs,
-	Atb_aws,
-	Atb_backbonejs,
-	Atb_bunjs,
-	Atb_cacheable_flash,
-	Atb_censible,
-	Atb_cordova,
-	Atb_ctx_core,
-	Atb_docker,
-	Atb_engine_yard,
-	Atb_erector,
-	Atb_esg,
-	Atb_heroku,
-	Atb_jquery,
-	Atb_lucene,
-	Atb_martin_investments,
-	Atb_menu,
-	Atb_milyoni,
-	Atb_nanostores,
-	Atb_news_corp,
-	Atb_nextcloud,
-	Atb_nodejs,
-	Atb_pnpm,
-	Atb_postgres,
-	Atb_redis,
-	Atb_rethinkdb,
-	Atb_riotjs,
-	Atb_rr,
-	Atb_rspec,
-	Atb_ruby_on_rails,
-	Atb_sapper,
-	Atb_sinatrarb,
-	Atb_solid_start,
-	Atb_solidjs,
-	Atb_sveltejs,
-	Atb_truecar,
-	Atb_unison,
-	Atb_usaa,
-	Atb_wsj
+	V_atb_astrojs,
+	V_atb_astropaper,
+	V_atb_aws,
+	V_atb_backbonejs,
+	V_atb_briantakita_me_dev,
+	V_atb_bunjs,
+	V_atb_cacheable_flash,
+	V_atb_censible,
+	V_atb_cordova,
+	V_atb_ctx_core,
+	V_atb_docker,
+	V_atb_engine_yard,
+	V_atb_erector,
+	V_atb_esg,
+	V_atb_foresight_host,
+	V_atb_heroku,
+	V_atb_honk,
+	V_atb_jquery,
+	V_atb_lucene,
+	V_atb_martin_investments,
+	V_atb_menu,
+	V_atb_milyoni,
+	V_atb_nanostores,
+	V_atb_neo,
+	V_atb_news_corp,
+	V_atb_nextcloud,
+	V_atb_nodejs,
+	V_atb_pnpm,
+	V_atb_postgres,
+	V_atb_redis,
+	V_atb_rethinkdb,
+	V_atb_riotjs,
+	V_atb_rr,
+	V_atb_rspec,
+	V_atb_ruby_on_rails,
+	V_atb_salesforce,
+	V_atb_sapper,
+	V_atb_sinatrarb,
+	V_atb_solid_start,
+	V_atb_solidjs,
+	V_atb_strapi,
+	V_atb_sveltejs,
+	V_atb_truecar,
+	V_atb_unison,
+	V_atb_usaa,
+	V_atb_wsj
 } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
+export const ctx = blog__ctx__new()
+export const { li, ul } = H_(ctx)
 
 ## [briantakita.me](https://briantakita.me)
 
-[Open source](https://github.com/btakita/dev) static app with libraries forked
-from [AstroPaper](https://astro-paper.pages.dev). I did some refactoring including converting it to a monorepo,
-used solidjs instead of react, and added ctx-core & Nano Stores. These changes improve code re-use to be used in
-other profile sites which I will soon work on. I plan on adding support for [Strapi](https://strapi.io/) to so
-people without technical experience can write posts on their own optimized blog.
+<p>
+	<Van dom={
+		V_fragment({ ctx },
+			V_atb_briantakita_me_dev({ ctx }),
+			` static app with libraries forked from `,
+			V_atb_astropaper({ ctx }),
+			`. I did some refactoring including converting it to a monorepo, used solidjs instead of react, and added
+			ctx-core & Nano Stores. These changes improve code re-use to be used in other profile sites which I will soon
+			work on. I plan on adding support for `,
+			V_atb_strapi({ ctx }),
+			` so people without technical experience can write posts on their own optimized blog.`
+		)
+	}/>
+</p>
 
 Stack:
-<ul>
-	<li><Atb_bunjs/></li>
-	<li><Atb_ctx_core/></li>
-	<li><Atb_astrojs/></li>
-	<li><Atb_nanostores/></li>
-	<li><Atb_docker/></li>
-	<li>VPS</li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_bunjs({ ctx })),
+		li(V_atb_ctx_core({ ctx })),
+		li(V_atb_astrojs({ ctx })),
+		li(V_atb_nanostores({ ctx })),
+		li(V_atb_docker({ ctx })),
+		li(`VPS`))
+}/>
 
 <h2>
-	<Atb_martin_investments/>
+	<Van dom={V_atb_martin_investments({ ctx })}/>
 </h2>
 
 Designed & Built an analyst & customer portal for ESG investment funds. Created ESG analysis algorithms to rate
 companies according to Environment & Women in Leadership criteria.
 
 <p>
-	{[
-		`Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using `,
-		<Atb innerText="Office Open XML" href="https://en.wikipedia.org/wiki/Office_Open_XML"/>,
-		`, replicating the ESG analysis algorithms & deep linking across the document & to relevant web content.`
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`Utilized various financial APIs. Built a XLSX exporter spanning > 10000 rows & hundreds of columns using `,
+			V_atb({ ctx, innerText: 'Office Open XML', href: 'https://en.wikipedia.org/wiki/Office_Open_XML' }),
+			`, replicating the ESG analysis algorithms & deep linking across the document & to relevant web content.`)
+	}/>
 </p>
 
 Built SVG & PDF exporters of portfolio & company ESG reports.
 
 Stack:
-<ul>
-	<li>
-		<Atb_nodejs/>
-		{', '}
-		<Atb_pnpm/>
-	</li>
-	<li><Atb_ctx_core/></li>
-	<li><Atb_astrojs/></li>
-	<li><Atb_nanostores/></li>
-	<li><Atb_solidjs/></li>
-	<li><Atb_redis/></li>
-	<li><Atb_docker/></li>
-	<li>VPS</li>
-</ul>
+<Van dom={
+	ul(
+		li(
+			V_atb_nodejs({ ctx }),
+			`, `,
+			V_atb_pnpm({ ctx })),
+		li(V_atb_ctx_core({ ctx })),
+		li(V_atb_astrojs({ ctx })),
+		li(V_atb_nanostores({ ctx })),
+		li(V_atb_solidjs({ ctx })),
+		li(V_atb_redis({ ctx })),
+		li(V_atb_docker({ ctx })),
+		li(`VPS`))
+}/>
 
 <h2>
-	<Atb_censible/>
+	<Van dom={V_atb_censible({ ctx })}/>
 </h2>
 
 <p>
-	{[
-		`Progressive Web App that enables the client to upload their portfolio from a CSV file and rebalance their
-		portfolio based on ESG metrics compared to an Index Fund benchmark. The client can select `,
-		<Atb_esg/>,
-		` Issue criteria (for scoring) & binary restriction criteria to identify securities that that cross ethical
-		boundaries. This app uses a market value weighted color bar, based on segmented scores, to indicate the areas of
-		improvement. Client can search for securities to add or replace based on Name, Industry Peers, Industry Sectors,
-		Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to obtain a desired
-		ESG outcome. Also contains a printable report and industry sector analysis of the portfolio & benchmark fund.`
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`Progressive Web App that enables the client to upload their portfolio from a CSV file and rebalance their
+			portfolio based on ESG metrics compared to an Index Fund benchmark. The client can select `,
+			V_atb_esg({ ctx }),
+			` Issue criteria (for scoring) & binary restriction criteria to identify securities that that cross ethical
+			boundaries. This app uses a market value weighted color bar, based on segmented scores, to indicate the areas
+			of improvement. Client can search for securities to add or replace based on Name, Industry Peers, Industry
+			Sectors, Market Cap Groups, Geographic Regions, & Economic Regions. Shows which positions to trade to obtain a
+			desired ESG outcome. Also contains a printable report and industry sector analysis of the portfolio &
+			benchmark fund.`)
+	}/>
 </p>
 
 <h3>
-	{
-		<Atb href="https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership">
-			Women In Leadership Report
-		</Atb>
-	}
+	<Van dom={
+		V_atb({ ctx, href: 'https://esg.censible.co/company-etf-and-mutual-fund-rankings/women-in-leadership' },
+			`Women In Leadership Report`)
+	}/>
 </h3>
 
 Market survey of Women in corporate leadership positions. Scoring methodology applied to Aggregate analysis, Best
@@ -127,170 +152,189 @@ Performing Companies, Best Performing Large Companies, Worst Performing Companie
 Largest Funds, & Socially Responsible Funds.
 
 Stack:
-<ul>
-	<li>
-		<Atb_nodejs/>
-		{', '}
-		<Atb_pnpm/>
-	</li>
-	<li><Atb_ctx_core/></li>
-	<li><Atb_astrojs/></li>
-	<li><Atb_nanostores/></li>
-	<li><Atb_solidjs/></li>
-	<li><Atb_solid_start/></li>
-	<li><Atb_postgres/></li>
-	<li><Atb_redis/></li>
-	<li><Atb_heroku/></li>
-</ul>
+<Van dom={
+	ul(
+		li(
+			V_atb_nodejs({ ctx }),
+			`, `,
+			V_atb_pnpm({ ctx })),
+		li(V_atb_ctx_core({ ctx })),
+		li(V_atb_astrojs({ ctx })),
+		li(V_atb_nanostores({ ctx })),
+		li(V_atb_solidjs({ ctx })),
+		li(V_atb_solid_start({ ctx })),
+		li(V_atb_postgres({ ctx })),
+		li(V_atb_redis({ ctx })),
+		li(V_atb_heroku({ ctx }))
+	)
+}/>
 
 <h2>
-	<Atb_menu/>
+	<Van dom={V_atb_menu({ ctx })}/>
 </h2>
 
 Front end development of the menu.com multi-tenant app. Consumer web app, restaurant back-office, & back-office
 Cordova app.
 
 Stack:
-<ul>
-	<li><Atb_sveltejs/></li>
-	<li><Atb_ctx_core/></li>
-	<li><Atb_sapper/></li>
-	<li><Atb_cordova/></li>
-	<li><Atb_aws/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_sveltejs({ ctx })),
+		li(V_atb_ctx_core({ ctx })),
+		li(V_atb_sapper({ ctx })),
+		li(V_atb_cordova({ ctx })),
+		li(V_atb_aws({ ctx }))
+	)
+}/>
 
 <h2>
-	<Atb innerText="cloud.foresight.host" href="https://cloud.foresight.host"/>
+	<Van dom={V_atb_foresight_host({ ctx })}/>
 </h2>
 
 Private NextCloud groupware site with some custom plugins.
 
 Stack:
-<ul>
-	<li><Atb_nextcloud/></li>
-	<li><Atb_docker/></li>
-	<li>VPS</li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_nextcloud({ ctx })),
+		li(V_atb_docker({ ctx })),
+		li(`VPS`)
+	)
+}/>
 
 <h2>
-	<Atb innerText="neo" href="https://neo.com/"/>
+	<Van dom={V_atb_neo({ ctx })}/>
 </h2>
 
 <p>
-	{[
-		`Worked with the previous incarnation as an inclubator & consulting firm of Neo before it's acquisition. The
-		client was Tenfore Holdings, an investment fund. The project was a low-code document writer with integrated search into the
-		client's `,
-		<Atb href="https://www.salesforce.com/">Salesforce</Atb>,
-		` using Salesforce cloud.`
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`Worked with the previous incarnation as an inclubator & consulting firm of Neo before it's acquisition. The
+			client was Tenfore Holdings, an investment fund. The project was a low-code document writer with integrated
+			search into the client's `,
+			V_atb_salesforce({ ctx }),
+			` using Salesforce cloud.`)
+	}/>
 </p>
 
 Stack:
-<ul>
-	<li><Atb_nodejs/></li>
-	<li><Atb_riotjs/></li>
-	<li><Atb_rethinkdb/></li>
-	<li><Atb_heroku/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_nodejs({ ctx })),
+		li(V_atb_riotjs({ ctx })),
+		li(V_atb_rethinkdb({ ctx })),
+		li(V_atb_heroku({ ctx }))
+	)
+}/>
 
 ## Rundavoo
 
 <p>
-	{[
-		'Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was ',
-		`included in the Google's `,
-		<Atb href="https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm">
-			Best Apps of 2014 List
-		</Atb>,
-		'.'
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was
+			included in the Google's `,
+			V_atb({ ...{ ctx },
+				href: 'https://www.techtimes.com/articles/21235/20141202/heres-best-apps-2014-list-google.htm' },
+				`Best Apps of 2014 List`),
+			`.`
+		)
+	}/>
 </p>
 Web front-end development for social planning & decision app for restaurant patrons. Mobile cordova app was included
 in the
 
 Stack:
-<ul>
-	<li><Atb_riotjs/></li>
-	<li><Atb_backbonejs/></li>
-	<li><Atb_heroku/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_riotjs({ ctx })),
+		li(V_atb_backbonejs({ ctx })),
+		li(V_atb_heroku({ ctx }))
+	)
+}/>
 
 <h2>
-	<Atb_milyoni/>
+	<Van dom={V_atb_milyoni({ ctx })}/>
 </h2>
 
 Consulting developer for social entertainment platform. Developed scalable live video events with admin message
 moderation & components, on-demand movies with time-coded chat & interactive components.
 
 Stack:
-<ul>
-	<li><Atb_ruby_on_rails/></li>
-	<li><Atb_nodejs/></li>
-	<li><Atb_postgres/></li>
-	<li><Atb_redis/></li>
-	<li><Atb_heroku/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_ruby_on_rails({ ctx })),
+		li(V_atb_nodejs({ ctx })),
+		li(V_atb_postgres({ ctx })),
+		li(V_atb_redis({ ctx })),
+		li(V_atb_heroku({ ctx })))
+}/>
 
 <h2>
-	<Atb innerText="honk.com" href="https://honk.com"/>
+	<Van dom={V_atb_honk({ ctx })}/>
 </h2>
 
 <p>
-	{[
-		`Lead developer for automotive pricing & info startup. `,
-		`Built product from initial concept through acquisition by `,
-		<Atb_truecar/>,
-		`. Key partnerships include `,
-		<Atb_news_corp/>,
-		`, `,
-		<Atb_wsj/>,
-		`, `,
-		<Atb_usaa/>,
-		`.`
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`Lead developer for automotive pricing & info startup. Built product from initial concept through acquisition
+			by `,
+			V_atb_truecar({ ctx }),
+			`. Key partnerships include `,
+			V_atb_news_corp({ ctx }),
+			`, `,
+			V_atb_wsj({ ctx }),
+			`, `,
+			V_atb_usaa({ ctx }),
+			`.`)
+	}/>
 </p>
 
 Stack:
-<ul>
-	<li><Atb_ruby_on_rails/></li>
-	<li><Atb_sinatrarb/></li>
-	<li><Atb_erector/></li>
-	<li><Atb_backbonejs/></li>
-	<li><Atb_postgres/></li>
-	<li><Atb_lucene/></li>
-	<li><Atb_engine_yard/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_ruby_on_rails({ ctx })),
+		li(V_atb_sinatrarb({ ctx })),
+		li(V_atb_erector({ ctx })),
+		li(V_atb_backbonejs({ ctx })),
+		li(V_atb_postgres({ ctx })),
+		li(V_atb_lucene({ ctx })),
+		li(V_atb_engine_yard({ ctx })))
+}/>
 
 ## Pivotal Labs
 
 Agile engineer with Web2.0 consulting firm & startup incubator from 2005-2009. Pivotal Labs was acquired by EMC &
 became VM Ware Tunzu after I left. At Pivotal, I worked with > 20 startup companies, bootstrapping their product
-development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries including:
-<ul>
-	<li><Atb_rspec/></li>
-	<li><Atb_rr/></li>
-	<li><Atb_erector/></li>
-	<li><Atb_unison/></li>
-	<li><Atb_cacheable_flash/></li>
-</ul>
+development, engineer process, & mentoring developers. While at Pivotal Labs I worked on open source libraries
+including:
+<Van dom={
+	ul(
+		li(V_atb_rspec({ ctx })),
+		li(V_atb_rr({ ctx })),
+		li(V_atb_erector({ ctx })),
+		li(V_atb_unison({ ctx })),
+		li(V_atb_cacheable_flash({ ctx })))
+}/>
 <p>
-	{[
-		`I spoke at the `,
-		<Atb innerText="2008 Rails Conf" href="https://www.oreilly.com/pub/pr/1966"/>,
-		`.`
-	]}
+	<Van dom={
+		V_fragment({ ctx },
+			`I spoke at the `,
+			V_atb({ ctx, innerText: '2008 Rails Conf', href: 'https://www.oreilly.com/pub/pr/1966' }),
+			`.`)
+	}/>
 </p>
 Stack:
-<ul>
-	<li><Atb_ruby_on_rails/></li>
-	<li><Atb_sinatrarb/></li>
-	<li><Atb_erector/></li>
-	<li><Atb_backbonejs/></li>
-	<li><Atb_jquery/></li>
-	<li><Atb_postgres/></li>
-	<li><Atb_lucene/></li>
-	<li><Atb_aws/></li>
-	<li><Atb_heroku/></li>
-	<li><Atb_engine_yard/></li>
-</ul>
+<Van dom={
+	ul(
+		li(V_atb_ruby_on_rails({ ctx })),
+		li(V_atb_sinatrarb({ ctx })),
+		li(V_atb_erector({ ctx })),
+		li(V_atb_backbonejs({ ctx })),
+		li(V_atb_jquery({ ctx })),
+		li(V_atb_postgres({ ctx })),
+		li(V_atb_lucene({ ctx })),
+		li(V_atb_aws({ ctx })),
+		li(V_atb_heroku({ ctx })),
+		li(V_atb_engine_yard({ ctx })))
+}/>

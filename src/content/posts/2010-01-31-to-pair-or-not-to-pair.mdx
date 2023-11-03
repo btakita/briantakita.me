@@ -11,16 +11,18 @@ description:
   badly on pair programming. We still do some pair programming. However, our current circumstances steered us away
   from pair programming being our primary development practice.
 ---
-import { Atb, Post_top_note } from '@btakita/ui--server--blog'
-import { Comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
+import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
+import { V_comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
+import Van from '../../components/Van.astro'
 
-<Post_top_note innerHTML={[
-	`Originally posted on `,
-	Atb({
-		innerText: 'blog.honk.com',
-		href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/'
-	}).t
-].join('')}/>
+<Van dom={
+	V_post_top_note(props,
+		`Originally posted on `,
+		V_atb({ ctx: props.ctx,
+			innerText: 'blog.honk.com',
+			href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/'
+		}))
+}/>
 
 Here at Honk, we have been transitioning away from pair programming. I do not think that this necessarily reflects
 badly on pair programming. We still do some pair programming. However, our current circumstances steered us away
@@ -66,4 +68,4 @@ programming may be the best option, given different circumstances.
 
 Comments *(copied from original post)*:
 
-<Comments_to_pair_or_not_to_pair/>
+<Van dom={V_comments_to_pair_or_not_to_pair(props)}/>

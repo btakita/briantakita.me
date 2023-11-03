@@ -3,47 +3,50 @@ layout: ../../layouts/MarkdownLayout.astro
 title: "Open Source"
 active: open-source
 ---
-import { Atb, Footnote } from '@btakita/ui--server--blog'
+import { blog__ctx__new } from '@btakita/domain--all--blog'
+import { V_atb, V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
 import {
-	Atb_ado_net,
-	Atb_astrojs,
-	Atb_backbone_signal,
-	Atb_backbonejs,
-	Atb_c_sharp,
-	Atb_ccrcorp,
 	Atb_ctx_core,
-	Atb_desertrb,
-	Atb_generic_query_analyzer,
-	Atb_honk,
-	Atb_jasmine_flow,
-	Atb_jasminejs,
-	Atb_jellyrb,
-	Atb_jquery,
-	Atb_msaccess,
-	Atb_msexcel,
-	Atb_nanostores,
-	Atb_pivotal_labs,
-	Atb_poloniumrb,
-	Atb_poof,
-	Atb_rr,
-	Atb_rspec,
-	Atb_ruby_on_rails,
-	Atb_rundavoo,
-	Atb_screw_unit,
-	Atb_smarty,
-	Atb_solidjs,
-	Atb_svelte_stores,
-	Atb_sveltejs,
-	Atb_unison,
-	Atb_winforms
+	V_atb_ado_net,
+	V_atb_apache2_license,
+	V_atb_astrojs,
+	V_atb_backbone_signal,
+	V_atb_backbonejs,
+	V_atb_c_sharp,
+	V_atb_ccrcorp,
+	V_atb_desertrb,
+	V_atb_generic_query_analyzer,
+	V_atb_honk,
+	V_atb_jasmine_flow,
+	V_atb_jasminejs,
+	V_atb_jellyrb,
+	V_atb_jquery,
+	V_atb_msaccess,
+	V_atb_msexcel,
+	V_atb_naming_convention,
+	V_atb_nanostores,
+	V_atb_pivotal_labs,
+	V_atb_poloniumrb,
+	V_atb_poof,
+	V_atb_rr,
+	V_atb_rspec,
+	V_atb_ruby_on_rails,
+	V_atb_rundavoo,
+	V_atb_screw_unit,
+	V_atb_smarty,
+	V_atb_solidjs,
+	V_atb_svelte_stores,
+	V_atb_sveltejs,
+	V_atb_unison,
+	V_atb_winforms
 } from '@btakita/ui--server--briantakita'
-import { ctx_ } from '@ctx-core/object'
-export const ctx = ctx_()
+import Van from '../../components/Van.astro'
+export const ctx = blog__ctx__new()
 
 <p>
 	{[
 		`I work on open source projects, licensed with the `,
-		<Atb innerText="Apache 2 license" href="https://www.apache.org/licenses/LICENSE-2.0.html"/>,
+		<Van dom={V_atb_apache2_license({ ctx })}/>,
 		`. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more
 		open source components & apps in the near future. Here are some notable projects:`
 	]}
@@ -57,12 +60,13 @@ export const ctx = ctx_()
 	{[
 		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
 		begin an 2016 & continues today`,
-		<Footnote id="ctx-core--catch-all" ctx={ctx}>
-			ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core. The
-			functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to be more
-			widely used. I have used ctx-core to handle transitions between other component & state management libraries as they
-			emerge & are updated.
-		</Footnote>,
+		<Van dom={
+			V_footnote({ ctx, id: 'ctx-core--catch-all' },
+				`ctx-core has been a bit of a catch-all project to share code between projects under the principles of
+				ctx-core. The functionality of ctx-core is in place but the packages need some reorganization &
+				documentation is needed to be more widely used. I have used ctx-core to handle transitions between other
+				component & state management libraries as they emerge & are updated.`)
+		}/>,
 		`.`
 	]}
 </p>
@@ -88,7 +92,9 @@ there is a maintenance burden of:
 <p>
 	{[
 		`I found that there are usually small libraries & code snippets that can be glued together with a `,
-		<Atb innerText="naming convention" href="/posts/naming-conventions"></Atb>,
+		<Van dom={
+			V_atb_naming_convention({ ctx, innerText: 'naming convention' })
+		}/>,
 		` that utilizes unique, immutable, & composable names. As a result, one could find all usages of an entity or
 		concept by doing a project-wide search. Rename refactorings were more accurate & comprehensive due to the
 		uniqueness of names. Composable naming allows one to understand the context & full description of the entity.`
@@ -111,54 +117,56 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 <p>
 	{[
 		`Currently, I use ctx-core along with `,
-		<Atb_nanostores/>,
-		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores is also a general purpose library `,
-		` any component library is supported. In my work, I favor `,
-		<Atb_solidjs/>,
+		<Van dom={V_atb_nanostores({ ctx })}/>,
+		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores
+		is also a general purpose library any component library is supported. In my work, I favor `,
+		<Van dom={V_atb_solidjs({ ctx })}/>,
 		` to render components on the server & browser. ctx-core also supports `,
-		<Atb_sveltejs/>,
+		<Van dom={V_atb_sveltejs({ ctx })}/>,
 		` with `,
-		<Atb_svelte_stores/>,
+		<Van dom={V_atb_svelte_stores({ ctx })}/>,
 		` to render components & manage reactive state on the server & browser.`
 	]}
 </p>
 
 <h2>
-	<Atb_nanostores/>
+	<Van dom={V_atb_nanostores({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`I learned about Nano Stores via `,
-		<Atb_astrojs/>,
+		<Van dom={V_atb_astrojs({ ctx })}/>,
 		`. Since I was already using `,
-		<Atb_svelte_stores/>,
+		<Van dom={V_atb_svelte_stores({ ctx })}/>,
 		`, Nano Stores was a natural replacement to support global reactive state while supporting multiple component
 		libraries, such as `,
-		<Atb_solidjs/>,
+		<Van dom={V_atb_solidjs({ ctx })}/>,
 		`. I contributed a fix`,
-		<Footnote id="nanostores-breadth-first-queue" ctx={ctx} innerHTML={
-			// avoid astro rendering to fix async render order issue
-			Atb({
-				innerText: 'Nano Stores breadth first queue',
-				href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
-			}).t
+		<Van dom={
+			V_footnote({ ctx, id: 'nanostores-breadth-first-queue' },
+				V_atb({
+					ctx, innerText: 'Nano Stores breadth first queue',
+					href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
+				}))
 		}/>,
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I
 		previously contributed to svelte stores`,
-		<Footnote id="nanostores-computed-async" ctx={ctx} innerHTML={
-			Atb({
-					innerText: 'Svelte Cyclic breadth first queue',
+		<Van dom={
+			V_footnote({ ctx, id: 'nanostores-computed-async' },
+				V_atb({
+					ctx, innerText: 'Svelte Cyclic breadth first queue',
 					href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
-			}).t
+				}))
 		}/>,
 		`. I also added soon to be released async support to `,
 		<code>computed</code>,
-		<Footnote id="nanostores-computed-async" ctx={ctx} innerHTML={
-			Atb({
-					innerText: 'Nano Stores async computed',
+		<Van dom={
+			V_footnote({ ctx, id: 'nanostores-computed-async' },
+				V_atb({
+					ctx, innerText: 'Nano Stores async computed',
 					href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
-			}).t
+				}))
 		}/>,
 		` & am working on adding autosubsciptions to `,
 		<code>computed</code>,
@@ -167,46 +175,46 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 </p>
 
 <h2>
-	<Atb_backbone_signal/>
+	<Van dom={V_atb_backbone_signal({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`I started using global state management with `,
-		<Atb_backbonejs/>,
+		<Van dom={V_atb_backbonejs({ ctx })}/>,
 		` while Lead Developer at `,
-		<Atb_honk/>,
+		<Van dom={V_atb_honk({ ctx })}/>,
 		`. I `,
 		<a href="/posts/backbone-signal-practical-reactive-programming-javascript">
 			created backbone-signal
 		</a>,
 		` to use global state management with Backbone.js across different projects, while working with `,
-		<Atb_rundavoo/>,
+		<Van dom={V_atb_rundavoo({ ctx })}/>,
 		`.`,
 	]}
 </p>
 
 <h2>
-	<Atb_jasmine_flow/>
+	<Van dom={V_atb_jasmine_flow({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`While at `,
-		<Atb_rundavoo/>,
+		<Van dom={V_atb_rundavoo({ ctx })}/>,
 		` I `,
 		<a href="/posts/jasmine-flow-fast-and-thourough-testing">created jasmine-flow</a>,
 		` to facilitate linear flow testing...saving effort in maintaining automated tests. This was hard-learned
 		from maintaining various large apps while at `,
-		<Atb_honk/>,
+		<Van dom={V_atb_honk({ ctx })}/>,
 		` & `,
-		<Atb_pivotal_labs/>,
+		<Van dom={V_atb_pivotal_labs({ ctx })}/>,
 		`.`
 	]}
 </p>
 
 <h2>
-	<Atb_rr/>
+	<Van dom={V_atb_rr({ ctx })}/>
 </h2>
 
 <p>
@@ -217,39 +225,45 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		It features a terse api to for a high signal to syntax noise ratio for read & write friendly automated testing.
 		I used global state management to manage complex data interactions. I stopped development when I moved to full-stack
 		Javascript development. Maintenance of this project was picked up by `,
-		<Atb innerText="Sutou Kouhei" href="https://github.com/kou"/>,
+		<Van dom={V_atb({ ctx, innerText: 'Sutou Kouhei', href: 'https://github.com/kou' })}/>,
 		` in 2015.`
 	]}
 </p>
 
 <h2>
-	<Atb_rspec/>
+	<Van dom={V_atb_rspec({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`I was an early core maintainer on the rspec team. Rspec is the first DSL (Domain Specific Language)
 		implementation of `,
-		<Atb innerText="BDD (Behavioral Driven Development)" href="https://dannorth.net/introducing-bdd/"/>,
+		<Van dom={V_atb({
+			ctx,
+			innerText: 'BDD (Behavioral Driven Development)',
+			href: 'https://dannorth.net/introducing-bdd/'
+		})}/>,
 		`. Key contributions include the first known implementation of nested `,
 		<code>describe</code>,
 		` & `,
 		<code>context</code>,
 		` statements`,
-		<Footnote id="rspec-nested-describes" ctx={ctx} innerHTML={[
-			`Rspec: Added Nested Describes: Implemented in ` +
-			// avoid astro rendering to fix async render order issue
-      Atb({
-          innerText: 'two',
-          href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-      }).t,
-			' ',
-			Atb({
+		<Van dom={
+			V_footnote({ ctx, id: 'rspec-nested-describes' },
+				`Rspec: Added Nested Describes: Implemented in `,
+				V_atb({
+					ctx,
+					innerText: 'two',
+					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
+				}),
+				` `,
+				V_atb({
+					ctx,
 					innerText: 'commits',
 					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-			}).t,
-			'.'
-		].join('')}/>,
+				}),
+				`.`)
+		}/>,
 		`. The concept of nested describes was controversial at that time as it was thought it would add to the complexity &
 		inhibit readability of the specs. However, nesting `,
 		<code>describe</code>,
@@ -260,15 +274,21 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` & `,
 		<code>afterEach</code>,
 		`. I championed the idea & delivered the implementation. I also integrated Rspec with `,
-		<Atb innerText="Test::Unit" href="https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html"/>,
+		<Van dom={
+			V_atb({
+				ctx,
+				innerText: 'Test::Unit',
+				href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html'
+			})
+		}/>,
 		`, worked on the initial mock implementation, & worked on the `,
-		<Atb_ruby_on_rails/>,
+		<Van dom={V_atb_ruby_on_rails({ ctx })}/>,
 		` integration.`
 	]}
 </p>
 
 <h2>
-	<Atb_desertrb/>
+	<Van dom={V_atb_desertrb({ ctx })}/>
 </h2>
 
 Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and
@@ -281,15 +301,15 @@ Classes are automatically mixed in with your own or other plugins’ classes. Th
 composable components.
 
 <h2>
-	<Atb_jellyrb/>
+	<Van dom={V_atb_jellyrb({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`Jelly is an unobtrusive Javascript framework for `,
-		<Atb_jquery/>,
+		<Van dom={V_atb_jquery({ ctx })}/>,
 		` and `,
-		<Atb_ruby_on_rails/>,
+		<Van dom={V_atb_ruby_on_rails({ ctx })}/>,
 		`. It provides a set of conventions and tools that help you organize your AJAX and client-side code, while
 		keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery
 		events.`
@@ -298,15 +318,15 @@ composable components.
 <p>
 	{[
 		`Jelly encourages and enables unit testing your Javascript code. Using a Javascript testing framework such as `,
-		<Atb_jasminejs/>,
+		<Van dom={V_atb_jasminejs({ ctx })}/>,
 		` or `,
-		<Atb_screw_unit/>,
+		<Van dom={V_atb_screw_unit({ ctx })}/>,
 		`, Jelly allows you to test AJAX and client-side events independently from your Rails app.`
 	]}
 </p>
 
 <h2>
-	<Atb_poloniumrb/>
+	<Van dom={V_atb_poloniumrb({ ctx })}/>
 </h2>
 
 <p>
@@ -318,13 +338,13 @@ composable components.
 </p>
 
 <h2>
-	<Atb_unison/>
+	<Van dom={V_atb_unison({ ctx })}/>
 </h2>
 
 Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.
 
 <h2>
-	<Atb_screw_unit/>
+	<Van dom={V_atb_screw_unit({ ctx })}/>
 </h2>
 
 Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to
@@ -335,38 +355,42 @@ provide:
 - and brief, extensible source-code.
 
 <h2>
-	<Atb_generic_query_analyzer/>
+	<Van dom={V_atb_generic_query_analyzer({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`A query analyzer using `,
-		<Atb_ado_net/>,
+		<Van dom={V_atb_ado_net({ ctx })}/>,
 		`. I built this tool to run SQL queries on the `,
-		<Atb_msaccess/>,
+		<Van dom={V_atb_msaccess({ ctx })}/>,
 		` CRM database & `,
-		<Atb_msexcel/>,
+		<Van dom={V_atb_msexcel({ ctx })}/>,
 		` @ `,
-		<Atb_ccrcorp/>,
+		<Van dom={V_atb_ccrcorp({ ctx })}/>,
 		`. Written with `,
-		<Atb_c_sharp/>,
+		<Van dom={V_atb_c_sharp({ ctx })}/>,
 		`, `,
-		<Atb_ado_net/>,
+		<Van dom={V_atb_ado_net({ ctx })}/>,
 		`, `,
-		<Atb_winforms/>,
+		<Van dom={V_atb_winforms({ ctx })}/>,
 		`.`
 	]}
 </p>
 
 <h2>
-	<Atb_poof/>
+	<Van dom={V_atb_poof({ ctx })}/>
 </h2>
 
 <p>
 	{[
 		`The PHP Object Oriented Framework is a framework library to build components in PHP. It was built as an
 		alternative to using the `,
-		<Atb_smarty/>,
+		<Van dom={V_atb_smarty({ ctx })}/>,
 		`. Poof was written to encapsulate html rendering in components.`
 	]}
 </p>
+
+<Van dom={
+	V_footnote_list({ ctx })
+}/>

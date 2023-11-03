@@ -1,10 +1,14 @@
 ---
-import { Main } from '@btakita/ui--server--blog'
+import { H_ } from '@btakita/domain--all--blog'
+import { V_raw } from '@btakita/ui--all--blog'
+import { V_main } from '@btakita/ui--server--blog'
+import type { PlateVan } from 'van-type-delegate'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import Van from '../components/Van.astro'
 import { SITE } from '../config'
 import Layout from './Layout.astro'
-import {server__ctx__new } from '../lib'
+import { server__ctx__new } from '../lib'
 export interface Props {
 	frontmatter:{
 		title:string
@@ -14,14 +18,24 @@ export interface Props {
 }
 const ctx = server__ctx__new(Astro)
 const { title, description, active } = Astro.props.frontmatter
+const H = H_<PlateVan>(ctx)
+const { article } = H
+const html = await Astro.slots.render('default')
 ---
 
 <Layout title={`${title} | ${SITE.title}`}>
 	<Header ctx={ctx} active={active}/>
-	<Main class="prose" ctx={ctx} title={title} description={description}>
-		<article id={active} class="mb-28 max-w-3xl prose-img:border-0">
-			<slot/>
-		</article>
-	</Main>
+	<Van dom={
+		V_main({
+				ctx,
+				class: 'prose',
+				title,
+				description
+			},
+			article({
+				id: active,
+				class: 'mb-28 max-w-3xl prose-img:border-0'
+			}, V_raw<PlateVan>({ ctx, html })))
+	}/>
 	<Footer ctx={ctx}/>
 </Layout>
