@@ -1,9 +1,13 @@
 ---
-import { type Post, post__slug__new } from '@btakita/domain--all--blog'
-import { sorted__posts__new } from '@btakita/domain--server--blog'
-import { Card } from '@btakita/ui--all--blog'
-import { Hr, LinkButton, Main, Socials, V_socials } from '@btakita/ui--server--blog'
-import { Atb_uop, Atb_uop_engineering, Atb_uop_engineering_physics } from '@btakita/ui--server--briantakita'
+import { H_, type Post, post__slug__new, S_ } from '@btakita/domain--all--blog'
+import { site__home__page__post_count_, sorted__posts__new } from '@btakita/domain--server--blog'
+import { V_card } from '@btakita/ui--all--blog'
+import { V_hr, V_link_button, V_main, V_socials } from '@btakita/ui--server--blog'
+import {
+	V_atb_uop,
+	V_atb_uop_engineering,
+	V_atb_uop_engineering_physics
+} from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -15,98 +19,78 @@ const ctx = server__ctx__new(Astro)
 const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const featured__posts = posts.filter(({ data })=>data.featured)
 const social__count = SOCIALS.filter(social=>social.active).length
+const H = H_(ctx)
+const S = S_(ctx)
 ---
 
 <!doctype html>
 <Layout>
 	<Header ctx={ctx}/>
-	<Main ctx={ctx}>
-		<section id="hero">
-			<h1 class="mr-2">Brian Takita</h1>
-			<a
-				target="_blank"
-				href="/rss.xml"
-				class="rss-link"
-				aria-label="rss feed"
-				title="RSS Feed"
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" class="rss-icon">
-					<path
-						d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-					></path>
-					<path
-						d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-					></path>
-					<circle cx="6" cy="18" r="2"></circle>
-				</svg>
-			</a>
-			<p>
-				Full stack developer with over 20 years experience. Emphasizes efficient product development, consistent domain
-				language, flat architectures, & code reuse. Graduated with a
-				<Atb_uop_engineering innerText="Bachelor of Science"/>
-				in
-				<Atb_uop_engineering_physics innerText="Engineering Physics"/>
-				from
-				<Atb_uop/>.
-			</p>
-			{
-				// only display if at least one social link is enabled
-				social__count > 0 && (
-					<div class="social-wrapper">
-						<div class="social-links">Social Links:</div>
-						<Van dom={V_socials({ ctx })}/>
-					</div>
-				)
-			}
-		</section>
-		<Hr/>
-		{
-			featured__posts.length > 0 && (
-				<>
-				<section id="featured">
-					<h2>Featured</h2>
-					<ul>
-						{featured__posts.map(post=>(
-							<Card
-								href={`/posts/${post__slug__new(post)}`}
-								post={post}
-								secHeading={false}
-							/>
-						))}
-					</ul>
-				</section>
-				<Hr/>
-				</>
-			)
-		}
-		<section id="recent-posts">
-			<h2>Recent Posts</h2>
-			<ul>
-				{
-					posts
+	<Van dom={
+		V_main({ ctx },
+			H.section({ id: 'hero' },
+				H.h1({ class: 'mr-2' }, `Brian Takita`),
+				H.a({
+						target: '_blank',
+						href: '/rss.xml',
+						class: 'rss-link',
+						'aria-label': 'rss feed',
+						title: 'RSS Feed',
+					},
+					S.svg({ xmlns: 'http://www.w3.org/2000/svg', class: 'rss-icon' },
+						S.path({ d: 'M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z' }),
+						S.path({ d: 'M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z' }),
+						S.circle({ cx: 6, cy: 18, r: 2 }))),
+				H.p(
+					`Full stack developer with over 20 years experience. Emphasizes efficient product development,
+					consistent domain language, flat architectures, & code reuse. Graduated with a`,
+					V_atb_uop_engineering({ ctx }),
+					` in `,
+					V_atb_uop_engineering_physics({ ctx }),
+					` from `,
+					V_atb_uop({ ctx }),
+					`.`
+				),
+				social__count > 0 ?
+					H.div({ class: 'social-wrapper' },
+						H.div({ class: 'social-links' }),
+						V_socials({ ctx }))
+					: undefined,
+				V_hr({ ctx }),
+				featured__posts.length > 0
+					? [
+						H.section({ id: 'featured' },
+							H.h2(`Featured`),
+							H.ul(featured__posts.map(post=>
+								V_card({
+									ctx,
+									href: `/posts/${post__slug__new(post)}`,
+									post,
+									secHeading: false
+								})
+							)))
+					] : undefined,
+				V_hr({ ctx }),
+				H.section({ id: 'recent-posts' },
+					H.h2(`Recent Posts`),
+					H.ul(
+						posts
 						.filter(({ data })=>!data.featured)
+						.slice(0, site__home__page__post_count_(ctx))
 						.map((post, index)=>
-							index < 4 && (
-								<Card
-									href={`/posts/${post__slug__new(post)}`}
-									post={post}
-									secHeading={false}
-								/>))
-				}
-			</ul>
-			<div class="all-posts-btn-wrapper">
-				<LinkButton href="/posts">
-					All Posts
-					<svg xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-						></path>
-					</svg>
-				</LinkButton>
-			</div>
-		</section>
-	</Main>
+							V_card({
+								ctx,
+								href: `/posts/${post__slug__new(post)}`,
+								post,
+								secHeading: false
+							}))),
+					H.div({ class: 'all-posts-btn-wrapper' },
+						V_link_button({ ctx, href: '/posts' },
+							`All Posts`,
+							S.svg({ xmlns: 'http://www.w3.org/2000/svg' },
+								S.path(
+									{ d: 'm11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' })))))))}
+	/>
 	<Footer ctx={ctx}/>
 </Layout>
 

@@ -8,7 +8,8 @@ export const SITE:Site = {
 	title: 'Brian Takita',
 	og_image: '/assets/images/briantakita-og.jpg',
 	light_and_dark_mode: true,
-	post_per_page: 10,
+	page__post_count: 10,
+	home__page__post_count: 4,
 }
 export const LOGO_IMAGE:LogoImage = {
 	enable: false,

@@ -22,8 +22,8 @@ const page_num =
 	slug && !isNaN(Number(slug)) && page_numbers.includes(Number(slug))
 		? Number(slug)
 		: 0
-const last_post = page_num * SITE.post_per_page
-const start_post = last_post - SITE.post_per_page
+const last_post = page_num * SITE.page__post_count
+const start_post = last_post - SITE.page__post_count
 const sorted__paginated__posts = sorted__posts.slice(start_post, last_post)
 ---
 

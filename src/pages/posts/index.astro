@@ -15,7 +15,7 @@ const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const sorted__posts = sorted__posts__new(posts)
 const page_count = page_number_a__new(ctx, sorted__posts.length).length
 const sorted__paginated__posts =
-	sorted__posts.slice(0, SITE.post_per_page)
+	sorted__posts.slice(0, SITE.page__post_count)
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
