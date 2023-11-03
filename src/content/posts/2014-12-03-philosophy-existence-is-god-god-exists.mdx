@@ -20,12 +20,14 @@ import {
 	V_atb_universal_set
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Philosophies are conceptual models. Conceptual models have a `,
-			V_atb_domain_specific_language(props),
+			V_atb_domain_specific_language({ ctx }),
 			`. If we expand the scope of certain definitions, we have the ability to expand consciousness. If we are able to
 			make more associations between concepts, consciousness expands.`
 		)
@@ -38,9 +40,9 @@ patterns to be reused across different scopes in Existence.
 
 <h1>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`A tool to explore `,
-			V_atb_existence(props))
+			V_atb_existence({ ctx }))
 	}/>
 </h1>
 
@@ -52,10 +54,10 @@ feel justified in defining the words to match the domain of Existence.
 
 <h1>
 	<Van dom={
-		V_fragment(props,
-			V_atb_abstraction(props),
+		V_fragment({ ctx },
+			V_atb_abstraction({ ctx }),
 			`, `,
-			V_atb_scope(props),
+			V_atb_scope({ ctx }),
 			`, Zooming In/Out`)
 	}/>
 </h1>
@@ -69,8 +71,8 @@ world. Abstract thoughts are not in Physical Existence, so an abstract thought d
 
 <h1>
 	<Van dom={
-		V_fragment(props,
-			V_atb_god(props),
+		V_fragment({ ctx },
+			V_atb_god({ ctx }),
 			` Exists`)
 	}/>
 </h1>
@@ -82,14 +84,12 @@ While there has been some critique on Ann Rand’s statement “Existence Exists
 definition of “exists” being scoped to mean “physical existence”.
 <p>
 	<Van dom={
-		<Van dom={
-			V_fragment(props,
-				`The “Existence is God” Philosophy defines existence as “Everything that ‘is’, or more simply, everything”
-				or the `,
-				V_atb_universal_set(props),
-				` of everything. That includes all thoughts ever thought, all possible concepts, including the notion of
+		V_fragment({ ctx },
+			`The “Existence is God” Philosophy defines existence as “Everything that ‘is’, or more simply, everything" or
+				the `,
+			V_atb_universal_set({ ctx }),
+			` of everything. That includes all thoughts ever thought, all possible concepts, including the notion of
 				Existence being everything. Thus Existence Exists. Everything (even fiction) exists. Thus God Exists.`)
-		}/>
 	}/>
 </p>
 

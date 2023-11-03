@@ -12,6 +12,8 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_briantakita_com } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 The wonderful web makes it very easy for someone to publish their thoughts and opinions, good and bad, true and
 false. If you find yourself at the wrong end of a post that shows up in your Google results, the implications can be
@@ -22,20 +24,20 @@ online reputation repair firms charge.
 
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb({ ctx: props.ctx, innerText: 'Brandyourself.com', href: 'http://brandyourself.com' }),
+		V_fragment({ ctx },
+			V_atb({ ctx, innerText: 'Brandyourself.com', href: 'http://brandyourself.com' }),
 			` makes it easy to inexpensively control your SEO destiny. Here is my `,
-			V_atb({ ctx: props.ctx, innerText: 'profile', href: 'http://briantakita.brandyourself.com/' }))
+			V_atb({ ctx, innerText: 'profile', href: 'http://briantakita.brandyourself.com/' }))
 	}/>
 </p>
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Their free plan has a limitation of setting up three links for the free plan, so I bought their "Premium
 			Membership" giving me unlimited links for $9 every 3 months. This should give me an initial bump. Since I just
 			acquired (my now defunct site) `,
-			V_atb_briantakita_com(props),
+			V_atb_briantakita_com({ ctx }),
 			` I can transfer the links to my blog after the 3 months.`
 		)
 	}/>

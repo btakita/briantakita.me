@@ -29,15 +29,17 @@ import {
 	V_atb_vue
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <h1>
-	<Van dom={V_atb_cms(props)}/>
+	<Van dom={V_atb_cms({ ctx })}/>
 </h1>
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
 
 <h2>
-	<Van dom={V_atb_strapi(props)}/>
+	<Van dom={V_atb_strapi({ ctx })}/>
 </h2>
 
 Strapi seems like the best option for the headless CRM. I features:
@@ -47,7 +49,7 @@ Strapi seems like the best option for the headless CRM. I features:
 - a ui to edit content
 
 <h2>
-	<Van dom={V_atb_grapejs(props)}/>
+	<Van dom={V_atb_grapejs({ ctx })}/>
 </h2>
 
 A No Code website builder. It features:
@@ -59,7 +61,7 @@ A No Code website builder. It features:
 - Codemirror editors
 
 <h2>
-	<Van dom={V_atb_codemirror(props)}/>
+	<Van dom={V_atb_codemirror({ ctx })}/>
 </h2>
 
 A Rich Text Editor. It features:
@@ -69,47 +71,47 @@ A Rich Text Editor. It features:
 - modular design
 
 <h2>
-	<Van dom={V_atb_astrojs(props)}/>
+	<Van dom={V_atb_astrojs({ ctx })}/>
 </h2>
 
 A MPA web app library. It features:
 <ul>
 	<li>{[
 		`a `,
-		<Van dom={V_atb_vite(props)}/>,
+		<Van dom={V_atb_vite({ ctx })}/>,
 		` core`
 	]}</li>
 	<li>{[
 		`support for multiple component libraries (`,
-		<Van dom={V_atb_solidjs(props)}/>,
+		<Van dom={V_atb_solidjs({ ctx })}/>,
 		`, `,
-		<Van dom={V_atb_reactjs(props)}/>,
+		<Van dom={V_atb_reactjs({ ctx })}/>,
 		`, `,
-		<Van dom={V_atb_sveltejs(props)}/>,
+		<Van dom={V_atb_sveltejs({ ctx })}/>,
 		`, `,
-		<Van dom={V_atb_vue(props)}/>,
+		<Van dom={V_atb_vue({ ctx })}/>,
 		`)`
 	]}</li>
 </ul>
 - support for multiple component libraries (SolidJS, React, Svelte, Vue)
 
 <h2>
-	<Van dom={V_atb_vercel(props)}/>
+	<Van dom={V_atb_vercel({ ctx })}/>
 </h2>
 <p>
 	{[
 		`A cloud host on `,
-		<Van dom={V_atb_aws(props)}/>
+		<Van dom={V_atb_aws({ ctx })}/>
 	]}
 </p>
 
 <h2>
-	<Van dom={V_atb_flyio(props)}/>
+	<Van dom={V_atb_flyio({ ctx })}/>
 </h2>
 <p>
 	{[
 		`An edge-computing cloud service that runs `,
-		<Van dom={V_atb_docker(props)}/>,
+		<Van dom={V_atb_docker({ ctx })}/>,
 		` images.`
 	]}
 </p>
@@ -120,12 +122,12 @@ A MPA web app library. It features:
 	{[
 		`	I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be
 		saved in Strapi using `,
-		<Van dom={V_atb_sqlite(props)}/>,
+		<Van dom={V_atb_sqlite({ ctx })}/>,
 		`. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a `,
-		<Van dom={V_atb_jamstack(props)}/>,
+		<Van dom={V_atb_jamstack({ ctx })}/>,
 		` on Vercel. I may also just use dynamic api requests to Strapi, using `,
 		<Van dom={
-			V_atb({ ctx: props.ctx, innerText: 'sqlite on Fly.io', href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' })
+			V_atb({ ctx, innerText: 'sqlite on Fly.io', href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' })
 		}/>,
 		`.`
 	]}

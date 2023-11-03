@@ -86,68 +86,70 @@ import {
 	V_atb_yammer
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
-export const { code, li, ul } = H_(props.ctx)
+import { mdx__ctx__new } from '../../lib'
+export const ctx = mdx__ctx__new()
+export const { code, li, ul } = H_(ctx)
 
 <p>
 	<em>This post got long & is a work in progress. I will break it up into smaller posts soon.</em>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in
 			Engineer Physics which included 1 year of paid internships learning about `,
-			V_atb_msoffice(props),
+			V_atb_msoffice({ ctx }),
 			` & `,
-			V_atb_microstation(props),
+			V_atb_microstation({ ctx }),
 			` automation at `,
-			V_atb_caltrans(props),
+			V_atb_caltrans({ ctx }),
 			` & working on the corporate intranet, which included a CRM system with `,
-			V_atb_asp(props),
+			V_atb_asp({ ctx }),
 			` at `,
-			V_atb_flextronics(props),
+			V_atb_flextronics({ ctx }),
 			`. I gained an appreciation of automating work & am still strongly driven to automate.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job
  			freezes, imploding companies everywhere. I picked up any freelance work that I could find`,
-			V_footnote({ ...props, id: 'early-freelance-projects' },
+			V_footnote({ ctx, id: 'early-freelance-projects' },
 				`Some of my favorite projects include a ringtone generator using `,
-				V_atb_php(props),
+				V_atb_php({ ctx }),
 				` & a CRM using using `,
-				V_atb_c_sharp(props),
+				V_atb_c_sharp({ ctx }),
 				` `,
-				V_atb_dot_net(props),
+				V_atb_dot_net({ ctx }),
 				` & `,
-				V_atb_sql_server(props),
+				V_atb_sql_server({ ctx }),
 				`.`
 			),
 			`. I learned resiliency in uncertain times where money was scarce & using my free time to work on the
 			craft; adopting `,
-			V_atb_linux(props),
+			V_atb_linux({ ctx }),
 			` & exploring `,
-			V_atb_literate_programming(props),
+			V_atb_literate_programming({ ctx }),
 			`. Literate programming is an important early influence as it promotes software code embedded in prose &
 			formatted text. I continue my work on tooling to support Literate programming with low-code solutions. I was
 			fascinated with this programming language from Japan called `,
-			V_atb_ruby(props),
+			V_atb_ruby({ ctx }),
 			` & grew even more excited with this cool alpha web framework called `,
-			V_atb_ruby_on_rails(props),
+			V_atb_ruby_on_rails({ ctx }),
 			`.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I got my first full time job at `,
-			V_atb_naspp(props),
+			V_atb_naspp({ ctx }),
 			`. The job consisted of office automation software & maintaining a long-used `,
-			V_atb({ ctx: props.ctx, innerText: 'CRM', href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }),
+			V_atb({ ctx, innerText: 'CRM', href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }),
 			` & order system to manage print & web subsciptions along with events & conference attendee management. It was
 			written in as an old & bogged down due to size `,
-			V_atb_msaccess(props),
+			V_atb_msaccess({ ctx }),
 			`app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit
 			of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining
 			the tests.`,)
@@ -159,13 +161,13 @@ export const { code, li, ul } = H_(props.ctx)
 ### Pivotal Labs
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I was excited to get break into startups & responded to an ad in `,
-			V_atb_craigslist(props),
+			V_atb_craigslist({ ctx }),
 			` by Jared Cosulich to collaborate on his startup `,
-			V_atb_communitywalk(props),
+			V_atb_communitywalk({ ctx }),
 			`. I helped with some features & bug fixes. He was working on funding & worked as a resident entrepreneur at `,
-			V_atb_pivotal_labs(props),
+			V_atb_pivotal_labs({ ctx }),
 			`. I was introduced to Rob Mee, Sherry Erskine, the team with a brand new Ruby on Rails practice.`)
 	}/>
 </p>
@@ -173,47 +175,47 @@ I joined Pivotal Labs (it was Pivotal Computing Systems back then). Pivotal Labs
 Wilmes, Nathan Sobo, Nick Kallen, in particular, pushed me to become a better more innovative developer.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I started working with reactive programming since collaborating with Nathan Sobo on a ruby project called `,
-			V_atb_unison(props),
+			V_atb_unison({ ctx }),
 			` at `,
-			V_atb_grockit(props),
+			V_atb_grockit({ ctx }),
 			`. `,
-			V_atb({ ctx: props.ctx, innerText: 'Reactive', href: 'https://en.wikipedia.org/wiki/Reactive_programming' }),
+			V_atb({ ctx, innerText: 'Reactive', href: 'https://en.wikipedia.org/wiki/Reactive_programming' }),
 			` `,
-			V_atb({ ctx: props.ctx, innerText: 'state management', href: 'https://en.wikipedia.org/wiki/State_management' }),
+			V_atb({ ctx, innerText: 'state management', href: 'https://en.wikipedia.org/wiki/State_management' }),
 			` clicked for me, as the paradigm allows state to be composed of functions with reactive inputs & a single output.`
 		)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I was a core contributor to the Behavior Driven Development library `,
-			V_atb_rspec(props),
+			V_atb_rspec({ ctx }),
 			` & championed/developed the first (that I know of) implementation of nested `,
 			<code>describe</code>,
 			` statements`,
-			V_footnote({ ...props, id: 'nested-describe-statements' },
+			V_footnote({ ctx, id: 'nested-describe-statements' },
 				`This pattern is still used in some testing libraries today. It was a practical solution paired along with
 				describing nested context along with `,
 				code('beforeEach'),
 				` & `,
 				code('afterEach'),
 				`. Given my inclination to flatten architecture, helper functions, the development of `,
-				V_atb({ ctx: props.ctx, innerText: 'Tag Vectors', href: '/posts/tag-vector-0-introduction' }),
+				V_atb({ ctx, innerText: 'Tag Vectors', href: '/posts/tag-vector-0-introduction' }),
 				`, I now prefer to keep the test structure flat.`),
 			`. I also worked on various open source projects focused on terse apis & Domain Driven Design`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I worked with creating composable plugins while working on `,
-			V_atb_desertrb(props),
+			V_atb_desertrb({ ctx }),
 			`, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to
 			coherently managing multiple libraries in a single domain; some of these led to `,
-			V_atb_monorepo({ ...props, innerText: 'monorepo' }),
+			V_atb_monorepo({ ctx, innerText: 'monorepo' }),
 			` patterns that I use today.`)
 	}/>
 </p>
@@ -223,9 +225,9 @@ was well respected, had some great friendships. After 4 years with Pivotal, I wa
 maintain a code base for the long run. I wanted to go deeper with maintaining single codebase to grow in my practice.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`My final project @ Pivotal was with `,
-			V_atb_honk(props),
+			V_atb_honk({ ctx }),
 			`. I liked working with the founders, Tom Taira, Stephanie Lacrosse, Bruce Krysiak. It was a smooth transition
 			to be the Lead Product Developer on the product.`)
 	}/>
@@ -237,24 +239,24 @@ Honk was an automotive social information & sales startup. Honk built in social 
 vehicle information, preference matching to autos tools.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`While working with `,
-			V_atb_backbonejs(props),
+			V_atb_backbonejs({ ctx }),
 			` at Honk, I found that state management was effective in maintaining complex apps.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Tom & Stephanie have a long track record & deep connections in the automotive & automotive web industry. A
 			partnership with `,
-			V_atb_news_corp(props),
+			V_atb_news_corp({ ctx }),
 			`, building auto buying components, even providing an office in the `,
-			V_atb_myspace(props),
+			V_atb_myspace({ ctx }),
 			` building. Honk also created the auto buying portal through a partnership with `,
-			V_atb_wsj(props),
+			V_atb_wsj({ ctx }),
 			` & `,
-			V_atb_usaa(props),
+			V_atb_usaa({ ctx }),
 			`.`)
 	}/>
 </p>
@@ -262,28 +264,28 @@ Work consisted of long hours to push out releases. I enjoyed the work though I w
 life was starting to fray. I sought to work from home & was not permitted to.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Around the time News Corp was going through the sale of My Space among other structural changes to it's
 			Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `,
-			V_atb_truecar(props),
+			V_atb_truecar({ ctx }),
 			`.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Around the time News Corp was going through the sale of My Space among other structural changes to it's
 			Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `,
-			V_atb_truecar(props),
+			V_atb_truecar({ ctx }),
 			`. The stagnancy, grind of long hours, releases led me to look elsewhere for work. I got a job offer to work
 			with `,
-			V_atb_yammer(props),
+			V_atb_yammer({ ctx }),
 			` led by Davis Sacks. I decided to stay with Honk, feeling sense of loyalty to stay onboard with the
 			acquisition to TrueCar. I told David Sacks I will not be signing the offer; he told me "you are making a
 			mistake". Given the early usage of node.js, `,
-			V_atb_cassandra(props),
+			V_atb_cassandra({ ctx }),
 			`, the eventual acquisition by `,
-			V_atb_microsoft(props),
+			V_atb_microsoft({ ctx }),
 			`, he is correct from the perspective of achieving business success.`)
 	}/>
 </p>
@@ -304,14 +306,14 @@ least I was in LA.
 ### Milyoni
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`My first independent contract began with the then "social entertainment" startup `,
-			V_atb_milyoni(props),
+			V_atb_milyoni({ ctx }),
 			` (pronounced million-eye) located in Pleasanton, CA. Milyoni had a Rails app supporting Video on Demand & Live
 			Online Events with time-coded chat & components synchronized with the Video on Demand. Live events had real-time
 			chat & components. Ruby, being a relatively slow language, did not scale to support large online events. In
 			light of the performance issues, I developed a chat & component server built in node.js & `,
-			V_atb_redis(props),
+			V_atb_redis({ ctx }),
 			`, which handled the traffic well. When I began the project, we made an agreement with one of the founders that I
 			would be working remotely in LA, where I lived. I agreed to move up to the Bay Area to help build the young team
 			along with my old employer, Pivotal Labs. This lasted about a year. I had personal matters to take care of back in
@@ -322,15 +324,15 @@ least I was in LA.
 ### Rundavoo
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I then joined `,
-			V_atb_rundavoo(props),
+			V_atb_rundavoo({ ctx }),
 			` & created `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'backbone-signal',
 				href: '/posts/backbone-signal-practical-reactive-programming-javascript'}),
 			` as a library for reactive state management, which I used with `,
-			V_atb_riotjs(props),
+			V_atb_riotjs({ ctx }),
 			` to render the front-end. I joined the company fairly late, sadly it was having funding issues. I stayed
 			onboard as everyone else left hoping to help rescue the company with a lean staff.  Sadly, Rundavoo ended up
 			folding & I was owed a sizable outstanding balance.`)
@@ -338,42 +340,42 @@ least I was in LA.
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this
 			journey, my `,
-			V_atb_worldview({ ...props, innerText: 'worldview' }),
+			V_atb_worldview({ ctx, innerText: 'worldview' }),
 			` expanded with experimenting with the `,
-			V_atb_ontology({ ...props, innerText: 'ontological' }),
+			V_atb_ontology({ ctx, innerText: 'ontological' }),
 			` expression of a `,
-			V_atb_philosophy(props),
+			V_atb_philosophy({ ctx }),
 			`. During this exploration, I explored how word `,
-			V_atb_definition({ ...props, innerText: 'definitions' }),
+			V_atb_definition({ ctx, innerText: 'definitions' }),
 			` can be `,
-			V_atb_scope({ ...props, innerText: 'scoped' }),
+			V_atb_scope({ ctx, innerText: 'scoped' }),
 			` with `,
-			V_atb_context({ ...props, innerText: 'context' }),
-			V_footnote({ ...props, id: 'context-of-entity' },
+			V_atb_context({ ctx, innerText: 'context' }),
+			V_footnote({ ctx, id: 'context-of-entity' },
 				`Taking into account that what is spoken & what is heard is defined with the context of the `,
-				V_atb_entity({ ...props, innerText: 'entity' }),
+				V_atb_entity({ ctx, innerText: 'entity' }),
 				` speaking or hearing.`
 			),
 			`. I learned about `,
-			V_atb_existence(props),
+			V_atb_existence({ ctx }),
 			` and in a wierd way, `,
-			V_atb({ ctx: props.ctx, innerText: 'Everything Exists' href: '/posts/everything-exists' }),
+			V_atb({ ctx, innerText: 'Everything Exists', href: '/posts/everything-exists' }),
 			`.`)
 	}/>
 </p>
 <h2>
-	<Van dom={V_atb_neo(props)}/>
+	<Van dom={V_atb_neo({ ctx })}/>
 </h2>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I then continued consulting & a few years later I consulted with the previous incarnation of `,
-			V_atb_neo(props),
+			V_atb_neo({ ctx }),
 			`. The client was `,
-			V_atb_tenfore_holdings(props),
+			V_atb_tenfore_holdings({ ctx }),
 			`. The project was a document editor with inline commands that integrated with the Tenfore Salesforce database.
 			Neo shut down operations as it was going through an acquisition.`)
 	}/>
@@ -382,35 +384,35 @@ least I was in LA.
 ### Censible
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I then consulted for `,
-			V_atb_censible(props),
+			V_atb_censible({ ctx }),
 			`, which pivoted from a `,
-			V_atb_esg(props),
+			V_atb_esg({ ctx }),
 			` Investment platform targeting millennials to apps presenting company ESG information, a stock screener, a
 			portfolio rebalance tool. With the rapid pivoting of products, I created the `,
-			V_atb_ctx_core(props),
+			V_atb_ctx_core({ ctx }),
 			` project to expand on reactive state management with `,
-			V_atb_domain_driven_design(props),
+			V_atb_domain_driven_design({ ctx }),
 			`. I leaned on my explorations with Ontology create the tag vector Convention`,
-			V_footnote({ ...props, id: 'tag-vector-development-continues' },
+			V_footnote({ ctx, id: 'tag-vector-development-continues' },
 				`Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
 				This design has been verified with real-world development since. I will write a formal definition & history
 				soon.`
 			),
 			` to enable a simple, flat architecture. We also switched from riotjs`,
 			code(`-->`),
-			V_atb_sveltejs(props),
+			V_atb_sveltejs({ ctx }),
 			`.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I appreciated the design of `,
-			V_atb_svelte_stores(props),
+			V_atb_svelte_stores({ ctx }),
 			` & for reactive state management. With the introduction of `,
-			V_atb_sapper(props),
+			V_atb_sapper({ ctx }),
 			` the same component code could be run on the browser & the server. Along with ctx-core, svelte stores could
 			also be run on the browser & server. The server side was tricky with svelte stores alone, as requests would be
 			handled concurrently. To solve the issue, a `,
@@ -426,16 +428,16 @@ least I was in LA.
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The Censible project was off & on for a few years. During this time I picked up some other projects including `,
-			V_atb_menu(props),
+			V_atb_menu({ ctx }),
 			` & `,
-			V_atb({ ctx: props.ctx, innerText: 'an app', href: 'https://github.com/btakita/iron-henhouse' }),
+			V_atb({ ctx, innerText: 'an app', href: 'https://github.com/btakita/iron-henhouse' }),
 			` to report voter suppression & info on how to exercise the right to vote for the 2016 Democrat primary election`,
-			V_footnote({ ...props, id: 'suppressthis-org' },
+			V_footnote({ ctx, id: 'suppressthis-org' },
 				`The app was launched as suppressthis.org. It is no longer online.`),
 			`, various other small sites. After Censible, I now collaborate with a related ESG financial advisor `,
-			V_atb_martin_investments(props),
+			V_atb_martin_investments({ ctx }),
 			`.`)
 	}/>
 </p>
@@ -445,11 +447,11 @@ software stack changed:
 	ul(
 		li(
 			`from riotjs with Backbone.js stores on a custom `,
-			V_atb_expressjs(props),
+			V_atb_expressjs({ ctx }),
 			` server`),
 		li(`to sveltejs with svelte stores & sapper`),
-		li(`to `, V_atb_solidjs(props), ` with `, V_atb_nanostores(props), ` & `, V_atb_solid_start(props)),
-		li(`to solidjs with Nano Stores & `, V_atb_astrojs(props)))
+		li(`to `, V_atb_solidjs({ ctx }), ` with `, V_atb_nanostores({ ctx }), ` & `, V_atb_solid_start({ ctx })),
+		li(`to solidjs with Nano Stores & `, V_atb_astrojs({ ctx })))
 }/>
 
 ## Now
@@ -462,24 +464,24 @@ software stack changed:
 ## Why not use React?
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The javascript world in late 2010s & early 2020s had much in it's move away from `,
-			V_atb_jquery(props),
+			V_atb_jquery({ ctx }),
 			` & Backbone.js toward SPA libraries. `,
-			V_atb_reactjs(props),
+			V_atb_reactjs({ ctx }),
 			` became the dominant front-end component rendering library.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb({ ctx: props.ctx,
+		V_fragment({ ctx },
+			V_atb({ ctx,
 				href: 'https://dev.to/this-is-learning/how-react-isn-t-reactive-and-why-you-shouldn-t-care-152m',
 			}, `React is not Reactive`),
 			` by default. There are libraries that can add reactivity to React, like NanoStores & `,
-			V_atb_signals_react(props),
+			V_atb_signals_react({ ctx }),
 			`. React works with the virtual dom where I would rather work with the real DOM. Along with a `,
-			V_atb({ ctx: props.ctx, href: 'https://dev.to/joetex/react-why-so-complicated-3dc7' },
+			V_atb({ ctx, href: 'https://dev.to/joetex/react-why-so-complicated-3dc7' },
 			 'complicated API'),
 			` & a need for many dependencies to extend it's default behavior, I never got into React. I still cannot force
 			myself to use React. It's not a natural fit to my mental model of developing web apps. I have grown to
@@ -488,12 +490,12 @@ software stack changed:
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I prefer small & performant libraries, ideally supporting server-side rendering (SSR), which is why I was
 			interested in riot.js (not SSR), sveltejs, solidjs, vanilla js. `,
-			V_atb_vanjs(props),
+			V_atb_vanjs({ ctx }),
 			` looks a promising vanilla js library which supports SSR`,
-			V_footnote({ ...props, id: 'vanjs-tradeoff' },
+			V_footnote({ ctx, id: 'vanjs-tradeoff' },
 				`VanJS is great for small component trees such as when embedding javascript components. When reactive state
 				changes in VanJS, it re-renders the component by default, allowing custom code to update the existing DOM.
 				For large stateful component trees, a component library with declarative state management (SolidJS, Svelte,
@@ -504,24 +506,24 @@ software stack changed:
 ## Multi Page Apps (MPA)`->`Single Page App (SPA) hybrids`->`Multi Page Apps
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Ruby on Rails is a MPA with progressive enhancement support. It's Javascript integration has been a work in
 			progress throughout the history of Rails. However, it cannot match the browser/server integrated development
 			experience of isomorphic Javascript web frameworks. In the earlier days of Javascript component libraries, the
 			Single Page App use case was emphasized. While there were some attempts at lean isomorphic Multi-page App
 			libraries such as `,
-			V_atb_marko(props),
+			V_atb_marko({ ctx }),
 			`, most of the javascript community focused on front-end Single Page App development, de-emphasizing Full
 			Stack Development. Libraries such as `,
-			V_atb_nextjs(props),
+			V_atb_nextjs({ ctx }),
 			`, `,
-			V_atb_sapper(props),
+			V_atb_sapper({ ctx }),
 			` (superceded by `,
-			V_atb_sveltejs(props),
+			V_atb_sveltejs({ ctx }),
 			`), `,
-			V_atb_solid_start(props),
+			V_atb_solid_start({ ctx }),
 			` added SSR progressive rendering to a SPA client side router. With the advent of libraries such as `,
-			V_atb_astrojs(props),
+			V_atb_astrojs({ ctx }),
 			` isomorphic Javascript MPA development gained prominence. Marko was built almost a decade earlier, but Astro
 			has gained significant popularity. Astro files are server-side rendered only. Astro's integration with many
 			SSR + CSR component libraries makes it practical to have a full stack web app project across multiple libraries.`)
@@ -539,19 +541,19 @@ hydration libraries would be development intensive, opaque, bloated, slow, unrel
 the component tree.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Astrojs provides `,
-			V_atb({ ctx: props.ctx, href: 'https://docs.astro.build/en/guides/client-side-scripts/#client-side-scripts' },
+			V_atb({ ctx, href: 'https://docs.astro.build/en/guides/client-side-scripts/#client-side-scripts' },
 				`client side builds`),
 			`, an independent browser build with the code inside of the `,
 			code(`<script/>`),
 			` tag. The Astrojs team pointed out techniques such as `,
-			V_atb({ ctx: props.ctx, href: 'https://docs.astro.build/en/reference/directives-reference/#definevars' },
+			V_atb({ ctx, href: 'https://docs.astro.build/en/reference/directives-reference/#definevars' },
 				`passing variables`),
 			` into the `,
 			code(`<script/>`),
 			` tags & `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				href: 'https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts'},
 				`hydrating data using Web Components`),
 			`. These tools make it practical to develop targeted custom code that is efficient in payload size & execution,
@@ -563,12 +565,12 @@ the component tree.
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the
 			Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails,
 			we saw Web 2.0 startups & the `,
 			code(`(a)gile->(A)gile`),
-			V_footnote({ ...props, id: 'agile_Agile' },
+			V_footnote({ ctx, id: 'agile_Agile' },
 				code(`agile->Agile`),
 				` lower-case `,
 				code(`a`),
@@ -579,7 +581,7 @@ the component tree.
 				conferences, etc.`
 			),
 			` transition. Emerging web standards made jQuery more or less redundant. I been through two celebrations to end `,
-			V_atb_ie6(props),
+			V_atb_ie6({ ctx }),
 			` @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old browser.
 			Specialized development (front end developer, api developer) took prominence in corporations. Full Stack
 			development was delegated to these departments. Even startups divided their development teams into these roles.`)
@@ -596,26 +598,26 @@ organization's communication structure.
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Of course history often rhymes & some of the same issues that plagued client-server programming in the early
 			1990s which led to web development `,
 			code(`cgi->server markup languages->web frameworks`),
 			`. Large javascript payloads, SEO, chatty apis, caching, hydration, etc. With Astrojs, the trade-off between
 			build tools, `,
-			V_atb({ ctx: props.ctx, href: 'https://cleancommit.io/blog/spa-vs-mpa-which-is-the-king/' },
+			V_atb({ ctx, href: 'https://cleancommit.io/blog/spa-vs-mpa-which-is-the-king/' },
 				`MPAs vs SPAs`),
 			`, `,
-			V_atb({ ctx: props.ctx, href: 'https://jamstack.org/' },
+			V_atb({ ctx, href: 'https://jamstack.org/' },
 				`Jamstack`),
 			`, `,
-			V_atb({...props, href: 'https://dev.to/this-is-learning/understanding-transitional-javascript-apps-27i2'},
+			V_atb({ ctx, href: 'https://dev.to/this-is-learning/understanding-transitional-javascript-apps-27i2'},
 				`Transitional Apps`),
 			` came into discussion. All of these innovations improved the `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				href: 'https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/',
 			}, `Development eXperience (DX)`),
 			`. `,
-			V_atb_vite(props),
+			V_atb_vite({ ctx }),
 			` brought standardized Hot Module Reloading which SPA & Transitional App libraries could use. Astrojs enabled
 			further integration with component libraries & it's own router to support a consistent along different
 			component libraries MPA development.`)

@@ -14,11 +14,13 @@ description:
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <Van dom={
-	V_post_top_note(props,
+	V_post_top_note({ ctx },
 		`Originally posted on `,
-		V_atb({ ctx: props.ctx,
+		V_atb({ ctx,
 			innerText: 'blog.honk.com',
 			href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/'
 		}))
@@ -68,4 +70,4 @@ programming may be the best option, given different circumstances.
 
 Comments *(copied from original post)*:
 
-<Van dom={V_comments_to_pair_or_not_to_pair(props)}/>
+<Van dom={V_comments_to_pair_or_not_to_pair({ ctx })}/>

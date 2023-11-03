@@ -13,13 +13,15 @@ description:
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <Van dom={
-	V_post_top_note(props,
-	V_fragment(props,
+	V_post_top_note({ ctx },
+	V_fragment({ ctx },
 		`Originally posted on `,
 		V_atb({
-			...props,
+			ctx,
 			innerText: 'geekswithblogs.net',
 			href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx'
 		})))

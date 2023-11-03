@@ -19,19 +19,21 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_footnote } from '@btakita/ui--server--blog'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 import Van from '../../components/Van.astro'
-export const { code } = H_(props.ctx)
+import { mdx__ctx__new } from '../../lib'
+export const ctx = mdx__ctx__new()
+export const { code } = H_(ctx)
 
 <TOC_tag_vector/>
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Tag Vector is currently a convention to connect "tags" together with vector arrows, showing the contextual
 			relationship between tags. The tags inference level in relation to each other can be inferred as being up`,
 			code(`↑`),
 			` or down `,
 			code(`↓`),
-			V_footnote({ ...props, id: 'no-up-down-arrow-ligatures' },
+			V_footnote({ ctx, id: 'no-up-down-arrow-ligatures' },
 				`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
 				code(`↑ (0x2191)`),
 				` & `,

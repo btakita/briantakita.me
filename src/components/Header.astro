@@ -56,7 +56,7 @@ function active_class_(check_active:Props['active']) {
 
 <script>
 	import { Button_theme_toggle__onbind } from '@btakita/domain--all--blog'
-	import { browser__ctx__ensure } from '../../../../lib/domain--browser--briantakita2'
+	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
 	import { dom__onbind__register } from '@ctx-core/dom'
 	const ctx = browser__ctx__ensure()
 	dom__onbind__register(ctx, Button_theme_toggle__onbind)

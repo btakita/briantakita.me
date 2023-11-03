@@ -4,7 +4,7 @@ pubDate: 2019-04-03T12:00:00Z
 title: Log 2019-04-03
 slug: log-2019-04-03
 tags:
-	- log
+  - log
   - name convention
   - tag vector
   - holochain
@@ -25,14 +25,16 @@ import {
 	V_atb_sveltejs
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
-export const { li, ul } = H_(props.ctx)
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
+export const { li, ul } = H_(ctx)
 
 # Naming Conventions
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I've been experimenting & making progress with `,
-			V_atb({ ctx: props.ctx, innerText: 'Naming Conventions', href: '/posts/naming-conventions' }),
+			V_atb({ ctx, innerText: 'Naming Conventions', href: '/posts/naming-conventions' }),
 			`. Naming conventions for immutable entities has proven to reduce incidental complexity. I'm working on
 			fleshing out the last details & a whitepaper. Please stay tuned. This practice has helped me remove incidental
 			complexity from my codebases.`
@@ -41,13 +43,13 @@ export const { li, ul } = H_(props.ctx)
 </p>
 
 <h1>
-	<Van dom={V_atb_sveltejs(props)}/>
+	<Van dom={V_atb_sveltejs({ ctx })}/>
 </h1>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I'm a fan of Sveltejs & `,
-			V_atb_sapper(props),
+			V_atb_sapper({ ctx }),
 			`. Svelte provides truly reactive stores & html components. Html components mean it's easy for programmers &
 			non-programmers (e.g. designers) to work with. Svelte is compiled, resulting in a payload that is small, fast,
 			& memory efficient.`
@@ -56,15 +58,15 @@ export const { li, ul } = H_(props.ctx)
 </p>
 
 <h1>
-	<Van dom={V_atb_holochain(props)}/>
+	<Van dom={V_atb_holochain({ ctx })}/>
 </h1>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Lately, I have been turned onto Holochain. Thanks to `,
-			V_atb_eric_yang(props),
+			V_atb_eric_yang({ ctx }),
 			`founder of `,
-			V_atb_flux_social({ ...props, innerText: 'Junto (now Flux Social)' }),
+			V_atb_flux_social({ ctx, innerText: 'Junto (now Flux Social)' }),
 			` for introducing me to this technology.`)
 	}/>
 </p>
@@ -72,9 +74,9 @@ export const { li, ul } = H_(props.ctx)
 I've read through:
 <Van dom={
 	ul(
-		li(V_atb_holochain_whitepaper(props)),
-		li(V_atb_holochain_currency_paper(props)),
-		li(V_atb_holochain_green_paper(props)))
+		li(V_atb_holochain_whitepaper({ ctx })),
+		li(V_atb_holochain_currency_paper({ ctx })),
+		li(V_atb_holochain_green_paper({ ctx })))
 }/>
 
 <p>

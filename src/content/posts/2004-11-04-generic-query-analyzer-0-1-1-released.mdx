@@ -18,10 +18,10 @@ import { Atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
 
 <Van dom={
-	V_post_top_note(props,
-		V_fragment(props,
+	V_post_top_note({ ctx },
+		V_fragment({ ctx },
 			`Originally posted on `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'geekswithblogs.net',
 				href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
 			})))
@@ -35,7 +35,7 @@ Despite its version number, it is a beta release and works well.
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`You can get it on `,
 			<Atb_generic_query_analyzer innerText="Sourceforge"/>,
 			`.`)

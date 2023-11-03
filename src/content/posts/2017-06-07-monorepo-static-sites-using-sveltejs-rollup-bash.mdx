@@ -26,48 +26,50 @@ import {
 	V_atb_wintersmithjs
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
-export const { em } = H_(props.ctx)
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
+export const { em } = H_(ctx)
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`BrianTakita.com `,
 			em('(now briantakita.me)'),
 			` is now built using a technology chain consisting of `,
-			V_atb_sveltejs(props),
+			V_atb_sveltejs({ ctx }),
 			`, `,
-			V_atb_rollupjs(props),
+			V_atb_rollupjs({ ctx }),
 			`, `,
-			V_atb_ctx_core(props),
+			V_atb_ctx_core({ ctx }),
 			`, & good ol' Bash.`
 		)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`You can see the source in the `,
-			V_atb_briantakita_com(props),
+			V_atb_briantakita_com({ ctx }),
 			` repo.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I wanted a static site generator that felt like building a custom app, with a `,
-			V_atb_domain_driven_design(props),
+			V_atb_domain_driven_design({ ctx }),
 			`, approachable custom build scripts, & isomorphic javascript.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`This site was build using existing solutions such as `,
-			V_atb_jeckyllrb(props),
+			V_atb_jeckyllrb({ ctx }),
 			`, `,
-			V_atb_wintersmithjs(props),
+			V_atb_wintersmithjs({ ctx }),
 			`, & `,
-			V_atb_metalsmithjs(props),
+			V_atb_metalsmithjs({ ctx }),
 			`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
 			done my way.`)
 	}/>

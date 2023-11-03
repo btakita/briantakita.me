@@ -10,40 +10,42 @@ tags:
 description:
   Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
   converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
-  Svelte & a a sample web component using Svelte.
+  Svelte & a sample web component using Svelte.
 ---
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_ctx_core, V_atb_metalsmithjs, V_atb_riotjs, V_atb_sveltejs } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
 converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
-Svelte & a a sample web component using Svelte.
+Svelte & a sample web component using Svelte.
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb_sveltejs(props),
+		V_fragment({ ctx },
+			V_atb_sveltejs({ ctx }),
 			` is a build-time isomorphic library that utilizes a transpilation process to build completely self-contained
 			web components.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb_riotjs(props),
+		V_fragment({ ctx },
+			V_atb_riotjs({ ctx }),
 			` is a runtime isomorphic component library.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I recently `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'converted this site',
 				href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}),
 			` to svelte from `,
-			V_atb_metalsmithjs(props),
+			V_atb_metalsmithjs({ ctx }),
 			`, which is a static site generator.`)
 	}/>
 </p>
@@ -54,9 +56,9 @@ of tech&hellip;
 ## Performance & Memory Usage
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Despite beinga young library, svelte `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html'
 			}, 'does quite well'),
 			` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte JS generates
@@ -81,17 +83,17 @@ larger frameworks out there.
 Svelte's api idioms are well thought out. Development flow was coherent natural during the port from Riot.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`For each of my professional clients, I usea monorepo using the `,
-			V_atb_ctx_core(props),
+			V_atb_ctx_core({ ctx }),
 			` toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`You can `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'read more about the features of svelte',
 				href: 'https://svelte.dev/guide'
 			}),

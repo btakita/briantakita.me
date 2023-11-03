@@ -14,7 +14,9 @@ import { H_ } from '@btakita/domain--all--blog'
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
-export const { a, b } = H_(props.ctx)
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
+export const { a, b } = H_(ctx)
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 
 include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which
@@ -22,12 +24,12 @@ includes a large number of edge cases.
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I'm a `,
-			a({ ...props, href: '/posts/automated-black-box-testing' },
+			a({ ctx, href: '/posts/automated-black-box-testing' },
 				'fan of black box'),
 			` testing, because it is decoupled from the implementation. The implication is the `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/'
 			},
 				b('what'),

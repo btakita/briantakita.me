@@ -13,11 +13,13 @@ description:
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_footnote } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <Van dom={
-	V_footnote({ ...props, id: 'encyclopedia-britannica-hero-image' },
+	V_footnote({ ctx, id: 'encyclopedia-britannica-hero-image' },
 		`From `,
-		V_atb({ ctx: props.ctx, href: 'http://www.flickr.com/photos/bostontx/4461314652/' }),
+		V_atb({ ctx, href: 'http://www.flickr.com/photos/bostontx/4461314652/' }),
 		` - Licensed under Creative Commons`)
 }/>
 
@@ -26,7 +28,7 @@ being a masculine version of story (his story). However, history & story can be 
 
 <h2>
 	<Van dom={
-		V_atb({ ctx: props.ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' },
+		V_atb({ ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' },
 			'Story')
 	}/>
 </h2>
@@ -34,9 +36,9 @@ being a masculine version of story (his story). However, history & story can be 
 > Story, a recounting of a sequence of events
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Our `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'culture',
 				href: 'https://github.com/btakita/philosophy/blob/master/src/culture.md'}),
 			` distinguishes a story as being used for entertainment and fiction. Our culture also uses story for an informal
@@ -45,7 +47,7 @@ being a masculine version of story (his story). However, history & story can be 
 </p>
 <h2>
 	<Van dom={
-		V_atb({ ctx: props.ctx, innerText: 'History', href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' })
+		V_atb({ ctx, innerText: 'History', href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' })
 	}/>
 </h2>
 
@@ -58,10 +60,10 @@ The history of human civilization; The history of Mars; The history of the Unive
 The vernacular has expanded the definition of history to include all the time and fiction worlds.
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb({ ctx: props.ctx, innerText: 'Biographies', href: 'http://en.wikipedia.org/wiki/Biography' }),
+		V_fragment({ ctx },
+			V_atb({ ctx, innerText: 'Biographies', href: 'http://en.wikipedia.org/wiki/Biography' }),
 			` & `,
-			V_atb({ ctx: props.ctx, innerText: 'Autobiographies', href: 'http://en.wikipedia.org/wiki/Autobiography' }),
+			V_atb({ ctx, innerText: 'Autobiographies', href: 'http://en.wikipedia.org/wiki/Autobiography' }),
 			` are also considered history.`)
 	}/>
 </p>

@@ -15,6 +15,8 @@ canonical_url: https://tanzu.vmware.com/content/blog/rr-0-6-0-released
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 I’m pleased to announce the 0.6.0 version of RR. The changes include:
 
@@ -105,11 +107,11 @@ RR has a mailing lists at:
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Also, RR’s rubyforge page is at `,
-			V_atb({ ctx: props.ctx, href: 'http://rubyforge.org/projects/double-ruby' }),
+			V_atb({ ctx, href: 'http://rubyforge.org/projects/double-ruby' }),
 			` and of course the github page is at `,
-			V_atb({ ctx: props.ctx, href: 'http://github.com/btakita/rr' }),
+			V_atb({ ctx, href: 'http://github.com/btakita/rr' }),
 			`. Yes, and there is more to come`)
 	}/>
 </p>

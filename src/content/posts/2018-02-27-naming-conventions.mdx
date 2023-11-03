@@ -11,12 +11,14 @@ description: Naming Conventions to encode the meaning & context of abstractions
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Note: The naming convention described in this article `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'has been named',
 				href: '/posts/multi-underscore-tag-naming-convention-analysis'
 			}),
@@ -36,7 +38,7 @@ An Abstraction name encodes the meaning & context of the abstraction. The name c
 together to create a name.
 
 <Van dom={
-	V_atb({ ctx: props.ctx, href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
+	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
 		'Naming Convention (programming) (Wikipedia)')
 }/>
 
@@ -46,7 +48,7 @@ A name & tags in the name also acts identifiers to locate the usages of the abst
 attribute is also known as discoverability.
 
 <Van dom={
-	V_atb({ ctx: props.ctx, href: 'https://en.wikipedia.org/wiki/Discoverability' },
+	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Discoverability' },
 		'Discoverability (Wikipedia)')
 }/>
 
@@ -71,7 +73,7 @@ For reason of unambiguous distinction, it is advantageous to always use the same
 ## Top-down & Bottom-up Design
 
 <Van dom={
-	V_atb({ ctx: props.ctx, href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
+	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
 		'Top-down and bottom-up design (Wikipedia)')
 }/>
 

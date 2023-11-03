@@ -15,27 +15,29 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_atb_ado_net, V_atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <Van dom={
-	V_post_top_note(props,
-		V_fragment(props,
+	V_post_top_note({ ctx },
+		V_fragment({ ctx },
 			`Originally posted on `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'geekswithblogs.net',
 				href: 'https://web.archive.org/web/20130407190313/http://geekswithblogs.net/btakita/archive/2004/11/05/14411.aspx'
 			})))
 }/>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The Generic Query Analyzer is a Database Independent Query Analyzer that uses `,
-			V_atb_ado_net({ ...props, innerText: 'ADO.NET (OLEDB)' }),
+			V_atb_ado_net({ ctx, innerText: 'ADO.NET (OLEDB)' }),
 			` technology. This Query Analyzer is run off the .NET 2.0 platform on Windows.`
 			)
 	}/>
 </p>
 
-<Van dom={V_atb_generic_query_analyzer(props)}/>
+<Van dom={V_atb_generic_query_analyzer({ ctx })}/>
 
 This release…
 

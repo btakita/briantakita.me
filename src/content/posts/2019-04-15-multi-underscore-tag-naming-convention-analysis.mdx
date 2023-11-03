@@ -13,6 +13,8 @@ description: Naming Convention that utilizes underscores to articulate relations
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a
@@ -41,9 +43,9 @@ left) of read words, generates a graph of progressive contextual development.
 This sequence follows the English rules of Grammar for a phrase.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The object is "`,
-			V_atb({ ctx: props.ctx, innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
+			V_atb({ ctx, innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
 			`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`)
 	}/>
 </p>
@@ -53,7 +55,7 @@ The prepositions are:
 	<li>Multi Underscore - implying multiple underscore characters <code>_</code></li>
 	<li>
 		<Van dom={
-			V_atb({ ctx: props.ctx, innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
+			V_atb({ ctx, innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
 		}/>
 		<ul>
 			<li>
@@ -64,7 +66,7 @@ The prepositions are:
 	</li>
 	<li>
 		<Van dom={
-			V_atb({ ctx: props.ctx, innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
+			V_atb({ ctx, innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
 		}/>
 		<ul>
 			<li>The process of giving names to things.</li>

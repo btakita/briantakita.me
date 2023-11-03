@@ -12,13 +12,15 @@ description:
 import { V_fragment } from '@btakita/ui--all--blog'
 import { Atb, V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 # Multi Underscore Tag Naming Convention
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I wrote `,
-			V_atb({ ctx: props.ctx, href: '/posts/multi-underscore-tag-naming-convention-analysis' },
+			V_atb({ ctx, href: '/posts/multi-underscore-tag-naming-convention-analysis' },
 				'Multi Underscore Tag Naming Convention Analysis'),
 			` which describes the Ontology & structure of the naming convention.`
 		)
@@ -26,9 +28,9 @@ import Van from '../../components/Van.astro'
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`TODO: I will latter post how & why the "Multi Underscore Tag Naming Convention" (`,
-			V_atb({ ctx: props.ctx, href: '/posts/tag-vector-0-introduction'},
+			V_atb({ ctx, href: '/posts/tag-vector-0-introduction'},
 				`(Tag Vector: Part 0: Introduction)`),
 			` can assist in creating simpler software that scales with complexity. Also, I will explain how this naming
 			convention makes it easy to find abstractions in a codebase with confidence, across any number of software &

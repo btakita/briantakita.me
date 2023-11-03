@@ -14,6 +14,8 @@ canonical_url: https://tanzu.vmware.com/content/blog/sake-for-gems-downloads-lis
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 I have a few gems on Rubyforge and I want to track how many of them were downloaded. I found Firefox's search tools
 lacking to find my gem rr.
@@ -22,9 +24,9 @@ To fix this issue, I made a sake task, named `gems:downloads:list`, that prints 
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The source is on `,
-			V_atb({ ctx: props.ctx, innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }),
+			V_atb({ ctx, innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }),
 			`.`)
 	}/>
 </p>

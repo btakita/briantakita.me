@@ -11,12 +11,14 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_atb_ccrcorp } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <Van dom={
-	V_post_top_note(props,
+	V_post_top_note({ ctx },
 		`Originally posted on `,
 		V_atb({
-			...props,
+			ctx,
 			innerText: 'geekswithblogs.net',
 			href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx'
 		}))
@@ -24,7 +26,7 @@ import Van from '../../components/Van.astro'
 <p>
 	{[
 		`One of the great things about Whidbey is ClickOnce Deployment. At `,
-		<Van dom={V_atb_ccrcorp(props)}/>,
+		<Van dom={V_atb_ccrcorp({ ctx })}/>,
 		`, I use it to deploy rich client internal applications.`
 	]}
 </p>
@@ -38,9 +40,9 @@ Access adp application to our organization. To do so, I simply...
 	<li>Write a bootstrapper application in the Main method</li>
 	<li>
 		<Van dom={
-			V_fragment(props,
+			V_fragment({ ctx },
 				V_atb({
-					...props,
+					ctx,
 					href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'
 				}, 'Configure'),
 				` the ClickOnce deployment`)

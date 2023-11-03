@@ -24,25 +24,27 @@ import {
 	V_atb_rspec
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
-			V_atb({ ctx: props.ctx, innerText: 'Magic', href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }),
+		V_fragment({ ctx },
+			V_atb({ ctx, innerText: 'Magic', href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }),
 			` exists! Well,if you have listened to me lately, you will hear that `,
-			V_atb({ ctx: props.ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' },
+			V_atb({ ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' },
 				'everything exists (including fiction)'),
 			`. When everything exists, we can recapture the entirety of language from those who impose restrictions on `,
-			V_atb_existence(props),
+			V_atb_existence({ ctx }),
 			`. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a useful concept.`
 		)
 	}/>
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The `,
-			V_atb({ ctx: props.ctx, href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' },
+			V_atb({ ctx, href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' },
 				'Philosophy of Language (Wikipedia)'),
 			` brings concepts together into a system of logic to yield magical & insightful connections in Existence.`
 		)
@@ -60,9 +62,9 @@ technology company & my physics teacher. It wasn't the facts that they taught. I
 seemingly unrelated concepts can be connected, yielding novelty & innovation.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I explored `,
-			V_atb({ ctx: props.ctx, innerText: 'Engineering Physics', href: 'http://en.wikipedia.org/wiki/Engineering_physics' }),
+			V_atb({ ctx, innerText: 'Engineering Physics', href: 'http://en.wikipedia.org/wiki/Engineering_physics' }),
 			` in college & found I had a natural aptitude for software development. Ever since I started following the path
 			of a technologist, I've wanted to explore the connections between technology & magic.`
 		)
@@ -70,18 +72,18 @@ seemingly unrelated concepts can be connected, yielding novelty & innovation.
 </p>
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`My practice started with agile software development as a consultant for startups in San Francisco with
 			Pivotal Computer Systems (now `,
-			V_atb_pivotal_labs(props),
+			V_atb_pivotal_labs({ ctx }),
 			`). There was a new technique called `,
-			V_atb_domain_driven_design(props),
+			V_atb_domain_driven_design({ ctx }),
 			` that was making it's way around. `,
-			V_atb_domain_specific_language({ ...props, innerText: 'Domain Specific Languages (DSLs)' }),
+			V_atb_domain_specific_language({ ctx, innerText: 'Domain Specific Languages (DSLs)' }),
 			` became the rage. I became an early contributor to a `,
-			V_atb_behavior_driven_development(props),
+			V_atb_behavior_driven_development({ ctx }),
 			` framework called `,
-			V_atb_rspec(props),
+			V_atb_rspec({ ctx }),
 			`. The premise behind rspec was to make automated testing software look more like the English language.`)
 	}/>
 </p>
@@ -92,9 +94,9 @@ better overall thought, & more innovative connections. The necessary precision i
 being used for (i.e. a sales presentation or software implementation).
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I also grew up with an interest in `,
-			V_atb({ ctx: props.ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/spirituality.md' },
+			V_atb({ ctx, href: 'https://github.com/btakita/philosophy/blob/master/src/spirituality.md' },
 				'spirituality'),
 			` & the nature of Existence. I wanted to unify everything in Existence. What if we use Domain Driven Design
 			principles where the Domain is Existence? Magic!`
@@ -105,9 +107,9 @@ being used for (i.e. a sales presentation or software implementation).
 ## Culture & Magic
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Culture has evolved a definition of `,
-			V_atb({ ctx: props.ctx, innerText: 'Magic (thefreedictionary.com)', href: 'http://www.thefreedictionary.com/magic'}),
+			V_atb({ ctx, innerText: 'Magic (thefreedictionary.com)', href: 'http://www.thefreedictionary.com/magic'}),
 			`.`
 		)
 	}/>
@@ -116,10 +118,10 @@ being used for (i.e. a sales presentation or software implementation).
 > The art that purports to control or forecast natural events, effects, or forces by invoking the supernatural.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Where `,
 			V_atb({
-				...props, innerText: 'Supernatural (thefreedictionary.com)',
+				ctx, innerText: 'Supernatural (thefreedictionary.com)',
 				href: 'http://www.thefreedictionary.com/supernatural'
 			}),
 			` means.`)
@@ -131,10 +133,10 @@ being used for (i.e. a sales presentation or software implementation).
 ## Magic of Expanding Consciousness
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`The cultural definition is accurate. However, let's add the qualification that supernatural is defined from the
 			perspective of the `,
-			V_atb({ ctx: props.ctx, innerText: 'entity', href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }),
+			V_atb({ ctx, innerText: 'entity', href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }),
 			` that is perceiving the event. That means prehistoric humans will see the thing that creates lightning as
 			being supernatural, because prehistoric humans did not understand weather patterns. Modern humans don't see the
 			thing that creates lightning as supernatural because there is a natural scientific explanation.`
@@ -180,13 +182,13 @@ oppress, & to ignore.
 
 Language has often been thought of as a human trait.
 
-<Van dom={V_atb({ ctx: props.ctx, innerText: 'Language (Wikipedia)', href: 'http://en.wikipedia.org/wiki/Language' })}/>
+<Van dom={V_atb({ ctx, innerText: 'Language (Wikipedia)', href: 'http://en.wikipedia.org/wiki/Language' })}/>
 
 > Language is the human ability to acquire and use complex systems of communication, and a language is any specific
 example of such a system.
 
 <Van dom={
-	V_atb({ ctx: props.ctx,
+	V_atb({ ctx,
 		innerText: 'Language (thefreedictionary.com)',
 		href: 'http://thefreedictionary.com/language' })
 }/>
@@ -195,10 +197,10 @@ example of such a system.
 > written symbols.
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants
 			have Language (`,
-			V_atb({ ctx: props.ctx, href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/'},
+			V_atb({ ctx, href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/'},
 				'What Plants Talk About'),
 			`). Stars have Language. The Universe itself has Language. Concepts have Language.`)
 	}/>

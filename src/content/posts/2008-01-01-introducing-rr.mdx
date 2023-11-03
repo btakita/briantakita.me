@@ -16,12 +16,14 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_flexmockrb, V_atb_mocharb, V_atb_rr, V_atb_rspec_mocks } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I'm pleased to introduce a new Test Double (or mock) framework named `,
-			V_atb_rr(props),
+			V_atb_rr({ ctx }),
 			`, which is short for Double Ruby. Why a Double framework and not a Mock framework?`)
 	}/>
 </p>
@@ -32,13 +34,13 @@ in future articles.
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's
 			terminology tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read
 			more about test doubles in `,
-			V_atb({ ctx: props.ctx, href: 'http://xunitpatterns.com/Test2e.html' }),
+			V_atb({ ctx, href: 'http://xunitpatterns.com/Test2e.html' }),
 			` and Martin Fowler's article, `,
-			V_atb({ ctx: props.ctx, href: 'http://martinfowler.com/articles/mocksArentStubs.html' }),
+			V_atb({ ctx, href: 'http://martinfowler.com/articles/mocksArentStubs.html' }),
 			`. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks.
 			How does RR compare to other Mock frameworks?`)
 	}/>
@@ -53,13 +55,13 @@ use for this is a double injection, since one or many doubles are being injected
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I'll use trivial Rails examples to highlight the syntactical differences between RR, `,
-			V_atb_mocharb(props),
+			V_atb_mocharb({ ctx }),
 			`, `,
-			V_atb_rspec_mocks(props),
+			V_atb_rspec_mocks({ ctx }),
 			`, `,
-			V_atb_flexmockrb(props),
+			V_atb_flexmockrb({ ctx }),
 			`. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely
 			different discussion.`)
 	}/>

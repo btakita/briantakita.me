@@ -14,28 +14,30 @@ import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_briantakita_com, V_atb_github_pages } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`I set up `,
-			V_atb_briantakita_com(props),
+			V_atb_briantakita_com({ ctx }),
 			` using `,
-			V_atb_github_pages(props),
+			V_atb_github_pages({ ctx }),
 			` to btakita.github.io.`)
 	}/>
 </p>
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`To set up the DNS, I followed the `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'official instructions',
 				href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
 			}),
 			` and `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'github pages with namecheap',
 				href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }),
 			`.`)

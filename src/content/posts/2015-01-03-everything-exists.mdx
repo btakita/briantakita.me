@@ -15,16 +15,18 @@ description:
 import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb } from '@btakita/ui--server--blog'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking about them. If they don't exist, why
 & how am I talking about them?
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept
 			conceptually exists. It may also physically exist; like the men who `,
-			V_atb({ ctx: props.ctx,
+			V_atb({ ctx,
 				innerText: 'name themselves Santa Claus',
 				href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html'}),
 			`.`
@@ -64,9 +66,9 @@ A person's belief system influences the person's thoughts, actions, & interpreta
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`Some `,
-			V_atb({ ctx: props.ctx, innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }),
+			V_atb({ ctx, innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }),
 			`impose a belief system composed of some outdated traditions. There are unifying ethics that create harmony with
 			self & others, however these ethics can be taught without Exoteric Religion.`
 		)

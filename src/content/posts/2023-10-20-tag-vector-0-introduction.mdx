@@ -21,12 +21,14 @@ import { V_footnote } from '@btakita/ui--server--blog'
 import { V_atb_ctx_core } from '@btakita/ui--server--briantakita'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export let ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={
-		V_fragment(props,
+		V_fragment({ ctx },
 			`This series about Tag Vector will go over a technique that I have iterated on since 2016 in `,
-			V_atb_ctx_core(props),
+			V_atb_ctx_core({ ctx }),
 			` & in other (mostly client) projects.`)
 	}/>
 </p>
@@ -45,9 +47,9 @@ eventually a formalized system with tools to:
 	<li>compose multi-dimension tag vectors</li>
 	<li>
 		<Van dom={
-			V_fragment(props,
+			V_fragment({ ctx },
 				`show the directional arrow of a tag vector in source code & text using font ligatures`,
-				V_footnote({ ...props, id: 'font-ligatures' },
+				V_footnote({ ctx, id: 'font-ligatures' },
 					`The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`))
 		}/>
 	</li>
@@ -56,10 +58,10 @@ eventually a formalized system with tools to:
 		domain-specific analysis.</li>
 	<li>
 		<Van dom={
-			V_fragment(props,
+			V_fragment({ ctx },
 				`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
 				rendering components & performing api calls`,
-				V_footnote({ ...props, id: 'tag-vector-editor-prototype' },
+				V_footnote({ ctx, id: 'tag-vector-editor-prototype' },
 					`A prototype of the document editor with Tag Vector is in the works`))
 		}/>
 	</li>
