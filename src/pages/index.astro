@@ -1,13 +1,7 @@
 ---
-import { H_, type Post, post__slug__new, S_ } from '@btakita/domain--all--blog'
-import { site__home__page__post_count_, sorted__posts__new } from '@btakita/domain--server--blog'
-import { V_card } from '@btakita/ui--all--blog'
-import { V_hr, V_link_button, V_main, V_socials } from '@btakita/ui--server--blog'
-import {
-	V_atb_uop,
-	V_atb_uop_engineering,
-	V_atb_uop_engineering_physics
-} from '@btakita/ui--server--briantakita'
+import { type Post } from '@btakita/domain--all--blog'
+import { sorted__posts__new } from '@btakita/domain--server--blog'
+import { V_home } from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -19,114 +13,13 @@ const ctx = server__ctx__new(Astro)
 const posts = sorted__posts__new(await getCollection('posts') as Post[])
 const featured__posts = posts.filter(({ data })=>data.featured)
 const social__count = SOCIALS.filter(social=>social.active).length
-const H = H_(ctx)
-const S = S_(ctx)
 ---
 
 <!doctype html>
 <Layout>
 	<Header ctx={ctx}/>
 	<Van dom={
-		V_main({ ctx },
-			H.section({ id: 'hero' },
-				H.h1({ class: 'mr-2' }, `Brian Takita`),
-				H.a({
-						target: '_blank',
-						href: '/rss.xml',
-						class: 'rss-link',
-						'aria-label': 'rss feed',
-						title: 'RSS Feed',
-					},
-					S.svg({ xmlns: 'http://www.w3.org/2000/svg', class: 'rss-icon' },
-						S.path({ d: 'M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z' }),
-						S.path({ d: 'M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z' }),
-						S.circle({ cx: 6, cy: 18, r: 2 }))),
-				H.p(
-					`Full stack developer with over 20 years experience. Emphasizes efficient product development,
-					consistent domain language, flat architectures, & code reuse. Graduated with a`,
-					V_atb_uop_engineering({ ctx }),
-					` in `,
-					V_atb_uop_engineering_physics({ ctx }),
-					` from `,
-					V_atb_uop({ ctx }),
-					`.`
-				),
-				social__count > 0 ?
-					H.div({ class: 'social-wrapper' },
-						H.div({ class: 'social-links' }),
-						V_socials({ ctx }))
-					: undefined,
-				V_hr({ ctx }),
-				featured__posts.length > 0
-					? [
-						H.section({ id: 'featured' },
-							H.h2(`Featured`),
-							H.ul(featured__posts.map(post=>
-								V_card({
-									ctx,
-									href: `/posts/${post__slug__new(post)}`,
-									post,
-									secHeading: false
-								})
-							)))
-					] : undefined,
-				V_hr({ ctx }),
-				H.section({ id: 'recent-posts' },
-					H.h2(`Recent Posts`),
-					H.ul(
-						posts
-						.filter(({ data })=>!data.featured)
-						.slice(0, site__home__page__post_count_(ctx))
-						.map((post, index)=>
-							V_card({
-								ctx,
-								href: `/posts/${post__slug__new(post)}`,
-								post,
-								secHeading: false
-							}))),
-					H.div({ class: 'all-posts-btn-wrapper' },
-						V_link_button({ ctx, href: '/posts' },
-							`All Posts`,
-							S.svg({ xmlns: 'http://www.w3.org/2000/svg' },
-								S.path(
-									{ d: 'm11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z' })))))))}
-	/>
+		V_home({ ctx, featured__posts, posts, social__count })
+	}/>
 	<Footer ctx={ctx}/>
 </Layout>
-
-<style>
-	/* ===== Hero Section ===== */
-	#hero {
-		@apply pb-6 pt-8;
-	}
-	#hero h1 {
-		@apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-	}
-	#hero .rss-link {
-		@apply mb-6;
-	}
-	#hero .rss-icon {
-		@apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-	}
-	#hero p {
-		@apply my-2;
-	}
-	.social-wrapper {
-		@apply mt-4 flex flex-col sm:flex-row sm:items-center;
-	}
-	.social-links {
-		@apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-	}
-	/* ===== Featured & Recent Posts Sections ===== */
-	#featured,
-	#recent-posts {
-		@apply pb-6 pt-12;
-	}
-	#featured h2,
-	#recent-posts h2 {
-		@apply text-2xl font-semibold tracking-wide;
-	}
-	.all-posts-btn-wrapper {
-		@apply my-8 text-center;
-	}
-</style>
