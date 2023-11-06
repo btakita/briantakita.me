@@ -7,9 +7,9 @@ description:
   ClickOnce can be used to not only deploy .NET applications, but also to deploy files. Yesterday, I deployed an
   Access adp application to our organization.
 ---
-import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_atb_ccrcorp } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
 export let ctx = mdx__ctx__new()
@@ -40,7 +40,7 @@ Access adp application to our organization. To do so, I simply...
 	<li>Write a bootstrapper application in the Main method</li>
 	<li>
 		<Van dom={
-			V_fragment({ ctx },
+			V_fragment(ctx,
 				V_atb({
 					ctx,
 					href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'

@@ -1,6 +1,6 @@
 ---
-import { V_raw } from '@btakita/ui--all--blog'
 import { V_main_post } from '@btakita/ui--server--blog'
+import { V_raw } from '@ctx-core/vanjs'
 import { type CollectionEntry, type Render } from 'astro:content'
 import type { PlateVan } from 'van-type-delegate'
 import Footer from '../components/Footer.astro'
@@ -27,7 +27,7 @@ const html = await Astro.slots.render('default')
 	<Header ctx={ctx} active="posts"/>
 	<Van dom={
 		V_main_post({ ctx, post },
-			V_raw<PlateVan>({ ctx, html }))
+			V_raw<PlateVan>(ctx, html))
 	}/>
 	<Footer ctx={ctx}/>
 </Layout>

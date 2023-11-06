@@ -1,7 +1,7 @@
 ---
 import { H_ } from '@btakita/domain--all--blog'
-import { V_raw } from '@btakita/ui--all--blog'
 import { V_main } from '@btakita/ui--server--blog'
+import { V_raw } from '@ctx-core/vanjs'
 import type { PlateVan } from 'van-type-delegate'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -18,7 +18,7 @@ export interface Props {
 }
 const ctx = server__ctx__new(Astro)
 const { title, description, active } = Astro.props.frontmatter
-const H = H_<PlateVan>(ctx)
+const H = H_(ctx)
 const { article } = H
 const html = await Astro.slots.render('default')
 ---
@@ -35,7 +35,7 @@ const html = await Astro.slots.render('default')
 			article({
 				id: active,
 				class: 'mb-28 max-w-3xl prose-img:border-0'
-			}, V_raw<PlateVan>({ ctx, html })))
+			}, V_raw<PlateVan>(ctx, html)))
 	}/>
 	<Footer ctx={ctx}/>
 </Layout>

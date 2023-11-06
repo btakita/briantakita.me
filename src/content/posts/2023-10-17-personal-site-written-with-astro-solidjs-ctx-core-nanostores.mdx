@@ -13,7 +13,6 @@ description:
   How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
 import { H_ } from '@btakita/domain--all--blog'
-import { V_fragment } from '@btakita/ui--all--blog'
 import { V_atb, V_footnote } from '@btakita/ui--server--blog'
 import {
 	V_atb_astrojs,
@@ -26,6 +25,7 @@ import {
 	V_atb_vercel,
 	V_attribution_web_framework_realworld_app_sizes
 } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
 export let ctx = mdx__ctx__new()

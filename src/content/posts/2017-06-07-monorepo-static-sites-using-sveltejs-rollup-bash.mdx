@@ -14,7 +14,6 @@ description:
   Building my old site briantakita.com using sveltejs, rollupjs, ctx-core, bash
 ---
 import { H_ } from '@btakita/domain--all--blog'
-import { V_fragment } from '@btakita/ui--all--blog'
 import {
 	V_atb_briantakita_com,
 	V_atb_ctx_core,
@@ -25,6 +24,7 @@ import {
 	V_atb_sveltejs,
 	V_atb_wintersmithjs
 } from '@btakita/ui--server--briantakita'
+import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
 export let ctx = mdx__ctx__new()
