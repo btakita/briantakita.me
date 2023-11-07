@@ -17,7 +17,7 @@ import { V_atb_ctx_core, V_atb_metalsmithjs, V_atb_riotjs, V_atb_sveltejs } from
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
 converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose

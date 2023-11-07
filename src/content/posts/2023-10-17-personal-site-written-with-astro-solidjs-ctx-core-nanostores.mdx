@@ -28,7 +28,7 @@ import {
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 export const { em, figcaption, figure, img, li, ul } = H_(ctx)
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important

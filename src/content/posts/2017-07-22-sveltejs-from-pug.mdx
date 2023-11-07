@@ -17,7 +17,7 @@ import { V_atb_pugjs, V_atb_sveltejs } from '@btakita/ui--server--briantakita'
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 Now it's time to implement server side rendering (SSR) using SvelteJS.
 

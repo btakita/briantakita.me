@@ -15,7 +15,7 @@ import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 <Van dom={
 	V_post_top_note({ ctx },

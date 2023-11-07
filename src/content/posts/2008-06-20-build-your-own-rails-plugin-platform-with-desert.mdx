@@ -16,7 +16,7 @@ import { V_atb } from '@btakita/ui--server--blog'
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 While it is easy to include plugins in your Rails projects, it isn't easy to extend and customize the plugin for
 your own application. Desert solves that limitation/complication by making it just as easy to extend or modify a

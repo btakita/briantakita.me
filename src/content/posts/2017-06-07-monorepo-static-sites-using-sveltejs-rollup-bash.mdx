@@ -27,7 +27,7 @@ import {
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 export const { em } = H_(ctx)
 
 <p>

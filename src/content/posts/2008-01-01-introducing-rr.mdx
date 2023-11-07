@@ -17,7 +17,7 @@ import { V_atb_flexmockrb, V_atb_mocharb, V_atb_rr, V_atb_rspec_mocks } from '@b
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 <p>
 	<Van dom={

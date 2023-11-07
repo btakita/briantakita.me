@@ -1,0 +1,32 @@
+---
+author: Brian Takita
+pubDate: 2023-11-06T14:43:00Z
+title: Log 2023-11-06
+slug: log-2023-11-06
+tags:
+  - data
+  - philosophy
+description: "Data layer definitions"
+---
+import { V_atb, V_footnote } from '@btakita/ui--server--blog'
+import Van from '../../components/Van.astro'
+import { mdx__ctx__new } from '../../lib'
+export const ctx = frontmatter.ctx = mdx__ctx__new()
+
+<p>
+	{[
+		`A Data ontology I saw`,
+		<Van dom={
+			V_footnote({ ctx, id: 'clif-high-data' },
+				V_atb({ ctx, href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' },
+					`SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))
+		}/>
+	]}
+</p>
+- **Datum**: A single piece of information
+- **Data**: A collection of individual data points
+- **Database**: A structured collection of data, or a collection of datasets
+- **Metadata**: Information about the data (like data definitions, structures, or characteristics)
+- **Entia-data**: Data pertaining to the beings or entities that are collecting & aggregating the data
+- **Omnia-Exemplar-data**: Data related to the overarching universal model or the paradigmatic structure of the
+universe in which these beings **think/believe** they operate

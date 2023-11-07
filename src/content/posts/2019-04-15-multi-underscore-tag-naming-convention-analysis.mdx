@@ -14,7 +14,7 @@ import { V_atb } from '@btakita/ui--server--blog'
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a

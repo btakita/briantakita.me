@@ -30,7 +30,7 @@ import {
 } from '@btakita/ui--server--briantakita'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 <h1>
 	<Van dom={V_atb_cms({ ctx })}/>

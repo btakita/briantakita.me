@@ -15,7 +15,7 @@ import { V_atb } from '@btakita/ui--server--blog'
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 export const { a, b } = H_(ctx)
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 

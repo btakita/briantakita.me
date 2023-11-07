@@ -16,7 +16,7 @@ import { V_atb_ado_net, V_atb_generic_query_analyzer } from '@btakita/ui--server
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 <Van dom={
 	V_post_top_note({ ctx },

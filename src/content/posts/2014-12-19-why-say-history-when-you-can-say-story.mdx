@@ -14,7 +14,7 @@ import { V_atb, V_footnote } from '@btakita/ui--server--blog'
 import { V_fragment } from '@ctx-core/vanjs'
 import Van from '../../components/Van.astro'
 import { mdx__ctx__new } from '../../lib'
-export let ctx = mdx__ctx__new()
+export const ctx = frontmatter.ctx = mdx__ctx__new()
 
 <Van dom={
 	V_footnote({ ctx, id: 'encyclopedia-britannica-hero-image' },
