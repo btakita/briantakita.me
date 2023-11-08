@@ -26,14 +26,14 @@ const { slug } = Astro.params
 const post = Astro.props.post as CollectionEntry<'posts'>
 const {
 	Content,
-	remarkPluginFrontmatter
+	// remarkPluginFrontmatter
 } = post ? await post.render() : {}
-const frontmatter_ctx = remarkPluginFrontmatter?.ctx
-if (frontmatter_ctx) {
-	for (const [k, v] of frontmatter_ctx.entries()) {
-		ctx.set(k, v)
-	}
-}
+// const frontmatter_ctx = remarkPluginFrontmatter?.ctx
+// if (frontmatter_ctx) {
+// 	for (const [k, v] of frontmatter_ctx.entries()) {
+// 		ctx.set(k, v)
+// 	}
+// }
 ---
 
 {post
