@@ -8,7 +8,7 @@ export async function GET(Astro:APIContext) {
 	const posts = sorted__posts__new(await getCollection('posts') as Post[])
 	const items = posts.map(post=>({
 		...post.data,
-		link: `/blog/${post.slug}/`,
+		link: `/posts/${post.slug}/`,
 	}))
 	return rss({
 		title: SITE.title,
