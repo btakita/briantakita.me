@@ -33,7 +33,7 @@
     "@ctx-core/function": "^21.20.2",
     "@ctx-core/object": "^29.0.0",
     "@ctx-core/uuid": "^8.1.21",
-    "@ctx-core/vanjs": "1.7.2",
+    "@ctx-core/vanjs": "2.1.0",
     "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.1.1",
     "astro": "^3.4.3",
