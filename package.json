@@ -35,7 +35,7 @@
     "@ctx-core/vanjs": "2.1.2",
     "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.1.1",
-    "astro": "^3.4.3",
+    "astro": "^3.4.4",
     "mini-van-plate": "^0.5.3",
     "tailwindcss": "^3.3.5",
     "vanjs-ext": "^0.1.3"
