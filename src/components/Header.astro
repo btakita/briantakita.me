@@ -1,5 +1,5 @@
 ---
-import { V_header, V_link_button, V_theme_toggle_button } from '@btakita/ui--server--blog'
+import { header_c_, link_button_c_, theme__toggle_button_c_ } from '@btakita/ui--server--blog'
 import type { Ctx } from 'ctx-core/object'
 import { a_, li_ } from 'relementjs/html'
 import { path_, svg_ } from 'relementjs/svg'
@@ -16,7 +16,7 @@ function active_class_(check_active:Props['active']) {
 ---
 
 <Rel dom={
-	V_header<'server'>({ ctx },
+	header_c_<'server'>({ ctx },
 		li_(
 			a_({ href: '/about', class: active_class_('about') },
 				'About')),
@@ -33,7 +33,7 @@ function active_class_(check_active:Props['active']) {
 			a_({ href: '/tags', class: active_class_('tags') },
 				'Tags')),
 		li_(
-			V_link_button<'server'>({
+			link_button_c_<'server'>({
 					href: '/search',
 					class: `focus-outline p-3 sm:p-1 ${
 						active === 'search' ? 'active' : ''
@@ -49,13 +49,13 @@ function active_class_(check_active:Props['active']) {
 						d: 'M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z'
 					})))),
 		SITE.light_and_dark_mode
-		&& li_(V_theme_toggle_button({ ctx })))
+		&& li_(theme__toggle_button_c_({ ctx })))
 }/>
 
 <script>
-	import { Button_theme_toggle__onbind } from '@btakita/domain--all--blog'
+	import { theme__toggle_button__onbind } from '@btakita/domain--all--blog'
 	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
 	import { dom__onbind__register } from '@ctx-core/dom'
 	const ctx = browser__ctx__ensure()
-	dom__onbind__register(ctx, Button_theme_toggle__onbind)
+	dom__onbind__register(ctx, theme__toggle_button__onbind)
 </script>

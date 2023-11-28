@@ -11,12 +11,12 @@ description:
 canonical_url: https://medium.com/@briantakita/philosophy-existence-is-god-god-exists-b2ec35ea39d2
 ---
 import {
-	V_atb_abstraction,
-	V_atb_domain_specific_language,
-	V_atb_existence,
-	V_atb_god,
-	V_atb_scope,
-	V_atb_universal_set
+	atb_abstraction_,
+	atb_domain_specific_language_,
+	atb_existence_,
+	atb_god_,
+	atb_scope_,
+	atb_universal_set_
 } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
@@ -25,7 +25,7 @@ import Rel from '../../components/Rel.astro'
 	<Rel dom={
 		fragment_(
 			`Philosophies are conceptual models. Conceptual models have a `,
-			V_atb_domain_specific_language(),
+			atb_domain_specific_language_(),
 			`. If we expand the scope of certain definitions, we have the ability to expand consciousness. If we are able to
 			make more associations between concepts, consciousness expands.`
 		)
@@ -40,7 +40,7 @@ patterns to be reused across different scopes in Existence.
 	<Rel dom={
 		fragment_(
 			`A tool to explore `,
-			V_atb_existence())
+			atb_existence_())
 	}/>
 </h1>
 
@@ -53,9 +53,9 @@ feel justified in defining the words to match the domain of Existence.
 <h1>
 	<Rel dom={
 		fragment_(
-			V_atb_abstraction(),
+			atb_abstraction_(),
 			`, `,
-			V_atb_scope(),
+			atb_scope_(),
 			`, Zooming In/Out`)
 	}/>
 </h1>
@@ -70,7 +70,7 @@ world. Abstract thoughts are not in Physical Existence, so an abstract thought d
 <h1>
 	<Rel dom={
 		fragment_(
-			V_atb_god(),
+			atb_god_(),
 			` Exists`)
 	}/>
 </h1>
@@ -85,7 +85,7 @@ definition of “exists” being scoped to mean “physical existence”.
 		fragment_(
 			`The “Existence is God” Philosophy defines existence as “Everything that ‘is’, or more simply, everything" or
 				the `,
-			V_atb_universal_set(),
+			atb_universal_set_(),
 			` of everything. That includes all thoughts ever thought, all possible concepts, including the notion of
 				Existence being everything. Thus Existence Exists. Everything (even fiction) exists. Thus God Exists.`)
 	}/>

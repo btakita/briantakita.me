@@ -10,16 +10,16 @@ description:
   In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history
   being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.
 ---
-import { V_atb, V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
+import { atb_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 <Rel dom={
-	V_footnote({ ctx, id: 'encyclopedia-britannica-hero-image' },
+	footnote_c_({ ctx, id: 'encyclopedia-britannica-hero-image' },
 		`From `,
-		V_atb({ href: 'http://www.flickr.com/photos/bostontx/4461314652/' }),
+		atb_({ href: 'http://www.flickr.com/photos/bostontx/4461314652/' }),
 		` - Licensed under Creative Commons`)
 }/>
 
@@ -28,7 +28,7 @@ being a masculine version of story (his story). However, history & story can be 
 
 <h2>
 	<Rel dom={
-		V_atb({ href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' },
+		atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' },
 			'Story')
 	}/>
 </h2>
@@ -38,7 +38,7 @@ being a masculine version of story (his story). However, history & story can be 
 	<Rel dom={
 		fragment_(
 			`Our `,
-			V_atb({
+			atb_({
 				innerText: 'culture',
 				href: 'https://github.com/btakita/philosophy/blob/master/src/culture.md'}),
 			` distinguishes a story as being used for entertainment and fiction. Our culture also uses story for an informal
@@ -47,7 +47,7 @@ being a masculine version of story (his story). However, history & story can be 
 </p>
 <h2>
 	<Rel dom={
-		V_atb({ innerText: 'History', href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' })
+		atb_({ innerText: 'History', href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' })
 	}/>
 </h2>
 
@@ -61,9 +61,9 @@ The vernacular has expanded the definition of history to include all the time an
 <p>
 	<Rel dom={
 		fragment_(
-			V_atb({ innerText: 'Biographies', href: 'http://en.wikipedia.org/wiki/Biography' }),
+			atb_({ innerText: 'Biographies', href: 'http://en.wikipedia.org/wiki/Biography' }),
 			` & `,
-			V_atb({ innerText: 'Autobiographies', href: 'http://en.wikipedia.org/wiki/Autobiography' }),
+			atb_({ innerText: 'Autobiographies', href: 'http://en.wikipedia.org/wiki/Autobiography' }),
 			` are also considered history.`)
 	}/>
 </p>
@@ -77,4 +77,4 @@ events, & physical events.
 
 The defining line is blurred. Story & History can be used Interchangeably. The usages of Story & History are
 connected. Enjoy the connection.
-<Rel dom={V_footnote_list({ ctx })}></Rel>
+<Rel dom={footnote_list_c_({ ctx })}></Rel>

@@ -1,5 +1,5 @@
 ---
-import { V_main_post } from '@btakita/ui--server--blog'
+import { blog__post__main_ } from '@btakita/ui--server--blog'
 import { type CollectionEntry } from 'astro:content'
 import { raw_ } from 'relementjs'
 import Footer from '../components/Footer.astro'
@@ -25,7 +25,7 @@ const html = await Astro.slots.render('default')
 >
 	<Header ctx={ctx} active="posts"/>
 	<Rel dom={
-		V_main_post({ ctx, post },
+		blog__post__main_({ ctx, post },
 			raw_(html))
 	}/>
 	<Footer ctx={ctx}/>

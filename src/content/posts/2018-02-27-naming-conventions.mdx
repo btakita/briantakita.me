@@ -8,18 +8,16 @@ tags:
   - name convention
 description: Naming Conventions to encode the meaning & context of abstractions
 ---
-import { V_atb } from '@btakita/ui--server--blog'
+import { atb_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import { p_ } from 'relementjs/html'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 <p>
 	<Rel dom={
 		fragment_(
 			`Note: The naming convention described in this article is named `,
-			V_atb({
+			atb_({
 				innerText: 'Tag Vector',
 				href: '/posts/tag-vector-0-introduction'
 			}),
@@ -34,7 +32,7 @@ export const ctx = mdx__ctx__new()
 		p_(
 			`An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined
 			together to create a name. `,
-		V_atb({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
+		atb_({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
 			'Naming Convention (programming) (Wikipedia)')
 	))
 }/>
@@ -45,7 +43,7 @@ A name & tags in the name also acts identifiers to locate the usages of the abst
 attribute is also known as discoverability.
 
 <Rel dom={
-	V_atb({ href: 'https://en.wikipedia.org/wiki/Discoverability' },
+	atb_({ href: 'https://en.wikipedia.org/wiki/Discoverability' },
 		'Discoverability (Wikipedia)')
 }/>
 
@@ -70,7 +68,7 @@ For reason of unambiguous distinction, it is advantageous to always use the same
 ## Top-down & Bottom-up Design
 
 <Rel dom={
-	V_atb({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
+	atb_({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
 		'Top-down and bottom-up design (Wikipedia)')
 }/>
 

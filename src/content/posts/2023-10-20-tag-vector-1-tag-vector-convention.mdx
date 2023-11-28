@@ -14,7 +14,7 @@ tags:
 description:
   A technical description of the Tag Name Convention
 ---
-import { V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
+import { footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import { code_ } from 'relementjs/html'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
@@ -32,7 +32,7 @@ export const ctx = mdx__ctx__new()
 			code_(`↑`),
 			` or down `,
 			code_(`↓`),
-			V_footnote({ ctx, id: 'no-up-down-arrow-ligatures' },
+			footnote_c_({ ctx, id: 'no-up-down-arrow-ligatures' },
 				`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
 				code_(`↑ (0x2191)`),
 				` & `,
@@ -208,4 +208,4 @@ const company_id_M_ceo_name:Map<string, string> = new Map([
 	['facebook', 'Mark Zuckerberg'],
 ])
 ```
-<Rel dom={V_footnote_list({ ctx })}></Rel>
+<Rel dom={footnote_list_c_({ ctx })}></Rel>

@@ -10,11 +10,9 @@ tags:
   - domain driven design
 description: Naming Convention that utilizes underscores to articulate relationships to tags.
 ---
-import { V_atb } from '@btakita/ui--server--blog'
+import { atb_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a
@@ -45,7 +43,7 @@ This sequence follows the English rules of Grammar for a phrase.
 	<Rel dom={
 		fragment_(
 			`The object is "`,
-			V_atb({ innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
+			atb_({ innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
 			`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`)
 	}/>
 </p>
@@ -55,7 +53,7 @@ The prepositions are:
 	<li>Multi Underscore - implying multiple underscore characters <code>_</code></li>
 	<li>
 		<Rel dom={
-			V_atb({ innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
+			atb_({ innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
 		}/>
 		<ul>
 			<li>
@@ -66,7 +64,7 @@ The prepositions are:
 	</li>
 	<li>
 		<Rel dom={
-			V_atb({ innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
+			atb_({ innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
 		}/>
 		<ul>
 			<li>The process of giving names to things.</li>

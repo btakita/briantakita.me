@@ -10,15 +10,15 @@ tags:
 description:
   Who knew that Fractal Zoom videos can be therapeutic?
 ---
-import { V_atb } from '@btakita/ui--server--blog'
-import { V_atb_existence } from '@btakita/ui--server--briantakita'
+import { atb_ } from '@btakita/ui--server--blog'
+import { atb_existence_ } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
 
 <p>
 	<Rel dom={
 		fragment_(
-			V_atb_existence(),
+			atb_existence_(),
 			` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`)
 	}/>
 </p>
@@ -50,12 +50,12 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 	<Rel dom={
 		fragment_(
 			`It turns out there are some `,
-			V_atb({
+			atb_({
 				innerText: 'therapies',
 				href: 'https://www.google.com/search?q=fractal+therapy'
 			}),
 			`that utilize Fractals. An `,
-			V_atb({
+			atb_({
 				innerText: 'article in Psychology Today',
 				href: 'http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals'
 			}),
@@ -67,9 +67,9 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 	<Rel dom={
 		fragment_(
 			`With the success of other techniques like `,
-			V_atb({ innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
+			atb_({ innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
 			` and advances in consumer video devices, like the `,
-			V_atb({ innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
+			atb_({ innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
 			`, therapy is about to become more immersive and available to everyone. Many of these therapies are available
 			free on Youtube.`,
 		)

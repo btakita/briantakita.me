@@ -2,7 +2,7 @@
 import { type Post } from '@btakita/domain--all--blog'
 import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
-import { V_main_posts, V_nav_posts } from '@btakita/ui--server--blog'
+import { blog__posts__main_c_, blog__posts__nav_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
@@ -22,8 +22,8 @@ const sorted__paginated__posts =
 	<Header ctx={ctx} active="posts"/>
 	<Rel dom={
 		fragment_(
-			V_main_posts({ ctx, posts: sorted__paginated__posts }),
-			V_nav_posts({
+			blog__posts__main_c_({ ctx, posts: sorted__paginated__posts }),
+			blog__posts__nav_({
 				page_num: 1,
 				page_count,
 			}))

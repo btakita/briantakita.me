@@ -10,8 +10,8 @@ tags:
 description:
   Fixing a DNS-related 404 error with Github Pages.
 ---
-import { V_atb } from '@btakita/ui--server--blog'
-import { V_atb_briantakita_com, V_atb_github_pages } from '@btakita/ui--server--briantakita'
+import { atb_ } from '@btakita/ui--server--blog'
+import { atb_briantakita_com_, atb_github_pages_ } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
 
@@ -19,9 +19,9 @@ import Rel from '../../components/Rel.astro'
 	<Rel dom={
 		fragment_(
 			`I set up `,
-			V_atb_briantakita_com(),
+			atb_briantakita_com_(),
 			` using `,
-			V_atb_github_pages(),
+			atb_github_pages_(),
 			` to btakita.github.io.`)
 	}/>
 </p>
@@ -30,12 +30,12 @@ import Rel from '../../components/Rel.astro'
 	<Rel dom={
 		fragment_(
 			`To set up the DNS, I followed the `,
-			V_atb({
+			atb_({
 				innerText: 'official instructions',
 				href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
 			}),
 			` and `,
-			V_atb({
+			atb_({
 				innerText: 'github pages with namecheap',
 				href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }),
 			`.`)

@@ -4,20 +4,20 @@ title: "About"
 description: Contextual full stack systems developer
 active: about
 ---
-import { V_atb, V_footnote_list } from '@btakita/ui--server--blog'
+import { atb_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import {
-	V_atb_astrojs,
-	V_atb_bunjs,
-	V_atb_ctx_core,
-	V_atb_electric_universe,
-	V_atb_existence,
-	V_atb_holochain_whitepaper,
-	V_atb_nanostores,
-	V_atb_philosophy,
-	V_atb_postgres,
-	V_atb_redis,
-	V_atb_solidjs,
-	V_attribution_dev,
+	atb_astrojs_,
+	atb_bunjs_,
+	atb_ctx_core_,
+	atb_electric_universe_,
+	atb_existence_,
+	atb_holochain_whitepaper_,
+	atb_nanostores_,
+	atb_philosophy_,
+	atb_postgres_,
+	atb_redis_,
+	atb_solidjs_,
+	attribution_dev__add,
 } from '@btakita/ui--server--briantakita'
 import { li_, ul_ } from 'relementjs/html'
 import Rel from '../../components/Rel.astro'
@@ -28,13 +28,13 @@ I create full stack software solutions. My current preferred tooling is:
 <Rel dom={
 	ul_(
 		li_('monorepos'),
-		li_(V_atb_ctx_core()),
-		li_(V_atb_bunjs()),
-		li_(V_atb_astrojs()),
-		li_(V_atb_nanostores()),
-		li_(V_atb_solidjs()),
-		li_(V_atb_redis()),
-		li_(V_atb_postgres())
+		li_(atb_ctx_core_()),
+		li_(atb_bunjs_()),
+		li_(atb_astrojs_()),
+		li_(atb_nanostores_()),
+		li_(atb_solidjs_()),
+		li_(atb_redis_()),
+		li_(atb_postgres_())
 	)
 }/>
 
@@ -115,9 +115,9 @@ commonly used.
 <p>
 	{[
 		`From the question "how do we model `,
-		<Rel dom={V_atb_existence()}/>,
+		<Rel dom={atb_existence_()}/>,
 		`?" sprang a `,
-		<Rel dom={V_atb_philosophy()}/>,
+		<Rel dom={atb_philosophy_()}/>,
 		`.`
 	]}
 </p>
@@ -125,7 +125,7 @@ commonly used.
 	{[
 		`This Meta-philosophy can be applied via `,
 		<Rel dom={
-			V_atb({ href: '/posts/magic-connections-with-the-philosophy-of-language'},
+			atb_({ href: '/posts/magic-connections-with-the-philosophy-of-language'},
 				`language`)
 		}/>,
 		` to model any reified entity. Language patterns can be utilized in software & speech to create models of
@@ -133,7 +133,7 @@ commonly used.
 	]}
 </p>
 <h2>
-	<Rel dom={V_atb_electric_universe()}/>
+	<Rel dom={atb_electric_universe_()}/>
 </h2>
 
 Viewing the Universe through the lens of Electricity & Magnetism.  The same well known electrical equations &
@@ -150,10 +150,10 @@ food & supplements for optimal health.
 <p>
 	{[
 		`Agent-centric crypto platform, inspired by nature. The `,
-		<Rel dom={V_atb_holochain_whitepaper()}/>,
+		<Rel dom={atb_holochain_whitepaper_()}/>,
 		` is worth a read. Here are some `,
 		<Rel dom={
-			V_atb({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
+			atb_({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
 				'notes')
 		}/>,
 		`.`
@@ -170,7 +170,7 @@ discovery allows one to explore conceptual systems with a logic feedback loop re
 
 <div>
 	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>
-	<Rel dom={V_attribution_dev({ ctx })}/>
+	<Rel dom={attribution_dev__add({ ctx })}/>
 </div>
 
-<Rel dom={V_footnote_list({ ctx })}/>
+<Rel dom={footnote_list_c_({ ctx })}/>

@@ -10,21 +10,18 @@ description:
   At work, I'm having an issue with losing control over events in my code. One big issue I'm having is recursion in
   the `DataRow.RowChanged` event.
 ---
-import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
+import { atb_, blog__post__top_note_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 <Rel dom={
-	V_post_top_note({ ctx },
-	fragment_(
-		`Originally posted on `,
-		V_atb({
-			ctx,
-			innerText: 'geekswithblogs.net',
-			href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx'
-		})))
+	blog__post__top_note_(
+		fragment_(
+			`Originally posted on `,
+			atb_({
+				innerText: 'geekswithblogs.net',
+				href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx'
+			})))
 }/>
 At work, I'm having an issue with losing control over events in my code. One big issue I'm having is recursion in
 the `DataRow.RowChanged` event.

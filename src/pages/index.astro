@@ -1,7 +1,7 @@
 ---
 import { type Post } from '@btakita/domain--all--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
-import { V_home } from '@btakita/ui--server--briantakita'
+import { briantakita__home_c_ } from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
@@ -19,7 +19,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 <Layout>
 	<Header ctx={ctx}/>
 	<Rel dom={
-		V_home({ ctx, featured__posts, posts, social__count })
+		briantakita__home_c_({ ctx, featured__posts, posts, social__count })
 	}/>
 	<Footer ctx={ctx}/>
 </Layout>

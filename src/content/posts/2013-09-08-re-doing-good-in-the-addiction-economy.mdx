@@ -12,23 +12,21 @@ description:
   success…
 canonical_url: https://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/
 ---
-import { V_atb } from '@btakita/ui--server--blog'
+import { atb_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 <p>
 	<Rel dom={
 		fragment_(
 			`From my `,
-			V_atb({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
+			atb_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
 				'wordpress blog')
 	}/>
 </p>
 <p>
 	<Rel dom={
-		V_atb({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
+		atb_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
 			'Doing Good in the Addiction Economy')
 	}/>
 </p>

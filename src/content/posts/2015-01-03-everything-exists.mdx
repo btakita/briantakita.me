@@ -12,11 +12,9 @@ description:
   Does God exist? Surely, Santa Claus & Unicorns do not exist.
   Yet we are talking about them. If they don't exist, why & how am I talking about them? Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept conceptually exists. It may also physically exist; like the men who name themselves Santa Claus.
 ---
-import { V_atb } from '@btakita/ui--server--blog'
+import { atb_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking about them. If they don't exist, why
 & how am I talking about them?
@@ -26,7 +24,7 @@ Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking 
 		fragment_(
 			`Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept
 			conceptually exists. It may also physically exist; like the men who `,
-			V_atb({
+			atb_({
 				innerText: 'name themselves Santa Claus',
 				href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html'}),
 			`.`
@@ -68,7 +66,7 @@ A person's belief system influences the person's thoughts, actions, & interpreta
 	<Rel dom={
 		fragment_(
 			`Some `,
-			V_atb({ innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }),
+			atb_({ innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }),
 			`impose a belief system composed of some outdated traditions. There are unifying ethics that create harmony with
 			self & others, however these ethics can be taught without Exoteric Religion.`
 		)

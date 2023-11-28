@@ -1,7 +1,7 @@
 ---
 import type { Post, SearchItem } from '@btakita/domain--all--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
-import { V_main_search } from '@btakita/ui--server--blog'
+import { blog__search__main_c_ } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
@@ -23,15 +23,15 @@ const search_item_a = posts.map(post=>({
 <Layout title={`Search | ${SITE.title}`}>
 	<Header ctx={ctx} active="search"/>
 	<Rel dom={
-		V_main_search({ ctx, search_item_a })
+		blog__search__main_c_({ ctx, search_item_a })
 	}></Rel>
 	<Footer ctx={ctx}/>
 </Layout>
 
 <script>
 	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
-	import { Main_search__onbind } from '@btakita/ui--all--blog'
+	import { blog__search__main__onbind } from '@btakita/ui--all--blog'
 	import { dom__onbind__register } from '@ctx-core/dom'
 	const ctx = browser__ctx__ensure()
-	dom__onbind__register(ctx, Main_search__onbind)
+	dom__onbind__register(ctx, blog__search__main__onbind)
 </script>

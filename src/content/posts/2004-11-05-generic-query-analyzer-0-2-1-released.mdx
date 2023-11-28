@@ -8,21 +8,18 @@ tags:
   - sql
   - open source
   - dotnet
-description:
-  Follow release of the Generic Query Analyzer. An icon was added & a little-used dll was removed.
+description: Follow release of the Generic Query Analyzer. An icon was added & a little-used dll was removed.
 ---
-import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
-import { V_atb_ado_net, V_atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
+import { atb_, blog__post__top_note_ } from '@btakita/ui--server--blog'
+import { atb_ado_net_, atb_generic_query_analyzer_ } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = mdx__ctx__new()
 
 <Rel dom={
-	V_post_top_note({ ctx },
+	blog__post__top_note_(
 		fragment_(
 			`Originally posted on `,
-			V_atb({
+			atb_({
 				innerText: 'geekswithblogs.net',
 				href: 'https://web.archive.org/web/20130407190313/http://geekswithblogs.net/btakita/archive/2004/11/05/14411.aspx'
 			})))
@@ -31,13 +28,13 @@ export const ctx = mdx__ctx__new()
 	<Rel dom={
 		fragment_(
 			`The Generic Query Analyzer is a Database Independent Query Analyzer that uses `,
-			V_atb_ado_net({ innerText: 'ADO.NET (OLEDB)' }),
+			atb_ado_net_({ innerText: 'ADO.NET (OLEDB)' }),
 			` technology. This Query Analyzer is run off the .NET 2.0 platform on Windows.`
 			)
 	}/>
 </p>
 
-<Rel dom={V_atb_generic_query_analyzer()}/>
+<Rel dom={atb_generic_query_analyzer_()}/>
 
 This release…
 

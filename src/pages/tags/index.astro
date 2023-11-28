@@ -1,7 +1,7 @@
 ---
 import { type Post } from '@btakita/domain--all--blog'
 import { sorted__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
-import { V_main_tags } from '@btakita/ui--server--blog'
+import { blog__tags__main_c_ } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
@@ -16,6 +16,6 @@ const tags = unique__tags__new(posts)
 
 <Layout title={`Tags | ${SITE.title}`}>
 	<Header ctx={ctx} active="tags"/>
-	<Rel dom={V_main_tags({ ctx, tags })}/>
+	<Rel dom={blog__tags__main_c_({ ctx, tags })}/>
 	<Footer ctx={ctx}/>
 </Layout>

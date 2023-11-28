@@ -12,8 +12,8 @@ description:
   Introducing RR (Double Ruby) library for testing
 canonical_url: https://tanzu.vmware.com/content/blog/introducing-rr
 ---
-import { V_atb } from '@btakita/ui--server--blog'
-import { V_atb_flexmockrb, V_atb_mocharb, V_atb_rr, V_atb_rspec_mocks } from '@btakita/ui--server--briantakita'
+import { atb_ } from '@btakita/ui--server--blog'
+import { atb_flexmockrb_, atb_mocharb_, atb_rr_, atb_rspec_mocks_ } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
 
@@ -21,7 +21,7 @@ import Rel from '../../components/Rel.astro'
 	<Rel dom={
 		fragment_(
 			`I'm pleased to introduce a new Test Double (or mock) framework named `,
-			V_atb_rr(),
+			atb_rr_(),
 			`, which is short for Double Ruby. Why a Double framework and not a Mock framework?`)
 	}/>
 </p>
@@ -36,9 +36,9 @@ in future articles.
 			`Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's
 			terminology tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read
 			more about test doubles in `,
-			V_atb({ href: 'http://xunitpatterns.com/Test%20Double%20Patterns.html' }),
+			atb_({ href: 'http://xunitpatterns.com/Test%20Double%20Patterns.html' }),
 			` and Martin Fowler's article, `,
-			V_atb({ href: 'http://martinfowler.com/articles/mocksArentStubs.html' }),
+			atb_({ href: 'http://martinfowler.com/articles/mocksArentStubs.html' }),
 			`. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks.
 			How does RR compare to other Mock frameworks?`)
 	}/>
@@ -55,11 +55,11 @@ use for this is a double injection, since one or many doubles are being injected
 	<Rel dom={
 		fragment_(
 			`I'll use trivial Rails examples to highlight the syntactical differences between RR, `,
-			V_atb_mocharb(),
+			atb_mocharb_(),
 			`, `,
-			V_atb_rspec_mocks(),
+			atb_rspec_mocks_(),
 			`, `,
-			V_atb_flexmockrb(),
+			atb_flexmockrb_(),
 			`. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely
 			different discussion.`)
 	}/>

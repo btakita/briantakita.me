@@ -8,8 +8,8 @@ tags:
 description:
   Personal SEO branding with brandyourself.com.
 ---
-import { V_atb } from '@btakita/ui--server--blog'
-import { V_atb_briantakita_com } from '@btakita/ui--server--briantakita'
+import { atb_ } from '@btakita/ui--server--blog'
+import { atb_briantakita_com_ } from '@btakita/ui--server--briantakita'
 import { fragment_ } from 'relementjs'
 import Rel from '../../components/Rel.astro'
 
@@ -23,9 +23,9 @@ online reputation repair firms charge.
 <p>
 	<Rel dom={
 		fragment_(
-			V_atb({ innerText: 'Brandyourself.com', href: 'http://brandyourself.com' }),
+			atb_({ innerText: 'Brandyourself.com', href: 'http://brandyourself.com' }),
 			` makes it easy to inexpensively control your SEO destiny. Here is my `,
-			V_atb({ innerText: 'profile', href: 'http://briantakita.brandyourself.com/' }))
+			atb_({ innerText: 'profile', href: 'http://briantakita.brandyourself.com/' }))
 	}/>
 </p>
 
@@ -35,7 +35,7 @@ online reputation repair firms charge.
 			`Their free plan has a limitation of setting up three links for the free plan, so I bought their "Premium
 			Membership" giving me unlimited links for $9 every 3 months. This should give me an initial bump. Since I just
 			acquired (my now defunct site) `,
-			V_atb_briantakita_com(),
+			atb_briantakita_com_(),
 			` I can transfer the links to my blog after the 3 months.`
 		)
 	}/>

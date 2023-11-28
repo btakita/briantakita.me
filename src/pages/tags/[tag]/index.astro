@@ -1,7 +1,7 @@
 ---
 import { type Post } from '@btakita/domain--all--blog'
 import { sorted__posts__new, tag__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
-import { V_main_tag } from '@btakita/ui--server--blog'
+import { blog__tag__main_c_ } from '@btakita/ui--server--blog'
 import { CollectionEntry, getCollection } from 'astro:content'
 import Footer from '../../../components/Footer.astro'
 import Header from '../../../components/Header.astro'
@@ -32,7 +32,7 @@ const tag__posts = tag__posts__new(posts, tag)
 <Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>
 	<Header ctx={ctx} active="tags"/>
 	<Rel dom={
-		V_main_tag({ ctx, tag, posts: tag__posts })
+		blog__tag__main_c_({ ctx, tag, posts: tag__posts })
 	}/>
 	<Footer ctx={ctx}/>
 </Layout>
