@@ -31,7 +31,7 @@
     "@ctx-core/dom": "^15.1.32",
     "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.1.1",
-    "astro": "^3.6.1",
+    "astro": "^3.6.2",
     "ctx-core": "^4.8.0",
     "relementjs": "^0.15.0",
     "tailwindcss": "^3.3.5"
