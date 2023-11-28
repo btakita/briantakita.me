@@ -19,14 +19,12 @@ import {
 	V_atb_tortoisesvn,
 	V_atb_vault_scm
 } from '@btakita/ui--server--briantakita'
-import Van from '../../components/Van.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+import Rel from '../../components/Rel.astro'
 
-<Van dom={
+<Rel dom={
 	V_post_top_note(props,
 		`Originally posted on `,
-		V_atb({ ctx,
+		V_atb({
 			innerText: 'geekswithblogs.net',
 			href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx'
 		})
@@ -35,25 +33,25 @@ export const ctx = frontmatter.ctx = mdx__ctx__new()
 <p>
 	{[
 		`	I am very impressed with `,
-		<Van dom={V_atb_subversion({ ctx, innerText: 'Subversion Source Control' })}/>,
+		<Rel dom={V_atb_subversion({ innerText: 'Subversion Source Control' })}/>,
 		`.`
 	]}
 </p>
 <p>
 	{[
 		`I've used `,
-		<Van dom={V_atb_ms_source_safe({ ctx })}/>,
+		<Rel dom={V_atb_ms_source_safe()}/>,
 		`, `,
-		<Van dom={V_atb_vault_scm({ ctx })}/>,
+		<Rel dom={V_atb_vault_scm()}/>,
 		`, `,
-		<Van dom={V_atb_cvs_scm({ ctx })}/>,
+		<Rel dom={V_atb_cvs_scm()}/>,
 		` but none of them matched my needs.`
 	]}
 </p>
 <p>
 	{[
 		`I really like Subversion because is it is fast, lightweight, and, when coupled with `,
-		<Van dom={V_atb_tortoisesvn({ ctx })}/>,
+		<Rel dom={V_atb_tortoisesvn()}/>,
 		`, easy to use, administer, and set up. Commits are as easy as going to Windows Explorer, select the folders and
 		files to commit > right click > select Commit. I dont need to integrate the source control with Visual Studio,
 		and suffer the performance hit and a more complicated development environment.`
@@ -68,9 +66,9 @@ Now, Im version controlling items that I edit, including my blog posts and artic
 	{[
 		`Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion
 		can be run off of its own svn server or `,
-		<Van dom={V_atb_apache({ ctx })}/>,
+		<Rel dom={V_atb_apache()}/>,
 		`. If you use the svn server on a Windows server, you may want to consider using `,
-		<Van dom={V_atb({ ctx,
+		<Rel dom={V_atb({
 			href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/'
 		}, 'SVNService')}/>,
 		` to register the svn server as a Service.`

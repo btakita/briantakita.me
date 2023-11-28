@@ -11,14 +11,14 @@ description:
   the `DataRow.RowChanged` event.
 ---
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
-<Van dom={
+<Rel dom={
 	V_post_top_note({ ctx },
-	V_fragment({ ctx },
+	fragment_(
 		`Originally posted on `,
 		V_atb({
 			ctx,

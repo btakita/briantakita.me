@@ -10,27 +10,27 @@ description:
   '2019-04-15: Multi Underscore Tag Naming Convention'
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 # Multi Underscore Tag Naming Convention
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`I wrote `,
-			V_atb({ ctx, href: '/posts/multi-underscore-tag-naming-convention-analysis' },
+			V_atb({ href: '/posts/multi-underscore-tag-naming-convention-analysis' },
 				'Multi Underscore Tag Naming Convention Analysis'),
 			` which describes the Ontology & structure of the naming convention.`
 		)
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`TODO: I will latter post how & why the "Multi Underscore Tag Naming Convention" (`,
-			V_atb({ ctx, href: '/posts/tag-vector-0-introduction'},
+			V_atb({ href: '/posts/tag-vector-0-introduction'},
 				`(Tag Vector: Part 0: Introduction)`),
 			` can assist in creating simpler software that scales with complexity. Also, I will explain how this naming
 			convention makes it easy to find abstractions in a codebase with confidence, across any number of software &
@@ -40,8 +40,8 @@ export const ctx = frontmatter.ctx = mdx__ctx__new()
 <p>
 	{[
 		`I also have a previous post with a quick introduction to the `,
-		<Van dom={
-			V_atb({ ctx, href: '/posts/naming-conventions' },
+		<Rel dom={
+			V_atb({ href: '/posts/naming-conventions' },
 				`Multi Underscore Tag Naming Convention`)
 		}/>,
 		`.`

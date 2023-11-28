@@ -19,23 +19,22 @@ import {
 	V_atb_solidjs,
 	V_attribution_dev,
 } from '@btakita/ui--server--briantakita'
-import { H_ } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { li_, ul_ } from 'relementjs/html'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
-export const H = H_(ctx)
 
 I create full stack software solutions. My current preferred tooling is:
-<Van dom={
-	H.ul(
-		H.li('monorepos'),
-		H.li(V_atb_ctx_core({ ctx })),
-		H.li(V_atb_bunjs({ ctx })),
-		H.li(V_atb_astrojs({ ctx })),
-		H.li(V_atb_nanostores({ ctx })),
-		H.li(V_atb_solidjs({ ctx })),
-		H.li(V_atb_redis({ ctx })),
-		H.li(V_atb_postgres({ ctx }))
+<Rel dom={
+	ul_(
+		li_('monorepos'),
+		li_(V_atb_ctx_core()),
+		li_(V_atb_bunjs()),
+		li_(V_atb_astrojs()),
+		li_(V_atb_nanostores()),
+		li_(V_atb_solidjs()),
+		li_(V_atb_redis()),
+		li_(V_atb_postgres())
 	)
 }/>
 
@@ -116,17 +115,17 @@ commonly used.
 <p>
 	{[
 		`From the question "how do we model `,
-		<Van dom={V_atb_existence({ ctx })}/>,
+		<Rel dom={V_atb_existence()}/>,
 		`?" sprang a `,
-		<Van dom={V_atb_philosophy({ ctx })}/>,
+		<Rel dom={V_atb_philosophy()}/>,
 		`.`
 	]}
 </p>
 <p>
 	{[
 		`This Meta-philosophy can be applied via `,
-		<Van dom={
-			V_atb({ ctx, href: '/posts/magic-connections-with-the-philosophy-of-language'},
+		<Rel dom={
+			V_atb({ href: '/posts/magic-connections-with-the-philosophy-of-language'},
 				`language`)
 		}/>,
 		` to model any reified entity. Language patterns can be utilized in software & speech to create models of
@@ -134,7 +133,7 @@ commonly used.
 	]}
 </p>
 <h2>
-	<Van dom={V_atb_electric_universe({ ctx })}/>
+	<Rel dom={V_atb_electric_universe()}/>
 </h2>
 
 Viewing the Universe through the lens of Electricity & Magnetism.  The same well known electrical equations &
@@ -151,10 +150,10 @@ food & supplements for optimal health.
 <p>
 	{[
 		`Agent-centric crypto platform, inspired by nature. The `,
-		<Van dom={V_atb_holochain_whitepaper({ ctx })}/>,
+		<Rel dom={V_atb_holochain_whitepaper()}/>,
 		` is worth a read. Here are some `,
-		<Van dom={
-			V_atb({ ctx, href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
+		<Rel dom={
+			V_atb({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
 				'notes')
 		}/>,
 		`.`
@@ -171,7 +170,7 @@ discovery allows one to explore conceptual systems with a logic feedback loop re
 
 <div>
 	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>
-	<Van dom={V_attribution_dev({ ctx })}/>
+	<Rel dom={V_attribution_dev({ ctx })}/>
 </div>
 
-<Van dom={V_footnote_list({ ctx })}/>
+<Rel dom={V_footnote_list({ ctx })}/>

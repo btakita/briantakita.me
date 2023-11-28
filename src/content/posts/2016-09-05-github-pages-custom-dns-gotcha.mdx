@@ -12,32 +12,30 @@ description:
 ---
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_briantakita_com, V_atb_github_pages } from '@btakita/ui--server--briantakita'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`I set up `,
-			V_atb_briantakita_com({ ctx }),
+			V_atb_briantakita_com(),
 			` using `,
-			V_atb_github_pages({ ctx }),
+			V_atb_github_pages(),
 			` to btakita.github.io.`)
 	}/>
 </p>
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`To set up the DNS, I followed the `,
-			V_atb({ ctx,
+			V_atb({
 				innerText: 'official instructions',
 				href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
 			}),
 			` and `,
-			V_atb({ ctx,
+			V_atb({
 				innerText: 'github pages with namecheap',
 				href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }),
 			`.`)

@@ -12,15 +12,13 @@ description:
 ---
 import { V_atb } from '@btakita/ui--server--blog'
 import { V_atb_existence } from '@btakita/ui--server--briantakita'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
-			V_atb_existence({ ctx }),
+	<Rel dom={
+		fragment_(
+			V_atb_existence(),
 			` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`)
 	}/>
 </p>
@@ -49,17 +47,15 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 ></iframe>
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`It turns out there are some `,
 			V_atb({
-				ctx,
 				innerText: 'therapies',
 				href: 'https://www.google.com/search?q=fractal+therapy'
 			}),
 			`that utilize Fractals. An `,
 			V_atb({
-				ctx,
 				innerText: 'article in Psychology Today',
 				href: 'http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals'
 			}),
@@ -68,12 +64,12 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`With the success of other techniques like `,
-			V_atb({ ctx, innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
+			V_atb({ innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
 			` and advances in consumer video devices, like the `,
-			V_atb({ ctx, innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
+			V_atb({ innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
 			`, therapy is about to become more immersive and available to everyone. Many of these therapies are available
 			free on Youtube.`,
 		)
@@ -83,4 +79,4 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 The genre of healing audio/video has been around the last few decades and will continue to gain in prevalence as the
 established medical profession begins to accept these forms of therapy.
 
-That smells like opportunity to heal people and to have a positive impact on humanity.
+That smells like the opportunity to heal people and to have a positive impact on humanity.

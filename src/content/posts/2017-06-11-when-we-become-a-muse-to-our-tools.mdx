@@ -9,11 +9,11 @@ tags:
 description:
   What happens when we become a muse to our tools?
 ---
-import { V_atb, V_footnote } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { V_atb, V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 What happens when we become a muse to our tools?
 
@@ -28,12 +28,13 @@ unwanted attachments?
 
 Some "it depends" questions to consider&hellip;
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`This post was inspired by `,
-			V_atb({ ctx, innerText: 'Alan Watts', href: 'https://www.youtube.com/watch?v=L4IAwk1G5ts' }),
+			V_atb({ innerText: 'Alan Watts', href: 'https://www.youtube.com/watch?v=L4IAwk1G5ts' }),
 			V_footnote({ ctx, id: 'alan-watts-thinking-too-much-illusion' },
 				'Alan Watts Too much Thinking will throw you into Illusion'),
 			`.`)
 	}/>
  </p>
+<Rel dom={V_footnote_list({ ctx })}></Rel>

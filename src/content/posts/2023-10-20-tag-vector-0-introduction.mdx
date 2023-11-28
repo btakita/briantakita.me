@@ -16,19 +16,19 @@ description:
   code apps, even in plain text.
 featured: true
 ---
-import { V_footnote } from '@btakita/ui--server--blog'
+import { V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
 import { V_atb_ctx_core } from '@btakita/ui--server--briantakita'
-import { V_fragment } from '@ctx-core/vanjs'
+import { fragment_ } from 'relementjs'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
-import Van from '../../components/Van.astro'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`This series about Tag Vector will go over a technique that I have iterated on since 2016 in `,
-			V_atb_ctx_core({ ctx }),
+			V_atb_ctx_core(),
 			` & in other (mostly client) projects.`)
 	}/>
 </p>
@@ -46,8 +46,8 @@ eventually a formalized system with tools to:
 	<li>immutable names to allow a simple text search to find all usages of tags & tag vectors</li>
 	<li>compose multi-dimension tag vectors</li>
 	<li>
-		<Van dom={
-			V_fragment({ ctx },
+		<Rel dom={
+			fragment_(
 				`show the directional arrow of a tag vector in source code & text using font ligatures`,
 				V_footnote({ ctx, id: 'font-ligatures' },
 					`The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`))
@@ -57,8 +57,8 @@ eventually a formalized system with tools to:
 	<li>tag graphs can will enable linking to & a vector search for other usages of the tag, machine leaning algorithms, &
 		domain-specific analysis.</li>
 	<li>
-		<Van dom={
-			V_fragment({ ctx },
+		<Rel dom={
+			fragment_(
 				`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
 				rendering components & performing api calls`,
 				V_footnote({ ctx, id: 'tag-vector-editor-prototype' },
@@ -68,7 +68,8 @@ eventually a formalized system with tools to:
 </ul>
 
 The Tag Vector system can provide profound benefits to computer science, programming, api design, domain design,
-low code tooling, machine learning, even plain text. The Tag Vector convention feels familiar to existing code
+low-code tooling, machine learning, even plain text. The Tag Vector convention feels familiar to existing code
 conventions & can be used with existing source code.
 
 <TOC_tag_vector/>
+<Rel dom={V_footnote_list({ ctx })}></Rel>

@@ -1,41 +1,39 @@
 ---
 import { V_header, V_link_button, V_theme_toggle_button } from '@btakita/ui--server--blog'
-import type { Ctx } from '@ctx-core/object'
-import { H_, S_ } from '@ctx-core/vanjs'
-import { SITE } from '../config'
-import Van from './Van.astro'
+import type { Ctx } from 'ctx-core/object'
+import { a_, li_ } from 'relementjs/html'
+import { path_, svg_ } from 'relementjs/svg'
+import { SITE } from '../config.js'
+import Rel from './Rel.astro'
 export interface Props {
 	ctx:Ctx
 	active?:'about'|'portfolio'|'posts'|'open-source'|'search'|'tags'
 }
 const { active, ctx } = Astro.props
-const S = S_(ctx)
-const { a, li } = H_(ctx)
 function active_class_(check_active:Props['active']) {
 	return active === check_active ? 'active' : ''
 }
 ---
 
-<Van dom={
-	V_header({ ctx },
-		li(
-			a({ href: '/about', class: active_class_('about') },
+<Rel dom={
+	V_header<'server'>({ ctx },
+		li_(
+			a_({ href: '/about', class: active_class_('about') },
 				'About')),
-		li(
-			a({ href: '/posts', class: active_class_('posts') },
+		li_(
+			a_({ href: '/posts', class: active_class_('posts') },
 				'Posts')),
-		li(
-			a({ href: '/portfolio', class: active_class_('portfolio') },
+		li_(
+			a_({ href: '/portfolio', class: active_class_('portfolio') },
 				'Portfolio')),
-		li(
-			a({ href: '/open-source', class: active_class_('open-source') },
+		li_(
+			a_({ href: '/open-source', class: active_class_('open-source') },
 				'Open Source')),
-		li(
-			a({ href: '/tags', class: active_class_('tags') },
+		li_(
+			a_({ href: '/tags', class: active_class_('tags') },
 				'Tags')),
-		li(
-			V_link_button({
-					ctx,
+		li_(
+			V_link_button<'server'>({
 					href: '/search',
 					class: `focus-outline p-3 sm:p-1 ${
 						active === 'search' ? 'active' : ''
@@ -43,15 +41,15 @@ function active_class_(check_active:Props['active']) {
 					'aria-label': 'search',
 					title: 'Search'
 				},
-				S.svg({
+				svg_({
 						xmlns: 'http://www.w3.org/2000/svg',
 						class: 'scale-125 sm:scale-100'
 					},
-					S.path({
+					path_({
 						d: 'M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z'
 					})))),
 		SITE.light_and_dark_mode
-		&& li(V_theme_toggle_button({ ctx })))
+		&& li_(V_theme_toggle_button({ ctx })))
 }/>
 
 <script>

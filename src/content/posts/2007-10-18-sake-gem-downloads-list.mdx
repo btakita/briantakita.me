@@ -12,10 +12,10 @@ description:
 canonical_url: https://tanzu.vmware.com/content/blog/sake-for-gems-downloads-list
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 I have a few gems on Rubyforge and I want to track how many of them were downloaded. I found Firefox's search tools
 lacking to find my gem rr.
@@ -23,10 +23,10 @@ lacking to find my gem rr.
 To fix this issue, I made a sake task, named `gems:downloads:list`, that prints the gem downloads in text.
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`The source is on `,
-			V_atb({ ctx, innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }),
+			V_atb({ innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }),
 			`.`)
 	}/>
 </p>

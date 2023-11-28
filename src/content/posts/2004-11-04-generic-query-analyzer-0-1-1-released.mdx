@@ -14,16 +14,16 @@ description:
 ---
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_atb_generic_query_analyzer } from '@btakita/ui--server--briantakita'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
-<Van dom={
+<Rel dom={
 	V_post_top_note({ ctx },
-		V_fragment({ ctx },
+		fragment_(
 			`Originally posted on `,
-			V_atb({ ctx,
+			V_atb({
 				innerText: 'geekswithblogs.net',
 				href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
 			})))
@@ -37,10 +37,10 @@ It requires .NET 2.0.
 Despite its version number, it is a beta release and works well.
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`You can get it on `,
-			V_atb_generic_query_analyzer({ ctx, innerText:  'Sourceforge' }),
+			V_atb_generic_query_analyzer({ innerText:  'Sourceforge' }),
 			`.`)
 	}/>
 </p>

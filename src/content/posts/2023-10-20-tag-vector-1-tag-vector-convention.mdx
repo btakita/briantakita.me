@@ -14,29 +14,29 @@ tags:
 description:
   A technical description of the Tag Name Convention
 ---
-import { V_footnote } from '@btakita/ui--server--blog'
-import { H_, V_fragment } from '@ctx-core/vanjs'
+import { V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
+import { fragment_ } from 'relementjs'
+import { code_ } from 'relementjs/html'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
-import Van from '../../components/Van.astro'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
-export const { code } = H_(ctx)
+export const ctx = mdx__ctx__new()
 
 <TOC_tag_vector/>
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`Tag Vector is currently a convention to connect "tags" together with vector arrows, showing the contextual
 			relationship between tags. The tags inference level in relation to each other can be inferred as being up`,
-			code(`↑`),
+			code_(`↑`),
 			` or down `,
-			code(`↓`),
+			code_(`↓`),
 			V_footnote({ ctx, id: 'no-up-down-arrow-ligatures' },
 				`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
-				code(`↑ (0x2191)`),
+				code_(`↑ (0x2191)`),
 				` & `,
-				code(`↓ (0x2193)`),
+				code_(`↓ (0x2193)`),
 				` are used.`
 			)
 		)
@@ -208,3 +208,4 @@ const company_id_M_ceo_name:Map<string, string> = new Map([
 	['facebook', 'Mark Zuckerberg'],
 ])
 ```
+<Rel dom={V_footnote_list({ ctx })}></Rel>

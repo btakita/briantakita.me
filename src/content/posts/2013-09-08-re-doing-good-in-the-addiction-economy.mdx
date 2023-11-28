@@ -13,22 +13,22 @@ description:
 canonical_url: https://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`From my `,
-			V_atb({ ctx, href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
+			V_atb({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
 				'wordpress blog')
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_atb({ ctx, href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
+	<Rel dom={
+		V_atb({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
 			'Doing Good in the Addiction Economy')
 	}/>
 </p>

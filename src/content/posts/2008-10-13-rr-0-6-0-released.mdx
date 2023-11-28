@@ -13,10 +13,10 @@ description:
 canonical_url: https://tanzu.vmware.com/content/blog/rr-0-6-0-released
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 I’m pleased to announce the 0.6.0 version of RR. The changes include:
 
@@ -106,15 +106,15 @@ RR has a mailing lists at:
 - ~~double-ruby-devel@rubyforge.org~~
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`Also, RR’s rubyforge page is at `,
-			V_atb({ ctx,
+			V_atb({
 				href: 'http://rubyforge.org/projects/double-ruby',
 				style: 'text-decoration: line-through;',
 				rel: 'external nofollow' }),
 			` and of course the github page is at `,
-			V_atb({ ctx, href: 'http://github.com/btakita/rr' }),
+			V_atb({ href: 'http://github.com/btakita/rr' }),
 			`. Yes, and there is more to come`)
 	}/>
 </p>

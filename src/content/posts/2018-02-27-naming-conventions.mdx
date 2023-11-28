@@ -9,37 +9,34 @@ tags:
 description: Naming Conventions to encode the meaning & context of abstractions
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import { p_ } from 'relementjs/html'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
-			`Note: The naming convention described in this article `,
-			V_atb({ ctx,
-				innerText: 'has been named',
-				href: '/posts/multi-underscore-tag-naming-convention-analysis'
+	<Rel dom={
+		fragment_(
+			`Note: The naming convention described in this article is named `,
+			V_atb({
+				innerText: 'Tag Vector',
+				href: '/posts/tag-vector-0-introduction'
 			}),
 			`:`)
 	}/>
 </p>
 
-Long form: Multi Underscore Tag Naming Convention
-
-Medium form: Tag Naming Convention
-
-Short Form: Tag Naming
-
 ---
 
-An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined
-together to create a name.
-
-<Van dom={
-	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
-		'Naming Convention (programming) (Wikipedia)')
+<Rel dom={
+	fragment_(
+		p_(
+			`An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined
+			together to create a name. `,
+		V_atb({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
+			'Naming Convention (programming) (Wikipedia)')
+	))
 }/>
 
 ## Discoverability: Unique vs Ambiguous Names
@@ -47,8 +44,8 @@ together to create a name.
 A name & tags in the name also acts identifiers to locate the usages of the abstraction in the codebase. This
 attribute is also known as discoverability.
 
-<Van dom={
-	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Discoverability' },
+<Rel dom={
+	V_atb({ href: 'https://en.wikipedia.org/wiki/Discoverability' },
 		'Discoverability (Wikipedia)')
 }/>
 
@@ -72,8 +69,8 @@ For reason of unambiguous distinction, it is advantageous to always use the same
 
 ## Top-down & Bottom-up Design
 
-<Van dom={
-	V_atb({ ctx, href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
+<Rel dom={
+	V_atb({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
 		'Top-down and bottom-up design (Wikipedia)')
 }/>
 

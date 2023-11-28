@@ -13,14 +13,14 @@ description:
 ---
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_comments_to_pair_or_not_to_pair } from '@btakita/ui--server--briantakita'
-import Van from '../../components/Van.astro'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
-<Van dom={
+<Rel dom={
 	V_post_top_note({ ctx },
 		`Originally posted on `,
-		V_atb({ ctx,
+		V_atb({
 			innerText: 'blog.honk.com',
 			href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/'
 		}))
@@ -70,4 +70,4 @@ programming may be the best option, given different circumstances.
 
 Comments *(copied from original post)*:
 
-<Van dom={V_comments_to_pair_or_not_to_pair({ ctx })}/>
+<Rel dom={V_comments_to_pair_or_not_to_pair({ ctx })}/>

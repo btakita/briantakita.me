@@ -1,7 +1,7 @@
 ---
 import { V_hr, V_socials } from '@btakita/ui--server--blog'
-import { type Ctx } from '@ctx-core/object'
-import Van from './Van.astro'
+import { type Ctx } from 'ctx-core/object'
+import Rel from './Rel.astro'
 const current_year = new Date().getFullYear()
 export interface Props {
 	ctx:Ctx
@@ -14,11 +14,11 @@ const {
 ---
 
 <footer class={`${no_margin_top ? '' : 'mt-auto'}`}>
-	<Van dom={
+	<Rel dom={
 		V_hr({ ctx, 'no-padding': true })
 	}/>
 	<div class="footer-wrapper">
-		<Van dom={V_socials({ ctx, centered: true })}/>
+		<Rel dom={V_socials({ ctx, centered: true })}/>
 		<div class="copyright-wrapper">
 			<span>Copyright &#169; {current_year}</span>
 			<span class="separator">&nbsp;|&nbsp;</span>

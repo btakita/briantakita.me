@@ -3,10 +3,9 @@ import { type Post } from '@btakita/domain--all--blog'
 import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
 import { V_main_posts, V_nav_posts } from '@btakita/ui--server--blog'
-import type { PlateVan } from 'van-type-delegate'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-import Van from '../components/Van.astro'
+import Rel from '../components/Rel.astro'
 import { SITE } from '../config'
 import Layout from '../layouts/Layout.astro'
 import { server__ctx__new } from '../lib'
@@ -29,10 +28,9 @@ const sorted__paginated__posts = sorted__posts.slice(start_post, last_post)
 
 <Layout title={`Posts | ${SITE.title}`}>
 	<Header ctx={ctx} active="posts"/>
-	<Van dom={V_main_posts<PlateVan>({ ctx, posts: sorted__paginated__posts })}/>
-	<Van dom={
-		V_nav_posts<PlateVan>({
-			ctx,
+	<Rel dom={V_main_posts({ ctx, posts: sorted__paginated__posts })}/>
+	<Rel dom={
+		V_nav_posts({
 			page_num,
 			page_count,
 		})

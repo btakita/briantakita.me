@@ -8,17 +8,17 @@ tags:
   - philosophy
 description: "Data layer definitions"
 ---
-import { V_atb, V_footnote } from '@btakita/ui--server--blog'
-import Van from '../../components/Van.astro'
+import { V_atb, V_footnote, V_footnote_list } from '@btakita/ui--server--blog'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 <p>
 	{[
 		`A Data ontology I saw`,
-		<Van dom={
+		<Rel dom={
 			V_footnote({ ctx, id: 'clif-high-data' },
-				V_atb({ ctx, href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' },
+				V_atb({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' },
 					`SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))
 		}/>
 	]}
@@ -30,3 +30,4 @@ export const ctx = frontmatter.ctx = mdx__ctx__new()
 - **Entia-data**: Data pertaining to the beings or entities that are collecting & aggregating the data
 - **Omnia-Exemplar-data**: Data related to the overarching universal model or the paradigmatic structure of the
 universe in which these beings **think/believe** they operate
+<Rel dom={V_footnote_list({ ctx })}></Rel>

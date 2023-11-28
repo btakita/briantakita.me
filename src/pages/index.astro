@@ -5,7 +5,7 @@ import { V_home } from '@btakita/ui--server--briantakita'
 import { getCollection } from 'astro:content'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
-import Van from '../components/Van.astro'
+import Rel from '../components/Rel.astro'
 import { SOCIALS } from '../config'
 import Layout from '../layouts/Layout.astro'
 import { server__ctx__new } from '../lib'
@@ -18,7 +18,7 @@ const social__count = SOCIALS.filter(social=>social.active).length
 <!doctype html>
 <Layout>
 	<Header ctx={ctx}/>
-	<Van dom={
+	<Rel dom={
 		V_home({ ctx, featured__posts, posts, social__count })
 	}/>
 	<Footer ctx={ctx}/>

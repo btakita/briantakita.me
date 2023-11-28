@@ -5,7 +5,7 @@ import { V_main_search } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
-import Van from '../../components/Van.astro'
+import Rel from '../../components/Rel.astro'
 import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
@@ -22,9 +22,9 @@ const search_item_a = posts.map(post=>({
 
 <Layout title={`Search | ${SITE.title}`}>
 	<Header ctx={ctx} active="search"/>
-	<Van dom={
+	<Rel dom={
 		V_main_search({ ctx, search_item_a })
-	}></Van>
+	}></Rel>
 	<Footer ctx={ctx}/>
 </Layout>
 

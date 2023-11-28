@@ -5,7 +5,7 @@ import { V_main_tag } from '@btakita/ui--server--blog'
 import { CollectionEntry, getCollection } from 'astro:content'
 import Footer from '../../../components/Footer.astro'
 import Header from '../../../components/Header.astro'
-import Van from '../../../components/Van.astro'
+import Rel from '../../../components/Rel.astro'
 import { SITE } from '../../../config'
 import Layout from '../../../layouts/Layout.astro'
 import { server__ctx__new } from '../../../lib'
@@ -31,7 +31,7 @@ const tag__posts = tag__posts__new(posts, tag)
 
 <Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>
 	<Header ctx={ctx} active="tags"/>
-	<Van dom={
+	<Rel dom={
 		V_main_tag({ ctx, tag, posts: tag__posts })
 	}/>
 	<Footer ctx={ctx}/>

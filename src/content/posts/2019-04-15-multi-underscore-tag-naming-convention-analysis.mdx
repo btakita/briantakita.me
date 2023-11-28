@@ -11,10 +11,10 @@ tags:
 description: Naming Convention that utilizes underscores to articulate relationships to tags.
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a
@@ -42,10 +42,10 @@ left) of read words, generates a graph of progressive contextual development.
 
 This sequence follows the English rules of Grammar for a phrase.
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`The object is "`,
-			V_atb({ ctx, innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
+			V_atb({ innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
 			`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`)
 	}/>
 </p>
@@ -54,8 +54,8 @@ The prepositions are:
 <ul>
 	<li>Multi Underscore - implying multiple underscore characters <code>_</code></li>
 	<li>
-		<Van dom={
-			V_atb({ ctx, innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
+		<Rel dom={
+			V_atb({ innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
 		}/>
 		<ul>
 			<li>
@@ -65,8 +65,8 @@ The prepositions are:
 		</ul>
 	</li>
 	<li>
-		<Van dom={
-			V_atb({ ctx, innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
+		<Rel dom={
+			V_atb({ innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
 		}/>
 		<ul>
 			<li>The process of giving names to things.</li>

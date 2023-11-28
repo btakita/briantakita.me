@@ -9,12 +9,12 @@ description:
 ---
 import { V_atb, V_post_top_note } from '@btakita/ui--server--blog'
 import { V_atb_ccrcorp } from '@btakita/ui--server--briantakita'
-import { V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import Rel from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
+export const ctx = mdx__ctx__new()
 
-<Van dom={
+<Rel dom={
 	V_post_top_note({ ctx },
 		`Originally posted on `,
 		V_atb({
@@ -26,7 +26,7 @@ export const ctx = frontmatter.ctx = mdx__ctx__new()
 <p>
 	{[
 		`One of the great things about Whidbey is ClickOnce Deployment. At `,
-		<Van dom={V_atb_ccrcorp({ ctx })}/>,
+		<Rel dom={V_atb_ccrcorp()}/>,
 		`, I use it to deploy rich client internal applications.`
 	]}
 </p>
@@ -39,8 +39,8 @@ Access adp application to our organization. To do so, I simply...
 	<li>Add the adp file to the project and set it as Content</li>
 	<li>Write a bootstrapper application in the Main method</li>
 	<li>
-		<Van dom={
-			V_fragment(ctx,
+		<Rel dom={
+			fragment_(
 				V_atb({
 					ctx,
 					href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'

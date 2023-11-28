@@ -11,29 +11,29 @@ description:
   Flow testing in Jasmine with Jasmine Flow.
 ---
 import { V_atb } from '@btakita/ui--server--blog'
-import { H_, V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
+import { fragment_ } from 'relementjs'
+import { a_, b_ } from 'relementjs/html'
+import Re from '../../components/Rel.astro'
 import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
-export const { a, b } = H_(ctx)
+export const ctx = mdx__ctx__new()
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 
 include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which
 includes a large number of edge cases.
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Re dom={
+		fragment_(
 			`I'm a `,
-			a({ ctx, href: '/posts/automated-black-box-testing' },
+			a_({ ctx, href: '/posts/automated-black-box-testing' },
 				'fan of black box'),
 			` testing, because it is decoupled from the implementation. The implication is the `,
-			V_atb({ ctx,
+			V_atb({
 				href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/'
 			},
-				b('what'),
+				b_('what'),
 				` is verified, rather than the `,
-				b('how')),
+				b_('how')),
 			`.`)
 	}/>
 </p>

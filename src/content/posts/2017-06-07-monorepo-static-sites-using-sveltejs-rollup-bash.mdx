@@ -23,58 +23,56 @@ import {
 	V_atb_sveltejs,
 	V_atb_wintersmithjs
 } from '@btakita/ui--server--briantakita'
-import { H_, V_fragment } from '@ctx-core/vanjs'
-import Van from '../../components/Van.astro'
-import { mdx__ctx__new } from '../../lib'
-export const ctx = frontmatter.ctx = mdx__ctx__new()
-export const { em } = H_(ctx)
+import { fragment_ } from 'relementjs'
+import { em_ } from 'relementjs/html'
+import Rel from '../../components/Rel.astro'
 
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`BrianTakita.com `,
-			em('(now briantakita.me)'),
+			em_('(now briantakita.me)'),
 			` is now built using a technology chain consisting of `,
-			V_atb_sveltejs({ ctx }),
+			V_atb_sveltejs(),
 			`, `,
-			V_atb_rollupjs({ ctx }),
+			V_atb_rollupjs(),
 			`, `,
-			V_atb_ctx_core({ ctx }),
+			V_atb_ctx_core(),
 			`, & good ol' Bash.`
 		)
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`You can see the source in the `,
-			V_atb_briantakita_com({ ctx }),
+			V_atb_briantakita_com(),
 			` repo.`)
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`I wanted a static site generator that felt like building a custom app, with a `,
-			V_atb_domain_driven_design({ ctx }),
+			V_atb_domain_driven_design(),
 			`, approachable custom build scripts, & isomorphic javascript.`)
 	}/>
 </p>
 <p>
-	<Van dom={
-		V_fragment({ ctx },
+	<Rel dom={
+		fragment_(
 			`This site was build using existing solutions such as `,
-			V_atb_jeckyllrb({ ctx }),
+			V_atb_jeckyllrb(),
 			`, `,
-			V_atb_wintersmithjs({ ctx }),
+			V_atb_wintersmithjs(),
 			`, & `,
-			V_atb_metalsmithjs({ ctx }),
+			V_atb_metalsmithjs(),
 			`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
 			done my way.`)
 	}/>
 </p>
 
-Some features that I found essential include:
+Some of my essential features include:
 
 * a development server with watch/build scripts
 * generate static html files to serve from github.io
