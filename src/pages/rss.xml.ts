@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss'
-import type { Post } from '@btakita/domain--all--blog'
+import type { Post } from '@btakita/domain--any--blog'
 import { sorted__posts__new } from '@btakita/domain--server--blog'
 import { SITE } from '@config'
 import type { APIContext } from 'astro'
