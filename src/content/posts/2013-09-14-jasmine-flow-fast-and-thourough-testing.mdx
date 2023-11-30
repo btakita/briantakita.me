@@ -12,15 +12,15 @@ description:
 ---
 import { atb_ } from '@btakita/ui--server--blog'
 import { fragment_ } from 'relementjs'
+import Rel from 'relementjs/astro'
 import { a_, b_ } from 'relementjs/html'
-import Re from '../../components/Rel.astro'
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 
 include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which
 includes a large number of edge cases.
 
 <p>
-	<Re dom={
+	<Rel dom={
 		fragment_(
 			`I'm a `,
 			a_({ href: '/posts/automated-black-box-testing' },
