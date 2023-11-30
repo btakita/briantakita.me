@@ -1,0 +1,13 @@
+---
+import Footer from '../../components/Footer.astro'
+import Header from '../../components/Header.astro'
+import Layout from '../../layouts/Layout.astro'
+import { server__ctx__new } from '../../lib/index.js'
+export const prerender = false
+const ctx = server__ctx__new(Astro)
+---
+
+<Layout title={'Links'}>
+	<Header ctx={ctx} active="links"/>
+	<Footer ctx={ctx}/>
+</Layout>
