@@ -1,7 +1,7 @@
 #!/bin/env bun
 import { readFile, writeFile } from 'fs/promises'
-import { dirname } from 'path'
-const project_dir = dirname(dirname(process.argv[1]), '..')
+import { dirname, join } from 'path'
+const project_dir = join(dirname(process.argv[1]), '..')
 const build = Bun.spawn(['astro', 'build'], {
 	cwd: '.',
 	env: process.env,
@@ -22,6 +22,7 @@ if (build.stderr) {
 	}))
 }
 const build__exitcode = await build.exited
+console.debug('vercel--build.js|debug|1', { build__exitcode })
 if (build__exitcode) {
 	process.exit(build__exitcode)
 }
