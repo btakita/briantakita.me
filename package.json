@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "./bin/dev.sh",
     "start": "./bin/dev.sh",
-    "build": "astro build",
+    "build": "./bin/vercel--build.js",
     "preview": "astro preview",
     "astro": "astro",
     "assets--download": "./bin/assets--download.sh",
