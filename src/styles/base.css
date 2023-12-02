@@ -88,18 +88,18 @@
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
-  .prose details {
-    @apply inline-block cursor-pointer select-none text-skin-base;
-  }
-  .prose summary {
-    @apply focus-outline;
-  }
   .prose code {
     @apply font-mono;
   }
   .prose p code {
     display: inline-block;
     white-space: nowrap;
+  }
+  .prose details {
+    @apply inline-block cursor-pointer select-none text-skin-base;
+  }
+  .prose summary {
+    @apply focus-outline;
   }
 
   /* ===== scrollbar ===== */
