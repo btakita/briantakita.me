@@ -1,6 +1,8 @@
 #!/usr/bin/node
 import { spawn } from 'child_process'
 import { readFile, writeFile } from 'fs/promises'
+import { dirname } from 'path'
+const project_dir = dirname(dirname(process.argv[1]), '..')
 const build = spawn('astro', ['build'], {
 	cwd: '.',
 	env: process.env,
@@ -14,7 +16,7 @@ await new Promise(res=>{
 		res(0)
 	})
 })
-const vercel_output_config_json_path = './.vercel/output/config.json'
+const vercel_output_config_json_path = `${project_dir}/.vercel/output/config.json`
 const config_json = await readFile(vercel_output_config_json_path)
 	.then(buf=>buf.toString())
 const config = JSON.parse(config_json)
