@@ -1,21 +1,31 @@
-#!/usr/bin/node
-import { spawn } from 'child_process'
+#!/bin/env bun
 import { readFile, writeFile } from 'fs/promises'
 import { dirname } from 'path'
 const project_dir = dirname(dirname(process.argv[1]), '..')
-const build = spawn('astro', ['build'], {
+
+const build = Bun.spawn(['astro', 'build'], {
 	cwd: '.',
 	env: process.env,
-	stdio: ['pipe', process.stdout, process.stderr]
 })
-await new Promise(res=>{
-	build.on('close', code=>{
-		if (code) {
-			process.exit(code)
+const text_decoder = new TextDecoder('UTF8')
+if (build.stdout) {
+	build.stdout.pipeTo(new WritableStream({
+		write(chunk) {
+			process.stdout.write(text_decoder.decode(chunk))
 		}
-		res(0)
-	})
-})
+	}))
+}
+if (build.stderr) {
+	build.stderr.pipeTo(new WritableStream({
+		write(chunk) {
+			process.stderr.write(text_decoder.decode(chunk))
+		}
+	}))
+}
+const build__exitcode = await build.exited
+if (build__exitcode) {
+	process.exit(build__exitcode)
+}
 const vercel_output_config_json_path = `${project_dir}/.vercel/output/config.json`
 const config_json = await readFile(vercel_output_config_json_path)
 	.then(buf=>buf.toString())
