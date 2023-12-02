@@ -22,7 +22,6 @@ if (build.stderr) {
 	}))
 }
 const build__exitcode = await build.exited
-console.debug('vercel--build.js|debug|1', { build__exitcode })
 if (build__exitcode) {
 	process.exit(build__exitcode)
 }
@@ -31,10 +30,13 @@ const config_json = await readFile(vercel_output_config_json_path)
 	.then(buf=>buf.toString())
 const config = JSON.parse(config_json)
 const { routes } = config
-routes.find(route=>route.src === '^/_astro/(.*)$').dest = 'static'
+const astro_file_route = routes.find(route=>route.src === '^/_astro/(.*)$')
+astro_file_route.src = '^/_astro/(?<path>.*)$'
+astro_file_route.dest = 'static/_astro/$path'
+delete astro_file_route.continue
 const handle_route_idx = routes.findIndex(route=>route.handle)
 routes.splice(handle_route_idx, 1, {
-	src: '/.*',
-	dest: 'static'
+	"src": "/(?<path>.*)",
+	"dest": "static/$path"
 })
 await writeFile(vercel_output_config_json_path, JSON.stringify(config, null, 2))
