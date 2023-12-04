@@ -22,54 +22,38 @@ import {
 	atb_sapper_,
 	atb_sveltejs_
 } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
-import { li_, ul_ } from 'relementjs/html'
+import R from 'relementjs/astro'
+import { li_, p_, ul_ } from 'relementjs/html'
 
 # Naming Conventions
-<p>
-	<Rel dom={
-		fragment_(
-			`I've been experimenting & making progress with `,
-			atb_({ innerText: 'Naming Conventions', href: '/posts/naming-conventions' }),
-			`. Naming conventions for immutable entities has proven to reduce incidental complexity. I'm working on
-			fleshing out the last details & a whitepaper. Please stay tuned. This practice has helped me remove incidental
-			complexity from my codebases.`
-		)
-	}/>
-</p>
+<R $={p_(
+	`I've been experimenting & making progress with `,
+	atb_({ innerText: 'Naming Conventions', href: '/posts/naming-conventions' }), `. Naming conventions for immutable
+	entities has proven to reduce incidental complexity. I'm working on fleshing out the last details & a whitepaper.
+	Please stay tuned. This practice has helped me remove incidental complexity from my codebases.`
+)}/>
 
 <h1>
-	<Rel dom={atb_sveltejs_()}/>
+	<R $={atb_sveltejs_()}/>
 </h1>
-<p>
-	<Rel dom={
-		fragment_(
-			`I'm a fan of Sveltejs & `,
-			atb_sapper_(),
-			`. Svelte provides truly reactive stores & html components. Html components mean it's easy for programmers &
-			non-programmers (e.g. designers) to work with. Svelte is compiled, resulting in a payload that is small, fast,
-			& memory efficient.`
-		)
-	}/>
-</p>
+
+<R $={p_(
+	`I'm a fan of Sveltejs & `, atb_sapper_(), `. Svelte provides truly reactive stores & html components. Html
+	components mean it's easy for programmers & non-programmers (e.g. designers) to work with. Svelte is compiled,
+	resulting in a payload that is small, fast, & memory efficient.`
+)}/>
 
 <h1>
-	<Rel dom={atb_holochain_()}/>
+	<R $={atb_holochain_()}/>
 </h1>
-<p>
-	<Rel dom={
-		fragment_(
-			`Lately, I have been turned onto Holochain. Thanks to `,
-			atb_eric_yang_(),
-			`founder of `,
-			atb_flux_social_({ innerText: 'Junto (now Flux Social)' }),
-			` for introducing me to this technology.`)
-	}/>
-</p>
+
+<R $={p_(
+	`Lately, I have been turned onto Holochain. Thanks to `, atb_eric_yang_(), `founder of `,
+	atb_flux_social_({ innerText: 'Junto (now Flux Social)' }), ` for introducing me to this technology.`
+)}/>
 
 I've read through:
-<Rel dom={
+<R $={
 	ul_(
 		li_(atb_holochain_whitepaper_()),
 		li_(atb_holochain_currency_paper_()),

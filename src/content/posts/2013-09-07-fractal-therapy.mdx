@@ -12,16 +12,12 @@ description:
 ---
 import { atb_ } from '@btakita/ui--server--blog'
 import { atb_existence_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<p>
-	<Rel dom={
-		fragment_(
-			atb_existence_(),
-			` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`)
-	}/>
-</p>
+<R $={p_(
+	atb_existence_(), ` over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.`
+)}/>
 
 <iframe
 	title="Fractals - Hunting the Hidden Dimension — PBS Nova"
@@ -46,35 +42,27 @@ Even watching a fractal zoom is soothing. Watch this in full screen!
 	allowfullscreen
 ></iframe>
 
-<p>
-	<Rel dom={
-		fragment_(
-			`It turns out there are some `,
-			atb_({
-				innerText: 'therapies',
-				href: 'https://www.google.com/search?q=fractal+therapy'
-			}),
-			`that utilize Fractals. An `,
-			atb_({
-				innerText: 'article in Psychology Today',
-				href: 'http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals'
-			}),
-			` suggests spending 20 minutes a day for a week being exposed to fractals. This could mean being in nature,
-			blowing bubbles, looking at artwork with Fractals…`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`With the success of other techniques like `,
-			atb_({ innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
-			` and advances in consumer video devices, like the `,
-			atb_({ innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
-			`, therapy is about to become more immersive and available to everyone. Many of these therapies are available
-			free on Youtube.`,
-		)
-	}/>
-</p>
+<R $={p_(
+	`It turns out there are some `,
+	atb_({
+		innerText: 'therapies',
+		href: 'https://www.google.com/search?q=fractal+therapy'
+	}), `that utilize Fractals. An `,
+	atb_({
+		innerText: 'article in Psychology Today',
+		href: 'http://www.psychologytoday.com/blog/codes-joy/201209/fun-fractals'
+	}), ` suggests spending 20 minutes a day for a week being exposed to fractals. This could mean being in nature,
+	blowing bubbles, looking at artwork with Fractals…`
+)}/>
+
+<R $={p_(
+	`With the success of other techniques like `,
+	atb_({ innerText: 'Binaural Beats (Wikipedia)', href: 'https://en.wikipedia.org/wiki/Binaural_beats'}),
+	` and advances in consumer video devices, like the `,
+	atb_({ innerText: 'Oculus Rift', href: 'http://www.oculusvr.com' }),
+	`, therapy is about to become more immersive and available to everyone. Many of these therapies are available free
+	on Youtube.`,
+)}/>
 
 The genre of healing audio/video has been around the last few decades and will continue to gain in prevalence as the
 established medical profession begins to accept these forms of therapy.

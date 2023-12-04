@@ -14,17 +14,16 @@ description:
 ---
 import { atb_, blog__post__top_note_ } from '@btakita/ui--server--blog'
 import { atb_generic_query_analyzer_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<Rel dom={
+<R $={
 	blog__post__top_note_(
-		fragment_(
-			`Originally posted on `,
-			atb_({
-				innerText: 'geekswithblogs.net',
-				href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
-			})))
+		`Originally posted on `,
+		atb_({
+			innerText: 'geekswithblogs.net',
+			href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
+		}))
 }/>
 
 I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
@@ -34,11 +33,6 @@ It requires .NET 2.0.
 
 Despite its version number, it is a beta release and works well.
 
-<p>
-	<Rel dom={
-		fragment_(
-			`You can get it on `,
-			atb_generic_query_analyzer_({ innerText:  'Sourceforge' }),
-			`.`)
-	}/>
-</p>
+<R $={p_(
+	`You can get it on `, atb_generic_query_analyzer_({ innerText:  'Sourceforge' }), `.`
+)}/>

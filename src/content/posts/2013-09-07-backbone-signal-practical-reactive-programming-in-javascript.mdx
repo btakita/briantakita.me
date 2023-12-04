@@ -14,22 +14,16 @@ description:
 ---
 import { atb_ } from '@btakita/ui--server--blog'
 import { atb_backbone_signal_, atb_browserify_, atb_nodejs_, atb_rundavoo_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { code_, p_ } from 'relementjs/html'
 
-<p>
-	<Rel dom={
-		fragment_(
-			`I have recently released `,
-			atb_backbone_signal_(),
-			`, which is a `,
-			atb_({
-				innerText: 'reactive programming (Wikipedia)',
-				href: 'https://en.wikipedia.org/wiki/Reactive_programming'
-			}),
-			` library with a practical & javascripty model api.`)
-	}/>
-</p>
+<R $={p_(
+	`I have recently released `, atb_backbone_signal_(), `, which is a `,
+	atb_({
+		innerText: 'reactive programming (Wikipedia)',
+		href: 'https://en.wikipedia.org/wiki/Reactive_programming'
+	}), ` library with a practical & javascripty model api.`
+)}/>
 
 ```js
 // backbone-signal extends Backbone.Model
@@ -66,23 +60,12 @@ The console ouput is:
     Nice to see you
 ```
 
-<p>
-	<Rel dom={
-		fragment_(
-			`We are calling `,
-			<code>getTruthy</code>,
-			`on the `,
-			<code>userSignal</code>,
-			` two times, one for `,
-			<code>"Hello " + user.name` and one for `"Nice to see you"</code>,
-			`. The callback is invoked when the value is`,
-			atb_({ innerText: 'Truthy', href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }),
-			`. So when `,
-			<code>userSignal.unset</code>,
-			` is called, the callbacks are not invoked.`
-		)
-	}/>
-</p>
+<R $={p_(
+	`We are calling `, code_(`getTruthy`), `on the `, code_(`userSignal`), ` two times, one for `,
+	code_(`"Hello " + user.name`), ` and one for `, code(`"Nice to see you"`), `. The callback is invoked when the
+	value is`, atb_({ innerText: 'Truthy', href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }), `. So when `,
+	code_(`userSignal.unset`), ` is called, the callbacks are not invoked.`
+)}/>
 
 What is nice about having a dedicated signal object is that you can bind to it even when it's value is undefined,
 thereby avoiding order dependencies and simplifying your logic.
@@ -90,18 +73,11 @@ thereby avoiding order dependencies and simplifying your logic.
 backbone-signal also utilizes Backbone's `listenTo` and `listenToOnce` methods, which make it easy to clean up by
 calling `stopListening` on the listener.
 
-<p>
-	<Rel dom={
-		fragment_(
-			`backbone-signal is being used in `,
-			atb_rundavoo_(),
-			` and has been fun to use, especially with `,
-			atb_nodejs_(),
-			` & `,
-			atb_browserify_(),
-			`. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.`)
-	}/>
-</p>
+<R $={p_(
+	`backbone-signal is being used in `, atb_rundavoo_(), ` and has been fun to use, especially with `, atb_nodejs_(),
+	` & `, atb_browserify_(), `. It's been a pleasure using a lightweight unframework to freely structure the dataflow
+	logic of the site.`
+)}/>
 
 The api includes:
 

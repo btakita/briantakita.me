@@ -19,9 +19,10 @@ import {
 	atb_tortoisesvn_,
 	atb_vault_scm_
 } from '@btakita/ui--server--briantakita'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<Rel dom={
+<R $={
 	blog__post__top_note_(
 		`Originally posted on `,
 		atb_({
@@ -30,47 +31,32 @@ import Rel from 'relementjs/astro'
 		})
 	)
 }/>
-<p>
-	{[
-		`	I am very impressed with `,
-		<Rel dom={atb_subversion_({ innerText: 'Subversion Source Control' })}/>,
-		`.`
-	]}
-</p>
-<p>
-	{[
-		`I've used `,
-		<Rel dom={atb_ms_source_safe_()}/>,
-		`, `,
-		<Rel dom={atb_vault_scm_()}/>,
-		`, `,
-		<Rel dom={atb_cvs_scm_()}/>,
-		` but none of them matched my needs.`
-	]}
-</p>
-<p>
-	{[
-		`I really like Subversion because is it is fast, lightweight, and, when coupled with `,
-		<Rel dom={atb_tortoisesvn_()}/>,
-		`, easy to use, administer, and set up. Commits are as easy as going to Windows Explorer, select the folders and
-		files to commit > right click > select Commit. I dont need to integrate the source control with Visual Studio,
-		and suffer the performance hit and a more complicated development environment.`
-	]}
-</p>
+
+<R $={p_(
+	`	I am very impressed with `, atb_subversion_({ innerText: 'Subversion Source Control' }), `.`
+)}/>
+
+<R $={p_(
+	`I've used `, atb_ms_source_safe_(), `, `, atb_vault_scm_(), `, `, atb_cvs_scm_(), ` but none of them matched my
+	needs.`
+)}/>
+
+<R $={p_(
+	`I really like Subversion because is it is fast, lightweight, and, when coupled with `, atb_tortoisesvn_(), `,
+	easy to use, administer, and set up. Commits are as easy as going to Windows Explorer, select the folders and
+	files to commit > right click > select Commit. I dont need to integrate the source control with Visual Studio, and
+	suffer the performance hit and a more complicated development environment.`
+)}/>
 
 Branching, merging, rollbacks, and conflict resolution are easy. Subversion makes source control fun, rather than a
 chore like the other tools I used before.
 
 Now, Im version controlling items that I edit, including my blog posts and articles.
-<p>
-	{[
-		`Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion
-		can be run off of its own svn server or `,
-		<Rel dom={atb_apache_()}/>,
-		`. If you use the svn server on a Windows server, you may want to consider using `,
-		<Rel dom={atb_({
-			href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/'
-		}, 'SVNService')}/>,
-		` to register the svn server as a Service.`
-	]}
-</p>
+
+<R $={p_(
+	`Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion can
+	be run off of its own svn server or `, atb_apache_(), `. If you use the svn server on a Windows server, you may
+	want to consider using `,
+	atb_({ href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/' }, 'SVNService'),
+	` to register the svn server as a Service.`
+)}/>

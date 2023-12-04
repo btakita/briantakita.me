@@ -11,30 +11,20 @@ description:
   Flow testing in Jasmine with Jasmine Flow.
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
-import { a_, b_ } from 'relementjs/html'
+import R from 'relementjs/astro'
+import { a_, b_, p_ } from 'relementjs/html'
 
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes 
 include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which
 includes a large number of edge cases.
 
-<p>
-	<Rel dom={
-		fragment_(
-			`I'm a `,
-			a_({ href: '/posts/automated-black-box-testing' },
-				'fan of black box'),
-			` testing, because it is decoupled from the implementation. The implication is the `,
-			atb_({
-				href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/'
-			},
-				b_('what'),
-				` is verified, rather than the `,
-				b_('how')),
-			`.`)
-	}/>
-</p>
+<R $={p_(
+	`I'm a `, a_({ href: '/posts/automated-black-box-testing' }, 'fan of black box'), ` testing, because it is
+	decoupled from the implementation. The implication is the `,
+	atb_({
+		href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/'
+	}, b_('what'), ` is verified, rather than the `, b_('how')), `.`
+)}/>
 
 Spec frameworks such as rspec and jasmine give you the constructs to perform edge case testing. Unfortunately, the
 same setup is repeated when verifying different aspects of the state of the system. This leads to long test suites

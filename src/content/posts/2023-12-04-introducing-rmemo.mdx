@@ -12,11 +12,14 @@ tags:
 description: "Introducing the rmemo reactive state management library."
 ---
 import { atb_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
-import { atb_rmemo_ } from '@btakita/ui--server--briantakita'
-import Rel from 'relementjs/astro'
+import { atb_relementjs_, atb_rmemo_ } from '@btakita/ui--server--briantakita'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
-Over the past couple of weeks, I created a reactive state library called <Rel dom={atb_rmemo_()}/>.
-
-<Rel dom={footnote_list_c_({ ctx })}/>
+<R $={[
+	p_(
+		`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. I was using `
+	)
+]}/>

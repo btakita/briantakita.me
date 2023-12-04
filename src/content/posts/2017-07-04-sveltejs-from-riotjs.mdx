@@ -14,57 +14,42 @@ description:
 ---
 import { atb_ } from '@btakita/ui--server--blog'
 import { atb_ctx_core_, atb_metalsmithjs_, atb_riotjs_, atb_sveltejs_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I
 converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose
 Svelte & a sample web component using Svelte.
-<p>
-	<Rel dom={
-		fragment_(
-			atb_sveltejs_(),
-			` is a build-time isomorphic library that utilizes a transpilation process to build completely self-contained
-			web components.`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			atb_riotjs_(),
-			` is a runtime isomorphic component library.`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`I recently `,
-			atb_({
-				innerText: 'converted this site',
-				href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}),
-			` to svelte from `,
-			atb_metalsmithjs_(),
-			`, which is a static site generator.`)
-	}/>
-</p>
+
+<R $={p_(
+	atb_sveltejs_(), ` is a build-time isomorphic library that utilizes a transpilation process to build completely
+	self-contained web components.`
+)}/>
+
+<R $={p_(
+	atb_riotjs_(), ` is a runtime isomorphic component library.`
+)}/>
+
+<R $={p_(
+	`I recently `,
+	atb_({
+		innerText: 'converted this site',
+		href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}),
+	` to svelte from `, atb_metalsmithjs_(), `, which is a static site generator.`
+)}/>
 
 While it's easy to get stuck into the rat race of endless technological upgrades & porting to the latest hyped piece
 of tech&hellip;
 
 ## Performance & Memory Usage
-<p>
-	<Rel dom={
-		fragment_(
-			`Despite beinga young library, svelte `,
-			atb_({
-				href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html'
-			}, 'does quite well'),
-			` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte JS generates
-			optimal javascript while not having the overhead of a runtime library. It's also going to have an advantage in
-			page load time due to not requiring a runtime library to be loaded.`
-		)
-	}/>
-</p>
+<R $={p_(
+	`Despite beinga young library, svelte `,
+	atb_({
+		href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html'
+	}, 'does quite well'), ` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte
+	JS generates optimal javascript while not having the overhead of a runtime library. It's also going to have an
+	advantage in page load time due to not requiring a runtime library to be loaded.`
+)}/>
 
 ## HTML-based Components
 
@@ -79,22 +64,12 @@ larger frameworks out there.
 ## APIs
 
 Svelte's api idioms are well thought out. Development flow was coherent natural during the port from Riot.
-<p>
-	<Rel dom={
-		fragment_(
-			`For each of my professional clients, I usea monorepo using the `,
-			atb_ctx_core_(),
-			` toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`You can `,
-			atb_({
-				innerText: 'read more about the features of svelte',
-				href: 'https://svelte.dev/docs'
-			}),
-			`.`)
-	}/>
-</p>
+
+<R $={p_(
+	`For each of my professional clients, I usea monorepo using the `, atb_ctx_core_(), ` toolkit. ctx-core has
+	supporting architecture of a dependency injected ctx (context), agents, & build tools.`
+)}/>
+
+<R $={p_(
+	`You can `, atb_({ innerText: 'read more about the features of svelte', href: 'https://svelte.dev/docs' }), `.`
+)}/>

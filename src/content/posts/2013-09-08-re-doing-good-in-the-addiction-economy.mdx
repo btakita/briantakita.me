@@ -13,23 +13,19 @@ description:
 canonical_url: https://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<p>
-	<Rel dom={
-		fragment_(
-			`From my `,
-			atb_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
-				'wordpress blog')
-	}/>
-</p>
-<p>
-	<Rel dom={
-		atb_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
-			'Doing Good in the Addiction Economy')
-	}/>
-</p>
+<R $={p_(
+	`From my `, atb_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/'}),
+	'wordpress blog'
+)}/>
+
+<R $={p_(
+	atb_({
+		href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/'},
+		'Doing Good in the Addiction Economy')
+)}/>
 
 Interesting but long-winded post, IMO. But then, maybe my impatience toward long posts is telling in the short term
 rewards culture we live in. Time is valuable, and trying to get to the core concept of some the writing is often the

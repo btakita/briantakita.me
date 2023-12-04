@@ -12,22 +12,17 @@ description:
 canonical_url: https://tanzu.vmware.com/content/blog/sake-for-gems-downloads-list
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
 I have a few gems on Rubyforge and I want to track how many of them were downloaded. I found Firefox's search tools
 lacking to find my gem rr.
 
 To fix this issue, I made a sake task, named `gems:downloads:list`, that prints the gem downloads in text.
 
-<p>
-	<Rel dom={
-		fragment_(
-			`The source is on `,
-			atb_({ innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }),
-			`.`)
-	}/>
-</p>
+<R $={p_(
+	`The source is on `, atb_({ innerText: 'caboo.se', href: 'http://pastie.caboo.se/79547' }), `.`
+)}/>
 
 You can install it by using:
 

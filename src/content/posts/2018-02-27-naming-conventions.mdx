@@ -9,40 +9,29 @@ tags:
 description: Naming Conventions to encode the meaning & context of abstractions
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
 import { p_ } from 'relementjs/html'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 
-<p>
-	<Rel dom={
-		fragment_(
-			`Note: The naming convention described in this article is named `,
-			atb_({
-				innerText: 'Tag Vector',
-				href: '/posts/tag-vector-0-introduction'
-			}),
-			`:`)
-	}/>
-</p>
+<R $={p_(
+	`Note: The naming convention described in this article is named `,
+	atb_({ innerText: 'Tag Vector', href: '/posts/tag-vector-0-introduction' }), `:`
+)}/>
 
 ---
 
-<Rel dom={
-	fragment_(
-		p_(
-			`An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined
-			together to create a name. `,
-		atb_({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
-			'Naming Convention (programming) (Wikipedia)')
-	))
-}/>
+<R $={p_(
+	`An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined
+		together to create a name. `,
+	atb_({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' },
+		'Naming Convention (programming) (Wikipedia)')
+)}/>
 
 ## Discoverability: Unique vs Ambiguous Names
 
 A name & tags in the name also acts identifiers to locate the usages of the abstraction in the codebase. This
 attribute is also known as discoverability.
 
-<Rel dom={
+<R $={
 	atb_({ href: 'https://en.wikipedia.org/wiki/Discoverability' },
 		'Discoverability (Wikipedia)')
 }/>
@@ -67,7 +56,7 @@ For reason of unambiguous distinction, it is advantageous to always use the same
 
 ## Top-down & Bottom-up Design
 
-<Rel dom={
+<R $={
 	atb_({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' },
 		'Top-down and bottom-up design (Wikipedia)')
 }/>

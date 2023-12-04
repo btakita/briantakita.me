@@ -13,9 +13,9 @@ description:
 ---
 import { atb_, blog__post__top_note_ } from '@btakita/ui--server--blog'
 import { to_pair_or_not_to_pair__comments_c_ } from '@btakita/ui--server--briantakita'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 
-<Rel dom={
+<R $={
 	blog__post__top_note_(
 		`Originally posted on `,
 		atb_({
@@ -68,4 +68,4 @@ programming may be the best option, given different circumstances.
 
 Comments *(copied from original post)*:
 
-<Rel dom={to_pair_or_not_to_pair__comments_c_()}/>
+<R $={to_pair_or_not_to_pair__comments_c_()}/>

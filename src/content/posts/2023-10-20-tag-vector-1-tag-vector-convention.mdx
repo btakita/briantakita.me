@@ -15,33 +15,25 @@ description:
   A technical description of the Tag Name Convention
 ---
 import { footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
-import { code_ } from 'relementjs/html'
+import R from 'relementjs/astro'
+import { code_, p_ } from 'relementjs/html'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 <TOC_tag_vector/>
 
-<p>
-	<Rel dom={
-		fragment_(
-			`Tag Vector is currently a convention to connect "tags" together with vector arrows, showing the contextual
-			relationship between tags. The tags inference level in relation to each other can be inferred as being up`,
-			code_(`↑`),
-			` or down `,
-			code_(`↓`),
-			footnote_c_({ ctx, id: 'no-up-down-arrow-ligatures' },
-				`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
-				code_(`↑ (0x2191)`),
-				` & `,
-				code_(`↓ (0x2193)`),
-				` are used.`
-			)
-		)
-	}/>
-</p>
+<R $={p_(
+	`Tag Vector is currently a convention to connect "tags" together with vector arrows, showing the contextual
+	relationship between tags. The tags inference level in relation to each other can be inferred as being up`,
+	code_(`↑`), ` or down `, code_(`↓`),
+	footnote_c_({ ctx, id: 'no-up-down-arrow-ligatures' },
+		`Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters `,
+		code_(`↑ (0x2191)`),
+		` & `,
+		code_(`↓ (0x2193)`),
+		` are used.`)
+)}/>
 
 The tag `person` has a higher inference level than `name` as `name` is an attribute of `person`.
 
@@ -208,4 +200,4 @@ const company_id_M_ceo_name:Map<string, string> = new Map([
 	['facebook', 'Mark Zuckerberg'],
 ])
 ```
-<Rel dom={footnote_list_c_({ ctx })}></Rel>
+<R $={footnote_list_c_({ ctx })}></R>

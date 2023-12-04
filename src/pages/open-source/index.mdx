@@ -39,28 +39,28 @@ import {
 	atb_unison_,
 	atb_winforms_
 } from '@btakita/ui--server--briantakita'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 <p>
 	{[
 		`I work on open source projects, licensed with the `,
-		<Rel dom={atb_apache2_license_()}/>,
+		<R $={atb_apache2_license_()}/>,
 		`. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more
 		open source components & apps in the near future. Here are some notable projects:`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_ctx_core_()}/>
+	<R $={atb_ctx_core_()}/>
 </h2>
 
 <p>
 	{[
 		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
 		begin an 2016 & continues today`,
-		<Rel dom={
+		<R $={
 			footnote_c_({ ctx, id: 'ctx-core--catch-all' },
 				`ctx-core has been a bit of a catch-all project to share code between projects under the principles of
 				ctx-core. The functionality of ctx-core is in place but the packages need some reorganization &
@@ -92,7 +92,7 @@ there is a maintenance burden of:
 <p>
 	{[
 		`I found that there are usually small libraries & code snippets that can be glued together with a `,
-		<Rel dom={
+		<R $={
 			atb_naming_convention_({ innerText: 'naming convention' })
 		}/>,
 		` that utilizes unique, immutable, & composable names. As a result, one could find all usages of an entity or
@@ -117,33 +117,33 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 <p>
 	{[
 		`Currently, I use ctx-core along with `,
-		<Rel dom={atb_nanostores_()}/>,
+		<R $={atb_nanostores_()}/>,
 		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores
 		is also a general purpose library any component library is supported. In my work, I favor `,
-		<Rel dom={atb_solidjs_()}/>,
+		<R $={atb_solidjs_()}/>,
 		` to render components on the server & browser. ctx-core also supports `,
-		<Rel dom={atb_sveltejs_()}/>,
+		<R $={atb_sveltejs_()}/>,
 		` with `,
-		<Rel dom={atb_svelte_stores_()}/>,
+		<R $={atb_svelte_stores_()}/>,
 		` to render components & manage reactive state on the server & browser.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_nanostores_()}/>
+	<R $={atb_nanostores_()}/>
 </h2>
 
 <p>
 	{[
 		`I learned about Nano Stores via `,
-		<Rel dom={atb_astrojs_()}/>,
+		<R $={atb_astrojs_()}/>,
 		`. Since I was already using `,
-		<Rel dom={atb_svelte_stores_()}/>,
+		<R $={atb_svelte_stores_()}/>,
 		`, Nano Stores was a natural replacement to support global reactive state while supporting multiple component
 		libraries, such as `,
-		<Rel dom={atb_solidjs_()}/>,
+		<R $={atb_solidjs_()}/>,
 		`. I contributed a fix`,
-		<Rel dom={
+		<R $={
 			footnote_c_({ ctx, id: 'nanostores-breadth-first-queue' },
 				atb_({
 					ctx, innerText: 'Nano Stores breadth first queue',
@@ -152,7 +152,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		}/>,
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I
 		previously contributed to svelte stores`,
-		<Rel dom={
+		<R $={
 			footnote_c_({ ctx, id: 'nanostores-computed-async' },
 				atb_({
 					ctx, innerText: 'Svelte Cyclic breadth first queue',
@@ -161,7 +161,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		}/>,
 		`. I also added soon to be released async support to `,
 		<code>computed</code>,
-		<Rel dom={
+		<R $={
 			footnote_c_({ ctx, id: 'nanostores-computed-async' },
 				atb_({
 					ctx, innerText: 'Nano Stores async computed',
@@ -175,46 +175,46 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 </p>
 
 <h2>
-	<Rel dom={atb_backbone_signal_()}/>
+	<R $={atb_backbone_signal_()}/>
 </h2>
 
 <p>
 	{[
 		`I started using global state management with `,
-		<Rel dom={atb_backbonejs_()}/>,
+		<R $={atb_backbonejs_()}/>,
 		` while Lead Developer at `,
-		<Rel dom={atb_honk_()}/>,
+		<R $={atb_honk_()}/>,
 		`. I `,
 		<a href="/posts/backbone-signal-practical-reactive-programming-javascript">
 			created backbone-signal
 		</a>,
 		` to use global state management with Backbone.js across different projects, while working with `,
-		<Rel dom={atb_rundavoo_()}/>,
+		<R $={atb_rundavoo_()}/>,
 		`.`,
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_jasmine_flow_()}/>
+	<R $={atb_jasmine_flow_()}/>
 </h2>
 
 <p>
 	{[
 		`While at `,
-		<Rel dom={atb_rundavoo_()}/>,
+		<R $={atb_rundavoo_()}/>,
 		` I `,
 		<a href="/posts/jasmine-flow-fast-and-thourough-testing">created jasmine-flow</a>,
 		` to facilitate linear flow testing...saving effort in maintaining automated tests. This was hard-learned
 		from maintaining various large apps while at `,
-		<Rel dom={atb_honk_()}/>,
+		<R $={atb_honk_()}/>,
 		` & `,
-		<Rel dom={atb_pivotal_labs_()}/>,
+		<R $={atb_pivotal_labs_()}/>,
 		`.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_rr_()}/>
+	<R $={atb_rr_()}/>
 </h2>
 
 <p>
@@ -225,20 +225,20 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		It features a terse api to for a high signal to syntax noise ratio for read & write friendly automated testing.
 		I used global state management to manage complex data interactions. I stopped development when I moved to full-stack
 		Javascript development. Maintenance of this project was picked up by `,
-		<Rel dom={atb_({ innerText: 'Sutou Kouhei', href: 'https://github.com/kou' })}/>,
+		<R $={atb_({ innerText: 'Sutou Kouhei', href: 'https://github.com/kou' })}/>,
 		` in 2015.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_rspec_()}/>
+	<R $={atb_rspec_()}/>
 </h2>
 
 <p>
 	{[
 		`I was an early core maintainer on the rspec team. Rspec is the first DSL (Domain Specific Language)
 		implementation of `,
-		<Rel dom={atb_({
+		<R $={atb_({
 			ctx,
 			innerText: 'BDD (Behavioral Driven Development)',
 			href: 'https://dannorth.net/introducing-bdd/'
@@ -248,7 +248,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` & `,
 		<code>context</code>,
 		` statements`,
-		<Rel dom={
+		<R $={
 			footnote_c_({ ctx, id: 'rspec-nested-describes' },
 				`Rspec: Added Nested Describes: Implemented in `,
 				atb_({
@@ -274,20 +274,20 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		` & `,
 		<code>afterEach</code>,
 		`. I championed the idea & delivered the implementation. I also integrated Rspec with `,
-		<Rel dom={
+		<R $={
 			atb_({
 				innerText: 'Test::Unit',
 				href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html'
 			})
 		}/>,
 		`, worked on the initial mock implementation, & worked on the `,
-		<Rel dom={atb_ruby_on_rails_()}/>,
+		<R $={atb_ruby_on_rails_()}/>,
 		` integration.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_desertrb_()}/>
+	<R $={atb_desertrb_()}/>
 </h2>
 
 Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and
@@ -300,15 +300,15 @@ Classes are automatically mixed in with your own or other plugins’ classes. Th
 composable components.
 
 <h2>
-	<Rel dom={atb_jellyrb_()}/>
+	<R $={atb_jellyrb_()}/>
 </h2>
 
 <p>
 	{[
 		`Jelly is an unobtrusive Javascript framework for `,
-		<Rel dom={atb_jquery_()}/>,
+		<R $={atb_jquery_()}/>,
 		` and `,
-		<Rel dom={atb_ruby_on_rails_()}/>,
+		<R $={atb_ruby_on_rails_()}/>,
 		`. It provides a set of conventions and tools that help you organize your AJAX and client-side code, while
 		keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery
 		events.`
@@ -317,15 +317,15 @@ composable components.
 <p>
 	{[
 		`Jelly encourages and enables unit testing your Javascript code. Using a Javascript testing framework such as `,
-		<Rel dom={atb_jasminejs_()}/>,
+		<R $={atb_jasminejs_()}/>,
 		` or `,
-		<Rel dom={atb_screw_unit_()}/>,
+		<R $={atb_screw_unit_()}/>,
 		`, Jelly allows you to test AJAX and client-side events independently from your Rails app.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_poloniumrb_()}/>
+	<R $={atb_poloniumrb_()}/>
 </h2>
 
 <p>
@@ -337,13 +337,13 @@ composable components.
 </p>
 
 <h2>
-	<Rel dom={atb_unison_()}/>
+	<R $={atb_unison_()}/>
 </h2>
 
 Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.
 
 <h2>
-	<Rel dom={atb_screw_unit_()}/>
+	<R $={atb_screw_unit_()}/>
 </h2>
 
 Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to
@@ -354,40 +354,40 @@ provide:
 - and brief, extensible source-code.
 
 <h2>
-	<Rel dom={atb_generic_query_analyzer_()}/>
+	<R $={atb_generic_query_analyzer_()}/>
 </h2>
 
 <p>
 	{[
 		`A query analyzer using `,
-		<Rel dom={atb_ado_net_()}/>,
+		<R $={atb_ado_net_()}/>,
 		`. I built this tool to run SQL queries on the `,
-		<Rel dom={atb_msaccess_()}/>,
+		<R $={atb_msaccess_()}/>,
 		` CRM database & `,
-		<Rel dom={atb_msexcel_()}/>,
+		<R $={atb_msexcel_()}/>,
 		` @ `,
-		<Rel dom={atb_ccrcorp_()}/>,
+		<R $={atb_ccrcorp_()}/>,
 		`. Written with `,
-		<Rel dom={atb_c_sharp_()}/>,
+		<R $={atb_c_sharp_()}/>,
 		`, `,
-		<Rel dom={atb_ado_net_()}/>,
+		<R $={atb_ado_net_()}/>,
 		`, `,
-		<Rel dom={atb_winforms_()}/>,
+		<R $={atb_winforms_()}/>,
 		`.`
 	]}
 </p>
 
 <h2>
-	<Rel dom={atb_poof_()}/>
+	<R $={atb_poof_()}/>
 </h2>
 
 <p>
 	{[
 		`The PHP Object Oriented Framework is a framework library to build components in PHP. It was built as an
 		alternative to using the `,
-		<Rel dom={atb_smarty_()}/>,
+		<R $={atb_smarty_()}/>,
 		`. Poof was written to encapsulate html rendering in components.`
 	]}
 </p>
 
-<Rel dom={footnote_list_c_({ ctx })}/>
+<R $={footnote_list_c_({ ctx })}/>

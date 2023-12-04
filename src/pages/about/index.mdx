@@ -19,13 +19,13 @@ import {
 	atb_solidjs_,
 	attribution_dev__add,
 } from '@btakita/ui--server--briantakita'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 import { li_, ul_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 I create full stack software solutions. My current preferred tooling is:
-<Rel dom={
+<R $={
 	ul_(
 		li_('monorepos'),
 		li_(atb_ctx_core_()),
@@ -115,16 +115,16 @@ commonly used.
 <p>
 	{[
 		`From the question "how do we model `,
-		<Rel dom={atb_existence_()}/>,
+		<R $={atb_existence_()}/>,
 		`?" sprang a `,
-		<Rel dom={atb_philosophy_()}/>,
+		<R $={atb_philosophy_()}/>,
 		`.`
 	]}
 </p>
 <p>
 	{[
 		`This Meta-philosophy can be applied via `,
-		<Rel dom={
+		<R $={
 			atb_({ href: '/posts/magic-connections-with-the-philosophy-of-language'},
 				`language`)
 		}/>,
@@ -133,7 +133,7 @@ commonly used.
 	]}
 </p>
 <h2>
-	<Rel dom={atb_electric_universe_()}/>
+	<R $={atb_electric_universe_()}/>
 </h2>
 
 Viewing the Universe through the lens of Electricity & Magnetism.  The same well known electrical equations &
@@ -150,9 +150,9 @@ food & supplements for optimal health.
 <p>
 	{[
 		`Agent-centric crypto platform, inspired by nature. The `,
-		<Rel dom={atb_holochain_whitepaper_()}/>,
+		<R $={atb_holochain_whitepaper_()}/>,
 		` is worth a read. Here are some `,
-		<Rel dom={
+		<R $={
 			atb_({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
 				'notes')
 		}/>,
@@ -170,7 +170,7 @@ discovery allows one to explore conceptual systems with a logic feedback loop re
 
 <div>
 	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>
-	<Rel dom={attribution_dev__add({ ctx })}/>
+	<R $={attribution_dev__add({ ctx })}/>
 </div>
 
-<Rel dom={footnote_list_c_({ ctx })}/>
+<R $={footnote_list_c_({ ctx })}/>

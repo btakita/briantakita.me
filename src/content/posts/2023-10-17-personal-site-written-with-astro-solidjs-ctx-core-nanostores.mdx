@@ -24,24 +24,19 @@ import {
 	atb_vercel_,
 	attribution_web_framework_realworld_app_sizes__add
 } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
-import { em_, figcaption_, figure_, img_, li_, ul_ } from 'relementjs/html'
+import R from 'relementjs/astro'
+import { em_, figcaption_, figure_, img_, li_, p_, ul_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
 advancement over the past few years to support development from small scale to large scale websites & applications.
-<p>
-	<Rel dom={
-		fragment_(
-			'This site is forked from ',
-			atb_astropaper_(),
-			' theme. I made some modifications & will go through them in this post.')
-	}/>
-</p>
+<R $={p_(
+	`This site is forked from `, atb_astropaper_(), ` theme. I made some modifications & will go through them in this
+	post.`
+)}/>
 This is a static site is a monorepo built with:
-<Rel dom={
+<R $={
 	ul_(
 		li_(atb_bunjs_()),
 		li_(atb_astrojs_()),
@@ -51,29 +46,21 @@ This is a static site is a monorepo built with:
 		li_(atb_tailwindcss_())
 	)
 }/>
-<p>
-	<Rel dom={
-		fragment_(
-			'It is deployed to ',
-			atb_vercel_(),
-			'.')
-	}/>
-</p>
+
+<R $={p_(
+	'It is deployed to ', atb_vercel_(), '.'
+)}/>
 
 ## Monorepo
 
-<p>
-	<Rel dom={
-		fragment_(
-			`For simplicity & ease of distribution, most `,
-			atb_({ innerText: 'Astro Themes', href: 'https://astro.build/themes/' }),
-			` are built in a single repository. I broke up the project into monorepo, where the libraries & apps are
-			broken into separate git repos. This provides structure to where the code is deployed to & how it's used while
-			enabling code re-use for other projects.`,)
-	}/>
-</p>
+<R $={p_(
+	`For simplicity & ease of distribution, most `,
+	atb_({ innerText: 'Astro Themes', href: 'https://astro.build/themes/' }), ` are built in a single repository. I
+	broke up the project into monorepo, where the libraries & apps are broken into separate git repos. This provides
+	structure to where the code is deployed to & how it's used while enabling code re-use for other projects.`
+)}/>
 The git repos include:
-<Rel dom={
+<R $={
 	ul_(
 		li_(
 			atb_({
@@ -121,7 +108,7 @@ The git repos include:
 
 ### Solidjs provides benefits over other isomorphic component frameworks *(e.g. React)*:
 
-<Rel dom={
+<R $={
 	ul_(
 		li_(`A more comprehensible API & more natural integration with the DOM API`),
 		li_(
@@ -152,14 +139,12 @@ The git repos include:
 
 ### Full-stack global state management with ctx-core & nanostores
 
-<p>
-	<Rel dom={
-		fragment_(
-			`ctx-core with nanostores enables libraries & apps to easily share state management`,
-			footnote_c_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
-				atb_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },
-					`How I ended up using ctx-core & nanostores…`)),
-			'.')
-	}/>
-</p>
-<Rel dom={footnote_list_c_({ ctx })}></Rel>
+<R $={p_(
+	`ctx-core with nanostores enables libraries & apps to easily share state management`,
+	footnote_c_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
+		atb_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },
+			`How I ended up using ctx-core & nanostores…`)),
+	'.'
+)}/>
+
+<R $={footnote_list_c_({ ctx })}></R>

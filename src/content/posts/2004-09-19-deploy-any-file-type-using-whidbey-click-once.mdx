@@ -9,10 +9,10 @@ description:
 ---
 import { atb_, blog__post__top_note_ } from '@btakita/ui--server--blog'
 import { atb_ccrcorp_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<Rel dom={
+<R $={
 	blog__post__top_note_(
 		`Originally posted on `,
 		atb_({
@@ -20,13 +20,11 @@ import Rel from 'relementjs/astro'
 			href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx'
 		}))
 }/>
-<p>
-	{[
-		`One of the great things about Whidbey is ClickOnce Deployment. At `,
-		<Rel dom={atb_ccrcorp_()}/>,
-		`, I use it to deploy rich client internal applications.`
-	]}
-</p>
+
+<R $={p_(
+	`One of the great things about Whidbey is ClickOnce Deployment. At `, atb_ccrcorp_(), `, I use it to deploy rich
+	client internal applications.`
+)}/>
 
 ClickOnce can be used to not only deploy .NET applications, but also to deploy files. Yesterday, I deployed an
 Access adp application to our organization. To do so, I simply...
@@ -36,13 +34,11 @@ Access adp application to our organization. To do so, I simply...
 	<li>Add the adp file to the project and set it as Content</li>
 	<li>Write a bootstrapper application in the Main method</li>
 	<li>
-		<Rel dom={
-			fragment_(
-				atb_({
-					href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'
-				}, 'Configure'),
-				` the ClickOnce deployment`)
-		}/>
+		<R $={[
+			atb_({
+				href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022'
+			}, 'Configure'), ` the ClickOnce deployment`
+		]}/>
 	</li>
 </ul>
 

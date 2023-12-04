@@ -11,8 +11,8 @@ tags:
 description: Naming Convention that utilizes underscores to articulate relationships to tags.
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
 Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for
 ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a
@@ -39,20 +39,16 @@ left) of read words, generates a graph of progressive contextual development.
 ### Left to Right: Multi Underscore Tag Naming Convention
 
 This sequence follows the English rules of Grammar for a phrase.
-<p>
-	<Rel dom={
-		fragment_(
-			`The object is "`,
-			atb_({ innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }),
-			`": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`)
-	}/>
-</p>
+<R $={p_(
+	`The object is "`, atb_({ innerText: 'Convention', href: 'https://en.wiktionary.org/wiki/convention' }), `": A
+	practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.`
+)}/>
 
 The prepositions are:
 <ul>
 	<li>Multi Underscore - implying multiple underscore characters <code>_</code></li>
 	<li>
-		<Rel dom={
+		<R $={
 			atb_({ innerText: 'Tag', href: 'https://en.wiktionary.org/wiki/tag' })
 		}/>
 		<ul>
@@ -63,7 +59,7 @@ The prepositions are:
 		</ul>
 	</li>
 	<li>
-		<Rel dom={
+		<R $={
 			atb_({ innerText: 'Naming', href: 'https://en.wiktionary.org/wiki/naming' })
 		}/>
 		<ul>

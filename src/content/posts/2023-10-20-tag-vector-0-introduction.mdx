@@ -18,20 +18,16 @@ featured: true
 ---
 import { footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import { atb_ctx_core_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 import TOC_tag_vector from '../../components/TOC_tag_vector.mdx'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
-<p>
-	<Rel dom={
-		fragment_(
-			`This series about Tag Vector will go over a technique that I have iterated on since 2016 in `,
-			atb_ctx_core_(),
-			` & in other (mostly client) projects.`)
-	}/>
-</p>
+<R $={p_(
+	`This series about Tag Vector will go over a technique that I have iterated on since 2016 in `, atb_ctx_core_(), `
+	& in other (mostly client) projects.`
+)}/>
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 > -- Phil Karlton
@@ -46,24 +42,22 @@ eventually a formalized system with tools to:
 	<li>immutable names to allow a simple text search to find all usages of tags & tag vectors</li>
 	<li>compose multi-dimension tag vectors</li>
 	<li>
-		<Rel dom={
-			fragment_(
-				`show the directional arrow of a tag vector in source code & text using font ligatures`,
-				footnote_c_({ ctx, id: 'font-ligatures' },
-					`The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`))
-		}/>
+		<R $={[
+			`show the directional arrow of a tag vector in source code & text using font ligatures`,
+			footnote_c_({ ctx, id: 'font-ligatures' },
+				`The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`)
+		]}/>
 	</li>
 	<li>store the tag vector in a vector database & automate querying tag graphs</li>
 	<li>tag graphs can will enable linking to & a vector search for other usages of the tag, machine leaning algorithms, &
 		domain-specific analysis.</li>
 	<li>
-		<Rel dom={
-			fragment_(
-				`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
+		<R $={[
+			`write prose with an editor that understands the tag vector with tools that parse & act on the tag vector,
 				rendering components & performing api calls`,
-				footnote_c_({ ctx, id: 'tag-vector-editor-prototype' },
-					`A prototype of the document editor with Tag Vector is in the works`))
-		}/>
+			footnote_c_({ ctx, id: 'tag-vector-editor-prototype' },
+				`A prototype of the document editor with Tag Vector is in the works`
+		)]}/>
 	</li>
 </ul>
 
@@ -72,4 +66,5 @@ low-code tooling, machine learning, even plain text. The Tag Vector convention f
 conventions & can be used with existing source code.
 
 <TOC_tag_vector/>
-<Rel dom={footnote_list_c_({ ctx })}></Rel>
+
+<R $={footnote_list_c_({ ctx })}/>

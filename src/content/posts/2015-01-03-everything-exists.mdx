@@ -13,24 +13,19 @@ description:
   Yet we are talking about them. If they don't exist, why & how am I talking about them? Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept conceptually exists. It may also physically exist; like the men who name themselves Santa Claus.
 ---
 import { atb_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
 Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking about them. If they don't exist, why
 & how am I talking about them?
 
-<p>
-	<Rel dom={
-		fragment_(
-			`Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept
-			conceptually exists. It may also physically exist; like the men who `,
-			atb_({
-				innerText: 'name themselves Santa Claus',
-				href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html'}),
-			`.`
-		)
-	}/>
-</p>
+<R $={p_(
+	`Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept
+	conceptually exists. It may also physically exist; like the men who `,
+	atb_({
+		innerText: 'name themselves Santa Claus',
+		href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html'}), `.`
+)}/>
 
 Surely this must be a cheat; Some sort of sleight of hand; Missing the point. However...
 
@@ -62,16 +57,11 @@ cruel; We can create God the loving, compassionate, & nurturing.
 
 A person's belief system influences the person's thoughts, actions, & interpretations.
 
-<p>
-	<Rel dom={
-		fragment_(
-			`Some `,
-			atb_({ innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }),
-			`impose a belief system composed of some outdated traditions. There are unifying ethics that create harmony with
-			self & others, however these ethics can be taught without Exoteric Religion.`
-		)
-	}/>
-</p>
+<R $={p_(
+	`Some `, atb_({ innerText: 'Exoteric Religions', href: 'http://en.wikipedia.org/wiki/Exoteric' }), `impose a
+	belief system composed of some outdated traditions. There are unifying ethics that create harmony with self &
+	others, however these ethics can be taught without Exoteric Religion.`
+)}/>
 
 ## Our Nature & Calling
 

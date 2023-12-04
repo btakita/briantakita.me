@@ -2,7 +2,7 @@
 import { blog__post__main_ } from '@btakita/ui--server--blog'
 import { type CollectionEntry } from 'astro:content'
 import { raw_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import { SITE } from '../config'
@@ -24,7 +24,7 @@ const html = await Astro.slots.render('default')
 	canonical_url={canonical_url}
 >
 	<Header ctx={ctx} active="posts"/>
-	<Rel dom={
+	<R $={
 		blog__post__main_({ ctx, post },
 			raw_(html))
 	}/>

@@ -3,8 +3,7 @@ import { type Post } from '@btakita/domain--any--blog'
 import { page_number_a__new, sorted__posts__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
 import { blog__posts__main_c_, blog__posts__nav_ } from '@btakita/ui--server--blog'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
 import Footer from '../../components/Footer.astro'
 import Header from '../../components/Header.astro'
 import { SITE } from '../../config'
@@ -20,13 +19,12 @@ const sorted__paginated__posts =
 
 <Layout title={`Posts | ${SITE.title}`}>
 	<Header ctx={ctx} active="posts"/>
-	<Rel dom={
-		fragment_(
-			blog__posts__main_c_({ ctx, posts: sorted__paginated__posts }),
-			blog__posts__nav_({
-				page_num: 1,
-				page_count,
-			}))
-	}/>
+	<R $={[
+		blog__posts__main_c_({ ctx, posts: sorted__paginated__posts }),
+		blog__posts__nav_({
+			page_num: 1,
+			page_count,
+		})
+	]}/>
 	<Footer ctx={ctx}/>
 </Layout>

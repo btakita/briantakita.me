@@ -12,35 +12,23 @@ description:
 ---
 import { atb_ } from '@btakita/ui--server--blog'
 import { atb_briantakita_com_, atb_github_pages_ } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
+import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 
-<p>
-	<Rel dom={
-		fragment_(
-			`I set up `,
-			atb_briantakita_com_(),
-			` using `,
-			atb_github_pages_(),
-			` to btakita.github.io.`)
-	}/>
-</p>
+<R $={p_(
+	`I set up `, atb_briantakita_com_(), ` using `, atb_github_pages_(), ` to btakita.github.io.`
+)}/>
 
-<p>
-	<Rel dom={
-		fragment_(
-			`To set up the DNS, I followed the `,
-			atb_({
-				innerText: 'official instructions',
-				href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
-			}),
-			` and `,
-			atb_({
-				innerText: 'github pages with namecheap',
-				href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }),
-			`.`)
-	}/>
-</p>
+<R $={p_(
+	`To set up the DNS, I followed the `,
+	atb_({
+		innerText: 'official instructions',
+		href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
+	}), ` and `,
+	atb_({
+		innerText: 'github pages with namecheap',
+		href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }), `.`
+)}/>
 
 I created the CNAME file with:
 

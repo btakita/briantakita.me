@@ -23,54 +23,28 @@ import {
 	atb_sveltejs_,
 	atb_wintersmithjs_
 } from '@btakita/ui--server--briantakita'
-import { fragment_ } from 'relementjs'
-import Rel from 'relementjs/astro'
-import { em_ } from 'relementjs/html'
+import R from 'relementjs/astro'
+import { em_, p_ } from 'relementjs/html'
 
-<p>
-	<Rel dom={
-		fragment_(
-			`BrianTakita.com `,
-			em_('(now briantakita.me)'),
-			` is now built using a technology chain consisting of `,
-			atb_sveltejs_(),
-			`, `,
-			atb_rollupjs_(),
-			`, `,
-			atb_ctx_core_(),
-			`, & good ol' Bash.`
-		)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`You can see the source in the `,
-			atb_briantakita_com_(),
-			` repo.`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`I wanted a static site generator that felt like building a custom app, with a `,
-			atb_domain_driven_design_(),
-			`, approachable custom build scripts, & isomorphic javascript.`)
-	}/>
-</p>
-<p>
-	<Rel dom={
-		fragment_(
-			`This site was build using existing solutions such as `,
-			atb_jeckyllrb_(),
-			`, `,
-			atb_wintersmithjs_(),
-			`, & `,
-			atb_metalsmithjs_(),
-			`. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things
-			done my way.`)
-	}/>
-</p>
+<R $={p_(
+	`BrianTakita.com `, em_('(now briantakita.me)'), ` is now built using a technology chain consisting of `,
+	atb_sveltejs_(), `, `, atb_rollupjs_(), `, `, atb_ctx_core_(), `, & good ol' Bash.`
+)}/>
+
+<R $={p_(
+	`You can see the source in the `, atb_briantakita_com_(), ` repo.`
+)}/>
+
+<R $={p_(
+	`I wanted a static site generator that felt like building a custom app, with a `, atb_domain_driven_design_(), `,
+	approachable custom build scripts, & isomorphic javascript.`
+)}/>
+
+<R $={p_(
+	`This site was build using existing solutions such as `, atb_jeckyllrb_(), `, `, atb_wintersmithjs_(), `, & `,
+	atb_metalsmithjs_(), `. When using each of these libraries, I felt the desire to strip away the non-essential code
+	& to have things done my way.`
+)}/>
 
 Some of my essential features include:
 
