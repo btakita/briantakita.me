@@ -11,15 +11,44 @@ tags:
   - open source
 description: "Introducing the rmemo reactive state management library."
 ---
-import { atb_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
-import { atb_relementjs_, atb_rmemo_ } from '@btakita/ui--server--briantakita'
+
+
+import {
+	atb_ctx_core_nanostores_, atb_ctx_core_solid_nanostores_,
+	atb_nanostores_,
+	atb_relementjs_,
+	atb_rmemo_
+} from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
-import { p_ } from 'relementjs/html'
-import { mdx__ctx__new } from '../../lib'
+import { code_, p_ } from 'relementjs/html'
+import { mdx__ctx__new } from '../../lib'import { footnote_c_ } from '@btakita/ui--server--blog'
 export const ctx = mdx__ctx__new()
 
 <R $={[
 	p_(
-		`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. I was using `
+		`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. rmemo is the reactive core
+		of `, atb_relementjs_(),`, a server & browser UI rendering library that I also released.`
 	)
 ]}/>
+
+## Motivation
+
+<R $={[
+	`Until recently I was using `, atb_nanostores_(), ` for my goto state management solution. I contributed to fixing
+	diamond dependency issues. I also wrote some extension libraries`,
+	footnote_c_({ ctx, id: 'ctx-core-nanostore' },
+		atb_ctx_core_nanostores_(), ` & `, atb_ctx_core_solid_nanostores_()),
+	`.
+	Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well & I
+	used Nanostores for some large projects. However, the api is cumbersome in a few ways..., particularly with `, code_
+	(`computed`), `.`,
+	code_(`computed`), ` requires it's parents to be listed as arguments.`,
+]}/>
+
+*
+
+```ts
+import { atom, computed } from 'nanostores'
+const id$ = atom(1)
+const user$ =
+```
