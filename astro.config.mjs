@@ -1,3 +1,4 @@
+import { import_meta_env_ } from '@ctx-core/env'
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -9,10 +10,10 @@ export default defineConfig({
 	output: 'hybrid',
 	adapter: vercel(),
 	integrations: [mdx(), sitemap(), tailwind()],
-	...(import.meta.env.BRIANTAKITAME_PORT ? {
+	...(import_meta_env_().BRIANTAKITAME_PORT ? {
 		server: {
 			host: '0.0.0.0', // heroku requires 0.0.0.0
-			port: parseInt(import.meta.env.BRIANTAKITAME_PORT)
+			port: parseInt(import_meta_env_().BRIANTAKITAME_PORT)
 		}
 	} : {}),
 })

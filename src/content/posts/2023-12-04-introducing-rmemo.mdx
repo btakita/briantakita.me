@@ -9,46 +9,124 @@ tags:
   - state management
   - reactive state management
   - open source
-description: "Introducing the rmemo reactive state management library."
+description: Introducing the rmemo reactive state management library.
 ---
-
-
+import { footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import {
-	atb_ctx_core_nanostores_, atb_ctx_core_solid_nanostores_,
+	atb_ctx_core_nanostores_,
+	atb_ctx_core_solid_nanostores_,
 	atb_nanostores_,
 	atb_relementjs_,
-	atb_rmemo_
+	atb_rmemo_, atb_WeakRef_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
-import { code_, p_ } from 'relementjs/html'
-import { mdx__ctx__new } from '../../lib'import { footnote_c_ } from '@btakita/ui--server--blog'
+import { code_, h3_, p_ } from 'relementjs/html'
+import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
-<R $={[
-	p_(
-		`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. rmemo is the reactive core
-		of `, atb_relementjs_(),`, a server & browser UI rendering library that I also released.`
-	)
-]}/>
+<R $={[p_(
+	`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. rmemo is the reactive core
+	of `, atb_relementjs_(), `, a server & browser UI rendering library that I also released.`
+)]}/>
+
+rmemo is a tiny no-fluff state management library using reactive memos & reactive signals for the server &
+browser. This includes:
+
+- reactive memos
+- reactive signals
+- autosubscriptions
+- async support
+- a terse & focused api
+- performance
+- integration with garbage collector
+
+| imports                                                    | size  |
+|------------------------------------------------------------|:-----:|
+| memo_                                                      | 338 B |
+| memo_ + sig_                                               | 354 B |
+| memo_ + sig_ + be_ + ctx_                                  | 506 B |
+| memo_ + sig_ + be_ + ctx_ + be_memo_pair_ + be_sig_triple_ | 602 B |
+
+
+<R $={p_(
+	`It looks something like:`
+)}/>
+
+```ts
+// users.ts
+import { sig_ } from 'rmemo'
+export const user_a$ = sig_<User[]>([], user_a$=>
+	fetch('https://an.api/users')
+		.then(res=>res.json())
+		.then(user_a=>user_a$._ = user_a))
+export function user__add(user:User) {
+	user_a$([...user_a$(), user])
+}
+export interface User {
+	id:number
+	name:string
+}
+```
+
+## Garbage Collection Integration
+
+<R $={p_(
+	`rmemo tracks listeners using `, atb_WeakRef_(), `. Most other reactive state management libraries directly track
+	listener references. This means the listener must explicitly unregister itself once the listener is complete.
+	Let's examine the trade-offs:`
+)}/>
 
 ## Motivation
 
-<R $={[
+<R $={p_(
 	`Until recently I was using `, atb_nanostores_(), ` for my goto state management solution. I contributed to fixing
 	diamond dependency issues. I also wrote some extension libraries`,
 	footnote_c_({ ctx, id: 'ctx-core-nanostore' },
 		atb_ctx_core_nanostores_(), ` & `, atb_ctx_core_solid_nanostores_()),
-	`.
-	Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well & I
-	used Nanostores for some large projects. However, the api is cumbersome in a few ways..., particularly with `, code_
-	(`computed`), `.`,
-	code_(`computed`), ` requires it's parents to be listed as arguments.`,
-]}/>
+	`. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well
+	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:`,
+)}/>
 
-*
+<R $={h3_(code_(`computed`), ` requires it's parents to be listed as arguments.`)}/>
 
 ```ts
 import { atom, computed } from 'nanostores'
+const user_cache = {
+	1: { id: 1, name: `Joe Blo` }
+}
 const id$ = atom(1)
-const user$ =
+const user$ = computed(id$, id=>user_cache[id])
 ```
+
+<R $={h3_(
+	`async operations must use a writable `, code_(`atom`), ` & `, code_(`subscribe`),
+	footnote_c_({ ctx, id: 'nanostores-async-task' },
+		[`The next major version will integrate `, code_(`task`), ` with `, code_(`computed`)])
+)}/>
+
+```ts
+import { atom } from 'nanostores'
+const id$ = atom(1)
+const user$ = atom()
+id$.subscribe(async id=>{
+	const user = id ? await user__get(id) : null
+	user$.set(user)
+})
+function user__get(id:number) {
+	return fetch(`https://my.api/users/${id}`)
+		.then(res=>res.json())
+}
+```
+
+<R $={h3_(`Should be smaller`)}/>
+
+| atom  | atom + computed | atom + computed + contexts (next release) |
+|:----: |:---------------:|:-----------------------------------------:|
+| 298 B | 1013 B          | > 1200 B                                  |
+
+<R $={p_(
+	`The bundle size of nanostores is remarkably small when only using `, code_(`atom`), ` but grows over 1 kb when
+	including `, code_(`computed`), `.`
+)}/>
+
+<R $={footnote_list_c_({ ctx })}/>

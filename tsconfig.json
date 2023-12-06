@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "strictNullChecks": true,
+    "moduleResolution": "nodenext",
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "paths": {
