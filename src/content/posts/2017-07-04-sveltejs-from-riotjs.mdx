@@ -33,10 +33,7 @@ Svelte & a sample web component using Svelte.
 )}/>
 
 <R $={p_(
-	`I recently `,
-	atb_({
-		innerText: 'converted this site',
-		href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}),
+	`I recently `, atb_({ href: '/posts/monorepo-static-sites-using-sveltejs-rollup-bash'}, 'converted this site'),
 	` to svelte from `, atb_metalsmithjs_(), `, which is a static site generator.`
 )}/>
 
@@ -46,9 +43,8 @@ of tech&hellip;
 ## Performance & Memory Usage
 <R $={p_(
 	`Despite beinga young library, svelte `,
-	atb_({
-		href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html'
-	}, 'does quite well'), ` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte
+	atb_({ href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html' },
+		'does quite well'), ` on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte
 	JS generates optimal javascript while not having the overhead of a runtime library. It's also going to have an
 	advantage in page load time due to not requiring a runtime library to be loaded.`
 )}/>
@@ -73,5 +69,5 @@ Svelte's api idioms are well thought out. Development flow was coherent natural 
 )}/>
 
 <R $={p_(
-	`You can `, atb_({ innerText: 'read more about the features of svelte', href: 'https://svelte.dev/docs' }), `.`
+	`You can `, atb_({ href: 'https://svelte.dev/docs' }, 'read more about the features of svelte'), `.`
 )}/>

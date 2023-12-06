@@ -20,13 +20,9 @@ import { p_ } from 'relementjs/html'
 
 <R $={p_(
 	`To set up the DNS, I followed the `,
-	atb_({
-		innerText: 'official instructions',
-		href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages'
-	}), ` and `,
-	atb_({
-		innerText: 'github pages with namecheap',
-		href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }), `.`
+	atb_({ href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages' }, 'official instructions'),
+	` and `, atb_({ href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' },
+		'github pages with namecheap'), `.`
 )}/>
 
 I created the CNAME file with:

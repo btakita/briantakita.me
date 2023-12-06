@@ -23,9 +23,8 @@ import { p_ } from 'relementjs/html'
 	blog__post__top_note_(
 		`Originally posted on `,
 		atb_({
-			innerText: 'geekswithblogs.net',
 			href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx'
-		}))
+		}, 'geekswithblogs.net'))
 }/>
 
 I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an
@@ -36,5 +35,5 @@ It requires .NET 2.0.
 Despite its version number, it is a beta release and works well.
 
 <R $={p_(
-	`You can get it on `, atb_generic_query_analyzer_({ innerText:  'Sourceforge' }), `.`
+	`You can get it on `, atb_generic_query_analyzer_('Sourceforge'), `.`
 )}/>

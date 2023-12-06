@@ -100,24 +100,25 @@ export const ctx = mdx__ctx__new()
 )}/>
 <R $={p_(
 	`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job
-    freezes, imploding companies everywhere. I picked up any freelance work that I could find`,
+	freezes, imploding companies everywhere. I picked up any freelance work that I could find`,
 	footnote_c_({ ctx, id: 'early-freelance-projects' },
 		`Some of my favorite projects include a ringtone generator using `, atb_php_(), ` & a CRM using using `,
 		atb_c_sharp_(), ` `, atb_dot_net_(), ` & `, atb_sql_server_(), `.`),
 	`. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft;
-		adopting `, atb_linux_(), ` & exploring `, atb_literate_programming_(), `. Literate programming is an important
-		early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to support Literate programming with low-code solutions. I was
-		fascinated with this programming language from Japan called `, atb_ruby_(), ` & grew even more excited with this
-		cool alpha web framework called `, atb_ruby_on_rails_(), `.`
+	adopting `, atb_linux_(), ` & exploring `, atb_literate_programming_(), `. Literate programming is an important
+	early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to
+	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan
+	called `, atb_ruby_(), ` & grew even more excited with this cool alpha web framework called `,
+	atb_ruby_on_rails_(), `.`
 )}/>
 <R $={p_(
 	`I got my first full time job at `,
 	atb_naspp_(), `. The job consisted of office automation software & maintaining a long-used `,
-	atb_({ innerText: 'CRM', href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }),
+	atb_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }, 'CRM'),
 	` & order system to manage print & web subscriptions along with events & conference attendee management. It was
-		written in as an old & bogged down due to size `, atb_msaccess_(), `app, that worked for years. I rewrote the MS
-		Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby
-		using the Ruby/.NET bridge to speed up writing & maintaining the tests.`,
+	written in as an old & bogged down due to size `, atb_msaccess_(), `app, that worked for years. I rewrote the MS
+	Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby
+	using the Ruby/.NET bridge to speed up writing & maintaining the tests.`,
 )}/>
 
 ## Web 2.0, Ruby on Rails, startups
@@ -134,41 +135,35 @@ Wilmes, Nathan Sobo, Nick Kallen, in particular, pushed me to become a better mo
 <R $={p_(
 	`I started working with reactive programming since collaborating with Nathan Sobo on a ruby project called `,
 	atb_unison_(), ` at `, atb_grockit_(), `. `,
-	atb_({ innerText: 'Reactive', href: 'https://en.wikipedia.org/wiki/Reactive_programming' }), ` `,
-	atb_({ innerText: 'state management', href: 'https://en.wikipedia.org/wiki/State_management' }), ` clicked for
-		me, as the paradigm allows state to be composed of functions with reactive inputs & a single output.`
+	atb_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'Reactive'), ` `,
+	atb_({ href: 'https://en.wikipedia.org/wiki/State_management' }, 'state management'), ` clicked for me, as the
+	paradigm allows state to be composed of functions with reactive inputs & a single output.`
 )}/>
 <R $={p_(
-	`I was a core contributor to the Behavior Driven Development library `, atb_rspec_(), ` & championed/developed
-			the first (that I know of) implementation of nested `, code_('describe'), ` statements`,
+	`I was a core contributor to the Behavior Driven Development library `, atb_rspec_(), ` & championed/developed the
+	first (that I know of) implementation of nested `, code_('describe'), ` statements`,
 	footnote_c_({ ctx, id: 'nested-describe-statements' },
 		`This pattern is still used in some testing libraries today. It was a practical solution paired along with
-				describing nested context along with `,
-		code_('beforeEach'),
-		` & `,
-		code_('afterEach'),
-		`. Given my inclination to flatten architecture, helper functions, the development of `,
-		atb_({ innerText: 'Tag Vectors', href: '/posts/tag-vector-0-introduction' }),
-		`, I now prefer to keep the test structure flat.`),
+		describing nested context along with `, code_('beforeEach'), ` & `, code_('afterEach'), `. Given my inclination
+		to flatten architecture, helper functions, the development of `,
+		atb_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors'), `, I now prefer to keep the test structure
+		flat.`),
 	`. I also worked on various open source projects focused on terse apis & Domain Driven Design`
 )}/>
 <R $={p_(
 	`I worked with creating composable plugins while working on `,
 	atb_desertrb_(),
-	`, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to
-			coherently managing multiple libraries in a single domain; some of these led to `,
-	atb_monorepo_({ innerText: 'monorepo' }),
-	` patterns that I use today.`
+	`, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to coherently
+	managing multiple libraries in a single domain; some of these led to `, atb_monorepo_('monorepo'), ` patterns that
+	I use today.`
 )}/>
 There were many projects that I had the fortune to be a part of at Pivotal, so it deserves it's own post. While I
 got exposure to some of the best in the industry, many early stage start up projects, innovative open source projects,
 was well respected, had some great friendships. After 4 years with Pivotal, I wanted to be with a company &
 maintain a code base for the long run. I wanted to go deeper with maintaining single codebase to grow in my practice.
 <R $={p_(
-	`My final project @ Pivotal was with `,
-	atb_honk_(),
-	`. I liked working with the founders, Tom Taira, Stephanie Lacrosse, Bruce Krysiak. It was a smooth transition
-			to be the Lead Product Developer on the product.`
+	`My final project @ Pivotal was with `, atb_honk_(), `. I liked working with the founders, Tom Taira, Stephanie
+	Lacrosse, Bruce Krysiak. It was a smooth transition to be the Lead Product Developer on the product.`
 )}/>
 
 ### Honk
@@ -176,43 +171,28 @@ maintain a code base for the long run. I wanted to go deeper with maintaining si
 Honk was an automotive social information & sales startup. Honk built in social reviews, market price comparison,
 vehicle information, preference matching to autos tools.
 <R $={p_(
-	`While working with `,
-	atb_backbonejs_(),
-	` at Honk, I found that state management was effective in maintaining complex apps.`
+	`While working with `, atb_backbonejs_(), ` at Honk, I found that state management was effective in maintaining
+	complex apps.`
 )}/>
 	<R $={p_(
 	`Tom & Stephanie have a long track record & deep connections in the automotive & automotive web industry. A
-			partnership with `,
-	atb_news_corp_(),
-	`, building auto buying components, even providing an office in the `,
-	atb_myspace_(),
-	` building. Honk also created the auto buying portal through a partnership with `,
-	atb_wsj_(),
-	` & `,
-	atb_usaa_(),
-	`.`
+	partnership with `, atb_news_corp_(), `, building auto buying components, even providing an office in the `,
+	atb_myspace_(), ` building. Honk also created the auto buying portal through a partnership with `, atb_wsj_(),
+	` & `, atb_usaa_(), `.`
 )}/>
 Work consisted of long hours to push out releases. I enjoyed the work though I was beginning to burn out & my personal
 life was starting to fray. I sought to work from home & was not permitted to.
 <R $={p_(
-	`Around the time News Corp was going through the sale of My Space among other structural changes to it's
-			Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `,
-	atb_truecar_(),
-	`.`
+	`Around the time News Corp was going through the sale of My Space among other structural changes to it's Digital
+	Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `, atb_truecar_(), `.`
 )}/>
 <R $={p_(
-	`Around the time News Corp was going through the sale of My Space among other structural changes to it's
-			Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `,
-	atb_truecar_(),
-	`. The stagnancy, grind of long hours, releases led me to look elsewhere for work. I got a job offer to work
-			with `,
-	atb_yammer_(),
-	` led by Davis Sacks. I decided to stay with Honk, feeling sense of loyalty to stay onboard with the
-			acquisition to TrueCar. I told David Sacks I will not be signing the offer; he told me "you are making a
-			mistake". Given the early usage of node.js, `,
-	atb_cassandra_(),
-	`, the eventual acquisition by `,
-	atb_microsoft_(),
+	`Around the time News Corp was going through the sale of My Space among other structural changes to it's Digital
+	Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by `, atb_truecar_(), `.
+	The stagnancy, grind of long hours, releases led me to look elsewhere for work. I got a job offer to work with `,
+	atb_yammer_(), ` led by Davis Sacks. I decided to stay with Honk, feeling sense of loyalty to stay onboard with
+	the acquisition to TrueCar. I told David Sacks I will not be signing the offer; he told me "you are making a
+	mistake". Given the early usage of node.js, `, atb_cassandra_(), `, the eventual acquisition by `, atb_microsoft_(),
 	`, he is correct from the perspective of achieving business success.`
 )}/>
 
@@ -231,129 +211,78 @@ least I was in LA.
 
 ### Milyoni
 <R $={p_(
-	`My first independent contract began with the then "social entertainment" startup `,
-	atb_milyoni_(),
-	` (pronounced million-eye) located in Pleasanton, CA. Milyoni had a Rails app supporting Video on Demand & Live
-		Online Events with time-coded chat & components synchronized with the Video on Demand. Live events had real-time
-		chat & components. Ruby, being a relatively slow language, did not scale to support large online events. In
-		light of the performance issues, I developed a chat & component server built in node.js & `,
-	atb_redis_(),
-	`, which handled the traffic well. When I began the project, we made an agreement with one of the founders that I
-		would be working remotely in LA, where I lived. I agreed to move up to the Bay Area to help build the young team
-		along with my old employer, Pivotal Labs. This lasted about a year. I had personal matters to take care of back in
-		LA but the manager of the project wanted me on site, so I left.`
+	`My first independent contract began with the then "social entertainment" startup `, atb_milyoni_(), ` (pronounced
+	million-eye) located in Pleasanton, CA. Milyoni had a Rails app supporting Video on Demand & Live Online Events
+	with time-coded chat & components synchronized with the Video on Demand. Live events had real-time chat &
+	components. Ruby, being a relatively slow language, did not scale to support large online events. In light of the
+	performance issues, I developed a chat & component server built in node.js & `, atb_redis_(), `, which handled the
+	traffic well. When I began the project, we made an agreement with one of the founders that I would be working
+	remotely in LA, where I lived. I agreed to move up to the Bay Area to help build the young team along with my old
+	employer, Pivotal Labs. This lasted about a year. I had personal matters to take care of back in LA but the
+	manager of the project wanted me on site, so I left.`
 )}/>
 
 ### Rundavoo
 <R $={p_(
-	`I then joined `,
-	atb_rundavoo_(),
-	` & created `,
-	atb_({
-		innerText: 'backbone-signal',
-		href: '/posts/backbone-signal-practical-reactive-programming-javascript'}),
-	` as a library for reactive state management, which I used with `,
-	atb_riotjs_(),
-	` to render the front-end. I joined the company fairly late, sadly it was having funding issues. I stayed
-		onboard as everyone else left hoping to help rescue the company with a lean staff.  Sadly, Rundavoo ended up
-		folding & I was owed a sizable outstanding balance.`
+	`I then joined `, atb_rundavoo_(), ` & created `,
+	atb_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript'}, 'backbone-signal'), ` as a
+	library for reactive state management, which I used with `, atb_riotjs_(), ` to render the front-end. I joined the
+	company fairly late, sadly it was having funding issues. I stayed onboard as everyone else left hoping to help
+	rescue the company with a lean staff.  Sadly, Rundavoo ended up folding & I was owed a sizable outstanding balance.`
 )}/>
 <R $={p_(
-	`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this
-			journey, my `,
-	atb_worldview_({ innerText: 'worldview' }),
-	` expanded with experimenting with the `,
-	atb_ontology_({ innerText: 'ontological' }),
-	` expression of a `,
-	atb_philosophy_(),
-	`. During this exploration, I explored how word `,
-	atb_definition_({ innerText: 'definitions' }),
-	` can be `,
-	atb_scope_({ innerText: 'scoped' }),
-	` with `,
-	atb_context_({ innerText: 'context' }),
+	`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this journey,
+	 my `, atb_worldview_('worldview'), ` expanded with experimenting with the `, atb_ontology_('ontological'), `
+	 expression of a `, atb_philosophy_(), `. During this exploration, I explored how word `,
+	atb_definition_('definitions'), ` can be `, atb_scope_('scoped'), ` with `, atb_context_('context'),
 	footnote_c_({ ctx, id: 'context-of-entity' },
 		`Taking into account that what is spoken & what is heard is defined with the context of the `,
-		atb_entity_({ innerText: 'entity' }),
-		` speaking or hearing.`
-	),
-	`. I learned about `,
-	atb_existence_(),
-	` and in a wierd way, `,
-	atb_({ innerText: 'Everything Exists', href: '/posts/everything-exists' }),
-	`.`
+		atb_entity_('entity'), ` speaking or hearing.`),
+	`. I learned about `, atb_existence_(), ` and in a wierd way, `,
+	atb_({ href: '/posts/everything-exists' }, 'Everything Exists'), `.`
 )}/>
 <h2>
 	<R $={atb_neo_()}/>
 </h2>
 <R $={p_(
-	`I then continued consulting & a few years later I consulted with the previous incarnation of `,
-	atb_neo_(),
-	`. The client was `,
-	atb_tenfore_holdings_(),
-	`. The project was a document editor with inline commands that integrated with the Tenfore Salesforce database.
-			Neo shut down operations as it was going through an acquisition.`
+	`I then continued consulting & a few years later I consulted with the previous incarnation of `, atb_neo_(), `.
+	The client was `, atb_tenfore_holdings_(), `. The project was a document editor with inline commands that
+	integrated with the Tenfore Salesforce database. Neo shut down operations as it was going through an acquisition.`
 )}/>
 
 ### Censible
 <R $={p_(
-	`I then consulted for `,
-	atb_censible_(),
-	`, which pivoted from a `,
-	atb_esg_(),
-	` Investment platform targeting millennials to apps presenting company ESG information, a stock screener, a
-		portfolio rebalance tool. With the rapid pivoting of products, I created the `,
-	atb_ctx_core_(),
-	` project to expand on reactive state management with `,
-	atb_domain_driven_design_(),
-	`. I leaned on my explorations with Ontology create the tag vector Convention`,
+	`I then consulted for `, atb_censible_(), `, which pivoted from a `, atb_esg_(), ` Investment platform targeting
+	millennials to apps presenting company ESG information, a stock screener, a portfolio rebalance tool. With the
+	rapid pivoting of products, I created the `, atb_ctx_core_(), ` project to expand on reactive state management
+	with `, atb_domain_driven_design_(), `. I leaned on my explorations with Ontology create the tag vector Convention`,
 	footnote_c_({ ctx, id: 'tag-vector-development-continues' },
-		`Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020.
-			This design has been verified with real-world development since. I will write a formal definition & history
-			soon.`
-	),
-	` to enable a simple, flat architecture. We also switched from riotjs`,
-	code_(`-->`),
-	atb_sveltejs_(),
-	`.`
+		`Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020. This
+		design has been verified with real-world development since. I will write a formal definition & history soon.`),
+	` to enable a simple, flat architecture. We also switched from riotjs`, code_(`-->`), atb_sveltejs_(), `.`
 )}/>
 <R $={p_(
-	`I appreciated the design of `,
-	atb_svelte_stores_(),
-	` & for reactive state management. With the introduction of `,
-	atb_sapper_(),
-	` the same component code could be run on the browser & the server. Along with ctx-core, svelte stores could
-			also be run on the browser & server. The server side was tricky with svelte stores alone, as requests would be
-			handled concurrently. To solve the issue, a `,
-	code_('ctx'),
-	`(context) object would be created when the server request starts. A `,
-	code_('Be'),
-	` function would take the `,
-	code_('ctx'),
-	` & to store the value returned by the `,
-	code_('Be'),
-	`, which would be the svelte store.`
+	`I appreciated the design of `, atb_svelte_stores_(), ` & for reactive state management. With the introduction of `,
+	atb_sapper_(), ` the same component code could be run on the browser & the server. Along with ctx-core, svelte
+	stores could also be run on the browser & server. The server side was tricky with svelte stores alone, as requests
+	would be handled concurrently. To solve the issue, a `, code_('ctx'), `(context) object would be created when the
+	server request starts. A `, code_('Be'), ` function would take the `, code_('ctx'), ` & to store the value
+	returned by the `, code_('Be'), `, which would be the svelte store.`
 )}/>
 <R $={p_(
 	`The Censible project was off & on for a few years. During this time I picked up some other projects including `,
-	atb_menu_(),
-	` & `,
-	atb_({ innerText: 'an app', href: 'https://github.com/btakita/iron-henhouse' }),
-	` to report voter suppression & info on how to exercise the right to vote for the 2016 Democrat primary election`,
+	atb_menu_(), ` & `, atb_({ href: 'https://github.com/btakita/iron-henhouse' }, 'an app'), ` to report voter
+	suppression & info on how to exercise the right to vote for the 2016 Democrat primary election`,
 	footnote_c_({ ctx, id: 'suppressthis-org' },
 		`The app was launched as suppressthis.org. It is no longer online.`),
 	`, various other small sites. After Censible, I now collaborate with a related ESG financial advisor `,
-	atb_martin_investments_(),
-	`.`
+	atb_martin_investments_(), `.`
 )}/>
 ctx-core continued to evolve, from git submodules added to a project to a set of > 100 npm packages. The preferred
 software stack changed:
 <R $={[
 	ul_((
-		li_(
-			`from riotjs with Backbone.js stores on a custom `,
-			atb_expressjs_(),
-			` server`),
+		li_(`from riotjs with Backbone.js stores on a custom `, atb_expressjs_(), ` server`),
 		li_(`to sveltejs with svelte stores & sapper`),
 		li_(`to `, atb_solidjs_(), ` with `, atb_nanostores_(), ` & `, atb_solid_start_()),
 		li_(`to solidjs with Nano Stores & `, atb_astrojs_())))
@@ -364,58 +293,43 @@ software stack changed:
 
 ## Why not use React?
 <R $={p_(
-	`The javascript world in late 2010s & early 2020s had much in it's move away from `,
-	atb_jquery_(),
-	` & Backbone.js toward SPA libraries. `,
-	atb_reactjs_(),
-	` became the dominant front-end component rendering library.`
+	`The javascript world in late 2010s & early 2020s had much in it's move away from `, atb_jquery_(), ` & Backbone.
+	js toward SPA libraries. `, atb_reactjs_(), ` became the dominant front-end component rendering library.`
 )}/>
 <R $={p_(
 	atb_({ href: 'https://dev.to/this-is-learning/how-react-isn-t-reactive-and-why-you-shouldn-t-care-152m' },
-		`React is not Reactive`),
-	` by default. There are libraries that can add reactivity to React, like NanoStores & `,
-	atb_signals_react_(),
-	`. React works with the virtual dom where I would rather work with the real DOM. Along with a `,
-	atb_({ href: 'https://dev.to/joetex/react-why-so-complicated-3dc7' },
-		'complicated API'),
-	` & a need for many dependencies to extend it's default behavior, I never got into React. I still cannot force
-			myself to use React. It's not a natural fit to my mental model of developing web apps. I have grown to
-			appreciate contributions made by the React ecosystem.`
+		`React is not Reactive`
+	), ` by default. There are libraries that can add reactivity to React, like NanoStores & `, atb_signals_react_(),
+	`. React works with the virtual dom where I would rather work with the real DOM. Along with a `, atb_({ href:
+			'https://dev.to/joetex/react-why-so-complicated-3dc7' }, 'complicated API'
+	), ` & a need for many dependencies to extend it's default behavior, I never got into React. I still cannot force
+	myself to use React. It's not a natural fit to my mental model of developing web apps. I have grown to appreciate
+	contributions made by the React ecosystem.`
 )}/>
 <R $={p_(
 	`I prefer small & performant libraries, ideally supporting server-side rendering (SSR), which is why I was
-			interested in riot.js (not SSR), sveltejs, solidjs, vanilla js. `,
-	atb_vanjs_(),
-	` looks a promising vanilla js library which supports SSR`,
+	interested in riot.js (not SSR), sveltejs, solidjs, vanilla js. `, atb_vanjs_(), ` looks a promising vanilla js
+	library which supports SSR`,
 	footnote_c_({ ctx, id: 'vanjs-tradeoff' },
 		`VanJS is great for small component trees such as when embedding javascript components. When reactive state
-				changes in VanJS, it re-renders the component by default, allowing custom code to update the existing DOM.
-				For large stateful component trees, a component library with declarative state management (SolidJS, Svelte,
-				React, etc.) is more practical.`),
-	`.`
+		changes in VanJS, it re-renders the component by default, allowing custom code to update the existing DOM. For
+		large stateful component trees, a component library with declarative state management (SolidJS, Svelte, React,
+		etc.) is more practical.`
+	), `.`
 )}/>
 ## Multi Page Apps (MPA)`->`Single Page App (SPA) hybrids`->`Multi Page Apps
 <R $={p_(
 	`Ruby on Rails is a MPA with progressive enhancement support. It's Javascript integration has been a work in
-			progress throughout the history of Rails. However, it cannot match the browser/server integrated development
-			experience of isomorphic Javascript web frameworks. In the earlier days of Javascript component libraries, the
-			Single Page App use case was emphasized. While there were some attempts at lean isomorphic Multi-page App
-			libraries such as `,
-	atb_marko_(),
-	`, most of the javascript community focused on front-end Single Page App development, de-emphasizing Full
-			Stack Development. Libraries such as `,
-	atb_nextjs_(),
-	`, `,
-	atb_sapper_(),
-	` (superceded by `,
-	atb_sveltejs_(),
-	`), `,
-	atb_solid_start_(),
-	` added SSR progressive rendering to a SPA client side router. With the advent of libraries such as `,
-	atb_astrojs_(),
-	` isomorphic Javascript MPA development gained prominence. Marko was built almost a decade earlier, but Astro
-			has gained significant popularity. Astro files are server-side rendered only. Astro's integration with many
-			SSR + CSR component libraries makes it practical to have a full stack web app project across multiple libraries.`
+	progress throughout the history of Rails. However, it cannot match the browser/server integrated development
+	experience of isomorphic Javascript web frameworks. In the earlier days of Javascript component libraries, the
+	Single Page App use case was emphasized. While there were some attempts at lean isomorphic Multi-page App
+	libraries such as `, atb_marko_(), `, most of the javascript community focused on front-end Single Page App
+	development, de-emphasizing Full Stack Development. Libraries such as `, atb_nextjs_(), `, `, atb_sapper_(), `
+	(superceded by `, atb_sveltejs_(), `), `, atb_solid_start_(), ` added SSR progressive rendering to a SPA client
+	side router. With the advent of libraries such as `, atb_astrojs_(), ` isomorphic Javascript MPA development
+	gained prominence. Marko was built almost a decade earlier, but Astro has gained significant popularity. Astro
+	files are server-side rendered only. Astro's integration with many SSR + CSR component libraries makes it
+	practical to have a full stack web app project across multiple libraries.`
 )}/>
 
 ### Hydration
@@ -428,45 +342,32 @@ server & the browser. They would bundle in a hydration library, which seems grea
 hydration libraries would be development intensive, opaque, bloated, slow, unreliable, often hydrates too much of
 the component tree.
 <R $={p_(
-	`Astrojs provides `,
-	atb_({ href: 'https://docs.astro.build/en/guides/client-side-scripts/#client-side-scripts' },
-		`client side builds`),
-	`, an independent browser build with the code inside of the `,
-	code_(`<script/>`),
-	` tag. The Astrojs team pointed out techniques such as `,
-	atb_({ href: 'https://docs.astro.build/en/reference/directives-reference/#definevars' },
-		`passing variables`),
-	` into the `,
-	code_(`<script/>`),
-	` tags & `,
-	atb_({
-			href: 'https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts'},
-		`hydrating data using Web Components`),
-	`. These tools make it practical to develop targeted custom code that is efficient in payload size & execution,
-transparent in it's logic, free of complex dependencies.`)}/>
+	`Astrojs provides `, atb_({ href: 'https://docs.astro.build/en/guides/client-side-scripts/#client-side-scripts' },
+		`client side builds`
+	), `, an independent browser build with the code inside of the `, code_(`<script/>`), ` tag. The Astrojs team
+	pointed out techniques such as `,
+	atb_({ href: 'https://docs.astro.build/en/reference/directives-reference/#definevars' }, `passing variables`),
+	` into the `, code_(`<script/>`), ` tags & `,
+	atb_({ href: 'https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts'},
+		`hydrating data using Web Components`
+	), `. These tools make it practical to develop targeted custom code that is efficient in payload size & execution,
+	transparent in it's logic, free of complex dependencies.`
+)}/>
 
 ### Technological Churn
 
 <R $={p_(
 	`The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the
-		Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails,
-		we saw Web 2.0 startups & the `,
-	code_(`(a)gile->(A)gile`),
+	Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails,
+	we saw Web 2.0 startups & the `, code_(`(a)gile->(A)gile`),
 	footnote_c_({ ctx, id: 'agile_Agile' },
-		code_(`agile->Agile`),
-		` lower-case `,
-		code_(`a`),
-		` to capital `,
-		code_(`A`),
-		`. As the agile movement gained success from it's bottom up software practitioner roots, Agile transition to
-			a top down institutional endeavor with the prominence of coaches, guidelines, corporate sponsored
-			conferences, etc.`
-	),
-	` transition. Emerging web standards made jQuery more or less redundant. I been through two celebrations to end `,
-	atb_ie6_(),
-	` @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old browser.
-		Specialized development (front end developer, api developer) took prominence in corporations. Full Stack
-		development was delegated to these departments. Even startups divided their development teams into these roles.`
+		code_(`agile->Agile`), ` lower-case `, code_(`a`), ` to capital `, code_(`A`), `. As the agile movement gained
+		success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor
+		with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`
+	), ` transition. Emerging web standards made jQuery more or less redundant. I been through two celebrations to end
+	`, atb_ie6_(), ` @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old
+	browser. Specialized development (front end developer, api developer) took prominence in corporations. Full Stack
+	development was delegated to these departments. Even startups divided their development teams into these roles.`
 )}/>
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the
 organization's communication structure.
@@ -479,27 +380,17 @@ organization's communication structure.
 </p>
 <R $={p_(
 	`Of course history often rhymes & some of the same issues that plagued client-server programming in the early
-			1990s which led to web development `,
-	code_(`cgi->server markup languages->web frameworks`),
-	`. Large javascript payloads, SEO, chatty apis, caching, hydration, etc. With Astrojs, the trade-off between
-			build tools, `,
-	atb_({ href: 'https://cleancommit.io/blog/spa-vs-mpa-which-is-the-king/' },
-		`MPAs vs SPAs`),
-	`, `,
-	atb_({ href: 'https://jamstack.org/' },
-		`Jamstack`),
-	`, `,
-	atb_({ href: 'https://dev.to/this-is-learning/understanding-transitional-javascript-apps-27i2'},
-		`Transitional Apps`),
+	1990s which led to web development `, code_(`cgi->server markup languages->web frameworks`), `. Large javascript
+	payloads, SEO, chatty apis, caching, hydration, etc. With Astrojs, the trade-off between build tools, `,
+	atb_({ href: 'https://cleancommit.io/blog/spa-vs-mpa-which-is-the-king/' }, `MPAs vs SPAs`),
+	`, `, atb_({ href: 'https://jamstack.org/' }, `Jamstack`), `, `,
+	atb_({ href: 'https://dev.to/this-is-learning/understanding-transitional-javascript-apps-27i2'}, `Transitional Apps`),
 	` came into discussion. All of these innovations improved the `,
-	atb_({
-		href: 'https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/',
-	}, `Development eXperience (DX)`),
-	`. `,
-	atb_vite_(),
-	` brought standardized Hot Module Reloading which SPA & Transitional App libraries could use. Astrojs enabled
-			further integration with component libraries & it's own router to support a consistent along different
-			component libraries MPA development.`
+	atb_({ href: 'https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/' },
+		`Development eXperience (DX)`
+	), `. `, atb_vite_(), ` brought standardized Hot Module Reloading which SPA & Transitional App libraries could use.
+	 Astrojs enabled further integration with component libraries & it's own router to support a consistent along
+	 different component libraries MPA development.`
 )}/>
 
 ### Dependencies & Migrations

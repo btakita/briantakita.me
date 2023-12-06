@@ -20,7 +20,7 @@ import {
 	attribution_dev__add,
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
-import { li_, ul_ } from 'relementjs/html'
+import { div_, h2_, img_, li_, p_, ul_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
@@ -112,29 +112,20 @@ commonly used.
 
 ## Meta-Philosophy
 
-<p>
-	{[
-		`From the question "how do we model `,
-		<R $={atb_existence_()}/>,
-		`?" sprang a `,
-		<R $={atb_philosophy_()}/>,
-		`.`
-	]}
-</p>
-<p>
-	{[
-		`This Meta-philosophy can be applied via `,
-		<R $={
-			atb_({ href: '/posts/magic-connections-with-the-philosophy-of-language'},
-				`language`)
-		}/>,
-		` to model any reified entity. Language patterns can be utilized in software & speech to create models of
-		Existence.`
-	]}
-</p>
-<h2>
-	<R $={atb_electric_universe_()}/>
-</h2>
+<R $={p_(
+	`From the question "how do we model `,
+	<R $={atb_existence_()}/>,
+	`?" sprang a `,
+	<R $={atb_philosophy_()}/>,
+	`.`
+)}/>
+<R $={p_(
+	`This Meta-philosophy can be applied via `,
+	atb_({ href: '/posts/magic-connections-with-the-philosophy-of-language'}, `language`), ` to model any reified
+	entity. Language patterns can be utilized in software & speech to create models of Existence.`
+)}/>
+
+<R $={h2_(atb_electric_universe_())}/>
 
 Viewing the Universe through the lens of Electricity & Magnetism.  The same well known electrical equations &
 circuit theory can be applied from the micro to the cosmic, with surprising twists. The incomprehensible becomes
@@ -147,18 +138,10 @@ food & supplements for optimal health.
 
 ## Holochain
 
-<p>
-	{[
-		`Agent-centric crypto platform, inspired by nature. The `,
-		<R $={atb_holochain_whitepaper_()}/>,
-		` is worth a read. Here are some `,
-		<R $={
-			atb_({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' },
-				'notes')
-		}/>,
-		`.`
-	]}
-</p>
+<R $={p_(
+	`Agent-centric crypto platform, inspired by nature. The `, atb_holochain_whitepaper_(), ` is worth a read. Here
+	are some `, atb_({ href: 'https://github.com/btakita/holochain-notes/blob/master/whitepaper.md' }, 'notes'), `.`
+)}/>
 
 ## 🌙 Divination
 
@@ -168,9 +151,9 @@ executable software provides feedback on the logical consistency of the model. I
 bugs. With tools such as type systems, tests, & validations, the software will result in errors. This process of
 discovery allows one to explore conceptual systems with a logic feedback loop revealing insights into Existence.
 
-<div>
-	<img src="/assets/images/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration"/>
-	<R $={attribution_dev__add({ ctx })}/>
-</div>
+<R $={div_(
+	img_({ src: '/assets/images/dev.svg', class: 'sm:w-1/2 mx-auto', alt: 'coding dev illustration' }),
+	attribution_dev__add({ ctx })
+)}/>
 
 <R $={footnote_list_c_({ ctx })}/>

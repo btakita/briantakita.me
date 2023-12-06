@@ -10,19 +10,17 @@ description: Data layer definitions
 ---
 import { atb_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import R from 'relementjs/astro'
+import { p_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
-<p>
-	{[
-		`A Data ontology I saw`,
-		<R $={
-			footnote_c_({ ctx, id: 'clif-high-data' },
-				atb_({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' },
-					`SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))
-		}/>
-	]}
-</p>
+<R $={p_(
+	`A Data ontology I saw`,
+	footnote_c_({ ctx, id: 'clif-high-data' },
+		atb_({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' },
+			`SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))
+)}/>
+
 - **Datum**: A single piece of information
 - **Data**: A collection of individual data points
 - **Database**: A structured collection of data, or a collection of datasets

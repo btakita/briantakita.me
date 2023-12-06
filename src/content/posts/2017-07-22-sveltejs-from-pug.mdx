@@ -23,12 +23,9 @@ Now it's time to implement server side rendering (SSR) using SvelteJS.
 
 <R $={p_(
 	`On my current project, I will be migrating from `, atb_pugjs_(), ` to `, atb_sveltejs_(), `. The key concepts are
-	`, atb_({
-		innerText: 'Server Side Rendering',
-		href: 'https://svelte.technology/guide#server-side-rendering'
-	}), `, `,
-	atb_({ innerText: 'Hydration', href: 'https://github.com/sveltejs/svelte/pull/649' }),
-	`, client/server architectural options.`)}/>
+	`, atb_({ href: 'https://svelte.technology/guide#server-side-rendering' }, 'Server Side Rendering'), `, `,
+	atb_({ href: 'https://github.com/sveltejs/svelte/pull/649' }, 'Hydration'), `, client/server architectural options.`
+)}/>
 
 SvelteJS allows one to render in dom & server side environments. SSR is simpler than DOM rendering since Svelte does
 not worry about `oncreate`, `ondestroy`, or `events`, or `methods`. `data` & `computed properties` still work to

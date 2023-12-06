@@ -28,14 +28,13 @@ import { p_ } from 'relementjs/html'
 	blog__post__top_note_(
 		`Originally posted on `,
 		atb_({
-			innerText: 'geekswithblogs.net',
 			href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx'
-		})
+		}, 'geekswithblogs.net')
 	)
 }/>
 
 <R $={p_(
-	`	I am very impressed with `, atb_subversion_({ innerText: 'Subversion Source Control' }), `.`
+	`	I am very impressed with `, atb_subversion_('Subversion Source Control'), `.`
 )}/>
 
 <R $={p_(

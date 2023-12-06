@@ -40,36 +40,28 @@ import {
 	atb_winforms_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
+import { a_, code_, h2_, p_ } from 'relementjs/html'
 import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
-<p>
-	{[
-		`I work on open source projects, licensed with the `,
-		<R $={atb_apache2_license_()}/>,
-		`. I have primarily focused on developing libraries to assist in my project work. I will be focusing on more
-		open source components & apps in the near future. Here are some notable projects:`
-	]}
-</p>
+<R $={p_(
+	`I work on open source projects, licensed with the `, atb_apache2_license_(), `. I have primarily focused on
+	developing libraries to assist in my project work. I will be focusing on more open source components & apps in the
+	near future. Here are some notable projects:`
+)}/>
 
-<h2>
-	<R $={atb_ctx_core_()}/>
-</h2>
-
-<p>
-	{[
-		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on ctx-core
-		begin an 2016 & continues today`,
-		<R $={
-			footnote_c_({ ctx, id: 'ctx-core--catch-all' },
-				`ctx-core has been a bit of a catch-all project to share code between projects under the principles of
-				ctx-core. The functionality of ctx-core is in place but the packages need some reorganization &
-				documentation is needed to be more widely used. I have used ctx-core to handle transitions between other
-				component & state management libraries as they emerge & are updated.`)
-		}/>,
-		`.`
-	]}
-</p>
+<R $={[
+	h2_(atb_ctx_core_()),
+	p_(
+		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on
+		ctx-core begin an 2016 & continues today`,
+		footnote_c_({ ctx, id: 'ctx-core--catch-all' },
+			`ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core.
+			The functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to
+			be more widely used. I have used ctx-core to handle transitions between other component & state management
+			libraries as they emerge & are updated.`),
+		`.`)
+]}/>
 
 ### Motivation
 
@@ -89,17 +81,13 @@ there is a maintenance burden of:
 - time to upgrade the application with the underlying libraries
 - domain language mismatch between the library/framework
 
-<p>
-	{[
-		`I found that there are usually small libraries & code snippets that can be glued together with a `,
-		<R $={
-			atb_naming_convention_({ innerText: 'naming convention' })
-		}/>,
-		` that utilizes unique, immutable, & composable names. As a result, one could find all usages of an entity or
-		concept by doing a project-wide search. Rename refactorings were more accurate & comprehensive due to the
-		uniqueness of names. Composable naming allows one to understand the context & full description of the entity.`
-	]}
-</p>
+<R $={p_(
+	`I found that there are usually small libraries & code snippets that can be glued together with a `,
+	atb_naming_convention_('naming convention'), ` that utilizes unique, immutable, & composable names.
+	As a result, one could find all usages of an entity or concept by doing a project-wide search. Rename refactorings
+	were more accurate & comprehensive due to the uniqueness of names. Composable naming allows one to understand the
+	context & full description of the entity.`
+)}/>
 
 I use ctx-core to maintain software with:
 
@@ -114,237 +102,123 @@ factory function). The flat architecture reduces incidental complexity. To manag
 provides scoping. The [Tag Vector](/posts/tag-vector-0-introduction) Convention, created while working on ctx-core,
 encodes tags joined by vectors & data structure shapes to express complex domains within a flat architecture.
 
-<p>
-	{[
-		`Currently, I use ctx-core along with `,
-		<R $={atb_nanostores_()}/>,
-		` to manage reactive state on the server & the browser. ctx-core is a general purpose library & since nanostores
-		is also a general purpose library any component library is supported. In my work, I favor `,
-		<R $={atb_solidjs_()}/>,
-		` to render components on the server & browser. ctx-core also supports `,
-		<R $={atb_sveltejs_()}/>,
-		` with `,
-		<R $={atb_svelte_stores_()}/>,
-		` to render components & manage reactive state on the server & browser.`
-	]}
-</p>
+<R $={p_(
+	`Currently, I use ctx-core along with `, atb_nanostores_(), ` to manage reactive state on the server & the browser.
+	 ctx-core is a general purpose library & since nanostores is also a general purpose library any component library
+	 is supported. In my work, I favor `, atb_nanostores_(), ` to render components on the server & browser. ctx-core
+	 also supports `, atb_sveltejs_(), ` with `, atb_svelte_stores_(), ` to render components & manage reactive state
+	 on the server & browser.`
+)}/>
 
-<h2>
-	<R $={atb_nanostores_()}/>
-</h2>
+<R $={[
+	h2_(atb_nanostores_()),
+	p_(
+		`I learned about Nano Stores via `, atb_astrojs_(), `. Since I was already using `, atb_svelte_stores_(), `, Nano
+		Stores was a natural replacement to support global reactive state while supporting multiple component libraries,
+		such as `, atb_solidjs_(), `. I contributed a fix`,
+		footnote_c_({ ctx, id: 'nanostores-breadth-first-queue' },
+			atb_({ href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f' },
+				'Nano Stores breadth first queue')),
+		` to diamond dependency bugs by using a breadth first queuing algorithm which I previously contributed to svelte
+		stores`,
+		footnote_c_({ ctx, id: 'nanostores-computed-async' },
+			atb_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6' },
+				'Svelte Cyclic breadth first queue')),
+		`. I also added soon to be released async support to `, code_(`computed`),
+		footnote_c_({ ctx, id: 'nanostores-computed-async' },
+			atb_({ href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc' },
+				'Nano Stores async computed')),
+		` & am working on adding autosubsciptions to `, code_(`computed`), `.`)
+]}/>
 
-<p>
-	{[
-		`I learned about Nano Stores via `,
-		<R $={atb_astrojs_()}/>,
-		`. Since I was already using `,
-		<R $={atb_svelte_stores_()}/>,
-		`, Nano Stores was a natural replacement to support global reactive state while supporting multiple component
-		libraries, such as `,
-		<R $={atb_solidjs_()}/>,
-		`. I contributed a fix`,
-		<R $={
-			footnote_c_({ ctx, id: 'nanostores-breadth-first-queue' },
-				atb_({
-					ctx, innerText: 'Nano Stores breadth first queue',
-					href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f'
-				}))
-		}/>,
-		` to diamond dependency bugs by using a breadth first queuing algorithm which I
-		previously contributed to svelte stores`,
-		<R $={
-			footnote_c_({ ctx, id: 'nanostores-computed-async' },
-				atb_({
-					ctx, innerText: 'Svelte Cyclic breadth first queue',
-					href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6'
-				}))
-		}/>,
-		`. I also added soon to be released async support to `,
-		<code>computed</code>,
-		<R $={
-			footnote_c_({ ctx, id: 'nanostores-computed-async' },
-				atb_({
-					ctx, innerText: 'Nano Stores async computed',
-					href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc'
-				}))
-		}/>,
-		` & am working on adding autosubsciptions to `,
-		<code>computed</code>,
-		`.`
-	]}
-</p>
+<R $={[
+	h2_(atb_backbone_signal_()),
+	p_(
+		`I started using global state management with `, atb_backbonejs_(), ` while Lead Developer at `, atb_honk_(), `.
+		I `, a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript' }, `created backbone-signal`),
+		` touse global state management with Backbone.js across different projects, while working with `,
+		atb_rundavoo_(), `.`,)]}/>
 
-<h2>
-	<R $={atb_backbone_signal_()}/>
-</h2>
+<R $={[
+	h2_(atb_jasmine_flow_()),
+	p_(
+		`While at `, atb_rundavoo_(), ` I `,
+		a_({ href: '/posts/jasmine-flow-fast-and-thourough-testing' }, `created jasmine-flow`), ` to facilitate linear
+		flow testing...saving effort in maintaining automated tests. This was hard-learned from maintaining various
+		large apps while at `, atb_honk_(), ` & `, atb_pivotal_labs_(), `.`)
+]}/>
 
-<p>
-	{[
-		`I started using global state management with `,
-		<R $={atb_backbonejs_()}/>,
-		` while Lead Developer at `,
-		<R $={atb_honk_()}/>,
-		`. I `,
-		<a href="/posts/backbone-signal-practical-reactive-programming-javascript">
-			created backbone-signal
-		</a>,
-		` to use global state management with Backbone.js across different projects, while working with `,
-		<R $={atb_rundavoo_()}/>,
-		`.`,
-	]}
-</p>
-
-<h2>
-	<R $={atb_jasmine_flow_()}/>
-</h2>
-
-<p>
-	{[
-		`While at `,
-		<R $={atb_rundavoo_()}/>,
-		` I `,
-		<a href="/posts/jasmine-flow-fast-and-thourough-testing">created jasmine-flow</a>,
-		` to facilitate linear flow testing...saving effort in maintaining automated tests. This was hard-learned
-		from maintaining various large apps while at `,
-		<R $={atb_honk_()}/>,
-		` & `,
-		<R $={atb_pivotal_labs_()}/>,
-		`.`
-	]}
-</p>
-
-<h2>
-	<R $={atb_rr_()}/>
-</h2>
-
-<p>
-	{[
+<R $={[
+	h2_(atb_rr_()),
+	p_(
 		`RR (double Ruby) is a test double library for the Ruby language. I `,
-		<a href="/posts/introducing-rr">released RR</a>,
-		` back in 2008.
-		It features a terse api to for a high signal to syntax noise ratio for read & write friendly automated testing.
-		I used global state management to manage complex data interactions. I stopped development when I moved to full-stack
-		Javascript development. Maintenance of this project was picked up by `,
-		<R $={atb_({ innerText: 'Sutou Kouhei', href: 'https://github.com/kou' })}/>,
-		` in 2015.`
-	]}
-</p>
+		a_({ href: '/posts/introducing-rr' }, `released RR`), ` back in 2008. It features a terse api to for a high
+		signal to syntax noise ratio for read & write friendly automated testing. I used global state management to
+		manage complex data interactions. I stopped development when I moved to full-stack Javascript development. Maintenance of
+		this project was picked up by `, atb_({ href: 'https://github.com/kou' }, `Sutou Kouhei`), ` in 2015.`)
+]}/>
 
-<h2>
-	<R $={atb_rspec_()}/>
-</h2>
-
-<p>
-	{[
+<R $={[
+	h2_(atb_rspec_()),
+	p_(
 		`I was an early core maintainer on the rspec team. Rspec is the first DSL (Domain Specific Language)
-		implementation of `,
-		<R $={atb_({
-			ctx,
-			innerText: 'BDD (Behavioral Driven Development)',
-			href: 'https://dannorth.net/introducing-bdd/'
-		})}/>,
-		`. Key contributions include the first known implementation of nested `,
-		<code>describe</code>,
-		` & `,
-		<code>context</code>,
+		implementation of `, atb_({ href: 'https://dannorth.net/introducing-bdd/' }, 'BDD (Behavioral Driven Development)'),
+		`. Key contributions include the first known implementation of nested `, code_(`describe`), ` & `, code_(`context`),
 		` statements`,
-		<R $={
-			footnote_c_({ ctx, id: 'rspec-nested-describes' },
-				`Rspec: Added Nested Describes: Implemented in `,
-				atb_({
-					ctx,
-					innerText: 'two',
-					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-				}),
-				` `,
-				atb_({
-					ctx,
-					innerText: 'commits',
-					href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29'
-				}),
-				`.`)
-		}/>,
+		footnote_c_({ ctx, id: 'rspec-nested-describes' },
+			`Rspec: Added Nested Describes: Implemented in `,
+			atb_({ href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29' }, `two`),
+			` `,
+			atb_({ href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29' }, `commits`),
+			`.`),
 		`. The concept of nested describes was controversial at that time as it was thought it would add to the complexity &
-		inhibit readability of the specs. However, nesting `,
-		<code>describe</code>,
-		` & `,
-		<code>context</code>,
-		` enabled contextual nesting with separate usage of `,
-		<code>beforeEach</code>,
-		` & `,
-		<code>afterEach</code>,
-		`. I championed the idea & delivered the implementation. I also integrated Rspec with `,
-		<R $={
-			atb_({
-				innerText: 'Test::Unit',
-				href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html'
-			})
-		}/>,
-		`, worked on the initial mock implementation, & worked on the `,
-		<R $={atb_ruby_on_rails_()}/>,
-		` integration.`
-	]}
-</p>
+		inhibit readability of the specs. However, nesting `, code_(`describe`), ` & `, code_(`context`), ` enabled
+		contextual nesting with separate usage of `, code_(`beforeEach`), ` & `, code_(`afterEach`), `. I championed the
+		idea & delivered the implementation. I also integrated Rspec with `,
+		atb_({ href: 'https://ruby-doc.org/stdlib-3.0.0/libdoc/test-unit/rdoc/Test/Unit.html' }, `Test::Unit`), `,
+		worked on the initial mock implementation, & worked on the `, atb_ruby_on_rails_(), ` integration.`
+	)
+]}/>
 
-<h2>
-	<R $={atb_desertrb_()}/>
-</h2>
+<R $={[
+	h2_(atb_desertrb_()),
+	p_(
+		`Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and
+		migrations across your applications.`),
+	p_(
+		`With Desert, reusability doesn’t come at the cost of extensibility: it’s trivial to extend the functionality of
+		a plugin - both in your application and in other plugins.`),
+	p_(
+		`Classes are automatically mixed in with your own or other plugins’ classes. This allows you to make full
+		featured composable components.`)
+]}/>
 
-Desert is a Rails plugin framework that makes it easy to share models, views, controllers, helpers, routes, and
-migrations across your applications.
-
-With Desert, reusability doesn’t come at the cost of extensibility: it’s trivial to extend the functionality of a
-plugin - both in your application and in other plugins.
-
-Classes are automatically mixed in with your own or other plugins’ classes. This allows you to make full featured
-composable components.
-
-<h2>
-	<R $={atb_jellyrb_()}/>
-</h2>
-
-<p>
-	{[
-		`Jelly is an unobtrusive Javascript framework for `,
-		<R $={atb_jquery_()}/>,
-		` and `,
-		<R $={atb_ruby_on_rails_()}/>,
-		`. It provides a set of conventions and tools that help you organize your AJAX and client-side code, while
-		keeping Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery
-		events.`
-	]}
-</p>
-<p>
-	{[
+<R $={[
+	h2_(atb_jellyrb_()),
+	p_(
+		`Jelly is an unobtrusive Javascript framework for `, atb_jquery_(), ` and `, atb_ruby_on_rails_(), `. It
+		provides a set of conventions and tools that help you organize your AJAX and client-side code, while keeping
+		Javascript out of your views and markup. Jelly is the glue between your Rails controllers and jQuery events.`),
+	p_(
 		`Jelly encourages and enables unit testing your Javascript code. Using a Javascript testing framework such as `,
-		<R $={atb_jasminejs_()}/>,
-		` or `,
-		<R $={atb_screw_unit_()}/>,
-		`, Jelly allows you to test AJAX and client-side events independently from your Rails app.`
-	]}
-</p>
+		atb_jasminejs_(), ` or `, atb_screw_unit_(), `, Jelly allows you to test AJAX and client-side events
+		independently from your Rails app.`
+	)
+]}/>
 
-<h2>
-	<R $={atb_poloniumrb_()}/>
-</h2>
+<R $={[
+	h2_(atb_poloniumrb_()),
+	p_(
+		`Selenium test runner & helpers for Rails. Featured a set of `, code_(`wait_for`), ` helpers to keep the tests
+		in sync with the application.`)
+]}/>
 
-<p>
-	{[
-		`Selenium test runner & helpers for Rails. Featured a set of `,
-		<code>wait_for</code>,
-		` helpers to keep the tests in sync with the application.`
-	]}
-</p>
+<R $={[
+	h2_(atb_unison_()),
+	p_(`Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.`)
+]}/>
 
-<h2>
-	<R $={atb_unison_()}/>
-</h2>
-
-Reactive in-memory relational caching library which syncs with upstream relational databases. Written in Ruby.
-
-<h2>
-	<R $={atb_screw_unit_()}/>
-</h2>
+<R $={h2_(atb_screw_unit_())}/>
 
 Screw.Unit is a Behavior-Driven Testing Framework for Javascript. It features nested describes. Its goals are to
 provide:
@@ -353,41 +227,19 @@ provide:
 - an interactive runner that can execute focused specs and describes;
 - and brief, extensible source-code.
 
-<h2>
-	<R $={atb_generic_query_analyzer_()}/>
-</h2>
+<R $={[
+	h2_(atb_generic_query_analyzer_()),
+	p_(
+		`A query analyzer using `, atb_ado_net_(), `. I built this tool to run SQL queries on the `, atb_msaccess_(), `
+		CRM database & `, atb_msexcel_(), ` @ `, atb_ccrcorp_(), `. Written with `, atb_c_sharp_(), `, `, atb_ado_net_(),
+		`, `, atb_winforms_(), `.`)
+]}/>
 
-<p>
-	{[
-		`A query analyzer using `,
-		<R $={atb_ado_net_()}/>,
-		`. I built this tool to run SQL queries on the `,
-		<R $={atb_msaccess_()}/>,
-		` CRM database & `,
-		<R $={atb_msexcel_()}/>,
-		` @ `,
-		<R $={atb_ccrcorp_()}/>,
-		`. Written with `,
-		<R $={atb_c_sharp_()}/>,
-		`, `,
-		<R $={atb_ado_net_()}/>,
-		`, `,
-		<R $={atb_winforms_()}/>,
-		`.`
-	]}
-</p>
-
-<h2>
-	<R $={atb_poof_()}/>
-</h2>
-
-<p>
-	{[
+<R $={[
+	h2_(atb_poof_()),
+	p_(
 		`The PHP Object Oriented Framework is a framework library to build components in PHP. It was built as an
-		alternative to using the `,
-		<R $={atb_smarty_()}/>,
-		`. Poof was written to encapsulate html rendering in components.`
-	]}
-</p>
+		alternative to using the `, atb_smarty_(), `. Poof was written to encapsulate html rendering in components.`)
+]}/>
 
 <R $={footnote_list_c_({ ctx })}/>

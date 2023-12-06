@@ -25,97 +25,89 @@ import {
 	atb_rspec_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
-import { p_ } from 'relementjs/html'
+import { blockquote_, h2_, p_ } from 'relementjs/html'
 
-<R $={p_(
-	atb_({ innerText: 'Magic', href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }), ` exists!
-	Well,if you have listened to me lately, you will hear that `,
-	atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' },
-		'everything exists (including fiction)'),
-	`. When everything exists, we can recapture the entirety of language from those who impose restrictions on `,
-	atb_existence_(), `. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a
-	useful concept.`
-)}/>
+<R $={[
+	p_(
+		atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }, `Magic`), ` exists! Well,if you
+		have listened to me lately, you will hear that `,
+		atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' },
+			`everything exists (including fiction)`),
+		`. When everything exists, we can recapture the entirety of language from those who impose restrictions on `,
+		atb_existence_(), `. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a
+		useful concept.`),
+	p_(
+		`I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The `,
+		atb_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' }, 'Philosophy of Language (Wikipedia)'), `
+		brings concepts together into a system of logic to yield magical & insightful connections in Existence.`),
+]}/>
 
-<R $={p_(
-	`I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The `,
-	atb_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' }, 'Philosophy of Language (Wikipedia)'),
-	` brings concepts together into a system of logic to yield magical & insightful connections in Existence.`
-)}/>
+<R $={[
+	h2_(`My Story with Magic`),
+	p_(
+		`I've always been a daydreaming, fantasy imagining, professing, believer in magic. It's a fascination that I've
+		stubbornly cultivated from childhood, in spite of attempts from others to change my view. I felt judgement & a
+		bit crazy when I spoke, so I ended up not speaking much. I had a strong emotional belief without the rational
+		backing.`),
+	p_(
+		`In high school, I had two notable role models who helped set direction to my life. My brother in law who
+		founded a technology company & my physics teacher. It wasn't the facts that they taught. It was the enthusiastic
+		approach that seemingly unrelated concepts can be connected, yielding novelty & innovation.`),
+	p_(
+		`I explored `, atb_({ href: 'http://en.wikipedia.org/wiki/Engineering_physics' }, 'Engineering Physics'), ` in
+		college & found I had a natural aptitude for software development. Ever since I started following the path of a
+		technologist, I've wanted to explore the connections between technology & magic.`),
+	p_(
+		`My practice started with agile software development as a consultant for startups in San Francisco with Pivotal
+		Computer Systems (now `, atb_pivotal_labs_(), `). There was a new technique called `,
+		atb_domain_driven_design_(),` that was making it's way around. `,
+		atb_domain_specific_language_(`Domain Specific Languages (DSLs)`), ` became the rage. I became an early
+		contributor to a `, atb_behavior_driven_development_(), ` framework called `, atb_rspec_(), `. The premise
+		behind rspec was to make automated testing software look more like the English language.`),
+	p_(
+		`Domain Driven Design states coherence is facilitated when members of an organization speak the same domain
+		language language. That means that when everybody in the business uses the same terminology, better overall
+		communication, better overall thought, & more innovative connections. The necessary precision is determined by
+		what the concept is being used for (i.e. a sales presentation or software implementation).`),
+	p_(
+		`I also grew up with an interest in `,
+		atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/spirituality.md' }, 'spirituality'), ` & the
+		nature of Existence. I wanted to unify everything in Existence. What if we use Domain Driven Design principles
+		where the Domain is Existence? Magic!`)
+]}/>
 
-## My Story with Magic
+<R $={[
+	h2_(`Culture & Magic`),
+	p_(
+		`Culture has evolved a definition of `,
+		atb_({ href: 'https://www.thefreedictionary.com/magic' }, 'Magic (thefreedictionary.com)'), `.`),
+	blockquote_(p_(
+		`The art that purports to control or forecast natural events, effects, or forces by invoking the supernatural.`)),
+	p_(
+		`Where `,
+		atb_({ href: 'https://www.thefreedictionary.com/supernatural' }, `Supernatural (thefreedictionary.com)`),` means.`),
+	blockquote_(p_(`Of or relating to existence outside the natural world.`))
+]}/>
 
-I've always been a daydreaming, fantasy imagining, professing, believer in magic. It's a fascination that I've
-stubbornly cultivated from childhood, in spite of attempts from others to change my view. I felt judgement & a bit
-crazy when I spoke, so I ended up not speaking much. I had a strong emotional belief without the rational backing.
-
-In high school, I had two notable role models who helped set direction to my life. My brother in law who founded a
-technology company & my physics teacher. It wasn't the facts that they taught. It was the enthusiastic approach that
-seemingly unrelated concepts can be connected, yielding novelty & innovation.
-
-<R $={p_(
-	`I explored `,
-	atb_({ innerText: 'Engineering Physics', href: 'http://en.wikipedia.org/wiki/Engineering_physics' }), ` in college
-	& found I had a natural aptitude for software development. Ever since I started following the path of a
-	technologist, I've wanted to explore the connections between technology & magic.`
-)}/>
-
-<R $={p_(
-	`My practice started with agile software development as a consultant for startups in San Francisco with Pivotal
-	Computer Systems (now `, atb_pivotal_labs_(), `). There was a new technique called `, atb_domain_driven_design_(),
-	` that was making it's way around. `,
-	atb_domain_specific_language_({ innerText: 'Domain Specific Languages (DSLs)' }), ` became the rage. I became an
-	early contributor to a `, atb_behavior_driven_development_(), ` framework called `, atb_rspec_(), `. The premise
-	behind rspec was to make automated testing software look more like the English language.`
-)}/>
-
-Domain Driven Design states coherence is facilitated when members of an organization speak the same domain language
-language. That means that when everybody in the business uses the same terminology, better overall communication,
-better overall thought, & more innovative connections. The necessary precision is determined by what the concept is
-being used for (i.e. a sales presentation or software implementation).
-
-<R $={p_(
-	`I also grew up with an interest in `,
-	atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/spirituality.md' }, 'spirituality'), ` & the
-	nature of Existence. I wanted to unify everything in Existence. What if we use Domain Driven Design principles
-	where the Domain is Existence? Magic!`
-)}/>
-
-## Culture & Magic
-<R $={p_(
-	`Culture has evolved a definition of `,
-	atb_({ innerText: 'Magic (thefreedictionary.com)', href: 'https://www.thefreedictionary.com/magic'}), `.`
-)}/>
-
-> The art that purports to control or forecast natural events, effects, or forces by invoking the supernatural.
-<R $={p_(
-	`Where `,
-	atb_({ innerText: 'Supernatural (thefreedictionary.com)',
-		href: 'https://www.thefreedictionary.com/supernatural'
-	}), ` means.`
-)}/>
-
-> Of or relating to existence outside the natural world.
-
-## Magic of Expanding Consciousness
-<R $={p_(
-	`The cultural definition is accurate. However, let's add the qualification that supernatural is defined from the
-	perspective of the `,
-	atb_({ innerText: 'entity', href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }), ` that is
-	perceiving the event. That means prehistoric humans will see the thing that creates lightning as being
-	supernatural, because prehistoric humans did not understand weather patterns. Modern humans don't see the thing
-	that creates lightning as supernatural because there is a natural scientific explanation.`
-)}/>
-
-Taking perspective into account; Magic is the phenomenon that cannot be accurately and/or precisely explained by the
-context of the entity perceiving the phenomenon.
-
-This means magic is the awareness & abstraction of the unexplained phenomenon. Magic is tied to Expanding
-Consciousness, as we attempt to understand the phenomenon. That does not mean we can't enjoy magic. Magic is
-motivated by the mystery & wonder as we interact with the unexplained (and unexplainable).
-
-Even when we can explain the physical process, like the hormonal interactions involved with love, we still
-experience love as magic. After all, a being in love often does not focus on these chemical interactions.
+<R $={[
+	h2_(`Magic of Expanding Consciousness`),
+	p_(
+		`The cultural definition is accurate. However, let's add the qualification that supernatural is defined from the
+		perspective of the `, atb_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, 'entity'),
+		` that is perceiving the event. That means prehistoric humans will see the thing that creates lightning as being
+		supernatural, because prehistoric humans did not understand weather patterns. Modern humans don't see the thing
+		that creates lightning as supernatural because there is a natural scientific explanation.`),
+	p_(
+		`Taking perspective into account; Magic is the phenomenon that cannot be accurately and/or precisely explained
+		by the context of the entity perceiving the phenomenon.`),
+	p_(
+		`This means magic is the awareness & abstraction of the unexplained phenomenon. Magic is tied to Expanding
+		Consciousness, as we attempt to understand the phenomenon. That does not mean we can't enjoy magic. Magic is
+		motivated by the mystery & wonder as we interact with the unexplained (and unexplainable).`),
+	p_(
+		`Even when we can explain the physical process, like the hormonal interactions involved with love, we still
+		experience love as magic. After all, a being in love often does not focus on these chemical interactions.`)
+]}/>
 
 ## Magic Connections with the Philosophy of Language
 
@@ -141,30 +133,24 @@ That's why some people are given labels, like "terrorist", "freedom fighter", "a
 etc. These words affect the perceived identities of the people with the labels. These words make it easy to kill, to
 oppress, & to ignore.
 
-## What is Language?
-
-Language has often been thought of as a human trait.
-
-<R $={atb_({ innerText: 'Language (Wikipedia)', href: 'http://en.wikipedia.org/wiki/Language' })}/>
-
-> Language is the human ability to acquire and use complex systems of communication, and a language is any specific
-example of such a system.
-
-<R $={
-	atb_({
-		innerText: 'Language (thefreedictionary.com)',
-		href: 'http://thefreedictionary.com/language' })
-}/>
-
-> Communication of thoughts and feelings through a system of arbitrary signals, such as voice sounds, gestures, or
-> written symbols.
-<R $={p_(
-	`We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants have
-	Language (`,
-	atb_({ href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/'},
-		'What Plants Talk About'),
-	`). Stars have Language. The Universe itself has Language. Concepts have Language.`
-)}/>
+<R $={[
+	h2_(`What is Language?`),
+	p_(`Language has often been thought of as a human trait.`),
+	p_(atb_({ href: 'http://en.wikipedia.org/wiki/Language' }, 'Language (Wikipedia)')),
+	blockquote_(p_(
+		`Language is the human ability to acquire and use complex systems of communication, and a language is any
+		specific example of such a system.`)),
+	p_(atb_({ href: 'http://thefreedictionary.com/language' }, 'Language (thefreedictionary.com)')),
+	blockquote_(p_(
+		`Communication of thoughts and feelings through a system of arbitrary signals, such as voice sounds, gestures,
+		or written symbols.`)),
+	p_(
+		`We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants
+		have Language (`,
+		atb_({ href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/'},
+			'What Plants Talk About'),
+		`). Stars have Language. The Universe itself has Language. Concepts have Language.`)
+]}/>
 
 ## Awareness of the Ecosystem of Language
 

@@ -19,9 +19,8 @@ import { code_, p_ } from 'relementjs/html'
 <R $={p_(
 	`I have recently released `, atb_backbone_signal_(), `, which is a `,
 	atb_({
-		innerText: 'reactive programming (Wikipedia)',
 		href: 'https://en.wikipedia.org/wiki/Reactive_programming'
-	}), ` library with a practical & javascripty model api.`
+	}, 'reactive programming (Wikipedia)'), ` library with a practical & javascripty model api.`
 )}/>
 
 ```js
@@ -61,8 +60,8 @@ The console ouput is:
 
 <R $={p_(
 	`We are calling `, code_(`getTruthy`), `on the `, code_(`userSignal`), ` two times, one for `,
-	code_(`"Hello " + user.name`), ` and one for `, code(`"Nice to see you"`), `. The callback is invoked when the
-	value is`, atb_({ innerText: 'Truthy', href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }), `. So when `,
+	code_(`"Hello " + user.name`), ` and one for `, code_(`"Nice to see you"`), `. The callback is invoked when the
+	value is`, atb_({ href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }, 'Truthy'), `. So when `,
 	code_(`userSignal.unset`), ` is called, the callbacks are not invoked.`
 )}/>
 

@@ -17,8 +17,7 @@ import {
 	atb_codemirror_,
 	atb_docker_,
 	atb_flyio_,
-	atb_grapejs_,
-	atb_jamstack_,
+	atb_grapejs_, atb_jamstack_,
 	atb_reactjs_,
 	atb_solidjs_,
 	atb_sqlite_,
@@ -29,16 +28,13 @@ import {
 	atb_vue_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
+import { h1_, h2_, li_, p_, ul_ } from 'relementjs/html'
 
-<h1>
-	<R $={atb_cms_()}/>
-</h1>
+<R $={h1_(atb_cms_())}/>
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
 
-<h2>
-	<R $={atb_strapi_()}/>
-</h2>
+<R $={h2_(atb_strapi_())}/>
 
 Strapi seems like the best option for the headless CRM. I features:
 
@@ -46,9 +42,7 @@ Strapi seems like the best option for the headless CRM. I features:
 - supporting multiple databases to store content
 - a ui to edit content
 
-<h2>
-	<R $={atb_grapejs_()}/>
-</h2>
+<R $={h2_(atb_grapejs_())}/>
 
 A No Code website builder. It features:
 
@@ -58,9 +52,7 @@ A No Code website builder. It features:
 - vanilla js
 - Codemirror editors
 
-<h2>
-	<R $={atb_codemirror_()}/>
-</h2>
+<R $={h2_(atb_codemirror_())}/>
 
 A Rich Text Editor. It features:
 
@@ -68,65 +60,29 @@ A Rich Text Editor. It features:
 - good docs
 - modular design
 
-<h2>
-	<R $={atb_astrojs_()}/>
-</h2>
+<R $={h2_(atb_astrojs_())}/>
 
 A MPA web app library. It features:
-<ul>
-	<li>{[
-		`a `,
-		<R $={atb_vite_()}/>,
-		` core`
-	]}</li>
-	<li>{[
-		` support for multiple component libraries (`,
-		<R $={atb_solidjs_()}/>,
-		`, `,
-		<R $={atb_reactjs_()}/>,
-		`, `,
-		<R $={atb_sveltejs_()}/>,
-		`, `,
-		<R $={atb_vue_()}/>,
-		`)`
-	]}</li>
-</ul>
+<R $={ul_(
+	li_(`a `, atb_vite_(), ` core`),
+	li_(` support for multiple component libraries (`, atb_solidjs_(), `, `, atb_reactjs_(), `, `, atb_sveltejs_(),
+		`,`, atb_vue_(), `)`)
+)}/>
 - support for multiple component libraries (SolidJS, React, Svelte, Vue)
 
-<h2>
-	<R $={atb_vercel_()}/>
-</h2>
-<p>
-	{[
-		`A cloud host on `,
-		<R $={atb_aws_()}/>
-	]}
-</p>
+<R $={h2_(atb_vercel_())}/>
 
-<h2>
-	<R $={atb_flyio_()}/>
-</h2>
-<p>
-	{[
-		`An edge-computing cloud service that runs `,
-		<R $={atb_docker_()}/>,
-		` images.`
-	]}
-</p>
+<R $={p_(`A cloud host on `, atb_aws_())}/>
+
+<R $={h2_(atb_flyio_())}/>
+
+<R $={p_(`An edge-computing cloud service that runs `, atb_docker_(), ` images.`)}/>
 
 ## Approach
 
-<p>
-	{[
-		`	I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be
-		saved in Strapi using `,
-		<R $={atb_sqlite_()}/>,
-		`. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a `,
-		<R $={atb_jamstack_()}/>,
-		` on Vercel. I may also just use dynamic api requests to Strapi, using `,
-		<R $={
-			atb_({ innerText: 'sqlite on Fly.io', href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' })
-		}/>,
-		`.`
-	]}
-</p>
+<R $={p_(
+	`	I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be saved
+	in Strapi using `, atb_sqlite_(), `. When an edit is published, the Astrojs app is rebuilt with the new content &
+	site is then republished as a `, atb_jamstack_(), ` on Vercel. I may also just use dynamic api requests to Strapi,
+	using `, atb_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' }, 'sqlite on Fly.io'), `.`
+)}/>
