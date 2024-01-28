@@ -30,7 +30,7 @@ const search_item_a = posts.map(post=>({
 
 <script>
 	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
-	import { blog__search__main__onbind } from '@btakita/ui--any--blog'
+	import { blog__search__main__onbind } from '@btakita/ui--any--blog/search'
 	import { dom__onbind__register } from '@ctx-core/dom'
 	const ctx = browser__ctx__ensure()
 	dom__onbind__register(ctx, blog__search__main__onbind)
