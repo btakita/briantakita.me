@@ -1,5 +1,5 @@
 import {
-	blog_server__ctx__new,
+	blog_server_ctx__new,
 	load__bold_font__set,
 	type load__font_T,
 	load__regular_font__set
@@ -7,7 +7,7 @@ import {
 import { LOGO_IMAGE, SITE, SOCIALS } from '@config'
 import type { APIContext, AstroGlobal } from 'astro'
 export function server__ctx__new(Astro:APIContext|AstroGlobal) {
-	const ctx = blog_server__ctx__new(Astro, {
+	const ctx = blog_server_ctx__new(Astro, {
 		logo_image: LOGO_IMAGE,
 		site: SITE,
 		socials: SOCIALS,

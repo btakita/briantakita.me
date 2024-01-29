@@ -89,9 +89,9 @@ const social_image_url = new URL(
 </html>
 
 <script>
-	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
+	import { browser_ctx__ensure } from '@btakita/domain--browser--briantakita'
 	import { dom__bind, dom__onbind__validate } from '@ctx-core/dom'
-	const ctx = browser__ctx__ensure()
+	const ctx = browser_ctx__ensure()
 	window.addEventListener('load', ()=>{
 		queueMicrotask(()=>{
 			dom__bind(ctx)

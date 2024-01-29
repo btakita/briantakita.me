@@ -4,7 +4,7 @@ import type { LogoImage, Site, Social } from '@btakita/domain--server--blog'
 export const SITE:Site = {
 	website: 'https://briantakita.me/', // replace this with your deployed domain
 	author: 'Brian Takita',
-	description: 'Contextual Full Stack Systems Development',
+	description: 'Reactive Context Enthusiast',
 	title: 'Brian Takita',
 	og_image: '/assets/images/briantakita-og.jpg',
 	light_and_dark_mode: true,

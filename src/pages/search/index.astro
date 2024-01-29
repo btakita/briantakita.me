@@ -29,9 +29,9 @@ const search_item_a = posts.map(post=>({
 </Layout>
 
 <script>
-	import { browser__ctx__ensure } from '@btakita/domain--browser--briantakita'
+	import { browser_ctx__ensure } from '@btakita/domain--browser--briantakita'
 	import { blog__search__main__onbind } from '@btakita/ui--any--blog/search'
 	import { dom__onbind__register } from '@ctx-core/dom'
-	const ctx = browser__ctx__ensure()
+	const ctx = browser_ctx__ensure()
 	dom__onbind__register(ctx, blog__search__main__onbind)
 </script>

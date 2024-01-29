@@ -28,10 +28,6 @@
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
-  body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base
-    selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
-  }
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;
@@ -107,37 +103,30 @@
     /* ===== scrollbar ===== */
     overflow-y: scroll;
   }
-
   /* width */
   ::-webkit-scrollbar {
     @apply w-3;
   }
-
   /* Track */
   ::-webkit-scrollbar-track {
     @apply bg-skin-fill;
   }
-
   /* Handle */
   ::-webkit-scrollbar-thumb {
     @apply bg-skin-card;
   }
-
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-skin-card-muted;
   }
-
   code,
   blockquote {
     word-wrap: break-word;
   }
-
   pre > code {
     white-space: pre;
   }
 }
-
 @layer components {
   .display-none {
     @apply hidden;
