@@ -8,12 +8,12 @@ tags:
   - software development
 description:
 #@formatter:off
-  I really like Subversion because is it is fast, lightweight, and, when coupled with Tortise, easy to use,
-  administer, and set up.
+I really like Subversion because is it is fast, lightweight, and, when coupled with Tortise, easy to use,
+administer, and set up.
 #@formatter:on
 ---
-import { atb_ } from '@btakita/ui--server--blog/anchor'
-import { blog__post__top_note_ } from '@btakita/ui--server--blog/post'
+import { tb_a_ } from '@btakita/ui--server--blog/anchor'
+import { blog_post__top_note_p_ } from '@btakita/ui--server--blog/post'
 import {
 	atb_apache_,
 	atb_cvs_scm_,
@@ -26,9 +26,9 @@ import R from 'relementjs/astro'
 import { p_ } from 'relementjs/html'
 
 <R $={
-	blog__post__top_note_(
+	blog_post__top_note_p_(
 		`Originally posted on `,
-		atb_({
+		tb_a_({
 			href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx'
 		}, 'geekswithblogs.net')
 	)
@@ -59,6 +59,6 @@ Now, Im version controlling items that I edit, including my blog posts and artic
 	`Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion can
 	be run off of its own svn server or `, atb_apache_(), `. If you use the svn server on a Windows server, you may
 	want to consider using `,
-	atb_({ href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/' }, 'SVNService'),
+	tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/' }, 'SVNService'),
 	` to register the svn server as a Service.`
 )}/>

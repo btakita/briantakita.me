@@ -11,14 +11,14 @@ tags:
   - backbonejs
 description: Introducing backbone-signal, which adds Signals to Backbonejs.
 ---
-import { atb_ } from '@btakita/ui--server--blog/anchor'
+import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { atb_backbone_signal_, atb_browserify_, atb_nodejs_, atb_rundavoo_ } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
 import { code_, p_ } from 'relementjs/html'
 
 <R $={p_(
 	`I have recently released `, atb_backbone_signal_(), `, which is a `,
-	atb_({
+	tb_a_({
 		href: 'https://en.wikipedia.org/wiki/Reactive_programming'
 	}, 'reactive programming (Wikipedia)'), ` library with a practical & javascripty model api.`
 )}/>
@@ -61,7 +61,7 @@ The console ouput is:
 <R $={p_(
 	`We are calling `, code_(`getTruthy`), `on the `, code_(`userSignal`), ` two times, one for `,
 	code_(`"Hello " + user.name`), ` and one for `, code_(`"Nice to see you"`), `. The callback is invoked when the
-	value is`, atb_({ href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }, 'Truthy'), `. So when `,
+	value is`, tb_a_({ href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }, 'Truthy'), `. So when `,
 	code_(`userSignal.unset`), ` is called, the callbacks are not invoked.`
 )}/>
 

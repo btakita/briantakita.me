@@ -1,6 +1,6 @@
 ---
-import { hr_c_ } from '@btakita/ui--server--blog/html'
-import { socials_c_ } from '@btakita/ui--server--blog/social'
+import { hr_div_ } from '@btakita/ui--server--blog/hr'
+import { socials_div_ } from '@btakita/ui--server--blog/social'
 import { type Ctx } from 'ctx-core/object'
 import R from 'relementjs/astro'
 const current_year = new Date().getFullYear()
@@ -16,10 +16,10 @@ const {
 
 <footer class={`${no_margin_top ? '' : 'mt-auto'}`}>
 	<R $={
-		hr_c_({ ctx, no_padding: true })
+		hr_div_({ ctx, no_padding: true })
 	}/>
 	<div class="footer-wrapper">
-		<R $={socials_c_({ ctx, centered: true })}/>
+		<R $={socials_div_({ ctx, centered: true })}/>
 		<div class="copyright-wrapper">
 			<span>Copyright &#169; {current_year}</span>
 			<span class="separator">&nbsp;|&nbsp;</span>

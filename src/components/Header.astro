@@ -1,5 +1,5 @@
 ---
-import { header_c_ } from '@btakita/ui--server--blog/header'
+import { blog__header_ } from '@btakita/ui--server--blog/header'
 import { type Ctx_wide_T } from 'ctx-core/all'
 import R from 'relementjs/astro'
 import { a_, li_ } from 'relementjs/html'
@@ -16,7 +16,7 @@ function active_class_(check_active:Props['active']) {
 ---
 
 <R $={
-	header_c_<'server'>({ ctx },
+	blog__header_<'server'>({ ctx },
 		li_(
 			a_({ href: '/about', class: active_class_('about') },
 				'About')),
@@ -49,13 +49,13 @@ function active_class_(check_active:Props['active']) {
 						d: 'M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z'
 					})))),
 		SITE.light_and_dark_mode
-		&& li_(theme__toggle_button_c_({ ctx })))
+		&& li_(theme_toggle_button_c_({ ctx })))
 }/>
 
 <script>
-	import { theme__toggle_button__onbind } from '@btakita/domain--any--blog'
+	import { theme_toggle_button__onbind } from '@btakita/domain--any--blog'
 	import { browser_ctx__ensure } from '@btakita/domain--browser--briantakita'
 	import { dom__onbind__register } from '@ctx-core/dom'
 	const ctx = browser_ctx__ensure()
-	dom__onbind__register(ctx, theme__toggle_button__onbind)
+	dom__onbind__register(ctx, theme_toggle_button__onbind)
 </script>

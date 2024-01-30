@@ -1,3 +1,4 @@
+import { type Config } from 'tailwindcss'
 const config:Config = {
 	content: ['../../*/*/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -58,11 +59,11 @@ const config:Config = {
 			}
 		},
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [require('@tailwindcss/typography')],
 }
 export default config
-function withOpacity(variableName) {
-	return ({ opacityValue })=>{
+function withOpacity(variableName:string) {
+	return ({ opacityValue }:{ opacityValue:number|string })=>{
 		if (opacityValue !== undefined) {
 			return `rgba(var(${variableName}), ${opacityValue})`
 		}

@@ -9,7 +9,7 @@ tags:
   - website
 description: Fixing a DNS-related 404 error with Github Pages.
 ---
-import { atb_ } from '@btakita/ui--server--blog/anchor'
+import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { atb_briantakita_com_, atb_github_pages_ } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
 import { p_ } from 'relementjs/html'
@@ -20,8 +20,8 @@ import { p_ } from 'relementjs/html'
 
 <R $={p_(
 	`To set up the DNS, I followed the `,
-	atb_({ href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages' }, 'official instructions'),
-	` and `, atb_({ href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' },
+	tb_a_({ href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages' }, 'official instructions'),
+	` and `, tb_a_({ href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' },
 		'github pages with namecheap'), `.`
 )}/>
 

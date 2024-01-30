@@ -10,7 +10,7 @@ tags:
 description: Use the ruby sake tool to list the total downloads of ruby gems
 canonical_url: https://tanzu.vmware.com/content/blog/sake-for-gems-downloads-list
 ---
-import { atb_ } from '@btakita/ui--server--blog/anchor'
+import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import R from 'relementjs/astro'
 import { p_ } from 'relementjs/html'
 
@@ -20,7 +20,7 @@ lacking to find my gem rr.
 To fix this issue, I made a sake task, named `gems:downloads:list`, that prints the gem downloads in text.
 
 <R $={p_(
-	`The source is on `, atb_({ href: 'http://pastie.caboo.se/79547' }, 'caboo.se'), `.`
+	`The source is on `, tb_a_({ href: 'http://pastie.caboo.se/79547' }, 'caboo.se'), `.`
 )}/>
 
 You can install it by using:
