@@ -17,6 +17,7 @@
     "@btakita/domain--browser--briantakita": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--any--blog": "workspace:*",
+    "@btakita/ui--browser--blog": "workspace:*",
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--briantakita": "workspace:*",
     "@ctx-core/source-map": "^0.2.31",
