@@ -13,11 +13,11 @@ description: Introducing the rmemo reactive state management library.
 ---
 import { footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import {
-	atb_ctx_core_nanostores_,
-	atb_ctx_core_solid_nanostores_,
-	atb_nanostores_,
-	atb_relementjs_,
-	atb_rmemo_, atb_WeakRef_
+	ctx_core_nanostores__tb_a_,
+	ctx_core_solid_nanostores__tb_a_,
+	nanostores__tb_a_,
+	relementjs__tb_a_,
+	rmemo__tb_a_, WeakRef__tb_a_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
 import { code_, h3_, p_ } from 'relementjs/html'
@@ -25,8 +25,8 @@ import { mdx__ctx__new } from '../../lib'
 export const ctx = mdx__ctx__new()
 
 <R $={[p_(
-	`I'm pleased to announce `, atb_rmemo_(), `, a tiny no-fluff reactive state library. rmemo is the reactive core
-	of `, atb_relementjs_(), `, a server & browser UI rendering library that I also released.`
+	`I'm pleased to announce `, rmemo__tb_a_(), `, a tiny no-fluff reactive state library. rmemo is the reactive core
+	of `, relementjs__tb_a_(), `, a server & browser UI rendering library that I also released.`
 )]}/>
 
 rmemo is a tiny no-fluff state management library using reactive memos & reactive signals for the server &
@@ -71,7 +71,7 @@ export interface User {
 ## Garbage Collection Integration
 
 <R $={p_(
-	`rmemo tracks listeners using `, atb_WeakRef_(), `. Most other reactive state management libraries directly track
+	`rmemo tracks listeners using `, WeakRef__tb_a_(), `. Most other reactive state management libraries directly track
 	listener references. This means the listener must explicitly unregister itself once the listener is complete.
 	Let's examine the trade-offs:`
 )}/>
@@ -79,9 +79,9 @@ export interface User {
 ## Motivation
 
 <R $={p_(
-	`Until recently I was using `, atb_nanostores_(), ` for my goto state management solution. I contributed to fixing
+	`Until recently I was using `, nanostores__tb_a_(), ` for my goto state management solution. I contributed to fixing
 	diamond dependency issues. I also wrote some extension libraries`,
-	footnote_c_({ ctx, id: 'ctx-core-nanostore' }, atb_ctx_core_nanostores_(), ` & `, atb_ctx_core_solid_nanostores_()),
+	footnote_c_({ ctx, id: 'ctx-core-nanostore' }, ctx_core_nanostores__tb_a_(), ` & `, ctx_core_solid_nanostores__tb_a_()),
 	`. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well
 	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:`,
 )}/>

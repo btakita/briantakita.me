@@ -3,14 +3,14 @@ import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
 import {
-	atb_astrojs_,
-	atb_astropaper_,
-	atb_bunjs_,
-	atb_ctx_core_,
-	atb_nanostores_,
-	atb_solidjs_,
-	atb_tailwindcss_,
-	atb_vercel_,
+	astrojs__tb_a_,
+	astropaper__tb_a_,
+	bunjs__tb_a_,
+	ctx_core__tb_a_,
+	nanostores__tb_a_,
+	solidjs__tb_a_,
+	tailwindcss__tb_a_,
+	vercel__tb_a_,
 } from '@btakita/ui--server--briantakita/anchor'
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
 import { type request_ctx_T } from 'rebuildjs/server'
@@ -35,18 +35,18 @@ export const meta = post_meta__validate({
 export default (ctx:request_ctx_T)=>md__raw_(`
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important advancement over the past few years to support development from small scale to large scale websites & applications.
 
-This site is forked from ${atb_astropaper_()} theme. I made some modifications & will go through them in this	post.
+This site is forked from ${astropaper__tb_a_()} theme. I made some modifications & will go through them in this	post.
 
 This is a static site is a monorepo built with:
 
-* ${atb_bunjs_()}
-* ${atb_astrojs_()}
-* ${atb_nanostores_()}
-* ${atb_ctx_core_()}
-* ${atb_solidjs_()}
-* ${atb_tailwindcss_()}
+* ${bunjs__tb_a_()}
+* ${astrojs__tb_a_()}
+* ${nanostores__tb_a_()}
+* ${ctx_core__tb_a_()}
+* ${solidjs__tb_a_()}
+* ${tailwindcss__tb_a_()}
 
-It is deployed to ${atb_vercel_()}.
+It is deployed to ${vercel__tb_a_()}.
 
 ## Monorepo
 

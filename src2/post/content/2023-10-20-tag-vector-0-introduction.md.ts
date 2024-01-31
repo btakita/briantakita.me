@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
-import { atb_ctx_core_ } from '@btakita/ui--server--briantakita/anchor'
+import { ctx_core__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { tag_vector_toc_c_ } from '../tag_vector/index.js'
 export const meta = post_meta__validate({
@@ -24,7 +24,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_(`
-This series about Tag Vector will go over a technique that I have iterated on since 2016 in ${atb_ctx_core_()}	& in other (mostly client) projects.
+This series about Tag Vector will go over a technique that I have iterated on since 2016 in ${ctx_core__tb_a_()}	& in other (mostly client) projects.
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 > -- Phil Karlton

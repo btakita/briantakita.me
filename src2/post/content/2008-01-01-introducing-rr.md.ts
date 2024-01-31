@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { atb_flexmockrb_, atb_mocharb_, atb_rr_, atb_rspec_mocks_ } from '@btakita/ui--server--briantakita/anchor'
+import { flexmockrb__tb_a_, mocharb__tb_a_, rr__tb_a_, rspec_mocks__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2008-01-01T05:30Z',
@@ -20,7 +20,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-I'm pleased to introduce a new Test Double (or mock) framework named ${atb_rr_()}, which is short for Double	Ruby. Why a Double framework and not a Mock framework?
+I'm pleased to introduce a new Test Double (or mock) framework named ${rr__tb_a_()}, which is short for Double	Ruby. Why a Double framework and not a Mock framework?
 
 A mock is a type of test double. Since RR supports mocks, stubs, and proxies, it makes sense to refer to RR as a double framework. The proxy is a new usage pattern that I will introduce later in this article, and in more detail in future articles.
 
@@ -30,7 +30,7 @@ Most double frameworks focus mainly on mocks (hence the categorization "mock fra
 
 RR also does not have dedicated mock objects. It primarily uses the technique called 'double injection'. Names that other frameworks use are 'stub injection', 'mock object injection', 'partial mocking', or 'stubbing'. The term I'll use for this is a double injection, since one or many doubles are being injected into an object's method.
 
-I'll use trivial Rails examples to highlight the syntactical differences between RR, ${atb_mocharb_()}, ${atb_rspec_mocks_()}, ${atb_flexmockrb_()}. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely different discussion.
+I'll use trivial Rails examples to highlight the syntactical differences between RR, ${mocharb__tb_a_()}, ${rspec_mocks__tb_a_()}, ${flexmockrb__tb_a_()}. They may or may not be appropriate situations for mocks. The right situations for mocks is an entirely different discussion.
 
 If there is better way to do any of the examples, please post a comment and I will gladly replace it.
 

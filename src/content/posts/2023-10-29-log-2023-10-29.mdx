@@ -9,32 +9,32 @@ tags:
   - log
 description: 'CMS exploration: Strapi, GrapeJS, CodeMirror, Astrojs, Vite, Vercel, Fly.io'
 ---
-import { atb_ } from '@btakita/ui--server--blog'
+import { tb_a_ } from '@btakita/ui--server--blog'
 import {
-	atb_astrojs_,
-	atb_aws_,
-	atb_cms_,
-	atb_codemirror_,
-	atb_docker_,
-	atb_flyio_,
-	atb_grapejs_, atb_jamstack_,
-	atb_reactjs_,
-	atb_solidjs_,
-	atb_sqlite_,
-	atb_strapi_,
-	atb_sveltejs_,
-	atb_vercel_,
-	atb_vite_,
-	atb_vue_
+	astrojs__tb_a_,
+	aws__tb_a_,
+	cms__tb_a_,
+	codemirror__tb_a_,
+	docker__tb_a_,
+	flyio__tb_a_,
+	grapejs__tb_a_, jamstack__tb_a_,
+	reactjs__tb_a_,
+	solidjs__tb_a_,
+	sqlite__tb_a_,
+	strapi__tb_a_,
+	sveltejs__tb_a_,
+	vercel__tb_a_,
+	vite__tb_a_,
+	vue__tb_a_
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
 import { h1_, h2_, li_, p_, ul_ } from 'relementjs/html'
 
-<R $={h1_(atb_cms_())}/>
+<R $={h1_(cms__tb_a_())}/>
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
 
-<R $={h2_(atb_strapi_())}/>
+<R $={h2_(strapi__tb_a_())}/>
 
 Strapi seems like the best option for the headless CRM. I features:
 
@@ -42,7 +42,7 @@ Strapi seems like the best option for the headless CRM. I features:
 - supporting multiple databases to store content
 - a ui to edit content
 
-<R $={h2_(atb_grapejs_())}/>
+<R $={h2_(grapejs__tb_a_())}/>
 
 A No Code website builder. It features:
 
@@ -52,7 +52,7 @@ A No Code website builder. It features:
 - vanilla js
 - Codemirror editors
 
-<R $={h2_(atb_codemirror_())}/>
+<R $={h2_(codemirror__tb_a_())}/>
 
 A Rich Text Editor. It features:
 
@@ -60,29 +60,29 @@ A Rich Text Editor. It features:
 - good docs
 - modular design
 
-<R $={h2_(atb_astrojs_())}/>
+<R $={h2_(astrojs__tb_a_())}/>
 
 A MPA web app library. It features:
 <R $={ul_(
-	li_(`a `, atb_vite_(), ` core`),
-	li_(` support for multiple component libraries (`, atb_solidjs_(), `, `, atb_reactjs_(), `, `, atb_sveltejs_(),
-		`,`, atb_vue_(), `)`)
+	li_(`a `, vite__tb_a_(), ` core`),
+	li_(` support for multiple component libraries (`, solidjs__tb_a_(), `, `, reactjs__tb_a_(), `, `, sveltejs__tb_a_(),
+		`,`, vue__tb_a_(), `)`)
 )}/>
 - support for multiple component libraries (SolidJS, React, Svelte, Vue)
 
-<R $={h2_(atb_vercel_())}/>
+<R $={h2_(vercel__tb_a_())}/>
 
-<R $={p_(`A cloud host on `, atb_aws_())}/>
+<R $={p_(`A cloud host on `, aws__tb_a_())}/>
 
-<R $={h2_(atb_flyio_())}/>
+<R $={h2_(flyio__tb_a_())}/>
 
-<R $={p_(`An edge-computing cloud service that runs `, atb_docker_(), ` images.`)}/>
+<R $={p_(`An edge-computing cloud service that runs `, docker__tb_a_(), ` images.`)}/>
 
 ## Approach
 
 <R $={p_(
 	`	I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be saved
-	in Strapi using `, atb_sqlite_(), `. When an edit is published, the Astrojs app is rebuilt with the new content &
-	site is then republished as a `, atb_jamstack_(), ` on Vercel. I may also just use dynamic api requests to Strapi,
-	using `, atb_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' }, 'sqlite on Fly.io'), `.`
+	in Strapi using `, sqlite__tb_a_(), `. When an edit is published, the Astrojs app is rebuilt with the new content &
+	site is then republished as a `, jamstack__tb_a_(), ` on Vercel. I may also just use dynamic api requests to Strapi,
+	using `, tb_a_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' }, 'sqlite on Fly.io'), `.`
 )}/>

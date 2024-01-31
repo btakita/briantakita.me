@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { atb_briantakita_com_, atb_github_pages_ } from '@btakita/ui--server--briantakita/anchor'
+import { briantakita_com__tb_a_, github_pages__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	author: 'Brian Takita',
 	pub_date: '2016-09-05T07:53Z',
@@ -17,7 +17,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-I set up ${atb_briantakita_com_()} using ${atb_github_pages_()} to btakita.github.io.
+I set up ${briantakita_com__tb_a_()} using ${github_pages__tb_a_()} to btakita.github.io.
 
 To set up the DNS, I followed the ${tb_a_({ href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages' }, 'official instructions')} and ${tb_a_({ href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/' }, 'github pages with namecheap')}.
 

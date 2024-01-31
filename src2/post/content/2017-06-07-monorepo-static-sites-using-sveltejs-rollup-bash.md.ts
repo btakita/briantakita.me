@@ -1,14 +1,14 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import {
-	atb_briantakita_com_,
-	atb_ctx_core_,
-	atb_domain_driven_design_,
-	atb_jeckyllrb_,
-	atb_metalsmithjs_,
-	atb_rollupjs_,
-	atb_sveltejs_,
-	atb_wintersmithjs_
+	briantakita_com__tb_a_,
+	ctx_core__tb_a_,
+	domain_driven_design__tb_a_,
+	jeckyllrb__tb_a_,
+	metalsmithjs__tb_a_,
+	rollupjs__tb_a_,
+	sveltejs__tb_a_,
+	wintersmithjs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,
@@ -28,13 +28,13 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-BrianTakita.com *(now briantakita.me)* is now built using a technology chain consisting of ${atb_sveltejs_()}, ${atb_rollupjs_()}, ${atb_ctx_core_()}, & good ol' Bash.
+BrianTakita.com *(now briantakita.me)* is now built using a technology chain consisting of ${sveltejs__tb_a_()}, ${rollupjs__tb_a_()}, ${ctx_core__tb_a_()}, & good ol' Bash.
 
-You can see the source in the ${atb_briantakita_com_()} repo.
+You can see the source in the ${briantakita_com__tb_a_()} repo.
 
-I wanted a static site generator that felt like building a custom app, with a ${atb_domain_driven_design_()},	approachable custom build scripts, & isomorphic javascript.
+I wanted a static site generator that felt like building a custom app, with a ${domain_driven_design__tb_a_()},	approachable custom build scripts, & isomorphic javascript.
 
-This site was build using existing solutions such as ${atb_jeckyllrb_()}, ${atb_wintersmithjs_()}, & ${atb_metalsmithjs_()}. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things done my way.
+This site was build using existing solutions such as ${jeckyllrb__tb_a_()}, ${wintersmithjs__tb_a_()}, & ${metalsmithjs__tb_a_()}. When using each of these libraries, I felt the desire to strip away the non-essential code & to have things done my way.
 
 Some of my essential features include:
 

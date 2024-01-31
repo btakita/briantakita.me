@@ -2,12 +2,12 @@ import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
 import {
-	atb_ctx_core_nanostores_,
-	atb_ctx_core_solid_nanostores_,
-	atb_nanostores_,
-	atb_relementjs_,
-	atb_rmemo_,
-	atb_WeakRef_
+	ctx_core_nanostores__tb_a_,
+	ctx_core_solid_nanostores__tb_a_,
+	nanostores__tb_a_,
+	relementjs__tb_a_,
+	rmemo__tb_a_,
+	WeakRef__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta = post_meta__validate({
@@ -27,7 +27,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_(`
-I'm pleased to announce ${atb_rmemo_()}, a tiny no-fluff reactive state library. rmemo is the reactive core of ${atb_relementjs_()}, a server & browser UI rendering library that I also released.
+I'm pleased to announce ${rmemo__tb_a_()}, a tiny no-fluff reactive state library. rmemo is the reactive core of ${relementjs__tb_a_()}, a server & browser UI rendering library that I also released.
 
 rmemo is a tiny no-fluff state management library using reactive memos & reactive signals for the server & browser. This includes:
 
@@ -66,11 +66,11 @@ export interface User {
 
 ## Garbage Collection Integration
 
-rmemo tracks listeners using ${atb_WeakRef_()}. Most other reactive state management libraries directly track	listener references. This means the listener must explicitly unregister itself once the listener is complete. Let's examine the trade-offs:
+rmemo tracks listeners using ${WeakRef__tb_a_()}. Most other reactive state management libraries directly track	listener references. This means the listener must explicitly unregister itself once the listener is complete. Let's examine the trade-offs:
 
 ## Motivation
 
-Until recently I was using ${atb_nanostores_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores_footnote_c_(ctx)}. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:
+Until recently I was using ${nanostores__tb_a_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores_footnote_c_(ctx)}. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:
 
 ### \`computed\` requires it's parents to be listed as arguments.
 
@@ -111,8 +111,8 @@ ${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on
 export function ctx_core_nanostores_footnote_c_(ctx:request_ctx_T) {
-	return footnote__sup_({ ctx, id: 'ctx_core_nanostore' }, atb_ctx_core_nanostores_(), ` & `,
-		atb_ctx_core_solid_nanostores_())
+	return footnote__sup_({ ctx, id: 'ctx_core_nanostore' }, ctx_core_nanostores__tb_a_(), ` & `,
+		ctx_core_solid_nanostores__tb_a_())
 }
 export function nanostores_async_task_footnote_c_(ctx:request_ctx_T) {
 	// @formatter:off

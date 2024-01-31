@@ -2,10 +2,10 @@ import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import {
-	atb_backbone_signal_,
-	atb_browserify_,
-	atb_nodejs_,
-	atb_rundavoo_
+	backbone_signal__tb_a_,
+	browserify__tb_a_,
+	nodejs__tb_a_,
+	rundavoo__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { asset_path_a_ } from 'rebuildjs'
 const [
@@ -31,7 +31,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-I have recently released ${atb_backbone_signal_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
+I have recently released ${backbone_signal__tb_a_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
 
 \`\`\`js
 // backbone-signal extends Backbone.Model
@@ -74,7 +74,7 @@ What is nice about having a dedicated signal object is that you can bind to it e
 
 backbone-signal also utilizes Backbone's \`listenTo\` and \`listenToOnce\` methods, which make it easy to clean up by calling \`stopListening\` on the listener.
 
-backbone-signal is being used in ${atb_rundavoo_()} and has been fun to use, especially with ${atb_nodejs_()} & ${atb_browserify_()}. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.
+backbone-signal is being used in ${rundavoo__tb_a_()} and has been fun to use, especially with ${nodejs__tb_a_()} & ${browserify__tb_a_()}. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.
 
 The api includes:
 

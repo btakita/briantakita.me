@@ -3,75 +3,75 @@ import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
 import {
-	atb_asp_,
-	atb_astrojs_,
-	atb_backbonejs_,
-	atb_c_sharp_,
-	atb_caltrans_,
-	atb_cassandra_,
-	atb_censible_,
-	atb_communitywalk_,
-	atb_context_,
-	atb_craigslist_,
-	atb_ctx_core_,
-	atb_definition_,
-	atb_desertrb_,
-	atb_domain_driven_design_,
-	atb_dot_net_,
-	atb_entity_,
-	atb_esg_,
-	atb_existence_,
-	atb_expressjs_,
-	atb_flextronics_,
-	atb_grockit_,
-	atb_honk_,
-	atb_ie6_,
-	atb_jquery_,
-	atb_linux_,
-	atb_literate_programming_,
-	atb_marko_,
-	atb_martin_investments_,
-	atb_menu_,
-	atb_microsoft_,
-	atb_microstation_,
-	atb_milyoni_,
-	atb_monorepo_,
-	atb_msaccess_,
-	atb_msoffice_,
-	atb_myspace_,
-	atb_nanostores_,
-	atb_naspp_,
-	atb_neo_,
-	atb_news_corp_,
-	atb_nextjs_,
-	atb_ontology_,
-	atb_philosophy_,
-	atb_php_,
-	atb_pivotal_labs_,
-	atb_reactjs_,
-	atb_redis_,
-	atb_riotjs_,
-	atb_rspec_,
-	atb_ruby_,
-	atb_ruby_on_rails_,
-	atb_rundavoo_,
-	atb_sapper_,
-	atb_scope_,
-	atb_signals_react_,
-	atb_solid_start_,
-	atb_solidjs_,
-	atb_sql_server_,
-	atb_svelte_stores_,
-	atb_sveltejs_,
-	atb_tenfore_holdings_,
-	atb_truecar_,
-	atb_unison_,
-	atb_usaa_,
-	atb_vanjs_,
-	atb_vite_,
-	atb_worldview_,
-	atb_wsj_,
-	atb_yammer_
+	asp__tb_a_,
+	astrojs__tb_a_,
+	backbonejs__tb_a_,
+	c_sharp__tb_a_,
+	caltrans__tb_a_,
+	cassandra__tb_a_,
+	censible__tb_a_,
+	communitywalk__tb_a_,
+	context__tb_a_,
+	craigslist__tb_a_,
+	ctx_core__tb_a_,
+	definition__tb_a_,
+	desertrb__tb_a_,
+	domain_driven_design__tb_a_,
+	dot_net__tb_a_,
+	entity__tb_a_,
+	esg__tb_a_,
+	existence__tb_a_,
+	expressjs__tb_a_,
+	flextronics__tb_a_,
+	grockit__tb_a_,
+	honk__tb_a_,
+	ie6__tb_a_,
+	jquery__tb_a_,
+	linux__tb_a_,
+	literate_programming__tb_a_,
+	marko__tb_a_,
+	martin_investments__tb_a_,
+	menu__tb_a_,
+	microsoft__tb_a_,
+	microstation__tb_a_,
+	milyoni__tb_a_,
+	monorepo__tb_a_,
+	msaccess__tb_a_,
+	msoffice__tb_a_,
+	myspace__tb_a_,
+	nanostores__tb_a_,
+	naspp__tb_a_,
+	neo__tb_a_,
+	news_corp__tb_a_,
+	nextjs__tb_a_,
+	ontology__tb_a_,
+	philosophy__tb_a_,
+	php__tb_a_,
+	pivotal_labs__tb_a_,
+	reactjs__tb_a_,
+	redis__tb_a_,
+	riotjs__tb_a_,
+	rspec__tb_a_,
+	ruby__tb_a_,
+	ruby_on_rails__tb_a_,
+	rundavoo__tb_a_,
+	sapper__tb_a_,
+	scope__tb_a_,
+	signals_react__tb_a_,
+	solid_start__tb_a_,
+	solidjs__tb_a_,
+	sql_server__tb_a_,
+	svelte_stores__tb_a_,
+	sveltejs__tb_a_,
+	tenfore_holdings__tb_a_,
+	truecar__tb_a_,
+	unison__tb_a_,
+	usaa__tb_a_,
+	vanjs__tb_a_,
+	vite__tb_a_,
+	worldview__tb_a_,
+	wsj__tb_a_,
+	yammer__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta = post_meta__validate({
@@ -94,40 +94,40 @@ export const meta = post_meta__validate({
 export default (ctx:request_ctx_T)=>md__raw_(`
 *This post got long & is a work in progress. I will break it up into smaller posts soon.*
 
-My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in Engineer Physics which included 1 year of paid internships learning about ${atb_msoffice_()} & ${atb_microstation_()} automation at ${atb_caltrans_()} & working on the corporate intranet, which included a CRM system with ${atb_asp_()} at ${atb_flextronics_()}. I gained an appreciation of automating work & am still strongly driven to automate.
+My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in Engineer Physics which included 1 year of paid internships learning about ${msoffice__tb_a_()} & ${microstation__tb_a_()} automation at ${caltrans__tb_a_()} & working on the corporate intranet, which included a CRM system with ${asp__tb_a_()} at ${flextronics__tb_a_()}. I gained an appreciation of automating work & am still strongly driven to automate.
 
-It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job freezes, imploding companies everywhere. I picked up any freelance work that I could find${footnote__sup_({ ctx, id: 'early-freelance-projects' }, [`Some of my favorite projects include a ringtone generator using `, atb_php_(), ` & a CRM using using `, atb_c_sharp_(), ` `, atb_dot_net_(), ` & `, atb_sql_server_(), `.`])}. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft; adopting ${atb_linux_()} & exploring ${atb_literate_programming_()}. Literate programming is an important early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan called ${atb_ruby_()} & grew even more excited with this cool alpha web framework called ${atb_ruby_on_rails_()}.
+It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job freezes, imploding companies everywhere. I picked up any freelance work that I could find${footnote__sup_({ ctx, id: 'early-freelance-projects' }, [`Some of my favorite projects include a ringtone generator using `, php__tb_a_(), ` & a CRM using using `, c_sharp__tb_a_(), ` `, dot_net__tb_a_(), ` & `, sql_server__tb_a_(), `.`])}. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft; adopting ${linux__tb_a_()} & exploring ${literate_programming__tb_a_()}. Literate programming is an important early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan called ${ruby__tb_a_()} & grew even more excited with this cool alpha web framework called ${ruby_on_rails__tb_a_()}.
 
-I got my first full time job at ${atb_naspp_()}. The job consisted of office automation software & maintaining a long-used ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }, 'CRM')} & order system to manage print & web subscriptions along with events & conference attendee management. It was written in as an old & bogged down due to size ${atb_msaccess_()} app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining the tests. 
+I got my first full time job at ${naspp__tb_a_()}. The job consisted of office automation software & maintaining a long-used ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management' }, 'CRM')} & order system to manage print & web subscriptions along with events & conference attendee management. It was written in as an old & bogged down due to size ${msaccess__tb_a_()} app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining the tests. 
 
 ## Web 2.0, Ruby on Rails, startups
 
 ### Pivotal Labs
 
-I was excited to get break into startups & responded to an ad in ${atb_craigslist_()} by Jared Cosulich to collaborate on his startup ${atb_communitywalk_}. I helped with some features & bug fixes. He was working on funding & worked as a resident entrepreneur at ${atb_pivotal_labs_()}. I was introduced to Rob Mee, Sherry Erskine, the team with a brand new Ruby on Rails practice.
+I was excited to get break into startups & responded to an ad in ${craigslist__tb_a_()} by Jared Cosulich to collaborate on his startup ${communitywalk__tb_a_}. I helped with some features & bug fixes. He was working on funding & worked as a resident entrepreneur at ${pivotal_labs__tb_a_()}. I was introduced to Rob Mee, Sherry Erskine, the team with a brand new Ruby on Rails practice.
 
 I joined Pivotal Labs (it was Pivotal Computing Systems back then). Pivotal Labs had many talented engineers. Nathan Wilmes, Nathan Sobo, Nick Kallen, in particular, pushed me to become a better more innovative developer.
 
-I started working with reactive programming since collaborating with Nathan Sobo on a ruby project called ${atb_unison_()} at ${atb_grockit_}. ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'Reactive')} ${tb_a_({ href: 'https://en.wikipedia.org/wiki/State_management' }, 'state management')} clicked for me, as the paradigm allows state to be composed of functions with reactive inputs & a single output.
+I started working with reactive programming since collaborating with Nathan Sobo on a ruby project called ${unison__tb_a_()} at ${grockit__tb_a_}. ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'Reactive')} ${tb_a_({ href: 'https://en.wikipedia.org/wiki/State_management' }, 'state management')} clicked for me, as the paradigm allows state to be composed of functions with reactive inputs & a single output.
 
-I was a core contributor to the Behavior Driven Development library ${atb_rspec_()} & championed/developed the first (that I know of) implementation of nested \`describe\` statements${
+I was a core contributor to the Behavior Driven Development library ${rspec__tb_a_()} & championed/developed the first (that I know of) implementation of nested \`describe\` statements${
 	footnote__sup_({ ctx, id: 'nested-describe-statements' }, md__raw_(
 	// language=md
 	`This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.
 	`.trim()))
 }. I also worked on various open source projects focused on terse apis & Domain Driven Design
 
-I worked with creating composable plugins while working on ${atb_desertrb_()}, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to coherently managing multiple libraries in a single domain; some of these led to ${atb_monorepo_('monorepo')} patterns that	I use today.
+I worked with creating composable plugins while working on ${desertrb__tb_a_()}, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to coherently managing multiple libraries in a single domain; some of these led to ${monorepo__tb_a_('monorepo')} patterns that	I use today.
 
 There were many projects that I had the fortune to be a part of at Pivotal, so it deserves it's own post. While I got exposure to some of the best in the industry, many early stage start up projects, innovative open source projects, was well respected, had some great friendships. After 4 years with Pivotal, I wanted to be with a company & maintain a code base for the long run. I wanted to go deeper with maintaining single codebase to grow in my practice.
 
-My final project @ Pivotal was with ${atb_honk_()}. I liked working with the founders, Tom Taira, Stephanie Lacrosse, Bruce Krysiak. It was a smooth transition to be the Lead Product Developer on the product.
+My final project @ Pivotal was with ${honk__tb_a_()}. I liked working with the founders, Tom Taira, Stephanie Lacrosse, Bruce Krysiak. It was a smooth transition to be the Lead Product Developer on the product.
 
 ### Honk
 
 Honk was an automotive social information & sales startup. Honk built in social reviews, market price comparison, vehicle information, preference matching to autos tools.
 
-While working with ${atb_backbonejs_()} at Honk, I found that state management was effective in maintaining complex apps.
+While working with ${backbonejs__tb_a_()} at Honk, I found that state management was effective in maintaining complex apps.
 
 Tom & Stephanie have a long track record & deep connections in the automotive & automotive web industry. A partnership with ${atb_news_corp_()}, building auto buying components, even providing an office in the ${atb_myspace_()} building. Honk also created the auto buying portal through a partnership with ${atb_wsj_()} & ${atb_usaa_()}.
 

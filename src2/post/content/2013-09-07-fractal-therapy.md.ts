@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { atb_existence_ } from '@btakita/ui--server--briantakita/anchor'
+import { existence__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { asset_path_a_ } from 'rebuildjs'
 const [
 	fractal_therapy_jpg,
@@ -24,7 +24,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${atb_existence_()} over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.
+${existence__tb_a_()} over time and space. If you aren't familiar, here's a 55 minute documentary. It's worth watching.
 
 <iframe title="Fractals - Hunting the Hidden Dimension — PBS Nova" width="560" height="315" src="https://www.youtube.com/embed/4BGpU0dvYHw" frameborder="0" allowfullscreen></iframe>
 

@@ -2,12 +2,12 @@ import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import {
-	atb_behavior_driven_development_,
-	atb_domain_driven_design_,
-	atb_domain_specific_language_,
-	atb_existence_,
-	atb_pivotal_labs_,
-	atb_rspec_
+	behavior_driven_development__tb_a_,
+	domain_driven_design__tb_a_,
+	domain_specific_language__tb_a_,
+	existence__tb_a_,
+	pivotal_labs__tb_a_,
+	rspec__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { asset_path_a_ } from 'rebuildjs'
 const [
@@ -32,7 +32,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }, `Magic`)} exists! Well,if you have listened to me lately, you will hear that ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, `everything exists (including fiction)`)}. When everything exists, we can recapture the entirety of language from those who impose restrictions on ${atb_existence_()}. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a useful concept.
+${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }, `Magic`)} exists! Well,if you have listened to me lately, you will hear that ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, `everything exists (including fiction)`)}. When everything exists, we can recapture the entirety of language from those who impose restrictions on ${existence__tb_a_()}. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a useful concept.
 
 I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' }, 'Philosophy of Language (Wikipedia)')} brings concepts together into a system of logic to yield magical & insightful connections in Existence.
 
@@ -44,7 +44,7 @@ In high school, I had two notable role models who helped set direction to my lif
 
 I explored ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Engineering_physics' }, 'Engineering Physics')} in college & found I had a natural aptitude for software development. Ever since I started following the path of a technologist, I've wanted to explore the connections between technology & magic.
 
-My practice started with agile software development as a consultant for startups in San Francisco with Pivotal		Computer Systems (now ${atb_pivotal_labs_()}). There was a new technique called ${atb_domain_driven_design_()} that was making it's way around. ${atb_domain_specific_language_(`Domain Specific Languages (DSLs)`)} became the rage. I became an early		contributor to a ${atb_behavior_driven_development_()} framework called ${atb_rspec_()}. The premise behind rspec was to make automated testing software look more like the English language.
+My practice started with agile software development as a consultant for startups in San Francisco with Pivotal		Computer Systems (now ${pivotal_labs__tb_a_()}). There was a new technique called ${domain_driven_design__tb_a_()} that was making it's way around. ${domain_specific_language__tb_a_(`Domain Specific Languages (DSLs)`)} became the rage. I became an early		contributor to a ${behavior_driven_development__tb_a_()} framework called ${rspec__tb_a_()}. The premise behind rspec was to make automated testing software look more like the English language.
 
 Domain Driven Design states coherence is facilitated when members of an organization speak the same domain language. That means that when everybody in the business uses the same terminology, better overall	communication, better overall thought, & more innovative connections. The necessary precision is determined by what the concept is being used for (i.e. a sales presentation or software implementation).
 

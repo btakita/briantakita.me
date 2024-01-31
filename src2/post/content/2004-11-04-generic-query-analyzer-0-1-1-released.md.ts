@@ -2,7 +2,7 @@ import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { blog_post__top_note_p_ } from '@btakita/ui--server--blog/post'
-import { atb_generic_query_analyzer_ } from '@btakita/ui--server--briantakita/anchor'
+import { generic_query_analyzer__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2004-11-04T07:15Z',
@@ -28,6 +28,6 @@ It requires .NET 2.0.
 
 Despite its version number, it is a beta release and works well.
 
-You can get it on ${atb_generic_query_analyzer_('Sourceforge')}.
+You can get it on ${generic_query_analyzer__tb_a_('Sourceforge')}.
 `.trim())
 // @formatter:on

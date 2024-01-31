@@ -16,14 +16,6 @@ export async function build(config?:relysjs__build_config_T) {
 		...config ?? {},
 		target: 'es2022',
 		external: ['/assets/*', 'relementjs', 'elysia-compression'],
-		loader: {
-			'.png': 'file',
-			'.gif': 'file',
-			'.jpeg': 'file',
-			'.jpg': 'file',
-			'.mp4': 'file',
-			'.svg': 'file',
-		},
 		plugins: [
 			esmcss_esbuild_plugin_(),
 			rebuild_tailwind_plugin,

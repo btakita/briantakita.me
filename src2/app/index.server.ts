@@ -1,7 +1,8 @@
 import './index.css'
 import { blog_server_request__init, sorted_posts__new } from '@btakita/domain--server--blog'
 import { blog__rss_ } from '@btakita/ui--server--blog/rss'
-import { home_page_ } from '@btakita/ui--server--briantakita/home'
+import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
+import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -30,7 +31,7 @@ export default middleware_(middleware_ctx=>
 				social_a1: social_a1,
 			})
 			return html_response__new(
-				'' + home_page_({
+				home__doc_html_({
 					ctx: request_ctx,
 					dehydrated_post_meta_a: post_mod_a1.map(post_mod=>post_mod.meta),
 				}))
@@ -39,9 +40,15 @@ export default middleware_(middleware_ctx=>
 			new Response(robots_txt, {
 				headers: { 'Content-Type': 'text/plain' },
 			}))
-		.get('/rss.xml', async context=>
-			new Response('' + blog__rss_({
+		.get('/rss.xml', async context=>{
+			const request_ctx = request_ctx__ensure(middleware_ctx, context)
+			blog_server_request__init(request_ctx, {
+				logo_image,
 				site,
+				social_a1: social_a1,
+			})
+			return new Response('' + blog__rss_({
+				ctx: request_ctx,
 				dehydrated_post_meta_a1:
 					sorted_posts__new(post_mod_a1.map(post_mod=>
 						post_mod.meta)),
@@ -50,5 +57,16 @@ export default middleware_(middleware_ctx=>
 				headers: {
 					'Content-Type': 'application/xml'
 				}
-			}))
+			})
+		})
+		.get('/about', async context=>{
+			const request_ctx = request_ctx__ensure(middleware_ctx, context)
+			blog_server_request__init(request_ctx, {
+				logo_image,
+				site,
+				social_a1: social_a1,
+			})
+			return html_response__new(
+				about__doc_html_({ ctx: request_ctx }))
+		})
 )

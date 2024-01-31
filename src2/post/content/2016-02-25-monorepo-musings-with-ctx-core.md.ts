@@ -1,6 +1,6 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { atb_meteorjs_ } from '@btakita/ui--server--briantakita/anchor'
+import { meteorjs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { details_, span_, summary_ } from 'relementjs/html'
 export const meta = post_meta__validate({
 	title: `Monorepo Musings with ctx-core`,
@@ -21,7 +21,7 @@ It's been about 2 years since my previous post here. I've been busy working on a
 ${details_([
 		summary_('Why I choose Javascript'),
 		span_([
-			`I'm developing full-stack applications using node.js & es6/es2017. An advantage of web applications written in javascript is the potential to share logic on all levels of the stack. Frameworks such as `, atb_meteorjs_(), ` provide full-stack solutions; with the price being lock-in to the design idioms that the framework authors have chosen to support their toolsets.`
+			`I'm developing full-stack applications using node.js & es6/es2017. An advantage of web applications written in javascript is the potential to share logic on all levels of the stack. Frameworks such as `, meteorjs__tb_a_(), ` provide full-stack solutions; with the price being lock-in to the design idioms that the framework authors have chosen to support their toolsets.`
 		])
 	])}
 

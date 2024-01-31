@@ -11,16 +11,16 @@ tags:
   - tailwind
 description: How I built my new site, using Astrojs, Solidjs, ctx-core, Nanostores, Tailwind.
 ---
-import { atb_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
+import { tb_a_, footnote_c_, footnote_list_c_ } from '@btakita/ui--server--blog'
 import {
-	atb_astrojs_,
-	atb_astropaper_,
-	atb_bunjs_,
-	atb_ctx_core_,
-	atb_nanostores_,
-	atb_solidjs_,
-	atb_tailwindcss_,
-	atb_vercel_,
+	astrojs__tb_a_,
+	astropaper__tb_a_,
+	bunjs__tb_a_,
+	ctx_core__tb_a_,
+	nanostores__tb_a_,
+	solidjs__tb_a_,
+	tailwindcss__tb_a_,
+	vercel__tb_a_,
 	attribution_web_framework_realworld_app_sizes__add
 } from '@btakita/ui--server--briantakita'
 import R from 'relementjs/astro'
@@ -31,29 +31,29 @@ export const ctx = mdx__ctx__new()
 I'm excited to launch my new site https://www.briantakita.me. The Typescript/Javascript ecosystem has made important
 advancement over the past few years to support development from small scale to large scale websites & applications.
 <R $={p_(
-	`This site is forked from `, atb_astropaper_(), ` theme. I made some modifications & will go through them in this
+	`This site is forked from `, astropaper__tb_a_(), ` theme. I made some modifications & will go through them in this
 	post.`
 )}/>
 This is a static site is a monorepo built with:
 <R $={
 	ul_(
-		li_(atb_bunjs_()),
-		li_(atb_astrojs_()),
-		li_(atb_nanostores_()),
-		li_(atb_ctx_core_()),
-		li_(atb_solidjs_()),
-		li_(atb_tailwindcss_())
+		li_(bunjs__tb_a_()),
+		li_(astrojs__tb_a_()),
+		li_(nanostores__tb_a_()),
+		li_(ctx_core__tb_a_()),
+		li_(solidjs__tb_a_()),
+		li_(tailwindcss__tb_a_())
 	)
 }/>
 
 <R $={p_(
-	'It is deployed to ', atb_vercel_(), '.'
+	'It is deployed to ', vercel__tb_a_(), '.'
 )}/>
 
 ## Monorepo
 
 <R $={p_(
-	`For simplicity & ease of distribution, most `, atb_({ href: 'https://astro.build/themes/' }, 'Astro Themes'), `
+	`For simplicity & ease of distribution, most `, tb_a_({ href: 'https://astro.build/themes/' }, 'Astro Themes'), `
 	are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken into
 	separate git repos. This provides structure to where the code is deployed to & how it's used while enabling code
 	re-use for other projects.`
@@ -62,26 +62,26 @@ The git repos include:
 <R $={
 	ul_(
 		li_(
-			atb_({ href: 'https://github.com/btakita/briantakita.me-dev' }, 'btakita/briantakita.me-dev'), ` — monorepo
-			with `, atb_({ href: 'https://git-scm.com/book/en/v2/Git-Tools-Submodules' }, `git submodules`), ` to other
+			tb_a_({ href: 'https://github.com/btakita/briantakita.me-dev' }, 'btakita/briantakita.me-dev'), ` — monorepo
+			with `, tb_a_({ href: 'https://git-scm.com/book/en/v2/Git-Tools-Submodules' }, `git submodules`), ` to other
 			libraries`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/briantakita.me' }, `btakita/briantakita.me`),
+			tb_a_({ href: 'https://github.com/btakita/briantakita.me' }, `btakita/briantakita.me`),
 			` — briantakita.me astro app`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/domain--all--blog' }, `btakita/domain--all--blog`),
+			tb_a_({ href: 'https://github.com/btakita/domain--all--blog' }, `btakita/domain--all--blog`),
 			` —  domain library targeting the browser & server for blogs`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/domain--server' }, `btakita/domain--server`), ` — domain library
+			tb_a_({ href: 'https://github.com/btakita/domain--server' }, `btakita/domain--server`), ` — domain library
 			targeting the server`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/domain--server--blog'}, `btakita/domain--server--blog`), ` — domain
+			tb_a_({ href: 'https://github.com/btakita/domain--server--blog'}, `btakita/domain--server--blog`), ` — domain
 			logic targeting the server for blogs`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/ui--all--blog' }, `btakita/ui--all--blog`), ` — UI library targeting
+			tb_a_({ href: 'https://github.com/btakita/ui--all--blog' }, `btakita/ui--all--blog`), ` — UI library targeting
 			the browser & server for blogs`),
 		li_(
-			atb_({ href: 'https://github.com/btakita/ui--server--blog' }, `btakita/ui--server--blog`), ` — UI library
+			tb_a_({ href: 'https://github.com/btakita/ui--server--blog' }, `btakita/ui--server--blog`), ` — UI library
 			targeting the server for blogs`))
 }/>
 
@@ -93,12 +93,12 @@ The git repos include:
 	ul_(
 		li_(`A more comprehensible API & more natural integration with the DOM API`),
 		li_(
-			`Reactive Signals — `, atb_({ href: 'https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71' },
+			`Reactive Signals — `, tb_a_({ href: 'https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71' },
 				`cleaner component state management`)),
 		li_(
 			`Smaller payload `,
 			em_(
-				`(from`, atb_({ href: 'https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck' },
+				`(from`, tb_a_({ href: 'https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck' },
 					` Introducing the SolidJS UI Library`
 				), `)`),
 			figure_(
@@ -109,7 +109,7 @@ The git repos include:
 				figcaption_(
 					attribution_web_framework_realworld_app_sizes__add({ ctx })))),
 		li_(
-			atb_({ href: 'https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html' },
+			tb_a_({ href: 'https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html' },
 				`Fast`)),
 		li_(`Less code needed for components`),
 		li_(`JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*`))
@@ -120,7 +120,7 @@ The git repos include:
 <R $={p_(
 	`ctx-core with nanostores enables libraries & apps to easily share state management`,
 	footnote_c_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
-		atb_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },
+		tb_a_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },
 			`How I ended up using ctx-core & nanostores…`)),
 	'.'
 )}/>

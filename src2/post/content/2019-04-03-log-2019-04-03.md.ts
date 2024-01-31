@@ -2,14 +2,14 @@ import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import {
-	atb_eric_yang_,
-	atb_flux_social_,
-	atb_holochain_,
-	atb_holochain_currency_paper_,
-	atb_holochain_green_paper_,
-	atb_holochain_whitepaper_,
-	atb_sapper_,
-	atb_sveltejs_
+	eric_yang__tb_a_,
+	flux_social__tb_a_,
+	holochain__tb_a_,
+	holochain_currency_paper__tb_a_,
+	holochain_green_paper__tb_a_,
+	holochain_whitepaper__tb_a_,
+	sapper__tb_a_,
+	sveltejs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
@@ -31,19 +31,19 @@ export default ()=>md__raw_(`
 
 I've been experimenting & making progress with ${tb_a_({ href: '/posts/naming-conventions' }, 'Naming Conventions')}. Naming conventions for immutable entities has proven to reduce incidental complexity. I'm working on fleshing out the last details & a whitepaper. Please stay tuned. This practice has helped me remove incidental complexity from my codebases.
 
-# ${atb_sveltejs_()}
+# ${sveltejs__tb_a_()}
 
-I'm a fan of Sveltejs & ${atb_sapper_()}. Svelte provides truly reactive stores & html components. Html components mean it's easy for programmers & non-programmers (e.g. designers) to work with. Svelte is compiled, resulting in a payload that is small, fast, & memory efficient.
+I'm a fan of Sveltejs & ${sapper__tb_a_()}. Svelte provides truly reactive stores & html components. Html components mean it's easy for programmers & non-programmers (e.g. designers) to work with. Svelte is compiled, resulting in a payload that is small, fast, & memory efficient.
 
-# ${atb_holochain_()}
+# ${holochain__tb_a_()}
 
-Lately, I have been turned onto Holochain. Thanks to ${atb_eric_yang_()} founder of ${atb_flux_social_('Junto (now Flux Social)')} for introducing me to this technology.
+Lately, I have been turned onto Holochain. Thanks to ${eric_yang__tb_a_()} founder of ${flux_social__tb_a_('Junto (now Flux Social)')} for introducing me to this technology.
 
 I've read through:
 
-* ${atb_holochain_whitepaper_()}
-* ${atb_holochain_currency_paper_}
-* ${atb_holochain_green_paper_}
+* ${holochain_whitepaper__tb_a_()}
+* ${holochain_currency_paper__tb_a_}
+* ${holochain_green_paper__tb_a_}
 
 I encourage you to read these papers, as they explain the state of distributed networks & the innovations that Holochain & the Holo currency bring.
 `.trim())

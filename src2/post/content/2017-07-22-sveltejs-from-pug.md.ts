@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@btakita/domain--any--blog'
 import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { atb_pugjs_, atb_sveltejs_ } from '@btakita/ui--server--briantakita/anchor'
+import { pugjs__tb_a_, sveltejs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 export const meta = post_meta__validate({
 	title: `Svelte JS from Pug`,
 	author: `Brian Takita`,
@@ -21,7 +21,7 @@ export const meta = post_meta__validate({
 export default ()=>md__raw_(`
 Now it's time to implement server side rendering (SSR) using SvelteJS.
 
-On my current project, I will be migrating from ${atb_pugjs_()} to ${atb_sveltejs_()}. The key concepts are ${tb_a_({ href: 'https://svelte.technology/guide#server-side-rendering' }, 'Server Side Rendering')}, ${tb_a_({ href: 'https://github.com/sveltejs/svelte/pull/649' }, 'Hydration')}, client/server architectural options.
+On my current project, I will be migrating from ${pugjs__tb_a_()} to ${sveltejs__tb_a_()}. The key concepts are ${tb_a_({ href: 'https://svelte.technology/guide#server-side-rendering' }, 'Server Side Rendering')}, ${tb_a_({ href: 'https://github.com/sveltejs/svelte/pull/649' }, 'Hydration')}, client/server architectural options.
 
 SvelteJS allows one to render in dom & server side environments. SSR is simpler than DOM rendering since Svelte does not worry about \`oncreate\`, \`ondestroy\`, or \`events\`, or \`methods\`. \`data\` & \`computed properties\` still work to create the properties and \`helpers\` are also available.
 
