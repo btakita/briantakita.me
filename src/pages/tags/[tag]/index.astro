@@ -1,6 +1,6 @@
 ---
 import { type Post } from '@btakita/domain--any--blog'
-import { sorted__posts__new, tag__posts__new, unique__tags__new } from '@btakita/domain--server--blog'
+import { sorted_posts__new, tag_posts__new, unique__tags__new } from '@btakita/domain--server--blog'
 import { blog__tag__main_c_ } from '@btakita/ui--server--blog'
 import { CollectionEntry, getCollection } from 'astro:content'
 import R from 'relementjs/astro'
@@ -14,7 +14,7 @@ export interface Props {
 	tag:string
 }
 export async function getStaticPaths() {
-	const posts = sorted__posts__new(await getCollection('posts') as Post[])
+	const posts = sorted_posts__new(await getCollection('posts') as Post[])
 	const tags = unique__tags__new(posts)
 	return tags.map(tag=>{
 		return {
@@ -25,8 +25,8 @@ export async function getStaticPaths() {
 }
 const ctx = server__ctx__new(Astro)
 const { tag } = Astro.props
-const posts = sorted__posts__new(await getCollection('posts') as Post[])
-const tag__posts = tag__posts__new(posts, tag)
+const posts = sorted_posts__new(await getCollection('posts') as Post[])
+const tag__posts = tag_posts__new(posts, tag)
 ---
 
 <Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>
