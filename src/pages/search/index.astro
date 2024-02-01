@@ -1,6 +1,6 @@
 ---
 import type { Post, SearchItem } from '@btakita/domain--any--blog'
-import { sorted_posts__new } from '@btakita/domain--server--blog'
+import { sorted_dehydrated_post_meta_a1__new } from '@btakita/domain--server--blog'
 import { blog__search__main_c_ } from '@btakita/ui--server--blog'
 import { getCollection } from 'astro:content'
 import R from 'relementjs/astro'
@@ -10,7 +10,7 @@ import { SITE } from '../../config'
 import Layout from '../../layouts/Layout.astro'
 import { server__ctx__new } from '../../lib'
 const ctx = server__ctx__new(Astro)
-const posts = sorted_posts__new(await getCollection('posts') as Post[])
+const posts = sorted_dehydrated_post_meta_a1__new(await getCollection('posts') as Post[])
 // List of items to search in
 const search_item_a = posts.map(post=>({
 	title: post.data.title,

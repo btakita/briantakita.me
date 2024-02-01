@@ -1,15 +1,15 @@
 import './index.css'
-import { blog_server_request__init, sorted_posts__new } from '@btakita/domain--server--blog'
-import { blog__rss_ } from '@btakita/ui--server--blog/rss'
+import { blog_server_request_ctx__ensure } from '@btakita/domain--server--blog'
+import { blog__rss_xml_ } from '@btakita/ui--server--blog/rss'
 import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
+import { tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
-import { html_response__new, middleware_, request_ctx__ensure } from 'relysjs/server'
-import { post_mod_a1 } from '../post/index.ts'
+import { html_response__new, middleware_ } from 'relysjs/server'
 import { logo_image, site, social_a1 } from './config.ts'
 relement__use(server__relement)
 const robots_txt = `
@@ -25,70 +25,78 @@ export default middleware_(middleware_ctx=>
 	new Elysia({
 		name: 'root_routes'
 	})
-		.get('/', async context=>{
-			const request_ctx = request_ctx__ensure(middleware_ctx, context)
-			blog_server_request__init(request_ctx, {
-				logo_image,
-				site,
-				social_a1: social_a1,
-			})
-			return html_response__new(
+		.get('/', async context=>
+			html_response__new(
 				home__doc_html_({
-					ctx: request_ctx,
-					dehydrated_post_meta_a: post_mod_a1.map(post_mod=>post_mod.meta),
-				}))
-		})
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1: social_a1,
+						})
+				})))
 		.get('/robots.txt', ()=>
 			new Response(robots_txt, {
 				headers: { 'Content-Type': 'text/plain' },
 			}))
-		.get('/rss.xml', async context=>{
-			const request_ctx = request_ctx__ensure(middleware_ctx, context)
-			blog_server_request__init(request_ctx, {
-				logo_image,
-				site,
-				social_a1: social_a1,
-			})
-			return new Response('' + blog__rss_({
-				ctx: request_ctx,
-				dehydrated_post_meta_a1:
-					sorted_posts__new(post_mod_a1.map(post_mod=>
-						post_mod.meta)),
+		.get('/rss.xml', async context=>
+			new Response(blog__rss_xml_({
+				ctx: blog_server_request_ctx__ensure(
+					middleware_ctx,
+					context, {
+						logo_image,
+						site,
+						social_a1: social_a1,
+					})
 			}), {
 				status: 200,
 				headers: {
 					'Content-Type': 'application/xml'
 				}
-			})
-		})
-		.get('/about', async context=>{
-			const request_ctx = request_ctx__ensure(middleware_ctx, context)
-			blog_server_request__init(request_ctx, {
-				logo_image,
-				site,
-				social_a1: social_a1,
-			})
-			return html_response__new(
-				about__doc_html_({ ctx: request_ctx }))
-		})
-		.get('/portfolio', async context=>{
-			const request_ctx = request_ctx__ensure(middleware_ctx, context)
-			blog_server_request__init(request_ctx, {
-				logo_image,
-				site,
-				social_a1: social_a1,
-			})
-			return html_response__new(
-				portfolio__doc_html_({ ctx: request_ctx }))
-		})
-		.get('/open-source', async context=>{
-			const request_ctx = request_ctx__ensure(middleware_ctx, context)
-			blog_server_request__init(request_ctx, {
-				logo_image,
-				site,
-				social_a1: social_a1,
-			})
-			return html_response__new(
-				open_source__doc_html_({ ctx: request_ctx }))
-		})
+			}))
+		.get('/about', async context=>
+			html_response__new(
+				about__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1: social_a1,
+						})
+				})))
+		.get('/portfolio', async context=>
+			html_response__new(
+				portfolio__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1: social_a1,
+						})
+				})))
+		.get('/open-source', async context=>
+			html_response__new(
+				open_source__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1: social_a1,
+						})
+				})))
+		.get('/tags', async context=>
+			html_response__new(
+				tags__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1: social_a1,
+						})
+				})))
 )
