@@ -5,6 +5,7 @@ import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
+import { posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
 import { tag__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
@@ -66,6 +67,17 @@ export default middleware_(middleware_ctx=>
 							social_a1,
 						})
 				})))
+		.get('/open-source', async context=>
+			html_response__new(
+				open_source__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1,
+						})
+				})))
 		.get('/portfolio', async context=>
 			html_response__new(
 				portfolio__doc_html_({
@@ -77,9 +89,9 @@ export default middleware_(middleware_ctx=>
 							social_a1,
 						})
 				})))
-		.get('/open-source', async context=>
+		.get('/posts', async context=>
 			html_response__new(
-				open_source__doc_html_({
+				posts__doc_html_({
 					ctx: blog_server_request_ctx__ensure(
 						middleware_ctx,
 						context, {

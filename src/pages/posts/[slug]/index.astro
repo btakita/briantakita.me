@@ -1,6 +1,7 @@
+import { site__page__post_count_ } from '@btakita/domain--server--blog'
 ---
 import { post__slug__new } from '@btakita/domain--any--blog'
-import { footnote_o_, footnote_o__set, page_number_a__new } from '@btakita/domain--server--blog'
+import { footnote_o_, footnote_o__set, page__post_count_a1__new } from '@btakita/domain--server--blog'
 import { type CollectionEntry, getCollection } from 'astro:content'
 import { type GetStaticPathsResult } from 'astro'
 import PostLayout from '../../../layouts/PostLayout.astro'
@@ -16,7 +17,7 @@ export async function getStaticPaths():Promise<GetStaticPathsResult> {
 		params: { slug: post__slug__new(post) },
 		props: { post },
 	}))
-	const pagination_result = page_number_a__new(ctx, posts.length).map(pageNum=>({
+	const pagination_result = page__post_count_a1__new(site__page__post_count_(ctx), posts.length).map(pageNum=>({
 		params: { slug: String(pageNum) },
 	}))
 	return [...post_result, ...pagination_result] as GetStaticPathsResult

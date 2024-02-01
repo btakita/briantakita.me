@@ -1,6 +1,7 @@
+import { site__page__post_count_ } from '@btakita/domain--server--blog'
 ---
 import { type Post } from '@btakita/domain--any--blog'
-import { page_number_a__new, sorted_dehydrated_post_meta_a1__new } from '@btakita/domain--server--blog'
+import { page__post_count_a1__new, sorted_dehydrated_post_meta_a1__new } from '@btakita/domain--server--blog'
 import { getCollection } from 'astro:content'
 import { blog__posts__main_c_, blog__posts__nav_ } from '@btakita/ui--server--blog'
 import R from 'relementjs/astro'
@@ -14,7 +15,7 @@ const { slug } = Astro.params
 const ctx = server__ctx__new(Astro)
 const posts = sorted_dehydrated_post_meta_a1__new(await getCollection('posts') as Post[])
 const sorted__posts = sorted_dehydrated_post_meta_a1__new(posts)
-const page_numbers = page_number_a__new(ctx, sorted__posts.length)
+const page_numbers = page__post_count_a1__new(site__page__post_count_(ctx), sorted__posts.length)
 const page_count = page_numbers.length
 const total_pages = page_numbers.length
 const page_num =
