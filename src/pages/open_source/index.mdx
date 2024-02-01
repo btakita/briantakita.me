@@ -55,7 +55,7 @@ export const ctx = mdx__ctx__new()
 	p_(
 		`A collection of over 100 general purpose libraries to assist work creating libraries & apps. Development on
 		ctx-core begin an 2016 & continues today`,
-		footnote_c_({ ctx, id: 'ctx-core--catch-all' },
+		footnote_c_({ ctx, id: 'ctx_core_catch_all' },
 			`ctx-core has been a bit of a catch-all project to share code between projects under the principles of ctx-core.
 			The functionality of ctx-core is in place but the packages need some reorganization & documentation is needed to
 			be more widely used. I have used ctx-core to handle transitions between other component & state management
@@ -116,16 +116,16 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		`I learned about Nano Stores via `, astrojs__tb_a_(), `. Since I was already using `, svelte_stores__tb_a_(), `, Nano
 		Stores was a natural replacement to support global reactive state while supporting multiple component libraries,
 		such as `, solidjs__tb_a_(), `. I contributed a fix`,
-		footnote_c_({ ctx, id: 'nanostores-breadth-first-queue' },
+		footnote_c_({ ctx, id: 'nanostores_breadth_first_queue' },
 			tb_a_({ href: 'https://github.com/nanostores/nanostores/commit/af5ba274b2b400e5b0845b9a187660006faf550f' },
 				'Nano Stores breadth first queue')),
 		` to diamond dependency bugs by using a breadth first queuing algorithm which I previously contributed to svelte
 		stores`,
-		footnote_c_({ ctx, id: 'nanostores-computed-async' },
+		footnote_c_({ ctx, id: 'nanostores_computed_async' },
 			tb_a_({ href: 'https://github.com/sveltejs/svelte/commit/4d8090aa158bc369fc679baccb29d7e843bd5ce6' },
 				'Svelte Cyclic breadth first queue')),
 		`. I also added soon to be released async support to `, code_(`computed`),
-		footnote_c_({ ctx, id: 'nanostores-computed-async' },
+		footnote_c_({ ctx, id: 'nanostores_computed_async' },
 			tb_a_({ href: 'https://github.com/nanostores/nanostores/commit/79d02d891f9c5bcf7c5ffffce693d54887df87bc' },
 				'Nano Stores async computed')),
 		` & am working on adding autosubsciptions to `, code_(`computed`), `.`)
@@ -165,7 +165,7 @@ encodes tags joined by vectors & data structure shapes to express complex domain
 		implementation of `, tb_a_({ href: 'https://dannorth.net/introducing-bdd/' }, 'BDD (Behavioral Driven Development)'),
 		`. Key contributions include the first known implementation of nested `, code_(`describe`), ` & `, code_(`context`),
 		` statements`,
-		footnote_c_({ ctx, id: 'rspec-nested-describes' },
+		footnote_c_({ ctx, id: 'rspec_nested_describes' },
 			`Rspec: Added Nested Describes: Implemented in `,
 			tb_a_({ href: 'https://github.com/dchelimsky/rspec/commit/ee2043d08fdea9a1b694fd8d3bf019b85d17ef29' }, `two`),
 			` `,
