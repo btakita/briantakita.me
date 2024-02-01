@@ -2,14 +2,14 @@
 import type { logo_image_T, site_T, social_T } from '@btakita/domain--server--blog'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const site:site_T = {
-	website: 'https://briantakita.me/', // replace this with your deployed domain
+	website: 'https://briantakita.me', // replace this with your deployed domain
 	author: 'Brian Takita',
 	description: 'Reactive Context Enthusiast',
 	title: 'Brian Takita',
 	og_image: '/assets/images/briantakita-og.jpg',
 	light_and_dark_mode: true,
 	page__post_count: 10,
-	home__page__post_count: 4,
+	home__post_count: 4,
 }
 export const logo_image:logo_image_T = {
 	enable: false,

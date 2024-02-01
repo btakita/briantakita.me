@@ -1,6 +1,6 @@
 ---
 import { type Post } from '@btakita/domain--any--blog'
-import { sorted_dehydrated_post_meta_a1__new, tag_posts__new, unique_tag_a1__new } from '@btakita/domain--server--blog'
+import { sorted_dehydrated_post_meta_a1__new, tag__dehydrated_post_meta_a1__new, unique_tag_a1__new } from '@btakita/domain--server--blog'
 import { blog__tag__main_c_ } from '@btakita/ui--server--blog'
 import { CollectionEntry, getCollection } from 'astro:content'
 import R from 'relementjs/astro'
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 const ctx = server__ctx__new(Astro)
 const { tag } = Astro.props
 const posts = sorted_dehydrated_post_meta_a1__new(await getCollection('posts') as Post[])
-const tag__posts = tag_posts__new(posts, tag)
+const tag__posts = tag__dehydrated_post_meta_a1__new(posts, tag)
 ---
 
 <Layout ctx={ctx} title={`Tag:${tag} | ${SITE.title}`}>

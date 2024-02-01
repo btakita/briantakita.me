@@ -9,7 +9,7 @@ export const SITE:site_T = {
 	og_image: '/assets/images/briantakita-og.jpg',
 	light_and_dark_mode: true,
 	page__post_count: 10,
-	home__page__post_count: 4,
+	home__post_count: 4,
 }
 export const LOGO_IMAGE:logo_image_T = {
 	enable: false,

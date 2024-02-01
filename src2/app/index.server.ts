@@ -1,11 +1,11 @@
 import './index.css'
-import { blog_server_request_ctx__ensure } from '@btakita/domain--server--blog'
+import { blog_server_request_ctx__ensure, tag__set } from '@btakita/domain--server--blog'
 import { blog__rss_xml_ } from '@btakita/ui--server--blog/rss'
 import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
-import { tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
+import { tag__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -33,7 +33,7 @@ export default middleware_(middleware_ctx=>
 						context, {
 							logo_image,
 							site,
-							social_a1: social_a1,
+							social_a1,
 						})
 				})))
 		.get('/robots.txt', ()=>
@@ -47,7 +47,7 @@ export default middleware_(middleware_ctx=>
 					context, {
 						logo_image,
 						site,
-						social_a1: social_a1,
+						social_a1,
 					})
 			}), {
 				status: 200,
@@ -63,7 +63,7 @@ export default middleware_(middleware_ctx=>
 						context, {
 							logo_image,
 							site,
-							social_a1: social_a1,
+							social_a1,
 						})
 				})))
 		.get('/portfolio', async context=>
@@ -74,7 +74,7 @@ export default middleware_(middleware_ctx=>
 						context, {
 							logo_image,
 							site,
-							social_a1: social_a1,
+							social_a1,
 						})
 				})))
 		.get('/open-source', async context=>
@@ -85,18 +85,21 @@ export default middleware_(middleware_ctx=>
 						context, {
 							logo_image,
 							site,
-							social_a1: social_a1,
+							social_a1,
 						})
 				})))
-		.get('/tags', async context=>
-			html_response__new(
-				tags__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
-						middleware_ctx,
-						context, {
-							logo_image,
-							site,
-							social_a1: social_a1,
-						})
-				})))
+		.get('/tags/:tag', async context=>{
+			const { params: { tag } } = context
+			const ctx =
+				blog_server_request_ctx__ensure(
+					middleware_ctx,
+					context, {
+						logo_image,
+						site,
+						social_a1,
+					})
+			tag__set(ctx, tag)
+			return html_response__new(
+				tag__doc_html_({ ctx }))
+		})
 )
