@@ -1,13 +1,17 @@
 import './index.css'
-import { blog_server_request_ctx__ensure, page_num__set, page_num_a1_, tag__set } from '@btakita/domain--server--blog'
+import {
+	blog_post_slug_or_page_num__set,
+	blog_server_request_ctx__ensure,
+	page_num_,
+	tag__set
+} from '@btakita/domain--server--blog'
 import { blog__rss_xml_ } from '@btakita/ui--server--blog/rss'
 import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
-import { posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
+import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
 import { tag__doc_html_ } from '@btakita/ui--server--briantakita/tag'
-import { isNumber_ } from 'ctx-core/number'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -111,16 +115,11 @@ export default middleware_(middleware_ctx=>
 						site,
 						social_a1,
 					})
-			const page_num =
-				isNumber_(slug_or_page_num)
-				&& page_num_a1_(ctx)!.includes(Number(slug_or_page_num))
-					? Number(slug_or_page_num)
-					: 0
-			if (page_num) page_num__set(ctx, page_num)
+			blog_post_slug_or_page_num__set(ctx, slug_or_page_num)
 			return html_response__new(
-				page_num
+				page_num_(ctx)
 					? posts__doc_html_({ ctx })
-					: posts__doc_html_({ ctx }))
+					: post__doc_html_({ ctx }))
 		})
 		.get('/tags/:tag', async context=>{
 			const { params: { tag } } = context
