@@ -11,7 +11,7 @@ import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
-import { tag__doc_html_ } from '@btakita/ui--server--briantakita/tag'
+import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -121,6 +121,17 @@ export default middleware_(middleware_ctx=>
 					? posts__doc_html_({ ctx })
 					: post__doc_html_({ ctx }))
 		})
+		.get('/tags', async context=>
+			html_response__new(
+				tags__doc_html_({
+					ctx: blog_server_request_ctx__ensure(
+						middleware_ctx,
+						context, {
+							logo_image,
+							site,
+							social_a1,
+						})
+				})))
 		.get('/tags/:tag', async context=>{
 			const { params: { tag } } = context
 			const ctx =
