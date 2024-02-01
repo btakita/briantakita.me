@@ -3,6 +3,7 @@ import { blog_server_request__init, sorted_posts__new } from '@btakita/domain--s
 import { blog__rss_ } from '@btakita/ui--server--blog/rss'
 import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
+import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -68,5 +69,15 @@ export default middleware_(middleware_ctx=>
 			})
 			return html_response__new(
 				about__doc_html_({ ctx: request_ctx }))
+		})
+		.get('/portfolio', async context=>{
+			const request_ctx = request_ctx__ensure(middleware_ctx, context)
+			blog_server_request__init(request_ctx, {
+				logo_image,
+				site,
+				social_a1: social_a1,
+			})
+			return html_response__new(
+				portfolio__doc_html_({ ctx: request_ctx }))
 		})
 )
