@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "bun ./bin/dev.ts",
-    "build": "bun ./src/index.ts",
+    "build": "bun ./src/build.ts",
     "start": "bun ./start.ts",
     "clean": "rm -rf ./node_modules/.vite"
   },
