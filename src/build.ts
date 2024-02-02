@@ -1,7 +1,12 @@
 import { rebuild_tailwind_plugin_ } from '@rebuildjs/tailwindcss'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { esmcss_esbuild_plugin_ } from 'esmcss'
-import { type relysjs__build_config_T, relysjs_browser__build, relysjs_server__build } from 'relysjs/server'
+import {
+	type relysjs__build_config_T,
+	relysjs__ready,
+	relysjs_browser__build,
+	relysjs_server__build
+} from 'relysjs/server'
 import tailwind_config from '../tailwind.config.js'
 import { config__init } from './app/index.js'
 export async function build(config?:relysjs__build_config_T) {
@@ -21,6 +26,7 @@ export async function build(config?:relysjs__build_config_T) {
 			rebuild_tailwind_plugin,
 		],
 	})
+	await relysjs__ready()
 }
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({
