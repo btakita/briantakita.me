@@ -16,7 +16,8 @@ import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { logo_image, site, social_a1 } from './config.ts'
+import { post_mod_a1 } from '../post/index.js'
+import { logo_image, site, social_a1 } from './config.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: Googlebot
@@ -40,6 +41,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/robots.txt', ()=>
@@ -54,6 +56,7 @@ export default middleware_(middleware_ctx=>
 						logo_image,
 						site,
 						social_a1,
+						post_mod_a1,
 					})
 			}), {
 				status: 200,
@@ -70,6 +73,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/open-source', async context=>
@@ -81,6 +85,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/portfolio', async context=>
@@ -92,6 +97,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/posts', async context=>
@@ -103,6 +109,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/posts/:slug_or_page_num', async context=>{
@@ -114,6 +121,7 @@ export default middleware_(middleware_ctx=>
 						logo_image,
 						site,
 						social_a1,
+						post_mod_a1,
 					})
 			blog_post_slug_or_page_num__set(ctx, slug_or_page_num)
 			return html_response__new(
@@ -130,6 +138,7 @@ export default middleware_(middleware_ctx=>
 							logo_image,
 							site,
 							social_a1,
+							post_mod_a1,
 						})
 				})))
 		.get('/tags/:tag', async context=>{
@@ -141,6 +150,7 @@ export default middleware_(middleware_ctx=>
 						logo_image,
 						site,
 						social_a1,
+						post_mod_a1,
 					})
 			tag__set(ctx, tag)
 			return html_response__new(
