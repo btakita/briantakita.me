@@ -1,3 +1,4 @@
+import { rebuild_tailwind_plugin__ready } from '@rebuildjs/tailwindcss'
 import { import_meta_env_ } from 'ctx-core/env'
 import { Elysia } from 'elysia'
 import { dirname, join, resolve } from 'path'
@@ -9,11 +10,14 @@ import {
 	compression_middleware_,
 	cwd__set,
 	is_prod_,
-	port__set, src_path__set,
+	port__set,
+	relysjs__ready,
 	static_middleware_
 } from 'relysjs/server'
 export default async ()=>{
 	config__init()
+	await relysjs__ready()
+	await rebuild_tailwind_plugin__ready()
 	return _app__start(
 		new Elysia()
 			.use(await static_middleware_(
@@ -23,8 +27,7 @@ export default async ()=>{
 							'Cache-Control': 'max-age=2592000, public'
 						})
 					}
-					: {}
-			))
+					: {}))
 			.use(compression_middleware_())
 			.onError(({ error, request })=>{
 				console.error(request.url, error)

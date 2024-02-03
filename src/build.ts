@@ -1,4 +1,4 @@
-import { rebuild_tailwind_plugin_ } from '@rebuildjs/tailwindcss'
+import { rebuild_tailwind_plugin_, rebuild_tailwind_plugin__ready } from '@rebuildjs/tailwindcss'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { esmcss_esbuild_plugin_ } from 'esmcss'
 import {
@@ -27,6 +27,7 @@ export async function build(config?:relysjs__build_config_T) {
 		],
 	})
 	await relysjs__ready()
+	await rebuild_tailwind_plugin__ready()
 }
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({

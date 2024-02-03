@@ -1,6 +1,5 @@
 import { type Config } from 'tailwindcss'
 const config:Config = {
-	content: ['../../*/*/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		// Remove the following screen breakpoint or add other breakpoints
 		// if one breakpoint is not enough for you
@@ -62,11 +61,11 @@ const config:Config = {
 	plugins: [require('@tailwindcss/typography')],
 }
 export default config
-function withOpacity(variableName:string) {
+function withOpacity(variable_name:string) {
 	return ({ opacityValue }:{ opacityValue:number|string })=>{
 		if (opacityValue !== undefined) {
-			return `rgba(var(${variableName}), ${opacityValue})`
+			return `rgba(var(${variable_name}), ${opacityValue})`
 		}
-		return `rgb(var(${variableName}))`
+		return `rgb(var(${variable_name}))`
 	}
 }
