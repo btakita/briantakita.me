@@ -1,5 +1,6 @@
 import { type Config } from 'tailwindcss'
 const config:Config = {
+	content: [],
 	theme: {
 		// Remove the following screen breakpoint or add other breakpoints
 		// if one breakpoint is not enough for you
@@ -11,36 +12,36 @@ const config:Config = {
 		// extend: {
 		textColor: {
 			skin: {
-				base: withOpacity('--color-text-base'),
-				accent: withOpacity('--color-accent'),
-				inverted: withOpacity('--color-fill'),
+				base: rgb_('--color-text-base'),
+				accent: rgb_('--color-accent'),
+				inverted: rgb_('--color-fill'),
 			},
 		},
 		backgroundColor: {
 			skin: {
-				fill: withOpacity('--color-fill'),
-				accent: withOpacity('--color-accent'),
-				inverted: withOpacity('--color-text-base'),
-				card: withOpacity('--color-card'),
-				'card-muted': withOpacity('--color-card-muted'),
+				fill: rgb_('--color-fill'),
+				accent: rgb_('--color-accent'),
+				inverted: rgb_('--color-text-base'),
+				card: rgb_('--color-card'),
+				'card-muted': rgb_('--color-card-muted'),
 			},
 		},
 		outlineColor: {
 			skin: {
-				fill: withOpacity('--color-accent'),
+				fill: rgb_('--color-accent'),
 			},
 		},
 		borderColor: {
 			skin: {
-				line: withOpacity('--color-border'),
-				fill: withOpacity('--color-text-base'),
-				accent: withOpacity('--color-accent'),
+				line: rgb_('--color-border'),
+				fill: rgb_('--color-text-base'),
+				accent: rgb_('--color-accent'),
 			},
 		},
 		fill: {
 			skin: {
-				base: withOpacity('--color-text-base'),
-				accent: withOpacity('--color-accent'),
+				base: rgb_('--color-text-base'),
+				accent: rgb_('--color-accent'),
 			},
 			transparent: 'transparent',
 		},
@@ -51,21 +52,16 @@ const config:Config = {
 		},
 		extend: {
 			colors: {
-				highlight: withOpacity('--color-accent'),
+				highlight: rgb_('--color-accent'),
 			},
 			boxShadow: {
-				highlight: `0 0 10px ${withOpacity('--color-accent')}`
+				highlight: `0 0 10px ${rgb_('--color-accent')}`
 			}
 		},
 	},
 	plugins: [require('@tailwindcss/typography')],
 }
 export default config
-function withOpacity(variable_name:string) {
-	return ({ opacityValue }:{ opacityValue:number|string })=>{
-		if (opacityValue !== undefined) {
-			return `rgba(var(${variable_name}), ${opacityValue})`
-		}
-		return `rgb(var(${variable_name}))`
-	}
+function rgb_(variable_name:string) {
+	return `rgb(var(${variable_name}))`
 }
