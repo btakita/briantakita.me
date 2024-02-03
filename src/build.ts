@@ -1,4 +1,4 @@
-import { rebuild_tailwind_plugin_, rebuildjs_tailwind__ready__wait } from '@rebuildjs/tailwindcss'
+import { rebuild_tailwind_plugin_ } from '@rebuildjs/tailwindcss'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { esmcss_esbuild_plugin_ } from 'esmcss'
 import { readdir } from 'node:fs/promises'
@@ -29,7 +29,6 @@ export async function build(config?:relysjs__build_config_T) {
 		],
 	})
 	await relysjs__ready__wait()
-	await rebuildjs_tailwind__ready__wait()
 }
 function server_external_() {
 	return readdir(
