@@ -1,5 +1,5 @@
-import { rebuild_tailwind_plugin__ready } from '@rebuildjs/tailwindcss'
 import { import_meta_env_ } from 'ctx-core/env'
+import { is_entry_file_ } from 'ctx-core/fs'
 import { Elysia } from 'elysia'
 import { dirname, join, resolve } from 'path'
 import { relement__use } from 'relementjs'
@@ -11,13 +11,10 @@ import {
 	cwd__set,
 	is_prod_,
 	port__set,
-	relysjs__ready,
 	static_middleware_
 } from 'relysjs/server'
-export default async ()=>{
+export async function app__start() {
 	config__init()
-	await relysjs__ready()
-	await rebuild_tailwind_plugin__ready()
 	return _app__start(
 		new Elysia()
 			.use(await static_middleware_(
@@ -39,4 +36,7 @@ export function config__init() {
 	port__set(app_ctx, port)
 	cwd__set(app_ctx, resolve(join(dirname(new URL(import.meta.url).pathname), '../..')))
 	relement__use(server__relement)
+}
+if (is_entry_file_(import.meta.url, process.argv[1])) {
+	app__start()
 }

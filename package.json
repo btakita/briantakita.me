@@ -17,7 +17,7 @@
     "@btakita/ui--server--blog": "workspace:*",
     "@btakita/ui--server--briantakita": "workspace:*",
     "@ctx-core/source-map": "^0.2.36",
-    "@rebuildjs/tailwindcss": "^0.4.1",
+    "@rebuildjs/tailwindcss": "^0.5.1",
     "@tailwindcss/typography": "^0.5.10",
     "ctx-core": "^5.37.0",
     "elysia": "^0.8.15",
@@ -26,7 +26,7 @@
     "marked": "^11.2.0",
     "rebuildjs": "^0.53.0",
     "relementjs": "^0.63.0",
-    "relysjs": "^1.1.0",
+    "relysjs": "^1.2.0",
     "picocolors": "^1.0.0",
     "tailwindcss": "^3.4.1"
   },
