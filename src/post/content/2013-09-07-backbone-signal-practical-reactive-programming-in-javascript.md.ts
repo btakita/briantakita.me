@@ -18,7 +18,7 @@ export const meta = post_meta__validate({
 	pub_date: '2013-09-07T05:16Z',
 	title: `backbone-signal - Practical Reactive Programming in Javascript`,
 	slug: 'backbone-signal-practical-reactive-programming-javascript',
-	hero_image: 'https://www.briantakita.me' + neurons_jpg,
+	hero_image: 'https://briantakita.me' + neurons_jpg,
 	tag_a1: [
 		'javascript',
 		'signals',

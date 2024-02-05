@@ -11,6 +11,7 @@
   "dependencies": {
     "@btakita/domain--any--blog": "workspace:*",
     "@btakita/domain--browser--briantakita": "workspace:*",
+    "@btakita/domain--server": "workspace:*",
     "@btakita/domain--server--blog": "workspace:*",
     "@btakita/ui--any--blog": "workspace:*",
     "@btakita/ui--browser--blog": "workspace:*",

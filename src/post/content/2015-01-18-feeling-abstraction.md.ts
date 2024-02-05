@@ -5,7 +5,7 @@ export const meta = post_meta__validate({
 	pub_date: '2015-01-18T04:00Z',
 	title: `Feeling Abstraction`,
 	slug: 'feeling-abstraction',
-	hero_image: 'https://www.briantakita.me/assets/images/feeling-abstraction.jpg',
+	hero_image: 'https://briantakita.me/assets/images/feeling-abstraction.jpg',
 	tag_a1: [
 		'philosophy',
 		'worldview',

@@ -20,7 +20,7 @@ export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2014-12-10T07:15:00Z',
 	slug: `magic-connections-with-the-philosophy-of-language`,
-	hero_image: 'http://briantakita.me' + unicorn_jpg,
+	hero_image: 'https://briantakita.me' + unicorn_jpg,
 	tag_a1: [
 		'philosophy',
 		'ontology',

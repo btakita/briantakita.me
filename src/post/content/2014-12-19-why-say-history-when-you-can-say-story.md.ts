@@ -14,7 +14,7 @@ export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2014-12-19T05:50Z',
 	slug: 'why-say-history-when-you-can-say-story',
-	hero_image: 'https://www.briantakita.me' + encyclopedia_britannica_jpg,
+	hero_image: 'https://briantakita.me' + encyclopedia_britannica_jpg,
 	tag_a1: ['philosophy'],
 	description:
 		`In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.`,

@@ -6,7 +6,7 @@ export const meta = post_meta__validate({
 	pub_date: '2015-01-03T11:45Z',
 	title: `Do Not Worry, Everything Exists`,
 	slug: 'everything-exists',
-	hero_image: 'http://www.briantakita.me/assets/images/1200px-Creation_of_Adam.jpg',
+	hero_image: 'https://briantakita.me/assets/images/1200px-Creation_of_Adam.jpg',
 	tag_a1: [
 		'philosophy',
 		'worldview',

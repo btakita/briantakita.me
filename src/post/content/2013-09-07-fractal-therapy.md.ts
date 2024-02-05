@@ -13,7 +13,7 @@ export const meta = post_meta__validate({
 	pub_date: '2013-09-07T10:13Z',
 	title: `Fractal Therapy`,
 	slug: 'fractal-therapy',
-	hero_image: 'http://www.briantakita.me' + fractal_therapy_jpg,
+	hero_image: 'https://briantakita.me' + fractal_therapy_jpg,
 	tag_a1: [
 		'fractals',
 		'therapy',
