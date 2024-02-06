@@ -1,5 +1,5 @@
 // Place any global data in this file.
-import type { logo_image_T, site_T, social_T } from '@btakita/domain--server--blog'
+import type { logo_image_T, site_T, social_T } from '@rappstack/domain--server--blog'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const site:site_T = {
 	website: 'https://briantakita.me', // replace this with your deployed domain

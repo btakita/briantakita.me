@@ -1,7 +1,3 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
 import {
 	astrojs__tb_a_,
 	astropaper__tb_a_,
@@ -13,6 +9,10 @@ import {
 	vercel__tb_a_,
 } from '@btakita/ui--server--briantakita/anchor'
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { figcaption_, figure_, img_ } from 'relementjs/html'
 export const meta = post_meta__validate({

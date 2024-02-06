@@ -1,7 +1,12 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { ctx_core__tb_a_, metalsmithjs__tb_a_, riotjs__tb_a_, sveltejs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
+import {
+	ctx_core__tb_a_,
+	metalsmithjs__tb_a_,
+	riotjs__tb_a_,
+	sveltejs__tb_a_
+} from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 export const meta = post_meta__validate({
 	title: `Svelte JS from Riot JS`,
 	author: `Brian Takita`,

@@ -1,7 +1,12 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { flexmockrb__tb_a_, mocharb__tb_a_, rr__tb_a_, rspec_mocks__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
+import {
+	flexmockrb__tb_a_,
+	mocharb__tb_a_,
+	rr__tb_a_,
+	rspec_mocks__tb_a_
+} from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2008-01-01T05:30Z',

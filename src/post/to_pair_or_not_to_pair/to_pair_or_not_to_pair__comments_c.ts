@@ -1,4 +1,4 @@
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 import { type relement_env_T } from 'relementjs'
 import { a_, div_, em_, h3_, img_, li_, p_, span_, ul_ } from 'relementjs/html'
 import './to_pair_or_not_to_pair__comments_c.css'

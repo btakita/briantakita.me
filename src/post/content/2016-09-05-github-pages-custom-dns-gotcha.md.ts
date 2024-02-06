@@ -1,7 +1,7 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
 import { briantakita_com__tb_a_, github_pages__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
 export const meta = post_meta__validate({
 	author: 'Brian Takita',
 	pub_date: '2016-09-05T07:53Z',

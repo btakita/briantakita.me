@@ -1,7 +1,3 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { tb_a_ } from '@btakita/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@btakita/ui--server--blog/post'
 import {
 	apache__tb_a_,
 	cvs_scm__tb_a_,
@@ -10,6 +6,10 @@ import {
 	tortoisesvn__tb_a_,
 	vault_scm__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2004-09-18T21:31:00Z',

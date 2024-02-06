@@ -1,4 +1,4 @@
-import { type post_mod_T } from '@btakita/domain--any--blog'
+import { type post_mod_T } from '@rappstack/domain--any--blog'
 export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2004-09-18-subversion-source-control.md.js'),
 	import('./content/2004-09-19-deploy-any-file-type-using-whidbey-click-once.md.js'),

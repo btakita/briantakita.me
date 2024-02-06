@@ -1,6 +1,3 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
 import {
 	ctx_core_nanostores__tb_a_,
 	ctx_core_solid_nanostores__tb_a_,
@@ -9,6 +6,9 @@ import {
 	rmemo__tb_a_,
 	WeakRef__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,

@@ -1,6 +1,6 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
-import { footnote__sup_, footnote_list__div_ } from '@btakita/ui--server--blog/footnote'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { tag_vector_toc_c_ } from '../tag_vector/index.js'
 export const meta = post_meta__validate({

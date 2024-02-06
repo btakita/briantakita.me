@@ -1,6 +1,6 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
 import { meteorjs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { details_, span_, summary_ } from 'relementjs/html'
 export const meta = post_meta__validate({
 	title: `Monorepo Musings with ctx-core`,

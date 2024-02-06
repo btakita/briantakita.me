@@ -1,5 +1,3 @@
-import { post_meta__validate } from '@btakita/domain--any--blog'
-import { md__raw_ } from '@btakita/ui--any--blog/md'
 import {
 	briantakita_com__tb_a_,
 	ctx_core__tb_a_,
@@ -10,6 +8,8 @@ import {
 	sveltejs__tb_a_,
 	wintersmithjs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
+import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { md__raw_ } from '@rappstack/ui--any--blog/md'
 export const meta = post_meta__validate({
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,
 	author: `Brian Takita`,
