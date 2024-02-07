@@ -2,7 +2,7 @@ import { generic_query_analyzer__tb_a_ } from '@btakita/ui--server--briantakita/
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2004-11-04T07:15Z',
@@ -20,7 +20,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note_p_([`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx' }, 'geekswithblogs.net')])}
+${blog_post__top_note__p_([`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20060509022139/http://geekswithblogs.net/btakita/archive/2004/11/04/14347.aspx' }, 'geekswithblogs.net')])}
 
 I developed a Query Analyzer that can Query any database that has an OleDb adapter. This means you can query an Excel spreadsheet or Access database.
 

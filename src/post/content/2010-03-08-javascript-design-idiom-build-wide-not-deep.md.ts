@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2010-03-08T12:00Z',
@@ -14,7 +14,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note_p_('Originally posted on ', tb_a_({ href: 'https://web.archive.org/web/20120611125513/http://blog.honk.com/javascript-design-idiom-%e2%80%93-build-wide-not-deep/' }, 'blog.honk.com'))}
+${blog_post__top_note__p_('Originally posted on ', tb_a_({ href: 'https://web.archive.org/web/20120611125513/http://blog.honk.com/javascript-design-idiom-%e2%80%93-build-wide-not-deep/' }, 'blog.honk.com'))}
 
 Providing a rich user experience calls for good client side software. Javascript is a powerful language to provide the needed functionality. Like any other tool it has it’s strengths and weaknesses. Successful design in Javascript favors composition, loose coupling, and separation of concerns more so than in most other languages. To see why, let’s look at some properties of Javascript.
 

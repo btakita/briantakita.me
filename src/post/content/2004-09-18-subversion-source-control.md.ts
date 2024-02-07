@@ -9,7 +9,7 @@ import {
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2004-09-18T21:31:00Z',
@@ -22,7 +22,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note_p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx' }, 'geekswithblogs.net'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx' }, 'geekswithblogs.net'))}
 
 I am very impressed with ${subversion__tb_a_('Subversion Source Control')}.
 

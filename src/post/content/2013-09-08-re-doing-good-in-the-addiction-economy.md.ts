@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	title: 'Re: Doing Good in the Addiction Economy',
 	author: `Brian Takita`,
@@ -16,7 +16,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note_p_(`From my `, tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/' }, `wordpress blog`))}
+${blog_post__top_note__p_(`From my `, tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/' }, `wordpress blog`))}
 
 ${tb_a_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/' }, `Doing Good in the Addiction Economy`)}
 

@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta = post_meta__validate({
 	title: `Multi Underscore Tag Naming Convention Analysis`,
 	author: `Brian Takita`,
@@ -18,7 +18,7 @@ export const meta = post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note_p_(`Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a bibliographic system. I gratefully accept any bibliographic references to ideas that I may present.`)}
+${blog_post__top_note__p_(`Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a bibliographic system. I gratefully accept any bibliographic references to ideas that I may present.`)}
 
 ---
 

@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-import { blog_post__top_note_p_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 import { to_pair_or_not_to_pair__comments_c_ } from '../to_pair_or_not_to_pair/index.js'
 export const meta = post_meta__validate({
 	author: `Brian Takita`,
@@ -18,7 +18,7 @@ export const meta = post_meta__validate({
 // language=md
 // @formatter:off
 export default ()=>md__raw_(`
-${blog_post__top_note_p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/' }, 'blog.honk.com'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/' }, 'blog.honk.com'))}
 
 Here at Honk, we have been transitioning away from pair programming. I do not think that this necessarily reflects badly on pair programming. We still do some pair programming. However, our current circumstances steered us away from pair programming being our primary development practice.
 
