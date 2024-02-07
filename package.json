@@ -19,7 +19,7 @@
     "@rappstack/domain--any--blog": "workspace:*",
     "@rappstack/domain--server": "workspace:*",
     "@rappstack/domain--server--blog": "workspace:*",
-    "@rebuildjs/tailwindcss": "^0.8.0",
+    "@rebuildjs/tailwindcss": "^0.8.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "ctx-core": "^5.38.1",
