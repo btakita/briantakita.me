@@ -10,7 +10,7 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,
 	author: `Brian Takita`,
 	pub_date: '2017-06-07T05:30Z',

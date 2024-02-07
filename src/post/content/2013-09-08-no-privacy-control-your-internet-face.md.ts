@@ -1,6 +1,6 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	title: 'There is no privacy! Control your internet face',
 	author: `Brian Takita`,
 	pub_date: '2016-09-07T04:39:00.000Z',

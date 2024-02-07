@@ -1,12 +1,18 @@
 // Place any global data in this file.
 import type { logo_image_T, site_T, social_T } from '@rappstack/domain--server--blog'
+import { asset_path_a_ } from 'rebuildjs'
+const [
+	briantakita_og_jpg,
+] = await asset_path_a_(
+	import('../../public/assets/images/briantakita-og.jpg')
+)
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const site:site_T = {
 	website: 'https://briantakita.me', // replace this with your deployed domain
 	author: 'Brian Takita',
 	description: 'Reactive Context Enthusiast',
 	title: 'Brian Takita',
-	og_image: '/assets/images/briantakita-og.jpg',
+	og_image: briantakita_og_jpg,
 	light_and_dark_mode: true,
 	page__post_count: 10,
 	home__post_count: 4,

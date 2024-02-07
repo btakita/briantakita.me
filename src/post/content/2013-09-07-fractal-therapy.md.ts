@@ -1,19 +1,21 @@
 import { existence__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { asset_path_a_ } from 'rebuildjs'
+import { type request_ctx_T } from 'rebuildjs/server'
+import { request_url_ } from 'relysjs/server'
 const [
 	fractal_therapy_jpg,
 ] = await asset_path_a_(
 	import('../../../public/assets/images/fractal-therapy.jpg'),
 )
-export const meta = post_meta__validate({
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2013-09-07T10:13Z',
 	title: `Fractal Therapy`,
 	slug: 'fractal-therapy',
-	hero_image: 'https://briantakita.me' + fractal_therapy_jpg,
+	hero_image: request_url_(ctx).origin + fractal_therapy_jpg,
 	tag_a1: [
 		'fractals',
 		'therapy',

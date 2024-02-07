@@ -10,8 +10,8 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-export const meta = post_meta__validate({
+import { tb_a_ } from '@rappstack/ui--any/anchor'
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2019-04-03T12:00:00Z',
 	title: 'Log 2019-04-03',
@@ -42,8 +42,8 @@ Lately, I have been turned onto Holochain. Thanks to ${eric_yang__tb_a_()} found
 I've read through:
 
 * ${holochain_whitepaper__tb_a_()}
-* ${holochain_currency_paper__tb_a_}
-* ${holochain_green_paper__tb_a_}
+* ${holochain_currency_paper__tb_a_()}
+* ${holochain_green_paper__tb_a_()}
 
 I encourage you to read these papers, as they explain the state of distributed networks & the innovations that Holochain & the Holo currency bring.
 `.trim())

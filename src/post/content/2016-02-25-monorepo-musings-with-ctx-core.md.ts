@@ -2,7 +2,7 @@ import { meteorjs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { details_, span_, summary_ } from 'relementjs/html'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	title: `Monorepo Musings with ctx-core`,
 	author: `Brian Takita`,
 	pub_date: '2016-02-25T11:00:00.000Z',

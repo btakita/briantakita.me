@@ -18,8 +18,8 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
-export const meta = post_meta__validate({
+import { tb_a_ } from '@rappstack/ui--any/anchor'
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2023-10-29T08:31:00Z',
 	title: 'Log 2023-10-29',
@@ -38,7 +38,7 @@ export default ()=>md__raw_(`
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
 
-## ${strapi__tb_a_}
+## ${strapi__tb_a_()}
 
 Strapi seems like the best option for the headless CRM. I features:
 

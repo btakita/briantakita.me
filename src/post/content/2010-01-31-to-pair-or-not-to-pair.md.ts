@@ -1,9 +1,9 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
-import { to_pair_or_not_to_pair__comments_c_ } from '../to_pair_or_not_to_pair/index.js'
-export const meta = post_meta__validate({
+import { to_pair_or_not_to_pair__comments__div_ } from '../to_pair_or_not_to_pair/index.js'
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2010-01-31T12:00Z',
 	title: `To Pair or Not to Pair`,
@@ -42,6 +42,6 @@ So in a sense, we have modified our system of software development to account fo
 
 Comments *(copied from original post)*:
 
-${to_pair_or_not_to_pair__comments_c_()}
+${to_pair_or_not_to_pair__comments__div_()}
 `.trim())
 // @formatter:on

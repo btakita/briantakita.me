@@ -1,9 +1,9 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	title: `When We become a Muse to Our Tools`,
 	author: `Brian Takita`,
 	pub_date: '2017-06-11T11:00Z',

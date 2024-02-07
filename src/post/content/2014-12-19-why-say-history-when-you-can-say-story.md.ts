@@ -1,20 +1,21 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { asset_path_a_ } from 'rebuildjs'
 import { type request_ctx_T } from 'rebuildjs/server'
+import { request_url_ } from 'relysjs/server'
 const [
 	encyclopedia_britannica_jpg,
 ] = await asset_path_a_(
 	import('../../../public/assets/images/encyclopedia-britannica.jpg'),
 )
-export const meta = post_meta__validate({
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	title: `Why Say History When You Can Say Story?`,
 	author: `Brian Takita`,
 	pub_date: '2014-12-19T05:50Z',
 	slug: 'why-say-history-when-you-can-say-story',
-	hero_image: 'https://briantakita.me' + encyclopedia_britannica_jpg,
+	hero_image: request_url_(ctx).origin + encyclopedia_britannica_jpg,
 	tag_a1: ['philosophy'],
 	description:
 		`In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.`,

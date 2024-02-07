@@ -11,11 +11,16 @@ import {
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { asset_path_a_ } from 'rebuildjs'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { figcaption_, figure_, img_ } from 'relementjs/html'
-export const meta = post_meta__validate({
+const [
+	web_framework_realworld_app_sizes_png,
+] = await asset_path_a_(
+	import('../../../public/assets/images/web-framework-realworld-app-sizes.png'))
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2023-10-17T15:35:28.259Z',
 	title: `My new personal site`,
@@ -72,7 +77,7 @@ The git repos include:
 	figure_(
 		img_({
 			width: '50%',
-			src: '/assets/images/web-framework-realworld-app-sizes.png',
+			src: web_framework_realworld_app_sizes_png,
 			alt: 'Web framework Realword App Sizes'
 		}),
 		figcaption_(

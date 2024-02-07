@@ -1,8 +1,8 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-import { tb_a_ } from '@rappstack/ui--server--blog/anchor'
+import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { a_, b_ } from 'relementjs/html'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2013-09-14T02:00Z',
 	title: `Fast and Thorough Testing with Jasmine Flow`,

@@ -3,7 +3,7 @@ import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { tag_vector_toc_c_ } from '../tag_vector/index.js'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2023-10-20T05:00:00.020Z',
 	updated_date: '2023-10-29T09:13:00Z',

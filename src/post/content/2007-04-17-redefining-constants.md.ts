@@ -1,6 +1,6 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2007-04-17T12:54Z',
 	title: `Redefining Constants`,

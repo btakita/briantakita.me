@@ -8,7 +8,7 @@ import {
 	scope__tb_a_,
 	universal_set__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
-export const meta = post_meta__validate({
+export const meta_ = ()=>post_meta__validate({
 	author: 'Brian Takita',
 	pub_date: '2014-12-03T12:00:00Z',
 	slug: 'philosophy-existence-is-god-god-exists',
