@@ -8,7 +8,7 @@ import {
 	sveltejs__tb_a_,
 	wintersmithjs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
-import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 export const meta_ = ()=>post_meta__validate({
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,

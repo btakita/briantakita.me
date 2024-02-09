@@ -5,12 +5,10 @@ import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_so
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
-import {
-	blog_post_slug_or_page_num__set,
-	blog_server_request_ctx__ensure,
-	page_num_,
-	tag__set
-} from '@rappstack/domain--server--blog'
+import { blog_server_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
+import { page_num_ } from '@rappstack/domain--server--blog/page'
+import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
+import { tag__set } from '@rappstack/domain--server--blog/tag'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'

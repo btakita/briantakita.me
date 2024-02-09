@@ -4,7 +4,7 @@ import {
 	nodejs__tb_a_,
 	rundavoo__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
-import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { asset_path_a_ } from 'rebuildjs'

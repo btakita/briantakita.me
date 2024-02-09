@@ -1,5 +1,7 @@
 // Place any global data in this file.
-import type { logo_image_T, site_T, social_T } from '@rappstack/domain--server--blog'
+import { type logo_image_T } from '@rappstack/domain--server--blog/logo'
+import { type site_T } from '@rappstack/domain--server--blog/site'
+import { type social_T } from '@rappstack/domain--server--blog/social'
 import { asset_path_a_ } from 'rebuildjs'
 const [
 	briantakita_og_jpg,

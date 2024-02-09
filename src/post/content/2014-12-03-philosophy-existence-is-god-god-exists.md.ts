@@ -1,4 +1,4 @@
-import { post_meta__validate } from '@rappstack/domain--any--blog'
+import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import {
 	abstraction__tb_a_,
