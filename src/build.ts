@@ -19,12 +19,14 @@ export async function build(config?:relysjs__build_config_T) {
 	await Promise.all([
 		relysjs_browser__build({
 			...config ?? {},
+			treeShaking: true,
 			plugins: [rebuild_tailwind_plugin],
 		}),
 		relysjs_server__build({
 			...config ?? {},
 			target: 'es2022',
 			external: await server_external_(),
+			treeShaking: true,
 			plugins: [
 				esmcss_esbuild_plugin_(),
 				rebuild_tailwind_plugin,
