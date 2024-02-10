@@ -1,4 +1,5 @@
 import { rebuild_tailwind_plugin_ } from '@rebuildjs/tailwindcss'
+import cssnano from 'cssnano'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { esmcss_esbuild_plugin_ } from 'esmcss'
 import { readdir } from 'node:fs/promises'
@@ -14,7 +15,11 @@ import tailwindcss_config from './tailwind.config.js'
 export async function build(config?:relysjs__build_config_T) {
 	config__init()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
-		tailwindcss_config
+		tailwindcss_config,
+		postcss_plugin_a1_: tailwindcss_plugin=>[
+			tailwindcss_plugin,
+			cssnano({ preset: 'default' })
+		],
 	})
 	await Promise.all([
 		relysjs_browser__build({
