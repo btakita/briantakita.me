@@ -7,7 +7,7 @@ import { request_url_ } from 'relysjs/server'
 const [
 	Creation_of_Adam_jpg
 ] = await asset_path_a_(
-	import('../../../public/assets/images/1200px-Creation_of_Adam.jpg')
+	import('../../public/assets/images/1200px-Creation_of_Adam.jpg')
 )
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,

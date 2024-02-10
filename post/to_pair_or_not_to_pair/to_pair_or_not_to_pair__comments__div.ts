@@ -7,8 +7,8 @@ const [
 	icon_wink_gif,
 	icon_smile_gif,
 ] = await asset_path_a_(
-	import('../../../public/assets/images/icon_wink.gif'),
-	import('../../../public/assets/images/icon_smile.gif'),
+	import('../../public/assets/images/icon_wink.gif'),
+	import('../../public/assets/images/icon_smile.gif'),
 )
 export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_env_T>() {
 	return (

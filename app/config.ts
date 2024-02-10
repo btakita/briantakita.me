@@ -6,7 +6,7 @@ import { asset_path_a_ } from 'rebuildjs'
 const [
 	briantakita_og_jpg,
 ] = await asset_path_a_(
-	import('../../public/assets/images/briantakita-og.jpg')
+	import('../public/assets/images/briantakita-og.jpg')
 )
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const site:site_T = {

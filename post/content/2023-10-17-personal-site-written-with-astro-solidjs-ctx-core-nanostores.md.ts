@@ -19,7 +19,7 @@ import { figcaption_, figure_, img_ } from 'relementjs/html'
 const [
 	web_framework_realworld_app_sizes_png,
 ] = await asset_path_a_(
-	import('../../../public/assets/images/web-framework-realworld-app-sizes.png'))
+	import('../../public/assets/images/web-framework-realworld-app-sizes.png'))
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2023-10-17T15:35:28.259Z',

@@ -1,4 +1,4 @@
-import '../index.css'
+import '../index.css.js'
 import { search__doc_html_ } from '@btakita/ui--server--briantakita/search'
 import { blog_server_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { Elysia } from 'elysia'

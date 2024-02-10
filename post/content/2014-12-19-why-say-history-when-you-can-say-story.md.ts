@@ -8,7 +8,7 @@ import { request_url_ } from 'relysjs/server'
 const [
 	encyclopedia_britannica_jpg,
 ] = await asset_path_a_(
-	import('../../../public/assets/images/encyclopedia-britannica.jpg'),
+	import('../../public/assets/images/encyclopedia-britannica.jpg'),
 )
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	title: `Why Say History When You Can Say Story?`,

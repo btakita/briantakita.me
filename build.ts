@@ -9,8 +9,8 @@ import {
 	relysjs_browser__build,
 	relysjs_server__build
 } from 'relysjs/server'
-import tailwindcss_config from '../tailwind.config.js'
 import { config__init } from './app/index.js'
+import tailwindcss_config from './tailwind.config.js'
 export async function build(config?:relysjs__build_config_T) {
 	config__init()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
@@ -38,7 +38,6 @@ export async function build(config?:relysjs__build_config_T) {
 function server_external_() {
 	return readdir(join(
 		dirname(new URL(import.meta.url).pathname),
-		'..',
 		'..',
 		'..',
 		'node_modules'

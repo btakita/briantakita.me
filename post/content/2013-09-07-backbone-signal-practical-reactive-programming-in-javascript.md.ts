@@ -13,7 +13,7 @@ import { request_url_ } from 'relysjs/server'
 const [
 	neurons_jpg,
 ] = await asset_path_a_(
-	import('../../../public/assets/images/neurons.jpg'),
+	import('../../public/assets/images/neurons.jpg'),
 )
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,
