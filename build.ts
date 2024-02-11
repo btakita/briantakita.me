@@ -24,12 +24,12 @@ export async function build(config?:relysjs__build_config_T) {
 			cssnano({ preset: 'default' })
 		],
 	})
-	const hyop_plugin = hyop_plugin_()
+	const preprocess_plugin = preprocess_plugin_()
 	await Promise.all([
 		relysjs_browser__build({
 			...config ?? {},
 			treeShaking: true,
-			plugins: [rebuild_tailwind_plugin, hyop_plugin],
+			plugins: [rebuild_tailwind_plugin, preprocess_plugin],
 		}),
 		relysjs_server__build({
 			...config ?? {},
@@ -39,7 +39,7 @@ export async function build(config?:relysjs__build_config_T) {
 			plugins: [
 				esmcss_esbuild_plugin_(),
 				rebuild_tailwind_plugin,
-				hyop_plugin,
+				preprocess_plugin,
 			],
 		}),
 		relysjs__ready__wait(10_000)
@@ -66,12 +66,12 @@ if (is_entry_file_(import.meta.url, process.argv[1])) {
 			process.exit(1)
 		})
 }
-function hyop_plugin_():Plugin {
+function preprocess_plugin_():Plugin {
 	return {
 		name: 'hyop',
 		setup(build) {
 			if (import_meta_env_().NODE_ENV !== 'production') {
-				build.onLoad({ filter: /hyop\/?.*$/ }, async ({ path })=>{
+				build.onLoad({ filter: /(\/ctx-core\/?.*|\/hyop\/?.*)$/ }, async ({ path })=>{
 					const source = await Bun.file(path).text()
 					return {
 						contents: preprocess(
