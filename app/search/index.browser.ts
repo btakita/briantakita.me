@@ -1,4 +1,4 @@
-import { blog_header__hyop } from '@rappstack/ui--browser--blog/header'
+import { blog__header__hyop } from '@rappstack/ui--browser--blog/header'
 import { blog_search__main__hyop } from '@rappstack/ui--browser--blog/search'
 import { theme__toggle_button__hyop } from '@rappstack/ui--browser--blog/theme'
 import { relement__use } from 'relementjs'
@@ -7,7 +7,7 @@ relement__use(browser__relement)
 single_hyop(
 	document,
 	{
-		blog_header__hyop,
+		blog__header__hyop,
 		blog_search__main__hyop,
 		theme__toggle_button__hyop,
 	})

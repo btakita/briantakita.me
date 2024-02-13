@@ -10,6 +10,7 @@ import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
+import { code_ } from 'relementjs/html'
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2023-12-04T03:12:00Z',
@@ -70,7 +71,7 @@ rmemo tracks listeners using ${WeakRef__tb_a_()}. Most other reactive state mana
 
 ## Motivation
 
-Until recently I was using ${nanostores__tb_a_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores_footnote_c_(ctx)}. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:
+Until recently I was using ${nanostores__tb_a_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores__footnote_sup_(ctx)}. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:
 
 ### \`computed\` requires it's parents to be listed as arguments.
 
@@ -83,7 +84,7 @@ const id$ = atom(1)
 const user$ = computed(id$, id=>user_cache[id])
 \`\`\`
 
-### async operations must use a writable \`atom\` & \`subscribe\`${nanostores_async_task_footnote_c_(ctx)}
+### async operations must use a writable \`atom\` & \`subscribe\`${nanostores_async_task__footnote_sup_(ctx)}
 
 \`\`\`ts
 import { atom } from 'nanostores'
@@ -110,14 +111,19 @@ The bundle size of nanostores is remarkably small when only using \`atom\` but g
 ${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on
-export function ctx_core_nanostores_footnote_c_(ctx:request_ctx_T) {
-	return footnote__sup_({ ctx, id: 'ctx_core_nanostore' }, ctx_core_nanostores__tb_a_(), ` & `,
-		ctx_core_solid_nanostores__tb_a_())
+export function ctx_core_nanostores__footnote_sup_(ctx:request_ctx_T) {
+	return footnote__sup_({
+		ctx,
+		id: 'ctx_core_nanostore'
+	}, [
+		ctx_core_nanostores__tb_a_(), ' & ', ctx_core_solid_nanostores__tb_a_()
+	])
 }
-export function nanostores_async_task_footnote_c_(ctx:request_ctx_T) {
-	// @formatter:off
-	return footnote__sup_({ ctx, id: 'nanostores_async_task' }, md__raw_(`
-The next major version will integrate \`task\` with \`computed\`.
-	`.trim()))
-	// @formatter:on
+export function nanostores_async_task__footnote_sup_(ctx:request_ctx_T) {
+	return footnote__sup_({
+		ctx,
+		id: 'nanostores_async_task'
+	}, [
+		'The next major version will integrate ', code_('task'), ' with ', code_('computed'), '.'
+	])
 }

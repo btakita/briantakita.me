@@ -7,11 +7,12 @@ import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantak
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { blog_server_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { page_num_ } from '@rappstack/domain--server--blog/page'
-import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
+import { blog_post__tag$_, blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
+import { blog_post__estimate_read_minutes$_ } from '@rappstack/ui--server--blog/post'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
 import { Elysia } from 'elysia'
-import { relement__use } from 'relementjs'
+import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
 import { post_mod_a1 } from '../post/index.js'
@@ -125,7 +126,14 @@ export default middleware_(middleware_ctx=>
 			return html_response__new(
 				page_num_(ctx)
 					? posts__doc_html_({ ctx })
-					: post__doc_html_({ ctx }))
+					: await run(async ()=>{
+						await rmemo__wait(
+							blog_post__estimate_read_minutes$_(ctx),
+							blog_post__estimate_read_minutes=>
+								blog_post__estimate_read_minutes != null,
+							5_000)
+						return post__doc_html_({ ctx })
+					}))
 		})
 		.get('/tags', async context=>
 			html_response__new(
