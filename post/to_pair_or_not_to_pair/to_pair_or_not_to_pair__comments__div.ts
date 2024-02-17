@@ -1,15 +1,9 @@
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { class_ } from 'ctx-core/html'
-import { asset_path_a_ } from 'rebuildjs'
 import { type relement_env_T } from 'relementjs'
 import { a_, div_, em_, h3_, img_, li_, p_, span_, ul_ } from 'relementjs/html'
-const [
-	icon_wink_gif,
-	icon_smile_gif,
-] = await asset_path_a_(
-	import('../../public/assets/images/icon_wink.gif'),
-	import('../../public/assets/images/icon_smile.gif'),
-)
+import icon_smile_gif from '../../public/assets/images/icon_smile.gif'
+import icon_wink_gif from '../../public/assets/images/icon_wink.gif'
 export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_env_T>() {
 	return (
 		div_({ id: 'comments' }, [

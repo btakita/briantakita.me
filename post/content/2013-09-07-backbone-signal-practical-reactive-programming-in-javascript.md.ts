@@ -7,14 +7,9 @@ import {
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
-import { asset_path_a_ } from 'rebuildjs'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { request_url_ } from 'relysjs/server'
-const [
-	neurons_jpg,
-] = await asset_path_a_(
-	import('../../public/assets/images/neurons.jpg'),
-)
+import neurons_jpg from '../../public/assets/images/neurons.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2013-09-07T05:16Z',

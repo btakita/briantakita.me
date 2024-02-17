@@ -2,12 +2,7 @@
 import { type logo_image_T } from '@rappstack/domain--server--blog/logo'
 import { type site_T } from '@rappstack/domain--server--blog/site'
 import { type social_T } from '@rappstack/domain--server--blog/social'
-import { asset_path_a_ } from 'rebuildjs'
-const [
-	briantakita_og_jpg,
-] = await asset_path_a_(
-	import('../public/assets/images/briantakita-og.jpg')
-)
+import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const site:site_T = {
 	website: 'https://briantakita.me', // replace this with your deployed domain

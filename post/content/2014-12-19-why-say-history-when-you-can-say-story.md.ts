@@ -2,14 +2,9 @@ import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any--blog/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
-import { asset_path_a_ } from 'rebuildjs'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { request_url_ } from 'relysjs/server'
-const [
-	encyclopedia_britannica_jpg,
-] = await asset_path_a_(
-	import('../../public/assets/images/encyclopedia-britannica.jpg'),
-)
+import encyclopedia_britannica_jpg from '../../public/assets/images/encyclopedia-britannica.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	title: `Why Say History When You Can Say Story?`,
 	author: `Brian Takita`,
