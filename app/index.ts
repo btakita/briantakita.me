@@ -24,7 +24,7 @@ export default async ()=>{
 				}
 				: {}))
 		.onError(({ error, request })=>{
-			console.error(request.url, error)
+			console.error(request.url, error.message, error.stack)
 		})
 }
 export function config__init() {

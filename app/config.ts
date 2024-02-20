@@ -1,6 +1,6 @@
 // Place any global data in this file.
-import { type logo_image_T } from '@rappstack/domain--server--blog/logo'
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
+import { type logo_image_T } from '@rappstack/domain--server/logo'
 import { social_T } from '@rappstack/domain--server/social'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 // You can import this data from anywhere in your site by using the `import` keyword.
