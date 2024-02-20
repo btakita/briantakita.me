@@ -16,7 +16,7 @@ import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
 import { post_mod_a1 } from '../post/index.js'
-import { logo_image, site, social_a1 } from './config.js'
+import { logo_image, blog_site, social_a1 } from './config.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: Googlebot
@@ -25,7 +25,7 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: ${new URL('sitemap-index.xml', site.website).href}
+Sitemap: ${new URL('sitemap-index.xml', blog_site.website).href}
 `
 export default middleware_(middleware_ctx=>
 	new Elysia({
@@ -38,7 +38,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -53,7 +53,7 @@ export default middleware_(middleware_ctx=>
 					middleware_ctx,
 					context, {
 						logo_image,
-						site,
+						blog_site,
 						social_a1,
 						post_mod_a1,
 					})
@@ -70,7 +70,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -82,7 +82,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -94,7 +94,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -106,7 +106,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -118,7 +118,7 @@ export default middleware_(middleware_ctx=>
 					middleware_ctx,
 					context, {
 						logo_image,
-						site,
+						blog_site,
 						social_a1,
 						post_mod_a1,
 					})
@@ -142,7 +142,7 @@ export default middleware_(middleware_ctx=>
 						middleware_ctx,
 						context, {
 							logo_image,
-							site,
+							blog_site,
 							social_a1,
 							post_mod_a1,
 						})
@@ -154,7 +154,7 @@ export default middleware_(middleware_ctx=>
 					middleware_ctx,
 					context, {
 						logo_image,
-						site,
+						blog_site,
 						social_a1,
 						post_mod_a1,
 					})
