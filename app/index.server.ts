@@ -5,9 +5,9 @@ import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_so
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
-import { blog_server_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
+import { blog_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { page_num_ } from '@rappstack/domain--server--blog/page'
-import { blog_post__tag$_, blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
+import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
 import { blog_post__estimate_read_minutes$_ } from '@rappstack/ui--server--blog/post'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
@@ -16,7 +16,7 @@ import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
 import { post_mod_a1 } from '../post/index.js'
-import { logo_image, blog_site, social_a1 } from './config.js'
+import { blog_site, logo_image, social_a1 } from './config.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: Googlebot
@@ -34,7 +34,7 @@ export default middleware_(middleware_ctx=>
 		.get('/', async context=>
 			html_response__new(
 				home__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -49,7 +49,7 @@ export default middleware_(middleware_ctx=>
 			}))
 		.get('/rss.xml', async context=>
 			new Response(blog__rss_xml_({
-				ctx: blog_server_request_ctx__ensure(
+				ctx: blog_request_ctx__ensure(
 					middleware_ctx,
 					context, {
 						logo_image,
@@ -66,7 +66,7 @@ export default middleware_(middleware_ctx=>
 		.get('/about', async context=>
 			html_response__new(
 				about__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -78,7 +78,7 @@ export default middleware_(middleware_ctx=>
 		.get('/open-source', async context=>
 			html_response__new(
 				open_source__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -90,7 +90,7 @@ export default middleware_(middleware_ctx=>
 		.get('/portfolio', async context=>
 			html_response__new(
 				portfolio__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -102,7 +102,7 @@ export default middleware_(middleware_ctx=>
 		.get('/posts', async context=>
 			html_response__new(
 				posts__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -114,7 +114,7 @@ export default middleware_(middleware_ctx=>
 		.get('/posts/:slug_or_page_num', async context=>{
 			const { params: { slug_or_page_num } } = context
 			const ctx =
-				blog_server_request_ctx__ensure(
+				blog_request_ctx__ensure(
 					middleware_ctx,
 					context, {
 						logo_image,
@@ -138,7 +138,7 @@ export default middleware_(middleware_ctx=>
 		.get('/tags', async context=>
 			html_response__new(
 				tags__doc_html_({
-					ctx: blog_server_request_ctx__ensure(
+					ctx: blog_request_ctx__ensure(
 						middleware_ctx,
 						context, {
 							logo_image,
@@ -150,7 +150,7 @@ export default middleware_(middleware_ctx=>
 		.get('/tags/:tag', async context=>{
 			const { params: { tag } } = context
 			const ctx =
-				blog_server_request_ctx__ensure(
+				blog_request_ctx__ensure(
 					middleware_ctx,
 					context, {
 						logo_image,
