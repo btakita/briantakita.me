@@ -2,6 +2,14 @@
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
 import { type logo_image_T } from '@rappstack/domain--server/logo'
 import { social_T } from '@rappstack/domain--server/social'
+import {
+	tabler_brand_discord_,
+	tabler_brand_github_,
+	tabler_brand_gitlab_,
+	tabler_brand_linkedin_,
+	tabler_mail_,
+	tabler_brand_telegram_
+} from '@rappstack/ui--any--blog/icon'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const blog_site:blog_site_T = {
@@ -22,43 +30,37 @@ export const logo_image:logo_image_T = {
 }
 export const social_a1:social_T[] = [
 	{
-		name: 'Github',
+		icon_html: tabler_brand_github_(),
 		href: 'https://github.com/btakita',
 		link_title: `${blog_site.title} on Github`,
 		active: true,
 	},
 	{
-		name: 'LinkedIn',
+		icon_html: tabler_brand_linkedin_(),
 		href: 'https://www.linkedin.com/in/briantakita/',
 		link_title: `${blog_site.title} on LinkedIn`,
 		active: true,
 	},
 	{
-		name: 'Mail',
+		icon_html: tabler_mail_(),
 		href: 'mailto:brian.takita@gmail.com',
 		link_title: `Send an email to ${blog_site.title}`,
 		active: false,
 	},
 	{
-		name: 'Discord',
+		icon_html: tabler_brand_discord_(),
 		href: 'https://discord.com/users/413926819733962762',
 		link_title: `${blog_site.title} on Discord`,
 		active: false,
 	},
 	{
-		name: 'GitLab',
+		icon_html: tabler_brand_gitlab_(),
 		href: 'https://gitlab.com/btakita',
 		link_title: `${blog_site.title} on GitLab`,
 		active: false,
 	},
 	{
-		name: 'Skype',
-		href: 'https://github.com/satnaing/astro-paper',
-		link_title: `${blog_site.title} on Skype`,
-		active: false,
-	},
-	{
-		name: 'Telegram',
+		icon_html: tabler_brand_telegram_(),
 		href: 'https://t.me/BrianTakita',
 		link_title: `${blog_site.title} on Telegram`,
 		active: false,
