@@ -24,7 +24,7 @@ export const social_a1:social_T[] = [
 	{
 		name: 'Github',
 		href: 'https://github.com/btakita',
-		link_title: ` ${site.title} on Github`,
+		link_title: `${site.title} on Github`,
 		active: true,
 	},
 	{
