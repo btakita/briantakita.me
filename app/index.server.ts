@@ -9,6 +9,7 @@ import { blog_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { page_num_ } from '@rappstack/domain--server--blog/page'
 import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
+import { redirect_response__new } from '@rappstack/domain--server/response'
 import { blog_post__estimate_read_minutes$_ } from '@rappstack/ui--server--blog/post'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
 import { Elysia } from 'elysia'
@@ -47,7 +48,7 @@ export default middleware_(middleware_ctx=>
 			new Response(robots_txt, {
 				headers: { 'Content-Type': 'text/plain' },
 			}))
-		.get('/rss.xml', async context=>
+		.get('/rss', async context=>
 			new Response(blog__rss_xml_({
 				ctx: blog_request_ctx__ensure(
 					middleware_ctx,
@@ -63,6 +64,8 @@ export default middleware_(middleware_ctx=>
 					'Content-Type': 'application/xml'
 				}
 			}))
+		.get('/rss.xml', ()=>
+			redirect_response__new(301, '/rss'))
 		.get('/about', async context=>
 			html_response__new(
 				about__doc_html_({
