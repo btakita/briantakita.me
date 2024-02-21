@@ -30,37 +30,37 @@ export const logo_image:logo_image_T = {
 }
 export const social_a1:social_T[] = [
 	{
-		icon_html: tabler_brand_github_(),
+		icon_: tabler_brand_github_,
 		href: 'https://github.com/btakita',
 		link_title: `${blog_site.title} on Github`,
 		active: true,
 	},
 	{
-		icon_html: tabler_brand_linkedin_(),
+		icon_: tabler_brand_linkedin_,
 		href: 'https://www.linkedin.com/in/briantakita/',
 		link_title: `${blog_site.title} on LinkedIn`,
 		active: true,
 	},
 	{
-		icon_html: tabler_mail_(),
+		icon_: tabler_mail_,
 		href: 'mailto:brian.takita@gmail.com',
 		link_title: `Send an email to ${blog_site.title}`,
 		active: false,
 	},
 	{
-		icon_html: tabler_brand_discord_(),
+		icon_: tabler_brand_discord_,
 		href: 'https://discord.com/users/413926819733962762',
 		link_title: `${blog_site.title} on Discord`,
 		active: false,
 	},
 	{
-		icon_html: tabler_brand_gitlab_(),
+		icon_: tabler_brand_gitlab_,
 		href: 'https://gitlab.com/btakita',
 		link_title: `${blog_site.title} on GitLab`,
 		active: false,
 	},
 	{
-		icon_html: tabler_brand_telegram_(),
+		icon_: tabler_brand_telegram_,
 		href: 'https://t.me/BrianTakita',
 		link_title: `${blog_site.title} on Telegram`,
 		active: false,
