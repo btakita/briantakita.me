@@ -6,7 +6,7 @@
 		"dev": "bun ./bin/dev.ts",
 		"build": "bun ./build.ts",
 		"start": "bun ./start.ts",
-		"clean": "rm -rf ./node_modules/.vite"
+		"clean": "rm -rf ./dist"
 	},
 	"dependencies": {
 		"@btakita/domain--browser--briantakita": "workspace:*",
