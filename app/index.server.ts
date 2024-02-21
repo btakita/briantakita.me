@@ -12,6 +12,7 @@ import { tag__set } from '@rappstack/domain--server--blog/tag'
 import { redirect_response__new } from '@rappstack/domain--server/response'
 import { blog_post__estimate_read_minutes$_ } from '@rappstack/ui--server--blog/post'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
+import { sitemap__xml_ } from '@rappstack/ui--server--blog/sitemap'
 import { Elysia } from 'elysia'
 import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
@@ -26,7 +27,7 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: ${new URL('sitemap-index.xml', blog_site.website).href}
+Sitemap: ${new URL('sitemap.xml', blog_site.website).href}
 `
 export default middleware_(middleware_ctx=>
 	new Elysia({
@@ -66,6 +67,22 @@ export default middleware_(middleware_ctx=>
 			}))
 		.get('/rss.xml', ()=>
 			redirect_response__new(301, '/rss'))
+		.get('/sitemap.xml', async context=>
+			new Response(sitemap__xml_({
+				ctx: blog_request_ctx__ensure(
+					middleware_ctx,
+					context, {
+						logo_image,
+						blog_site,
+						social_a1,
+						post_mod_a1,
+					})
+			}), {
+				status: 200,
+				headers: {
+					'Content-Type': 'application/xml'
+				}
+			}))
 		.get('/about', async context=>
 			html_response__new(
 				about__doc_html_({
