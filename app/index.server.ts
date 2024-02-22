@@ -11,14 +11,14 @@ import { page_num_ } from '@rappstack/domain--server--blog/page'
 import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
 import { redirect_response__new } from '@rappstack/domain--server/response'
-import { blog_post__estimate_read_minutes$_ } from '@rappstack/ui--server--blog/post'
+import { blog_post__estimate_read_minutes_ } from '@rappstack/ui--server--blog/post'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
 import { Elysia } from 'elysia'
 import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { post_mod_a1 } from '../post/index.js'
 import { blog_site, logo_image, social_a1 } from '../config.js'
+import { post_mod_a1 } from '../post/index.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: Googlebot
@@ -148,7 +148,7 @@ export default middleware_(middleware_ctx=>
 					? posts__doc_html_({ ctx })
 					: await run(async ()=>{
 						await rmemo__wait(
-							blog_post__estimate_read_minutes$_(ctx),
+							()=>blog_post__estimate_read_minutes_(ctx),
 							blog_post__estimate_read_minutes=>
 								blog_post__estimate_read_minutes != null,
 							5_000)
