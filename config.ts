@@ -1,16 +1,20 @@
 // Place any global data in this file.
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
 import { type logo_image_T } from '@rappstack/domain--server/logo'
-import { social_T } from '@rappstack/domain--server/social'
+import { type social_T } from '@rappstack/domain--server/social'
 import {
 	tabler_brand_discord_,
 	tabler_brand_github_,
 	tabler_brand_gitlab_,
 	tabler_brand_linkedin_,
-	tabler_mail_,
-	tabler_brand_telegram_
+	tabler_brand_telegram_,
+	tabler_mail_
 } from '@rappstack/ui--any--blog/icon'
-import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
+import { import_meta_env_ } from 'ctx-core/env'
+import { relement__use } from 'relementjs'
+import { server__relement } from 'relementjs/server'
+import { app_ctx, cwd__set, port__set, src_path__set } from 'relysjs/server'
+import briantakita_og_jpg from './public/assets/images/briantakita-og.jpg'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const blog_site:blog_site_T = {
 	website: 'https://briantakita.me', // replace this with your deployed domain
@@ -66,3 +70,10 @@ export const social_a1:social_T[] = [
 		active: false,
 	},
 ]
+export function config__init() {
+	const port = parseInt(import_meta_env_().BRIANTAKITA_PORT) || 4100
+	port__set(app_ctx, port)
+	cwd__set(app_ctx, process.cwd())
+	src_path__set(app_ctx, process.cwd())
+	relement__use(server__relement)
+}

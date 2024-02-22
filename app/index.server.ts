@@ -18,7 +18,7 @@ import { relement__use, rmemo__wait, run } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
 import { post_mod_a1 } from '../post/index.js'
-import { blog_site, logo_image, social_a1 } from './config.js'
+import { blog_site, logo_image, social_a1 } from '../config.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: Googlebot

@@ -1,4 +1,4 @@
-import { config__init } from './app/index.js'
 import { build } from './build.js'
+import { config__init } from './config.js'
 config__init()
 await build()

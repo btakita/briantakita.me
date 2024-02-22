@@ -4,7 +4,7 @@ import { blog_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { Elysia } from 'elysia'
 import { html_response__new, middleware_ } from 'relysjs/server'
 import { post_mod_a1 } from '../../post/index.js'
-import { logo_image, blog_site, social_a1 } from '../config.js'
+import { logo_image, blog_site, social_a1 } from '../../config.js'
 export default middleware_(middleware_ctx=>
 	new Elysia({
 		name: 'search_routes'
