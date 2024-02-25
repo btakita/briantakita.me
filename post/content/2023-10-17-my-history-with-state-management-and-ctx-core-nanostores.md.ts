@@ -20,10 +20,12 @@ import {
 	expressjs__tb_a_,
 	flextronics__tb_a_,
 	grockit__tb_a_,
-	honk__tb_a_, ie6__tb_a_,
+	honk__tb_a_,
+	ie6__tb_a_,
 	jquery__tb_a_,
 	linux__tb_a_,
-	literate_programming__tb_a_, marko__tb_a_,
+	literate_programming__tb_a_,
+	marko__tb_a_,
 	martin_investments__tb_a_,
 	menu__tb_a_,
 	microsoft__tb_a_,
@@ -36,7 +38,8 @@ import {
 	nanostores__tb_a_,
 	naspp__tb_a_,
 	neo__tb_a_,
-	news_corp__tb_a_, nextjs__tb_a_,
+	news_corp__tb_a_,
+	nextjs__tb_a_,
 	ontology__tb_a_,
 	philosophy__tb_a_,
 	php__tb_a_,
@@ -59,14 +62,16 @@ import {
 	tenfore_holdings__tb_a_,
 	truecar__tb_a_,
 	unison__tb_a_,
-	usaa__tb_a_, vanjs__tb_a_, vite__tb_a_,
+	usaa__tb_a_,
+	vanjs__tb_a_,
+	vite__tb_a_,
 	worldview__tb_a_,
 	wsj__tb_a_,
 	yammer__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = ()=>post_meta__validate({
