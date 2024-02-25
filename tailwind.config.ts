@@ -2,6 +2,13 @@ import typography from '@tailwindcss/typography'
 import { type Config } from 'tailwindcss'
 const config:Config = {
 	content: [],
+	safelist: [
+		// These classes are purged when NODE_ENV === 'production'
+		// TODO: why?
+		'group-[.is-open]/blog_header__handle_nav:opacity-0',
+		'group-[.is-open]/blog_header__handle_nav:opacity-100',
+		'group-[.is-open]/blog_header__handle_nav:flex',
+	],
 	theme: {
 		textColor: {
 			skin: {
