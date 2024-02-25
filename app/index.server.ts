@@ -28,7 +28,7 @@ User-agent: *
 Allow: /
 
 Sitemap: ${new URL('sitemap.xml', blog_site.website).href}
-`
+`.trim()
 export default middleware_(middleware_ctx=>
 	new Elysia({
 		name: 'root_routes'
