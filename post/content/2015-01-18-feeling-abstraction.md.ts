@@ -1,5 +1,5 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { request_url_ } from 'relysjs/server'
 import feeling_abstraction_jpg from '../../public/assets/images/feeling-abstraction.jpg'

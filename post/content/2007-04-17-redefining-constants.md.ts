@@ -1,5 +1,5 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2007-04-17T12:54Z',

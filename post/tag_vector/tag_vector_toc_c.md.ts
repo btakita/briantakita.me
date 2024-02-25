@@ -1,4 +1,4 @@
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 export function tag_vector_toc_c_() {
 	// @formatter:off
 	// language=md

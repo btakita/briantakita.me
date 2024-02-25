@@ -10,7 +10,7 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'

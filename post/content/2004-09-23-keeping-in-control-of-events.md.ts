@@ -1,5 +1,5 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 export const meta_ = ()=>post_meta__validate({

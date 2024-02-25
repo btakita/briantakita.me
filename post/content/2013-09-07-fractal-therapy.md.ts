@@ -1,6 +1,6 @@
 import { existence__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { md__raw_ } from '@rappstack/ui--any--blog/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { request_url_ } from 'relysjs/server'
