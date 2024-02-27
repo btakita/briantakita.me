@@ -1,13 +1,11 @@
-import { blog__header__hyop } from '@rappstack/ui--browser--blog/header'
-import { blog_search__main__hyop } from '@rappstack/ui--browser--blog/search'
-import { theme__toggle_button__hyop } from '@rappstack/ui--browser--blog/theme'
+import * as blog__header__hyops from '@rappstack/ui--browser--blog/header/hyop'
+import * as blog_search__main__hyops from '@rappstack/ui--browser--blog/search/hyop'
+import * as theme__toggle_button__hyops from '@rappstack/ui--browser--blog/theme/hyop'
 import { relement__use } from 'relementjs'
-import { browser__relement, single_hyop } from 'relementjs/browser'
+import { browser__relement, hyop } from 'relementjs/browser'
 relement__use(browser__relement)
-single_hyop(
-	document,
-	{
-		blog__header__hyop,
-		blog_search__main__hyop,
-		theme__toggle_button__hyop,
-	})
+hyop(document, {
+	...blog__header__hyops,
+	...blog_search__main__hyops,
+	...theme__toggle_button__hyops,
+})

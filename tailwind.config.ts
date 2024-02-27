@@ -5,9 +5,9 @@ const config:Config = {
 	safelist: [
 		// These classes are purged when NODE_ENV === 'production'
 		// TODO: why?
-		'group-[.is-open]/blog_header__handle_nav:opacity-0',
-		'group-[.is-open]/blog_header__handle_nav:opacity-100',
-		'group-[.is-open]/blog_header__handle_nav:flex',
+		'group-[.is-open]/blog__header__handle__nav:opacity-0',
+		'group-[.is-open]/blog__header__handle__nav:opacity-100',
+		'group-[.is-open]/blog__header__handle__nav:flex',
 	],
 	theme: {
 		textColor: {
