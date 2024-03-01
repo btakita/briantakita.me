@@ -14,7 +14,7 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx' }, 'geekswithblogs.net'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 At work, I'm having an issue with losing control over events in my code. One big issue I'm having is recursion inthe \`DataRow.RowChanged\` event.
 

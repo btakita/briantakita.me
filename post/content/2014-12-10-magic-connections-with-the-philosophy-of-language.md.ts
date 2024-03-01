@@ -31,7 +31,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 export default ()=>md__raw_(`
 ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }, `Magic`)} exists! Well,if you have listened to me lately, you will hear that ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, `everything exists (including fiction)`)}. When everything exists, we can recapture the entirety of language from those who impose restrictions on ${existence__tb_a_()}. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a useful concept.
 
-I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language' }, 'Philosophy of Language (Wikipedia)')} brings concepts together into a system of logic to yield magical & insightful connections in Existence.
+I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language', nofollow: true }, 'Philosophy of Language (Wikipedia)')} brings concepts together into a system of logic to yield magical & insightful connections in Existence.
 
 ## My Story with Magic
 
@@ -39,7 +39,7 @@ I've always been a daydreaming, fantasy imagining, professing, believer in magic
 
 In high school, I had two notable role models who helped set direction to my life. My brother in law who		founded a technology company & my physics teacher. It wasn't the facts that they taught. It was the enthusiastic approach that seemingly unrelated concepts can be connected, yielding novelty & innovation.
 
-I explored ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Engineering_physics' }, 'Engineering Physics')} in college & found I had a natural aptitude for software development. Ever since I started following the path of a technologist, I've wanted to explore the connections between technology & magic.
+I explored ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Engineering_physics', nofollow: true }, 'Engineering Physics')} in college & found I had a natural aptitude for software development. Ever since I started following the path of a technologist, I've wanted to explore the connections between technology & magic.
 
 My practice started with agile software development as a consultant for startups in San Francisco with Pivotal		Computer Systems (now ${pivotal_labs__tb_a_()}). There was a new technique called ${domain_driven_design__tb_a_()} that was making it's way around. ${domain_specific_language__tb_a_(`Domain Specific Languages (DSLs)`)} became the rage. I became an early		contributor to a ${behavior_driven_development__tb_a_()} framework called ${rspec__tb_a_()}. The premise behind rspec was to make automated testing software look more like the English language.
 
@@ -49,11 +49,11 @@ I also grew up with an interest in ${tb_a_({ href: 'https://github.com/btakita/p
 
 ## Culture & Magic
 
-Culture has evolved a definition of ${tb_a_({ href: 'https://www.thefreedictionary.com/magic' }, `Magic (thefreedictionary.com)`)}.
+Culture has evolved a definition of ${tb_a_({ href: 'https://www.thefreedictionary.com/magic', nofollow: true }, `Magic (thefreedictionary.com)`)}.
 
 > The art that purports to control or forecast natural events, effects, or forces by invoking the supernatural.
 
-Where ${tb_a_({ href: 'https://www.thefreedictionary.com/supernatural' }, `Supernatural (thefreedictionary.com)`)} means.
+Where ${tb_a_({ href: 'https://www.thefreedictionary.com/supernatural', nofollow: true }, `Supernatural (thefreedictionary.com)`)} means.
 
 > Of or relating to existence outside the natural world.
 
@@ -83,15 +83,15 @@ Marketing entities understand the power of language & images. That's why Marketi
 
 Language has often been thought of as a human trait.
 
-${tb_a_({ href: 'http://en.wikipedia.org/wiki/Language' }, 'Language (Wikipedia)')}
+${tb_a_({ href: 'http://en.wikipedia.org/wiki/Language', nofollow: true }, 'Language (Wikipedia)')}
 
 > Language is the human ability to acquire and use complex systems of communication, and a language is any specific example of such a system.
 
-${tb_a_({ href: 'http://thefreedictionary.com/language' }, 'Language (thefreedictionary.com)')}
+${tb_a_({ href: 'http://thefreedictionary.com/language', nofollow: true }, 'Language (thefreedictionary.com)')}
 
 > Communication of thoughts and feelings through a system of arbitrary signals, such as voice sounds, gestures, or written symbols.
 
-We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants have Language (${tb_a_({ href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/'},'What Plants Talk About')}). Stars have Language. The Universe itself has Language. Concepts have Language.
+We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants have Language (${tb_a_({ href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/', nofollow: true},'What Plants Talk About')}). Stars have Language. The Universe itself has Language. Concepts have Language.
 
 ## Awareness of the Ecosystem of Language
 

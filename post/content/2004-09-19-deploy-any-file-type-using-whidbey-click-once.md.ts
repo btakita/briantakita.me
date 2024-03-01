@@ -14,7 +14,7 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx' }, 'geekswithblogs.net'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190258/http://geekswithblogs.net/btakita/archive/2004/09/18/11352.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 One of the great things about Whidbey is ClickOnce Deployment. At ${ccrcorp__tb_a_()}, I use it to deploy rich client internal applications.
 
@@ -23,7 +23,7 @@ ClickOnce can be used to not only deploy .NET applications, but also to deploy f
 - Create a Console Application
 - Add the adp file to the project and set it as Content
 - Write a bootstrapper application in the Main method
-- ${tb_a_({ href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022' }, 'Configure'), ` the ClickOnce deployment`}
+- ${tb_a_({ href: 'https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment?view=vs-2022', nofollow: true }, 'Configure'), ` the ClickOnce deployment`}
 
 Here is the bootstrap&hellip;
 

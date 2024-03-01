@@ -16,9 +16,9 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note__p_(`From my `, tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/' }, `wordpress blog`))}
+${blog_post__top_note__p_(`From my `, tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/', nofollow: true }, `wordpress blog`))}
 
-${tb_a_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/' }, `Doing Good in the Addiction Economy`)}
+${tb_a_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/', nofollow: true }, `Doing Good in the Addiction Economy`)}
 
 Interesting but long-winded post, IMO. But then, maybe my impatience toward long posts is telling in the short term rewards culture we live in. Time is valuable, and trying to get to the core concept of some the writing is often the goal. We don’t seem to savor the journey as much, or the journey has changed to be our lives toward success…
 

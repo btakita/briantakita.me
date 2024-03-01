@@ -23,7 +23,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 export default ()=>md__raw_(`
 Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking about them. If they don't exist, why & how am I talking about them?
 
-Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept conceptually exists. It may also physically exist; like the men who ${tb_a_({ href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html' }, 'name themselves Santa Claus')}. 
+Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept conceptually exists. It may also physically exist; like the men who ${tb_a_({ href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html', nofollow: true }, 'name themselves Santa Claus')}. 
 
 Surely this must be a cheat; Some sort of sleight of hand; Missing the point. However...
 
@@ -49,7 +49,7 @@ God involves creation. Our feelings, thoughts, & actions create God; We can crea
 
 A person's belief system influences the person's thoughts, actions, & interpretations.
 
-Some ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Exoteric' }, 'Exoteric Religions')} impose a belief system composed of some outdated traditions. There are unifying ethics that create harmony with self & others, however these ethics can be taught without Exoteric Religion.
+Some ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Exoteric', nofollow: true }, 'Exoteric Religions')} impose a belief system composed of some outdated traditions. There are unifying ethics that create harmony with self & others, however these ethics can be taught without Exoteric Religion.
 
 ## Our Nature & Calling
 

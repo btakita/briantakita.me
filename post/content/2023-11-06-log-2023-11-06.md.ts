@@ -17,7 +17,7 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_(`
-A Data ontology I saw ${footnote__sup_({ ctx, id: 'clif-high-data' }, tb_a_({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639' }, `SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))}
+A Data ontology I saw ${footnote__sup_({ ctx, id: 'clif-high-data' }, tb_a_({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639', nofollow: true }, `SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))}
 
 * **Datum**: A single piece of information
 * **Data**: A collection of individual data points

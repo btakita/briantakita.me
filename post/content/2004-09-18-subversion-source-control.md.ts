@@ -22,7 +22,7 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx' }, 'geekswithblogs.net'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 I am very impressed with ${subversion__tb_a_('Subversion Source Control')}.
 
@@ -34,6 +34,6 @@ Branching, merging, rollbacks, and conflict resolution are easy. Subversion make
 
 Now, I'm version controlling items that I edit, including my blog posts and articles.
 
-Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion can be run off of its own svn server or ${apache__tb_a_()}. If you use the svn server on a Windows server, you may want to consider using ${tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/' }, 'SVNService')} to register the svn server as a Service.
+Subversion can be run on a desktop, file share, or as a web service. The web service interface for Subversion can be run off of its own svn server or ${apache__tb_a_()}. If you use the svn server on a Windows server, you may want to consider using ${tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://dark.clansoft.dk/~mbn/svnservice/', nofollow: true }, 'SVNService')} to register the svn server as a Service.
 `.trim())
 // @formatter:off

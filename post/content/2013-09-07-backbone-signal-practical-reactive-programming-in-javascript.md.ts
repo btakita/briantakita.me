@@ -28,7 +28,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-I have recently released ${backbone_signal__tb_a_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming' }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
+I have recently released ${backbone_signal__tb_a_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming', nofollow: true }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
 
 \`\`\`js
 // backbone-signal extends Backbone.Model
@@ -65,7 +65,7 @@ The console ouput is:
     Nice to see you
 \`\`\`
 
-We are calling \`getTruthy\` on the \`userSignal\` two times, one for \`"Hello " + user.name\` and one for \`"Nice to see you"\`. The callback is invoked when the	value is ${tb_a_({ href: 'http://www.sitepoint.com/javascript-truthy-falsy/' }, 'Truthy')}. So when \`userSignal.unset\` is called, the callbacks are not invoked.
+We are calling \`getTruthy\` on the \`userSignal\` two times, one for \`"Hello " + user.name\` and one for \`"Nice to see you"\`. The callback is invoked when the	value is ${tb_a_({ href: 'http://www.sitepoint.com/javascript-truthy-falsy/', nofollow: true }, 'Truthy')}. So when \`userSignal.unset\` is called, the callbacks are not invoked.
 
 What is nice about having a dedicated signal object is that you can bind to it even when it's value is undefined, thereby avoiding order dependencies and simplifying your logic.
 

@@ -36,14 +36,14 @@ Ordinally, the phrase "Multi Underscore Tag Naming Convention" can be read left 
 
 This sequence follows the English rules of Grammar for a phrase.
 
-The object is "${tb_a_({ href: 'https://en.wiktionary.org/wiki/convention' }, 'Convention')}": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.
+The object is "${tb_a_({ href: 'https://en.wiktionary.org/wiki/convention', nofollow: true }, 'Convention')}": A practice or procedure widely observed in a group, especially to facilitate social interaction; a custom.
 
 The prepositions are:
 
 * Multi Underscore - implying multiple underscore characters \`_\`
-* ${tb_a_({ href: 'https://en.wiktionary.org/wiki/tag' }, 'Tag')}
+* ${tb_a_({ href: 'https://en.wiktionary.org/wiki/tag', nofollow: true }, 'Tag')}
 	* A keyword, term, or phrase associated with or assigned to data, media, and/or information enabling keyword-based classification; often used to categorize content.
-* ${tb_a_({ href: 'https://en.wiktionary.org/wiki/naming' }, 'Naming')}
+* ${tb_a_({ href: 'https://en.wiktionary.org/wiki/naming', nofollow: true }, 'Naming')}
 	* The process of giving names to things.
 
 The vector can be used:

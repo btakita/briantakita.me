@@ -29,7 +29,7 @@ I'm pleased to introduce a new Test Double (or mock) framework named ${rr__tb_a_
 
 A mock is a type of test double. Since RR supports mocks, stubs, and proxies, it makes sense to refer to RR as a double framework. The proxy is a new usage pattern that I will introduce later in this article, and in more detail in future articles.
 
-Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's terminology tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read more about test doubles in ${tb_a_({ href: 'http://xunitpatterns.com/Test%20Double%20Patterns.html' })} and Martin Fowler's article, ${tb_a_({ href: 'http://martinfowler.com/articles/mocksArentStubs.html' })}. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks. How does RR compare to other Mock frameworks?  
+Unfortunately, the terminology over doubles has been contradictory depending on the framework. RR's terminology tries to be as faithful as possible to Gerald Meszaros' definition of test doubles. You can read more about test doubles in ${tb_a_({ href: 'http://xunitpatterns.com/Test%20Double%20Patterns.html', nofollow: true })} and Martin Fowler's article, ${tb_a_({ href: 'http://martinfowler.com/articles/mocksArentStubs.html', nofollow: true })}. Regretfully, this does mean that RR will have slightly different terminology than other double frameworks. How does RR compare to other Mock frameworks?  
 
 Most double frameworks focus mainly on mocks (hence the categorization "mock framework"). RR's focus is on enabling more double test patterns in a terse and readable syntax.
 

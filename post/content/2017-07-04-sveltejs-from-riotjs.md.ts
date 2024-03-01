@@ -35,7 +35,7 @@ While it's easy to get stuck into the rat race of endless technological upgrades
 
 ## Performance & Memory Usage
 
-Despite beinga young library, svelte ${tb_a_({ href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html' }, 'does quite well')} on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte	JS generates optimal javascript while not having the overhead of a runtime library. It's also going to have an	advantage in page load time due to not requiring a runtime library to be loaded.
+Despite beinga young library, svelte ${tb_a_({ href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html', nofollow: true }, 'does quite well')} on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte	JS generates optimal javascript while not having the overhead of a runtime library. It's also going to have an	advantage in page load time due to not requiring a runtime library to be loaded.
 
 ## HTML-based Components
 
@@ -49,6 +49,6 @@ Svelte's api idioms are well thought out. Development flow was coherent natural 
 
 For each of my professional clients, I usea monorepo using the ${ctx_core__tb_a_()} toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.
 
-You can ${tb_a_({ href: 'https://svelte.dev/docs' }, 'read more about the features of svelte')}.
+You can ${tb_a_({ href: 'https://svelte.dev/docs', nofollow: true }, 'read more about the features of svelte')}.
 `.trim())
 // @formatter:on

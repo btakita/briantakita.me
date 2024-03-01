@@ -20,7 +20,7 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190313/http://geekswithblogs.net/btakita/archive/2004/11/05/14411.aspx' }, 'geekswithblogs.net'))}
+${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190313/http://geekswithblogs.net/btakita/archive/2004/11/05/14411.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 The Generic Query Analyzer is a Database Independent Query Analyzer that uses ${ado_net__tb_a_('ADO.NET (OLEDB)')}  technology. This Query Analyzer is run off the .NET 2.0 platform on Windows.
 

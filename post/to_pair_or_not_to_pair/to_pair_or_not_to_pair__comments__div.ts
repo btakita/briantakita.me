@@ -70,7 +70,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 						}, [
 							tb_a_({
 								href: 'http://thewoolleyweb.com/',
-								rel: 'external nofollow',
+								nofollow: true,
 								class: 'url'
 							}, 'Chad Woolley'),
 							' says...'
@@ -127,7 +127,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 						span_({ class: 'commentauthor' }, [
 							tb_a_({
 								href: 'https://web.archive.org/web/20120513132750/http://www.honk.com/',
-								rel: 'external nofollow',
+								nofollow: true,
 								class: 'url'
 							}, 'Brian'),
 							' says...'

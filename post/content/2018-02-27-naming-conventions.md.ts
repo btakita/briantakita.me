@@ -20,13 +20,13 @@ ${blog_post__top_note__p_(`Note: The naming convention described in this article
 
 ---
 
-An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined together to create a name. ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)' }, 'Naming Convention (programming) (Wikipedia)')}
+An Abstraction name encodes the meaning & context of the abstraction. The name consists of tags that are joined together to create a name. ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Naming_convention_(programming)', nofollow: true }, 'Naming Convention (programming) (Wikipedia)')}
 
 ## Discoverability: Unique vs Ambiguous Names
 
 A name & tags in the name also acts identifiers to locate the usages of the abstraction in the codebase. This attribute is also known as discoverability.
 
-${tb_a_({ href: 'https://en.wikipedia.org/wiki/Discoverability' }, 'Discoverability (Wikipedia)')}
+${tb_a_({ href: 'https://en.wikipedia.org/wiki/Discoverability', nofollow: true }, 'Discoverability (Wikipedia)')}
 
 Unique & Accurate names for abstractions help discoverability. Ambiguous names hurt discoverability.
 
@@ -44,7 +44,7 @@ Note that it's advantageous to name a field \`user.user_id\` instead of \`user.i
 
 ## Top-down & Bottom-up Design
 
-${tb_a_({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design' }, 'Top-down and bottom-up design (Wikipedia)')}
+${tb_a_({ href: 'https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design', nofollow: true }, 'Top-down and bottom-up design (Wikipedia)')}
 
 One can communicate & gain design feedback on a system design by thinking in terms of top-down & bottom-up design. The typical naming convention in software systems is to have a top-down convention where the leftmost part of the name is the most global, becoming more local when moving rightward.
 

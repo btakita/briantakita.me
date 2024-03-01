@@ -51,7 +51,7 @@ It is deployed to ${vercel__tb_a_()}.
 
 ## Monorepo
 
-For simplicity & ease of distribution, most ${tb_a_({ href: 'https://astro.build/themes/' }, 'Astro Themes')} are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken into	separate git repos. This provides structure to where the code is deployed to & how it's used while enabling code	re-use for other projects.
+For simplicity & ease of distribution, most ${tb_a_({ href: 'https://astro.build/themes/', nofollow: true }, 'Astro Themes')} are built in a single repository. I broke up the project into monorepo, where the libraries & apps are broken into	separate git repos. This provides structure to where the code is deployed to & how it's used while enabling code	re-use for other projects.
 
 The git repos include:
 
@@ -68,8 +68,8 @@ The git repos include:
 ### Solidjs provides benefits over other isomorphic component frameworks *(e.g. React)*:
 
 * A more comprehensible API & more natural integration with the DOM API
-* \`Reactive Signals — \`${tb_a_({ href: 'https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71' }, `cleaner component state management`)}* 
-* Smaller payload *(from ${tb_a_({ href: 'https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck' }, `Introducing the SolidJS UI Library`)})*${
+* \`Reactive Signals — \`${tb_a_({ href: 'https://dev.to/this-is-learning/react-vs-signals-10-years-later-3k71', nofollow: true }, `cleaner component state management`)}* 
+* Smaller payload *(from ${tb_a_({ href: 'https://dev.to/ryansolid/introducing-the-solidjs-ui-library-4mck', nofollow: true }, `Introducing the SolidJS UI Library`)})*${
 	figure_(
 		img_({
 			width: '50%',
@@ -78,7 +78,7 @@ The git repos include:
 		}),
 		figcaption_(
 			attribution_web_framework_realworld_app_sizes__add({ ctx })))}
-* ${tb_a_({ href: 'https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html' },`Fast`)}
+* ${tb_a_({ href: 'https://krausest.github.io/js-framework-benchmark/2023/table_chrome_118.0.5993.70.html', nofollow: true },`Fast`)}
 * Less code needed for components
 * JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*
 

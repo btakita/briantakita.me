@@ -22,7 +22,7 @@ I have a few gems on Rubyforge and I want to track how many of them were downloa
 
 To fix this issue, I made a sake task, named \`gems:downloads:list\`, that prints the gem downloads in text.
 
-The source is on ${tb_a_({ href: 'http://pastie.caboo.se/79547' }, 'caboo.se')}.
+The source is on ${tb_a_({ href: 'http://pastie.caboo.se/79547', nofollow: true }, 'caboo.se')}.
 
 You can install it by using:
 

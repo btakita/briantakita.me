@@ -198,6 +198,6 @@ require_plugin 'will_paginate'
 
 This means you no longer need to define plugin load order inside of environment.rb. Your plugins can take care of that. Desert works with practically all plugins. That means you can have a plugin dependency on any existing Rails plugin.
 
-To see more examples & documentation, take a look at the Desert project at ${tb_a_({ href: 'https://github.com/pivotalexperimental/desert' })}.
+To see more examples & documentation, take a look at the Desert project at ${tb_a_({ href: 'https://github.com/pivotalexperimental/desert', nofollow: true })}.
 `.trim())
 // @formatter:on

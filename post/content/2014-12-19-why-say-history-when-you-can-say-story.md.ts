@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 // @formatter:off
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_(`
-${footnote__sup_({ ctx, id: 'encyclopedia-britannica-hero-image' }, `From `, tb_a_({ href: 'http://www.flickr.com/photos/bostontx/4461314652/' }), ` - Licensed under Creative Commons`)}
+${footnote__sup_({ ctx, id: 'encyclopedia-britannica-hero-image' }, `From `, tb_a_({ href: 'http://www.flickr.com/photos/bostontx/4461314652/', nofollow: true }), ` - Licensed under Creative Commons`)}
 
 In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.
 
@@ -36,7 +36,7 @@ Our ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/cultu
 
 Our culture says History is the recorded narrative of the sequence of Human events. However, we've heard the usages: The history of human civilization; The history of Mars; The history of the Universe; The history of Middle Earth. The vernacular has expanded the definition of history to include all the time and fiction worlds.
 
-${tb_a_({ href: 'http://en.wikipedia.org/wiki/Biography' }, 'Biographies')} & ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Autobiography' }, 'Autobiographies')} are also considered history.
+${tb_a_({ href: 'http://en.wikipedia.org/wiki/Biography', nofollow: true }, 'Biographies')} & ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Autobiography', nofollow: true }, 'Autobiographies')} are also considered history.
 
 ## Story & History can be used Interchangeably
 

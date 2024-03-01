@@ -17,7 +17,7 @@ The wonderful web makes it easy for someone to publish their thoughts and opinio
 
 Fortunately, you can take control over your name on the web, without having to spend thousands of dollars that online reputation repair firms charge.
 
-${tb_a_({ href: 'http://brandyourself.com' }, 'Brandyourself.com')} makes it easy to inexpensively control your SEO destiny. Here is my ${tb_a_({ href: 'http://briantakita.brandyourself.com/' }, 'profile')}.
+${tb_a_({ href: 'http://brandyourself.com', nofollow: true }, 'Brandyourself.com')} makes it easy to inexpensively control your SEO destiny. Here is my ${tb_a_({ href: 'http://briantakita.brandyourself.com/' }, 'profile')}.
 
 Their free plan has a limitation of setting up three links for the free plan, so I bought their "Premium	Membership" giving me unlimited links for $9 every 3 months. This should give me an initial bump. Since I just acquired (my now defunct site) ${briantakita_com__tb_a_()} I can transfer the links to my blog after the 3 months.
 

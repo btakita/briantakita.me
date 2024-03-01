@@ -105,7 +105,7 @@ RR has a mailing lists at:
 - ~~double-ruby-users@rubyforge.org~~
 - ~~double-ruby-devel@rubyforge.org~~
 
-Also, RR’s rubyforge page is at ${tb_a_({ href: 'http://rubyforge.org/projects/double-ruby', style: 'text-decoration: line-through;', rel: 'external nofollow' })} and of course the github page is at ${tb_a_({ href: 'http://github.com/btakita/rr' })}. Yes, and there is more to come
+Also, RR’s rubyforge page is at ${tb_a_({ href: 'http://rubyforge.org/projects/double-ruby', nofollow: true, style: 'text-decoration: line-through;' })} and of course the github page is at ${tb_a_({ href: 'http://github.com/btakita/rr' })}. Yes, and there is more to come
 
 There are many interesting ideas floating around. Joseph Wilk has been playing around with adding Spies into RR. I’m also thinking about adding Double validation scoping into RR. Also, I’m impressed by Mocha’s warning of unused stubs. Josh Susser also proposed having a mode where a warning would occur if a mocked method is not implemented on the subject being mocked.
 

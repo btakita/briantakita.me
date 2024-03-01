@@ -81,6 +81,6 @@ An edge-computing cloud service that runs ${docker__tb_a_()} images.
 
 ## Approach
 
-I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be saved	in Strapi using ${sqlite__tb_a_()}. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a ${jamstack__tb_a_()} on Vercel. I may also just use dynamic api requests to Strapi, using ${tb_a_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/' }, 'sqlite on Fly.io')}.
+I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be saved	in Strapi using ${sqlite__tb_a_()}. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a ${jamstack__tb_a_()} on Vercel. I may also just use dynamic api requests to Strapi, using ${tb_a_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/', nofollow: true }, 'sqlite on Fly.io')}.
 `.trim())
 // @formatter:on
