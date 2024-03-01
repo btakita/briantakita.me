@@ -30,7 +30,7 @@ export const meta_ = ()=>post_meta__validate({
 export default (ctx:request_ctx_T)=>md__raw_(`
 I'm pleased to announce ${rmemo__tb_a_()}, a tiny no-fluff reactive state library. rmemo is the reactive core of ${relementjs__tb_a_()}, a server & browser UI rendering library that I also released.
 
-rmemo is a tiny no-fluff state management library using reactive memos & reactive signals for the server & browser. This includes:
+rmemo is a tiny no-fluff state management library. It offers reactive memos & reactive signals for the server & browser. This includes:
 
 * reactive memos
 * reactive signals
@@ -67,11 +67,11 @@ export interface User {
 
 ## Garbage Collection Integration
 
-rmemo tracks listeners using ${WeakRef__tb_a_()}. Most other reactive state management libraries directly track	listener references. This means the listener must explicitly unregister itself once the listener is complete. Let's examine the trade-offs:
+rmemo tracks listeners using ${WeakRef__tb_a_()}. Most other reactive state management libraries track listener references. This means the listener must unregister itself once the listener is complete. Let's examine the trade-offs:
 
 ## Motivation
 
-Until recently I was using ${nanostores__tb_a_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores__footnote_sup_(ctx)}. Nanostores is smallish, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. However, the api is cumbersome in a few ways:
+Until recently I was using ${nanostores__tb_a_()} for my goto state management solution. I contributed to fixing	diamond dependency issues. I also wrote some extension libraries${ctx_core_nanostores__footnote_sup_(ctx)}. Nanostores is small, usable on the server & browser, & works with any UI rendering library. All seemed well	& I used Nanostores for some large projects. The api is cumbersome in a few ways:
 
 ### \`computed\` requires it's parents to be listed as arguments.
 
@@ -106,7 +106,7 @@ function user__get(id:number) {
 |:----: |:---------------:|:-----------------------------------------:|
 | 298 B | 1013 B          | > 1200 B                                  |
 
-The bundle size of nanostores is remarkably small when only using \`atom\` but grows over 1 kb when	including \`computed\`.
+The bundle size of nanostores is tiny when only using \`atom\` but grows over 1 kb when	including \`computed\`.
 
 ${footnote_list__div_({ ctx })}
 `.trim())

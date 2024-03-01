@@ -24,7 +24,7 @@ export const meta_ = ()=>post_meta__validate({
 export default (ctx:request_ctx_T)=>md__raw_(`
 ${tag_vector_toc_c_()}
 
-Tag Vector is currently a convention to connect "tags" together with vector arrows, showing the contextual	relationship between tags. The tags inference level in relation to each other can be inferred as being up \`↑\` or down \`↓\`${no_up_down_arrow_ligatures_footnote_c_(ctx)}.
+Tag Vector is a system to connect "tags" with vector arrows. The vector demonstrates the contextual relationship between tags. The tags are in relation to each other. The relationships between tags are relative to each other on inference levels. A tag in a vector has a higher \`↑\`, lower \`↓\`$, or the same inference level compared to other tags. ${no_up_down_arrow_ligatures_footnote_c_(ctx)}.
 
 The tag \`person\` has a higher inference level than \`name\` as \`name\` is an attribute of \`person\`.
 
@@ -73,14 +73,14 @@ const company_company = { name: 'SpaceX' }
 
 # Tag Vectors with 3 or more tags
 
-A tag vector can be composed of any number of tags. The inference level rules are applied to the first & last tag. In the following case:
+A tag vector composes of any number of tags. Apply the inference level rules to the first & last tag. In the following case:
 
 \`\`\`ts
 const company_person_name = 'Elon Musk'
 // inferred as company->person->name
 \`\`\`
 
-the \`company\` & \`name\` tags are inferred against each other. \`company\` has a higher inference level than \`name\` so the inferred direction is \`->\`. Conversely:
+Infer the \`company\` & \`name\` tags against each other. \`company\` has a higher inference level than \`name\` so the inferred direction is \`->\`. Conversely:
 
 \`\`\`ts
 const name_person_company = 'Elon Musk'
@@ -106,7 +106,7 @@ const company_registry_person = { name: 'SpaceX' }
 
 ## multi-dimension tag vectors
 
-Multiple tag vectors can also be composed into a multi-dimension tag vector.
+Compose tag vectors into a multi-dimension tag vector.
 
 \`\`\`ts
 const highest_net_worth__company_person_name = 'Elon Musk'

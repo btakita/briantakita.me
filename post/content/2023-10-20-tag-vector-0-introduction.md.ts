@@ -18,7 +18,7 @@ export const meta_ = ()=>post_meta__validate({
 		'vector database',
 	],
 	description:
-		`tag vector is a name convention, will eventually be a formal name system, where names are composed of tags connected by a 1 dimensional vector. It can be used for naming variables, functions, components, network apis, low code apps, even in plain text.`,
+		`Tag Vector is a name system where tags connected as a vector form a name. Tag Vector can name variables, functions, components, network apis, low code apps, & prose.`,
 	featured: true,
 })
 // @formatter:off
