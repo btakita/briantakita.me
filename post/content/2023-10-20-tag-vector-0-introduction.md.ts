@@ -29,24 +29,24 @@ This series about Tag Vector will go over a technique that I have iterated on si
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 > -- Phil Karlton
 
-Tag Vector aims to be a tool to solve the two hard things in Computed Science by providing a name convention & eventually a formalized system with tools to:
+Tag Vector aims to be a tool to solve the two hard things in Computed Science by providing a name convention. A formalized system in the works with tools to:
 
 * work with existing source code
-* show how tags are connected by using a 1 dimensional vector
-* understand the context of an abstraction just by looking at the tag vector
-* the data structure shape of the abstraction can be encoded in the tag vector
+* show how tags connect using a 1 dimensional vector
+* understand the context of an abstraction by looking at the tag vector
+* encode the data structure shape of the abstraction in the tag vector
 * immutable names to allow a simple text search to find all usages of tags & tag vectors
 * compose multi-dimension tag vectors
 * show the directional arrow of a tag vector in source code & text using font ligatures${
 	footnote__sup_({ ctx, id: 'font-ligatures' }, `The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`)
 }
 * store the tag vector in a vector database & automate querying tag graphs
-* tag graphs can enable linking to & a vector search for other usages of the tag, machine leaning algorithms, & domain-specific analysis.
-* write prose with an editor that understands the tag vector with tools that parse & act on the tag vector, rendering components & performing api calls${
+* tag graphs can enable linking & vector search. Other usages of the tag include machine leaning algorithms & domain-specific analysis.
+* write prose with tools that render components & perform api calls based on the tag vector${
 	footnote__sup_({ ctx, id: 'tag-vector-editor-prototype' }, `A prototype of the document editor with Tag Vector is in the works`)
 }
 
-The Tag Vector system can provide profound benefits to computer science, programming, api design, domain design, low-code tooling, machine learning, even plain text. The Tag Vector convention feels familiar to existing code conventions & can be used with existing source code.
+Tag Vector enables a flat structure in a code base. Tag Vector feels familiar to existing code & prose conventions. Tag Vector works with existing source code bases.
 
 ${tag_vector_toc_c_()}
 
