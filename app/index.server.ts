@@ -21,12 +21,8 @@ import { blog_site, logo_image, social_a1 } from '../config.js'
 import { post_mod_a1 } from '../post/index.js'
 relement__use(server__relement)
 const robots_txt = `
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
 Allow: /
-
 Sitemap: ${new URL('sitemap.xml', blog_site.website).href}
 `.trim()
 export default middleware_(middleware_ctx=>
