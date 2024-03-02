@@ -15,6 +15,16 @@ import {
 } from 'relysjs/server'
 import { config__init } from './config.js'
 import tailwindcss_config from './tailwind.config.js'
+if (is_entry_file_(import.meta.url, process.argv[1])) {
+	build({
+		rebuildjs: { watch: false },
+		relysjs: { app__start: false }
+	}).then(()=>process.exit(0))
+		.catch(err=>{
+			console.error(err)
+			process.exit(1)
+		})
+}
 export async function build(config?:relysjs__build_config_T) {
 	config__init()
 	const esmcss_esbuild_plugin = esmcss_esbuild_plugin_()
@@ -26,6 +36,7 @@ export async function build(config?:relysjs__build_config_T) {
 		],
 	})
 	const preprocess_plugin = preprocess_plugin_()
+	const json_esbuild_plugin = json_esbuild_plugin_()
 	await Promise.all([
 		relysjs_browser__build({
 			...config ?? {},
@@ -33,7 +44,8 @@ export async function build(config?:relysjs__build_config_T) {
 			plugins: [
 				esmcss_esbuild_plugin,
 				rebuild_tailwind_plugin,
-				preprocess_plugin
+				preprocess_plugin,
+				json_esbuild_plugin,
 			],
 		}),
 		relysjs_server__build({
@@ -45,6 +57,7 @@ export async function build(config?:relysjs__build_config_T) {
 				esmcss_esbuild_plugin,
 				rebuild_tailwind_plugin,
 				preprocess_plugin,
+				json_esbuild_plugin,
 			],
 		}),
 		relysjs__ready__wait(10_000)
@@ -64,16 +77,6 @@ function server_external_() {
 		'bun:*'
 	])
 }
-if (is_entry_file_(import.meta.url, process.argv[1])) {
-	build({
-		rebuildjs: { watch: false },
-		relysjs: { app__start: false }
-	}).then(()=>process.exit(0))
-		.catch(err=>{
-			console.error(err)
-			process.exit(1)
-		})
-}
 function preprocess_plugin_():Plugin {
 	return {
 		name: 'hyop',
@@ -91,5 +94,20 @@ function preprocess_plugin_():Plugin {
 				})
 			}
 		}
+	}
+}
+export function json_esbuild_plugin_() {
+	return <Plugin>{
+		name: 'json',
+		setup(build) {
+			build.onLoad(
+				{ filter: /\.json\.(js|ts)$/ },
+				async (config)=>{
+					const { path, suffix } = config
+					const contents = await import(path + (suffix ?? '')).then(mod=>mod.default())
+					return { contents, loader: 'json' }
+				}
+			)
+		},
 	}
 }

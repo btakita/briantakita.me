@@ -1,7 +1,6 @@
 import './index.css'
 import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
-import { layout__ld_json_graph__wait } from '@btakita/ui--server--briantakita/layout'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
@@ -39,7 +38,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(home__doc_html_({ ctx }))
 		})
 		.get('/robots.txt', ()=>
@@ -66,7 +64,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return xml_response__new(sitemap__xml_({ ctx }))
 		})
 		.get('/about', async context=>{
@@ -78,7 +75,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(about__doc_html_({ ctx }))
 		})
 		.get('/open-source', async context=>{
@@ -90,7 +86,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(open_source__doc_html_({ ctx }))
 		})
 		.get('/portfolio', async context=>{
@@ -102,7 +97,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(portfolio__doc_html_({ ctx }))
 		})
 		.get('/posts', async context=>{
@@ -114,7 +108,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(posts__doc_html_({ ctx }))
 		})
 		.get('/posts/:slug_or_page_num', async context=>{
@@ -143,7 +136,6 @@ export default middleware_(middleware_ctx=>
 					social_a1,
 					post_mod_a1,
 				})
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(tags__doc_html_({ ctx }))
 		})
 		.get('/tags/:tag', async context=>{
@@ -158,7 +150,5 @@ export default middleware_(middleware_ctx=>
 						post_mod_a1,
 					})
 			tag__set(ctx, tag)
-			await layout__ld_json_graph__wait(ctx)
 			return html_response__new(tag__doc_html_({ ctx }))
-		})
-)
+		}))
