@@ -37,12 +37,6 @@ export default ()=>`
 	a {
 		@apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
 	}
-	svg {
-		@apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
-	}
-	svg.icon-tabler {
-		@apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
-	}
 	html {
 		tab-size: 2;
 		/* ===== scrollbar ===== */
