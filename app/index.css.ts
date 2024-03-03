@@ -43,42 +43,6 @@ export default ()=>`
 	svg.icon-tabler {
 		@apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
 	}
-	.prose {
-		@apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-h3:italic prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8 hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base prose-figcaption:opacity-70 prose-strong:!text-skin-base prose-code:rounded prose-code:bg-skin-card prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base prose-code:before:!content-[''] prose-code:after:!content-[''] prose-pre:!text-skin-base prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent prose-table:text-skin-base prose-th:border prose-th:border-skin-line prose-td:border prose-td:border-skin-line prose-img:mx-auto prose-img:!mt-2 prose-img:border-2 prose-img:border-skin-line prose-hr:!border-skin-line;
-	}
-	.prose a {
-		@apply break-words hover:!text-skin-accent;
-	}
-	.prose a:hover svg {
-		@apply fill-skin-accent;
-	}
-	.prose thead th:first-child,
-	tbody td:first-child,
-	tfoot td:first-child {
-		padding-left: 0.5714286em;
-	}
-	.prose h2 {
-		@apply mt-0;
-	}
-	.prose h2#table-of-contents {
-		@apply mb-2;
-	}
-	.prose h2#table-of-contents + p {
-		@apply hidden;
-	}
-	.prose code {
-		@apply font-mono;
-	}
-	.prose p code {
-		display: inline-block;
-		white-space: nowrap;
-	}
-	.prose details {
-		@apply inline-block cursor-pointer select-none text-skin-base;
-	}
-	.prose summary {
-		@apply focus-outline;
-	}
 	html {
 		tab-size: 2;
 		/* ===== scrollbar ===== */

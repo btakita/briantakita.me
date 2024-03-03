@@ -23,7 +23,7 @@ To set up the DNS, I followed the ${tb_a_({ href: 'https://help.github.com/artic
 
 I created the CNAME file with:
 
-\`\`\`shell
+\`\`\`sh
 briantakita.com
 \`\`\`
 
@@ -33,7 +33,7 @@ However, I got the 404 page on github.
 
 So I ran
 
-\`\`\`shell
+\`\`\`sh
 $ dig briantakita.com +nostats +nocomments +nocmd
 
 ; <<>> DiG 9.8.4-rpz2+rl005.12-P1 <<>> briantakita.com +nostats +nocomments +nocmd

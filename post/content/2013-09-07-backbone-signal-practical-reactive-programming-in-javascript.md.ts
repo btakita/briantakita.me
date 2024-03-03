@@ -57,7 +57,7 @@ userSignal.unset();
 
 The console ouput is:
 
-\`\`\`shell
+\`\`\`sh
     Let's see some friends
     Hello Jane
     Nice to see you
