@@ -76,7 +76,6 @@ const config:Config = {
 						},
 						'code': {
 							backgroundColor: '#2a2c2d',
-							backgroundOpacity: '.75',
 							borderRadius: '.25rem',
 							color: 'rgb(var(--color-text-base))',
 							display: 'inline-block',
