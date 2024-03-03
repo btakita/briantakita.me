@@ -63,7 +63,7 @@ const config:Config = {
 					css: {
 						'a': {
 							color: 'rgb(var(--color-accent))',
-							fontWeight: '700',
+							fontWeight: '500',
 							overflowWrap: 'break-word',
 							textDecorationStyle: 'dashed',
 							textUnderlineOffset: '4px',
