@@ -1,6 +1,7 @@
 // Place any global data in this file.
+import { site_logo__svg_ } from '@btakita/ui--server--briantakita/icon'
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
-import { type logo_image_T } from '@rappstack/domain--server/logo'
+import { type logo_image__new_T } from '@rappstack/domain--server/logo'
 import { type social_T } from '@rappstack/domain--server/social'
 import {
 	tabler_brand_discord_,
@@ -26,12 +27,8 @@ export const blog_site:blog_site_T = {
 	page__post_count: 10,
 	home__post_count: 4,
 }
-export const logo_image:logo_image_T = {
-	enable: false,
-	svg: true,
-	width: 216,
-	height: 46,
-}
+export const logo_image__new:logo_image__new_T = ($p?:{ class?:string })=>
+	site_logo__svg_($p)
 export const social_a1:social_T[] = [
 	{
 		icon_: tabler_brand_github_,

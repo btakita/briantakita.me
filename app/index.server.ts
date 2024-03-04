@@ -17,7 +17,7 @@ import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, logo_image, social_a1 } from '../config.js'
+import { blog_site, logo_image__new, social_a1 } from '../config.js'
 import { post_mod_a1 } from '../post/index.js'
 relement__use(server__relement)
 const robots_txt = `
@@ -33,7 +33,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -47,7 +47,7 @@ export default middleware_(middleware_ctx=>
 				ctx: blog_request_ctx__ensure(
 					middleware_ctx,
 					context, {
-						logo_image,
+						logo_image__new,
 						blog_site,
 						social_a1,
 						post_mod_a1,
@@ -59,7 +59,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -70,7 +70,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -81,7 +81,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -92,7 +92,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -103,7 +103,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -115,7 +115,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -131,7 +131,7 @@ export default middleware_(middleware_ctx=>
 			const ctx = blog_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image,
+					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -144,7 +144,7 @@ export default middleware_(middleware_ctx=>
 				blog_request_ctx__ensure(
 					middleware_ctx,
 					context, {
-						logo_image,
+						logo_image__new,
 						blog_site,
 						social_a1,
 						post_mod_a1,
