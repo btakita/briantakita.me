@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { request_url_ } from 'relysjs/server'
 import encyclopedia_britannica_jpg from '../../public/assets/images/encyclopedia-britannica.jpg'
@@ -45,7 +45,5 @@ We already can use "story" in place of "history" since both are a recounting of 
 "History" can also be used in place of "story" since the vernacular usage of history includes fiction worlds, geological events, & physical events.
 
 The defining line is blurred. Story & History can be used Interchangeably. The usages of Story & History are connected. Enjoy the connection.
-
-${footnote_list__div_({ ctx })}
-`.trim())
+o`.trim())
 // @formatter:on

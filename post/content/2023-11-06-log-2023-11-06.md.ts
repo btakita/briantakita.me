@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
@@ -26,7 +26,5 @@ A Data ontology I saw ${footnote__sup_({ ctx, id: 'clif-high-data' }, tb_a_({ hr
 * **Entia-data**: Data pertaining to the beings or entities that are collecting & aggregating the data
 * **Omnia-Exemplar-data**: Data related to the overarching universal model or the paradigmatic structure of the
 universe in which these beings **think/believe** they operate
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on

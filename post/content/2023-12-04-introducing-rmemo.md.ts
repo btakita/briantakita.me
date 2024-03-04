@@ -8,7 +8,7 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { code_ } from 'relementjs/html'
 export const meta_ = ()=>post_meta__validate({
@@ -107,8 +107,6 @@ function user__get(id:number) {
 | 298 B | 1013 B          | > 1200 B                                  |
 
 The bundle size of nanostores is tiny when only using \`atom\` but grows over 1 kb when	including \`computed\`.
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on
 export function ctx_core_nanostores__footnote_sup_(ctx:request_ctx_T) {

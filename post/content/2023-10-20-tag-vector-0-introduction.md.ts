@@ -1,7 +1,7 @@
 import { ctx_core__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { tag_vector_toc_c_ } from '../tag_vector/index.js'
 export const meta_ = ()=>post_meta__validate({
@@ -49,7 +49,5 @@ Tag Vector aims to be a tool to solve the two hard things in Computed Science by
 Tag Vector enables a flat structure in a code base. Tag Vector feels familiar to existing code & prose conventions. Tag Vector works with existing source code bases.
 
 ${tag_vector_toc_c_()}
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on

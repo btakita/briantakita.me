@@ -1,7 +1,7 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = ()=>post_meta__validate({
 	title: `When We become a Muse to Our Tools`,
@@ -28,7 +28,5 @@ Would we be better off if we consciously create & choose our tools? When would i
 Some "it depends" questions to consider&hellip;
 
 This post was inspired by ${tb_a_({ href: 'https://www.youtube.com/watch?v=L4IAwk1G5ts', nofollow: true }, 'Alan Watts')}${footnote__sup_({ ctx, id: 'alan-watts-thinking-too-much-illusion' }, 'Alan Watts Too much Thinking will throw you into Illusion')}.
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on

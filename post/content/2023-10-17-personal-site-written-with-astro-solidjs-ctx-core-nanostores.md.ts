@@ -12,7 +12,7 @@ import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui-
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { figcaption_, figure_, img_ } from 'relementjs/html'
 import web_framework_realworld_app_sizes_png from '../../public/assets/images/web-framework-realworld-app-sizes.png'
@@ -88,7 +88,5 @@ ctx-core with nanostores enables libraries & apps to easily share state manageme
 	footnote__sup_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
 		tb_a_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },`How I ended up using ctx-core & nanostores…`))
 }.
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on

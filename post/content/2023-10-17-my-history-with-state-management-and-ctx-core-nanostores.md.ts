@@ -72,7 +72,7 @@ import {
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__inline_raw_, md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
@@ -242,7 +242,5 @@ I developed ctx-core to be a consistent project to keep patterns & libraries sup
 # Next Steps
 
 This post is long & covered more than the original intent. Graphs of detail provide context but add to length & create rabbit-holes. I will end this post for now & extract out posts over the next few weeks.
-
-${footnote_list__div_({ ctx })}
 `.trim())
 // @formatter:on

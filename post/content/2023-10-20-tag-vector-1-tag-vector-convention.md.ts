@@ -1,6 +1,6 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { md__inline_raw_, md__raw_ } from '@rappstack/ui--any/md'
-import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { tag_vector_toc_c_ } from '../tag_vector/index.js'
 export const meta_ = ()=>post_meta__validate({
@@ -183,9 +183,6 @@ const company_id_M_ceo_name:Map<string, string> = new Map([
 	['facebook', 'Mark Zuckerberg'],
 ])
 \`\`\`
-
-${footnote_list__div_({ ctx })}
-<R $={footnote_list_c_({ ctx })}></R>
 `.trim())
 // @formatter:on
 function no_up_down_arrow_ligatures_footnote_c_(ctx:request_ctx_T) {
