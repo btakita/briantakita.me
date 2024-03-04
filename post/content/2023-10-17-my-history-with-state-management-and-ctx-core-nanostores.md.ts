@@ -71,7 +71,7 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
-import { md__raw_ } from '@rappstack/ui--any/md'
+import { md__inline_raw_, md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_, footnote_list__div_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = ()=>post_meta__validate({
@@ -111,10 +111,11 @@ I joined Pivotal Labs (it was Pivotal Computing Systems back then). Pivotal Labs
 I started working with reactive programming since collaborating with Nathan Sobo on a ruby project called ${unison__tb_a_()} at ${grockit__tb_a_}. ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming', nofollow: true }, 'Reactive')} ${tb_a_({ href: 'https://en.wikipedia.org/wiki/State_management', nofollow: true }, 'state management')} clicked for me, as the paradigm allows state to be composed of functions with reactive inputs & a single output.
 
 I was a core contributor to the Behavior Driven Development library ${rspec__tb_a_()} & championed/developed the first (that I know of) implementation of nested \`describe\` statements${
-	footnote__sup_({ ctx, id: 'nested-describe-statements' }, md__raw_(
-	// language=md
-	`This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.
-	`.trim()))
+	footnote__sup_({ ctx, id: 'nested-describe-statements' }, [
+		md__inline_raw_(
+			// language=md
+			`This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.`)
+	])
 }. I also worked on various open source projects focused on terse apis & Domain Driven Design
 
 I worked with creating composable plugins while working on ${desertrb__tb_a_()}, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to coherently managing multiple libraries in a single domain; some of these led to ${monorepo__tb_a_('monorepo')} patterns that	I use today.
@@ -158,7 +159,7 @@ I then joined ${rundavoo__tb_a_()} & created ${tb_a_({ href: '/posts/backbone-si
 Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this journey, my ${worldview__tb_a_('worldview')} expanded by experimenting with the ${ontology__tb_a_('ontological')} expression of a ${philosophy__tb_a_()}. During this exploration, I explored how word ${definition__tb_a_('definitions')} can be ${scope__tb_a_('scoped')} with ${context__tb_a_('context')}${
 	footnote__sup_({ ctx, id: 'context-of-entity' },
 		// language=md
-		md__raw_(`Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
+		md__inline_raw_(`Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
 }. I learned about ${existence__tb_a_()} and in a weird way ${tb_a_({ href: '/posts/everything-exists' }, 'Everything Exists')}.
 
 ## ${neo__tb_a_()}
@@ -219,7 +220,7 @@ Astrojs provides ${tb_a_({ href: 'https://docs.astro.build/en/guides/client-side
 
 The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails, we saw Web 2.0 startups & the \`(a)gile->(A)gile\`${
 	footnote__sup_({ ctx, id: 'agile_Agile' },
-		md__raw_(
+		md__inline_raw_(
 			// language=md
 			`\`agile->Agile\` lower-case \`a\` to capital \`A\`. As the agile movement gained success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`.trim()))
 } transition. Emerging web standards made jQuery more or less redundant. I've been through two celebrations to end ${ie6__tb_a_()} @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old	browser. Specialized development (front end developer, api developer) took prominence in corporations. Full Stack development was delegated to these departments. Even startups divided their development teams into these roles.
