@@ -1,12 +1,12 @@
 import { heroicons_chevron_double_right_ } from '@btakita/ui--server--briantakita/icon'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { nofollow_tb_a_, tb_a_ } from '@rappstack/ui--any/anchor'
+import { nofollow_tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { class_ } from 'ctx-core/html'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { iframe_, img_ } from 'relementjs/html'
-import chrome_dev_toolbar_menu_lightouse_png from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lightouse.png'
 import artipsstudio_html from '../../public/assets/lighthouse/artipsstudio.html'
+import chrome_dev_toolbar_menu_lightouse_png from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lightouse.png'
 import devoe_html from '../../public/assets/lighthouse/devoe.html'
 import dodropshipping_html from '../../public/assets/lighthouse/dodropshipping.html'
 import jonesbbqkc_html from '../../public/assets/lighthouse/jonesbbqkc.html'
@@ -14,8 +14,8 @@ import shoptimizer_html from '../../public/assets/lighthouse/shoptimizer.html'
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2024-03-06T01:41:02.185Z',
-	title: 'Squarespace Site Lightouse Scores',
-	slug: 'squarespace-site-lightouse-scores',
+	title: 'Squarespace Site Lighthouse Scores',
+	slug: 'squarespace-site-lighthouse-scores',
 	tag_a1: [
 		'performance',
 		'squarespace',
@@ -103,6 +103,8 @@ Good to perfect performance scores with a large e-commerce CMS platform is possi
 A custom e-commerce site or platform can have a good to perfect performance score. With a software stack built for speed. I am working on high performance e-commerce solutions. I custom built software for performance, efficiency, & maintainability. Using cutting edge industry & novel tech. Stay tuned for an e-commerce platform that will give you a high performance. With SEO & Semantic AI optimization. Along with usability. There will be other features geared toward serving Small Business Owners.
 
 I am striving to announce this platform soon. Until then, happy optimizing!
+
+You can ${nofollow_tb_a_({ href: 'mailto:brian+squarespace-site-lighthouse-scores@briantakita.me' }, 'email me')} if want to discuss further.
 `)
 function lighthouse__iframe_(src:string) {
 	return iframe_({ src, class: 'w-full h-80 mb-3' })
