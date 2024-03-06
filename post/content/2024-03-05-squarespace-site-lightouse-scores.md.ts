@@ -23,6 +23,7 @@ export const meta_ = ()=>post_meta__validate({
 		'seq',
 	],
 	description: `Let's analyze the performance of some Squarespace sites`,
+	featured: true,
 })
 // @formatter:off
 // language=md
