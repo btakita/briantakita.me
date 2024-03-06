@@ -60,7 +60,7 @@ export async function build(config?:relysjs__build_config_T) {
 				json_esbuild_plugin,
 			],
 		}),
-		relysjs__ready__wait(10_000)
+		relysjs__ready__wait(15_000)
 	])
 }
 function server_external_() {
