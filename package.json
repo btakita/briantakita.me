@@ -37,6 +37,7 @@
 		"tailwindcss": "^3.4.1"
 	},
 	"devDependencies": {
-		"bun-types": "latest"
+		"bun-types": "latest",
+		"schema-dts": "^1.1.2"
 	}
 }

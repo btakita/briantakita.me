@@ -26,7 +26,7 @@ if (is_entry_file_(import.meta.url, process.argv[1])) {
 		})
 }
 export async function build(config?:relysjs__build_config_T) {
-	config__init()
+	await config__init()
 	const esmcss_esbuild_plugin = esmcss_esbuild_plugin_()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
 		tailwindcss_config,

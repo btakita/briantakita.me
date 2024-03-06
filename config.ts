@@ -1,6 +1,7 @@
 // Place any global data in this file.
 import { site_logo__svg_ } from '@btakita/ui--server--briantakita/icon'
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
+import { site__ld_json__set } from '@rappstack/domain--server/ld_json'
 import { type logo_image__new_T } from '@rappstack/domain--server/logo'
 import { type social_T } from '@rappstack/domain--server/social'
 import {
@@ -15,6 +16,7 @@ import { import_meta_env_ } from 'ctx-core/env'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { app_ctx, cwd__set, port__set, src_path__set } from 'relysjs/server'
+import { site__ld_json__new } from './ld_json/index.js'
 import briantakita_og_jpg from './public/assets/images/briantakita-og.jpg'
 // You can import this data from anywhere in your site by using the `import` keyword.
 export const blog_site:blog_site_T = {
@@ -67,10 +69,11 @@ export const social_a1:social_T[] = [
 		active: false,
 	},
 ]
-export function config__init() {
+export async function config__init() {
 	const port = parseInt(import_meta_env_().BRIANTAKITA_PORT) || 4100
 	port__set(app_ctx, port)
 	cwd__set(app_ctx, process.cwd())
 	src_path__set(app_ctx, process.cwd())
+	site__ld_json__set(app_ctx, await site__ld_json__new())
 	relement__use(server__relement)
 }
