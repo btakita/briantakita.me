@@ -56,19 +56,19 @@ ${img_({
 
 Keep in mind that this site scores at 100 across the board (performance, accessibility, best practices, seo)${footnote__sup_({ ctx, id: 'briantakita-me-100' }, 'briantakita.me lighthouse', lighthouse__iframe_(url__join(bucket_url, 'lighthouse/briantakita.me.html'), 'briantakita.me lighthouse'))}. Also keep in mind that anything above 90 is considered a good score.
 
-## Case 1 - ${nofollow_tb_a_({ href: 'https://www.artipsstudio.com/' }, 'www.artipsstudio.com')}
+## Case 1 - ${nofollow_tb_a_({ href: 'https://www.artipsstudio.com/' }, 'artipsstudio.com')}
 
 A performance score of 20 is surprising. But then, this site targets fans of artistry. So large beautiful images & elegant design take priority.
 
 ${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/artipsstudio.html'), 'artipsstudio.com lighthouse')}
 
-## Case 2 - ${nofollow_tb_a_({ href: 'https://www.jonesbbqkc.com/' }, 'www.jonesbbqkc.com')}
+## Case 2 - ${nofollow_tb_a_({ href: 'https://www.jonesbbqkc.com/' }, 'jonesbbqkc.com')}
 
 This site performed better but leaves much to be desired. The home page animation is catchy.
 
 ${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/jonesbbqkc.html'), 'jonesbbqkc.com lighthouse')}
 
-## Case 3 - ${nofollow_tb_a_({ href: 'https://devoe-fluid-demo.squarespace.com/' }, 'devoe-fluid-demo.squarespace.com')}
+## Case 3 - ${nofollow_tb_a_({ href: 'https://devoe-fluid-demo.squarespace.com/' }, 'devoe fluid demo')}
 
 ${nofollow_tb_a_({ href: 'https://www.stylefactoryproductions.com/blog/how-to-speed-up-a-squarespace-site' }, 'How to Speed Up a Squarespace Site')} features the Devoe template. For it's performance improvements over other Squarespace Site templates. With a performance score of 55, Squarespace has a ways to go.
 
@@ -88,7 +88,7 @@ dodropshipping.com has a performance score of 85. A decent score! My hunch is th
 
 ${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/dodropshipping.html'), 'dodropshipping lighthouse')}
 
-## Bonus #2 WordPress WooCommerce Theme Shoptimizer - ${nofollow_tb_a_({ href: 'https://shoptimizerdemo.commercegurus.com/' }, 'shoptimizerdemo.commercegurus.com')}
+## Bonus #2 WordPress WooCommerce Theme Shoptimizer - ${nofollow_tb_a_({ href: 'https://shoptimizerdemo.commercegurus.com/' }, 'Shoptimizer demo')}
 
 The ${nofollow_tb_a_({ href: 'https://www.commercegurus.com/product/shoptimizer/' }, 'Shoptimizer')} theme breaks into the "good" performance score with a 95! Kudos to the Shoptimizer team. Keep in mind that this is a demo & is likely the ceiling of this theme's optimization. Yet few theme achieve a performance score >90, so it is noteworthy.
 
