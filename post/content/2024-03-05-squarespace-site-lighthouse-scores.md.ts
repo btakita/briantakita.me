@@ -1,33 +1,39 @@
+import { briantakita_server_env_ } from '@btakita/domain--browser--briantakita/env'
 import { heroicons_chevron_double_right_ } from '@btakita/ui--server--briantakita/icon'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { nofollow_tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { class_ } from 'ctx-core/html'
+import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { iframe_, img_ } from 'relementjs/html'
-import artipsstudio_html from '../../public/assets/lighthouse/artipsstudio.html'
-import chrome_dev_toolbar_menu_lightouse_png from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lightouse.png'
-import devoe_html from '../../public/assets/lighthouse/devoe.html'
-import dodropshipping_html from '../../public/assets/lighthouse/dodropshipping.html'
-import jonesbbqkc_html from '../../public/assets/lighthouse/jonesbbqkc.html'
-import shoptimizer_html from '../../public/assets/lighthouse/shoptimizer.html'
+import { h2_, iframe_, img_ } from 'relementjs/html'
+import chrome_dev_toolbar_menu_lighthouse_webp
+	from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lighthouse.webp'
+const slug = 'squarespace-site-lighthouse-scores'
+const bucket_url = briantakita_server_env_().ASSETS_BRIANTAKITA_ME__BUCKET_URL
 export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2024-03-06T01:41:02.185Z',
 	title: 'Squarespace Site Lighthouse Scores',
-	slug: 'squarespace-site-lighthouse-scores',
+	slug,
 	tag_a1: [
 		'performance',
+		'lighthouse',
 		'squarespace',
+		'ecommerce',
+		'shopify',
+		'wordpress',
+		'woocommerce',
 		'crm',
-		'seq',
 	],
 	description: `Let's analyze the performance of some Squarespace sites`,
 	featured: true,
 })
-// @formatter:off
-// language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>{
+	// @formatter:off
+	// language=md
+	return md__raw_(`
 Squarespace is an E-commerce CRM with dominant market share. I became curious about it's performance when reviewing some squarespace sites. I will use the lighthouse scores for performance analysis of some squarespace sites.
 
 ## Site performance impacts SEO
@@ -43,29 +49,30 @@ Lighthouse is ${nofollow_tb_a_({ href: 'https://developer.chrome.com/docs/lighth
 1. Open the Developer Toolbar. Ctrl+Shift+I on Windows/Linux & Cmd+Shift+I on OSX
 1. Select the Lighthouse tab at the top menu. You may have to press the ${heroicons_chevron_double_right_({ class: 'inline-block m-0 h-6 w-6'})} icon at the right to see the Lighthouse tool
 ${img_({
-	src: chrome_dev_toolbar_menu_lightouse_png,
-	class: class_('w-full')
-})}
+		src: chrome_dev_toolbar_menu_lighthouse_webp,
+		alt: 'Google Chrome Dev Toolbar Menu with Lighthouse',
+		class: class_('max-h-[395px]', 'w-full')
+	})}
 
-Keep in mind that this site scores at 100 across the board (performance, accessibility, best practices, seo). Also keep in mind that anything above 90 is considered a good score.
+Keep in mind that this site scores at 100 across the board (performance, accessibility, best practices, seo)${footnote__sup_({ ctx, id: 'briantakita-me-100' }, h2_({ class: 'inline-block' }, 'briantakita.me home page lighthouse'), lighthouse__iframe_(url__join(bucket_url, 'lighthouse/briantakita.me.html'), 'briantakita.me lighthouse'))}. Also keep in mind that anything above 90 is considered a good score. This page has a score of 55 due to the excessive amount of iframes used to show the lighthouse tests.
 
 ## Case 1 - ${nofollow_tb_a_({ href: 'https://www.artipsstudio.com/' }, 'www.artipsstudio.com')}
 
 A performance score of 20 is surprising. But then, this site targets fans of artistry. So large beautiful images & elegant design take priority.
 
-${lighthouse__iframe_(artipsstudio_html)}
+${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/artipsstudio.html'), 'artipsstudio.com lighthouse')}
 
 ## Case 2 - ${nofollow_tb_a_({ href: 'https://www.jonesbbqkc.com/' }, 'www.jonesbbqkc.com')}
 
 This site performed better but leaves much to be desired. The home page animation is catchy.
 
-${lighthouse__iframe_(jonesbbqkc_html)}
+${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/jonesbbqkc.html'), 'jonesbbqkc.com lighthouse')}
 
 ## Case 3 - ${nofollow_tb_a_({ href: 'https://devoe-fluid-demo.squarespace.com/' }, 'devoe-fluid-demo.squarespace.com')}
 
 ${nofollow_tb_a_({ href: 'https://www.stylefactoryproductions.com/blog/how-to-speed-up-a-squarespace-site' }, 'How to Speed Up a Squarespace Site')} features the Devoe template. For it's performance improvements over other Squarespace Site templates. With a performance score of 55, Squarespace has a ways to go.
 
-${lighthouse__iframe_(devoe_html)}
+${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/devoe.html'), 'devoe demo lighthouse')}
 
 ## Squarespace going forward
 
@@ -79,13 +86,13 @@ Alternative e-commerce platforms are another option. Though Squarespace does sco
 
 dodropshipping.com has a performance score of 85. A decent score! My hunch is that Shopify has an advantage due it's 3rd party theme ecosystem. These 3rd party themes boutique developers to specialize. The Booster theme team delivers high performance Shopify themes. Dodropshipping.com is close. I would not be surprised if dodropshipping.com could optimize their page to be in the mid 90's or higher.
 
-${lighthouse__iframe_(dodropshipping_html)}
+${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/dodropshipping.html'), 'dodropshipping lighthouse')}
 
 ## Bonus #2 WordPress WooCommerce Theme Shoptimizer - ${nofollow_tb_a_({ href: 'https://shoptimizerdemo.commercegurus.com/' }, 'shoptimizerdemo.commercegurus.com')}
 
 The ${nofollow_tb_a_({ href: 'https://www.commercegurus.com/product/shoptimizer/' }, 'Shoptimizer')} theme breaks into the "good" performance score with a 95! Kudos to the Shoptimizer team. Keep in mind that this is a demo & is likely the ceiling of this theme's optimization. Yet few theme achieve a performance score >90, so it is noteworthy.
 
-${lighthouse__iframe_(shoptimizer_html)}
+${lighthouse__iframe_(url__join(bucket_url, 'lighthouse/shoptimizer.html'), 'shoptimizer lighthouse')}
 
 ## Why are there few e-commerce themes with good (>90) to Perfect Performance Scores?
 
@@ -106,6 +113,7 @@ I am striving to announce this platform soon. Until then, happy optimizing!
 
 You can ${nofollow_tb_a_({ href: 'mailto:brian+squarespace-site-lighthouse-scores@briantakita.me' }, 'email me')} if want to discuss further.
 `)
-function lighthouse__iframe_(src:string) {
-	return iframe_({ src, class: 'w-full h-80 mb-3' })
+}
+function lighthouse__iframe_(src:string, title:string) {
+	return iframe_({ 'data-src': src, class: 'w-full h-80 mb-3', loading: 'lazy', title })
 }
