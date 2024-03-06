@@ -7,7 +7,7 @@ import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { class_ } from 'ctx-core/html'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { h2_, iframe_, img_ } from 'relementjs/html'
+import { iframe_, img_ } from 'relementjs/html'
 import chrome_dev_toolbar_menu_lighthouse_webp
 	from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lighthouse.webp'
 const slug = 'squarespace-site-lighthouse-scores'
