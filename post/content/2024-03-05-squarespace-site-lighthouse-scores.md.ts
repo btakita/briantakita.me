@@ -54,7 +54,7 @@ ${img_({
 		class: class_('max-h-[395px]', 'w-full')
 	})}
 
-Keep in mind that this site scores at 100 across the board (performance, accessibility, best practices, seo)${footnote__sup_({ ctx, id: 'briantakita-me-100' }, 'briantakita.me lighthouse', lighthouse__iframe_(url__join(bucket_url, 'lighthouse/briantakita.me.html'), 'briantakita.me lighthouse'))}. Also keep in mind that anything above 90 is considered a good score. This page has a score of 55 due to the excessive amount of iframes used to show the lighthouse tests.
+Keep in mind that this site scores at 100 across the board (performance, accessibility, best practices, seo)${footnote__sup_({ ctx, id: 'briantakita-me-100' }, 'briantakita.me lighthouse', lighthouse__iframe_(url__join(bucket_url, 'lighthouse/briantakita.me.html'), 'briantakita.me lighthouse'))}. Also keep in mind that anything above 90 is considered a good score.
 
 ## Case 1 - ${nofollow_tb_a_({ href: 'https://www.artipsstudio.com/' }, 'www.artipsstudio.com')}
 
