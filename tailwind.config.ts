@@ -65,7 +65,7 @@ const config:Config = {
 							color: 'rgb(var(--color-accent))',
 							fontWeight: '500',
 							overflowWrap: 'break-word',
-							textDecorationStyle: 'dashed',
+							textDecorationStyle: 'dotted',
 							textUnderlineOffset: '4px',
 						},
 						'blockquote': {

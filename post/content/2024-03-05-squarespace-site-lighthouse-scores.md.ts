@@ -38,7 +38,7 @@ Squarespace is an E-commerce CRM with dominant market share. I became curious ab
 
 ## Site performance impacts SEO
 
-Google & other search engines ${nofollow_tb_a_({ href: 'https://developers.google.com/search/blog/2010/04/using-site-speed-in-web-search-ranking' }, 'factor page load time')} in ranking search results. Page speed ensures the person has an optimal experience viewing the search result.
+Google & other search engines ${nofollow_tb_a_({ href: 'https://developers.google.com/search/blog/2010/04/using-site-speed-in-web-search-ranking' }, 'factor page load time')} in ranking search results. Page speed ensures the audience has an optimal experience viewing the search result.
 
 ## The Lighthouse Test Tool
 
@@ -80,7 +80,7 @@ Squarespace 7.1 has performance improvements over 7.0. So expect further perform
 
 ## Alternatives to Squarespace
 
-Alternative e-commerce platforms are another option. Though Squarespace does score well compared to it's direct competitors, such as Shopify. The ${nofollow_tb_a_({ href: 'https://boostertheme.com/' }, 'Booster theme')} is the fastest Shopify theme I found for this article.
+Alternative e-commerce platforms are another option. The ${nofollow_tb_a_({ href: 'https://boostertheme.com/' }, 'Booster theme')} is the fastest Shopify theme I found.
 
 ## Bonus Shopify Booter Theme Case Study - ${nofollow_tb_a_({ href: 'https://dodropshipping.com/' }, 'dodropshipping.com')}
 
@@ -115,5 +115,5 @@ You can ${nofollow_tb_a_({ href: 'mailto:brian+squarespace-site-lighthouse-score
 `)
 }
 function lighthouse__iframe_(src:string, title:string) {
-	return iframe_({ 'data-src': src, class: 'w-full h-80 mb-3', loading: 'lazy', title })
+	return iframe_({ 'data-src': src, class: 'w-full h-80 mb-24', loading: 'lazy', title })
 }
