@@ -27,7 +27,7 @@ export const meta_ = ()=>post_meta__validate({
 		'woocommerce',
 		'crm',
 	],
-	description: `Let's analyze the performance of some Squarespace sites`,
+	description: `Let's analyze the performance of some Squarespace sites. Along with the fastest WordPress & Shopify themes.`,
 	featured: true,
 })
 export default (ctx:request_ctx_T)=>{
