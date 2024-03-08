@@ -13,7 +13,7 @@ import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, logo_image__new, social_a1 } from '../config.js'
+import { blog_site, logo_image__new, social_a1 } from '../config/index.js'
 import { post_mod_a1 } from '../post/index.js'
 relement__use(server__relement)
 const robots_txt = `

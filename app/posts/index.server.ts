@@ -9,7 +9,7 @@ import { Elysia } from 'elysia'
 import { basename } from 'node:path'
 import { assets__assign, browser__metafile_, type request_ctx_T } from 'rebuildjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, logo_image__new, social_a1 } from '../../config.js'
+import { blog_site, logo_image__new, social_a1 } from '../../config/index.js'
 import { post_mod_a1 } from '../../post/index.js'
 export default middleware_(middleware_ctx=>
 	new Elysia({

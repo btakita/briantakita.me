@@ -13,7 +13,7 @@ import {
 	relysjs_browser__build,
 	relysjs_server__build
 } from 'relysjs/server'
-import { config__init } from './config.js'
+import { config__init } from './config/index.js'
 import tailwindcss_config from './tailwind.config.js'
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({
@@ -26,7 +26,7 @@ if (is_entry_file_(import.meta.url, process.argv[1])) {
 		})
 }
 export async function build(config?:relysjs__build_config_T) {
-	await config__init()
+	config__init()
 	const esmcss_esbuild_plugin = esmcss_esbuild_plugin_()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
 		tailwindcss_config,

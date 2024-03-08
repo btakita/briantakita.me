@@ -1,8 +1,8 @@
 import { Elysia } from 'elysia'
 import { app_ctx, compression_middleware_, is_prod_, static_middleware_ } from 'relysjs/server'
-import { config__init } from '../config.js'
+import { config__init } from '../config/index.js'
 export default async ()=>{
-	await config__init()
+	config__init()
 	return new Elysia()
 		.use(compression_middleware_())
 		.use(await static_middleware_(
