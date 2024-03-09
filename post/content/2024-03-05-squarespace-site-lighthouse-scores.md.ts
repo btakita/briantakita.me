@@ -111,7 +111,7 @@ A custom e-commerce site or platform can have a good to perfect performance scor
 
 I am striving to announce this platform soon. Until then, happy optimizing!
 
-You can ${nofollow_tb_a_({ href: 'mailto:brian+squarespace-site-lighthouse-scores@briantakita.me' }, 'email me')} if want to discuss further.
+Email me ${nofollow_tb_a_({ href: 'mailto:info+squarespace-site-lighthouse-scores@briantakita.me' }, 'email me')} discuss further.
 `)
 }
 function lighthouse__iframe_(src:string, title:string) {

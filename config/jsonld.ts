@@ -9,81 +9,99 @@ import type {
 	Thing,
 	WebSite
 } from '@btakita/schema-dts'
-import { app_jsonld__add } from '@rappstack/domain--server/jsonld'
-import { ns_id_be_ } from 'ctx-core/rmemo'
+import { ns_id_be_id_ref_jsonld_Thing_pair_ } from '@rappstack/domain--server/jsonld'
 import { url__join } from 'ctx-core/uri'
+import { wide_app_ctx_T } from 'rebuildjs/server'
 import logo_svg from '../public/assets/images/logo.svg'
 import { blog_site } from './blog.js'
 import { social_a1 } from './social.js'
 const { author, title, website } = blog_site
-export const jsonld_WebSite_ = ns_id_be_('app', 'jsonld_WebSite', ctx=>{
-	return app_jsonld__add(ctx, <WebSite>{
+export const [
+	jsonld_WebSite_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'jsonld_WebSite', ctx=>{
+	return <WebSite>{
 		'@type': 'WebSite',
 		'@id': url__join(website, '#WebSite'),
 		url: website,
 		name: title,
-		publisher: jsonld_Person_(ctx),
-	})
+		publisher: jsonld_Person_id_ref_(ctx),
+	}
 })
-export const jsonld_Organization_ = ns_id_be_('app', 'jsonld_Organization', ctx=>{
-	return app_jsonld__add(ctx, <Organization>{
+export const [
+	jsonld_Organization_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'jsonld_Organization', ctx=>{
+	return <Organization>{
 		'@type': 'Organization',
 		'@id': url__join(website, '#Organization'),
 		url: website,
 		name: title,
-		logo: logo_jsonld_ImageObject_(ctx)
-	})
+		logo: logo_jsonld_ImageObject_id_ref_(ctx)
+	}
 })
-export const logo_jsonld_ImageObject_ = ns_id_be_('app', 'logo_jsonld_ImageObject', ctx=>{
-	return app_jsonld__add(ctx, <ImageObject>{
+export const [
+	logo_jsonld_ImageObject_id_ref_,
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'logo_jsonld_ImageObject', ctx=>{
+	return <ImageObject>{
 		'@type': 'ImageObject',
 		'@id': url__join(website, '#logo'),
 		url: url__join(website, logo_svg),
 		width: '256px',
 		height: '256px',
-	})
+	}
 })
-export const jsonld_AboutPage_ = ns_id_be_('app', 'jsonld_AboutPage', ctx=>{
-	return app_jsonld__add(ctx, <AboutPage>{
-		'@type': 'AboutPage',
-		'@id': url__join(website, 'about', '#AboutPage'),
-		url: url__join(website, 'about'),
-		name: author + ' Summary',
-		about: jsonld_Person_(ctx),
-		inLanguage: 'en-us',
-		isPartOf: jsonld_WebSite_(ctx)
-	})
-})
-export const jsonld_ContactPage_ = ns_id_be_('app', 'jsonld_ContactPage', ctx=>{
-	const jsonld_ContactPage_id = url__join(website, '#ContactPage')
-	return app_jsonld__add(ctx, <ContactPage>{
-			'@type': 'ContactPage',
-			'@id': jsonld_ContactPage_id,
-			url: jsonld_ContactPage_id,
-			name: 'Contact ' + author,
+export const [
+	[jsonld_AboutPage_id_ref_, jsonld_AboutPage_],
+	jsonld_AboutPage__id_,
+	jsonld_AboutPage__description_,
+] = [
+	ns_id_be_id_ref_jsonld_Thing_pair_('app', 'jsonld_AboutPage', ctx=>{
+		return <AboutPage>{
+			'@type': 'AboutPage',
+			'@id': url__join(website, 'about', '#AboutPage'),
+			url: url__join(website, 'about'),
+			name: 'About | ' + author,
+			about: jsonld_Person_id_ref_(ctx),
+			description: 'Creates efficient systems that grow with you',
 			inLanguage: 'en-us',
-			isPartOf: jsonld_WebSite_(ctx),
-			about: jsonld_Person_(ctx),
-			mainEntity: jsonld_Person_(ctx)
+			isPartOf: jsonld_WebSite_id_ref_(ctx)
 		}
-	)
+	}),
+	(ctx:wide_app_ctx_T)=><string>jsonld_AboutPage_(ctx)['@id'],
+	(ctx:wide_app_ctx_T)=><string>jsonld_AboutPage_(ctx).description,
+]
+export const [
+	jsonld_ContactPage_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'jsonld_ContactPage', ctx=>{
+	const jsonld_ContactPage_id = url__join(website, '#ContactPage')
+	return <ContactPage>{
+		'@type': 'ContactPage',
+		'@id': jsonld_ContactPage_id,
+		url: jsonld_ContactPage_id,
+		name: 'Contact ' + author,
+		inLanguage: 'en-us',
+		isPartOf: jsonld_WebSite_id_ref_(ctx),
+		about: jsonld_Person_id_ref_(ctx),
+		mainEntity: jsonld_Person_id_ref_(ctx)
+	}
 })
-export const jsonld_Person_ = ns_id_be_('app', 'jsonld_Person', ctx=>{
-	return app_jsonld__add(ctx, <Person>{
+export const [
+	jsonld_Person_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'jsonld_Person', ctx=>{
+	return <Person>{
 		'@type': 'Person',
 		'@id': url__join(website, '#Person'),
 		url: website,
 		name: author,
 		image: 'https://gravatar.com/avatar/a0599814ceddc2e283792f4e47c57f5e',
-		alumniOf: uop_jsonld_Organization_(ctx),
-		jobTitle: full_stack_engineer_jsonld_DefinedTerm_(ctx),
+		alumniOf: uop_jsonld_Organization_id_ref_(ctx),
+		jobTitle: full_stack_engineer_jsonld_DefinedTerm_id_ref_(ctx),
 		knowsAbout: [
-			typescript_jsonld_Thing_(ctx),
-			javascript_jsonld_Thing_(ctx),
+			typescript_jsonld_Thing_id_ref_(ctx),
+			javascript_jsonld_Thing_id_ref_(ctx),
 		],
 		hasOccupation: [
-			sr_full_stack_engineer_jsonld_Occupation_(ctx),
-			digital_marketer_jsonld_Occupation_(ctx),
+			sr_full_stack_engineer_jsonld_Occupation_id_ref_(ctx),
+			digital_marketer_jsonld_Occupation_id_ref_(ctx),
 		],
 		sameAs: [
 			...social_a1.filter(social=>social.active).map(social=>social.href),
@@ -134,55 +152,66 @@ export const jsonld_Person_ = ns_id_be_('app', 'jsonld_Person', ctx=>{
 			'https://stocktwits.com/briantakita',
 			'https://briantakita.brandyourself.com/',
 		],
-	})
+	}
 })
-export const typescript_jsonld_Thing_ = ns_id_be_('app', 'typescript_jsonld_Thing', ctx=>{
-	return app_jsonld__add(ctx, <Thing>{
+export const [
+	typescript_jsonld_Thing_id_ref_,
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'typescript_jsonld_Thing', ()=>{
+	return <Thing>{
 		'@type': 'Thing',
 		'name': 'Typescript',
 		alternateName: 'ts',
 		sameAs: 'https://www.typescriptlang.org/'
-	})
+	}
 })
-export const javascript_jsonld_Thing_ = ns_id_be_('app', 'javascript_jsonld_Thing', ctx=>{
-	return app_jsonld__add(ctx, <Thing>{
+export const [
+	javascript_jsonld_Thing_id_ref_,
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'javascript_jsonld_Thing', ()=>{
+	return <Thing>{
 		'@type': 'Thing',
 		'name': 'Javascript',
 		alternateName: 'js',
 		sameAs: 'https://developer.mozilla.org/en-US/docs/Web/javascript/'
-	})
+	}
 })
-export const sr_full_stack_engineer_jsonld_Occupation_ = ns_id_be_('app', 'sr_full_stack_engineer_jsonld_Occupation',
-	ctx=>{
-		const full_stack_engineer_description = 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.'
-		return app_jsonld__add(ctx, <Occupation>{
-			'@type': 'Occupation',
-			name: 'Sr. Full Stack Engineer',
-			description: full_stack_engineer_description,
-			qualifications: full_stack_engineer_description,
-		})
-	})
-export const digital_marketer_jsonld_Occupation_ = ns_id_be_('app', 'digital_marketer_jsonld_Occupation', ctx=>{
+export const [
+	sr_full_stack_engineer_jsonld_Occupation_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'sr_full_stack_engineer_jsonld_Occupation', ()=>{
+	const full_stack_engineer_description = 'Develops many interoperable apps + open source libraries that are simple & small in size. Creates flat architectures that scale large & small. These libraries & apps build on each other. Reactive programming with general purpose contexts. Precise & scalable domain ontology. These techniques remove incidental complexity & bloat that come with other programming paradigms.'
+	return <Occupation>{
+		'@type': 'Occupation',
+		name: 'Sr. Full Stack Engineer',
+		description: full_stack_engineer_description,
+		qualifications: full_stack_engineer_description,
+	}
+})
+export const [
+	digital_marketer_jsonld_Occupation_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'digital_marketer_jsonld_Occupation', ctx=>{
 	const digital_marketer_description = 'Performs full-featured Digital Marketing Services. Excels at creating engaging websites/apps, technical SEO, & automating systems.'
-	return app_jsonld__add(ctx, <Occupation>{
+	return <Occupation>{
 		'@type': 'Occupation',
 		name: 'Digital Marketer',
 		description: digital_marketer_description,
 		qualifications: digital_marketer_description,
-	})
+	}
 })
-export const uop_jsonld_Organization_ = ns_id_be_('app', 'uop_jsonld_Organization', ctx=>{
-	return app_jsonld__add(ctx, <Organization>{
+export const [
+	uop_jsonld_Organization_id_ref_,
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'uop_jsonld_Organization', ctx=>{
+	return <Organization>{
 		'@type': 'Organization',
 		name: 'University of the Pacific',
 		'@id': 'https://www.wikidata.org/wiki/Q630226'
-	})
+	}
 })
-export const full_stack_engineer_jsonld_DefinedTerm_ = ns_id_be_('app', 'full_stack_engineer_jsonld_DefinedTerm', ctx=>{
-	return app_jsonld__add(ctx, <DefinedTerm>{
+export const [
+	full_stack_engineer_jsonld_DefinedTerm_id_ref_
+] = ns_id_be_id_ref_jsonld_Thing_pair_('app', 'full_stack_engineer_jsonld_DefinedTerm', ctx=>{
+	return <DefinedTerm>{
 		'@type': 'DefinedTerm',
 		'name': 'Full Stack Engineer',
 		'alternateName': 'Full Stack Web Developer',
 		'sameAs': 'https://www.coursera.org/articles/full-stack-engineer'
-	})
+	}
 })
