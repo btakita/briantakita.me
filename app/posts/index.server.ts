@@ -1,6 +1,5 @@
 import '../index.css'
 import { post__doc_html_, posts__doc_html_ } from '@btakita/ui--server--briantakita/post'
-import { blog_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { page_num_ } from '@rappstack/domain--server--blog/page'
 import { blog_post_slug_or_page_num__set } from '@rappstack/domain--server--blog/post'
 import { blog_post__estimate_read_minutes__wait } from '@rappstack/ui--server--blog/post'
@@ -9,14 +8,14 @@ import { Elysia } from 'elysia'
 import { basename } from 'node:path'
 import { assets__assign, browser__metafile_, type request_ctx_T } from 'rebuildjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, logo_image__new, social_a1 } from '../../config/index.js'
+import { blog_site, briantakita_request_ctx__ensure, logo_image__new, social_a1 } from '../../config/index.js'
 import { post_mod_a1 } from '../../post/index.js'
 export default middleware_(middleware_ctx=>
 	new Elysia({
 		name: 'posts_routes'
 	})
 		.get('/posts', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -28,7 +27,7 @@ export default middleware_(middleware_ctx=>
 		})
 		.get('/posts/:slug_or_page_num', async context=>{
 			const { params: { slug_or_page_num } } = context
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,

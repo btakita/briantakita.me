@@ -9,7 +9,7 @@
 		"clean": "rm -rf ./dist"
 	},
 	"dependencies": {
-		"@btakita/domain--browser--briantakita": "workspace:*",
+		"@btakita/domain--server--briantakita": "workspace:*",
 		"@btakita/ui--server--briantakita": "workspace:*",
 		"@ctx-core/preprocess": "^0.1.2",
 		"@ctx-core/source-map": "^0.2.58",

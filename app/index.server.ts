@@ -5,7 +5,6 @@ import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_so
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { sitemap__xml_ } from '@btakita/ui--server--briantakita/sitemap'
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
-import { blog_request_ctx__ensure } from '@rappstack/domain--server--blog/ctx'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
 import { redirect_response__new, text_response__new, xml_response__new } from '@rappstack/domain--server/response'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
@@ -13,7 +12,7 @@ import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
 import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, logo_image__new, social_a1 } from '../config/index.js'
+import { blog_site, briantakita_request_ctx__ensure, logo_image__new, social_a1 } from '../config/index.js'
 import { post_mod_a1 } from '../post/index.js'
 relement__use(server__relement)
 const robots_txt = `
@@ -26,7 +25,7 @@ export default middleware_(middleware_ctx=>
 		name: 'root_routes'
 	})
 		.get('/', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -40,7 +39,7 @@ export default middleware_(middleware_ctx=>
 			text_response__new(robots_txt))
 		.get('/rss', async context=>
 			xml_response__new(blog__rss_xml_({
-				ctx: blog_request_ctx__ensure(
+				ctx: briantakita_request_ctx__ensure(
 					middleware_ctx,
 					context, {
 						logo_image__new,
@@ -52,7 +51,7 @@ export default middleware_(middleware_ctx=>
 		.get('/rss.xml', ()=>
 			redirect_response__new(301, '/rss'))
 		.get('/sitemap.xml', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -63,7 +62,7 @@ export default middleware_(middleware_ctx=>
 			return xml_response__new(sitemap__xml_({ ctx }))
 		})
 		.get('/about', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -74,7 +73,7 @@ export default middleware_(middleware_ctx=>
 			return html_response__new(about__doc_html_({ ctx }))
 		})
 		.get('/open-source', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -85,7 +84,7 @@ export default middleware_(middleware_ctx=>
 			return html_response__new(open_source__doc_html_({ ctx }))
 		})
 		.get('/portfolio', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -96,7 +95,7 @@ export default middleware_(middleware_ctx=>
 			return html_response__new(portfolio__doc_html_({ ctx }))
 		})
 		.get('/tags', async context=>{
-			const ctx = blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
 					logo_image__new,
@@ -108,8 +107,7 @@ export default middleware_(middleware_ctx=>
 		})
 		.get('/tags/:tag', async context=>{
 			const { params: { tag } } = context
-			const ctx =
-				blog_request_ctx__ensure(
+			const ctx = briantakita_request_ctx__ensure(
 					middleware_ctx,
 					context, {
 						logo_image__new,
