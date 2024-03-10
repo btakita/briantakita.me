@@ -1,6 +1,4 @@
 export * from './blog.js'
 export * from './config__init.js'
 export * from './ctx.js'
-export * from './jsonld.js'
-export * from './rdfa.js'
 export * from './social.js'

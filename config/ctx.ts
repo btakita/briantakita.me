@@ -1,12 +1,12 @@
-import { blog_request_ctx__ensure, type blog_request_ctx__ensure_config_T } from '@rappstack/domain--server--blog/ctx'
-import type { middleware_ctx_T } from 'rebuildjs/server'
 import {
 	AboutPage_id_ref_,
 	ContactPage_id_ref_,
 	Organization_id_ref_,
 	Person_id_ref_,
 	WebSite_id_ref_
-} from './jsonld.js'
+} from '@btakita/domain--server--briantakita/jsonld'
+import { blog_request_ctx__ensure, type blog_request_ctx__ensure_config_T } from '@rappstack/domain--server--blog/ctx'
+import type { middleware_ctx_T } from 'rebuildjs/server'
 export function briantakita_request_ctx__ensure(
 	middleware_ctx:middleware_ctx_T,
 	context:{
