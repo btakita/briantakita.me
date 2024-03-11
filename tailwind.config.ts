@@ -164,6 +164,10 @@ const config:Config = {
 							color: 'rgb(var(--color-text-base))',
 							fontWeight: '500',
 						},
+						'summary': {
+							color: 'rgb(var(--color-text-base))',
+							cursor: 'pointer',
+						},
 						'table': {
 							color: 'rgb(var(--color-text-base))',
 						},
