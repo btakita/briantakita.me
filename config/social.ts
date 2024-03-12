@@ -7,7 +7,7 @@ import {
 	tabler_brand_telegram_,
 	tabler_mail_
 } from '@rappstack/ui--any--blog/icon'
-import { blog_site } from './blog.js'
+import { blog_site } from './blog_site.js'
 export const social_a1:social_T[] = [
 	{
 		icon_: tabler_brand_github_,

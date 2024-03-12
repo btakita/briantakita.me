@@ -9,15 +9,15 @@ import {
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { request_url_ } from 'relysjs/server'
 import unicorn_jpg from '../../public/assets/images/unicorn.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	title: `Magic Connections with the Philosophy of Language`,
 	author: `Brian Takita`,
 	pub_date: '2014-12-10T07:15:00Z',
 	slug: `magic-connections-with-the-philosophy-of-language`,
-	hero_image: request_url_(ctx).origin + unicorn_jpg,
+	hero_image: new URL(unicorn_jpg, request_url__origin_(ctx)).href,
 	tag_a1: [
 		'philosophy',
 		'ontology',

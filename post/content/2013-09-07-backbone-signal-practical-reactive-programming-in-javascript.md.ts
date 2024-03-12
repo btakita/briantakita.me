@@ -7,15 +7,15 @@ import {
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { request_url_ } from 'relysjs/server'
 import neurons_jpg from '../../public/assets/images/neurons.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2013-09-07T05:16Z',
 	title: `backbone-signal - Practical Reactive Programming in Javascript`,
 	slug: 'backbone-signal-practical-reactive-programming-javascript',
-	hero_image: request_url_(ctx).origin + neurons_jpg,
+	hero_image: new URL(neurons_jpg, request_url__origin_(ctx)).hrefo,
 	tag_a1: [
 		'javascript',
 		'signals',

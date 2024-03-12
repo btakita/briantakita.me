@@ -1,15 +1,15 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { request_url_ } from 'relysjs/server'
 import Creation_of_Adam_jpg from '../../public/assets/images/1200px-Creation_of_Adam.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2015-01-03T11:45Z',
 	title: `Do Not Worry, Everything Exists`,
 	slug: 'everything-exists',
-	hero_image: request_url_(ctx).origin + Creation_of_Adam_jpg,
+	hero_image: new URL(Creation_of_Adam_jpg, request_url__origin_(ctx)).href,
 	tag_a1: [
 		'philosophy',
 		'worldview',
