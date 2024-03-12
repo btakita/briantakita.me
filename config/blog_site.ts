@@ -1,6 +1,6 @@
 import { site_logo__svg_ } from '@btakita/ui--server--briantakita/icon'
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
-import { type logo_image__new_T } from '@rappstack/domain--server/logo'
+import { type logo_image__new_T } from '@rappstack/domain--server/site'
 import { import_meta_env_ } from 'ctx-core/env'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
@@ -27,6 +27,7 @@ export const blog_site:blog_site_T = {
 	light_and_dark_mode: true,
 	google_site_verification: import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION,
 	gtag_id: 'G-F2F171MSE3',
+	logo_image__new,
 	page__post_count: 10,
 	home__post_count: 4,
 }

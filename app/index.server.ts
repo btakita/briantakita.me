@@ -28,7 +28,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -42,7 +41,6 @@ export default middleware_(middleware_ctx=>
 				ctx: briantakita_request_ctx__ensure(
 					middleware_ctx,
 					context, {
-						logo_image__new,
 						blog_site,
 						social_a1,
 						post_mod_a1,
@@ -54,7 +52,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -65,7 +62,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -76,7 +72,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -87,7 +82,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -98,7 +92,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context, {
-					logo_image__new,
 					blog_site,
 					social_a1,
 					post_mod_a1,
@@ -110,7 +103,6 @@ export default middleware_(middleware_ctx=>
 			const ctx = briantakita_request_ctx__ensure(
 					middleware_ctx,
 					context, {
-						logo_image__new,
 						blog_site,
 						social_a1,
 						post_mod_a1,
