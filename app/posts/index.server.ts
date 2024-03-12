@@ -8,8 +8,7 @@ import { Elysia } from 'elysia'
 import { basename } from 'node:path'
 import { assets__assign, browser__metafile_, type request_ctx_T } from 'rebuildjs/server'
 import { html_response__new, middleware_ } from 'relysjs/server'
-import { blog_site, briantakita_request_ctx__ensure, social_a1 } from '../../config/index.js'
-import { post_mod_a1 } from '../../post/index.js'
+import { blog_site, briantakita_request_ctx__ensure } from '../../config/index.js'
 export default middleware_(middleware_ctx=>
 	new Elysia({
 		name: 'posts_routes'
@@ -17,22 +16,16 @@ export default middleware_(middleware_ctx=>
 		.get('/posts', async context=>{
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
-				context, {
-					blog_site,
-					social_a1,
-					post_mod_a1,
-				})
+				context,
+				{ blog_site })
 			return html_response__new(posts__doc_html_({ ctx }))
 		})
 		.get('/posts/:slug_or_page_num', async context=>{
 			const { params: { slug_or_page_num } } = context
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
-				context, {
-					blog_site,
-					social_a1,
-					post_mod_a1,
-				})
+				context,
+				{ blog_site })
 			blog_post_slug_or_page_num__set(ctx, slug_or_page_num)
 			if (slug_or_page_num === 'squarespace-site-lighthouse-scores') {
 				entryPoint__assets__assign(ctx, 'app/posts/squarespace-site-lighthouse-scores/index.browser.ts')
