@@ -2,7 +2,6 @@ import { site_logo__svg_ } from '@btakita/ui--server--briantakita/icon'
 import { type blog_site_T } from '@rappstack/domain--server--blog/site'
 import { type logo_image__new_T } from '@rappstack/domain--server/logo'
 import { import_meta_env_ } from 'ctx-core/env'
-import { class_ } from 'ctx-core/html'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
 export const logo_image__new:logo_image__new_T = ($p?:{ class?:string })=>
