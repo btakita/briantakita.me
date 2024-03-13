@@ -21,7 +21,7 @@ export const blog_site:blog_site_T = {
 	author: 'Brian Takita',
 	description: 'Reactive Context Enthusiast',
 	title: title,
-	icon: {
+	favicon: {
 		type: 'image/svg+xml',
 		href: favicon_svg
 	},

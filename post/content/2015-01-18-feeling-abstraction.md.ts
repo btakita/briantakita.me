@@ -1,6 +1,6 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { type request_ctx_T } from 'rebuildjs/server'
 import feeling_abstraction_jpg from '../../public/assets/images/feeling-abstraction.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({

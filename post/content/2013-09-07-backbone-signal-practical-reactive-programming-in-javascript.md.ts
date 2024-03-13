@@ -5,9 +5,9 @@ import {
 	rundavoo__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { type request_ctx_T } from 'rebuildjs/server'
 import neurons_jpg from '../../public/assets/images/neurons.jpg'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
