@@ -37,7 +37,6 @@
 		"tailwindcss": "^3.4.1"
 	},
 	"devDependencies": {
-		"@btakita/schema-dts": "^1.1.3-patch",
 		"bun-types": "latest",
 		"schema-dts": "^1.1.2"
 	}
