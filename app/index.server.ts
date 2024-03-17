@@ -1,12 +1,17 @@
 import './index.css'
-import { about__doc_html_ } from '@btakita/ui--server--briantakita/about'
+import { about__doc_html_, about_content__html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
 import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
 import { portfolio__doc_html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { sitemap__xml_ } from '@btakita/ui--server--briantakita/sitemap'
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
-import { redirect_response__new, text_response__new, xml_response__new } from '@rappstack/domain--server/response'
+import {
+	redirect_response__new,
+	response__drain,
+	text_response__new,
+	xml_response__new
+} from '@rappstack/domain--server/response'
 import { blog__rss_xml_ } from '@rappstack/ui--server--blog/rss'
 import { Elysia } from 'elysia'
 import { relement__use } from 'relementjs'
@@ -54,7 +59,16 @@ export default middleware_(middleware_ctx=>
 				middleware_ctx,
 				context,
 				{ blog_site })
-			return html_response__new(about__doc_html_({ ctx }))
+			const about_content__html = about_content__html_({ ctx })
+			let articleBody = ''
+			const rw = new HTMLRewriter().on('*', {
+				text(text) {
+					articleBody += text.text ?? ''
+				}
+			})
+			await response__drain(
+				await rw.transform(new Response(about_content__html)))
+			return html_response__new(about__doc_html_({ ctx, about_content__html, articleBody }))
 		})
 		.get('/open-source', async context=>{
 			const ctx = briantakita_request_ctx__ensure(
