@@ -1,8 +1,8 @@
 import './index.css'
-import { about__doc_html_, about_content__html_ } from '@btakita/ui--server--briantakita/about'
+import { about__doc_html_, about__html_ } from '@btakita/ui--server--briantakita/about'
 import { home__doc_html_ } from '@btakita/ui--server--briantakita/home'
-import { open_source__doc_html_ } from '@btakita/ui--server--briantakita/open_source'
-import { portfolio__doc_html_, portfolio_content__html_ } from '@btakita/ui--server--briantakita/portfolio'
+import { open_source__doc_html_, open_source__html_ } from '@btakita/ui--server--briantakita/open_source'
+import { portfolio__doc_html_, portfolio__html_ } from '@btakita/ui--server--briantakita/portfolio'
 import { sitemap__xml_ } from '@btakita/ui--server--briantakita/sitemap'
 import { tag__doc_html_, tags__doc_html_ } from '@btakita/ui--server--briantakita/tag'
 import { tag__set } from '@rappstack/domain--server--blog/tag'
@@ -55,25 +55,27 @@ export default middleware_(middleware_ctx=>
 				middleware_ctx,
 				context,
 				{ blog_site })
-			const about_content__html = about_content__html_({ ctx })
-			const articleBody = await html__text_(about_content__html)
-			return html_response__new(about__doc_html_({ ctx, about_content__html, articleBody }))
+			const about__html = about__html_({ ctx })
+			const articleBody = await html__text_(about__html)
+			return html_response__new(about__doc_html_({ ctx, about__html, articleBody }))
 		})
 		.get('/open-source', async context=>{
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context,
 				{ blog_site })
-			return html_response__new(open_source__doc_html_({ ctx }))
+			const open_source__html = open_source__html_({ ctx })
+			const articleBody = await html__text_(open_source__html)
+			return html_response__new(open_source__doc_html_({ ctx, open_source__html, articleBody }))
 		})
 		.get('/portfolio', async context=>{
 			const ctx = briantakita_request_ctx__ensure(
 				middleware_ctx,
 				context,
 				{ blog_site })
-			const portfolio_content__html = portfolio_content__html_()
-			const articleBody = await html__text_(portfolio_content__html)
-			return html_response__new(portfolio__doc_html_({ ctx, portfolio_content__html, articleBody }))
+			const portfolio__html = portfolio__html_()
+			const articleBody = await html__text_(portfolio__html)
+			return html_response__new(portfolio__doc_html_({ ctx, portfolio__html, articleBody }))
 		})
 		.get('/tags', async context=>{
 			const ctx = briantakita_request_ctx__ensure(
