@@ -14,7 +14,6 @@ export const meta_ = ()=>post_meta__validate({
 	],
 	description: `Tag Vector Interpreted by ChatGPT`,
 })
-
 // @formatter:off
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_(`
