@@ -12,7 +12,7 @@ export const meta_ = ()=>post_meta__validate({
 		'openai',
 		'ai',
 	],
-	description: `Tag Vector Interpreted by ChatGPT`,
+	description: `An experiment using Chat GPT 3.5 on a Tag Vector blog post`,
 })
 // @formatter:off
 // language=md
