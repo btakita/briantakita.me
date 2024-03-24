@@ -21,7 +21,7 @@
 		"@rappstack/ui--browser--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
-		"@rebuildjs/tailwindcss": "^0.8.78",
+		"@rebuildjs/tailwindcss": "^0.9.0",
 		"@tailwindcss/forms": "^0.5.7",
 		"@tailwindcss/typography": "^0.5.10",
 		"cssnano": "^6.1.1",
@@ -33,7 +33,7 @@
 		"picocolors": "^1.0.0",
 		"rebuildjs": "^0.66.3",
 		"relementjs": "^0.75.5",
-		"relysjs": "^1.17.6",
+		"relysjs": "^1.17.7",
 		"tailwindcss": "^3.4.1"
 	},
 	"devDependencies": {
