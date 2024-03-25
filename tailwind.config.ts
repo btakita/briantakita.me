@@ -104,7 +104,7 @@ const config:Config = {
 							marginBottom: '1.25rem',
 							fontSize: '2.25rem',
 							fontWeight: 400,
-							lineHeight: '2.25rem',
+							lineHeight: '2.5rem',
 							color: 'rgb(var(--color-text-base))',
 						},
 						'h2': {
