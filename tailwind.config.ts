@@ -100,38 +100,49 @@ const config:Config = {
 							marginRight: 'auto',
 						},
 						'h1': {
-							fontSize: '1.875rem',
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
+							fontSize: '2.25rem',
+							fontWeight: 400,
 							lineHeight: '2.25rem',
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'h2': {
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
 							fontSize: '1.5rem',
+							fontWeight: 400,
 							lineHeight: '2rem',
-							marginTop: '0',
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'h3': {
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
 							fontSize: '1.25rem',
+							fontWeight: 400,
 							lineHeight: '1.75rem',
 							fontStyle: 'italic',
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'h4': {
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
 							fontSize: '1.125rem',
+							fontWeight: 400,
 							lineHeight: '1.75rem',
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'h5': {
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
+							fontWeight: 400,
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'h6': {
+							marginTop: '2.5rem',
+							marginBottom: '1.25rem',
+							fontWeight: 400,
 							color: 'rgb(var(--color-text-base))',
-							marginBottom: '.75rem'
 						},
 						'hr': {
 							borderColor: 'rgb(var(--color-border))',
