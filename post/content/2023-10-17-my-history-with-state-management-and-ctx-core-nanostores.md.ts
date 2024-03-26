@@ -100,7 +100,7 @@ It was a tough time to be an entry-level programmer, as there were layoffs, outs
 
 I got my first full time job at ${naspp__tb_a_()}. The job consisted of office automation software & maintaining a long-used ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management', nofollow: true }, 'CRM')} & order system to manage print & web subscriptions along with events & conference attendee management. It was written in as an old & bogged down due to size ${msaccess__tb_a_()} app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining the tests. 
 
-## Web 2.0, Ruby on Rails, startups
+### Web 2.0, Ruby on Rails, startups
 
 ### Pivotal Labs
 

@@ -39,53 +39,53 @@ I'll use trivial Rails examples to highlight the syntactical differences between
 
 If there is better way to do any of the examples, please post a comment and I will gladly replace it.
 
-# Mocks
+## Mocks
 
 Here are the ways to mock the User.find method. The expectation is the User class object will receive a call to \`#find\` with the argument \`99\` once and will return the object represented by the variable user.
 
-## RR
+### RR
 
 \`\`\`rb
 mock(User).find('99') { user }
 \`\`\`
 
-## Mocha
+### Mocha
 
 \`\`\`rb
 User.expects(:find).with('99').returns(user)
 \`\`\`
 
-## spec/mocks
+### spec/mocks
 
 \`\`\`rb
 User.should_receive(:find).with('99').and_return(user)
 \`\`\`
 
-## Flexmock
+### Flexmock
 
 \`\`\`rb
 flexstub(User).should_receive(:find).with('99').and_return(user).once
 \`\`\`
 
-# Stubs
+## Stubs
 
 Here are the ways to stub the User.find method. When the User class object receives a call to find with the argument '99' it will return user1. When User receives find with any other arg, it returns user2.
 
-## RR
+### RR
 
 \`\`\`rb
 stub(User).find('99') { user1 }
 stub(User).find { user2 }
 \`\`\`
 
-## Mocha
+### Mocha
 
 \`\`\`rb
 User.stubs(:find).with(anything).returns(2)
 User.stubs(:find).with('99').returns(1)
 \`\`\`
 
-## spec/mocks
+### spec/mocks
 
 \`\`\`rb
 users = {
@@ -97,7 +97,7 @@ User.stub!(:find).and_return do |id|
 end
 \`\`\`
 
-## Flexmock
+### Flexmock
 
 \`\`\`rb
 users = {
@@ -109,7 +109,7 @@ flexstub(User).should_receive(:find).and_return do |id|
 end
 \`\`\`
 
-# Proxy
+## Proxy
 
 A proxy used with a mock or stub causes the real method to be called. Expectations can be placed on the invocation and the return value can be intercepted. The main rationales are test clarity and you can ensure that the methods are being called correctly, even after you refactor your code. I will delve more into proxies and their usage patterns in my next article.
 
@@ -117,13 +117,13 @@ Mock Proxy
 
 The following examples set an expectation that \`User.find('99')\` will be called once. The actual user is returned.
 
-## RR
+### RR
 
 \`\`\`rb
 mock.proxy(User).find('99')
 \`\`\`
 
-## Mocha
+### Mocha
 
 You cannot implement this in Mocha. You can do an approximation in this situation however. This technique is not always the solution you need, though.
 
@@ -132,25 +132,25 @@ user = User.find('99')
 User.expects(:find).with('99').returns(user)
 \`\`\`
 
-## spec/mocks
+### spec/mocks
 
 \`\`\`rb
 find_method = User.method(:find)
 User.should_receive(:find).with('99').and_return(&find_method)
 \`\`\`
 
-## Flexmock
+### Flexmock
 
 \`\`\`rb
 find_method = User.method(:find)
 User.should_receive(:find).with('99').and_return(&find_method)
 \`\`\`
 
-# Stub Proxy
+## Stub Proxy
 
 The following examples intercept the return value of User.find('99') and stub out valid? to return false.
 
-## RR
+### RR
 
 \`\`\`rb
 stub.proxy(User).find('99') do |user|
@@ -159,7 +159,7 @@ stub.proxy(User).find('99') do |user|
 end
 \`\`\`
 
-## Mocha
+### Mocha
 
 Again, this is an approximation, since you cannot use proxies in Mocha.
 
@@ -169,7 +169,7 @@ user.stubs(:valid?).returns(false)
 User.stubs(:find).with('99').returns(user)
 \`\`\`
 
-## spec/mocks
+### spec/mocks
 
 \`\`\`rb
 find_method = User.method(:find)
@@ -180,7 +180,7 @@ find_method = User.method(:find)
 end
 \`\`\`
 
-## Flexmock
+### Flexmock
 
 \`\`\`rb
 find_method = User.method(:find)
@@ -190,23 +190,23 @@ find_method = User.method(:find)
 	user
 end
 \`\`\`
-# instance_of
+## instance_of
 
 \`instance_of\` is method sugar than allows you to mock or stub instances of a particular class. The following examples mock instances of User to expect valid? with no arguments to be called once and return false.
 
-## RR
+### RR
 
 \`\`\`rb
 mock.instance_of(User).valid? {false}
 \`\`\`
 
-## Mocha
+### Mocha
 
 \`\`\`rb
 User.any_instance.expects(:valid?).returns(false)
 \`\`\`
 
-## spec/mocks
+### spec/mocks
 
 \`\`\`rb
 new_method = User.method(:new)
@@ -217,7 +217,7 @@ new_method = User.method(:new)
 end
 \`\`\`
 
-## Flexmock
+### Flexmock
 
 \`\`\`rb
 new_method = User.method(:new)
@@ -228,7 +228,7 @@ new_method = User.method(:new)
 end
 \`\`\`
 
-# More to come
+## More to come
 
 This concludes the introduction to RR. RR enables some techniques, like proxying, that will make your tests clearer and less brittle. In the next article, I will describe into patterns and techniques that will make mocks a more feasible tool for more situations.
 `.trim())

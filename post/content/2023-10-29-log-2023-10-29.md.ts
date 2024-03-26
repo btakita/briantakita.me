@@ -34,11 +34,11 @@ export const meta_ = ()=>post_meta__validate({
 // @formatter:off
 // language=md
 export default ()=>md__raw_(`
-# ${cms__tb_a_()}
+## ${cms__tb_a_()}
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.
 
-## ${strapi__tb_a_()}
+### ${strapi__tb_a_()}
 
 Strapi seems like the best option for the headless CRM. I features:
 
@@ -46,7 +46,7 @@ Strapi seems like the best option for the headless CRM. I features:
 - supporting multiple databases to store content
 - a ui to edit content
 
-## ${grapejs__tb_a_()}
+### ${grapejs__tb_a_()}
 
 A No Code website builder. It features:
 
@@ -56,7 +56,7 @@ A No Code website builder. It features:
 - vanilla js
 - Codemirror editors
 
-## ${codemirror__tb_a_()}
+### ${codemirror__tb_a_()}
 
 A Rich Text Editor. It features:
 
@@ -64,22 +64,22 @@ A Rich Text Editor. It features:
 - good docs
 - modular design
 
-## ${astrojs__tb_a_()}
+### ${astrojs__tb_a_()}
 
 A MPA web app library. It features:
 
 * a ${vite__tb_a_()} core
 * support for multiple component libraries (${solidjs__tb_a_()}, ${reactjs__tb_a_()}, ${sveltejs__tb_a_()}, ${vue__tb_a_()})
 
-## ${vercel__tb_a_()}
+### ${vercel__tb_a_()}
 
 A cloud host on ${aws__tb_a_()}
 
-## ${flyio__tb_a_()}
+### ${flyio__tb_a_()}
 
 An edge-computing cloud service that runs ${docker__tb_a_()} images.
 
-## Approach
+### Approach
 
 I will start working with GrapeJS & integrating it with Strapi in an Astrojs app. Editable content will be saved	in Strapi using ${sqlite__tb_a_()}. When an edit is published, the Astrojs app is rebuilt with the new content & site is then republished as a ${jamstack__tb_a_()} on Vercel. I may also just use dynamic api requests to Strapi, using ${tb_a_({ href: 'https://fly.io/blog/all-in-on-sqlite-litestream/', nofollow: true }, 'sqlite on Fly.io')}.
 `.trim())

@@ -26,7 +26,7 @@ These characteristics make it beneficial to build via composition. It makes sens
 
 That being said, I really enjoy developing in Javascript because it encourages (or forces) me to better design my code. Working with a good testing framework leads to a quick, red/green/refactor cycle.
 
-# The Maintenance Costs of Complex Objects
+## The Maintenance Costs of Complex Objects
 
 Unfortunately, it is challengin to build an example because complexity in Javascript requires complex code. So I’m not really going to show code examples, but talk at a higher level.
 
@@ -48,17 +48,17 @@ The idea is to have consistent levels of abstraction. It may be expedient to hav
 
 Fortunately, if you unit test and have loosely coupled objects and functions, your code will be easier to think about and you will not need to debug as much.
 
-# Heuristics to Measuring Complexity
+## Heuristics to Measuring Complexity
 
 Javascript makes complexity especially bad. When developing Javascript software, it helps to have some heuristics to keep the complexity down.
 
-# Talk About It
+## Talk About It
 
 Whenever I complete a piece of functionality, I try to recreate the mental model of where this piece fits in on the web page. It should be clear, distinct, and easy to talk about. Talk about it with somebody. Is it easy to summarize?
 
 If not, it is probably too complex. Break it apart. Create functions and objects which you can name. Compose these names to describe dependent objects.
 
-# Use Your Test Framework
+## Use Your Test Framework
 
 A good javascript test framework (a couple of examples are Screw Unit and Jasmine) allows for nested ‘describe’ blocks and ‘it’ blocks (nested SUT’s, contexts, and test cases). When writing the name of the ‘describe’ block and ‘it’ block, try to capture the system under test, the situation of the test, and what happens. Be descriptive and precise. Don’t be vague. Being vague is cheating.
 
@@ -66,7 +66,7 @@ This is important because the length and complexity of your statements are a goo
 
 Are the tests very painful to write? Are there repetitive patterns? If yes, then that may be an indication that you need to extract something.
 
-# Refer to your Mental Model
+## Refer to your Mental Model
 
 Think about the client/server interaction. Whenever you add functionality, think about how it fits into the overall picture. Unless you are doing really heavy client side development, it should be easy to think about how that object and/or function fits into the picture. If you are doing heavy client side development, use good abstractions. Talk in the language of your abstractions. Let the concepts permeate through your consciousness. Having an intuitive grasp on your past, present, and future problems and solutions.
 `.trim())

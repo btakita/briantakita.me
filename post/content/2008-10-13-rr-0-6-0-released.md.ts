@@ -25,7 +25,7 @@ I’m pleased to announce the 0.6.0 version of RR. The changes include:
 - \`satisfy\` matcher
 - \`hash_including\` matcher
 
-# Declaring Double Subjects (The bang methods)
+## Declaring Double Subjects (The bang methods)
 
 In previous versions of RR, you always needed to pass in the subject of the double. For example:
 
@@ -44,7 +44,7 @@ subject.does_something # :and_returns_me
 
 Now the bang methods by themselves don’t really add a whole lot, but when used in the context of Double chaining, they become a powerful addition.
 
-# Double Chaining
+## Double Chaining
 
 Nick Kallen presented the use case for Double chaining and contributed a patch for the 0.5.0 release of RR. It has proved useful and is now more fully incorporated into RR. Now you can pass in your subject or use the subject provided by RR by using the \`!\` method. Here are some examples of Double Chaining:
 

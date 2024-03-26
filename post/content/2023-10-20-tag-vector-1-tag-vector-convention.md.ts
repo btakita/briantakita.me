@@ -61,7 +61,7 @@ const company_company = { name: 'SpaceX' }
 // company<-person
 \`\`\`
 
-# Overriding the Default Direction
+## Overriding the Default Direction
 
 The default direction can be overridden in code with a comment above or before the statement.
 
@@ -71,7 +71,7 @@ const company_company = { name: 'SpaceX' }
 // company<-person
 \`\`\`
 
-# Tag Vectors with 3 or more tags
+## Tag Vectors with 3 or more tags
 
 A tag vector composes of any number of tags. Apply the inference level rules to the first & last tag. In the following case:
 
@@ -104,7 +104,7 @@ const company_registry_person = { name: 'SpaceX' }
 // company<-registry<-person
 \`\`\`
 
-## multi-dimension tag vectors
+### multi-dimension tag vectors
 
 Compose tag vectors into a multi-dimension tag vector.
 
@@ -126,11 +126,11 @@ The inference levels of the name vectors are compared, with the more abstract ha
 
 Continuing with inference levels in grammar; an adjective, adverb, preposition, or conjunction \`as\` would be more abstract than a noun \`2023\`.
 
-# Data Structure Shape
+## Data Structure Shape
 
 The Tag Vector Convention can encode the shape of the data structure.
 
-## Array
+### Array
 
 \`\`\`ts
 const company_person_name_a = [
@@ -140,7 +140,7 @@ const company_person_name_a = [
 // company->person->name->a(array)
 \`\`\`
 
-### Multi-dimensional Array
+#### Multi-dimensional Array
 
 \`\`\`ts
 const company_a_person_name_aa = [
@@ -166,7 +166,7 @@ const d1_a_d2_a2_d3_a3_d4_a4:number[][][][] =
 	]
 \`\`\`
 
-## Record
+### Record
 
 \`\`\`ts
 const company_id_R_ceo_name:Record<string, string> = {
@@ -175,7 +175,7 @@ const company_id_R_ceo_name:Record<string, string> = {
 }
 \`\`\`
 
-## Map
+### Map
 
 \`\`\`ts
 const company_id_M_ceo_name:Map<string, string> = new Map([

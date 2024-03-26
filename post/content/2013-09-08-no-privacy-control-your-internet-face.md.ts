@@ -20,7 +20,7 @@ export const meta_ = ()=>post_meta__validate({
 export default ()=>md__raw_(`
 With all the revelations over how the NSA is snooping over your personal communications, companies storing and controlling your data, encryption backdoors and the fact that it's always crackable, one thing is becoming clear.
 
-# There is no privacy on the internet
+## There is no privacy on the internet
 
 Ok, maybe if you are good at covering your tracks, then there is a bit of privacy, but for most people doing most tasks, privacy is an illusion and has been for a while.
 
