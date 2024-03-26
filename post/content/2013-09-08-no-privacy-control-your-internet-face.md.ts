@@ -5,7 +5,7 @@ export const meta_ = ()=>post_meta__validate({
 	author: `Brian Takita`,
 	pub_date: '2016-09-07T04:39:00.000Z',
 	slug: 'no-privacy-control-your-internet-face',
-	hero_image: `http://briantakita.files.wordpress.com/2013/09/4959060_750beab5a4.jpg`,
+	hero_image: `https://briantakita.files.wordpress.com/2013/09/4959060_750beab5a4.jpg`,
 	tag_a1: [
 		'privacy',
 		'security',

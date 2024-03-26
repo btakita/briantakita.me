@@ -19,7 +19,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 					}, [
 						img_({
 							alt: '',
-							src: 'http://www.gravatar.com/avatar/d5fa38c6dc1cd61b01397e11b30425d7',
+							src: 'https://www.gravatar.com/avatar/d5fa38c6dc1cd61b01397e11b30425d7',
 							class: 'avatar avatar-50 photo',
 							height: '50',
 							width: '50'
@@ -58,7 +58,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 					}, [
 						img_({
 							alt: '',
-							src: 'http://www.gravatar.com/avatar/2475563a3ba1da4018af64f964ab45b0',
+							src: 'https://www.gravatar.com/avatar/2475563a3ba1da4018af64f964ab45b0',
 							class: 'avatar avatar-50 photo',
 							height: '50',
 							width: '50'
@@ -117,7 +117,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 					}, [
 						img_({
 							alt: '',
-							src: 'http://www.gravatar.com/avatar/10dcd7cf4ff4b679c284cedf7be4f68f',
+							src: 'https://www.gravatar.com/avatar/10dcd7cf4ff4b679c284cedf7be4f68f',
 							class: 'avatar avatar-50 photo',
 							height: '50',
 							width: '50'
