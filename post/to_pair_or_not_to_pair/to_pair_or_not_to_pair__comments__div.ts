@@ -18,7 +18,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 							'min-w-[50px]'),
 					}, [
 						img_({
-							alt: '',
+							alt: 'Joe Moore',
 							src: 'https://www.gravatar.com/avatar/d5fa38c6dc1cd61b01397e11b30425d7',
 							class: 'avatar avatar-50 photo',
 							height: '50',
@@ -57,7 +57,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 							'min-w-[50px]')
 					}, [
 						img_({
-							alt: '',
+							alt: 'Chad Woolley',
 							src: 'https://www.gravatar.com/avatar/2475563a3ba1da4018af64f964ab45b0',
 							class: 'avatar avatar-50 photo',
 							height: '50',
@@ -116,7 +116,7 @@ export function to_pair_or_not_to_pair__comments__div_<env_T extends relement_en
 							'min-w-[50px]')
 					}, [
 						img_({
-							alt: '',
+							alt: 'Brian Takita',
 							src: 'https://www.gravatar.com/avatar/10dcd7cf4ff4b679c284cedf7be4f68f',
 							class: 'avatar avatar-50 photo',
 							height: '50',
