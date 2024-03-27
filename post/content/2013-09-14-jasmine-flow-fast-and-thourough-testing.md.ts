@@ -1,9 +1,12 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { type request_ctx_T } from 'rebuildjs/server'
 import { a_, b_ } from 'relementjs/html'
-export const meta_ = ()=>post_meta__validate({
-	author: `Brian Takita`,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2013-09-14T02:00Z',
 	title: `Fast and Thorough Testing with Jasmine Flow`,
 	slug: 'jasmine-flow-fast-and-thourough-testing',

@@ -13,14 +13,14 @@ import { import_meta_env_ } from 'ctx-core/env'
 import { post_mod_a1 } from '../post/index.js'
 import favicon_svg from '../public/assets/favicon.svg'
 import briantakita_og_jpg from '../public/assets/images/briantakita-og.jpg'
-import briantakita_profile_photo_webp from '../public/assets/images/briantakita-profile-photo.webp'
+import author_img_url from '../public/assets/images/briantakita-profile-photo.webp'
 export const logo_image__new:logo_image__new_T = ($p?:{ class?:string })=>
 	site_logo__svg_($p)
 const title = 'Brian Takita'
 export const blog_site:blog_site_T = {
 	website: 'https://briantakita.me', // replace this with your deployed domain
 	author: 'Brian Takita',
-	author_img_url: briantakita_profile_photo_webp,
+	author_img_url,
 	description: 'Reactive Context Enthusiast',
 	title: title,
 	favicon: {

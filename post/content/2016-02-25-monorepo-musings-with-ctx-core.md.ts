@@ -1,11 +1,14 @@
 import { meteorjs__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
+import { type request_ctx_T } from 'rebuildjs/server'
 import { details_, p_, summary_ } from 'relementjs/html'
-export const meta_ = ()=>post_meta__validate({
-	title: `Monorepo Musings with ctx-core`,
-	author: `Brian Takita`,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2016-02-25T11:00:00.000Z',
+	title: `Monorepo Musings with ctx-core`,
 	slug: 'monorepo-musings-with-ctx-core',
 	tag_a1: [
 		'ctx-core',

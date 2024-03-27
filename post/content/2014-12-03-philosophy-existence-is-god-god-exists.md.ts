@@ -7,9 +7,12 @@ import {
 	universal_set__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
-export const meta_ = ()=>post_meta__validate({
-	author: 'Brian Takita',
+import { type request_ctx_T } from 'rebuildjs/server'
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2014-12-03T12:00:00Z',
 	slug: 'philosophy-existence-is-god-god-exists',
 	title: 'Philosophy — Existence is God & God Exists',

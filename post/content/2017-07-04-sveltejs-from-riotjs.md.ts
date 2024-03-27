@@ -5,12 +5,15 @@ import {
 	sveltejs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-export const meta_ = ()=>post_meta__validate({
-	title: `Svelte JS from Riot JS`,
-	author: `Brian Takita`,
+import type { request_ctx_T } from 'rebuildjs/server'
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2017-07-04T00:30Z',
+	title: `Svelte JS from Riot JS`,
 	slug: 'sveltejs-from-riotjs',
 	tag_a1: [
 		'sveltejs',

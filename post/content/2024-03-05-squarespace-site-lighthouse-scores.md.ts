@@ -1,6 +1,7 @@
 import { briantakita_server_env_ } from '@btakita/domain--server--briantakita/env'
 import { heroicons_chevron_double_right_ } from '@btakita/ui--server--briantakita/icon'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { nofollow_tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
@@ -12,8 +13,9 @@ import chrome_dev_toolbar_menu_lighthouse_webp
 	from '../../public/assets/lighthouse/chrome-dev-toolbar-menu-lighthouse.webp'
 const slug = 'squarespace-site-lighthouse-scores'
 const bucket_url = briantakita_server_env_().ASSETS_BRIANTAKITA_ME__BUCKET_URL
-export const meta_ = ()=>post_meta__validate({
-	author: `Brian Takita`,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2024-03-06T01:41:02.185Z',
 	title: 'Squarespace Site Lighthouse Scores',
 	slug,

@@ -7,11 +7,14 @@ import {
 	vault_scm__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
-export const meta_ = ()=>post_meta__validate({
-	author: `Brian Takita`,
+import { type request_ctx_T } from 'rebuildjs/server'
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
+	author: site__author_(ctx)!,
+	author_img_url: site__author_img_url_(ctx)!,
 	pub_date: '2004-09-18T21:31:00Z',
 	title: `Subversion Source Control`,
 	slug: 'subversion-source-control',
