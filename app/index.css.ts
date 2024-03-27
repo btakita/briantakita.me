@@ -7,23 +7,6 @@ export default ()=>`
 @tailwind components;
 @tailwind utilities;
 @layer base {
-	:root,
-	html[data-theme="light"] {
-		--color-fill: ${light_theme_color_fill};
-		--color-text-base: 40,39,40;
-		--color-accent: 0,108,172;
-		--color-card: 230,230,230;
-		--color-card-muted: 205,205,205;
-		--color-border: 236,233,233;
-	}
-	html[data-theme="dark"] {
-		--color-fill: ${dark_theme_color_fill};
-		--color-text-base: 234,237,243;
-		--color-accent: 255,107,1;
-		--color-card: 52,63,96;
-		--color-card-muted: 138,51,2;
-		--color-border: 171,75,8;
-	}
 	#sun-svg,
 	html[data-theme="dark"] #moon-svg {
 		display: none;
