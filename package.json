@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@btakita/domain--server--briantakita": "workspace:*",
+		"@btakita/ui--browser--briantakita": "workspace:*",
 		"@btakita/ui--server--briantakita": "workspace:*",
 		"@ctx-core/preprocess": "^0.1.3",
 		"@ctx-core/source-map": "^0.2.68",
@@ -18,6 +19,7 @@
 		"@rappstack/domain--server--blog": "workspace:*",
 		"@rappstack/ui--any": "workspace:*",
 		"@rappstack/ui--any--blog": "workspace:*",
+		"@rappstack/ui--browser": "workspace:*",
 		"@rappstack/ui--browser--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
