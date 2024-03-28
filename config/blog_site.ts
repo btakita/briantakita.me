@@ -37,6 +37,8 @@ export const blog_site:blog_site_T = {
 		}
 	],
 	light_and_dark_mode: true,
+	light_theme_color_fill: '251,254,251',
+	dark_theme_color_fill: '33,39,55',
 	google_site_verification: import_meta_env_().PUBLIC_GOOGLE_SITE_VERIFICATION,
 	gtag_id: 'G-F2F171MSE3',
 	logo_image__new,

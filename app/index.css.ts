@@ -1,7 +1,5 @@
 // @formatter:off
-import { light_theme_color_fill } from '../config/index.js'
 // language=css
-import { dark_theme_color_fill } from '../config/index.js'
 export default ()=>`
 @tailwind base;
 @tailwind components;
