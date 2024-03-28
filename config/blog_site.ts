@@ -17,9 +17,11 @@ import author_img_url from '../public/assets/images/briantakita-profile-photo.we
 export const logo_image__new:logo_image__new_T = ($p?:{ class?:string })=>
 	site_logo__svg_($p)
 const title = 'Brian Takita'
+const website = 'https://briantakita.me'
 export const blog_site:blog_site_T = {
-	website: 'https://briantakita.me', // replace this with your deployed domain
+	website,
 	author: 'Brian Takita',
+	author_url: website,
 	author_img_url,
 	description: 'Reactive Context Enthusiast',
 	title: title,
