@@ -57,7 +57,7 @@ import { sig_ } from 'rmemo'
 export const user_a$ = sig_<User[]>([], user_a$=>
 	fetch('https://an.api/users')
 		.then(res=>res.json())
-		.then(user_a=>user_a$._ = user_a))
+		.then(user_a=>user_a$.set(user_a)))
 export function user__add(user:User) {
 	user_a$([...user_a$(), user])
 }
