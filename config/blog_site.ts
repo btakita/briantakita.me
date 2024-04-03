@@ -62,7 +62,7 @@ export const brian_takita = <author_T>{
 	'@id': url__join(website, '#Person'),
 	name: 'Brian Takita',
 	url: website,
-	image: author_image,
+	image: url__join(website, author_image),
 }
 export const blog_site:blog_site_T = {
 	website,
