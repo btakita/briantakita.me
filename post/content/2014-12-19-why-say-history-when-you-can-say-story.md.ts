@@ -1,14 +1,11 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import encyclopedia_britannica_jpg from '../../public/assets/images/encyclopedia-britannica.jpg'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2014-12-19T05:50Z',
 	title: `Why Say History When You Can Say Story?`,
 	slug: 'why-say-history-when-you-can-say-story',

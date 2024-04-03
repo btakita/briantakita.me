@@ -9,12 +9,9 @@ import {
 	wintersmithjs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2017-06-07T05:30Z',
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,
 	slug: 'monorepo-static-sites-using-sveltejs-rollup-bash',

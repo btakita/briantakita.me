@@ -10,16 +10,13 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { figcaption_, figure_, img_ } from 'relementjs/html'
 import web_framework_realworld_app_sizes_png from '../../public/assets/images/web-framework-realworld-app-sizes.png'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-10-17T15:35:28.259Z',
 	title: `My new personal site`,
 	slug: 'personal-site-written-with-astro-solidjs-ctx-core-nanostores',

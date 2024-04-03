@@ -8,14 +8,11 @@ import {
 } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'
 import unicorn_jpg from '../../public/assets/images/unicorn.jpg'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2014-12-10T07:15:00Z',
 	title: `Magic Connections with the Philosophy of Language`,
 	slug: `magic-connections-with-the-philosophy-of-language`,

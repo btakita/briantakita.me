@@ -1,12 +1,9 @@
 import { briantakita_com__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2013-09-05T05:07Z',
 	title: `DIY SEO with BrandYourself.com`,
 	slug: 'diy-seo-brandyourself',

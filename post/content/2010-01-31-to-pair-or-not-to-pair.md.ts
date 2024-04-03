@@ -1,13 +1,10 @@
 import { post_meta__validate } from '@rappstack/domain--any--blog/post'
-import { site__author_, site__author_img_url_ } from '@rappstack/domain--server/site'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { to_pair_or_not_to_pair__comments__div_ } from '../to_pair_or_not_to_pair/index.js'
-export const meta_ = (ctx:request_ctx_T)=>post_meta__validate({
-	author: site__author_(ctx)!,
-	author_img_url: site__author_img_url_(ctx)!,
+export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2010-01-31T12:00Z',
 	title: `To Pair or Not to Pair`,
 	slug: 'to-pair-or-not-to-pair',
