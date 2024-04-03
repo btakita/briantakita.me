@@ -1,4 +1,4 @@
-import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'

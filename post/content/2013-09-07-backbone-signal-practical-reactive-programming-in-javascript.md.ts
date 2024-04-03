@@ -4,7 +4,7 @@ import {
 	nodejs__tb_a_,
 	rundavoo__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
-import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'

@@ -1,6 +1,6 @@
 import { briantakita_server_env_ } from '@btakita/domain--server--briantakita/env'
 import { heroicons_chevron_double_right_ } from '@btakita/ui--server--briantakita/icon'
-import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { nofollow_tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'

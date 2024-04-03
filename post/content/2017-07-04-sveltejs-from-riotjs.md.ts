@@ -4,7 +4,7 @@ import {
 	riotjs__tb_a_,
 	sveltejs__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
-import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import type { request_ctx_T } from 'rebuildjs/server'

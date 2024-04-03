@@ -9,7 +9,7 @@ import {
 	vercel__tb_a_,
 } from '@btakita/ui--server--briantakita/anchor'
 import { attribution_web_framework_realworld_app_sizes__add } from '@btakita/ui--server--briantakita/attribution'
-import { post_meta__validate } from '@rappstack/domain--any--blog/post'
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
