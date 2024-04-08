@@ -8,9 +8,10 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	tag_a1: [
 		'ruby',
 		'rails',
-		'open source',
+		'cache',
+		'open-source',
 		'test',
-		'pivotal labs',
+		'pivotal-labs',
 	],
 	description: `Cacheable Flash testing`,
 	canonical_url: 'https://tanzu.vmware.com/content/blog/cacheable-flash-0-1-4-test-helpers',

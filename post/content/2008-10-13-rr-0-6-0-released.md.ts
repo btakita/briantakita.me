@@ -8,9 +8,9 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	slug: 'rr-0-6-0-released',
 	tag_a1: [
 		'ruby',
-		'open source',
+		'open-source',
 		'test',
-		'pivotal labs',
+		'pivotal-labs',
 	],
 	description: `RR version 0.6.0 is released`,
 	canonical_url: 'https://tanzu.vmware.com/content/blog/rr-0-6-0-released',

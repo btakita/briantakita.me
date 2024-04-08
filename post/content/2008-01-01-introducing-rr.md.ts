@@ -14,9 +14,9 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	slug: 'introducing-rr',
 	tag_a1: [
 		'ruby',
-		'open source',
+		'open-source',
 		'test',
-		'pivotal labs',
+		'pivotal-labs',
 	],
 	description:
 		`Introducing RR (Double Ruby) library for testing`,

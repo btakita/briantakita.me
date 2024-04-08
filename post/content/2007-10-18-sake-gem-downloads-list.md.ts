@@ -8,8 +8,8 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	slug: 'sake-gem-downloads-list',
 	tag_a1: [
 		'ruby',
-		'open source',
-		'pivotal labs',
+		'open-source',
+		'pivotal-labs',
 	],
 	description:
 		`Use the ruby sake tool to list the total downloads of ruby gems`,

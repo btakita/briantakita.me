@@ -7,6 +7,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2004-11-04-generic-query-analyzer-0-1-1-released.md.js'),
 	import('./content/2004-11-05-generic-query-analyzer-0-2-1-released.md.js'),
 	import('./content/2007-04-17-redefining-constants.md.js'),
+	import('./content/2007-08-07-cacheable-flash.md.js'),
 	import('./content/2007-10-08-cacheable-flash-0-1-4.md.js'),
 	import('./content/2007-10-18-sake-gem-downloads-list.md.js'),
 	import('./content/2008-01-01-introducing-rr.md.js'),

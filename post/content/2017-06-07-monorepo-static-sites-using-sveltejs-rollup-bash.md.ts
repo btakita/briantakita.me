@@ -21,7 +21,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'sveltejs',
 		'monorepo',
 		'web development',
-		'open source',
+		'open-source',
 	],
 	description: `Building my old site briantakita.com using sveltejs, rollupjs, ctx-core, bash`
 })

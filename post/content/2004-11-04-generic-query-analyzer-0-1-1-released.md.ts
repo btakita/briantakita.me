@@ -11,7 +11,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	tag_a1: [
 		'db',
 		'sql',
-		'open source',
+		'open-source',
 		'dotnet'
 	],
 	description:

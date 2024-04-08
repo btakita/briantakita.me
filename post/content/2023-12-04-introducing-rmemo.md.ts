@@ -20,7 +20,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'reactive',
 		'state management',
 		'reactive state management',
-		'open source',
+		'open-source',
 	],
 	description: `Introducing the rmemo reactive state management library.`,
 })

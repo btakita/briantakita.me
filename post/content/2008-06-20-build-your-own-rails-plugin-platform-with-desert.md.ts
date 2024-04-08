@@ -9,8 +9,8 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	tag_a1: [
 		'ruby',
 		'rails',
-		'open source',
-		'pivotal labs',
+		'open-source',
+		'pivotal-labs',
 	],
 	description:
 		`Create plugins-based platforms for Rails using Desert`,
