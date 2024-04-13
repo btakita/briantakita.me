@@ -23,9 +23,9 @@
 		"@rappstack/ui--browser--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
-		"@rebuildjs/tailwindcss": "^0.9.30",
-		"@tailwindcss/forms": "^0.5.7",
-		"@tailwindcss/typography": "^0.5.12",
+		"@rebuildjs/tailwindcss": "^0.10.1",
+		"@tailwindcss/forms": "latest",
+		"@tailwindcss/typography": "latest",
 		"cssnano": "^6.1.2",
 		"ctx-core": "^7.1.5",
 		"elysia": "^1.0.13",
@@ -36,7 +36,7 @@
 		"rebuildjs": "^0.69.7",
 		"relementjs": "^0.79.5",
 		"relysjs": "^1.20.11",
-		"tailwindcss": "^3.4.3"
+		"tailwindcss": "latest"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
