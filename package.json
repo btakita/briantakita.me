@@ -23,7 +23,7 @@
 		"@rappstack/ui--browser--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
-		"@rebuildjs/tailwindcss": "^0.10.1",
+		"@rebuildjs/tailwindcss": "^0.10.2",
 		"@tailwindcss/forms": "latest",
 		"@tailwindcss/typography": "latest",
 		"cssnano": "^6.1.2",
@@ -36,7 +36,7 @@
 		"rebuildjs": "^0.69.7",
 		"relementjs": "^0.79.5",
 		"relysjs": "^1.20.11",
-		"tailwindcss": "latest"
+		"tailwindcss": "^3.4.3"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
