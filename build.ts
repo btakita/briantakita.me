@@ -11,7 +11,7 @@ import {
 	type relysjs__build_config_T,
 	relysjs__ready__wait,
 	relysjs_browser__build,
-	relysjs_server__build
+	relysjs_server__build, run
 } from 'relysjs/server'
 import { config__init } from './config/index.js'
 import tailwindcss_config from './tailwind.config.js'
@@ -38,29 +38,41 @@ export async function build(config?:relysjs__build_config_T) {
 	const preprocess_plugin = preprocess_plugin_()
 	const json_esbuild_plugin = json_esbuild_plugin_()
 	await Promise.all([
-		relysjs_browser__build({
-			...config ?? {},
-			treeShaking: true,
-			plugins: [
-				esmcss_esbuild_plugin,
-				rebuild_tailwind_plugin,
-				preprocess_plugin,
-				json_esbuild_plugin,
-			],
+		run(async ()=>{
+			try {
+				return relysjs_browser__build({
+					...config ?? {},
+					treeShaking: true,
+					plugins: [
+						esmcss_esbuild_plugin,
+						rebuild_tailwind_plugin,
+						preprocess_plugin,
+						json_esbuild_plugin,
+					],
+				})
+			} finally {
+				console.info('relysjs_browser__build|done')
+			}
 		}),
-		relysjs_server__build({
-			...config ?? {},
-			target: 'es2022',
-			external: await server_external_(),
-			treeShaking: true,
-			plugins: [
-				esmcss_esbuild_plugin,
-				rebuild_tailwind_plugin,
-				preprocess_plugin,
-				json_esbuild_plugin,
-			],
+		run(async ()=>{
+			try {
+				return relysjs_server__build({
+					...config ?? {},
+					target: 'es2022',
+					external: await server_external_(),
+					treeShaking: true,
+					plugins: [
+						esmcss_esbuild_plugin,
+						rebuild_tailwind_plugin,
+						preprocess_plugin,
+						json_esbuild_plugin,
+					],
+				})
+			} finally {
+				console.info('relysjs_server__build|done')
+			}
 		}),
-		relysjs__ready__wait(15_000)
+		relysjs__ready__wait(60_000)
 	])
 }
 function server_external_() {
