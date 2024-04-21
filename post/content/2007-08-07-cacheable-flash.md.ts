@@ -24,7 +24,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 Page caching is an easy way to get massive performance and scalability increases with little up front effort.
 
 Of course, when page caching, a number of design changes are necessary. For example, server side session data cannot be used to render data on cached pages.

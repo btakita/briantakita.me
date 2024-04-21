@@ -26,7 +26,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I'm pleased to announce ${rmemo__tb_a_()}, a tiny no-fluff reactive state library. rmemo is the reactive core of ${relementjs__tb_a_()}, a server & browser UI rendering library that I also released.
 
 rmemo is a tiny no-fluff state management library. It offers reactive memos & reactive signals for the server & browser. This includes:

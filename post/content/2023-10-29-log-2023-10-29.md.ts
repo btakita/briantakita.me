@@ -19,7 +19,7 @@ import {
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import type { request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-10-29T08:31:00Z',
 	title: 'Log 2023-10-29',
@@ -33,7 +33,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ## ${cms__tb_a_()}
 
 Looking at some tools to rapidly create CMS backed sites for artists, bloggers, etc.

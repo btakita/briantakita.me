@@ -2,7 +2,7 @@ import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
-import type { request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2018-02-27T20:30:00Z',
 	title: `Naming Conventions`,
@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_(`Note: The naming convention described in this article is named `, tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vector'), `:`)}
 
 ---

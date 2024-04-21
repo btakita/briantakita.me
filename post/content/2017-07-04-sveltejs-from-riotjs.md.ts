@@ -7,7 +7,7 @@ import {
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import type { request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2017-07-04T00:30Z',
 	title: `Svelte JS from Riot JS`,
@@ -22,7 +22,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose Svelte & a sample web component using Svelte.
 
 ${sveltejs__tb_a_()} is a build-time isomorphic library that utilizes a transpilation process to build completely	self-contained web components.

@@ -21,7 +21,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20051217083500/http://geekswithblogs.net/btakita/archive/2004/09/18/11347.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 I am very impressed with ${subversion__tb_a_('Subversion Source Control')}.

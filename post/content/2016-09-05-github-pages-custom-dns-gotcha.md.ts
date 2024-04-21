@@ -16,7 +16,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I set up ${briantakita_com__tb_a_()} using ${github_pages__tb_a_()} to btakita.github.io.
 
 To set up the DNS, I followed the ${tb_a_({ href: 'https://help.github.com/articles/setting-up-a-custom-domain-with-pages', nofollow: true }, 'official instructions')} and ${tb_a_({ href: 'http://davidensinger.com/2013/03/setting-the-dns-for-github-pages-on-namecheap/', nofollow: true }, 'github pages with namecheap')}.

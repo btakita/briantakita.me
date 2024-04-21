@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I just released Cacheable Flash 0.1.4. This version includes test helpers so you can easily test your cache messages. It works by allowing you to make assertions on the flash cookie.
 
 Here is a test/unit example:

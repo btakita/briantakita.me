@@ -6,6 +6,8 @@ import {
 	WebSite_id_ref_
 } from '@btakita/domain--server--briantakita/jsonld'
 import { blog_request_ctx__ensure, type blog_request_ctx__ensure_config_T } from '@rappstack/domain--server--blog/ctx'
+import { marked__set } from '@rappstack/ui--any/md'
+import { app_marked_ } from '@rappstack/ui--server/md'
 import type { middleware_ctx_T } from 'rebuildjs/server'
 export function briantakita_request_ctx__ensure(
 	middleware_ctx:middleware_ctx_T,
@@ -21,5 +23,6 @@ export function briantakita_request_ctx__ensure(
 	Organization_id_ref_(request_ctx)
 	AboutPage_id_ref_(request_ctx)
 	ContactPage_id_ref_(request_ctx)
+	marked__set(request_ctx, app_marked_(request_ctx))
 	return request_ctx
 }

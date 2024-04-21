@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_(`From my `, tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/08/doing-good-in-the-addiction-economy/', nofollow: true }, `wordpress blog`))}
 
 ${tb_a_({ href: 'http://kajsotala.fi/2013/09/doing-good-in-the-addiction-economy/', nofollow: true }, `Doing Good in the Addiction Economy`)}

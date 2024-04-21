@@ -13,7 +13,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_('Originally posted on ', tb_a_({ href: 'https://web.archive.org/web/20120611125513/http://blog.honk.com/javascript-design-idiom-%e2%80%93-build-wide-not-deep/', nofollow: true }, 'blog.honk.com'))}
 
 Providing a rich user experience calls for good client side software. Javascript is a powerful language to provide the needed functionality. Like any other tool it has it’s strengths and weaknesses. Successful design in Javascript favors composition, loose coupling, and separation of concerns more so than in most other languages. To see why, let’s look at some properties of Javascript.

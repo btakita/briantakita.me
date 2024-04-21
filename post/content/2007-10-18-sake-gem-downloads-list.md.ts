@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I have a few gems on Rubyforge and I want to track how many of them were downloaded. I found Firefox's search tools lacking to find my gem rr.
 
 To fix this issue, I made a sake task, named \`gems:downloads:list\`, that prints the gem downloads in text.

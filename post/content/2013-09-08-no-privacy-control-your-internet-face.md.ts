@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 With all the revelations over how the NSA is snooping over your personal communications, companies storing and controlling your data, encryption backdoors and the fact that it's always crackable, one thing is becoming clear.
 
 ## There is no privacy on the internet

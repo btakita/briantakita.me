@@ -14,7 +14,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 We all like a good oxymoron, like redefining constants. There are times when we need to redefine a constant to test an edge case in the application code. Before I go into this example, please note that redefining constants is generally not a good way to have maintainable software. If you find yourself needing to redefine a constant, it may be an indication that refactoring is needed.
 
 Given that, let's get into an example where you may need to redefine a constant. Lets say an app has does file uploads to Amazon's S3 service. A common practice to upload to a real S3 account made for the production, development, or demo environment.

@@ -13,7 +13,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20130407190636/http://geekswithblogs.net/btakita/archive/2004/09/23/11571.aspx', nofollow: true }, 'geekswithblogs.net'))}
 
 At work, I'm having an issue with losing control over events in my code. One big issue I'm having is recursion inthe \`DataRow.RowChanged\` event.

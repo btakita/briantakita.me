@@ -90,7 +90,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 *This post got long & is a work in progress. I will break it up into smaller posts soon.*
 
 My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in Engineer Physics which included 1 year of paid internships learning about ${msoffice__tb_a_()} & ${microstation__tb_a_()} automation at ${caltrans__tb_a_()} & working on the corporate intranet, which included a CRM system with ${asp__tb_a_()} at ${flextronics__tb_a_()}. I gained an appreciation of automating work & am still strongly driven to automate.
@@ -111,7 +111,7 @@ I started working with reactive programming since collaborating with Nathan Sobo
 
 I was a core contributor to the Behavior Driven Development library ${rspec__tb_a_()} & championed/developed the first (that I know of) implementation of nested \`describe\` statements${
 	footnote__sup_({ ctx, id: 'nested-describe-statements' }, [
-		md__inline_raw_(
+		md__inline_raw_(ctx,
 			// language=md
 			`This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.`)
 	])
@@ -158,7 +158,7 @@ I then joined ${rundavoo__tb_a_()} & created ${tb_a_({ href: '/posts/backbone-si
 Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this journey, my ${worldview__tb_a_('worldview')} expanded by experimenting with the ${ontology__tb_a_('ontological')} expression of a ${philosophy__tb_a_()}. During this exploration, I explored how word ${definition__tb_a_('definitions')} can be ${scope__tb_a_('scoped')} with ${context__tb_a_('context')}${
 	footnote__sup_({ ctx, id: 'context-of-entity' },
 		// language=md
-		md__inline_raw_(`Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
+		md__inline_raw_(ctx, `Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
 }. I learned about ${existence__tb_a_()} and in a weird way ${tb_a_({ href: '/posts/everything-exists' }, 'Everything Exists')}.
 
 ## ${neo__tb_a_()}
@@ -219,7 +219,7 @@ Astrojs provides ${tb_a_({ href: 'https://docs.astro.build/en/guides/client-side
 
 The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails, we saw Web 2.0 startups & the \`(a)gile->(A)gile\`${
 	footnote__sup_({ ctx, id: 'agile_Agile' },
-		md__inline_raw_(
+		md__inline_raw_(ctx,
 			// language=md
 			`\`agile->Agile\` lower-case \`a\` to capital \`A\`. As the agile movement gained success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`.trim()))
 } transition. Emerging web standards made jQuery more or less redundant. I've been through two celebrations to end ${ie6__tb_a_()} @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old	browser. Specialized development (front end developer, api developer) took prominence in corporations. Full Stack development was delegated to these departments. Even startups divided their development teams into these roles.

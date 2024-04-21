@@ -22,7 +22,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 This series about Tag Vector will go over a technique that I have iterated on since 2016 in ${ctx_core__tb_a_()}	& in other (mostly client) projects.
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
@@ -47,6 +47,6 @@ Tag Vector aims to be a tool to solve the two hard things in Computed Science by
 
 Tag Vector enables a flat structure in a code base. Tag Vector feels familiar to existing code & prose conventions. Tag Vector works with existing source code bases.
 
-${tag_vector_toc_c_()}
+${tag_vector_toc_c_({ ctx })}
 `.trim())
 // @formatter:on

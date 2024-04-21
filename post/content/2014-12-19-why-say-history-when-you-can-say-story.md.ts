@@ -16,7 +16,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${footnote__sup_({ ctx, id: 'encyclopedia-britannica-hero-image' }, `From `, tb_a_({ href: 'http://www.flickr.com/photos/bostontx/4461314652/', nofollow: true }), ` - Licensed under Creative Commons`)}
 
 In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.

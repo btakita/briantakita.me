@@ -26,7 +26,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I have recently released ${backbone_signal__tb_a_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming', nofollow: true }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
 
 \`\`\`js

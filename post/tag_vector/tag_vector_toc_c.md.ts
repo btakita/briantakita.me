@@ -1,8 +1,9 @@
 import { md__raw_ } from '@rappstack/ui--any/md'
-export function tag_vector_toc_c_() {
+import { type request_ctx_T } from 'rebuildjs/server'
+export function tag_vector_toc_c_({ ctx }:{ ctx:request_ctx_T }) {
 	// @formatter:off
 	// language=md
-  return md__raw_(`
+  return md__raw_(ctx, `
 Tag Vector Series: Table of Contents
 
 - [Tag Vector: Part 0: Introduction](/posts/tag-vector-0-introduction)

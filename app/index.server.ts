@@ -73,7 +73,7 @@ export default middleware_(middleware_ctx=>
 				middleware_ctx,
 				context,
 				{ blog_site })
-			const portfolio__html = portfolio__html_()
+			const portfolio__html = portfolio__html_({ ctx })
 			const articleBody = await html__text_(portfolio__html)
 			return html_response__new(portfolio__doc_html_({ ctx, portfolio__html, articleBody }))
 		})

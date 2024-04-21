@@ -11,7 +11,7 @@ import {
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
-import type { request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2019-04-03T12:00:00Z',
 	title: 'Log 2019-04-03',
@@ -26,7 +26,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ## Naming Conventions
 
 I've been experimenting & making progress with ${tb_a_({ href: '/posts/naming-conventions' }, 'Naming Conventions')}. Naming conventions for immutable entities has proven to reduce incidental complexity. I'm working on fleshing out the last details & a whitepaper. Please stay tuned. This practice has helped me remove incidental complexity from my codebases.

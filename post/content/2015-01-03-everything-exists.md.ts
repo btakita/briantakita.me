@@ -19,7 +19,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 Does God exist? Surely, Santa Claus & Unicorns do not exist. Yet we are talking about them. If they don't exist, why & how am I talking about them?
 
 Santa Claus & Unicorns do exist, as fictional characters; more on God later. Everything Exists. The concept conceptually exists. It may also physically exist; like the men who ${tb_a_({ href: 'http://www.huffingtonpost.com/2014/12/23/real-santas_n_6366974.html', nofollow: true }, 'name themselves Santa Claus')}. 

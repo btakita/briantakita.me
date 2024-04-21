@@ -2,7 +2,7 @@ import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { blog_post__top_note__p_ } from '@rappstack/ui--server--blog/post'
-import type { request_ctx_T } from 'rebuildjs/server'
+import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2019-04-15T20:20:00Z',
 	title: `Multi Underscore Tag Naming Convention Analysis`,
@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${blog_post__top_note__p_(`Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a bibliographic system. I gratefully accept any bibliographic references to ideas that I may present.`)}
 
 ---

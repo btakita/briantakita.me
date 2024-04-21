@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 > I wrote about Tag Vector in:<br>
 > https://briantakita.me/posts/tag-vector-0-introduction<br>
 > https://briantakita.me/posts/tag-vector-1-tag-vector-convention<br>

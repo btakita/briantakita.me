@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 A Data ontology I saw ${footnote__sup_({ ctx, id: 'clif-high-data' }, tb_a_({ href: 'https://youtu.be/z78fcGbtZ94?si=JznGhvjrl0EvgBPj&t=639', nofollow: true }, `SCI-FI WORLD LUNACY - EXPLORERS' GUIDE TO SCIFI WORLD`))}
 
 * **Datum**: A single piece of information

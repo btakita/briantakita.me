@@ -27,7 +27,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md' }, `Magic`)} exists! Well,if you have listened to me lately, you will hear that ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, `everything exists (including fiction)`)}. When everything exists, we can recapture the entirety of language from those who impose restrictions on ${existence__tb_a_()}. We have all heard "that does not exist". We can now say, "that" does exist & "that" is a useful concept.
 
 I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language', nofollow: true }, 'Philosophy of Language (Wikipedia)')} brings concepts together into a system of logic to yield magical & insightful connections in Existence.

@@ -24,7 +24,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 I'm pleased to introduce a new Test Double (or mock) framework named ${rr__tb_a_()}, which is short for Double	Ruby. Why a Double framework and not a Mock framework?
 
 A mock is a type of test double. Since RR supports mocks, stubs, and proxies, it makes sense to refer to RR as a double framework. The proxy is a new usage pattern that I will introduce later in this article, and in more detail in future articles.

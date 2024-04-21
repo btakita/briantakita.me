@@ -27,7 +27,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default ()=>md__raw_(`
+export default (ctx:request_ctx_T)=>md__raw_(ctx, `
 BrianTakita.com *(now briantakita.me)* is now built using a technology chain consisting of ${sveltejs__tb_a_()}, ${rollupjs__tb_a_()}, ${ctx_core__tb_a_()}, & good ol' Bash.
 
 You can see the source in the ${briantakita_com__tb_a_()} repo.
