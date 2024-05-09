@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 Now it's time to implement server side rendering (SSR) using SvelteJS.
 
 On my current project, I will be migrating from ${pugjs__tb_a_()} to ${sveltejs__tb_a_()}. The key concepts are ${tb_a_({ href: 'https://svelte.technology/guide#server-side-rendering', nofollow: true }, 'Server Side Rendering')}, ${tb_a_({ href: 'https://github.com/sveltejs/svelte/pull/649', nofollow: true }, 'Hydration')}, client/server architectural options.

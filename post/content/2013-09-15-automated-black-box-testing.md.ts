@@ -14,7 +14,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 Automated testing encourages your software to behave a certain way going forward into the future.
 
 When you write tests against your user facing requirements (black box and acceptance tests), verifying how your app acts.

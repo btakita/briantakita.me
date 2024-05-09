@@ -21,7 +21,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 Philosophies are conceptual models. Conceptual models have a ${domain_specific_language__tb_a_()}. If we expand	the scope of certain definitions, we have the ability to expand consciousness. If we are able to make more	associations between concepts, consciousness expands.
 
 I’m evolving a philosophy that has it’s own domain language. The domain language is similar to their common cultural definitions, however, I expand the scope of these words. Expanding the scope of these words enables conceptual patterns to be reused across different scopes in Existence.

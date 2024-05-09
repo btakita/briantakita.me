@@ -32,7 +32,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 export default (ctx:request_ctx_T)=>{
 	// @formatter:off
 	// language=md
-	return md__raw_(ctx, `
+	return md__raw_({ ctx }, `
 Squarespace is an E-commerce CRM with dominant market share. I became curious about it's performance when reviewing some squarespace sites. I will use the lighthouse scores for performance analysis of some squarespace sites.
 
 ## Site performance impacts SEO

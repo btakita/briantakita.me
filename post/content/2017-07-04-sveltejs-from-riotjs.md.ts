@@ -22,7 +22,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 Creating Web Components/Web Apps has never been more pleasurable. It's out with the old & in with the new. I converted my client's project to use Svelte JS from Riot JS. This post highlights some considerations why I chose Svelte & a sample web component using Svelte.
 
 ${sveltejs__tb_a_()} is a build-time isomorphic library that utilizes a transpilation process to build completely	self-contained web components.

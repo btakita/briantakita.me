@@ -16,7 +16,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 Automated testing helps to ensure that your software does not have regressions as you make changes. These changes include refactorings, new features, bug fixes, etc. A Software product has an intricate set of behavior which includes a large number of edge cases.
 
 I'm a ${a_({ href: '/posts/automated-black-box-testing' }, 'fan of black box')} testing, because it is decoupled from the implementation. The implication is the ${tb_a_({ href: 'http://briantakita.wordpress.com/2013/09/15/why-its-better-to-strive-toward-accomplishment-rather-than-method/' }, b_('what'), ` is verified, rather than the `, b_('how'))}. 

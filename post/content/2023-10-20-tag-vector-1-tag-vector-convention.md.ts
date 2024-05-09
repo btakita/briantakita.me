@@ -20,7 +20,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 ${tag_vector_toc_c_({ ctx })}
 
 Tag Vector is a system to connect "tags" with vector arrows. The vector demonstrates the contextual relationship between tags. The tags are in relation to each other. The relationships between tags are relative to each other on inference levels. A tag in a vector has a higher \`↑\`, lower \`↓\`$, or the same inference level compared to other tags. ${no_up_down_arrow_ligatures_footnote_c_(ctx)}.
@@ -187,7 +187,7 @@ const company_id_M_ceo_name:Map<string, string> = new Map([
 function no_up_down_arrow_ligatures_footnote_c_(ctx:request_ctx_T) {
 	// @formatter:off
 	// language=md
-	return footnote__sup_({ ctx, id: 'no_up_down_arrow_ligatures' }, md__inline_raw_(ctx, `
+	return footnote__sup_({ ctx, id: 'no_up_down_arrow_ligatures' }, md__inline_raw_({ ctx }, `
 Unfortunately, there are no font ligatures for the up & down arrows so the utf-8 characters \`↑ (0x2191)\` & \`↓ (0x2193)\` are used.
 	`.trim()))
 	// @formatter:on

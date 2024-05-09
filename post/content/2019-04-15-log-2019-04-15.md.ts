@@ -14,7 +14,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 ## Multi Underscore Tag Naming Convention
 
 I wrote ${tb_a_({ href: '/posts/multi-underscore-tag-naming-convention-analysis' }, 'Multi Underscore Tag Naming Convention Analysis')} which describes the Ontology & structure of the naming convention.

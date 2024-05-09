@@ -32,7 +32,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 I'm excited to launch my new site https://briantakita.me. The Typescript/Javascript ecosystem has made important advancement over the past few years to support development from small scale to large scale websites & applications.
 
 This site is forked from ${astropaper__tb_a_()} theme. I made some modifications & will go through them in this	post.

@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 ${blog_post__top_note__p_(`Note: The naming convention described in this article is named `, tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vector'), `:`)}
 
 ---

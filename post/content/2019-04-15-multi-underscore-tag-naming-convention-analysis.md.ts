@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 ${blog_post__top_note__p_(`Note: I am primarily a practitioner & have not amassed a large reservoir of bibliographic references. Apologies for ideas have been previously published without being reference. I do not include them due to my ignorance or lack of a bibliographic system. I gratefully accept any bibliographic references to ideas that I may present.`)}
 
 ---

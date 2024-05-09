@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 While it is easy to include plugins in your Rails projects, it isn't easy to extend and customize the plugin for your own application. Desert solves that limitation/complication by making it just as easy to extend or modify a plugin class as it would be with any other class. In this post we will go over how Desert provides an easy way to manage and extend your plugins.
 
 At Pivotal, we offer an integrated platform of Rails plugins named Socialitis.

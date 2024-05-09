@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 I’m pleased to announce the 0.6.0 version of RR. The changes include:
 
 - Declaring Double subject objects without having to pass it in via the \`mock!\`, \`stub!\`, \`dont_allow!\`, \`instance_of!\`, and \`proxy!\` methods

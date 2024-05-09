@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // language=md
 // @formatter:off
-export default (ctx:request_ctx_T)=>md__raw_(ctx, `
+export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
 ${blog_post__top_note__p_(`Originally posted on `, tb_a_({ href: 'https://web.archive.org/web/20120513132750/http://blog.honk.com/to-pair-or-not-to-pair/', nofollow: true }, 'blog.honk.com'))}
 
 Here at Honk, we have been transitioning away from pair programming. I do not think that this necessarily reflects badly on pair programming. We still do some pair programming. However, our current circumstances steered us away from pair programming being our primary development practice.
