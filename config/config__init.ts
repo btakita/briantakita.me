@@ -1,3 +1,4 @@
+import './hljs.css'
 import { app_marked__set } from '@rappstack/ui--server/md'
 import { import_meta_env_ } from 'ctx-core/env'
 import hljs from 'highlight.js'
