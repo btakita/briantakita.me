@@ -5,14 +5,6 @@ export default ()=>`
 @tailwind components;
 @tailwind utilities;
 @layer base {
-	#sun-svg,
-	html[data-theme="dark"] #moon-svg {
-		display: none;
-	}
-	#moon-svg,
-	html[data-theme="dark"] #sun-svg {
-		display: block;
-	}
 	section,
 	footer {
 		@apply mx-auto max-w-3xl px-4;
