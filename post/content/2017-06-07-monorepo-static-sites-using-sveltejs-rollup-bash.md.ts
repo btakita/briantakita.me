@@ -38,15 +38,15 @@ This site was build using existing solutions such as ${jeckyllrb__tb_a_()}, ${wi
 
 Some of my essential features include:
 
-* a development server with watch/build scripts
-* generate static html files to serve from github.io
-* isomorphic javascript
+- a development server with watch/build scripts
+- generate static html files to serve from github.io
+- isomorphic javascript
 
 With these techs, the following is possible:
 
-* static file builds
-* server side rendering
-* client side rendering
+- static file builds
+- server side rendering
+- client side rendering
 
 This means the entire html page can be rendered using svelte on the server (or static file) & svelte on the client side (for dynamic components). This means there's no need for other rendering libraries like pug. Only svelte & raw html strings are needed to gain all of the features of dynamic isomorphic components!
 

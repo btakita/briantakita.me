@@ -4,9 +4,11 @@ import {
 	nodejs__tb_a_,
 	rundavoo__tb_a_
 } from '@btakita/ui--server--briantakita/anchor'
+import { sticky_h2__dl_tree_props_ } from '@btakita/ui--server--briantakita/sticky'
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { request_url__origin_ } from '@rappstack/domain--server/request'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
+import { dl_tree_ } from '@rappstack/ui--any/dl'
 import { md__raw_ } from '@rappstack/ui--any/md'
 import { type request_ctx_T } from 'rebuildjs/server'
 import neurons_jpg from '../../public/assets/images/neurons.jpg'
@@ -26,7 +28,8 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 })
 // @formatter:off
 // language=md
-export default (ctx:request_ctx_T)=>md__raw_({ ctx }, `
+export default (ctx:request_ctx_T)=>''
++ md__raw_({ ctx }, `
 I have recently released ${backbone_signal__tb_a_()}, which is a ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Reactive_programming', nofollow: true }, 'reactive programming (Wikipedia)')} library with a practical & javascripty model api.
 
 \`\`\`js
@@ -73,47 +76,43 @@ backbone-signal also utilizes Backbone's \`listenTo\` and \`listenToOnce\` metho
 backbone-signal is being used in ${rundavoo__tb_a_()} and has been fun to use, especially with ${nodejs__tb_a_()} & ${browserify__tb_a_()}. It's been a pleasure using a lightweight unframework to freely structure the dataflow logic of the site.
 
 The api includes:
-
-## Loading/Unloading
-
-- \`load\` - Invokes the loader when the value is not defined
-- \`forceLoad\` - Invokes the loader (regardless if the value is defined)
-- \`reload\` - Unsets the value then invokes the loader
-- \`unload\` - Invokes the unloader
-- \`setLoader\` - Sets the Loader callback
-- \`unsetLoader\` - Unsets the Loader callback
-- \`setUnloader\` - Sets the Unloader callback
-- \`unsetUnloader\` - Unsets the Unloader callback
-
-## Setters
-
-- \`set\` - Sets the value with the argument
-- \`unset\` - Unets the value
-- \`value\` - Returns the value
-
-## Getters/Listeners
-
-- \`get\` - Invoke the callback immediately and on any additional changes to the value
-- \`listen\` - Listen to any additional changes to the value (does not invoke the callback immediately)
-- \`getOnce\` - Invoke the callback immediately one time
-- \`listenOnce\` - Listen to any additional changes to the value one time
-- \`getTruthy\` - Invoke the callback immediately and on any additional changes to the value if the value is truthy
-- \`listenTruthy\` - Listen to any additional changes to the value if the value is truthy
-- \`getTruthyOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is truthy
-one time only
-- \`listenTruthyOnce\` - Listen to any additional changes to the value if the value is truthy one time only
-- getFalsy- Invoke the callback immediately and on any additional changes to the value if the value is falsy
-- \`listenFalsy\` - Listen to any additional changes to the value if the value is falsy
-- \`getFalsyOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is falsy one
-time only
-- \`listenFalsyOnce\` - Listen to any additional changes to the value if the value is falsy one time only
-- getDefined- Invoke the callback immediately and on any additional changes to the value if the value is defined
-- \`listenDefined\` - Listen to any additional changes to the value if the value is defined
-- \`getDefinedOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is defined
-one time only
-- \`listenDefinedOnce\` - Listen to any additional changes to the value if the value is defined one time only
-- \`unbind\` - Unbinds the given object from the callback
-- \`loading\`
-- \`isLoading\`
 `.trim())
++ dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
+	[`## Loading/Unloading`, [
+		`- \`load\` - Invokes the loader when the value is not defined`,
+		`- \`forceLoad\` - Invokes the loader (regardless if the value is defined)`,
+		`- \`reload\` - Unsets the value then invokes the loader`,
+		`- \`unload\` - Invokes the unloader`,
+		`- \`setLoader\` - Sets the Loader callback`,
+		`- \`unsetLoader\` - Unsets the Loader callback`,
+		`- \`setUnloader\` - Sets the Unloader callback`,
+		`- \`unsetUnloader\` - Unsets the Unloader callback`,]],
+	[`## Setters`, [
+		`- \`set\` - Sets the value with the argument`,
+		`- \`unset\` - Unets the value`,
+		`- \`value\` - Returns the value`,]],
+	[`## Getters/Listeners`, [
+		`- \`get\` - Invoke the callback immediately and on any additional changes to the value`,
+		`- \`listen\` - Listen to any additional changes to the value (does not invoke the callback immediately)`,
+		`- \`getOnce\` - Invoke the callback immediately one time`,
+		`- \`listenOnce\` - Listen to any additional changes to the value one time`,
+		`- \`getTruthy\` - Invoke the callback immediately and on any additional changes to the value if the value is truthy`,
+		`- \`listenTruthy\` - Listen to any additional changes to the value if the value is truthy`,
+		`- \`getTruthyOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is truthy`,
+		`one time only`,
+		`- \`listenTruthyOnce\` - Listen to any additional changes to the value if the value is truthy one time only`,
+		`- getFalsy- Invoke the callback immediately and on any additional changes to the value if the value is falsy`,
+		`- \`listenFalsy\` - Listen to any additional changes to the value if the value is falsy`,
+		`- \`getFalsyOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is falsy one`,
+		`time only`,
+		`- \`listenFalsyOnce\` - Listen to any additional changes to the value if the value is falsy one time only`,
+		`- getDefined- Invoke the callback immediately and on any additional changes to the value if the value is defined`,
+		`- \`listenDefined\` - Listen to any additional changes to the value if the value is defined`,
+		`- \`getDefinedOnce\` - Invoke the callback immediately or on any additional changes to the value if the value is defined`,
+		`one time only`,
+		`- \`listenDefinedOnce\` - Listen to any additional changes to the value if the value is defined one time only`,
+		`- \`unbind\` - Unbinds the given object from the callback`,
+		`- \`loading\``,
+		`- \`isLoading\``,]],
+])
 // @formatter:on

@@ -40,6 +40,14 @@ export default ()=>`
 	pre > code {
 		white-space: pre;
 	}
+	.prose :where(dd):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+		padding-inline-start: 0;
+	}
+	@media (min-width: 640px) {
+		.prose :where(dd):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+			padding-inline-start: 1.625em;
+		}
+	}
 }
 @layer components {
 	.focus-outline {

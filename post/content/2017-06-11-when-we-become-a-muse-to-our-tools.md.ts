@@ -26,6 +26,10 @@ Would we be better off if we consciously create & choose our tools? When would i
 
 Some "it depends" questions to consider&hellip;
 
-This post was inspired by ${tb_a_({ href: 'https://www.youtube.com/watch?v=L4IAwk1G5ts', nofollow: true }, 'Alan Watts')}${footnote__sup_({ ctx, id: 'alan-watts-thinking-too-much-illusion' }, 'Alan Watts Too much Thinking will throw you into Illusion')}.
+This post was inspired by ${
+	tb_a_({ href: 'https://www.youtube.com/watch?v=L4IAwk1G5ts', nofollow: true }, 'Alan Watts')
+}${
+	footnote__sup_({ ctx, id: 'alan-watts-thinking-too-much-illusion' }, 'Alan Watts Too much Thinking will throw you into Illusion')
+}.
 `.trim())
 // @formatter:on
