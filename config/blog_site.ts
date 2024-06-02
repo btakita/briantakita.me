@@ -78,7 +78,7 @@ export const blog_site:blog_site_T = {
 		{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
 		{ rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 1 },
 		{
-			href: 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;700&display=swap',
+			href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap',
 			rel: 'stylesheet'
 		}
 	],

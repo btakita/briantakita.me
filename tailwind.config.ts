@@ -47,8 +47,9 @@ const config:Config = {
 			transparent: 'transparent',
 		},
 		fontFamily: {
-			sans: ['Atkinson Hyperlegible'],
-			serif: ['Atkinson Hyperlegible'],
+			inter: ['Inter', 'sans-serif'],
+			sans: ['Inter', 'sans-serif'],
+			serif: ['Inter', 'serif'],
 			mono: ['JetBrains Mono', 'monospace'],
 		},
 		extend: {

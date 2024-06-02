@@ -96,6 +96,7 @@ export default (ctx:request_ctx_T)=>{
 		nl,
 		`Email me ${nofollow_tb_a_({ href: 'mailto:info+squarespace-site-lighthouse-scores@briantakita.me' }, 'email me')} discuss further.`,]],
 ])}
+// @formatter:on
 function lighthouse__iframe_(src:string, title:string) {
 	return iframe_({ 'data-src': src, class: 'w-full h-80 mb-24', loading: 'lazy', title })
 }

@@ -46,4 +46,5 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2023-12-04-introducing-rmemo.md.js'),
 	import('./content/2024-02-18-tag-vector-interpreted-by-chat-gpt.md.js'),
 	import('./content/2024-03-05-squarespace-site-lighthouse-scores.md.js'),
+	import('./content/2024-06-01-signals-proposal-compared-to-rmemo-weak-ref.md.js'),
 ])
