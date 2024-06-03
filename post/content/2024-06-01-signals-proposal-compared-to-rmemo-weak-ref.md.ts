@@ -62,14 +62,13 @@ export default (ctx:request_ctx_T)=>{
 						`An Effect is defined by the Signal Proposal. An Effect is not implemented within the Signals Proposal. Effects are ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#implementing-effects' }, 'implemented by the library')} using the Signals Proposal. Effects use Watcher to watch the Signals & manage the Signal Lifetime.`,]],
 					[`### Memory Management & Lifetime`, [
 						`From the Signal Proposal's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#memory-management' }, 'Memory Management:')} section. Annotations inline:`,
-						nl,
-						`> - If possible: A computed Signal should be garbage-collectable if nothing live is referencing it for possible future reads, even if it's linked into a broader graph which stays alive (e.g., by reading a state which remains live).`,
-						`>   - Note that most frameworks today require explicit disposal of computed Signals if they have any reference to or from another Signal graph which remains alive.`,
-						`>   - This ends up not being so bad when their lifetime is tied to the lifetime of a UI component, and effects need to be disposed of anyway.`,
-						`>   - If it is too expensive to execute with these semantics, then we should add explicit disposal (or "unlinking") of computed Signals to the API below, which currently lacks it.`,
-						nl,
 						()=>[
-							[`#### Live`, [
+							[`#### Live Signals`, [
+								`> - If possible: A computed Signal should be garbage-collectable if nothing live is referencing it for possible future reads, even if it's linked into a broader graph which stays alive (e.g., by reading a state which remains live).`,
+								`>   - Note that most frameworks today require explicit disposal of computed Signals if they have any reference to or from another Signal graph which remains alive.`,
+								`>   - This ends up not being so bad when their lifetime is tied to the lifetime of a UI component, and effects need to be disposed of anyway.`,
+								`>   - If it is too expensive to execute with these semantics, then we should add explicit disposal (or "unlinking") of computed Signals to the API below, which currently lacks it.`,
+								nl,
 								`A Signal is "live" when it is watched by a Watcher.`,
 								`- The "live" Signal is in the scope of the Watcher.`,
 								`- When a "live" Signal is unwatched, it is removed from the scope of the Watcher.`,
@@ -82,43 +81,87 @@ export default (ctx:request_ctx_T)=>{
 								`function hasSinks(s: State | Computed): boolean;`,
 								'```',
 								nl,
-								`A computed Signal should be garbage-collectable if nothing watched is referencing it for possible future reads.`,]],],
-						nl,
-						`> - A separate related goal: Minimize the number of allocations, e.g., `,
-						`>   - to make a writable Signal (avoid two separate closures + array)`,
-						`>   - to implement effects (avoid a closure for every single reaction)`,
-						`>   - In the API for observing Signal changes, avoid creating additional temporary data structures`,
-						`>   - Solution: Class-based API enabling reuse of methods and fields defined in subclasses`,
-						nl,
-						`Unnecessary allocations should be avoided. Benchmarks & memory profiling help detect the impact of these allocations.`,]],],]],],]],
+								`A computed Signal should be garbage-collectable if nothing watched is referencing it for possible future reads.`,]],
+							[`#### Memory Allocations`, [
+								`> - A separate related goal: Minimize the number of allocations, e.g., `,
+								`>   - to make a writable Signal (avoid two separate closures + array)`,
+								`>   - to implement effects (avoid a closure for every single reaction)`,
+								`>   - In the API for observing Signal changes, avoid creating additional temporary data structures`,
+								`>   - Solution: Class-based API enabling reuse of methods and fields defined in subclasses`,
+								nl,
+								`Unnecessary allocations should be avoided. Benchmarks & memory profiling help detect the impact of these allocations.`,]],],]],],]],],]],
 	[`## ${tb_a_({ href: 'https://github.com/ctx-core/rmemo' }, 'rmemo')}`, [
-		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive. A reactive memo has similarities to a Signal where both:`,
-		`- hold state in a "slot"`,
-		`- lazily load state`,
-		`- lazily start reactivity when called`,
+		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive.`,
+		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries.`,
+		nl,
 		()=>[
-			[`### Motivations to Develop rmemo`],
+			[`### Motivations to Develop rmemo`, [
+				`Here are some motivations that I had when making rmemo.`,
+				()=>[
+					[`#### General Purpose`, [
+						`rmemo is a general purpose library. Usages include:`,
+						`- reactive browser dom state`,
+						`- browser or server side async reactive state`,
+						`- devops async task scheduling`,
+						`- build async task scheduling`,
+						`- animation scheduling`,]],
+					[`#### Small & Focused`, [
+						`A library that is small to have a minimal impact to browser javascript package sizes.`]],
+					[`#### Simple API`, [
+						()=>[
+							[`##### Function instead of Object with \`.get()\``, [
+								`I find working with functions a bit more flexible than an object with \`.get()\`. Calling the rmemo function requires less code than calling \`.get()\` on an object. I tried both apis when writing relementjs, which is a small dom rendering library. The function api used less code.`,]],
+							[`##### Implicit Lifetime Management`, [
+								`This means Garbage Collection without having to manage lifetimes.`,
+								()=>[
+									[`###### Libraries Supporting Implicit Lifetimes`, [
+										`Reactive Signal libraries that use UI component trees can use the lifecycle of the components to watch & unwatch the Signals. Since these libraries require a component tree, they are not general purpose. These libraries include:`,
+										`- solidjs`,
+										`- sveltejs`,
+										`- vanjs`,
+										nl,
+										`rmemo uses WeakRef to support implicit lifetimes while being general purpose. Meaning rmemo does not require a component tree to operate.`,]],],]],],]],],]],
 			[`### Why does rmemo use WeakRef?`, [
 				()=>[
-					[`#### Signal Lifetime`],
-					[`#### Garbage Collection`],],]],],]],
+					[`#### Signal Lifetime`, [
+						`WeakRef allows parent rmemos to notify but not hold a strong reference to child rmemos.`,]],
+					[`#### Garbage Collection`, [
+						`The javascript garbage collector collects live rmemos that fall out of memory scope.`,]],],]],],]],
+			[`### Similarities to the Signals Proposal`, [
+				`A reactive memo has similarities to a Signal where both:`,
+				`- hold state in a "slot"`,
+				`- lazily load state`,
+				`- lazily start reactivity when called & watched`,]],
+			[`### Differences from the Signals Proposal`, [
+				()=>[
+					[`#### rmemo's Functions are Reactive When Called`, [
+						`When a rmemo function calls a dependency rmemo function, the reactive relationship immediately starts. There is no Watcher object. rmemo functions are immediately "watched".`,]],
+					[`#### rmemo Uses WeakRef to Support Garbage Collection`, [
+						`When a "live" rmemo goes out of scope, it will be Garbage Collected. In the Signals Proposal, a "live" Signal watched by a Watcher in memory scope will not be Garbage Collected.`,]],],]],
 	[`## Signals Proposal does not support WeakRef`, [
+		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build off of the Signals Proposal. rmemo could interop with the Signals Proposal as is, but that would require extra logic. There are only downsides to rmemo building off of the Signals Proposal.`,
 		()=>[
-			[`### Discussions for the Signals Proposal supporting WeakRef`],],]],
-	[`## Benchmarking the Signals Proposal vs rmemo/WeakRef`],
+			[`### Discussions for the Signals Proposal Supporting WeakRef`, [
+				`So far, no delegates support this ticket. I was asked to show my use cases & a performance concern about WeakRef memory allocation.`,]],],]],
+	[`## Benchmarking the Signals Proposal vs rmemo/WeakRef`, [
+		``,
+		()=>[
+			[`### The Benchmark`],
+			[`### WeakRef Performance`, [
+				()=>[
+					[`#### WeakRef on V8`, [
+						()=>[
+							[`##### NodeJS Benchmark`],
+							[`##### Deno Benchmark`],],]],
+					[`#### WeakRef on JavascriptCore`, [
+						()=>[
+							[`##### BunJS Benchmark`],],]],
+					[`#### Chromium Bug Report`],],]]
+		],
+	]],
 	[`## VanillaJS Use Cases`, [
 		()=>[
-			[`A Plea for Simplicity`],],]],
-	[`## WeakRef Performance`, [
-		()=>[
-			[`### WeakRef on V8`, [
-				()=>[
-					[`#### NodeJS Benchmark`],
-					[`#### Deno Benchmark`],],]],
-			[`### WeakRef on JavascriptCore`, [
-				()=>[
-					[`#### BunJS Benchmark`],],]],
-			[`### Chromium Bug Report`],],]],
+			[`### A Plea for Simplicity`],],]],
 ])
 }
 // @formatter:on
