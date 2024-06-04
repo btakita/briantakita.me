@@ -1,3 +1,4 @@
+import { motion_one__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
 import { sticky_h2__dl_tree_props_ } from '@btakita/ui--server--briantakita/sticky'
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { nofollow_tb_a_, tb_a_ } from '@rappstack/ui--any/anchor'
@@ -256,15 +257,29 @@ export default (ctx:request_ctx_T)=>{
 								`    deno(+0x2d25cf1) [0x5ef955360cf1]`,
 								`    deno(+0x2a5e036) [0x5ef955099036]`,
 								`[1]    547229 trace trap (core dumped)  deno run index.js`,
-								'```',
-							]],],]],
+								'```',]],],]],
 					[`#### Chromium Bug Report`, [
-						`If you have a chance, please upvote the ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'Chromium WeakRef Performance Issue')}. If you know someone on the Chromium team, please let them know about this issue. WeakRef has potential to simplify apis. WeakRef has gotten a bad rap due to this V8 bug. It performs well on JavascriptCore.`,]],],]]
-		],
-	]],
+						`If you have a chance, please upvote the ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'Chromium WeakRef Performance Issue')}. If you know someone on the Chromium team, please let them know about this issue. WeakRef has potential to simplify apis. And it performs well on JavascriptCore.`,]],],]]],]],
 	[`## VanillaJS Use Cases`, [
+		`The Watcher api is in the subtle namespace. Targeting library authors. There are good reasons to make an accessible api for VanillaJS authors. Some use cases include:`,
 		()=>[
-			[`### A Plea for Simplicity`],],]],
+			[`### Simple Hydration`, [
+				`With the recent resurgence of Multi Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library. rmemo provides this capability. Here are examples:`,
+				()=>[
+					[`#### Hydration as Hypemedia with hyop`, [
+						`The name hyop is a contraction of HYpermedia OPeration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
+						()=>[
+							[`##### Youtube Video Player & Animations`, [
+								`rmemo + hyop bind the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
+							[`##### Flexible & Lightweight Web Animation Timelines`, [
+								`Reactive programming can manage Web Animation Timelines. I began developing this page using ${motion_one__tb_a_()}, due to it's small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
+								nl,
+								`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}.`,
+							]],
+						],
+					]],
+				],
+			]],],]],
 ])
 }
 // @formatter:on
