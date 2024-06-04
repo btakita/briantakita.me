@@ -34,11 +34,11 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'signals',
 		'state-management',
 	],
-	description: `WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable. This post shows the benchmarks with the results. Along with how rmemo's WeakRef implementation is the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`,
+	description: `WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable. This post shows the benchmarks with the results. Along with demonstrating that rmemo's WeakRef implementation has the simplest benchmark code. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`,
 	description_md: lines_(
-		`WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable.`,
+		`WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to ${v8_weakref_performance_bug__tb_a_('a bug in V8')}. JSCore's implementation of WeakRef is reasonable.`,
 		nl,
-		`This post shows the benchmarks with the results. Along with how rmemo's WeakRef implementation is the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`
+		`This post shows the benchmarks with the results. Along with demonstrating that rmemo's WeakRef implementation has the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`
 	),
 	featured: true,
 })
@@ -48,7 +48,7 @@ export default (ctx:request_ctx_T)=>{
 	return ''
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
 	[`## The Signals Proposal`, [
-		`The ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals' }, 'Signals Proposal')} forms a foundational API for reactive signal libraries in Javascript. The emphasis is on interoperability between libraries that build on the Signals Proposal. The Signal Proposal does not emphasize the VanillaJS use case. There's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#example---a-signals-counter' }, 'an example in VanillaJS')}.`,
+		`The ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals' }, 'Signals Proposal')} forms a foundational API for reactive signal libraries in Javascript. The emphasis is on interoperability between libraries that build on the Signals Proposal. The Signal Proposal does not emphasize the VanillaJS use case. However, there's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#example---a-signals-counter' }, 'an example in VanillaJS')}.`,
 		()=>[
 			[`### Relevant Architecture`, [
 				`Focusing on the architecture relevant to this article. Framing the definitions to relate to this article.`,
@@ -103,7 +103,9 @@ export default (ctx:request_ctx_T)=>{
 								`function hasSinks(s: State | Computed): boolean;`,
 								'```',
 								nl,
-								`A computed Signal should be garbage-collectable if nothing watched is referencing it for possible future reads.`,]],
+								`A computed Signal should be garbage-collectable if:`,
+								`- the Signal is not watched`,
+								`- no other Signal referencing the Signal is "live"`,]],
 							[`#### Memory Allocations`, [
 								`> - A separate related goal: Minimize the number of allocations, e.g., `,
 								`>   - to make a writable Signal (avoid two separate closures + array)`,
@@ -114,7 +116,7 @@ export default (ctx:request_ctx_T)=>{
 								`Unnecessary allocations should be avoided. Benchmarks & memory profiling help detect the impact of these allocations.`,]],],]],],]],],]],
 	[`## ${rmemo__tb_a_()}`, [
 		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive.`,
-		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries.`,
+		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries. Possibly the smallest reactive state library that handles Diamond Dependencies in the correct order.`,
 		nl,
 		`rmemo was forked from ${vanjs__tb_a_()}. VanJS only supports reactivity using its DOM component tree. The first commit occurred 2023-11-17. Since then, rmemo along with libraries & applications that depend on rmemo have been developed.`,
 		nl,
@@ -146,12 +148,12 @@ export default (ctx:request_ctx_T)=>{
 										`- vanjs`,
 										nl,
 										`rmemo uses WeakRef to support implicit lifetimes while being general purpose. Meaning rmemo does not require a component tree to operate.`,]],],]],],]],],]],
-			[`### Why does rmemo use WeakRef?`, [
+			[`### How does rmemo use WeakRef?`, [
 				()=>[
 					[`#### Signal Lifetime`, [
 						`WeakRef allows the parent rmemo to notify but not hold a strong reference to the child rmemo.`,]],
 					[`#### Garbage Collection`, [
-						`The javascript garbage collector collects the live rmemo that falls out of memory scope.`,]],],]],],]],
+						`The WeakRef allows the javascript garbage collector to collect the "live" rmemo that falls out of memory scope.`,]],],]],],]],
 			[`### Similarities to the Signals Proposal`, [
 				`A reactive memo has similarities to a Signal where both:`,
 				`- hold state in a "slot"`,
@@ -220,7 +222,7 @@ export default (ctx:request_ctx_T)=>{
 						`a1[999]()`,
 						'```',]],],]],
 			[`### WeakRef Performance`, [
-				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. Each rmemo has one WeakRef. There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` function. A \`sig_()\` exposes the \`.set()\` function in its typescript type. A \`memo_()\` does not expose the \`.set()\` in its typescript type.`,
+				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. Each rmemo has 0 or 1 instantiated WeakRef. There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` function. A \`sig_()\` exposes the \`.set()\` function in its typescript type. A \`memo_()\` does not expose the \`.set()\` in its typescript type.`,
 				()=>[
 					[`#### WeakRef on JavascriptCore`, [
 						()=>[
@@ -287,7 +289,9 @@ export default (ctx:request_ctx_T)=>{
 		`The Watcher api is in the subtle namespace. Targeting library authors. There are good reasons to make an accessible api for VanillaJS authors. Some use cases include:`,
 		()=>[
 			[`### Simple Hydration`, [
-				`With the recent resurgence of Multi-Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],],]],
+				`With the recent resurgence of Multi-Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],
+			[`### Simplify & Compose Libraries with Reactive State`, [
+				`See the [rmemo Use Cases](#rmemo-use-cases) section for examples on how a simpler reactive api powered by WeakRef increases simplicity, state modularity, & productivity.`,]],],]],
 	[`## rmemo Use Cases`, [
 		`rmemo provides simple reactive memo functions. Here are some examples of where its used:`,
 		()=>[
@@ -308,11 +312,11 @@ export default (ctx:request_ctx_T)=>{
 					[`##### YouTube Video Player & Animations`, [
 						`rmemo + hyop binds the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
 					[`##### Flexible & Lightweight Web Animation Timelines`, [
-						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to its small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
+						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to its small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to compose. As I was not able to use any form of callback when the event ended to chain timeline events together.`,
 						nl,
-						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library includes various helper functions to manage the Web Animations.`,
+						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library includes various helper functions to manage the Web Animations & their states.`,
 						nl,
-						`These helper library functions replacing Motion One end up being 1214 Bytes. Significantly smaller than Motion One. And these functions offer a larger breadth of reactive options. The imported functions include:`,
+						`These helper library functions replacing Motion One end up being 1214 Bytes. Significantly smaller than Motion One. And these functions are multi-purpose. Usabable for any domain with reactive state. The imported functions include:`,
 						`- be_`,
 						`- be_memo_pair_`,
 						`- be_sig_triple_`,
@@ -345,13 +349,14 @@ export default (ctx:request_ctx_T)=>{
 						`  - videos`,
 						`  - other media`,
 						nl,
-						`It works with a web server such as ${elysiajs__tb_a_()} or ${expressjs__tb_a_()}. relysjs is a library that uses rebuildjs to add reactive state to ElysiaJS.`,
+						`It works with a web server such as ${elysiajs__tb_a_()}. relysjs is a library that uses rebuildjs to add reactive state to ElysiaJS.`,
 						nl,
 						`rebuildjs uses ${ctx_core_be__tb_a_()} for context state. This context state modularizes composable state for the:`,
-						`- app`,
-						`- middleware`,
-						`- request`,
-						`- browser`,]],
+						`- server-side app`,
+						`- server-side middleware`,
+						`- server-side request`,
+						`- browser-side`,
+						`- any environment`,]],
 					[`##### ${rebuildjs_tailwind__tb_a_()}`, [
 						`@rebuildjs/tailwindcss adds ${tailwindcss__tb_a_()} support to rebuildjs.`,]],
 					[`##### ${relysjs__tb_a_()}`, [
