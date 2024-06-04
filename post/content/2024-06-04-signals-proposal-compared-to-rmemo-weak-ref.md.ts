@@ -25,7 +25,7 @@ import { type request_ctx_T } from 'rebuildjs/server'
 import { code_, sub_ } from 'relementjs/html'
 const slug = 'signals-proposal-compared-to-rmemo-weak-ref'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
-	pub_date: '2024-06-01T18:49:51.217Z',
+	pub_date: '2024-06-04T07:25:33.046Z',
 	title: 'Signals Proposal Compared to rmemo/WeakRef',
 	slug,
 	tag_a1: [
