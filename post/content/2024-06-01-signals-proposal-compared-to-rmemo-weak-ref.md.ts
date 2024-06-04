@@ -1,9 +1,17 @@
-import { motion_one__tb_a_ } from '@btakita/ui--server--briantakita/anchor'
+import {
+	elysiajs__tb_a_,
+	expressjs__tb_a_,
+	motion_one__tb_a_,
+	rebuildjs__tb_a_,
+	rebuildjs_tailwind__tb_a_,
+	relysjs__tb_a_,
+	tailwindcss__tb_a_
+} from '@btakita/ui--server--briantakita/anchor'
 import { sticky_h2__dl_tree_props_ } from '@btakita/ui--server--briantakita/sticky'
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { nofollow_tb_a_, tb_a_ } from '@rappstack/ui--any/anchor'
 import { dl_tree_ } from '@rappstack/ui--any/dl'
-import { nl } from '@rappstack/ui--any/string'
+import { lines_, nl } from '@rappstack/ui--any/string'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { code_, sub_ } from 'relementjs/html'
 const slug = 'signals-proposal-compared-to-rmemo-weak-ref'
@@ -17,7 +25,12 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'signals',
 		'state-management',
 	],
-	description: `WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable.`,
+	description: `WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable. This post shows the benchmarks with the results. Along with how rmemo's WeakRef implementation is the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`,
+	description_md: lines_(
+		`WeakRef can simplify reactivity within the Signals Proposal. WeakRef is criticized for having extra memory allocations & being slow. It turns out that the slowness is due to a bug in V8. JSCore's implementation of WeakRef is reasonable.`,
+		nl,
+		`This post shows the benchmarks with the results. Along with how rmemo's WeakRef implementation is the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`
+	),
 	featured: true,
 	draft: true,
 })
@@ -264,22 +277,47 @@ export default (ctx:request_ctx_T)=>{
 		`The Watcher api is in the subtle namespace. Targeting library authors. There are good reasons to make an accessible api for VanillaJS authors. Some use cases include:`,
 		()=>[
 			[`### Simple Hydration`, [
-				`With the recent resurgence of Multi Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library. rmemo provides this capability. Here are examples:`,
+				`With the recent resurgence of Multi Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],],]],
+	[`## rmemo Use Cases`, [
+		`rmemo provides simple reactive memo functions. Here are some examples of where its used:`,
+		()=>[
+			[`#### Hydration as Hypemedia with hyop`, [
+				`The name hyop is a contraction of **HY**permedia **OP**eration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
 				()=>[
-					[`#### Hydration as Hypemedia with hyop`, [
-						`The name hyop is a contraction of HYpermedia OPeration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
-						()=>[
-							[`##### Youtube Video Player & Animations`, [
-								`rmemo + hyop bind the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
-							[`##### Flexible & Lightweight Web Animation Timelines`, [
-								`Reactive programming can manage Web Animation Timelines. I began developing this page using ${motion_one__tb_a_()}, due to it's small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
-								nl,
-								`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}.`,
-							]],
-						],
-					]],
-				],
-			]],],]],
+					[`##### Youtube Video Player & Animations`, [
+						`rmemo + hyop bind the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
+					[`##### Flexible & Lightweight Web Animation Timelines`, [
+						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to it's small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
+						nl,
+						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library has includes various helper functions to manage the Web Animations. These helper functions end up being 1214 Bytes. Significantly smaller than Motion One. And these functions offer a larger breadth of reactive options.`,
+						nl,
+						`Now, the Brookers Timeline is 4.38 kb min + brotli in total. Saving around 3.6 kb. Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/brookers/hyop/brookers__hyop.ts' }, 'source code')}`,]],],]],
+			[`#### Reactive Builds & Servers`, [
+				`Reactivity is great for managing asynchronous state graphs. A development build, development server, & production servers all have asynchronous state graphs. With this in mind, I created 3 libraries for my development stack.`,
+				()=>[
+					[`##### ${rebuildjs__tb_a_()}`, [
+						`rebuildjs is a base library by integrating the following with a web server:`,
+						`- server side reactive state for the:`,
+						`  - app`,
+						`  - middleware`,
+						`  - request`,
+						`- esbuild`,
+						`- dev server`,
+						`- production server`,
+						`- middleware-based route builds:`,
+						`  - server`,
+						`  - browser`,
+						`- cacheable asset builds:`,
+						`  - css`,
+						`  - images`,
+						`  - videos`,
+						`  - other media`,
+						nl,
+						`It works with a web server such as ${elysiajs__tb_a_()} or ${expressjs__tb_a_()}. relysjs is a library that uses rebuildjs to add reactive state to ElysiaJS.`,]],
+					[`##### ${rebuildjs_tailwind__tb_a_()}`, [
+						`@rebuildjs/tailwindcss adds ${tailwindcss__tb_a_()} support to rebuildjs.`,]],
+					[`##### ${relysjs__tb_a_()}`, [
+						`Integrates ElysiaJS with rebuildjs.`,]],],]],],]],
 ])
 }
 // @formatter:on
