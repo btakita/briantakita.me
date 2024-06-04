@@ -48,7 +48,7 @@ export default (ctx:request_ctx_T)=>{
 	return ''
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
 	[`## The Signals Proposal`, [
-		`The ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals' }, 'Signals Proposal')} forms a foundational API for reactive signal libraries in Javascript. The emphasis is on interoperability between libraries that build on the Signals Proposal. The Signal Proposall does not emphasize the VanillaJS use case. There's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#example---a-signals-counter' }, 'an example in VanillaJS')}.`,
+		`The ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals' }, 'Signals Proposal')} forms a foundational API for reactive signal libraries in Javascript. The emphasis is on interoperability between libraries that build on the Signals Proposal. The Signal Proposal does not emphasize the VanillaJS use case. There's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#example---a-signals-counter' }, 'an example in VanillaJS')}.`,
 		()=>[
 			[`### Relevant Architecture`, [
 				`Focusing on the architecture relevant to this article. Framing the definitions to relate to this article.`,
@@ -131,7 +131,7 @@ export default (ctx:request_ctx_T)=>{
 						`- build async task scheduling`,
 						`- animation scheduling`,]],
 					[`#### Small & Focused`, [
-						`A library that is small to have a minimal impact to browser javascript package sizes.`]],
+						`A library that is small to have a minimal impact on browser javascript package sizes.`]],
 					[`#### Simple API`, [
 						()=>[
 							[`##### Function instead of Object with \`.get()\``, [
@@ -149,9 +149,9 @@ export default (ctx:request_ctx_T)=>{
 			[`### Why does rmemo use WeakRef?`, [
 				()=>[
 					[`#### Signal Lifetime`, [
-						`WeakRef allows parent rmemos to notify but not hold a strong reference to child rmemos.`,]],
+						`WeakRef allows the parent rmemo to notify but not hold a strong reference to the child rmemo.`,]],
 					[`#### Garbage Collection`, [
-						`The javascript garbage collector collects live rmemos that fall out of memory scope.`,]],],]],],]],
+						`The javascript garbage collector collects the live rmemo that falls out of memory scope.`,]],],]],],]],
 			[`### Similarities to the Signals Proposal`, [
 				`A reactive memo has similarities to a Signal where both:`,
 				`- hold state in a "slot"`,
@@ -164,7 +164,7 @@ export default (ctx:request_ctx_T)=>{
 					[`#### rmemo Uses WeakRef to Support Garbage Collection`, [
 						`When a "live" rmemo goes out of scope, it will be Garbage Collected. In the Signals Proposal, a "live" Signal watched by a Watcher in memory scope will not be Garbage Collected.`,]],],]],
 	[`## Signals Proposal does not support WeakRef`, [
-		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build off of the Signals Proposal. rmemo could interop with the Signals Proposal as is, but that would require extra logic. There are only downsides to rmemo building off of the Signals Proposal.`,
+		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build on the Signals Proposal. rmemo could interop with the Signals Proposal as is, but that would require extra logic. There are only downsides to rmemo building off of the Signals Proposal.`,
 		()=>[
 			[`### Discussions for the Signals Proposal Supporting WeakRef`, [
 				`So far, no delegates support this ticket. I was asked to show my use cases & a performance concern about WeakRef memory allocation.`,]],],]],
@@ -257,7 +257,7 @@ export default (ctx:request_ctx_T)=>{
 								``,
 								`<--- Last few GCs --->`,
 								``,
-								`[547229:0x5ef986310000]    21250 ms: Mark-Compact (reduce) 1399.0 (1426.6) -> 1398.7 (1425.4) MB, pooled: 0 MB, 183.17 / 0.00 ms  (+ 0.4 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 188 ms) (average mu = 0.545`,
+								`[547229:0x5ef986310000]    21250 ms: Mark-Compact (reduce) 1399.0 (1426.6) -> 1398.7 (1425.4) MB, pooled: 0 MB, 183.17 / 0.00 ms  (+ 0.4 ms in 0 steps since the start of marking, biggest step 0.0 ms, walltime since the start of marking 188 ms) (average mu = 0.545`,
 								``,
 								`<--- JS stacktrace --->`,
 								``,
@@ -302,7 +302,7 @@ export default (ctx:request_ctx_T)=>{
 				`- mathml`,
 				`- xml`,
 				`  - also supports namespaced xml tags`,]],
-			[`#### Hydration as Hypemedia with hyop`, [
+			[`#### Hydration as Hypermedia with hyop`, [
 				`The name hyop is a contraction of **HY**permedia **OP**eration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
 				()=>[
 					[`##### YouTube Video Player & Animations`, [
@@ -370,7 +370,7 @@ export default (ctx:request_ctx_T)=>{
 						`- ${brookebrodack_dev__tb_a_()}`,
 						`- other private repositories`,]],],]],],]],
 	[`## Conclusion`, [
-		`WeakRef simplifies reactivity & expands reactivity's use cases. The ${v8_weakref_performance_bug__tb_a_()} is a roadblock to wider adoption of using WeakRef. Javascript Core proves that WeakRef can have reasonable performance. rmemo uses WeakRef. The first commit for rmemo was in 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
+		`WeakRef simplifies reactivity & expands reactivity use cases. The ${v8_weakref_performance_bug__tb_a_()} is a roadblock to wider adoption of using WeakRef. Javascript Core proves that WeakRef can have reasonable performance. rmemo uses WeakRef. The first commit for rmemo was in 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
 		`- relementjs`,
 		`- hyop & Hydration as Hypermedia techniques`,
 		`  - YouTube Video Player & Animations`,
