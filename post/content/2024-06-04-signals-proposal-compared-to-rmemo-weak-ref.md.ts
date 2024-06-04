@@ -227,7 +227,7 @@ export default (ctx:request_ctx_T)=>{
 					[`#### WeakRef on JavascriptCore`, [
 						()=>[
 							[`##### BunJS Benchmark`, [
-								`In the BunJS benchmark, rmemo benchmark is >20% faster than the reactive Signals benchmark. The reactive Signals benchmark only includes \`.watch()\` & does not include \`.unwatch()\`. \`.unwatch()\` has a ${nofollow_tb_a_({ href: 'https://githubcom/tc39/proposal-signals/issues/215' }, 'major performance issue')} at this moment.`,
+								`In the BunJS benchmark, rmemo benchmark is >20% faster than the reactive Signals benchmark. The reactive Signals benchmark only includes \`.watch()\` & does not include \`.unwatch()\`. \`.unwatch()\` has a ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals/issues/215' }, 'major performance issue')} at this moment.`,
 								nl,
 								`The rmemo benchmark is <5% slower than the non-reactive Signals benchmark. While WeakRef may have performance implications, it is not significant enough to throw the benchmarks.`,
 								'```',
