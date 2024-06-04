@@ -1,3 +1,4 @@
+// noinspection MarkdownUnresolvedHeaderReference
 import {
 	briantakita_me_dev__tb_a_,
 	brookebrodack_dev__tb_a_,
@@ -220,7 +221,7 @@ export default (ctx:request_ctx_T)=>{
 						`a1[999]()`,
 						'```',]],],]],
 			[`### WeakRef Performance`, [
-				`These benchmarks compare the Signal Polyfill vs rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. Each rmemo has one WeakRef. There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` function. A \`sig_()\` exposes the \`.set()\` function in it's typescript type. A \`memo_()\` does not expose the \`.set()\` in it's typescript type.`,
+				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. Each rmemo has one WeakRef. There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` function. A \`sig_()\` exposes the \`.set()\` function in its typescript type. A \`memo_()\` does not expose the \`.set()\` in its typescript type.`,
 				()=>[
 					[`#### WeakRef on JavascriptCore`, [
 						()=>[
@@ -233,7 +234,7 @@ export default (ctx:request_ctx_T)=>{
 								`1000 Signal chain: without watcher x 4,968 ops/sec ±2.60% (80 runs sampled)`,
 								`1000 Signal chain: with watcher x 3,941 ops/sec ±1.93% (85 runs sampled)`,
 								`1000 rmemo chain x 4,829 ops/sec ±1.63% (89 runs sampled)`,
-								`Fastest is 1000 Signal chain: without watcher,1000 rmemo chain`,
+								`Fastest is 1000 Signal chain: without watcher, 1000 rmemo chain`,
 								'```',]],],]],
 					[`#### WeakRef on V8`, [
 						`In the V8 benchmarks, WeakRef has major performance issues & runtime instability. So much so, I filed ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'an issue')} with Chromium.`,
@@ -245,7 +246,7 @@ export default (ctx:request_ctx_T)=>{
 								`1000 Signal chain: without watcher x 3,317 ops/sec ±1.26% (92 runs sampled)`,
 								`1000 Signal chain: with watcher x 2,414 ops/sec ±1.15% (93 runs sampled)`,
 								`1000 rmemo chain x 542 ops/sec ±45.31% (46 runs sampled)`,
-								`Fastest is 1000 Signal chain: without watcher`,
+								`Fastest is 1000 Signal chain: without a watcher`,
 								'```',]],
 							[`##### Deno Benchmark`, [
 								`Well, this is embarrassing. I hope this V8 WeakRef bug is fixed soon!`,
@@ -282,17 +283,17 @@ export default (ctx:request_ctx_T)=>{
 								`[1]    547229 trace trap (core dumped)  deno run index.js`,
 								'```',]],],]],
 					[`#### Chromium Bug Report`, [
-						`If you have a chance, please upvote the ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'Chromium WeakRef Performance Issue')}. If you know someone on the Chromium team, please let them know about this issue. WeakRef has potential to simplify apis. And it performs well on JavascriptCore.`,]],],]]],]],
+						`If you have a chance, please upvote the ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'Chromium WeakRef Performance Issue')}. If you know someone on the Chromium team, please let them know about this issue. WeakRef has the potential to simplify apis. And it performs well on JavascriptCore.`,]],],]]],]],
 	[`## VanillaJS Use Cases`, [
 		`The Watcher api is in the subtle namespace. Targeting library authors. There are good reasons to make an accessible api for VanillaJS authors. Some use cases include:`,
 		()=>[
 			[`### Simple Hydration`, [
-				`With the recent resurgence of Multi Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],],]],
+				`With the recent resurgence of Multi-Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],],]],
 	[`## rmemo Use Cases`, [
 		`rmemo provides simple reactive memo functions. Here are some examples of where its used:`,
 		()=>[
 			[`#### ${relementjs__tb_a_()}`, [
-				`relementjs was originally forked from VanJS along side rmemo. rmemo is for reactive state. relementjs is for reactive isomorphic UI components. Unlike VanJS, rmemo & relementjs is reactive on both the browser & server side. This enables isomorphic UI components to work as-is on both the browser & server.`,
+				`relementjs was originally forked from VanJS alongside rmemo. rmemo is for reactive state. relementjs is for reactive isomorphic UI components. Unlike VanJS, rmemo & relementjs is reactive on both the browser & server side. This enables isomorphic UI components to work as-is on both the browser & server.`,
 				nl,
 				`relementjs is tree-shakable & is smaller than VanJS for equivalent functionality. The smaller bundle size is possible using WeakRef.`,
 				nl,
@@ -305,12 +306,12 @@ export default (ctx:request_ctx_T)=>{
 			[`#### Hydration as Hypemedia with hyop`, [
 				`The name hyop is a contraction of **HY**permedia **OP**eration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
 				()=>[
-					[`##### Youtube Video Player & Animations`, [
-						`rmemo + hyop bind the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
+					[`##### YouTube Video Player & Animations`, [
+						`rmemo + hyop binds the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
 					[`##### Flexible & Lightweight Web Animation Timelines`, [
-						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to it's small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
+						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to its small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to work with. As I was not able to use any form of callback when the event ended to chain events together.`,
 						nl,
-						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library has includes various helper functions to manage the Web Animations. These helper functions end up being 1214 Bytes. Significantly smaller than Motion One. And these functions offer a larger breadth of reactive options.`,
+						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library includes various helper functions to manage the Web Animations. These helper functions end up being 1214 Bytes. Significantly smaller than Motion One. And these functions offer a larger breadth of reactive options.`,
 						nl,
 						`Now, the Brookers Timeline is 4.38 kb min + brotli in total. Saving around 3.6 kb. Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/brookers/hyop/brookers__hyop.ts' }, 'source code')}`,]],],]],
 			[`#### Reactive Builds & Servers`, [
@@ -352,17 +353,17 @@ export default (ctx:request_ctx_T)=>{
 						`- browser environments`,
 						`- all environments`,
 						nl,
-						`ctx-core/be & rmemo are used to modularize the application, middleware, & request state across the plugin libraries. The ${rappstack_repositories__tb_a_()} form the base of applications. Applications contain their own domain & ui plugin libraries that work with the rappstack plugin libraries.`,
+						`ctx-core/be & rmemo are used to modularize the application, middleware, & request state across the plugin libraries. The ${rappstack_repositories__tb_a_()} forms the base of applications. Applications contain their own domain & ui plugin libraries that work with the rappstack plugin libraries.`,
 						nl,
 						`Some websites that use rappstack include:`,
 						`- ${briantakita_me_dev__tb_a_()}`,
 						`- ${brookebrodack_dev__tb_a_()}`,
 						`- other private repositories`,]],],]],],]],
 	[`## Conclusion`, [
-		`WeakRef simplifies reactivity & expands reactivity's use cases. The ${v8_weakref_performance_bug__tb_a_()} is a roadblock to wider adoption of using WeakRef. Javascript Core proves that WeakRef can have reasonable performance. rmemo uses WeakRef. The first commit for rmemo was on 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
+		`WeakRef simplifies reactivity & expands reactivity's use cases. The ${v8_weakref_performance_bug__tb_a_()} is a roadblock to wider adoption of using WeakRef. Javascript Core proves that WeakRef can have reasonable performance. rmemo uses WeakRef. The first commit for rmemo was in 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
 		`- relementjs`,
 		`- hyop & Hydration as Hypermedia techniques`,
-		`  - Youtube Video Player & Animations`,
+		`  - YouTube Video Player & Animations`,
 		`  - Flexible & Lightweight Web Animation Timelines`,
 		`- Reactive Builds & Servers`,
 		`  - rebuildjs`,
