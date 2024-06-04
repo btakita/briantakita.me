@@ -1,11 +1,19 @@
 import {
+	briantakita_me_dev__tb_a_,
+	brookebrodack_dev__tb_a_,
+	ctx_core_be__tb_a_,
 	elysiajs__tb_a_,
 	expressjs__tb_a_,
 	motion_one__tb_a_,
+	rappstack__tb_a_,
+	rappstack_repositories__tb_a_,
 	rebuildjs__tb_a_,
 	rebuildjs_tailwind__tb_a_,
+	relementjs__tb_a_,
 	relysjs__tb_a_,
-	tailwindcss__tb_a_
+	rmemo__tb_a_,
+	tailwindcss__tb_a_,
+	vanjs__tb_a_,
 } from '@btakita/ui--server--briantakita/anchor'
 import { sticky_h2__dl_tree_props_ } from '@btakita/ui--server--briantakita/sticky'
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
@@ -104,9 +112,11 @@ export default (ctx:request_ctx_T)=>{
 								`>   - Solution: Class-based API enabling reuse of methods and fields defined in subclasses`,
 								nl,
 								`Unnecessary allocations should be avoided. Benchmarks & memory profiling help detect the impact of these allocations.`,]],],]],],]],],]],
-	[`## ${tb_a_({ href: 'https://github.com/ctx-core/rmemo' }, 'rmemo')}`, [
+	[`## ${rmemo__tb_a_()}`, [
 		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive.`,
 		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries.`,
+		nl,
+		`rmemo was forked from ${vanjs__tb_a_()}. VanJS only supports reactivity using its DOM component tree. The first commit occurred 2023-11-17. Since then, rmemo along with libraries & applications that depend on rmemo have been developed.`,
 		nl,
 		()=>[
 			[`### Motivations to Develop rmemo`, [
@@ -281,6 +291,17 @@ export default (ctx:request_ctx_T)=>{
 	[`## rmemo Use Cases`, [
 		`rmemo provides simple reactive memo functions. Here are some examples of where its used:`,
 		()=>[
+			[`#### ${relementjs__tb_a_()}`, [
+				`relementjs was originally forked from VanJS along side rmemo. rmemo is for reactive state. relementjs is for reactive isomorphic UI components. Unlike VanJS, rmemo & relementjs is reactive on both the browser & server side. This enables isomorphic UI components to work as-is on both the browser & server.`,
+				nl,
+				`relementjs is tree-shakable & is smaller than VanJS for equivalent functionality. The smaller bundle size is possible using WeakRef.`,
+				nl,
+				`relementjs enables components using:`,
+				`- html`,
+				`- svg`,
+				`- mathml`,
+				`- xml`,
+				`  - also supports namespaced xml tags`,]],
 			[`#### Hydration as Hypemedia with hyop`, [
 				`The name hyop is a contraction of **HY**permedia **OP**eration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
 				()=>[
@@ -313,11 +334,49 @@ export default (ctx:request_ctx_T)=>{
 						`  - videos`,
 						`  - other media`,
 						nl,
-						`It works with a web server such as ${elysiajs__tb_a_()} or ${expressjs__tb_a_()}. relysjs is a library that uses rebuildjs to add reactive state to ElysiaJS.`,]],
+						`It works with a web server such as ${elysiajs__tb_a_()} or ${expressjs__tb_a_()}. relysjs is a library that uses rebuildjs to add reactive state to ElysiaJS.`,
+						nl,
+						`rebuildjs uses ${ctx_core_be__tb_a_()} for context state. This context state modularizes composable state for the:`,
+						`- app`,
+						`- middleware`,
+						`- request`,
+						`- browser`,]],
 					[`##### ${rebuildjs_tailwind__tb_a_()}`, [
 						`@rebuildjs/tailwindcss adds ${tailwindcss__tb_a_()} support to rebuildjs.`,]],
 					[`##### ${relysjs__tb_a_()}`, [
-						`Integrates ElysiaJS with rebuildjs.`,]],],]],],]],
+						`Integrates ElysiaJS with rebuildjs.`,]],
+					[`##### ${rappstack__tb_a_()} (reactive app stack)`, [
+						`Rappstack is made of composable domain & ui plugin libraries that target:`,
+						`- any environment`,
+						`- server environments`,
+						`- browser environments`,
+						`- all environments`,
+						nl,
+						`ctx-core/be & rmemo are used to modularize the application, middleware, & request state across the plugin libraries. The ${rappstack_repositories__tb_a_()} form the base of applications. Applications contain their own domain & ui plugin libraries that work with the rappstack plugin libraries.`,
+						nl,
+						`Some websites that use rappstack include:`,
+						`- ${briantakita_me_dev__tb_a_()}`,
+						`- ${brookebrodack_dev__tb_a_()}`,
+						`- other private repositories`,]],],]],],]],
+	[`## Conclusion`, [
+		`WeakRef simplifies reactivity & expands reactivity's use cases. The ${v8_weakref_performance_bug__tb_a_()} is a roadblock to wider adoption of using WeakRef. Javascript Core proves that WeakRef can have reasonable performance. rmemo uses WeakRef. The first commit for rmemo was on 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
+		`- relementjs`,
+		`- hyop & Hydration as Hypermedia techniques`,
+		`  - Youtube Video Player & Animations`,
+		`  - Flexible & Lightweight Web Animation Timelines`,
+		`- Reactive Builds & Servers`,
+		`  - rebuildjs`,
+		`  - @rebuildjs/tailwindcss`,
+		`  - relysjs`,
+		`- rappstack`,
+		`  - 14 rappstack plugin libraries`,
+		`- applications along with application-specific plugin libraries`,
+		`  - @btakita/briantakita.me-dev`,
+		`  - @btakita/brookebrodack-dev`,
+		`  - several private apps`,]],
 ])
 }
 // @formatter:on
+function v8_weakref_performance_bug__tb_a_(text?:string) {
+  return tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, text ?? 'V8 WeakRef performance bug')
+}
