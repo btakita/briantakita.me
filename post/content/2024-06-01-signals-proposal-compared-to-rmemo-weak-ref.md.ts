@@ -41,7 +41,6 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		`This post shows the benchmarks with the results. Along with how rmemo's WeakRef implementation is the simplest benchmark. This post then highlights use cases where WeakRef is necessary for the simplest & most flexible reactive apis.`
 	),
 	featured: true,
-	draft: true,
 })
 export default (ctx:request_ctx_T)=>{
 	// @formatter:off
