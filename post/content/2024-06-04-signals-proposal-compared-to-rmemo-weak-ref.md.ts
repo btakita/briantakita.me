@@ -33,7 +33,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'signals',
 		'state-management',
 	],
-	description: `WeakRef can simplify systems built using the Signals Proposal. By removing the need to unwatch live Signals. WeakRef is criticized for having extra memory allocations & being slow. This post shows benchmarks. Including the Signals Proposal polyfill & rmemo, a reactive library that uses WeakRef. Comparing performance, memory usage, & implementation. V8 & Javascript Core have different Garbage Collection behavior for WeakRef. This caused me confusion with my initial benchmarks synchronous benchmarks. Along with demonstrating the implementations. This post then highlights use cases where WeakRef can be used for simple & flexible reactive apis.`,
+	description: `WeakRef can simplify systems built using the Signals Proposal. By removing the need to unwatch live Signals. WeakRef is criticized for having extra memory allocations & being slow. This post shows benchmarks. Including the Signals Proposal polyfill & rmemo, a reactive library that uses WeakRef. Comparing performance, memory usage, & implementation. V8 & Javascript Core have different Garbage Collection behavior for WeakRef. This caused me confusion with my initial benchmarks which were only synchronous. Along with demonstrating the implementations. This post then highlights use cases where WeakRef can be used for simple & flexible reactive apis.`,
 	description_md: lines_(
 		`WeakRef can simplify systems built using the Signals Proposal. By removing the need to unwatch live Signals. WeakRef is criticized for having extra memory allocations & being slow.`,
 		nl,
@@ -42,7 +42,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		`- memory usage`,
 		`- implementation`,
 		nl,
-		`V8 & Javascript Core have different Garbage Collection behavior for WeakRef. This caused me confusion with my initial benchmarks synchronous benchmarks. This post demonstrates the implementations. This post then highlights use cases where WeakRef can be used for simple & flexible reactive apis.`,
+		`V8 & Javascript Core have different Garbage Collection behavior for WeakRef. This caused me confusion with my initial benchmarks which were only synchronous. This post demonstrates the implementations. This post then highlights use cases where WeakRef can be used for simple & flexible reactive apis.`,
 	),
 	featured: true,
 })
@@ -58,7 +58,7 @@ export default (ctx:request_ctx_T)=>{
 				`Focusing on the architecture relevant to this article. Framing the definitions to relate to this article.`,
 				()=>[
 					[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#signal-algorithms' }, 'Signal')}`, [
-						`A Signal is an Object that forms a dependency graph with other Signals. It is made of:`,
+						`A Signal is an Object that forms a directed acyclic graph (DAG) with other Signals. It is made of:`,
 						()=>[
 							[`##### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalstate-class' }, 'Signal.State')}`, [
 								`A Signal.State stores reactive data in an internal slot.`,]],
@@ -66,7 +66,7 @@ export default (ctx:request_ctx_T)=>{
 								`A Signal.Computed stores the return value of a lazy function in the internal slot. The Signal.Computed can reference dependency signals (Signal.State or Signal.Computed) in the lazy function.`,
 								()=>[
 									[`###### Signal Directed Acyclic Graph (DAG)`, [
-										`Signal.Computed referencing other dependency Signals forms a dependency Directed Acyclic Graph.`,]],],]],],]],
+										`Signal.Computed referencing other Signals forms a dependency Directed Acyclic Graph.`,]],],]],],]],
 					[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalsubtlewatcher-class' }, 'Watcher')}`, [
 						`The Watcher makes the Signals reactive. Let's say \`Signal.Computed\` ${code_('sig', sub_('child'))} depends on another Signal ${code_('sig', sub_('parent'))}.`,
 						()=>[
@@ -107,7 +107,7 @@ export default (ctx:request_ctx_T)=>{
 								`function hasSinks(s: State | Computed): boolean;`,
 								'```',
 								nl,
-								`A computed Signal should be garbage-collectable if:`,
+								`A computed Signal is garbage-collectable if:`,
 								`- the Signal is not watched`,
 								`- no other Signal referencing the Signal is **live**`,]],
 							[`#### Memory Allocations`, [
@@ -122,7 +122,9 @@ export default (ctx:request_ctx_T)=>{
 		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive.`,
 		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries. Possibly the smallest reactive state library that handles Diamond Dependencies in the correct order.`,
 		nl,
-		`Rmemo was forked from ${vanjs__tb_a_()}. VanJS only supports reactivity using its DOM component tree. The first commit occurred 2023-11-17. Since then, rmemo along with libraries & applications that depend on rmemo have been developed.`,
+		`Rmemo was forked from ${vanjs__tb_a_()}. VanJS only supports reactivity using its DOM component tree. VanJS does not support diamond dependencies.`,
+		nl,
+		`Rmemo's first commit occurred 2023-11-17. Since then, rmemo along with libraries & applications that depend on rmemo have been developed.`,
 		nl,
 		()=>[
 			[`### Motivations to Develop rmemo`, [
@@ -142,16 +144,22 @@ export default (ctx:request_ctx_T)=>{
 						()=>[
 							[`##### Function instead of Object with \`.get()\``, [
 								`Functions are a bit more flexible than an object with \`.get()\`. Calling the rmemo function requires less code than calling \`.get()\` on an object. I tried both apis when writing relementjs, which is a small dom rendering library. The function api used less code.`,]],
+							[`##### Function Object has \`.set()\` method`, [
+								`- \`memo_()\` returns a memo where the Typescript type does not have \`.set()\`.`,
+								`- \`sig_()\` returns a memo where the Typescript type does have \`.set()\`.`,
+								`- The javascript implementation for both \`memo_()\` & \`sig_()\` use \`.set()\` internally.`,]],
 							[`##### Implicit Lifetime Management`, [
-								`Garbage Collection occurs when the rmemo goes out of scope. There is no need to explicitly manage lifetimes. Lifetimes may optionally be explicitly managed.`,
+								`Garbage Collection occurs when the rmemo goes out of scope. Lifetime management occurs implicitly. There no need to explicitly manage lifetimes.`,
 								()=>[
-									[`###### Libraries Supporting Implicit Lifetimes`, [
+									[`###### Other Libraries Supporting Implicit Lifetimes`, [
 										`Reactive Signal libraries that use UI component trees can use the lifecycle of the components to watch & unwatch the Signals. These libraries require a component tree with a cleanup event to manage lifetimes. They are not general purpose. These libraries include:`,
 										`- solidjs`,
 										`- sveltejs`,
 										`- vanjs`,
 										nl,
-										`Rmemo uses WeakRef to support implicit lifetimes while being general purpose. Meaning rmemo does not require a component tree to operate.`,]],],]],],]],],]],
+										`Rmemo uses WeakRef to support implicit lifetimes while being general purpose. Meaning rmemo does not require a component tree to operate.`,]],],]],
+							[`##### Optional Explicit Lifetimes Management`, [
+								`Rmemo allows explicit management of lifetimes. This occurs my overriding the reactive memo function's WeakRef's \`defer()\` method to return undefined. Rmemo provides a helper function \`rmemo__off(memo)\`.`,]],],]],],]],
 			[`### How does Rmemo use WeakRef?`, [
 				()=>[
 					[`#### Signal Lifetime`, [
@@ -166,11 +174,15 @@ export default (ctx:request_ctx_T)=>{
 			[`### Differences from the Signals Proposal`, [
 				()=>[
 					[`#### Rmemo's Functions are Reactive When Called`, [
-						`When a rmemo function calls a dependency rmemo function, the reactive relationship immediately starts. There is no Watcher object. Rmemo functions are immediately **live**.`,]],
+						`When a rmemo function calls a dependency rmemo function, the reactive relationship immediately starts. There is no Watcher object. A rmemo function is **live** when it has a dependency rmemo & is called.`,]],
 					[`#### Rmemo Uses WeakRef to Support Garbage Collection`, [
-						`When a **live** rmemo goes out of memory scope, it will be eligable for Garbage Collection. In the Signals Proposal, a **live** Signal is watched by a Watcher. A **live** Signal will not be eligible for Garbage Collection if it or the Watcher remains in memory scope. This reference binding is broken when the Signal is no longer **live** by being **unwatched**.`,]],],]],
+						`When a **live** rmemo goes out of memory scope, it will be eligable for Garbage Collection. In the Signals Proposal, a **live** Signal is watched by a Watcher. A **live** Signal will not be eligible for Garbage Collection if it or the Watcher remains in memory scope. This reference binding to the Watcher is broken when the Signal is no longer **live** by being **unwatched**.`,]],],]],
 	[`## Signals Proposal does not support WeakRef`, [
-		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build on the Signals Proposal. Rmemo could interop with the Signals Proposal as is, but that would require extra logic. Along with being larger & not performing as well.`,
+		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build on the Signals Proposal. Rmemo could interop with the Signals Proposal as is, but that would:`,
+		`- require extra logic`,
+		`- require a larger bundle size`,
+		`- would degrade in performance`,
+		`- may use more heap memory`,
 		()=>[
 			[`### Discussions for the Signals Proposal Supporting WeakRef`, [
 				`So far, no delegates support this ticket. I was asked to demonstrate my use cases & address performance/memory concerns about using WeakRef.`,]],],]],
@@ -194,25 +206,31 @@ export default (ctx:request_ctx_T)=>{
 				nl,
 				`The ${nofollow_tb_a_({ href: 'https://developer.apple.com/documentation/javascriptcore' }, 'Javascript Core')} runtime will run the loop in a steady state. Since its Garbage Collects both the WeakRef & the referent Object while in synchronous execution.`,
 				nl,
-				`However, both V8 & Spider Monkey will not run in a steady state. The memory will grow until there is an Out of Memory or Null Ptr error. This is due to V8 & Spider Monkey not Garbage Collecting the WeakRef while in synchronous execution. The Chromium team ${nofollow_tb_a_({ href: 'https://issues.chromium.org/issues/42202112#comment19' }, 'will fix this particular issue')}. I file ${tb_a_({ href: 'https://bugzilla.mozilla.org/show_bug.cgi?id=1900933' }, 'an issue')} with the Firefox team.`,]],],]],
+				`However, both V8 & Spider Monkey will not run in a steady state. The memory will grow until there is an Out of Memory or Null Ptr error. This is due to V8 & Spider Monkey not Garbage Collecting the WeakRef while in synchronous execution. The Chromium team ${nofollow_tb_a_({ href: 'https://issues.chromium.org/issues/42202112#comment19' }, 'will fix this particular issue')}. I filed ${tb_a_({ href: 'https://bugzilla.mozilla.org/show_bug.cgi?id=1900933' }, 'an issue')} with the Firefox team.`,]],],]],
 	[`## Benchmarking the Signals Proposal vs rmemo/WeakRef`, [
 		`The ${tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark' }, 'benchmark repo')} has several benchmarks. Consisting of:`,
-		`- Synchronous Signal Chain benchmark`,
+		`- Synchronous Signal Chain Benchmark`,
 		`  - 1000 Signal chain: without watcher`,
 		`  - 1000 Signal chain: with watcher`,
 		`  - 1000 rmemo chain`,
-		`- Asynchronous Signal Chain benchmark`,
+		`- Asynchronous Signal Chain Benchmark`,
 		`  - 1000 Signal chain: without watcher`,
 		`  - 1000 Signal chain: with watcher`,
 		`  - 1000 rmemo chain`,
-		`- Memory allocation benchmark`,
+		`- Memory Benchmarks`,
+		`  - 1000 x 1000 Signal Chain Memory allocation benchmark`,
+		`  - 1000 x 1000 rmemo Chain Memory allocation benchmark`,
+		nl,
+		`None of the Signal benchmarks call \`.unwatch()\`, which has a ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals/issues/215' }, 'performance issue')}.`,
 		()=>[
 			[`### Rmemo as a Proxy for WeakRef Performance`, [
-				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. Each rmemo has 0 or 1 instantiated WeakRef. There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` function. A \`sig_()\` exposes the \`.set()\` function in its typescript type. A \`memo_()\` does not expose the \`.set()\` in its typescript type.`,
+				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. A rmemo lazily instantiates one WeakRef when calling its first dependency rmemo.`,
 				nl,
-				`There are several differences in implementation between Rmemo & the Signals Polyfill. However, comparing these two implementations should at least demonstrate whether WeakRef has a significant negative impact on performance & memory usage.`,]],
+				`There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` method used internally. A \`sig_()\` exposes the \`.set()\` method in its typescript type. A \`memo_()\` does not expose \`.set()\` in its typescript type.`,
+				nl,
+				`There are several differences in implementation between Rmemo & the Signals Polyfill. However, comparing these two implementations should at least demonstrate whether or not WeakRef has a significant negative impact on performance & memory usage.`,]],
 			[`### Synchronous Signal Chain Benchmark`, [
-				`The Synchronous Signal Chain Benchmark was the first benchmark that I ran. The original version of this post only had this benchmark. There were issues with the V8 runtimes not Nursery Garbage Collecting synchronous WeakRefs that are immediately out of scope.`,
+				`The Synchronous Signal Chain Benchmark was the first benchmark that I ran. The original version of this blog post only had this benchmark. There were issues with the V8 runtime being run synchronously. Not Garbage Collecting WeakRefs in the Nursery & out of memory scope.`,
 				nl,
 				`Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/blob/main/sync.js' }, 'synchronous benchmark source code')}.`,
 				()=>[
@@ -263,7 +281,7 @@ export default (ctx:request_ctx_T)=>{
 							[`#### WeakRef on JavascriptCore`, [
 								()=>[
 									[`##### BunJS Synchronous Benchmark`, [
-										`In the BunJS benchmark, rmemo benchmark is ~20% faster than the reactive Signals benchmark. The reactive Signals benchmark only includes \`.watch()\` & does not include \`.unwatch()\`. \`.unwatch()\` has a ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals/issues/215' }, 'major performance issue')} at this moment.`,
+										`In the BunJS benchmark, rmemo benchmark is ~20% faster than the reactive Signals benchmark. The reactive Signals benchmark only includes \`.watch()\` & does not include \`.unwatch()\`.`,
 										nl,
 										`The rmemo benchmark is <5% slower than the non-reactive Signals benchmark. While WeakRef may have performance implications, it is not significant enough to throw the benchmarks.`,
 										'```',
@@ -274,7 +292,7 @@ export default (ctx:request_ctx_T)=>{
 										`Fastest is 1000 Signal chain: without watcher, 1000 rmemo chain`,
 										'```',]],],]],
 							[`#### Synchronous WeakRef on V8`, [
-								`In the V8 benchmarks, WeakRef has major performance issues & runtime instability. Due to the lack of Nursery Garbage Collection in synchronous code. I also filed ${tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'an issue')}.`,
+								`In the V8 benchmarks, WeakRef has major performance issues & runtime instability. Due to the lack of Nursery Garbage Collection in synchronous code. There is ${nofollow_tb_a_({ href: 'https://issues.chromium.org/issues/42202112' }, 'an issue')}. I also filed ${nofollow_tb_a_({ href: 'https://issues.chromium.org/issues/333584632' }, 'an issue')}.`,
 								()=>[
 									[`##### NodeJS Synchronous Benchmark`, [
 										`The rmemo benchmark is ~127% slower due to the V8 WeakRef performance bug. Also note the standard deviation spikes up to ±45.31%, suggesting runtime instability.`,
@@ -335,7 +353,7 @@ export default (ctx:request_ctx_T)=>{
 								`Fastest is 1000 Signal chain: without watcher`,
 								'```',]],
 							[`##### NodeJS Asynchronous Benchmark`, [
-								`In the [NodeJS Synchronous Benchmark](#nodejs-synchronous-benchmark), rmemo was ~350% slower. In this benchmark, rmemo is ~5% faster.`,
+								`In the [NodeJS Synchronous Benchmark](#nodejs-synchronous-benchmark), rmemo was \\~350% slower. In this benchmark, rmemo is \\~5% faster.`,
 								nl,
 								'```',
 								`node async.js`,
@@ -345,7 +363,7 @@ export default (ctx:request_ctx_T)=>{
 								`Fastest is 1000 Signal chain: without watcher`,
 								'```',]],
 							[`##### Deno Asynchronous Benchmark`, [
-								`In the [Deno Synchronous Benchmark](#deno-synchronous-benchmark), rmemo caused a core dump. In this benchmark, rmemo was ~23% faster than the Signals Polyfill.`,
+								`In the [Deno Synchronous Benchmark](#deno-synchronous-benchmark), rmemo caused a core dump. In this benchmark, rmemo was \\~23% faster than the Signals Polyfill.`,
 								nl,
 								'```',
 								`deno run async.js`,
@@ -365,7 +383,7 @@ export default (ctx:request_ctx_T)=>{
 						`Rmemo consistently had a lower heapUsed than the Signals Polyfill. WeakRef does require some memory allocation. However, WeakRef does not allocate enough memory to change the observation that rmemo uses less memory than the Signals Polyfill.`,
 						()=>[
 							[`##### BunJS`, [
-								`BunJS consistently had the best benchmarks out of the 3 runtimes. The Signals Polyfill performed significantly better (~36%) than rmemo. Rmemo used significantly less heap memory (~31%).`,
+								`BunJS consistently had the best benchmarks out of the 3 runtimes. The Signals Polyfill performed significantly better (\\~36%) than rmemo. Rmemo used significantly less heap memory (\\~31%).`,
 								()=>[
 									[`##### bun memory-rmemo.js`, [
 										'```shell',
@@ -394,8 +412,8 @@ export default (ctx:request_ctx_T)=>{
 										`bun ./memory-signal.js  0.74s user 0.11s system 222% cpu 0.382 total`,
 										'```',]],],]],
 							[`##### NodeJS`, [
+								`Rmemo was ~21% faster & used ~16% less heap memory.`,
 								()=>[
-									`Rmemo was ~21% faster & used ~16% less heap memory.`,
 									[`###### node memory-rmemo.js`, [
 										'```shell',
 										`time node memory-rmemo.js`,
@@ -481,6 +499,7 @@ export default (ctx:request_ctx_T)=>{
 						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library includes various helper functions to manage the Web Animations & their states.`,
 						nl,
 						`These helper library functions replacing Motion One end up being 1214 Bytes. Significantly smaller than Motion One. And these functions are multipurpose. Usabable for any domain with reactive state. The imported functions include:`,
+						`- wanimato__new`,
 						`- be_`,
 						`- be_memo_pair_`,
 						`- be_sig_triple_`,
