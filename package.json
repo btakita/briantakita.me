@@ -32,7 +32,7 @@
 		"esbuild": "^0.21.5",
 		"esmcss": "^0.2.11",
 		"marked": "^13.0.0",
-		"marked-gfm-heading-id": "^3.2.0",
+		"marked-gfm-heading-id": "^4.0.0",
 		"picocolors": "^1.0.1",
 		"rebuildjs": "^0.70.27",
 		"relementjs": "^0.80.17",
