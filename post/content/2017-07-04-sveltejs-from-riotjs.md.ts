@@ -38,13 +38,13 @@ I recently ${tb_a_({ href: '/posts/monorepo-static-sites-using-sveltejs-rollup-b
 While it's easy to get stuck into the rat race of endless technological upgrades & porting to the latest hyped piece of tech&hellip;
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Performance & Memory Usage`, [
+	[`# Performance & Memory Usage`, [
 		`Despite beinga young library, svelte ${tb_a_({ href: 'https://rawgit.com/krausest/js-framework-benchmark/master/webdriver-ts-results/table.html', nofollow: true }, 'does quite well')} on krausest/js-framework-benchmark for Performance & Memory Usage. That's because, Svelte	JS generates optimal javascript while not having the overhead of a runtime library. It's also going to have an	advantage in page load time due to not requiring a runtime library to be loaded.`,]],
-	[`## HTML-based Components`, [
+	[`# HTML-based Components`, [
 		`HTML is the lingua franca of the world wide web. HTML the lowest common denominator (developers, designers, non-technical) can work with. With Svelte, the HTML file is converted to be a Component. Components can use other Components.`,
 		nl,
 		`I feel confident that I will continue to use Svelte for a long time. Since it's design is simple & well thought out (all of my use cases were supported with elegance), I don't expect to have upgrade pains that plague some of the larger frameworks out there.`,]],
-	[`## APIs`, [
+	[`# APIs`, [
 		`Svelte's api idioms are well thought out. Development flow was coherent natural during the port from Riot.`,
 		nl,
 		`For each of my professional clients, I usea monorepo using the ${ctx_core__tb_a_()} toolkit. ctx-core has supporting architecture of a dependency injected ctx (context), agents, & build tools.`,

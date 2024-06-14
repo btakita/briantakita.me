@@ -25,7 +25,7 @@ export default (ctx:request_ctx_T)=>''
 With all the revelations over how the NSA is snooping over your personal communications, companies storing and controlling your data, encryption backdoors and the fact that it's always crackable, one thing is becoming clear.
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## There is no privacy on the internet`, [
+	[`# There is no privacy on the internet`, [
 		`Ok, maybe if you are good at covering your tracks, then there is a bit of privacy, but for most people doing most tasks, privacy is an illusion and has been for a while.`,
 		nl,
 		`It's similar to the physical world. The moment you step outside onto a public street, your privacy has ended. Everyone can see you. And it's ok...`,

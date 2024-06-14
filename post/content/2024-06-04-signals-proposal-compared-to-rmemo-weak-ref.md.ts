@@ -51,45 +51,45 @@ export default (ctx:request_ctx_T)=>{
 	// language=md
 	return ''
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## The Signals Proposal`, [
+	[`# The Signals Proposal`, [
 		`The ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals' }, 'Signals Proposal')} forms a foundational API for reactive signal libraries in Javascript. The emphasis is on interoperability between libraries that build on the Signals Proposal. The Signal Proposal does not emphasize the VanillaJS use case. However, there's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#example---a-signals-counter' }, 'an example in VanillaJS')}.`,
 		()=>[
-			[`### Relevant Architecture`, [
+			[`## Relevant Architecture`, [
 				`Focusing on the architecture relevant to this article. Framing the definitions to relate to this article.`,
 				()=>[
-					[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#signal-algorithms' }, 'Signal')}`, [
+					[`### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#signal-algorithms' }, 'Signal')}`, [
 						`A Signal is an Object that forms a directed acyclic graph (DAG) with other Signals. It is made of:`,
 						()=>[
-							[`##### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalstate-class' }, 'Signal.State')}`, [
+							[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalstate-class' }, 'Signal.State')}`, [
 								`A Signal.State stores reactive data in an internal slot.`,]],
-							[`##### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalcomputed-class' }, 'Signal.Computed')}`, [
+							[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalcomputed-class' }, 'Signal.Computed')}`, [
 								`A Signal.Computed stores the return value of a lazy function in the internal slot. The Signal.Computed can reference dependency signals (Signal.State or Signal.Computed) in the lazy function.`,
 								()=>[
-									[`###### Signal Directed Acyclic Graph (DAG)`, [
+									[`##### Signal Directed Acyclic Graph (DAG)`, [
 										`Signal.Computed referencing other Signals forms a dependency Directed Acyclic Graph.`,]],],]],],]],
-					[`#### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalsubtlewatcher-class' }, 'Watcher')}`, [
+					[`### ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#the-signalsubtlewatcher-class' }, 'Watcher')}`, [
 						`The Watcher makes the Signals reactive. Let's say \`Signal.Computed\` ${code_('sig', sub_('child'))} depends on another Signal ${code_('sig', sub_('parent'))}.`,
 						()=>[
-							[`##### Without the Watcher`, [
+							[`#### Without the Watcher`, [
 								`Without the Watcher, the Signal's \`.get()\` method invokes the Signal Graph. Any subsequent changes to the signals in the DAG do not notify any dependents. The only way to see the changes to the slot values in a DAG is to call \`.get()\` again.`,
 								()=>[
-									[`###### Lazy`, [
+									[`##### Lazy`, [
 										`\`Signal.Computed\` \`.get()\` will store the return value in its slot.`,]],
-									[`###### Not Reactive`, [
+									[`##### Not Reactive`, [
 										`\`Signal.Computed\` \`.get()\` must be called **every** time to see dependency updates.`]],],]],
-							[`##### With the Watcher`, [
+							[`#### With the Watcher`, [
 								`When a Signal is watched by the Watcher, the Signal becomes lazily reactive. When ${code_('sig', sub_('child'))} is watched, any change to ${code_('sig', sub_('parent'))} will notify ${code_('sig', sub_('child'))} to rerun its lazy function & store the return value in its slot.`,
 								()=>[
-									[`###### Lazy`, [
+									[`##### Lazy`, [
 										`\`Signal.Computed\` \`.get()\` will store the return value in its slot.`,]],
-									[`###### Reactive`, [
+									[`##### Reactive`, [
 										`\`Signal.Computed\` \`.get()\` must be called **one** time to see dependency updates. When a dependency Signal updates, the Watcher notifies the \`Signal.Computed\`.`,]],],]],],]],
-					[`#### Effect`, [
+					[`### Effect`, [
 						`An Effect is defined by the Signal Proposal. An Effect is not implemented within the Signals Proposal. Effects are ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#implementing-effects' }, 'implemented by the library')} using the Signals Proposal. Effects use Watcher to watch the Signals & manage the Signal Lifetime.`,]],
-					[`### Memory Management & Lifetime`, [
+					[`## Memory Management & Lifetime`, [
 						`From the Signal Proposal's ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals?tab=readme-ov-file#memory-management' }, 'Memory Management:')} section. Annotations inline:`,
 						()=>[
-							[`#### Live Signals`, [
+							[`### Live Signals`, [
 								`> - If possible: A computed Signal should be garbage-collectable if nothing live is referencing it for possible future reads, even if it's linked into a broader graph which stays alive (e.g., by reading a state which remains live).`,
 								`>   - Note that most frameworks today require explicit disposal of computed Signals if they have any reference to or from another Signal graph which remains alive.`,
 								`>   - This ends up not being so bad when their lifetime is tied to the lifetime of a UI component, and effects need to be disposed of anyway.`,
@@ -110,7 +110,7 @@ export default (ctx:request_ctx_T)=>{
 								`A computed Signal is garbage-collectable if:`,
 								`- the Signal is not watched`,
 								`- no other Signal referencing the Signal is **live**`,]],
-							[`#### Memory Allocations`, [
+							[`### Memory Allocations`, [
 								`> - A separate related goal: Minimize the number of allocations, e.g., `,
 								`>   - to make a writable Signal (avoid two separate closures + array)`,
 								`>   - to implement effects (avoid a closure for every single reaction)`,
@@ -118,7 +118,7 @@ export default (ctx:request_ctx_T)=>{
 								`>   - Solution: Class-based API enabling reuse of methods and fields defined in subclasses`,
 								nl,
 								`Unnecessary allocations should be avoided. Benchmarks & memory profiling help detect the impact of these allocations.`,]],],]],],]],],]],
-	[`## ${rmemo__tb_a_()}`, [
+	[`# ${rmemo__tb_a_()}`, [
 		`The rmemo library is named as a contraction of "reactive memo". A memo function that is reactive.`,
 		`rmemo is small. Currently weighing in at 381 Bytes min + brotli. Which makes rmemo among the smallest reactive state management libraries. Possibly the smallest reactive state library that handles Diamond Dependencies in the correct order.`,
 		nl,
@@ -127,10 +127,10 @@ export default (ctx:request_ctx_T)=>{
 		`Rmemo's first commit occurred 2023-11-17. Since then, rmemo along with libraries & applications that depend on rmemo have been developed.`,
 		nl,
 		()=>[
-			[`### Motivations to Develop rmemo`, [
+			[`## Motivations to Develop rmemo`, [
 				`Here are some motivations that I had when making rmemo.`,
 				()=>[
-					[`#### General Purpose`, [
+					[`### General Purpose`, [
 						`Rmemo is a general purpose library. Usages include:`,
 						`- reactive browser dom state`,
 						`- small hydration libraries`,
@@ -138,55 +138,55 @@ export default (ctx:request_ctx_T)=>{
 						`- devops async task scheduling`,
 						`- build async task scheduling`,
 						`- animation scheduling`,]],
-					[`#### Small & Focused`, [
+					[`### Small & Focused`, [
 						`A library that is small to have a minimal impact on browser javascript package sizes.`]],
-					[`#### Simple API`, [
+					[`### Simple API`, [
 						()=>[
-							[`##### Function instead of Object with \`.get()\``, [
+							[`#### Function instead of Object with \`.get()\``, [
 								`Functions are a bit more flexible than an object with \`.get()\`. Calling the rmemo function requires less code than calling \`.get()\` on an object. I tried both apis when writing relementjs, which is a small dom rendering library. The function api used less code.`,]],
-							[`##### Function Object has \`.set()\` method`, [
+							[`#### Function Object has \`.set()\` method`, [
 								`- \`memo_()\` returns a memo where the Typescript type does not have \`.set()\`.`,
 								`- \`sig_()\` returns a memo where the Typescript type does have \`.set()\`.`,
 								`- The javascript implementation for both \`memo_()\` & \`sig_()\` use \`.set()\` internally.`,]],
-							[`##### Implicit Lifetime Management`, [
+							[`#### Implicit Lifetime Management`, [
 								`Garbage Collection occurs when the rmemo goes out of scope. Lifetime management occurs implicitly. There no need to explicitly manage lifetimes.`,
 								()=>[
-									[`###### Other Libraries Supporting Implicit Lifetimes`, [
+									[`##### Other Libraries Supporting Implicit Lifetimes`, [
 										`Reactive Signal libraries that use UI component trees can use the lifecycle of the components to watch & unwatch the Signals. These libraries require a component tree with a cleanup event to manage lifetimes. They are not general purpose. These libraries include:`,
 										`- solidjs`,
 										`- sveltejs`,
 										`- vanjs`,
 										nl,
 										`Rmemo uses WeakRef to support implicit lifetimes while being general purpose. Meaning rmemo does not require a component tree to operate.`,]],],]],
-							[`##### Optional Explicit Lifetimes Management`, [
+							[`#### Optional Explicit Lifetimes Management`, [
 								`Rmemo allows explicit management of lifetimes. This occurs my overriding the reactive memo function's WeakRef's \`defer()\` method to return undefined. Rmemo provides a helper function \`rmemo__off(memo)\`.`,]],],]],],]],
-			[`### How does Rmemo use WeakRef?`, [
+			[`## How does Rmemo use WeakRef?`, [
 				()=>[
-					[`#### Signal Lifetime`, [
+					[`### Signal Lifetime`, [
 						`WeakRef allows the parent rmemo to notify but not hold a strong reference to the child rmemo.`,]],
-					[`#### Garbage Collection`, [
-						`The WeakRef allows the javascript garbage collector to collect the **live** rmemo that falls out of memory scope.`,]],],]],],]],
-			[`### Similarities to the Signals Proposal`, [
+					[`### Garbage Collection`, [
+						`The WeakRef allows the javascript garbage collector to collect the **live** rmemo that falls out of memory scope.`,]],],]],
+			[`## Similarities to the Signals Proposal`, [
 				`A reactive memo has similarities to a Signal where both:`,
 				`- hold state in a "slot"`,
 				`- lazily load state`,
 				`- lazily start reactivity when called & watched`,]],
-			[`### Differences from the Signals Proposal`, [
+			[`## Differences from the Signals Proposal`, [
 				()=>[
-					[`#### Rmemo's Functions are Reactive When Called`, [
+					[`### Rmemo's Functions are Reactive When Called`, [
 						`When a rmemo function calls a dependency rmemo function, the reactive relationship immediately starts. There is no Watcher object. A rmemo function is **live** when it has a dependency rmemo & is called.`,]],
-					[`#### Rmemo Uses WeakRef to Support Garbage Collection`, [
-						`When a **live** rmemo goes out of memory scope, it will be eligable for Garbage Collection. In the Signals Proposal, a **live** Signal is watched by a Watcher. A **live** Signal will not be eligible for Garbage Collection if it or the Watcher remains in memory scope. This reference binding to the Watcher is broken when the Signal is no longer **live** by being **unwatched**.`,]],],]],
-	[`## Signals Proposal does not support WeakRef`, [
+					[`### Rmemo Uses WeakRef to Support Garbage Collection`, [
+						`When a **live** rmemo goes out of memory scope, it will be eligable for Garbage Collection. In the Signals Proposal, a **live** Signal is watched by a Watcher. A **live** Signal will not be eligible for Garbage Collection if it or the Watcher remains in memory scope. This reference binding to the Watcher is broken when the Signal is no longer **live** by being **unwatched**.`,]],],]],],]],
+	[`# Signals Proposal does not support WeakRef`, [
 		`I filed [a ticket](https://github.com/tc39/proposal-signals/issues/156) to add WeakRef support. I hope to explain why rmemo needs WeakRef support in order to build on the Signals Proposal. Rmemo could interop with the Signals Proposal as is, but that would:`,
 		`- require extra logic`,
 		`- require a larger bundle size`,
 		`- would degrade in performance`,
 		`- may use more heap memory`,
 		()=>[
-			[`### Discussions for the Signals Proposal Supporting WeakRef`, [
+			[`## Discussions for the Signals Proposal Supporting WeakRef`, [
 				`So far, no delegates support this ticket. I was asked to demonstrate my use cases & address performance/memory concerns about using WeakRef.`,]],],]],
-	[`## ${tb_a_({ href: 'https://tc39.es/ecma262/#sec-weakref-processing-model' }, 'WeakRef Processing Model')}`, [
+	[`# ${tb_a_({ href: 'https://tc39.es/ecma262/#sec-weakref-processing-model' }, 'WeakRef Processing Model')}`, [
 		`The WeakRef Processing Model is important to understand. Especially in regard to synchronous behavior. A couple of important notes:`,
 		nl,
 		`> When WeakRef.prototype.deref is called, the referent (if undefined is not returned) is kept alive so that subsequent, synchronous accesses also return the same value. This list is reset when synchronous work is done using the ${nofollow_tb_a_({ href: 'https://tc39.es/ecma262/#sec-clear-kept-objects' }, 'ClearKeptObjects')} abstract operation.`,
@@ -196,7 +196,7 @@ export default (ctx:request_ctx_T)=>{
 		`This means a WeakRef will not know that the referent object is Garbage Collected in the same synchronous event loop run. As the host environment will need to call ClearKeptObjects in between event loop runs.`,
 		nl,
 		()=>[
-			[`### WeakRef & Nursery Garbage Collected`, [
+			[`## WeakRef & Nursery Garbage Collected`, [
 				`Some confusion with the Synchronous Benchmarks came with WeakRef & Nursery Garbage Collection. Consider the following loop:`,
 				'```js',
 				`while (true) {`,
@@ -207,7 +207,7 @@ export default (ctx:request_ctx_T)=>{
 				`The ${nofollow_tb_a_({ href: 'https://developer.apple.com/documentation/javascriptcore' }, 'Javascript Core')} runtime will run the loop in a steady state. Since its Garbage Collects both the WeakRef & the referent Object while in synchronous execution.`,
 				nl,
 				`However, both V8 & Spider Monkey will not run in a steady state. The memory will grow until there is an Out of Memory or Null Ptr error. This is due to V8 & Spider Monkey not Garbage Collecting the WeakRef while in synchronous execution. The Chromium team ${nofollow_tb_a_({ href: 'https://issues.chromium.org/issues/42202112#comment19' }, 'will fix this particular issue')}. I filed ${tb_a_({ href: 'https://bugzilla.mozilla.org/show_bug.cgi?id=1900933' }, 'an issue')} with the Firefox team.`,]],],]],
-	[`## Benchmarking the Signals Proposal vs rmemo/WeakRef`, [
+	[`# Benchmarking the Signals Proposal vs rmemo/WeakRef`, [
 		`The ${tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark' }, 'benchmark repo')} has several benchmarks. Consisting of:`,
 		`- Synchronous Signal Chain Benchmark`,
 		`  - 1000 Signal chain: without watcher`,
@@ -223,18 +223,18 @@ export default (ctx:request_ctx_T)=>{
 		nl,
 		`None of the Signal benchmarks call \`.unwatch()\`, which has a ${nofollow_tb_a_({ href: 'https://github.com/tc39/proposal-signals/issues/215' }, 'performance issue')}.`,
 		()=>[
-			[`### Rmemo as a Proxy for WeakRef Performance`, [
+			[`## Rmemo as a Proxy for WeakRef Performance`, [
 				`These benchmarks compare the Signal Polyfill vs. rmemo's performance. A single WeakRef is lazy instantiated whenever a rmemo is referenced by another rmemo. A rmemo lazily instantiates one WeakRef when calling its first dependency rmemo.`,
 				nl,
 				`There are several props that are dynamically assigned to each rmemo. Each rmemo has a \`.set()\` method used internally. A \`sig_()\` exposes the \`.set()\` method in its typescript type. A \`memo_()\` does not expose \`.set()\` in its typescript type.`,
 				nl,
 				`There are several differences in implementation between Rmemo & the Signals Polyfill. However, comparing these two implementations should at least demonstrate whether or not WeakRef has a significant negative impact on performance & memory usage.`,]],
-			[`### Synchronous Signal Chain Benchmark`, [
+			[`## Synchronous Signal Chain Benchmark`, [
 				`The Synchronous Signal Chain Benchmark was the first benchmark that I ran. The original version of this blog post only had this benchmark. There were issues with the V8 runtime being run synchronously. Not Garbage Collecting WeakRefs in the Nursery & out of memory scope.`,
 				nl,
 				`Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/blob/main/sync.js' }, 'synchronous benchmark source code')}.`,
 				()=>[
-					[`#### 1000 Signal chain: without watcher`, [
+					[`### 1000 Signal chain: without watcher`, [
 						`Note that Signals are not reactive without the watcher.`,
 						'```js',
 						`let a1 = new Array(1000)`,
@@ -244,7 +244,7 @@ export default (ctx:request_ctx_T)=>{
 						`}`,
 						`a1[999].get()`,
 						'```',]],
-					[`#### 1000 Signal chain: with watcher`, [
+					[`### 1000 Signal chain: with watcher`, [
 						`These Signals are reactive with the watcher. Note the increase in complexity in adding the watcher.`,
 						'```js',
 						`let pending = false`,
@@ -266,7 +266,7 @@ export default (ctx:request_ctx_T)=>{
 						`w.watch(a1[999])`,
 						`a1[999].get()`,
 						'```',]],
-					[`#### 1000 rmemo chain`, [
+					[`### 1000 rmemo chain`, [
 						`Note that the rmemo example is simpler than even the [1000 Signal chain: without watcher](#1000-signal-chain-without-watcher) example.`,
 						'```js',
 						`let a1 = new Array(1000)`,
@@ -276,7 +276,7 @@ export default (ctx:request_ctx_T)=>{
 						`}`,
 						`a1[999]()`,
 						'```',]],
-					[`#### Results`, [
+					[`### Results`, [
 						()=>[
 							[`#### WeakRef on JavascriptCore`, [
 								()=>[
@@ -337,12 +337,12 @@ export default (ctx:request_ctx_T)=>{
 										`    deno(+0x2a5e036) [0x5ef955099036]`,
 										`[1]    547229 trace trap (core dumped)  deno run index.js`,
 										'```',]],],]],],]],],]],
-			[`### Asynchronous Signal Chain Benchmark`, [
+			[`## Asynchronous Signal Chain Benchmark`, [
 				`Asynchronous code currently enables WeakRef to Garbage Collect for the major JS runtimes. Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/blob/main/async.js' }, 'async benchmark source code')}.`,
 				()=>[
-					[`#### Results`, [
+					[`### Results`, [
 						()=>[
-							[`##### BunJS Asynchronous Benchmark`, [
+							[`#### BunJS Asynchronous Benchmark`, [
 								`In the [BunJS Synchronous Benchmark](#bunjs-synchronous-benchmark), rmemo was ~20% faster. In this benchmark, rmemo is ~10% slower.`,
 								nl,
 								'```',
@@ -352,7 +352,7 @@ export default (ctx:request_ctx_T)=>{
 								`1000 rmemo chain x 2,747 ops/sec ±4.73% (69 runs sampled)`,
 								`Fastest is 1000 Signal chain: without watcher`,
 								'```',]],
-							[`##### NodeJS Asynchronous Benchmark`, [
+							[`#### NodeJS Asynchronous Benchmark`, [
 								`In the [NodeJS Synchronous Benchmark](#nodejs-synchronous-benchmark), rmemo was \\~350% slower. In this benchmark, rmemo is \\~5% faster.`,
 								nl,
 								'```',
@@ -362,7 +362,7 @@ export default (ctx:request_ctx_T)=>{
 								`1000 rmemo chain x 1,054 ops/sec ±4.92% (70 runs sampled)`,
 								`Fastest is 1000 Signal chain: without watcher`,
 								'```',]],
-							[`##### Deno Asynchronous Benchmark`, [
+							[`#### Deno Asynchronous Benchmark`, [
 								`In the [Deno Synchronous Benchmark](#deno-synchronous-benchmark), rmemo caused a core dump. In this benchmark, rmemo was \\~23% faster than the Signals Polyfill.`,
 								nl,
 								'```',
@@ -373,19 +373,19 @@ export default (ctx:request_ctx_T)=>{
 								`1000 rmemo chain x 1,043 ops/sec ±5.36% (44 runs sampled)`,
 								`Fastest is 1000 rmemo chain,1000 Signal chain: without watcher`,
 								'```',]],],]],],]],
-			[`### Memory Allocation Benchmark`, [
+			[`## Memory Allocation Benchmark`, [
 				`This benchmark tests the memory allocation & time it takes to load & store 1000 x 1000 Signal Chains. Here are the source codes for:`,
 				`- ${nofollow_tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/blob/main/memory-signal.js' }, 'Signals Polyfill Memory Allocation Benchmark')}`,
 				`- ${nofollow_tb_a_({ href: 'https://github.com/btakita/rmemo-vs-signal-polyfill-benchmark/blob/main/memory-rmemo.js' }, 'Rmemo Memory tallocation Benchmark')}`,
 				nl,
 				()=>[
-					[`#### Results`, [
+					[`### Results`, [
 						`Rmemo consistently had a lower heapUsed than the Signals Polyfill. WeakRef does require some memory allocation. However, WeakRef does not allocate enough memory to change the observation that rmemo uses less memory than the Signals Polyfill.`,
 						()=>[
-							[`##### BunJS`, [
+							[`#### BunJS`, [
 								`BunJS consistently had the best benchmarks out of the 3 runtimes. The Signals Polyfill performed significantly better (\\~36%) than rmemo. Rmemo used significantly less heap memory (\\~31%).`,
 								()=>[
-									[`##### bun memory-rmemo.js`, [
+									[`#### bun memory-rmemo.js`, [
 										'```shell',
 										`time bun ./memory-rmemo.js`,
 										`...`,
@@ -398,7 +398,7 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`bun ./memory-rmemo.js  1.07s user 0.21s system 286% cpu 0.446 total`,
 										'```',]],
-									[`##### bun memory-signal.js`, [
+									[`#### bun memory-signal.js`, [
 										'```shell',
 										`time bun ./memory-signal.js`,
 										`...`,
@@ -411,10 +411,10 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`bun ./memory-signal.js  0.74s user 0.11s system 222% cpu 0.382 total`,
 										'```',]],],]],
-							[`##### NodeJS`, [
+							[`#### NodeJS`, [
 								`Rmemo was ~21% faster & used ~16% less heap memory.`,
 								()=>[
-									[`###### node memory-rmemo.js`, [
+									[`##### node memory-rmemo.js`, [
 										'```shell',
 										`time node memory-rmemo.js`,
 										`...`,
@@ -427,7 +427,7 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`node ./memory-rmemo.js  2.59s user 0.53s system 224% cpu 1.387 total`,
 										'```',]],
-									[`###### node memory-signal.js`, [
+									[`##### node memory-signal.js`, [
 										'```shell',
 										`time node memory-signal.js`,
 										`...`,
@@ -440,10 +440,10 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`node ./memory-signal.js  3.21s user 0.59s system 238% cpu 1.598 total`,
 										'```',]],],]],
-							[`##### Deno`, [
+							[`#### Deno`, [
 								`Rmemo was ~7% faster & used ~12% less heap memory.`,
 								()=>[
-									[`###### deno memory-rmemo.js`, [
+									[`##### deno memory-rmemo.js`, [
 										'```shell',
 										`time deno memory-rmemo.js`,
 										`...`,
@@ -455,7 +455,7 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`deno run ./memory-rmemo.js  5.14s user 0.83s system 343% cpu 1.740 total`,
 										'```',]],
-									[`###### deno memory-signal.js`, [
+									[`##### deno memory-signal.js`, [
 										'```shell',
 										`time deno memory-signal.js`,
 										`...`,
@@ -467,17 +467,17 @@ export default (ctx:request_ctx_T)=>{
 										`}`,
 										`deno run ./memory-signal.js  5.50s user 0.93s system 331% cpu 1.937 total`,
 										'```',]],],]],],]],],]],],]],
-	[`## VanillaJS Use Cases`, [
+	[`# VanillaJS Use Cases`, [
 		`The Watcher api is in the subtle namespace. Targeting library authors. There are good reasons to make an accessible api for VanillaJS authors. Some use cases include:`,
 		()=>[
-			[`### Simple Hydration`, [
+			[`## Simple Hydration`, [
 				`With the recent resurgence of Multi-Page Apps (MPAs) & non-javascript server-side languages. It would be beneficial to provide the option to use reactive state. Without having to use a library.`,]],
-			[`### Simplify & Compose Libraries with Reactive State`, [
+			[`## Simplify & Compose Libraries with Reactive State`, [
 				`See the [rmemo Use Cases](#rmemo-use-cases) section for examples on how a simpler reactive api powered by WeakRef increases simplicity, state modularity, & productivity.`,]],],]],
-	[`## rmemo Use Cases`, [
+	[`# rmemo Use Cases`, [
 		`Rmemo provides simple reactive memo functions. Here are some examples of where its used:`,
 		()=>[
-			[`#### ${relementjs__tb_a_()}`, [
+			[`### ${relementjs__tb_a_()}`, [
 				`relementjs was originally forked from VanJS alongside rmemo. Rmemo is for reactive state. relementjs is for reactive isomorphic UI components. Unlike VanJS, rmemo & relementjs is reactive on both the browser & server side. This enables isomorphic UI components to work as-is on both the browser & server.`,
 				nl,
 				`relementjs is tree-shakable & is smaller than VanJS for equivalent functionality. The smaller bundle size is possible using WeakRef.`,
@@ -488,12 +488,12 @@ export default (ctx:request_ctx_T)=>{
 				`- mathml`,
 				`- xml`,
 				`  - also supports namespaced xml tags`,]],
-			[`#### Hydration as Hypermedia with hyop`, [
+			[`### Hydration as Hypermedia with hyop`, [
 				`The name hyop is a contraction of **HY**permedia **OP**eration. Hyop weighs in at 61 Bytes min + brotli. Hyop binds functions to html tags. With a minimal amount of logic. These functions can bind DOM elements to reactive memos.`,
 				()=>[
-					[`##### YouTube Video Player & Animations`, [
+					[`#### YouTube Video Player & Animations`, [
 						`Rmemo + hyop binds the video player control logic + animations on ${tb_a_({ href: 'https://brookebrodack.net/content' }, 'https://brookebrodack.net/content')}. The application logic is 4.16 kb gzip + brotli. The ${tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/content/hyop/content__hyop.ts' }, 'source code')} is available.`,]],
-					[`##### Flexible & Lightweight Web Animation Timelines`, [
+					[`#### Flexible & Lightweight Web Animation Timelines`, [
 						`Reactive programming can manage Web Animation Timelines. I began developing the ${tb_a_({ href: 'https://brookebrodack.net/brookers' }, 'Brookers Timeline')} using ${motion_one__tb_a_()}, due to its small size at 3.8 kb min + gzip. Adding 1 kb min + gzip for spring easing. However, I found Motion One's timeline difficult to compose. As I was not able to use any form of callback when the event ended to chain timeline events together.`,
 						nl,
 						`So I replaced Motion One with rmemo. Creating a new library, ${tb_a_({ href: 'https://github.com/ctx-core/web_animation' }, 'ctx-core/web_animation')}. This library includes various helper functions to manage the Web Animations & their states.`,
@@ -511,10 +511,10 @@ export default (ctx:request_ctx_T)=>{
 						`- tup`,
 						nl,
 						`Now, the Brookers Timeline is 4.38 kb min + brotli in total. Saving around 3.6 kb. Here is the ${nofollow_tb_a_({ href: 'https://github.com/btakita/ui--browser--brookebrodack/blob/main/brookers/hyop/brookers__hyop.ts' }, 'source code')}`,]],],]],
-			[`#### Reactive Builds & Servers`, [
+			[`### Reactive Builds & Servers`, [
 				`Reactivity is great for managing asynchronous state graphs. A development build, development server, & production servers all have asynchronous state graphs. With this in mind, I created 3 libraries for my development stack.`,
 				()=>[
-					[`##### ${rebuildjs__tb_a_()}`, [
+					[`#### ${rebuildjs__tb_a_()}`, [
 						`rebuildjs is a base library by integrating the following with a web server:`,
 						`- server side reactive state for the:`,
 						`  - app`,
@@ -540,11 +540,11 @@ export default (ctx:request_ctx_T)=>{
 						`- server-side request`,
 						`- browser-side`,
 						`- any environment`,]],
-					[`##### ${rebuildjs_tailwind__tb_a_()}`, [
+					[`#### ${rebuildjs_tailwind__tb_a_()}`, [
 						`@rebuildjs/tailwindcss adds ${tailwindcss__tb_a_()} support to rebuildjs.`,]],
-					[`##### ${relysjs__tb_a_()}`, [
+					[`#### ${relysjs__tb_a_()}`, [
 						`Integrates ElysiaJS with rebuildjs.`,]],
-					[`##### ${rappstack__tb_a_()} (reactive app stack)`, [
+					[`#### ${rappstack__tb_a_()} (reactive app stack)`, [
 						`Rappstack is made of composable domain & ui plugin libraries that target:`,
 						`- any environment`,
 						`- server environments`,
@@ -557,7 +557,7 @@ export default (ctx:request_ctx_T)=>{
 						`- ${briantakita_me_dev__tb_a_()}`,
 						`- ${brookebrodack_dev__tb_a_()}`,
 						`- other private repositories`,]],],]],],]],
-	[`## Conclusion`, [
+	[`# Conclusion`, [
 		`WeakRef has reasonable performance & memory usage. This is seen through the benchmarks where rmemo uses WeakRef. Rmemo stands for reactive memo. The reactive memo is a function that is reactive within other reactive memos. The first commit for rmemo was in 2023-11-17. Since then, the following has been developed by me. All of which are powered by rmemo & WeakRef:`,
 		`- relementjs`,
 		`- hyop & Hydration as Hypermedia techniques`,

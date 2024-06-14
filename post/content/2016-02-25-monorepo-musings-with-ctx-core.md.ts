@@ -31,7 +31,7 @@ ${
 	])
 }`.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Independence/Autonomy`, [
+	[`# Independence/Autonomy`, [
 		`As desirable features emerge in other libraries, the Framework would need to integrate the new feature. If a library is no longer desirable, it may be difficult to decouple from that library. A Framework has inertia. Once a Framework gains a community, it has an obligation to keep a feature set out while maintaining a simple interface. This often has a cost of complexity & loss of freedom to provide additional functionality.`,
 		nl,
 		`As any software project (Frameworks included) is used & as new tech emerges, the idioms of the project often change.`,]],

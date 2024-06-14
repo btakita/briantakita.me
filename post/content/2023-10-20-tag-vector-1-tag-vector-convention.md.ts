@@ -37,7 +37,7 @@ export default (ctx:request_ctx_T)=>''
 	`// person & name are tags`,
 	'```',))
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	['## Inferred vectors can also run left `<-`', [
+	['# Inferred vectors can also run left `<-`', [
 		`Is inference, vectors can also be in the left direction:`,
 		nl,
 		'```ts',
@@ -45,7 +45,7 @@ export default (ctx:request_ctx_T)=>''
 		`// name is inferred to be downstream of person`,
 		`// The vector is name<-person`,
 		'```',]],
-	[`## Default Direction when tags are on the same inferential level`, [
+	[`# Default Direction when tags are on the same inferential level`, [
 		'If two tags are on the same inferential level, such as `person` & `company`, the vector arrow will be `->` by default.',
 		nl,
 		'```ts',
@@ -61,7 +61,7 @@ export default (ctx:request_ctx_T)=>''
 		`// company<-person`,
 		'```',
 		()=>[
-			[`### Overriding the Default Direction`, [
+			[`## Overriding the Default Direction`, [
 				`The default direction can be overridden in code with a comment above or before the statement.`,
 				nl,
 				'```ts',
@@ -69,7 +69,7 @@ export default (ctx:request_ctx_T)=>''
 				`const company_company = { name: 'SpaceX' }`,
 				`// company<-person`,
 				'```',]],
-			[`### Tag Vectors with 3 or more tags`, [
+			[`## Tag Vectors with 3 or more tags`, [
 				`A tag vector composes of any number of tags. Apply the inference level rules to the first & last tag. In the following case:`,
 				nl,
 				'```ts',
@@ -101,7 +101,7 @@ export default (ctx:request_ctx_T)=>''
 				`// company<-registry<-person`,
 				'```',
 				()=>[
-					[`#### multi-dimension tag vectors`, [
+					[`### multi-dimension tag vectors`, [
 						`Compose tag vectors into a multi-dimension tag vector.`,
 						nl,
 						'```ts',
@@ -121,10 +121,10 @@ export default (ctx:request_ctx_T)=>''
 						`The inference levels of the name vectors are compared, with the more abstract has a higher inference level than the concrete. In grammar, the predicate \`as->of->2023\` has a higher inference level than the subject \`company->person->name\`.`,
 						nl,
 						`Continuing with inference levels in grammar; an adjective, adverb, preposition, or conjunction \`as\` would be more abstract than a noun \`2023\`.`,]],],]],
-			[`### Data Structure Shape`, [
+			[`## Data Structure Shape`, [
 				`The Tag Vector Convention can encode the shape of the data structure.`,
 				()=>[
-					[`#### Array`, [
+					[`### Array`, [
 						'```ts',
 						`const company_person_name_a = [`,
 						`	 'Elon Musk',`,
@@ -133,7 +133,7 @@ export default (ctx:request_ctx_T)=>''
 						`// company->person->name->a(array)`,
 						'```',
 						()=>[
-							[`##### Multi-dimensional Array`, [
+							[`#### Multi-dimensional Array`, [
 								'```ts',
 								`const company_a_person_name_aa = [`,
 								`	 ['Elon Musk', 'Zachary Kirkhorn'],`,
@@ -158,14 +158,14 @@ export default (ctx:request_ctx_T)=>''
 								`  ]`,
 								'```',
 							]],],]],
-					[`#### Record`, [
+					[`### Record`, [
 						'```ts',
 						`const company_id_R_ceo_name:Record<string, string> = {`,
 						`  'tesla': 'Elon Musk',`,
 						`  'facebook': 'Mark Zuckerberg',`,
 						`}`,
 						'```',]],
-					[`#### Map`, [
+					[`### Map`, [
 						'```ts',
 						`const company_id_M_ceo_name:Map<string, string> = new Map([`,
 						`  ['tesla', 'Elon Musk'],`,

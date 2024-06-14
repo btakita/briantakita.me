@@ -37,7 +37,7 @@ ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/magic.md'
 I'm happy to see my own homespun approach have a strong connection to an established Philosophical branch. The ${tb_a_({ href: 'http://en.wikipedia.org/wiki/Philosophy_of_language', nofollow: true }, 'Philosophy of Language (Wikipedia)')} brings concepts together into a system of logic to yield magical & insightful connections in Existence.
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## My Story with Magic`, [
+	[`# My Story with Magic`, [
 		`I've always been a daydreaming, fantasy imagining, professing, believer in magic. It's a fascination that I've stubbornly cultivated from childhood, in spite of attempts from others to change my view. I felt judgement & a bit crazy when I spoke, so I ended up not speaking much. I had a strong emotional belief without the rational backing.`,
 		nl,
 		`In high school, I had two notable role models who helped set direction to my life. My brother in law who		founded a technology company & my physics teacher. It wasn't the facts that they taught. It was the enthusiastic approach that seemingly unrelated concepts can be connected, yielding novelty & innovation.`,
@@ -51,7 +51,7 @@ I'm happy to see my own homespun approach have a strong connection to an establi
 		`Domain Driven Design states coherence is facilitated when members of an organization speak the same domain language. That means that when everybody in the business uses the same terminology, better overall	communication, better overall thought, & more innovative connections. The necessary precision is determined by what the concept is being used for (i.e. a sales presentation or software implementation).`,
 		nl,
 		`I also grew up with an interest in ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/spirituality.md' }, 'spirituality')} & the nature of Existence. I wanted to unify everything in Existence. What if we use Domain Driven Design principles where the Domain is Existence? Magic!`,]],
-	[`## Culture & Magic`, [
+	[`# Culture & Magic`, [
 		`Culture has evolved a definition of ${
 			tb_a_({ href: 'https://www.thefreedictionary.com/magic', nofollow: true }, `Magic (thefreedictionary.com)`)
 		}.`,
@@ -63,7 +63,7 @@ I'm happy to see my own homespun approach have a strong connection to an establi
 		} means.`,
 		nl,
 		`> Of or relating to existence outside the natural world.`,]],
-	[`## Magic of Expanding Consciousness`, [
+	[`# Magic of Expanding Consciousness`, [
 		`The cultural definition is accurate. However, let's add the qualification that supernatural is defined from the perspective of the ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/exist.md' }, 'entity')} that is perceiving the event. That means prehistoric humans will see the thing that creates lightning as being supernatural, because prehistoric humans did not understand weather patterns. Modern humans don't see the thing that creates lightning as supernatural because there is a natural scientific explanation.`,
 		nl,
 		`Taking perspective into account; Magic is the phenomenon that cannot be accurately and/or precisely explained by the context of the entity perceiving the phenomenon.`,
@@ -71,7 +71,7 @@ I'm happy to see my own homespun approach have a strong connection to an establi
 		`This means magic is the awareness & abstraction of the unexplained phenomenon. Magic is tied to Expanding Consciousness, as we attempt to understand the phenomenon. That does not mean we can't enjoy magic. Magic is motivated by the mystery & wonder as we interact with the unexplained (and unexplainable).`,
 		nl,
 		`Even when we can explain the physical process, like the hormonal interactions involved with love, we still experience love as magic. After all, a being in love often does not focus on these chemical interactions.`,]],
-	[`## Magic Connections with the Philosophy of Language`, [
+	[`# Magic Connections with the Philosophy of Language`, [
 		`Not having a formal training in Philosophy, it's been my pleasure to come across the Philosophy of Language. I've arrived at a similar approach from my life experience. However, it is great to see that there is a Philosophical tradition with a similar focus.`,
 		nl,
 		`It's quite magical that patterns in Existence repeat in many different Domains. It's a tragedy culture has separated many Domains in Existence. A notable schism was when rational materialistic science separated from esoteric spirituality.`,
@@ -81,7 +81,7 @@ I'm happy to see my own homespun approach have a strong connection to an establi
 		`Language has a magical effect on entities. Language sets the conceptual scope of the entities that communicate with each other. Language also sets the conceptual scope of rational, symbolic logic. Language is spoken by the voice in our heads. Language influences the thoughts & context of the entities that listen to.`,
 		nl,
 		`Marketing entities understand the power of language & images. That's why Marketing departments & politicians spend hours picking the right name & terminology. That's why you see ads defining & redefining words for the audience. That's why some people are given labels, like "terrorist", "freedom fighter", "anarchist", "republican", "democrat", etc. These words affect the perceived identities of the people with the labels. These words make it easy to kill, to oppress, & to ignore.`,]],
-	[`## What is Language?`, [
+	[`# What is Language?`, [
 		`Language has often been thought of as a human trait.`,
 		nl,
 		`${tb_a_({ href: 'http://en.wikipedia.org/wiki/Language', nofollow: true }, 'Language (Wikipedia)')}`,
@@ -95,7 +95,7 @@ I'm happy to see my own homespun approach have a strong connection to an establi
 		`We can expand the scope of Language to be utilized by any entity signaling another entity. That means plants have Language (${
 			tb_a_({ href: 'http://www.pbs.org/wnet/nature/what-plants-talk-about-video-full-episode/8243/', nofollow: true}, 'What Plants Talk About')
 		}). Stars have Language. The Universe itself has Language. Concepts have Language.`,]],
-	[`## Awareness of the Ecosystem of Language`, [
+	[`# Awareness of the Ecosystem of Language`, [
 		`Language is an evolutionary ecosystem of the culture's mindshare & heartshare by those who propagate definitions & meaning. Language influences (even determines) how we, as a culture, act. We, as participating entities, have the power to be aware of & change the language. We can influence each other to become harmonious, loving, intelligent, peaceful, beautiful, playful, creative, magical.`,
 		nl,
 		`Language is also a tool of empowerment. Awareness of context & choice of words effectively shape your mental model & the model of those who listen to you. Language, in it's many forms, is a key tool that has been Expanding Consciousness of Life.`,

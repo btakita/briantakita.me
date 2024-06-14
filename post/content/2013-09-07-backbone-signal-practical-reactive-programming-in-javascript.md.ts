@@ -78,7 +78,7 @@ backbone-signal is being used in ${rundavoo__tb_a_()} and has been fun to use, e
 The api includes:
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Loading/Unloading`, [
+	[`# Loading/Unloading`, [
 		`- \`load\` - Invokes the loader when the value is not defined`,
 		`- \`forceLoad\` - Invokes the loader (regardless if the value is defined)`,
 		`- \`reload\` - Unsets the value then invokes the loader`,
@@ -87,11 +87,11 @@ The api includes:
 		`- \`unsetLoader\` - Unsets the Loader callback`,
 		`- \`setUnloader\` - Sets the Unloader callback`,
 		`- \`unsetUnloader\` - Unsets the Unloader callback`,]],
-	[`## Setters`, [
+	[`# Setters`, [
 		`- \`set\` - Sets the value with the argument`,
 		`- \`unset\` - Unets the value`,
 		`- \`value\` - Returns the value`,]],
-	[`## Getters/Listeners`, [
+	[`# Getters/Listeners`, [
 		`- \`get\` - Invoke the callback immediately and on any additional changes to the value`,
 		`- \`listen\` - Listen to any additional changes to the value (does not invoke the callback immediately)`,
 		`- \`getOnce\` - Invoke the callback immediately one time`,

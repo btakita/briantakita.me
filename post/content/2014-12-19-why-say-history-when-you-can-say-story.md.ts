@@ -26,11 +26,11 @@ ${footnote__sup_({ ctx, id: 'encyclopedia-britannica-hero-image' }, `From `, tb_
 In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' }, 'Story')}`, [
+	[`# ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/story.md' }, 'Story')}`, [
 		`> Story, a recounting of a sequence of events`,
 		nl,
 		`Our ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/culture.md' }, 'culture')} distinguishes a story as being used for entertainment and fiction. Our culture also uses story for an informal narrative for people, animals, etc.`,]],
-	[`## ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' }, 'History')}`, [
+	[`# ${tb_a_({ href: 'https://github.com/btakita/philosophy/blob/master/src/history.md' }, 'History')}`, [
 		`> History (from Greek ἱστορία, historia, meaning "inquiry, knowledge acquired by investigation") is the study of the past, particularly how it relates to humans. It is an umbrella term that relates to past events as well as the memory, discovery, collection, organization, presentation, and interpretation of information about these events. Scholars who write about history are called historians. Events occurring prior to written record are considered prehistory.`,
 		nl,
 		`> History can also refer to the academic discipline which uses a narrative to examine and analyse a sequence of past events, and objectively determine the patterns of cause and effect that determine them.`,
@@ -42,7 +42,7 @@ In culture, we are taught to distinguish history & story as two separate concept
 		} & ${
 			tb_a_({ href: 'http://en.wikipedia.org/wiki/Autobiography', nofollow: true }, 'Autobiographies')
 		} are also considered history.`,]],
-	[`## Story & History can be used Interchangeably`, [
+	[`# Story & History can be used Interchangeably`, [
 		`We already can use "story" in place of "history" since both are a recounting of events.`,
 		nl,
 		`"History" can also be used in place of "story" since the vernacular usage of history includes fiction worlds, geological events, & physical events.`,

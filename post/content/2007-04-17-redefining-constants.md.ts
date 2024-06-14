@@ -52,7 +52,7 @@ Since the tests are running in the test environment, a fake File Upload service 
 There are a few ways of doing this...
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Just Reset the Constant`, [
+	[`# Just Reset the Constant`, [
 		'```rb',
 		`context "A real S3 call" do`,
 		`  setup do`,
@@ -68,7 +68,7 @@ There are a few ways of doing this...
 		'```sh',
 		`warning: already initialized constant STORAGE_SERVICE`,
 		'```',]],
-	[`## Use silence_warnings`, [
+	[`# Use silence_warnings`, [
 		'```rb',
 		`context "A real S3 call" do`,
 		`  setup do`,
@@ -112,7 +112,7 @@ There are a few ways of doing this...
 		'```',
 		nl,
 		`Calling redefining the constant does not generate a warning. Also it does provide semantic value because you are actively declaring that you are redefining the constant. If there are other warnings, you will also see them.`,]],
-	[`## Its all Dirty`, [
+	[`# Its all Dirty`, [
 		`Redefining constants is a non-standard tactic, especially for those new to Ruby. Since this is unconventional and is often contrary to assumptions, it may lead to unpredictable behavior.`,
 		nl,
 		`Maybe the storage service can be an attribute that can be changed for individual tests.`,]],

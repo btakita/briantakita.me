@@ -30,7 +30,7 @@ I’m pleased to announce the 0.6.0 version of RR. The changes include:
 - \`hash_including\` matcher
 `.trim())
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Declaring Double Subjects (The bang methods)`, [
+	[`# Declaring Double Subjects (The bang methods)`, [
 		`In previous versions of RR, you always needed to pass in the subject of the double. For example:`,
 		nl,
 		'```rb',
@@ -47,7 +47,7 @@ I’m pleased to announce the 0.6.0 version of RR. The changes include:
 		'```',
 		nl,
 		`Now the bang methods by themselves don’t really add a whole lot, but when used in the context of Double chaining, they become a powerful addition.`,]],
-	[`## Double Chaining`, [
+	[`# Double Chaining`, [
 		`Nick Kallen presented the use case for Double chaining and contributed a patch for the 0.5.0 release of RR. It has proved useful and is now more fully incorporated into RR. Now you can pass in your subject or use the subject provided by RR by using the \`!\` method. Here are some examples of Double Chaining:`,
 		nl,
 		'```rb',
@@ -82,21 +82,21 @@ I’m pleased to announce the 0.6.0 version of RR. The changes include:
 		`o.branch2.branch22 # 22`,
 		'```',
 		()=>[
-			[`### Satisfy Matcher`, [
+			[`## Satisfy Matcher`, [
 				`Matthew O’Conner submitted a patch that added the satisfy matcher. This adds the ability to add arbitrary argument expectation matchers.`,
 				nl,
 				'```rb',
 				`mock(object).foobar(satisfy {|arg| arg.length == 2})`,
 				`object.foobar("xy")`,
 				'```',]],
-			[`### Hash Including Matcher`, [
+			[`## Hash Including Matcher`, [
 				`Matthew O’Conner also submitted a patch that added the hash_including matcher. This adds a convenient way to assert that the passed-in hash includes certain key/value pairs.`,
 				nl,
 				'```rb',
 				`mock(object).foobar(hash_including(:red => "#FF0000", :blue => "#0000FF"))`,
 				`object.foobar({:red => "#FF0000", :blue => "#0000FF", :green => "#00FF00"})`,
 				'```',]],],]],
-	[`## Mailing list`, [
+	[`# Mailing list`, [
 		`RR has a mailing lists at:`,
 		nl,
 		`- ~~double-ruby-users@rubyforge.org~~`,

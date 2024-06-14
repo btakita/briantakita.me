@@ -19,7 +19,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 // language=md
 export default (ctx:request_ctx_T)=>md__raw_({ ctx }, ''
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Multi Underscore Tag Naming Convention`, [
+	[`# Multi Underscore Tag Naming Convention`, [
 		`I wrote ${tb_a_({ href: '/posts/multi-underscore-tag-naming-convention-analysis' },
 			'Multi Underscore Tag Naming Convention Analysis')} which describes the Ontology & structure of the naming convention.`,
 		nl,

@@ -98,15 +98,15 @@ export default (ctx:request_ctx_T)=>''
 	`*This post got long & is a work in progress. I will break it up into smaller posts soon.*`,
 ]))
 + dl_tree_({ ctx, _: sticky_h2__dl_tree_props_ }, ()=>[
-	[`## Beginning of My Career`, [
+	[`# Beginning of My Career`, [
 		`My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in Engineer Physics which included 1 year of paid internships learning about ${msoffice__tb_a_()} & ${microstation__tb_a_()} automation at ${caltrans__tb_a_()} & working on the corporate intranet, which included a CRM system with ${asp__tb_a_()} at ${flextronics__tb_a_()}. I gained an appreciation of automating work & am still strongly driven to automate.`,
 		nl,
 		`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job freezes, imploding companies everywhere. I picked up any freelance work that I could find${footnote__sup_({ ctx, id: 'early-freelance-projects' }, [`Some of my favorite projects include a ringtone generator using `, php__tb_a_(), ` & a CRM using using `, c_sharp__tb_a_(), ` `, dot_net__tb_a_(), ` & `, sql_server__tb_a_(), `.`])}. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft; adopting ${linux__tb_a_()} & exploring ${literate_programming__tb_a_()}. Literate programming is an important early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan called ${ruby__tb_a_()} & grew even more excited with this cool alpha web framework called ${ruby_on_rails__tb_a_()}.`,
 		nl,
 		`I got my first full time job at ${naspp__tb_a_()}. The job consisted of office automation software & maintaining a long-used ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management', nofollow: true }, 'CRM')} & order system to manage print & web subscriptions along with events & conference attendee management. It was written in as an old & bogged down due to size ${msaccess__tb_a_()} app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining the tests.`,]],
-	[`## Web 2.0, Ruby on Rails, startups`, [
+	[`# Web 2.0, Ruby on Rails, startups`, [
 		()=>[
-			[`### Pivotal Labs`, [
+			[`## Pivotal Labs`, [
 				`I was excited to get break into startups & responded to an ad in ${craigslist__tb_a_()} by Jared Cosulich to collaborate on his startup ${communitywalk__tb_a_()}. I helped with features & bug fixes. He was working on funding & worked as a resident entrepreneur at ${pivotal_labs__tb_a_()}. I was introduced to Rob Mee, Sherry Erskine, the team with a brand new Ruby on Rails practice.`,
 				nl,
 				`I joined Pivotal Labs (it was Pivotal Computing Systems back then). Pivotal Labs had many talented engineers. Nathan Wilmes, Nathan Sobo, Nick Kallen, in particular, pushed me to become a better, more innovative developer.`,
@@ -126,7 +126,7 @@ export default (ctx:request_ctx_T)=>''
 				`There were many projects that I had the fortune to be a part of at Pivotal, so it deserves it's own post. While I got exposure to some of the best in the industry, many early stage start up projects, innovative open source projects, was well respected, had some great friendships. After 4 years with Pivotal, I wanted to be with a company & maintain a code base for the long run. I wanted to go deeper with maintaining a single codebase to grow in my practice.`,
 				nl,
 				`My final project @ Pivotal was with ${honk__tb_a_()}. I liked working with the founders, Tom Taira, Stephanie Lacrosse, Bruce Krysiak. It was a smooth transition to be the Lead Product Developer on the product.`,]],
-			[`### Honk`, [
+			[`## Honk`, [
 				`Honk was an automotive social information & sales startup. Honk built in social reviews, market price comparison, vehicle information, preference matching.`,
 				nl,
 				`While working with ${backbonejs__tb_a_()} at Honk, I found that state management was effective in maintaining complex apps.`,
@@ -138,15 +138,15 @@ export default (ctx:request_ctx_T)=>''
 				`Around the time News Corp was going through the sale of My Space among other structural changes to it's Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by ${truecar__tb_a_()}.`,
 				nl,
 				`Around the time News Corp was going through the sale of My Space among other structural changes to it's Digital Division, the key partnership with News Corp was ending. Honk then pivoted to be acquired by ${truecar__tb_a_()}.	The stagnancy, grind of long hours, releases led me to look elsewhere for work. I got a job offer to work with ${yammer__tb_a_()} led by Davis Sacks. I decided to stay with Honk, feeling a sense of loyalty to stay onboard with	the acquisition to TrueCar. I told David Sacks I will not be signing the offer; he told me, "you are making a mistake". Given the early usage of node.js, ${cassandra__tb_a_()}, the eventual acquisition by ${microsoft__tb_a_()}, he is correct from the perspective of achieving business success.`,]],
-			[`### Move to LA`, [
+			[`## Move to LA`, [
 				`LA appealed to me & I moved south to work @ TrueCar.`,]],
-			[`### TrueCar`, [
+			[`## TrueCar`, [
 				`Going from the startup Honk to integrating into the culture at TrueCar was tough. Working within a deep corporate structure with constrained tech options on fringe projects is not for everyone. After working long hours for partnership accounts. I burn out & we parted ways. Perhaps I should have taken the Yammer job after all, but at least I was in LA.`,]],],]],
-	[`## Independent contracting & evolution of the practice`, [
+	[`# Independent contracting & evolution of the practice`, [
 		()=>[
-				[`### Milyoni`, [
+				[`## Milyoni`, [
 					`My first independent contract began with the then "social entertainment" startup ${milyoni__tb_a_()} (pronounced a million-eye) located in Pleasanton, CA. Milyoni had a Rails app supporting Video on Demand & Live Online Events	with time-coded chat & components synchronized with the Video on Demand. Live events had real-time chat & components. Ruby, being a relatively slow language, did not scale to support large online events. In light of the	performance issues, I developed a chat & component server built in node.js & ${redis__tb_a_()}, which handled the traffic well. When I began the project, we made an agreement with one of the founders that I would be working	remotely in LA, where I lived. I agreed to move up to the Bay Area to help build the young team along with my old	employer, Pivotal Labs. This lasted about a year. I had personal matters to take care of back in LA but the manager of the project wanted me on site, so I left.`,]],
-				[`### Rundavoo`, [
+				[`## Rundavoo`, [
 					`I then joined ${rundavoo__tb_a_()} & created ${tb_a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript'}, 'backbone-signal')} as a	library for reactive state management, which I used with ${riotjs__tb_a_()} to render the front-end. I joined the company fairly late, sadly it was having funding issues. I stayed onboard as everyone else left hoping to help	rescue the company with a lean staff. Sadly, Rundavoo ended up folding & I was owed a sizable outstanding balance.`,
 					nl,
 					`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this journey, my ${worldview__tb_a_('worldview')} expanded by experimenting with the ${ontology__tb_a_('ontological')} expression of a ${philosophy__tb_a_()}. During this exploration, I explored how word ${definition__tb_a_('definitions')} can be ${scope__tb_a_('scoped')} with ${context__tb_a_('context')}${
@@ -154,9 +154,9 @@ export default (ctx:request_ctx_T)=>''
 							// language=md
 							md__inline_raw_({ ctx }, `Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
 					}. I learned about ${existence__tb_a_()} and in a weird way ${tb_a_({ href: '/posts/everything-exists' }, 'Everything Exists')}.`,]],
-				[`### ${neo__tb_a_()}`, [
+				[`## ${neo__tb_a_()}`, [
 					`I then continued consulting & a few years later I consulted with the previous incarnation of ${neo__tb_a_()}. The client was ${tenfore_holdings__tb_a_()}. The project was a document editor with inline commands that integrated with the Tenfore Salesforce database. Neo shut down operations as it was going through an acquisition.`,]],
-				[`### Censible`, [
+				[`## Censible`, [
 					`I then consulted for ${censible__tb_a_()}, which pivoted from a ${esg__tb_a_()} Investment platform targeting millennials to apps presenting company ESG information, a stock screener, and a portfolio rebalance tool. With the rapid pivoting of products, I created the ${ctx_core__tb_a_()} project to expand on reactive state management with ${domain_driven_design__tb_a_()}. I leaned on my explorations with Ontology create the tag vector Convention${
 						footnote__sup_({ ctx, id: 'tag-vector-development-continues' },
 							`Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020. This design has been verified with real-world development since. I will write a formal definition & history soon.`)
@@ -175,9 +175,9 @@ export default (ctx:request_ctx_T)=>''
 					`- to sveltejs with svelte stores & sapper`,
 					`- to ${solidjs__tb_a_()} with ${nanostores__tb_a_()} & ${solid_start__tb_a_()}`,
 					`- to solidjs with Nano Stores & ${astrojs__tb_a_()}`,]],],]],
-	[`## Now`, [
+	[`# Now`, [
 		`I remarried & we have a beautiful daughter.`,]],
-	[`## Why not use React?`, [
+	[`# Why not use React?`, [
 		`The javascript world in the late 2010s & early 2020s had much in it's move away from ${jquery__tb_a_()} & Backbone. js toward SPA libraries. ${reactjs__tb_a_()} became the dominant front-end component rendering library.`,
 		nl,
 		`${tb_a_({ href: 'https://dev.to/this-is-learning/how-react-isn-t-reactive-and-why-you-shouldn-t-care-152m', nofollow: true }, `React is not Reactive`)} by default. There are libraries that can add reactivity to React, like NanoStores & ${signals_react__tb_a_()}. React works with the virtual dom where I would rather work with the real DOM. Along with an ${tb_a_({ href: 'https://dev.to/joetex/react-why-so-complicated-3dc7', nofollow: true }, 'complicated API')} & a need for many dependencies to extend it's default behavior, I never got into React. I still cannot force myself to use React. It's not a natural fit to my mental model of developing web apps. I have grown to appreciate	contributions made by the React ecosystem.`,
@@ -185,14 +185,14 @@ export default (ctx:request_ctx_T)=>''
 		`I prefer small & performant libraries, ideally supporting server-side rendering (SSR), which is why I was interested in riot.js (not SSR), sveltejs, solidjs, vanilla js. ${vanjs__tb_a_()} looks a promising vanilla js library which supports SSR${
 			footnote__sup_({ ctx, id: 'vanjs-tradeoff' }, [
 				`VanJS is great for small component trees such as when embedding javascript components. When reactive state changes in VanJS, it re-renders the component by default, allowing custom code to update the existing DOM. For large stateful component trees, a component library with declarative state management (SolidJS, Svelte, React, etc.) is more practical.`,])}.`,]],
-	[`## Multi Page Apps (MPA)\`->\`Single Page App (SPA) hybrids\`->\`Multi Page Apps`, [
+	[`# Multi Page Apps (MPA)\`->\`Single Page App (SPA) hybrids\`->\`Multi Page Apps`, [
 		`Ruby on Rails is an MPA with progressive enhancement support. Its Javascript integration has been a work in progress throughout the history of Rails. However, it cannot match the browser/server integrated development	experience of isomorphic Javascript web frameworks. In the earlier days of Javascript component libraries, the Single Page App use case was emphasized. While there were some attempts at lean isomorphic Multi-page App libraries such as ${marko__tb_a_()}, most of the javascript community focused on front-end Single Page App	development, de-emphasizing Full Stack Development. Libraries such as ${nextjs__tb_a_()}, ${sapper__tb_a_()}	(superceded by ${sveltejs__tb_a_()}), ${solid_start__tb_a_()} added SSR progressive rendering to an SPA client side router. With the advent of libraries such as ${astrojs__tb_a_()} isomorphic Javascript MPA development gained prominence. Marko was built almost a decade earlier, but Astro has gained significant popularity. Astro	files are server-side rendered only. Astro's integration with many SSR + CSR component libraries makes it	practical to have a full stack web app project across multiple libraries.`,
 		()=>[
-			[`### Hydration`, [
+			[`## Hydration`, [
 				`Back during my time at Honk.com, I created a Rails library that provided a rich hydration api the Backbone.js model in the browser. Rails, being an MPA written in Ruby, needed a way to efficiently send data from the server to the browser during the page load. When moving to Javascript/Typescript SPAs, the component libraries were focused on being an SPA library first & would have a separate progressive web app library to render the components on both the server & the browser. They would bundle in a hydration library, which seems great. However, the general purpose hydration libraries would be development intensive, opaque, bloated, slow, unreliable, often hydrates too much of the component tree.`,
 				nl,
 				`Astrojs provides ${tb_a_({ href: 'https://docs.astro.build/en/guides/client-side-scripts/#client-side-scripts', nofollow: true }, `client side builds`)}, an independent browser build with the code inside of the \`<script></script>\` tag. The Astrojs team	pointed out techniques such as ${tb_a_({ href: 'https://docs.astro.build/en/reference/directives-reference/#definevars', nofollow: true }, `passing variables`)} into the \`<script></script>\` tags & ${tb_a_({ href: 'https://docs.astro.build/en/guides/client-side-scripts/#pass-frontmatter-variables-to-scripts', nofollow: true}, `hydrating data using Web Components`)}. These tools make it practical to develop targeted custom code that is efficient in payload size & execution,	transparent in its logic, free of complex dependencies.`,]],
-			[`### Technological Churn`, [
+			[`## Technological Churn`, [
 				`The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails, we saw Web 2.0 startups & the \`(a)gile->(A)gile\` `
 				+ footnote__sup_({ ctx, id: 'agile_Agile' }, [
 					md__inline_raw_({ ctx },
@@ -206,11 +206,11 @@ export default (ctx:request_ctx_T)=>''
 				`As the front-end developers built their tooling & architectures, Single Page Apps gained prominence. The lessons learned with MPAs, such as Rails & Marko did not factor into the early development. Early SPA developers coming from Full Stack backgrounds, yearned to fix the browser/server integration issues with full stack frameworks through the SPA. A clean client/server break.`,
 				nl,
 				`Of course, history often rhymes & some of the same issues that plagued client-server programming in the early 1990s which led to web development \`cgi->server markup languages->web frameworks\`. Large javascript payloads, SEO, chatty apis, caching, hydration, etc. With Astrojs, the trade-off between build tools, ${tb_a_({ href: 'https://cleancommit.io/blog/spa-vs-mpa-which-is-the-king/', nofollow: true }, `MPAs vs SPAs`)}, ${tb_a_({ href: 'https://jamstack.org/' }, `Jamstack`)}, ${tb_a_({ href: 'https://dev.to/this-is-learning/understanding-transitional-javascript-apps-27i2', nofollow: true}, `Transitional Apps`)} came into discussion. All of these innovations improved the ${tb_a_({ href: 'https://github.blog/2023-06-08-developer-experience-what-is-it-and-why-should-you-care/', nofollow: true }, `Development eXperience (DX)`)}. ${vite__tb_a_()} brought standardized Hot Module Reloading which SPA & Transitional App libraries could use. Astrojs enabled further integration with component libraries & its own router to support a consistent API using different component libraries MPA development.`,]],
-			[`### Dependencies & Migrations`, [
+			[`## Dependencies & Migrations`, [
 				`As a developer sees many seasons, technologies change, fads emerge, maintaining apps based on old tech, migrating to the latest set of development practices. Migration takes effort as there are differences between the domain of the older & newer tech. A framework may go through large transitions throughout its lifetime. Techniques to make content & software easier to migrate save effort & time.`,
 				nl,
 				`I developed ctx-core to be a consistent project to keep patterns & libraries supporting context dependency injection, reactivity, & other tools to remain consistent during migration. Tag Vector enables the domain architecture to remain flat & independent of software architecture. As the tech ecosystem changes & migrations are needed, cohesive libraries under the programmer's control can aid in the transition.`,]],],]],
-	[`## Next Steps`, [
+	[`# Next Steps`, [
 			`This post is long & covered more than the original intent. Graphs of detail provide context but add to length & create rabbit-holes. I will end this post for now & extract out posts over the next few weeks.`,]],
 ])
 // @formatter:on
