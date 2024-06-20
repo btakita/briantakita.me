@@ -107,11 +107,14 @@ export function ctx_core_nanostores__footnote_sup_(ctx:request_ctx_T) {
 	return footnote__sup_({
 		ctx,
 		id: 'ctx_core_nanostore'
-	}, [ctx_core_nanostores__tb_a_(), ' & ', ctx_core_solid_nanostores__tb_a_()])
+	}, [
+		`${ctx_core_nanostores__tb_a_()} & ${ctx_core_solid_nanostores__tb_a_()}`,])
 }
 export function nanostores_async_task__footnote_sup_(ctx:request_ctx_T) {
 	return footnote__sup_({
 		ctx,
 		id: 'nanostores_async_task'
-	}, ['The next major version will integrate ', code_('task'), ' with ', code_('computed'), '.'])
+	}, [
+		`The next major version will integrate \`task\` with \`computed\`.`,
+	])
 }

@@ -38,12 +38,14 @@ Tag Vector aims to be a tool to solve the two hard things in Computed Science by
 - immutable names to allow a simple text search to find all usages of tags & tag vectors
 - compose multi-dimension tag vectors
 - show the directional arrow of a tag vector in source code & text using font ligatures${
-	footnote__sup_({ ctx, id: 'font-ligatures' }, `The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`)
+	footnote__sup_({ ctx, id: 'font-ligatures' }, [
+		`The underscore arrow font ligatures will be developed in new fonts forked from popular existing fonts`,])
 }
 - store the tag vector in a vector database & automate querying tag graphs
 - tag graphs can enable linking & vector search. Other usages of the tag include machine leaning algorithms & domain-specific analysis.
 - write prose with tools that render components & perform api calls based on the tag vector${
-	footnote__sup_({ ctx, id: 'tag-vector-editor-prototype' }, `A prototype of the document editor with Tag Vector is in the works`)
+	footnote__sup_({ ctx, id: 'tag-vector-editor-prototype' }, [
+		`A prototype of the document editor with Tag Vector is in the works`,])
 }
 
 Tag Vector enables a flat structure in a code base. Tag Vector feels familiar to existing code & prose conventions. Tag Vector works with existing source code bases.

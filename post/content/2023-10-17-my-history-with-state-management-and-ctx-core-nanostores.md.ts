@@ -73,7 +73,7 @@ import { sticky_h2__dl_tree_props_ } from '@btakita/ui--server--briantakita/stic
 import { post_meta__validate } from '@rappstack/domain--server--blog/post'
 import { tb_a_ } from '@rappstack/ui--any/anchor'
 import { dl_tree_ } from '@rappstack/ui--any/dl'
-import { md__inline_raw_, md__raw_ } from '@rappstack/ui--any/md'
+import { md__raw_ } from '@rappstack/ui--any/md'
 import { lines_, nl } from '@rappstack/ui--any/string'
 import { footnote__sup_ } from '@rappstack/ui--server--blog/footnote'
 import { type request_ctx_T } from 'rebuildjs/server'
@@ -101,7 +101,10 @@ export default (ctx:request_ctx_T)=>''
 	[`# Beginning of My Career`, [
 		`My professional career started during the .com bust in May 2002. I was fresh out of school with a BS in Engineer Physics which included 1 year of paid internships learning about ${msoffice__tb_a_()} & ${microstation__tb_a_()} automation at ${caltrans__tb_a_()} & working on the corporate intranet, which included a CRM system with ${asp__tb_a_()} at ${flextronics__tb_a_()}. I gained an appreciation of automating work & am still strongly driven to automate.`,
 		nl,
-		`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job freezes, imploding companies everywhere. I picked up any freelance work that I could find${footnote__sup_({ ctx, id: 'early-freelance-projects' }, [`Some of my favorite projects include a ringtone generator using `, php__tb_a_(), ` & a CRM using using `, c_sharp__tb_a_(), ` `, dot_net__tb_a_(), ` & `, sql_server__tb_a_(), `.`])}. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft; adopting ${linux__tb_a_()} & exploring ${literate_programming__tb_a_()}. Literate programming is an important early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan called ${ruby__tb_a_()} & grew even more excited with this cool alpha web framework called ${ruby_on_rails__tb_a_()}.`,
+		`It was a tough time to be an entry-level programmer, as there were layoffs, outsourcing to other countries, job freezes, imploding companies everywhere. I picked up any freelance work that I could find${
+			footnote__sup_({ ctx, id: 'early-freelance-projects' }, [
+			`Some of my favorite projects include a ringtone generator using ${php__tb_a_()} & a CRM using using ${c_sharp__tb_a_()} ${dot_net__tb_a_()} & ${sql_server__tb_a_()}.`,])
+		}. I learned resiliency in uncertain times where money was scarce & using my free time to work on the craft; adopting ${linux__tb_a_()} & exploring ${literate_programming__tb_a_()}. Literate programming is an important early influence as it promotes software code embedded in prose & formatted text. I continue my work on tooling to	support Literate programming with low-code solutions. I was fascinated with this programming language from Japan called ${ruby__tb_a_()} & grew even more excited with this cool alpha web framework called ${ruby_on_rails__tb_a_()}.`,
 		nl,
 		`I got my first full time job at ${naspp__tb_a_()}. The job consisted of office automation software & maintaining a long-used ${tb_a_({ href: 'https://en.wikipedia.org/wiki/Customer_relationship_management', nofollow: true }, 'CRM')} & order system to manage print & web subscriptions along with events & conference attendee management. It was written in as an old & bogged down due to size ${msaccess__tb_a_()} app, that worked for years. I rewrote the MS Access app in C#, .NET, Sql Server. I managed to sneak in a bit of Ruby as well, writing automated tests in Ruby using the Ruby/.NET bridge to speed up writing & maintaining the tests.`,]],
 	[`# Web 2.0, Ruby on Rails, startups`, [
@@ -115,10 +118,7 @@ export default (ctx:request_ctx_T)=>''
 				nl,
 				`I was a core contributor to the Behavior Driven Development library ${rspec__tb_a_()} & championed/developed the first (that I know of) implementation of nested \`describe\` statements${
 					footnote__sup_({ ctx, id: 'nested-describe-statements' }, [
-						md__inline_raw_({ ctx },
-							// language=md
-							`This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.`)
-					])
+            `This pattern is still used in some testing libraries today. It was a practical solution paired along with describing nested context along with \`beforeEach\` & \`afterEach\`. Given my inclination to flatten architecture, helper functions, the development of ${tb_a_({ href: '/posts/tag-vector-0-introduction' }, 'Tag Vectors')}, I now prefer to keep the test structure flat.`,])
 				}. I also worked on various open source projects focused on terse apis & Domain Driven Design`,
 				nl,
 				`I worked with creating composable plugins while working on ${desertrb__tb_a_()}, which was the core of Pivotal's set of composable "social software" plugins. I got exposure to coherently managing multiple libraries in a single domain; some of these led to ${monorepo__tb_a_('monorepo')} patterns that	I use today.`,
@@ -150,23 +150,22 @@ export default (ctx:request_ctx_T)=>''
 					`I then joined ${rundavoo__tb_a_()} & created ${tb_a_({ href: '/posts/backbone-signal-practical-reactive-programming-javascript'}, 'backbone-signal')} as a	library for reactive state management, which I used with ${riotjs__tb_a_()} to render the front-end. I joined the company fairly late, sadly it was having funding issues. I stayed onboard as everyone else left hoping to help	rescue the company with a lean staff. Sadly, Rundavoo ended up folding & I was owed a sizable outstanding balance.`,
 					nl,
 					`Out of paying work, I went on a personal journey of sorts, visiting up & down the West Coast. During this journey, my ${worldview__tb_a_('worldview')} expanded by experimenting with the ${ontology__tb_a_('ontological')} expression of a ${philosophy__tb_a_()}. During this exploration, I explored how word ${definition__tb_a_('definitions')} can be ${scope__tb_a_('scoped')} with ${context__tb_a_('context')}${
-						footnote__sup_({ ctx, id: 'context-of-entity' },
-							// language=md
-							md__inline_raw_({ ctx }, `Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`))
+						footnote__sup_({ ctx, id: 'context-of-entity' }, [
+							`Taking into account that what is spoken & what is heard is defined with the context of the ${entity__tb_a_('entity')} speaking or hearing.`,])
 					}. I learned about ${existence__tb_a_()} and in a weird way ${tb_a_({ href: '/posts/everything-exists' }, 'Everything Exists')}.`,]],
 				[`## ${neo__tb_a_()}`, [
 					`I then continued consulting & a few years later I consulted with the previous incarnation of ${neo__tb_a_()}. The client was ${tenfore_holdings__tb_a_()}. The project was a document editor with inline commands that integrated with the Tenfore Salesforce database. Neo shut down operations as it was going through an acquisition.`,]],
 				[`## Censible`, [
 					`I then consulted for ${censible__tb_a_()}, which pivoted from a ${esg__tb_a_()} Investment platform targeting millennials to apps presenting company ESG information, a stock screener, and a portfolio rebalance tool. With the rapid pivoting of products, I created the ${ctx_core__tb_a_()} project to expand on reactive state management with ${domain_driven_design__tb_a_()}. I leaned on my explorations with Ontology create the tag vector Convention${
-						footnote__sup_({ ctx, id: 'tag-vector-development-continues' },
-							`Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020. This design has been verified with real-world development since. I will write a formal definition & history soon.`)
+						footnote__sup_({ ctx, id: 'tag-vector-development-continues' }, [
+              `Work on the tag vector Convention continues. Through much iteration, it reached a stable design in 2020. This design has been verified with real-world development since. I will write a formal definition & history soon.`,])
 					} to enable a simple, flat architecture. We also switched from riotjs\`-->\`${sveltejs__tb_a_()}.`,
 					nl,
 					`I appreciated the design of ${svelte_stores__tb_a_()} & for reactive state management. With the introduction of ${sapper__tb_a_()} the same component code could be run on the browser & the server. Along with ctx-core, svelte stores could also be run on the browser & server. The server side was tricky with svelte stores alone, as requests would be handled concurrently. To solve the issue, a \`ctx\`(context) object would be created when the server request starts. A \`Be\` function would take the \`ctx\` & to store the value returned by the \`Be\`, which would be the svelte store.`,
 					nl,
 					`The Censible project was off & on for a few years. During this time, I picked up some other projects including ${menu__tb_a_()} & ${tb_a_({ href: 'https://github.com/btakita/iron-henhouse' }, 'an app')} to report voter suppression & info on how to exercise the right to vote for the 2016 Democrat primary election${
-						footnote__sup_({ ctx, id: 'suppressthis-org' },
-							`The app was launched as suppressthis.org. It is no longer online.`)
+						footnote__sup_({ ctx, id: 'suppressthis-org' }, [
+              `The app was launched as suppressthis.org. It is no longer online.`,])
 					}, various other small sites. After Censible, I now collaborate with a related ESG financial advisor ${martin_investments__tb_a_()}.`,
 					nl,
 					`ctx-core continued to evolve, from git submodules added to a project to a set of > 100 npm packages. The preferred software stack changed:`,
@@ -195,8 +194,7 @@ export default (ctx:request_ctx_T)=>''
 			[`## Technological Churn`, [
 				`The Rails/Ruby community & the Javascript community come from different roots. I had inside exposure with the Ruby on Rails community, seeing the ecosystems from different perspectives. During the rise & heyday of Rails, we saw Web 2.0 startups & the \`(a)gile->(A)gile\` `
 				+ footnote__sup_({ ctx, id: 'agile_Agile' }, [
-					md__inline_raw_({ ctx },
-						`\`agile->Agile\` lower-case \`a\` to capital \`A\`. As the agile movement gained success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`),])
+					`\`agile->Agile\` lower-case \`a\` to capital \`A\`. As the agile movement gained success from it's bottom up software practitioner roots, Agile transition to a top down institutional endeavor with the prominence of coaches, guidelines, corporate sponsored conferences, etc.`,])
 				+ ` transition. Emerging web standards made jQuery more or less redundant. I've been through two celebrations to end ${ie6__tb_a_()} @ Honk then again @ TrueCar in 2010 while many other companies already stopped supporting the old	browser. Specialized development (front end developer, api developer) took prominence in corporations. Full Stack development was delegated to these departments. Even startups divided their development teams into these roles.`,
 				nl,
 				`> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the`,

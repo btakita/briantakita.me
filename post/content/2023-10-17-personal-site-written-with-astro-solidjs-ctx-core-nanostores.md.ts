@@ -75,8 +75,9 @@ export default (ctx:request_ctx_T)=>''
 				`- JSX — function components facilitate composition *(compared to single file components with Vue or Svelte)*`,]],
 			[`## Full-stack global state management with ctx-core & nanostores`, [
 				`ctx-core with nanostores enables libraries & apps to easily share state management${
-          footnote__sup_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' },
-            tb_a_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },`How I ended up using ctx-core & nanostores…`))}.`,]],],]],
+          footnote__sup_({ ctx, id: 'my-history-with-state-management-and-ctx-core-nanostores' }, [
+            tb_a_({ href: '/posts/my-history-with-state-management-and-ctx-core-nanostores' },`How I ended up using ctx-core & nanostores…`),])
+				}.`,]],],]],
 ])
 // @formatter:on
 function web_framework_realworld_app_sizes_(ctx:request_ctx_T) {
