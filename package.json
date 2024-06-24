@@ -36,7 +36,7 @@
 		"picocolors": "^1.0.1",
 		"rebuildjs": "^0.70.33",
 		"relementjs": "^0.80.23",
-		"relysjs": "^1.21.58",
+		"relysjs": "^1.21.59",
 		"tailwindcss": "^3.4.4"
 	},
 	"devDependencies": {
