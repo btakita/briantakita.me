@@ -23,7 +23,7 @@
 		"@rappstack/ui--browser--blog": "workspace:*",
 		"@rappstack/ui--server": "workspace:*",
 		"@rappstack/ui--server--blog": "workspace:*",
-		"@rebuildjs/tailwindcss": "^0.10.48",
+		"@rebuildjs/tailwindcss": "^0.10.49",
 		"@tailwindcss/forms": "latest",
 		"@tailwindcss/typography": "latest",
 		"cssnano": "^7.0.4",
@@ -34,9 +34,9 @@
 		"marked": "^13.0.2",
 		"marked-gfm-heading-id": "^4.0.0",
 		"picocolors": "^1.0.1",
-		"rebuildjs": "^0.70.36",
+		"rebuildjs": "^0.70.37",
 		"relementjs": "^0.80.26",
-		"relysjs": "^1.21.62",
+		"relysjs": "^1.21.63",
 		"tailwindcss": "^3.4.4"
 	},
 	"devDependencies": {
