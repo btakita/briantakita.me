@@ -1,6 +1,7 @@
 import { preprocess } from '@ctx-core/preprocess'
 import { rebuild_tailwind_plugin_ } from '@rebuildjs/tailwindcss'
 import cssnano from 'cssnano'
+import { MAX_INT32 } from 'ctx-core/number'
 import { import_meta_env_ } from 'ctx-core/env'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { type Plugin } from 'esbuild'
@@ -72,10 +73,10 @@ export async function build(config?:relysjs__build_config_T) {
 				console.info('relysjs_server__build|done')
 			}
 		}),
-		relysjs__ready__wait(Infinity)
+		relysjs__ready__wait(MAX_INT32)
 	])
 }
-function server_external_() {
+async function server_external_() {
 	return readdir(join(
 		dirname(new URL(import.meta.url).pathname),
 		'..',
