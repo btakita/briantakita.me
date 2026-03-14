@@ -10,24 +10,24 @@ import yaml from 'js-yaml'
 import { readdir, readFile } from 'node:fs/promises'
 import { basename, dirname, join } from 'node:path'
 import {
-	type relysjs__build_config_T,
-	relysjs__ready__wait,
-	relysjs_browser__build,
-	relysjs_server__build, run
-} from 'relysjs/server'
+	type rhonojs__build_config_T,
+	rhonojs__ready__wait,
+	rhonojs_browser__build,
+	rhonojs_server__build, run
+} from 'rhonojs/server'
 import { config__init } from './config/index.js'
 import tailwindcss_config from './tailwind.config.js'
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({
 		rebuildjs: { watch: false },
-		relysjs: { app__start: false }
+		rhonojs: { app__start: false }
 	}).then(()=>process.exit(0))
 		.catch(err=>{
 			console.error(err)
 			process.exit(1)
 		})
 }
-export async function build(config?:relysjs__build_config_T) {
+export async function build(config?:rhonojs__build_config_T) {
 	config__init()
 	const esmcss_esbuild_plugin = esmcss_esbuild_plugin_()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
@@ -43,7 +43,7 @@ export async function build(config?:relysjs__build_config_T) {
 	await Promise.all([
 		run(async ()=>{
 			try {
-				return relysjs_browser__build({
+				return rhonojs_browser__build({
 					...config ?? {},
 					treeShaking: true,
 					plugins: [
@@ -55,12 +55,12 @@ export async function build(config?:relysjs__build_config_T) {
 					],
 				})
 			} finally {
-				console.info('relysjs_browser__build|done')
+				console.info('rhonojs_browser__build|done')
 			}
 		}),
 		run(async ()=>{
 			try {
-				return relysjs_server__build({
+				return rhonojs_server__build({
 					...config ?? {},
 					target: 'es2022',
 					external: await server_external_(),
@@ -74,10 +74,10 @@ export async function build(config?:relysjs__build_config_T) {
 					],
 				})
 			} finally {
-				console.info('relysjs_server__build|done')
+				console.info('rhonojs_server__build|done')
 			}
 		}),
-		relysjs__ready__wait(MAX_INT32)
+		rhonojs__ready__wait(MAX_INT32)
 	])
 }
 async function server_external_() {
@@ -111,6 +111,52 @@ function preprocess_plugin_():Plugin {
 				})
 			}
 		}
+	}
+}
+export function md_esbuild_plugin_():Plugin {
+	return {
+		name: 'md',
+		setup(build) {
+			build.onLoad(
+				{ filter: /\.md$/ },
+				async (config)=>{
+					const raw = await readFile(config.path, 'utf8')
+					let body = raw
+					let meta:Record<string, any> = {}
+					if (raw.startsWith('---\n')) {
+						const end = raw.indexOf('\n---\n', 4)
+						if (end >= 0) {
+							meta = (yaml as any).load(raw.substring(4, end)) ?? {}
+							body = raw.substring(end + 5)
+						}
+					}
+					const fname = basename(config.path, '.md')
+					const slug = meta.slug
+						?? fname.replace(/^\d{4}-\d{2}-\d{2}-/, '')
+					const pub_date = meta.date
+						? (String(meta.date).includes('T')
+							? String(meta.date)
+							: String(meta.date) + 'T00:00:00Z')
+						: new Date().toISOString()
+					const contents = `
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
+import { md__raw_ } from '@rappstack/ui--any/md'
+export const meta_ = (ctx)=>post_meta__validate(ctx, ${JSON.stringify({
+						pub_date,
+						title: meta.title ?? slug,
+						slug,
+						description: meta.description ?? '',
+						tag_a1: meta.tags ?? ['other'],
+						...(meta.hero_image && { hero_image: meta.hero_image }),
+						...(meta.og_image && { og_image: meta.og_image }),
+						...(meta.draft !== undefined && { draft: meta.draft }),
+					})})
+export default (ctx)=>md__raw_({ ctx }, ${JSON.stringify(body)})
+`
+					return { contents, loader: 'js' }
+				}
+			)
+		},
 	}
 }
 export function json_esbuild_plugin_() {

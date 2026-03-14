@@ -28,7 +28,8 @@
 		"@tailwindcss/typography": "latest",
 		"cssnano": "^7.1.2",
 		"ctx-core": "^7.2.34",
-		"elysia": "^1.4.27",
+		"hono": "^4.0.0",
+		"js-yaml": "^4.1.0",
 		"esbuild": "^0.27.3",
 		"esmcss": "^0.2.15",
 		"marked": "^17.0.4",
@@ -36,7 +37,7 @@
 		"picocolors": "^1.1.1",
 		"rebuildjs": "^0.70.45",
 		"relementjs": "^0.80.33",
-		"relysjs": "^1.21.75",
+		"rhonojs": "^0.1.1",
 		"tailwindcss": "^4.2.1"
 	},
 	"devDependencies": {
