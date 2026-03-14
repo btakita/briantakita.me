@@ -6,8 +6,9 @@ import { import_meta_env_ } from 'ctx-core/env'
 import { is_entry_file_ } from 'ctx-core/fs'
 import { type Plugin } from 'esbuild'
 import { esmcss_esbuild_plugin_ } from 'esmcss'
-import { readdir } from 'node:fs/promises'
-import { dirname, join } from 'node:path'
+import yaml from 'js-yaml'
+import { readdir, readFile } from 'node:fs/promises'
+import { basename, dirname, join } from 'node:path'
 import {
 	type relysjs__build_config_T,
 	relysjs__ready__wait,
@@ -38,6 +39,7 @@ export async function build(config?:relysjs__build_config_T) {
 	})
 	const preprocess_plugin = preprocess_plugin_()
 	const json_esbuild_plugin = json_esbuild_plugin_()
+	const md_esbuild_plugin = md_esbuild_plugin_()
 	await Promise.all([
 		run(async ()=>{
 			try {
@@ -49,6 +51,7 @@ export async function build(config?:relysjs__build_config_T) {
 						rebuild_tailwind_plugin,
 						preprocess_plugin,
 						json_esbuild_plugin,
+						md_esbuild_plugin,
 					],
 				})
 			} finally {
@@ -67,6 +70,7 @@ export async function build(config?:relysjs__build_config_T) {
 						rebuild_tailwind_plugin,
 						preprocess_plugin,
 						json_esbuild_plugin,
+						md_esbuild_plugin,
 					],
 				})
 			} finally {
@@ -119,6 +123,54 @@ export function json_esbuild_plugin_() {
 					const { path, suffix } = config
 					const contents = await import(path + (suffix ?? '')).then(mod=>mod.default())
 					return { contents, loader: 'json' }
+				}
+			)
+		},
+	}
+}
+export function md_esbuild_plugin_():Plugin {
+	return {
+		name: 'md',
+		setup(build) {
+			build.onLoad(
+				{ filter: /\.md$/ },
+				async (config)=>{
+					const raw = await readFile(config.path, 'utf8')
+					let body = raw
+					let meta:Record<string, any> = {}
+					if (raw.startsWith('---\n')) {
+						const end = raw.indexOf('\n---\n', 4)
+						if (end >= 0) {
+							meta = (yaml.load(raw.substring(4, end)) as Record<string, any>) ?? {}
+							body = raw.substring(end + 5)
+						}
+					}
+					const fname = basename(config.path, '.md')
+					const slug = meta.slug
+						?? fname.replace(/^\d{4}-\d{2}-\d{2}-/, '')
+					const pub_date = meta.date
+						? (meta.date instanceof Date
+							? meta.date.toISOString()
+							: String(meta.date).includes('T')
+								? String(meta.date)
+								: String(meta.date) + 'T00:00:00Z')
+						: new Date().toISOString()
+					const contents = `
+import { post_meta__validate } from '@rappstack/domain--server--blog/post'
+import { md__raw_ } from '@rappstack/ui--any/md'
+export const meta_ = (ctx)=>post_meta__validate(ctx, ${JSON.stringify({
+						pub_date,
+						title: meta.title ?? slug,
+						slug,
+						description: meta.description ?? '',
+						tags: meta.tags ?? ['other'],
+						...(meta.hero_image && { hero_image: meta.hero_image }),
+						...(meta.og_image && { og_image: meta.og_image }),
+						...(meta.draft !== undefined && { draft: meta.draft }),
+					})})
+export default (ctx)=>md__raw_({ ctx }, ${JSON.stringify(body)})
+`
+					return { contents, loader: 'js' }
 				}
 			)
 		},
