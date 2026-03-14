@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2017-07-04T00:30Z',
 	title: `Svelte JS from Riot JS`,
 	slug: 'sveltejs-from-riotjs',
-	tag_a1: [
+	tags: [
 		'sveltejs',
 		'riotjs',
 		'web development',

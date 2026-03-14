@@ -9,7 +9,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: 'There is no privacy! Control your internet face',
 	slug: 'no-privacy-control-your-internet-face',
 	hero_image: `https://briantakita.files.wordpress.com/2013/09/4959060_750beab5a4.jpg`,
-	tag_a1: [
+	tags: [
 		'privacy',
 		'security',
 	],

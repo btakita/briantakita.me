@@ -17,7 +17,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: `backbone-signal - Practical Reactive Programming in Javascript`,
 	slug: 'backbone-signal-practical-reactive-programming-javascript',
 	hero_image: new URL(neurons_jpg, request_url__origin_(ctx)).href,
-	tag_a1: [
+	tags: [
 		'javascript',
 		'signals',
 		'reactive',

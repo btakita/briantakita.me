@@ -23,7 +23,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-10-17T15:35:28.259Z',
 	title: `My new personal site`,
 	slug: 'personal-site-written-with-astro-solidjs-ctx-core-nanostores',
-	tag_a1: [
+	tags: [
 		'astrojs',
 		'solidjs',
 		'ctx-core',

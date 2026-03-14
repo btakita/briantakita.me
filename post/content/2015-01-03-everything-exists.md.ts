@@ -12,7 +12,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: `Do Not Worry, Everything Exists`,
 	slug: 'everything-exists',
 	hero_image: new URL(Creation_of_Adam_jpg, request_url__origin_(ctx)).href,
-	tag_a1: [
+	tags: [
 		'philosophy',
 		'worldview',
 		'existence',

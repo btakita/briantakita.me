@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-10-20T05:00:00.020Z',
 	title: `Tag Vector: Part 0: Introduction`,
 	slug: 'tag-vector-0-introduction',
-	tag_a1: [
+	tags: [
 		'tag vector',
 		'tag graph',
 		'domain driven design',

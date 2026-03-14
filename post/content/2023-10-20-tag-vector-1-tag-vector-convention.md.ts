@@ -11,7 +11,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	updated_date: '2023-10-29T09:13:00Z',
 	title: `Tag Vector: Part 1: Tag Vector Convention`,
 	slug: 'tag-vector-1-tag-vector-convention',
-	tag_a1: [
+	tags: [
 		'tag vector',
 		'tag graph',
 		'domain driven design',

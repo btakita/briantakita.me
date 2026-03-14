@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2024-02-18T17:28:10.561Z',
 	title: `Tag Vector Interpreted by Chat GPT`,
 	slug: 'tag-vector-interpreted-by-chat-gpt',
-	tag_a1: [
+	tags: [
 		'tag vector',
 		'domain',
 		'openai',

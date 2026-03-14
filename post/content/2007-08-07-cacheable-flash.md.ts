@@ -10,7 +10,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2007-10-08T04:45Z',
 	title: `Cacheable Flash`,
 	slug: 'cacheable-flash',
-	tag_a1: [
+	tags: [
 		'cache',
 		'open-source',
 		'page-cache',

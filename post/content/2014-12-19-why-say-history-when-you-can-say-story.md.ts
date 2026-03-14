@@ -13,7 +13,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: `Why Say History When You Can Say Story?`,
 	slug: 'why-say-history-when-you-can-say-story',
 	hero_image: new URL(encyclopedia_britannica_jpg, request_url__origin_(ctx)).href,
-	tag_a1: ['philosophy'],
+	tags: ['philosophy'],
 	description:
 		`In culture, we are taught to distinguish history & story as two separate concepts. Some (falsely) think of history being a masculine version of story (his story). However, history & story can be used interchangeably. Here's why.`,
 })

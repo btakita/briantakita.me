@@ -10,7 +10,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: `Fractal Therapy`,
 	slug: 'fractal-therapy',
 	hero_image: new URL(fractal_therapy_jpg, request_url__origin_(ctx)).href,
-	tag_a1: [
+	tags: [
 		'fractals',
 		'therapy',
 	],

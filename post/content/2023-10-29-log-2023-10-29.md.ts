@@ -25,7 +25,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-10-29T08:31:00Z',
 	title: 'Log 2023-10-29',
 	slug: 'log-2023-10-29',
-	tag_a1: [
+	tags: [
 		'cms',
 		'astrojs',
 		'log',

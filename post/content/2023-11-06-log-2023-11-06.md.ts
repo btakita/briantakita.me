@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-11-06T14:43:00Z',
 	title: 'Log 2023-11-06',
 	slug: 'log-2023-11-06',
-	tag_a1: [
+	tags: [
 		'data',
 		'philosophy',
 	],

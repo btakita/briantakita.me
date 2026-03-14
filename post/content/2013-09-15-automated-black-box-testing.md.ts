@@ -4,7 +4,7 @@ import { type request_ctx_T } from 'rebuildjs/server'
 export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2013-09-15T02:31Z',
 	title: `Automated Black Box Testing`,
-	tag_a1: [
+	tags: [
 		'tests',
 		'automation',
 	],

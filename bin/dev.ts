@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 import { sourcemap_writable_stream_ } from '@ctx-core/source-map'
 import { red } from 'picocolors'
+
 const dev = Bun.spawn(
 	['bun', 'index.ts'], {
 		stdin: 'inherit',

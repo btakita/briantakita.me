@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2013-09-05T05:07Z',
 	title: `DIY SEO with BrandYourself.com`,
 	slug: 'diy-seo-brandyourself',
-	tag_a1: ['seo'],
+	tags: ['seo'],
 	description: `Personal SEO branding with brandyourself.com.`,
 })
 // @formatter:off

@@ -11,7 +11,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2018-02-27T20:30:00Z',
 	title: `Naming Conventions`,
 	slug: 'naming-conventions',
-	tag_a1: [
+	tags: [
 		'tag vector',
 		'name convention',
 	],

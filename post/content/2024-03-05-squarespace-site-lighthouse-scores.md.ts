@@ -19,7 +19,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2024-03-06T01:41:02.185Z',
 	title: 'Squarespace Site Lighthouse Scores',
 	slug,
-	tag_a1: [
+	tags: [
 		'performance',
 		'lighthouse',
 		'squarespace',

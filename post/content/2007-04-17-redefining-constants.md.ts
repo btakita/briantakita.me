@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2007-04-17T12:54Z',
 	title: `Redefining Constants`,
 	slug: 'redefining-constants',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'pivotal labs'
 	],

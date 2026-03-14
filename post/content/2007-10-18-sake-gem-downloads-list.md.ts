@@ -6,7 +6,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2007-10-18T02:16Z',
 	title: `Sake for Gems Downloads List`,
 	slug: 'sake-gem-downloads-list',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'open-source',
 		'pivotal-labs',

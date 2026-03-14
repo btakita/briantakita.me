@@ -5,7 +5,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2007-10-08T04:45Z',
 	title: `Cacheable Flash 0.1.4 — Test Helpers`,
 	slug: 'cacheable-flash-0-1-4-test-helpers',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'rails',
 		'cache',

@@ -9,7 +9,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2019-04-15T12:00:00Z',
 	title: 'Log 2019-04-15',
 	slug: 'log-2019-04-15',
-	tag_a1: [
+	tags: [
 		'log',
 		'tag vector',
 	],

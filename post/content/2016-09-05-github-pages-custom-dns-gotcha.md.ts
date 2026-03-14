@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2016-09-05T07:53Z',
 	title: `Github Pages Custom DNS Gotcha`,
 	slug: 'github-pages-custom-dns-gotcha',
-	tag_a1: [
+	tags: [
 		'github pages',
 		'dns',
 		'website',

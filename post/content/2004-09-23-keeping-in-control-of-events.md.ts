@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2004-09-23T10:27:00Z',
 	title: `Keeping in Control of Events`,
 	slug: 'keeping-in-control-of-events',
-	tag_a1: ['programming', 'dotnet'],
+	tags: ['programming', 'dotnet'],
 	description:
 		`At work, I'm having an issue with losing control over events in my code. One big issue I'm having is recursion in the \`DataRow.RowChanged\` event.`
 })

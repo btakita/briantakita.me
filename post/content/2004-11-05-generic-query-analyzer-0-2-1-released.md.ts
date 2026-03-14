@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2004-11-05T07:54Z',
 	title: `Generic Query Analyzer 0.2.1 released`,
 	slug: 'generic-query-analyzer-0-2-1-released',
-	tag_a1: [
+	tags: [
 		'db',
 		'sql',
 		'open-source',

@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	title: `Feeling Abstraction`,
 	slug: 'feeling-abstraction',
 	hero_image: new URL(feeling_abstraction_jpg, request_url__origin_(ctx)).href,
-	tag_a1: [
+	tags: [
 		'philosophy',
 		'worldview',
 		'abstraction',

@@ -6,7 +6,8 @@
 		"dev": "bun ./bin/dev.ts",
 		"build": "bun ./build.ts",
 		"start": "bun ./start.ts",
-		"clean": "rm -rf ./dist"
+		"clean": "rm -rf ./dist",
+		"generate": "bun post/index.generate.ts"
 	},
 	"dependencies": {
 		"@btakita/domain--server--briantakita": "workspace:*",
@@ -44,6 +45,7 @@
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"schema-dts": "^1.1.5"
+		"schema-dts": "^1.1.5",
+		"@types/js-yaml": "^4.0.9"
 	}
 }

@@ -9,7 +9,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2026-03-05T14:00:00Z',
 	title: 'Introducing agent-doc: Documents as the UI for AI Agents',
 	slug: 'introducing-agent-doc',
-	tag_a1: [
+	tags: [
 		'agent-doc',
 		'ai',
 		'developer-tools',

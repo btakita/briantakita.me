@@ -53,7 +53,7 @@ export async function build(config?:rhonojs__build_config_T) {
 					],
 				})
 			} finally {
-				console.info('rhonojs_browser__build|done')
+				console.info('build|done')
 			}
 		}),
 		run(async ()=>{
@@ -72,7 +72,7 @@ export async function build(config?:rhonojs__build_config_T) {
 					],
 				})
 			} finally {
-				console.info('rhonojs_server__build|done')
+				console.info('build|done')
 			}
 		}),
 		rhonojs__ready__wait(MAX_INT32)

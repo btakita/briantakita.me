@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2023-12-04T03:12:00Z',
 	title: `Introducing rmemo`,
 	slug: '2023-12-04-introducing-rmemo',
-	tag_a1: [
+	tags: [
 		'rmemo',
 		'reactive',
 		'state-management',

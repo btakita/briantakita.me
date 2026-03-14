@@ -27,7 +27,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2024-06-06T06:56:43.521Z',
 	title: 'Signals Proposal Compared to rmemo/WeakRef',
 	slug,
-	tag_a1: [
+	tags: [
 		'performance',
 		'reactive',
 		'signals',

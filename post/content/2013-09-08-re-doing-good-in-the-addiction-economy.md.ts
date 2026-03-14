@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2013-09-08T18:13Z',
 	title: 'Re: Doing Good in the Addiction Economy',
 	slug: 're-doing-good-in-the-addiction-economy',
-	tag_a1: ['philosophy'],
+	tags: ['philosophy'],
 	description:
 		`Interesting but long-winded post, IMO. But then, maybe my impatience toward long posts is telling in the short term rewards culture we live in. Of course, time is valuable, and trying to get to the core concept of some the writing is often the goal. We don’t seem to savor the journey as much, or the journey has changed to be our lives toward success…`,
 	canonical_url:

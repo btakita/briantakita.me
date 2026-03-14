@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2013-09-14T02:00Z',
 	title: `Fast and Thorough Testing with Jasmine Flow`,
 	slug: 'jasmine-flow-fast-and-thourough-testing',
-	tag_a1: [
+	tags: [
 		'javascript',
 		'test',
 		'bdd',

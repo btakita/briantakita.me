@@ -18,8 +18,8 @@ function import_line_a_(file_a:string[]) {
 	return file_a
 		.filter(file=>isNumber(file[0]))
 		.map(file=>{
-			if (file.endsWith('.md.ts'))
-				return `\timport('./content/${basename(file, '.ts')}.js'),`
+			if (file.endsWith('.md.ts') || file.endsWith('.md.js'))
+				return `\timport('./content/${basename(file, '.ts')}'),`
 			if (file.endsWith('.md'))
 				return `\timport('./content/${file}'),`
 			return null

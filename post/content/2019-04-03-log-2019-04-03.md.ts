@@ -18,7 +18,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2019-04-03T12:00:00Z',
 	title: 'Log 2019-04-03',
 	slug: 'log-2019-04-03',
-	tag_a1: [
+	tags: [
 		'log',
 		'name convention',
 		'tag vector',

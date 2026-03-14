@@ -8,7 +8,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2010-01-31T12:00Z',
 	title: `To Pair or Not to Pair`,
 	slug: 'to-pair-or-not-to-pair',
-	tag_a1: [
+	tags: [
 		'agile',
 		'software development',
 	],

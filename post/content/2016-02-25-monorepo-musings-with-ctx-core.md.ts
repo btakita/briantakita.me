@@ -10,7 +10,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2016-02-25T11:00:00.000Z',
 	title: `Monorepo Musings with ctx-core`,
 	slug: 'monorepo-musings-with-ctx-core',
-	tag_a1: [
+	tags: [
 		'ctx-core',
 		'monorepo',
 	],

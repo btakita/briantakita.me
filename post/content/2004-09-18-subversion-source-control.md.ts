@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2004-09-18T21:31:00Z',
 	title: `Subversion Source Control`,
 	slug: 'subversion-source-control',
-	tag_a1: ['version control', 'software development'],
+	tags: ['version control', 'software development'],
 	description:
 		`I really like Subversion because is it is fast, lightweight, and, when coupled with Tortoise, easy to use, administer, and set up.`
 })

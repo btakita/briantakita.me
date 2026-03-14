@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2008-01-01T05:30Z',
 	title: `Introducing RR`,
 	slug: 'introducing-rr',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'open-source',
 		'test',

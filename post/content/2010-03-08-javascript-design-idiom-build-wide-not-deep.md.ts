@@ -10,7 +10,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2010-03-08T12:00Z',
 	title: `Javascript Design Idiom – Build Wide Not Deep`,
 	slug: 'javascript-design-idiom-build-wide-not-deep',
-	tag_a1: ['software architecture'],
+	tags: ['software architecture'],
 	description:
 		`Providing a rich user experience calls for good client side software. Javascript is a powerful language to provide the needed functionality. Like any other tool it has it’s strengths and weaknesses. Successful design in Javascript favors composition, loose coupling, and separation of concerns more so than in most other languages. To see why, let’s look at some properties of Javascript.`
 })

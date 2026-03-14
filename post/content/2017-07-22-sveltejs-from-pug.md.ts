@@ -7,7 +7,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2017-07-22T09:00Z',
 	title: `Svelte JS from Pug`,
 	slug: 'sveltejs-from-pug',
-	tag_a1: [
+	tags: [
 		'sveltejs',
 		'pug',
 		'hydration',

@@ -6,7 +6,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2008-01-01T05:30Z',
 	title: `Build Your Own Rails Plugin Platform with Desert`,
 	slug: 'build-your-own-rails-plugin-platform-with-desert',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'rails',
 		'open-source',

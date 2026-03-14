@@ -9,7 +9,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2008-10-13T12:00Z',
 	title: `RR 0.6.0 Released`,
 	slug: 'rr-0-6-0-released',
-	tag_a1: [
+	tags: [
 		'ruby',
 		'open-source',
 		'test',

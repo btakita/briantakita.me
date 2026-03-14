@@ -10,7 +10,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2019-04-15T20:20:00Z',
 	title: `Multi Underscore Tag Naming Convention Analysis`,
 	slug: 'multi-underscore-tag-naming-convention-analysis',
-	tag_a1: [
+	tags: [
 		'ctx-core',
 		'tag vector',
 		'name convention',

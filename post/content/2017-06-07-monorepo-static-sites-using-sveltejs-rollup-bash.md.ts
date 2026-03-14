@@ -15,7 +15,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2017-06-07T05:30Z',
 	title: `Monorepo Static Sites using Svelte JS, Rollup, ctx-core, & Bash`,
 	slug: 'monorepo-static-sites-using-sveltejs-rollup-bash',
-	tag_a1: [
+	tags: [
 		'javascript',
 		'ctx-core',
 		'sveltejs',

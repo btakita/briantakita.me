@@ -16,7 +16,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 	pub_date: '2014-12-03T12:00:00Z',
 	slug: 'philosophy-existence-is-god-god-exists',
 	title: 'Philosophy — Existence is God & God Exists',
-	tag_a1: ['philosophy'],
+	tags: ['philosophy'],
 	description:
 		`I’m happy to utilize, and prove, God’s existence. Since Existence is God and Existence, well exists, God Exists in this Philosophy. It’s about how God & Existence is defined.`,
 	canonical_url:
