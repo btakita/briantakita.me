@@ -16,7 +16,6 @@ import {
 	rhonojs_server__build, run
 } from 'rhonojs/server'
 import { config__init } from './config/index.js'
-import tailwindcss_config from './tailwind.config.js'
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({
 		rebuildjs: { watch: false },
@@ -31,7 +30,6 @@ export async function build(config?:rhonojs__build_config_T) {
 	config__init()
 	const esmcss_esbuild_plugin = esmcss_esbuild_plugin_()
 	const rebuild_tailwind_plugin = rebuild_tailwind_plugin_({
-		tailwindcss_config,
 		postcss_plugin_a1_: tailwindcss_plugin=>[
 			tailwindcss_plugin,
 			cssnano({ preset: 'default' })
@@ -111,52 +109,6 @@ function preprocess_plugin_():Plugin {
 				})
 			}
 		}
-	}
-}
-export function md_esbuild_plugin_():Plugin {
-	return {
-		name: 'md',
-		setup(build) {
-			build.onLoad(
-				{ filter: /\.md$/ },
-				async (config)=>{
-					const raw = await readFile(config.path, 'utf8')
-					let body = raw
-					let meta:Record<string, any> = {}
-					if (raw.startsWith('---\n')) {
-						const end = raw.indexOf('\n---\n', 4)
-						if (end >= 0) {
-							meta = (yaml as any).load(raw.substring(4, end)) ?? {}
-							body = raw.substring(end + 5)
-						}
-					}
-					const fname = basename(config.path, '.md')
-					const slug = meta.slug
-						?? fname.replace(/^\d{4}-\d{2}-\d{2}-/, '')
-					const pub_date = meta.date
-						? (String(meta.date).includes('T')
-							? String(meta.date)
-							: String(meta.date) + 'T00:00:00Z')
-						: new Date().toISOString()
-					const contents = `
-import { post_meta__validate } from '@rappstack/domain--server--blog/post'
-import { md__raw_ } from '@rappstack/ui--any/md'
-export const meta_ = (ctx)=>post_meta__validate(ctx, ${JSON.stringify({
-						pub_date,
-						title: meta.title ?? slug,
-						slug,
-						description: meta.description ?? '',
-						tag_a1: meta.tags ?? ['other'],
-						...(meta.hero_image && { hero_image: meta.hero_image }),
-						...(meta.og_image && { og_image: meta.og_image }),
-						...(meta.draft !== undefined && { draft: meta.draft }),
-					})})
-export default (ctx)=>md__raw_({ ctx }, ${JSON.stringify(body)})
-`
-					return { contents, loader: 'js' }
-				}
-			)
-		},
 	}
 }
 export function json_esbuild_plugin_() {
