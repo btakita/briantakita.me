@@ -1,6 +1,6 @@
 ---
-title: "Lazily: Reactive Signals Done Right — Lazy vs Eager, Context, Slots, and Cells"
-description: "Introducing lazily — a multi-language reactive signals library (Rust, Zig, Python) built on lazy invalidation. Deep dive into Context, Slot, Cell, and Signal abstractions, lazy vs eager reactivity, and how proper hydration (code and body) eliminates waste."
+title: "Lazily: Reactive Primitives Done Right — Context, Slots, Cells, and Signals"
+description: "Introducing lazily — a multi-language reactive primitives library (Rust, Zig, Python) built on lazy invalidation. Deep dive into Context, Slot, Cell, and Signal abstractions, lazy vs eager reactivity, and how proper hydration (code and body) eliminates waste."
 date: 2026-03-15
 featured: true
 tags:
@@ -12,11 +12,14 @@ tags:
   - architecture
   - agent-doc
   - performance
+video_url: https://www.youtube.com/watch?v=hVNmbmY4vgo
 ---
 
-# Lazily: Reactive Signals Done Right
+# Lazily: Reactive Primitives Done Right
 
-[lazily](https://crates.io/crates/lazily) is a multi-language reactive signals library — currently implemented in [Rust](https://crates.io/crates/lazily), [Zig](https://github.com/btakita/lazily-zig), and [Python](https://github.com/btakita/lazily-py). The core idea: **lazy invalidation with automatic dependency tracking**.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hVNmbmY4vgo" title="Lazily: Building a Multi-Language Reactive Signals Library — Live Session" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[lazily](https://crates.io/crates/lazily) is a multi-language reactive primitives library — currently implemented in [Rust](https://crates.io/crates/lazily), [Zig](https://github.com/btakita/lazily-zig), and [Python](https://github.com/btakita/lazily-py). The core idea: **lazy invalidation with automatic dependency tracking**.
 
 Most reactive systems are eager — when a value changes, everything downstream recomputes immediately. Lazily takes the opposite approach: dependents are *cleared* but only recompute when actually accessed. This eliminates wasted computation for values nobody is reading.
 
@@ -37,36 +40,39 @@ Think of it as the "world" for your reactive computations. In web frameworks, th
 A **Cell** is a mutable input value. When you change a Cell, all dependent Slots are *cleared* (not recomputed — cleared).
 
 ```rust
-let counter = ctx.cell(0i32);
+let counter = Cell::new(0i32);
 
-// Read
-let value = ctx.get_cell(&counter); // 0
+// Bind to context, then read
+let value = counter(&ctx).get(); // 0
 
-// Write — clears all dependents
-ctx.set_cell(&counter, 5);
+// Bind to context, then write — clears all dependents
+counter(&ctx).set(5);
 ```
 
-Key behavior: `set_cell` uses `PartialEq` to check if the value actually changed. Setting a Cell to its current value is a no-op — no cascading invalidation. This is a significant optimization in practice.
+`counter(&ctx)` returns a `CellRef` — a borrowed reference bound to the context. This mirrors lazily-py's callable pattern where `counter(ctx)` produces a bound value.
+
+Key behavior: `set` uses `PartialEq` to check if the value actually changed. Setting a Cell to its current value is a no-op — no cascading invalidation.
 
 ### Slot
 
 A **Slot** is a lazily-computed cached value with automatic dependency tracking. It has a compute function that runs on first access (or after being cleared).
 
 ```rust
-let doubled = ctx.slot(|ctx| {
-    let val = ctx.get_cell(&counter);
-    val * 2
+let doubled = Slot::new(|ctx| {
+    counter(ctx).get() * 2
 });
 
 // First access: computes 0 * 2 = 0
-assert_eq!(ctx.get(&doubled), 0);
+assert_eq!(doubled(&ctx), 0);
 
 // After cell changes: slot is cleared but NOT recomputed
-ctx.set_cell(&counter, 5);
+counter(&ctx).set(5);
 
 // Accessing the slot triggers recomputation: 5 * 2 = 10
-assert_eq!(ctx.get(&doubled), 10);
+assert_eq!(doubled(&ctx), 10);
 ```
+
+Slots are also callable — `doubled(&ctx)` returns the computed value directly (lazy, computes on first access).
 
 **Dependencies are dynamic.** Every time a Slot recomputes, it re-discovers its dependencies from scratch. If your compute function has conditional branches that access different Cells depending on state, the dependency graph updates automatically. No stale subscriptions, no manual cleanup.
 
@@ -105,7 +111,7 @@ The name "lazily" isn't accidental. **Lazy evaluation is a form of hydration** �
 2. Browser loads the page (static, no JS yet)
 3. Client hydrates — attaches interactivity only where needed
 
-rappstack's [hyop](https://github.com/nicholasgasior/rappstack) system takes this further: sub-1KB hydration that only activates the interactive parts. No full-page rehydration, no virtual DOM diffing. Lazy by design.
+rappstack's [hyop](https://github.com/hyopjs/hyop) system takes this further: sub-1KB hydration that only activates the interactive parts. No full-page rehydration, no virtual DOM diffing. Lazy by design.
 
 ## Water Hydration: The Physical Parallel
 
@@ -124,8 +130,6 @@ Research supports this directly:
 - **Dehydration reduces exercise performance:** [Cheuvront & Kenefick (2014)](https://doi.org/10.1002/cphy.c130017) showed that 2% body mass loss from dehydration impairs both physical and cognitive performance.
 - **Kidney function and waste elimination:** The kidney requires adequate hydration to maintain glomerular filtration rate (GFR). Chronic mild dehydration is linked to increased kidney stone risk and reduced waste clearance ([Clark et al., 2016](https://doi.org/10.1093/ajcn/nqw103)).
 - **Blood viscosity and oxygen transport:** Dehydration increases blood viscosity, which reduces tissue oxygenation and increases cardiovascular strain ([Kenefick & Cheuvront, 2012](https://doi.org/10.1249/MSS.0b013e318232cf95)).
-
-**The programming parallel is exact:** Eager reactive systems are like a dehydrated body — they do unnecessary work (waste products) that accumulates and slows everything down. Lazy evaluation is proper hydration — compute only what's needed, eliminate the rest.
 
 ## Multi-Language Implementation
 
@@ -153,17 +157,17 @@ cargo test
 ```
 
 ```rust
-use lazily::Context;
+use lazily::{Context, Cell, Slot};
 
 let ctx = Context::new();
-let name = ctx.cell("world".to_string());
-let greeting = ctx.slot(|ctx| {
-    format!("Hello, {}!", ctx.get_cell(&name))
+let name = Cell::new("world".to_string());
+let greeting = Slot::new(|ctx| {
+    format!("Hello, {}!", name(ctx).get())
 });
 
-assert_eq!(ctx.get(&greeting), "Hello, world!");
-ctx.set_cell(&name, "lazily".to_string());
-assert_eq!(ctx.get(&greeting), "Hello, lazily!");
+assert_eq!(greeting(&ctx), "Hello, world!");
+name(&ctx).set("lazily".to_string());
+assert_eq!(greeting(&ctx), "Hello, lazily!");
 ```
 
 ## Links

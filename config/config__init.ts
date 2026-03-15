@@ -35,5 +35,17 @@ function marked__init() {
 			}
 		}))
 	marked.use(gfmHeadingId())
+	marked.use({
+		renderer: {
+			link({ href, title, tokens }) {
+				const text = this.parser.parseInline(tokens)
+				const titleAttr = title ? ` title="${title}"` : ''
+				if (href && /^https?:\/\//.test(href) && !href.includes('briantakita.me')) {
+					return `<a href="${href}"${titleAttr} target="_blank" rel="noopener">${text}</a>`
+				}
+				return `<a href="${href}"${titleAttr}>${text}</a>`
+			}
+		}
+	})
 	app_marked__set(app_ctx, marked)
 }
