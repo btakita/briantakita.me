@@ -21,6 +21,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2008-06-20-build-your-own-rails-plugin-platform-with-desert.md'),
 	import('./content/2008-10-13-rr-0-6-0-released.md'),
 	import('./content/2017-06-07-monorepo-static-sites-using-sveltejs-rollup-bash.md'),
+	import('./content/2026-03-14-rappstack-live-session.md'),
 	import('./content/2024-02-18-tag-vector-interpreted-by-chat-gpt.md'),
 	import('./content/2017-06-11-when-we-become-a-muse-to-our-tools.md'),
 	import('./content/2013-09-08-re-doing-good-in-the-addiction-economy.md'),
