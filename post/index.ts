@@ -36,6 +36,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2015-01-18-feeling-abstraction.md'),
 	import('./content/2026-03-12-dogfooding-agent-doc-part1-blog.md'),
 	import('./content/2016-02-25-monorepo-musings-with-ctx-core.md'),
+	import('./content/2026-03-15-lazily-reactive-signals.md'),
 	import('./content/2023-10-29-log-2023-10-29.md'),
 	import('./content/2007-04-17-redefining-constants.md'),
 	import('./content/2019-04-15-log-2019-04-15.md'),
