@@ -9,7 +9,7 @@ const { exported, errors } = await static_export_({
 	site_url: process.env.PRERENDER_SITE_URL || 'https://briantakita.me',
 	out_dir: process.env.PRERENDER_OUT || 'dist/static',
 	sitemap: true,
-	extra_routes: ['/search', '/rss', '/rss.xml', '/robots.txt'],
+	extra_routes: ['/search', '/rss', '/rss.xml', '/robots.txt', '/sitemap.xml'],
 })
 if (errors.length > 0) {
 	process.exit(1)
