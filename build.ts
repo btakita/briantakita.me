@@ -15,7 +15,25 @@ import {
 	rhonojs_browser__build,
 	rhonojs_server__build, run
 } from 'rhonojs/server'
+import type { Plugin } from 'esbuild'
 import { config__init } from './config/index.js'
+function ts_resolve_plugin_():Plugin {
+	return {
+		name: 'ts_resolve_node_modules',
+		setup(build) {
+			const absWorkingDir = build.initialOptions.absWorkingDir || process.cwd()
+			build.onResolve({ filter: /^[^./]/ }, async (args)=>{
+				if (args.pluginData?.fromTsResolve) return
+				try {
+					const resolved = Bun.resolveSync(args.path, absWorkingDir)
+					if (resolved && (resolved.endsWith('.ts') || resolved.endsWith('.tsx'))) {
+						return { path: resolved }
+					}
+				} catch {}
+			})
+		}
+	}
+}
 if (is_entry_file_(import.meta.url, process.argv[1])) {
 	build({
 		rebuildjs: { watch: false },
@@ -38,6 +56,7 @@ export async function build(config?:rhonojs__build_config_T) {
 	const preprocess_plugin = preprocess_plugin_()
 	const json_esbuild_plugin = json_esbuild_plugin_()
 	const md_esbuild_plugin = md_esbuild_plugin_()
+	const ts_resolve_plugin = ts_resolve_plugin_()
 	await Promise.all([
 		run(async ()=>{
 			try {
@@ -45,6 +64,7 @@ export async function build(config?:rhonojs__build_config_T) {
 					...config ?? {},
 					treeShaking: true,
 					plugins: [
+						ts_resolve_plugin,
 						esmcss_esbuild_plugin,
 						rebuild_tailwind_plugin,
 						preprocess_plugin,
@@ -64,6 +84,7 @@ export async function build(config?:rhonojs__build_config_T) {
 					external: await server_external_(),
 					treeShaking: true,
 					plugins: [
+						ts_resolve_plugin,
 						esmcss_esbuild_plugin,
 						rebuild_tailwind_plugin,
 						preprocess_plugin,
