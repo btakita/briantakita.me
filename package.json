@@ -16,7 +16,7 @@
 		"@ctx-core/preprocess": "^0.2.4",
 		"@ctx-core/source-map": "^0.2.117",
 		"@rappstack/domain--any--blog": "^0.1.2",
-		"@rappstack/domain--server": "0.1.1",
+		"@rappstack/domain--server": "0.1.2",
 		"@rappstack/domain--server--blog": "^0.1.1",
 		"@rappstack/ui--any": "^0.1.0",
 		"@rappstack/ui--any--blog": "^0.1.0",
