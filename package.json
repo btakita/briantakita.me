@@ -29,7 +29,7 @@
 		"@tailwindcss/typography": "latest",
 		"cssnano": "^7.1.2",
 		"ctx-core": "^7.2.34",
-		"esbuild": "~0.24.2",
+		"esbuild": "^0.27.3",
 		"esbuild-plugin-object-store-asset": "^0.0.2",
 		"esmcss": "^0.2.15",
 		"highlight.js": "^11.11.1",
@@ -40,7 +40,7 @@
 		"marked-highlight": "^2.2.3",
 		"object-store-asset": "^0.0.1",
 		"picocolors": "^1.1.1",
-		"rebuildjs": "file:.yalc/rebuildjs",
+		"rebuildjs": "^0.71.0",
 		"relementjs": "^0.80.33",
 		"rhonojs": "^0.1.2",
 		"tailwindcss": "^4.2.1"
