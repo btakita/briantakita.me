@@ -218,5 +218,15 @@ export default ()=>`
 .prose > :last-child {
 	margin-bottom: 0;
 }
+/* Search icon — classes from @rappstack/ui--browser--blog not in Tailwind @source */
+.inset-y-0 { top: 0; bottom: 0; }
+.items-center { align-items: center; }
+.pl-10 { padding-left: 2.5rem; }
+.border-opacity-40 { --tw-border-opacity: 0.4; }
+.shadow-highlight { box-shadow: var(--shadow-highlight); }
+.focus\\:border-skin-accent:focus { border-color: rgb(var(--color-accent)); }
+.focus\\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+.placeholder\\:italic::placeholder { font-style: italic; }
+.placeholder\\:text-opacity-75::placeholder { --tw-text-opacity: 0.75; }
 `
 // @formatter:on
