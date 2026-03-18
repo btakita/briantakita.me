@@ -15,8 +15,19 @@ import {
 	rhonojs_browser__build,
 	rhonojs_server__build, run
 } from 'rhonojs/server'
-import type { Plugin } from 'esbuild'
 import { config__init } from './config/index.js'
+const rappstack_dev_root = '/home/brian/work/btakita/agent-loop/src/rappstack-dev/lib'
+const rappstack_watch_dirs = [
+	`${rappstack_dev_root}/domain--any--blog`,
+	`${rappstack_dev_root}/domain--server`,
+	`${rappstack_dev_root}/domain--server--blog`,
+	`${rappstack_dev_root}/ui--any`,
+	`${rappstack_dev_root}/ui--any--blog`,
+	`${rappstack_dev_root}/ui--browser`,
+	`${rappstack_dev_root}/ui--browser--blog`,
+	`${rappstack_dev_root}/ui--server`,
+	`${rappstack_dev_root}/ui--server--blog`,
+]
 function ts_resolve_plugin_():Plugin {
 	return {
 		name: 'ts_resolve_node_modules',
@@ -56,12 +67,15 @@ export async function build(config?:rhonojs__build_config_T) {
 	const preprocess_plugin = preprocess_plugin_()
 	const json_esbuild_plugin = json_esbuild_plugin_()
 	const md_esbuild_plugin = md_esbuild_plugin_()
+	const is_dev = config?.rebuildjs?.watch !== false
 	const ts_resolve_plugin = ts_resolve_plugin_()
+	const rebuildjs_config = is_dev ? { ...config?.rebuildjs, watch_dirs: rappstack_watch_dirs } : config?.rebuildjs
 	await Promise.all([
 		run(async ()=>{
 			try {
 				return rhonojs_browser__build({
 					...config ?? {},
+					rebuildjs: rebuildjs_config,
 					treeShaking: true,
 					plugins: [
 						ts_resolve_plugin,
@@ -80,6 +94,7 @@ export async function build(config?:rhonojs__build_config_T) {
 			try {
 				return rhonojs_server__build({
 					...config ?? {},
+					rebuildjs: rebuildjs_config,
 					target: 'es2022',
 					external: await server_external_(),
 					treeShaking: true,
