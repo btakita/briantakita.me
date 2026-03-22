@@ -30,7 +30,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		'crm',
 	],
 	description: `Let's analyze the performance of some Squarespace sites. Along with the fastest WordPress & Shopify themes.`,
-	featured: true,
+	featured: false,
 })
 export default (ctx:request_ctx_T)=>{
 	// @formatter:off

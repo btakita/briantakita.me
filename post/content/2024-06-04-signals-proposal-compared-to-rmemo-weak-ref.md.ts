@@ -44,7 +44,7 @@ export const meta_ = (ctx:request_ctx_T)=>post_meta__validate(ctx, {
 		nl,
 		`V8 & Javascript Core have different Garbage Collection behavior for WeakRef. This caused me confusion with my initial benchmarks which were only synchronous. This post demonstrates the implementations. This post then highlights use cases where WeakRef can be used for simple & flexible reactive apis.`,
 	),
-	featured: true,
+	featured: false,
 })
 export default (ctx:request_ctx_T)=>{
 	// @formatter:off
