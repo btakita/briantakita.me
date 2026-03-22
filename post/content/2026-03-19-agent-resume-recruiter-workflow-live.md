@@ -1,6 +1,6 @@
 ---
-title: "Building Agent Resume: AI-Powered Resume Generation from Recruiter Conversations"
-description: "A live coding session building agent-resume — a TOML-based system for generating tailored resumes from recruiter conversations, phone call transcriptions, and email correspondence using corky and agent-doc."
+title: "Building Agent Resume: AI-Powered Job Search Workflow with Resume Generation"
+description: "A live coding session building agent-resume — a TOML-based system for generating tailored resumes for job applications, phone call transcriptions, and email correspondence using corky and agent-doc."
 date: 2026-03-19
 featured: true
 tags:
@@ -15,13 +15,13 @@ tags:
 video_url: https://www.youtube.com/watch?v=IenfqO2vmAw
 ---
 
-# Building Agent Resume: AI-Powered Resume Generation from Recruiter Conversations
+# Building Agent Resume: AI-Powered Job Search Workflow with Resume Generation
 
-Another raw, unscripted live coding session. This time the focus is on the recruiter-facing side of my toolchain: using [corky](https://github.com/btakita/corky) for email correspondence and phone call transcription, building a new project called **agent-resume**, and continuing to refine [agent-doc](https://github.com/btakita/agent-doc)'s CRDT document sessions.
+Another raw, unscripted live coding session. This time the focus is on the job-search side of my toolchain: using [corky](https://github.com/btakita/corky) for email correspondence and phone call transcription, building a new project called **agent-resume**, and continuing to refine [agent-doc](https://github.com/btakita/agent-doc)'s CRDT document sessions.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IenfqO2vmAw" title="Building Agent Resume: AI-Powered Resume Generation from Recruiter Conversations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IenfqO2vmAw" title="Building Agent Resume: AI-Powered Job Search Workflow with Resume Generation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**What you'll see:** Real recruiter workflow automation, resume gap analysis with AI agents, CRDT debugging, and the messy reality of building tools while actively using them for job applications. This is vibe coding — not a tutorial.
+**What you'll see:** Real job search workflow automation, resume gap analysis with AI agents, CRDT debugging, and the messy reality of building tools while actively using them for job applications. This is vibe coding — not a tutorial.
 
 ## Agent Resume: Experience as Data
 
@@ -44,17 +44,17 @@ This turned up some interesting results. For instance, I had Holochain/protocol.
 
 That's the kind of judgment call that makes agent-assisted resume building valuable. It's not just keyword matching — it's contextual evaluation of whether experience actually strengthens your story.
 
-## Corky: The Recruiter Correspondence Pipeline
+## Corky: The Job Search Correspondence Pipeline
 
-This session demonstrates the full corky pipeline for recruiter interactions:
+This session demonstrates the full corky pipeline for job search interactions:
 
-1. **Email ingestion** — Corky loads recruiter emails automatically and creates contact profiles with correspondence history
+1. **Email ingestion** — Corky loads emails automatically and creates contact profiles with correspondence history
 2. **Phone call transcription** — Record calls, drop the audio file into corky, and it transcribes *and diarizes* the conversation (attributing who said what)
 3. **Context assembly** — All correspondence, transcriptions, and the TOML experience database feed into agent-doc
 4. **Resume generation** — The agent drafts a tailored resume and cover email, with all the context it needs to be specific and accurate
 5. **Email drafting** — Corky drafts the response email and pushes to Gmail Drafts for review
 
-The workflow ran end-to-end for two different recruiter conversations in this session. The second one was more interesting — better role, higher compensation — but the process was identical. That's the point: the tooling handles the mechanical parts so you can focus on the decisions that matter.
+The workflow ran end-to-end for two different job search conversations in this session. The second one was more interesting — better role, higher compensation — but the process was identical. That's the point: the tooling handles the mechanical parts so you can focus on the decisions that matter.
 
 ## Agent-Doc: Parallel Commands and CRDT Refinements
 
