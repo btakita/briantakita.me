@@ -55,4 +55,11 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2004-11-04-generic-query-analyzer-0-1-1-released.md'),
 	import('./content/2007-10-08-cacheable-flash-0-1-4.md'),
 	import('./content/2007-10-18-sake-gem-downloads-list.md'),
+	import('./content/2026-03-23-skill-to-binary-agent-doc-live.md'),
+	import('./content/2026-03-23-skill-to-binary-ep1-crdt-ordering.md'),
+	import('./content/2026-03-23-skill-to-binary-ep2-snowball-bug.md'),
+	import('./content/2026-03-23-skill-to-binary-ep3-ast-gpu-transcription.md'),
+	import('./content/2026-03-23-skill-to-binary-ep4-ipc-timeout.md'),
+	import('./content/2026-03-23-skill-to-binary-ep5-preflight.md'),
+	import('./content/2026-03-23-skill-to-binary-ep6-deterministic-primitives.md'),
 ])
