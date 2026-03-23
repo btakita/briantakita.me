@@ -1,0 +1,67 @@
+{
+	"name": "@rappstack/domain--server--blog",
+	"type": "module",
+	"version": "0.1.1",
+	"description": "domain library targeting the server for blogs",
+	"keywords": [
+		"rappstack",
+		"reactive",
+		"full-stack",
+		"domain",
+		"server",
+		"blog"
+	],
+	"homepage": "https://github.com/rappstack/domain--server--blog",
+	"bugs": {
+		"url": "https://github.com/rappstack/domain--server--blog/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rappstack/domain--server--blog.git"
+	},
+	"license": "Apache-2.0",
+	"author": "Brian Takita",
+	"types": "index.ts",
+	"exports": {
+		".": "./index.ts",
+		"./breadcrumb": "./breadcrumb/index.ts",
+		"./ctx": "./ctx/index.ts",
+		"./footnote": "./footnote/index.ts",
+		"./og_image": "./og_image/index.ts",
+		"./page": "./page/index.ts",
+		"./post": "./post/index.ts",
+		"./site": "./site/index.ts",
+		"./social": "./social/index.ts",
+		"./tag": "./tag/index.ts",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"*.d.ts",
+		"*.js",
+		"*.json",
+		"breadcrumb",
+		"ctx",
+		"footnote",
+		"og_image",
+		"page",
+		"post",
+		"site",
+		"tag"
+	],
+	"dependencies": {
+		"@rappstack/domain--server": "^0.1.0",
+		"ctx-core": "^7.2.32",
+		"hono": "^4.0.0",
+		"react": "^19.2.4",
+		"relementjs": "^0.80.31",
+		"rhonojs": "^0.1.1",
+		"rmemo": "^0.51.32",
+		"satori": "^0.24.1",
+		"satori-html": "^0.3.2",
+		"zod": "^4.3.6"
+	},
+	"peerDependencies": {
+		"typescript": "*"
+	},
+	"yalcSig": "27b03cf49d0251520c6f35bca6fc8800"
+}

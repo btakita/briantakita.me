@@ -13,24 +13,6 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=lEnOxyT5crY
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Ep2: The Snowball Bug — Skill to Binary Series",
-  "description": "Moving boundary management into the binary reveals a cascading corruption bug. Conditional reinsertion causes each cycle to perpetuate a missing boundary. Also: AI agents as probabilistic algorithms and context window optimization.",
-  "thumbnailUrl": "https://img.youtube.com/vi/lEnOxyT5crY/maxresdefault.jpg",
-  "uploadDate": "2026-03-23",
-  "duration": "PT1H31M49S",
-  "contentUrl": "https://www.youtube.com/watch?v=lEnOxyT5crY",
-  "embedUrl": "https://www.youtube.com/embed/lEnOxyT5crY",
-  "author": {
-    "@type": "Person",
-    "name": "Brian Takita",
-    "url": "https://briantakita.me"
-  }
-}
-</script>
 
 
 # Ep2: The Snowball Bug

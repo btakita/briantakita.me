@@ -13,24 +13,6 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=ntdcp2pH2qw
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Ep3: AST Parsing & GPU Transcription — Skill to Binary Series",
-  "description": "Replacing regex with pulldown-cmark AST, debugging boundary markers across IPC paths, adding CUDA GPU transcription to corky, and designing the YouTube publishing pipeline.",
-  "thumbnailUrl": "https://img.youtube.com/vi/ntdcp2pH2qw/maxresdefault.jpg",
-  "uploadDate": "2026-03-23",
-  "duration": "PT1H59M39S",
-  "contentUrl": "https://www.youtube.com/watch?v=ntdcp2pH2qw",
-  "embedUrl": "https://www.youtube.com/embed/ntdcp2pH2qw",
-  "author": {
-    "@type": "Person",
-    "name": "Brian Takita",
-    "url": "https://briantakita.me"
-  }
-}
-</script>
 
 
 # Ep3: AST Parsing & GPU Transcription

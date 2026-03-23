@@ -13,24 +13,6 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=DC1tAv-a_7E
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "Ep5: Preflight & Browser Extension — Skill to Binary Series",
-  "description": "YouTube comment automation research, designing the preflight command, fixing the IPC boundary reposition bug, and planning a browser extension for platform automation.",
-  "thumbnailUrl": "https://img.youtube.com/vi/DC1tAv-a_7E/maxresdefault.jpg",
-  "uploadDate": "2026-03-23",
-  "duration": "PT1H2M17S",
-  "contentUrl": "https://www.youtube.com/watch?v=DC1tAv-a_7E",
-  "embedUrl": "https://www.youtube.com/embed/DC1tAv-a_7E",
-  "author": {
-    "@type": "Person",
-    "name": "Brian Takita",
-    "url": "https://briantakita.me"
-  }
-}
-</script>
 
 
 # Ep5: Preflight & Browser Extension

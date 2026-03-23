@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "packages": {
+    "@rappstack/domain--any--blog": {
+      "signature": "65236683a9ca0cdd6c0336e3f10d9dc9",
+      "file": true,
+      "replaced": "^0.1.2"
+    },
+    "@rappstack/domain--server--blog": {
+      "signature": "27b03cf49d0251520c6f35bca6fc8800",
+      "file": true,
+      "replaced": "^0.1.1"
+    }
+  }
+}
