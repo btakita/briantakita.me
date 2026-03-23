@@ -12,6 +12,25 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=xNBkZAJuUys
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Ep6: Deterministic Primitives — Skill to Binary Series",
+  "description": "The design principle that emerged: put deterministic operations in the binary, let agents handle probabilistic coordination. Session wrap-up and reflections on AI-assisted development velocity.",
+  "thumbnailUrl": "https://img.youtube.com/vi/xNBkZAJuUys/maxresdefault.jpg",
+  "uploadDate": "2026-03-23",
+  "duration": "PT19M35S",
+  "contentUrl": "https://www.youtube.com/watch?v=xNBkZAJuUys",
+  "embedUrl": "https://www.youtube.com/embed/xNBkZAJuUys",
+  "author": {
+    "@type": "Person",
+    "name": "Brian Takita",
+    "url": "https://briantakita.me"
+  }
+}
+</script>
+
 
 # Ep6: Deterministic Primitives
 

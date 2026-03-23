@@ -13,6 +13,25 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=5m9rTJ-4Xbc
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Ep1: The CRDT Ordering Bug — Skill to Binary Series",
+  "description": "CRDT merge preserves data but not semantic ordering. Debugging how user prompts end up below agent responses, discovering IPC caching as the root cause, and a philosophical detour about 'vibe coder' labels.",
+  "thumbnailUrl": "https://img.youtube.com/vi/5m9rTJ-4Xbc/maxresdefault.jpg",
+  "uploadDate": "2026-03-23",
+  "duration": "PT1H58M46S",
+  "contentUrl": "https://www.youtube.com/watch?v=5m9rTJ-4Xbc",
+  "embedUrl": "https://www.youtube.com/embed/5m9rTJ-4Xbc",
+  "author": {
+    "@type": "Person",
+    "name": "Brian Takita",
+    "url": "https://briantakita.me"
+  }
+}
+</script>
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5m9rTJ-4Xbc" title="Ep1: The CRDT Ordering Bug — Skill to Binary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

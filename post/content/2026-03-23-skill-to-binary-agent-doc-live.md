@@ -17,6 +17,24 @@ tags:
   - cuda
 playlist_url: https://www.youtube.com/playlist?list=PL4Ma0srhCY3PVBZF3D541tPyPPm1BhnEI
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Skill to Binary — Debugging agent-doc Live",
+  "description": "A 7.5-hour live coding mini-series documenting the migration of agent-doc's boundary management from the Claude Code skill into deterministic binary/plugin code.",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "url": "https://www.youtube.com/watch?v=5m9rTJ-4Xbc"},
+    {"@type": "ListItem", "position": 2, "url": "https://www.youtube.com/watch?v=lEnOxyT5crY"},
+    {"@type": "ListItem", "position": 3, "url": "https://www.youtube.com/watch?v=ntdcp2pH2qw"},
+    {"@type": "ListItem", "position": 4, "url": "https://www.youtube.com/watch?v=j0684b9NZ-o"},
+    {"@type": "ListItem", "position": 5, "url": "https://www.youtube.com/watch?v=DC1tAv-a_7E"},
+    {"@type": "ListItem", "position": 6, "url": "https://www.youtube.com/watch?v=xNBkZAJuUys"}
+  ]
+}
+</script>
+
 
 # Skill to Binary: Debugging agent-doc Live
 

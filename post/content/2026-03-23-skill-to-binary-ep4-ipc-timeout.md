@@ -12,6 +12,25 @@ tags:
 series: skill-to-binary
 video_url: https://www.youtube.com/watch?v=j0684b9NZ-o
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Ep4: IPC Timeout Deep Dive — Skill to Binary Series",
+  "description": "Why does the boundary reposition time out? Debugging the IPC layer between agent-doc and the JetBrains plugin, CRDT vs semantic ordering, and the argument for file descriptors over polling.",
+  "thumbnailUrl": "https://img.youtube.com/vi/j0684b9NZ-o/maxresdefault.jpg",
+  "uploadDate": "2026-03-23",
+  "duration": "PT42M",
+  "contentUrl": "https://www.youtube.com/watch?v=j0684b9NZ-o",
+  "embedUrl": "https://www.youtube.com/embed/j0684b9NZ-o",
+  "author": {
+    "@type": "Person",
+    "name": "Brian Takita",
+    "url": "https://briantakita.me"
+  }
+}
+</script>
+
 
 # Ep4: IPC Timeout Deep Dive
 
