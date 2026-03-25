@@ -14,14 +14,14 @@ tags:
   - live-coding
   - vibe-coding
   - agentic-programming
-video_url: https://www.youtube.com/watch?v=OrGJi8Hh_bQ
+video_url: https://www.youtube.com/watch?v=ixDbYPO43Cw
 ---
 
 # Module Harness, Back-Testing, and Building a Domain Ontology with Agents
 
 Another live coding session working on [agent-doc](https://github.com/btakita/agent-doc). This one starts with tmux session sync recovery, moves into a new concept — module-level harness context — and ends with the first concrete usage of existence language to build a domain ontology where the agent defines its own terminology.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OrGJi8Hh_bQ" title="Module Harness, Back-Testing, and Building a Domain Ontology with Agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ixDbYPO43Cw" title="Module Harness, Back-Testing, and Building a Domain Ontology with Agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **What you'll see:** Tmux session recovery from a catastrophic bug, the birth of a new concept for structuring agent context at the module level, philosophical tangents on agent teams and back-testing, and a surprisingly productive ontology-building session where Claude defines terms like eval, contract, spec, harness, and audit — and I iterate on the definitions in real time. This is vibe coding — not a tutorial.
 
