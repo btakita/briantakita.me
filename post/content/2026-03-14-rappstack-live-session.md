@@ -19,7 +19,7 @@ video_url: https://www.youtube.com/watch?v=oFFHVjQaYdA
 
 # Building a Sub-1KB Web Framework — Live Debugging with AI
 
-This is a raw live coding session where I work on [rappstack](https://github.com/nicholasgasior/rappstack) — my composable web application framework built on [rmemo](https://github.com/nicholasgasior/rmemo) and [relysjs](https://github.com/nicholasgasior/relysjs). The session covers infrastructure migration, architecture walkthrough, and real debugging with [Claude Code](https://claude.com/claude-code).
+This is a raw live coding session where I work on [rappstack](https://github.com/btakita/rappstack) — my composable web application framework built on [rmemo](https://github.com/btakita/rmemo) and [relysjs](https://github.com/btakita/relysjs). The session covers infrastructure migration, architecture walkthrough, and real debugging with [Claude Code](https://claude.com/claude-code).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oFFHVjQaYdA" title="Building a Sub-1KB Web Framework — Live Debugging with AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
