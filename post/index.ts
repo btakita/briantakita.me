@@ -1,5 +1,7 @@
 import { type post_mod_T } from '@rappstack/domain--any--blog/post'
 export const post_mod_a1:post_mod_T[] = await Promise.all([
+	import('./content/2026-03-29-existence-lang-pneuma-noumena-phenomena.md'),
+	import('./content/2026-03-27-agent-doc-ffi-plugin-socket-ipc.md'),
 	import('./content/2023-10-17-my-history-with-state-management-and-ctx-core-nanostores.md'),
 	import('./content/2013-09-15-automated-black-box-testing.md'),
 	import('./content/2019-04-03-log-2019-04-03.md'),
