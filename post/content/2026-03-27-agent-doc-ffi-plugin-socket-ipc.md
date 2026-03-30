@@ -39,10 +39,10 @@ This session builds the socket IPC layer that replaces the previous file-based a
 
 An interesting pattern emerged: when asked to implement the socket IPC, Claude chose to write a pure Kotlin implementation inside the JetBrains plugin — technically correct, but architecturally wrong. It optimized for immediate effort reduction rather than following the FFI-first convention documented in CLAUDE.md.
 
-This led to a productive discussion about how to make architectural conventions stick:
+This led to a productive discussion about how to make architectural conventions stick when your coding partner has an instinct to minimize effort:
 - CLAUDE.md instructions alone weren't strong enough
 - Memory feedback helped but wasn't sufficient
-- The solution: encode the convention into a skill and reinforce it with domain ontology
+- The solution: encode the convention into a skill and reinforce it with domain ontology — a shared vocabulary that persists across sessions
 
 ## Ontology Applied to Architecture
 

@@ -60,9 +60,21 @@ A subtle but important distinction:
 
 The ontology always operates through abstraction. It never expresses raw pneuma — it works through abstractions at varying levels of precision.
 
+## Scope and Resolution in Bounded vs Unbounded Systems
+
+A key distinction that emerged: in bounded-information systems, scope and resolution trade off — wider scope means lower resolution, because finite information is spread thinner. But in unbounded systems — creative systems where information grows through activity — scope can increase without losing resolution. There's no inherent trade-off.
+
+This matters because many of the systems we care most about are creative and therefore unbounded: permaculture sites, software projects, research programs, markets in their early phases. The bounded case is a simplification, not the default.
+
+## Creative Systems and Steady State
+
+Some systems start unbounded and creative — information grows as participants interact, succeed, fail, and evolve. These can transition to bounded "steady state" once incumbents or monopolists gatekeep the channels. But creativity is constrained, not necessarily extinguished — it depends on whether the boundary is permeable and whether the system has mechanisms for renewal.
+
+This pattern appears across domains: markets that become monopolistic, codebases that calcify around legacy decisions, ecosystems that reach climax community. The question isn't whether boundedness kills creativity — it's whether the system retains mechanisms for cyclical renewal.
+
 ## Permaculture as Systemic Design
 
-A conversation with John Cassel explores permaculture as a systemic design practice and its parallels to ontology-driven software:
+A response to John Cassel's outreach about permaculture design principles inspired an exploration of parallels:
 
 - **Design practice framework**: guiding ethics, principles, vocabulary of categories for system interactions, toolbox of design methods
 - **Discovery processes**: designers manage calculated risks through strategic intervention, reasoning about factor concentration without knowing each factor individually
