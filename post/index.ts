@@ -1,11 +1,10 @@
 import { type post_mod_T } from '@rappstack/domain--any--blog/post'
 export const post_mod_a1:post_mod_T[] = await Promise.all([
-	import('./content/2026-03-29-existence-lang-pneuma-noumena-phenomena.md'),
-	import('./content/2026-03-27-agent-doc-ffi-plugin-socket-ipc.md'),
 	import('./content/2023-10-17-my-history-with-state-management-and-ctx-core-nanostores.md'),
 	import('./content/2013-09-15-automated-black-box-testing.md'),
 	import('./content/2019-04-03-log-2019-04-03.md'),
 	import('./content/2026-03-23-skill-to-binary-ep6-deterministic-primitives.md'),
+	import('./content/2026-03-27-agent-doc-ffi-plugin-socket-ipc.md'),
 	import('./content/2004-09-23-keeping-in-control-of-events.md'),
 	import('./content/2026-03-05-introducing-agent-doc.md'),
 	import('./content/2015-01-03-everything-exists.md'),
@@ -53,7 +52,9 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2014-12-19-why-say-history-when-you-can-say-story.md'),
 	import('./content/2023-10-20-tag-vector-1-tag-vector-convention.md'),
 	import('./content/2014-12-10-magic-connections-with-the-philosophy-of-language.md'),
+	import('./content/2026-03-29-existence-lang-pneuma-noumena-phenomena.md'),
 	import('./content/2023-10-20-tag-vector-0-introduction.md'),
+	import('./content/2026-04-01-agent-security-multiuser-lessons.md'),
 	import('./content/2004-09-19-deploy-any-file-type-using-whidbey-click-once.md'),
 	import('./content/2026-03-23-skill-to-binary-ep5-preflight.md'),
 	import('./content/2026-03-23-skill-to-binary-ep2-snowball-bug.md'),
