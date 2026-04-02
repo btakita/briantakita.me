@@ -6,7 +6,7 @@ export default ()=>`
 @tailwind utilities;
 @source "../../lib/**/*.ts";
 @source "../app/**/*.ts";
-@source "/home/brian/work/btakita/agent-loop/src/rappstack-dev/lib/**/*.ts";
+@source "../../../../rappstack-dev/lib/**/*.ts";
 @plugin "@tailwindcss/typography";
 @theme {
 	--font-inter: "Inter", sans-serif;
