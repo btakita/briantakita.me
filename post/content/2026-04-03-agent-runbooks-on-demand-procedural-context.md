@@ -27,7 +27,7 @@ CLAUDE.md (or AGENTS.md, or whatever your AI harness calls its instruction file)
 
 Policy is always-on context. It should be in the instruction file. Procedure is on-demand context. It should be loaded when needed and absent when not.
 
-When you inline procedures into CLAUDE.md, you pay the full token cost on every interaction. A 100-line instruction file with 60 lines of procedures means 60% of your persistent context is irrelevant most of the time.
+When you inline procedures into CLAUDE.md, you pay the full token cost on every interaction. In my own projects, by identifying and extracting 12 runbooks, I cut 212 lines from instruction files — a 28% reduction in persistent context that was irrelevant most of the time.
 
 ## Runbooks vs rules
 
@@ -102,7 +102,9 @@ A 25-line checklist covering four steps: run tests, add tests for new behavior, 
 
 A 40-line multi-target release procedure covering common steps plus target-specific sections for cargo (crates.io), PyPI, npm, GitHub Releases, and binary installs. This procedure is needed maybe once per release cycle... not on every interaction.
 
-Together, these two runbooks save ~65 lines of persistent context. Scale that to a mature project with 10+ procedures and you're saving hundreds of tokens per interaction.
+These two runbooks alone save 63 lines of persistent context from the main instruction file. But the pattern scales further — I extracted 10 more runbooks from skill files (release workflows, security audits, email sending, module validation), saving an additional 149 lines. Some skills saw over 50% of their content moved to on-demand loading — procedures that only matter during specific operations, not on every invocation.
+
+**Total across 12 runbooks: 212 lines saved, 28% reduction in agent instruction surface.**
 
 ### Nested runbooks: skills with sub-procedures
 
