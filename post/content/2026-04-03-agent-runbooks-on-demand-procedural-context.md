@@ -126,6 +126,27 @@ This gives you three tiers of context management:
 
 Each tier loads only when needed. The agent pays the token cost of tier 3 only during the specific operation that requires it.
 
+### Packaged skills: binary + instructions + runbooks
+
+The pattern extends further when a CLI tool bundles its own agent instructions alongside the binary.
+
+Consider a tool that handles email, LinkedIn posting, and general correspondence. As a monolithic skill, every invocation loads 695 lines of instructions — email threading rules when you're posting to LinkedIn, transcription config when you're drafting an email.
+
+Split into three focused skills with on-demand runbooks, each installed by a single command (`tool skill install`):
+
+| Component | Lines loaded | When |
+|-----------|-------------|------|
+| Email skill | 66 | `/email` invocations only |
+| LinkedIn skill | 58 | `/linkedin` invocations only |
+| General skill | 61 | `/corky` invocations only |
+| 5 runbooks | 0 (on demand) | Only when sub-task fires |
+
+That's 85-92% less context per invocation compared to the monolithic approach. The runbooks (gmail config, browser paste, imports, transcription) add another 98 lines that never load unless the specific sub-task fires.
+
+The key insight: the binary bundles its instruction files via compile-time embedding (`include_str!` in Rust, though any language can do this). One install command writes all three skills and their runbooks. The agent instructions version-lock with the tool — no drift between what the binary can do and what the agent knows about it.
+
+This is encapsulation applied to agent context. Binary logic, skill instructions, procedural runbooks, and behavioral rules — packaged and distributed together. The agent loads only the slice it needs for the current task.
+
 ## Where to put them: the directory question
 
 The runbooks pattern works regardless of which directory you choose. But where should that directory live? The community hasn't settled this yet. Several conventions are emerging in parallel:
