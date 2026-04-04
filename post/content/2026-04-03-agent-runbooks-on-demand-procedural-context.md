@@ -38,7 +38,7 @@ Runbooks are different. They're **imperative procedures**: step-by-step instruct
 - **Rule**: "Use snake_case for Python functions. Run tests before committing."
 - **Runbook**: "Step 1: Run `make check`. Step 2: Verify output. Step 3: Stage changed files. Step 4: Review diff for secrets..."
 
-The loading model is orthogonal — both rules and runbooks can be eager or lazy. What differs is the content type. A rule is guidance. A runbook is a checklist. Naming them differently tells the agent (and the human) what to expect when they open the file.
+In practice, rules are typically always-on — loaded at session start to shape every interaction. Runbooks are the opposite: on-demand procedures loaded only when the agent reaches that specific task. What differs is both the content type and the loading expectation. A rule is guidance. A runbook is a checklist. Naming them differently tells the agent (and the human) what to expect when they open the file.
 
 ## The convention: `runbooks/*.md`
 
