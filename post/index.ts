@@ -17,6 +17,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2004-09-21-the-third-sector.md'),
 	import('./content/2026-03-12-dogfooding-agent-doc-part2-blog.md'),
 	import('./content/2016-09-05-github-pages-custom-dns-gotcha.md'),
+	import('./content/2026-04-03-agent-runbooks-on-demand-procedural-context.md'),
 	import('./content/2010-01-31-to-pair-or-not-to-pair.md'),
 	import('./content/2004-09-18-subversion-source-control.md'),
 	import('./content/2023-11-06-log-2023-11-06.md'),
