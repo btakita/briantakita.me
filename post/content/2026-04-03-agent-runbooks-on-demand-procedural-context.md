@@ -29,6 +29,17 @@ Policy is always-on context. It should be in the instruction file. Procedure is 
 
 When you inline procedures into CLAUDE.md, you pay the full token cost on every interaction. A 100-line instruction file with 60 lines of procedures means 60% of your persistent context is irrelevant most of the time.
 
+## Runbooks vs rules
+
+AI coding tools already have "rules" — `.cursor/rules/`, `.windsurf/rules/`, Zed's `.rules`. Rules are **declarative policy**: coding conventions, architectural guidelines, behavioral constraints. They shape *how the agent thinks*.
+
+Runbooks are different. They're **imperative procedures**: step-by-step instructions for specific tasks. They tell the agent *what to do*, not how to think.
+
+- **Rule**: "Use snake_case for Python functions. Run tests before committing."
+- **Runbook**: "Step 1: Run `make check`. Step 2: Verify output. Step 3: Stage changed files. Step 4: Review diff for secrets..."
+
+The loading model is orthogonal — both rules and runbooks can be eager or lazy. What differs is the content type. A rule is guidance. A runbook is a checklist. Naming them differently tells the agent (and the human) what to expect when they open the file.
+
 ## The convention: `runbooks/*.md`
 
 Put your procedural files in a `runbooks/` directory under whichever agent config directory you use. The directory name is still an emerging convention (see [Where to put them](#where-to-put-them-the-directory-question) below), but the pattern is the same regardless:
