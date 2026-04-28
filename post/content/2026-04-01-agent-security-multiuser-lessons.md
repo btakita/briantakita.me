@@ -73,7 +73,7 @@ The agent trusts the document content because the document *is* the prompt. Ther
 
 ### Credential Exposure as a Hypothetical
 
-In prior sessions, audit reviews of the commit history revealed instances where agents included credential values in their output during debugging tasks. The agent optimizes for task completion — it doesn't model who will read its output. A `$(pass ...)` wrapper around secret access prevents this, and agent-doc now includes guardrails that enforce this pattern.
+In prior sessions, audit reviews of the commit history revealed instances where agents included credential values in their output during debugging tasks. The agent optimizes for task completion — it doesn't model who will read its output. A `$(passage ...)` wrapper around secret access prevents this, and agent-doc now includes guardrails that enforce this pattern.
 
 The point: **regular audits of private git commits can catch exposures that would otherwise go unnoticed.** The commit history is the defense — as long as the repository stays private.
 
@@ -142,7 +142,7 @@ After this day, several structural improvements were made:
 2. **Session dedup guard** — Before starting a new session, validate that no existing pane is already serving the file. Cross-reference all running panes against the session registry.
 3. **Operation-level logging** — Every `write`, `commit`, and snapshot save is logged with timestamps, content lengths, and session UUIDs. The session-level logs confirmed sessions were stable; the operation logs revealed the write/commit gap.
 4. **Session registry cleanup** — Every command that touches `sessions.json` now prunes dead panes and detects duplicates.
-5. **Secret guardrails** — The `/livestream` skill deny-lists sensitive files, scans for secret patterns, and requires `$(pass ...)` for all credentials. Applicable to any session where the audit trail might be shared.
+5. **Secret guardrails** — The `/livestream` skill deny-lists sensitive files, scans for secret patterns, and requires `$(passage ...)` for all credentials. Applicable to any session where the audit trail might be shared.
 
 *Each of these changes has its own commit trail in the session documents. The logging feature was proposed, discussed, implemented, and tested within a single document. That's not documentation written after the fact — it's documentation as a byproduct of the work itself.*
 
