@@ -20,16 +20,46 @@ This post walks the progression, shows how `Signal` is built by composing the tw
 
 ## The progression at a glance
 
-```
-   Cell                Slot                  Signal
- (input)            (lazy derived)        (eager derived)
-   │                     │                     │
- mutable             compute-on-read       compute-on-change
- source of truth     pull-based            push-based
- PartialEq guard     dirty-on-invalidate   no unset window (v1 → v2)
-   │                     │                     │
-   └─────────── one Context, one dependency graph ───────────┘
-```
+<figure>
+<svg viewBox="0 0 720 270" role="img" aria-label="The Cell to Slot to Signal progression: Cell is a mutable input (source of truth, PartialEq guard); Slot is a lazy derived value (compute-on-read, pull-based, dirty-on-invalidate); Signal is an eager derived value (compute-on-change, push-based, no unset window v1 to v2) — all in one Context and one dependency graph." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+  <defs>
+    <marker id="lz5-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
+    </marker>
+  </defs>
+  <style>
+    .lz5-box{fill:rgb(var(--color-card));stroke:rgb(var(--color-border));stroke-width:1.5}
+    .lz5-eager{fill:rgb(var(--color-card));stroke:rgb(var(--color-accent));stroke-width:2}
+    .lz5-t{fill:rgb(var(--color-text-base));font-size:17px;font-weight:700}
+    .lz5-k{fill:rgb(var(--color-accent));font-size:12px;font-weight:600}
+    .lz5-s{fill:rgb(var(--color-text-base));opacity:.78;font-size:12.5px}
+    .lz5-edge{stroke:rgb(var(--color-text-base));stroke-opacity:.55;stroke-width:1.5;fill:none}
+    .lz5-cap{fill:rgb(var(--color-text-base));opacity:.8;font-size:13px;font-weight:600}
+  </style>
+  <rect class="lz5-box" x="12" y="20" width="206" height="172" rx="8"/>
+  <text class="lz5-t" x="115" y="52" text-anchor="middle">Cell</text>
+  <text class="lz5-k" x="115" y="72" text-anchor="middle">input</text>
+  <text class="lz5-s" x="115" y="106" text-anchor="middle">mutable</text>
+  <text class="lz5-s" x="115" y="130" text-anchor="middle">source of truth</text>
+  <text class="lz5-s" x="115" y="154" text-anchor="middle">PartialEq guard</text>
+  <path class="lz5-edge" d="M218 106 H252" marker-end="url(#lz5-arr)"/>
+  <rect class="lz5-box" x="254" y="20" width="206" height="172" rx="8"/>
+  <text class="lz5-t" x="357" y="52" text-anchor="middle">Slot</text>
+  <text class="lz5-k" x="357" y="72" text-anchor="middle">lazy derived</text>
+  <text class="lz5-s" x="357" y="106" text-anchor="middle">compute-on-read</text>
+  <text class="lz5-s" x="357" y="130" text-anchor="middle">pull-based</text>
+  <text class="lz5-s" x="357" y="154" text-anchor="middle">dirty-on-invalidate</text>
+  <path class="lz5-edge" d="M460 106 H494" marker-end="url(#lz5-arr)"/>
+  <rect class="lz5-eager" x="496" y="20" width="212" height="172" rx="8"/>
+  <text class="lz5-t" x="602" y="52" text-anchor="middle">Signal</text>
+  <text class="lz5-k" x="602" y="72" text-anchor="middle">eager derived</text>
+  <text class="lz5-s" x="602" y="106" text-anchor="middle">compute-on-change</text>
+  <text class="lz5-s" x="602" y="130" text-anchor="middle">push-based</text>
+  <text class="lz5-s" x="602" y="154" text-anchor="middle">no unset window (v1 → v2)</text>
+  <path class="lz5-edge" d="M115 192 V222 H602 V192"/>
+  <text class="lz5-cap" x="360" y="248" text-anchor="middle">one Context · one dependency graph</text>
+</svg>
+</figure>
 
 Each step adds exactly one capability and reuses everything before it:
 
@@ -69,11 +99,33 @@ assert_eq!(doubled.get(&ctx), 10);// recomputes lazily on read: 10
 
 This is the right default for most backend work. If a request handler exposes 50 derived values but a given request reads only 5, lazy evaluation computes 5. Eager evaluation would compute all 50 on every upstream change. Use `ctx.memo()` when the value is `PartialEq` and you want an equal recompute to suppress downstream work.
 
-```
- write counter ──► [doubled: dirty] ........ (no work yet)
-                                              │
- read doubled  ─────────────────────────────►│ recompute → 10
-```
+<figure>
+<svg viewBox="0 0 720 180" role="img" aria-label="A lazy Slot: writing the counter marks doubled dirty with no work yet; only reading doubled triggers the recompute to 10." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+  <defs>
+    <marker id="lz6-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
+    </marker>
+  </defs>
+  <style>
+    .lz6-box{fill:rgb(var(--color-card));stroke:rgb(var(--color-border));stroke-width:1.5}
+    .lz6-go{fill:rgb(var(--color-card));stroke:rgb(var(--color-accent));stroke-width:2}
+    .lz6-t{fill:rgb(var(--color-text-base));font-size:14px;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .lz6-s{fill:rgb(var(--color-text-base));opacity:.7;font-size:12.5px}
+    .lz6-edge{stroke:rgb(var(--color-text-base));stroke-opacity:.55;stroke-width:1.5;fill:none}
+  </style>
+  <rect class="lz6-box" x="12" y="28" width="158" height="46" rx="8"/>
+  <text class="lz6-t" x="91" y="56" text-anchor="middle">write counter</text>
+  <path class="lz6-edge" d="M170 51 H236" marker-end="url(#lz6-arr)"/>
+  <rect class="lz6-box" x="238" y="28" width="178" height="46" rx="8"/>
+  <text class="lz6-t" x="327" y="56" text-anchor="middle">doubled: dirty</text>
+  <text class="lz6-s" x="446" y="56">…no work yet</text>
+  <rect class="lz6-box" x="12" y="106" width="158" height="46" rx="8"/>
+  <text class="lz6-t" x="91" y="134" text-anchor="middle">read doubled</text>
+  <path class="lz6-edge" d="M170 129 H472" marker-end="url(#lz6-arr)"/>
+  <rect class="lz6-go" x="474" y="106" width="190" height="46" rx="8"/>
+  <text class="lz6-t" x="569" y="134" text-anchor="middle">recompute → 10</text>
+</svg>
+</figure>
 
 ## Signal: eager derived (no unset window)
 
@@ -86,9 +138,31 @@ n.set(&ctx, 5);                                  // doubled is already 10
 assert_eq!(doubled.get(&ctx), 10);
 ```
 
-```
- write n ──► recompute signal NOW ──► [doubled: 10]   (before set returns)
-```
+<figure>
+<svg viewBox="0 0 720 130" role="img" aria-label="An eager Signal: writing n recomputes the signal immediately, so doubled is already 10 before the set call returns." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+  <defs>
+    <marker id="lz7-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
+    </marker>
+  </defs>
+  <style>
+    .lz7-box{fill:rgb(var(--color-card));stroke:rgb(var(--color-border));stroke-width:1.5}
+    .lz7-now{fill:rgb(var(--color-card));stroke:rgb(var(--color-accent));stroke-width:2}
+    .lz7-t{fill:rgb(var(--color-text-base));font-size:14px;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .lz7-s{fill:rgb(var(--color-text-base));opacity:.7;font-size:12.5px}
+    .lz7-edge{stroke:rgb(var(--color-text-base));stroke-opacity:.55;stroke-width:1.5;fill:none}
+  </style>
+  <rect class="lz7-box" x="12" y="34" width="120" height="46" rx="8"/>
+  <text class="lz7-t" x="72" y="62" text-anchor="middle">write n</text>
+  <path class="lz7-edge" d="M132 57 H198" marker-end="url(#lz7-arr)"/>
+  <rect class="lz7-now" x="200" y="34" width="220" height="46" rx="8"/>
+  <text class="lz7-t" x="310" y="62" text-anchor="middle">recompute signal NOW</text>
+  <path class="lz7-edge" d="M420 57 H486" marker-end="url(#lz7-arr)"/>
+  <rect class="lz7-box" x="488" y="34" width="160" height="46" rx="8"/>
+  <text class="lz7-t" x="568" y="62" text-anchor="middle">doubled: 10</text>
+  <text class="lz7-s" x="310" y="102" text-anchor="middle">before set returns</text>
+</svg>
+</figure>
 
 Notice there is no second step. With a Slot you write, then read to drive the recompute. With a Signal the write *is* the trigger.
 
@@ -96,23 +170,38 @@ Notice there is no second step. With a Slot you write, then read to drive the re
 
 This is the part worth dwelling on. `Signal` does not introduce a new graph, a new scheduler, or a new invalidation path. It is **a memoized Slot plus a small puller Effect**:
 
-```
-        ┌──────────────────────────────────────────┐
-        │  Signal                                    │
-        │                                            │
-        │   ctx.memo(compute)   ◄── glitch-free,     │
-        │        │                  pull-based,      │
-        │        │                  memo-guarded     │
-        │        ▼                                   │
-        │   puller Effect       ──► re-reads the slot│
-        │   (depends on slot)       after every      │
-        │                           invalidation     │
-        └──────────────────────────────────────────┘
-              │                         ▲
-              │   one shared Context    │
-              ▼   one dependency graph  │
-        Cells ───────────────────────────
-```
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="A Signal is composed of a glitch-free, pull-based, memo-guarded ctx.memo(compute) plus a puller Effect that re-reads the slot after every invalidation. Both share one Context and one dependency graph with the underlying Cells." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+  <defs>
+    <marker id="lz8-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
+    </marker>
+  </defs>
+  <style>
+    .lz8-outer{fill:none;stroke:rgb(var(--color-accent));stroke-width:2}
+    .lz8-box{fill:rgb(var(--color-card));stroke:rgb(var(--color-border));stroke-width:1.5}
+    .lz8-label{fill:rgb(var(--color-accent));font-size:14px;font-weight:700}
+    .lz8-t{fill:rgb(var(--color-text-base));font-size:14.5px;font-weight:700;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .lz8-s{fill:rgb(var(--color-text-base));opacity:.74;font-size:12.5px}
+    .lz8-edge{stroke:rgb(var(--color-text-base));stroke-opacity:.6;stroke-width:1.5;fill:none}
+    .lz8-cap{fill:rgb(var(--color-text-base));opacity:.78;font-size:12.5px}
+  </style>
+  <rect class="lz8-outer" x="150" y="16" width="420" height="214" rx="10"/>
+  <text class="lz8-label" x="170" y="42">Signal</text>
+  <rect class="lz8-box" x="186" y="58" width="348" height="62" rx="8"/>
+  <text class="lz8-t" x="360" y="84" text-anchor="middle">ctx.memo(compute)</text>
+  <text class="lz8-s" x="360" y="104" text-anchor="middle">glitch-free · pull-based · memo-guarded</text>
+  <path class="lz8-edge" d="M360 120 V152" marker-end="url(#lz8-arr)"/>
+  <rect class="lz8-box" x="186" y="154" width="348" height="62" rx="8"/>
+  <text class="lz8-t" x="360" y="180" text-anchor="middle">puller Effect</text>
+  <text class="lz8-s" x="360" y="200" text-anchor="middle">re-reads the slot after every invalidation</text>
+  <rect class="lz8-box" x="288" y="276" width="144" height="44" rx="8"/>
+  <text class="lz8-t" x="360" y="303" text-anchor="middle">Cells</text>
+  <path class="lz8-edge" d="M330 276 V230" marker-end="url(#lz8-arr)"/>
+  <path class="lz8-edge" d="M390 230 V276" marker-end="url(#lz8-arr)"/>
+  <text class="lz8-cap" x="360" y="252" text-anchor="middle">one shared Context · one dependency graph</text>
+</svg>
+</figure>
 
 - `ctx.memo(compute)` supplies the value cell with a `PartialEq` guard and **glitch-free, pull-based** recomputation (dependencies refresh depth-first before the value itself).
 - A puller `effect` reads the slot after every invalidation. The effect runs eagerly on invalidation, which pulls the memo current — that is the entire source of the eagerness.
