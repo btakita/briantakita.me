@@ -4,6 +4,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2013-09-15-automated-black-box-testing.md'),
 	import('./content/2019-04-03-log-2019-04-03.md'),
 	import('./content/2026-03-23-skill-to-binary-ep6-deterministic-primitives.md'),
+	import('./content/2026-06-14-lazily-architecture-overview.md'),
 	import('./content/2026-03-27-agent-doc-ffi-plugin-socket-ipc.md'),
 	import('./content/2004-09-23-keeping-in-control-of-events.md'),
 	import('./content/2026-03-05-introducing-agent-doc.md'),
