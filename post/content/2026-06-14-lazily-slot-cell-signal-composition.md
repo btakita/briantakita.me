@@ -251,4 +251,4 @@ Lazy-by-default is the correct default for most non-UI work: you never compute w
 cargo add lazily
 ```
 
-Source: [lazily-rs on GitHub](https://github.com/btakita/lazily-rs) · [crates.io](https://crates.io/crates/lazily)
+Source: [lazily-rs on GitHub](https://github.com/btakita/lazily-rs) · [docs](https://lazily-hub.github.io/lazily-rs/) · [spec](https://lazily-hub.github.io/lazily-spec/) · [crates.io](https://crates.io/crates/lazily)

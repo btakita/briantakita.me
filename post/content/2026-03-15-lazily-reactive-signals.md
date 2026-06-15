@@ -172,6 +172,8 @@ assert_eq!(greeting(&ctx), "Hello, lazily!");
 
 ## Links
 
+- [lazily-rs docs](https://lazily-hub.github.io/lazily-rs/) — generated documentation
+- [lazily-spec](https://lazily-hub.github.io/lazily-spec/) — shared cross-language spec
 - [lazily (Rust)](https://crates.io/crates/lazily) — crates.io
 - [lazily-zig](https://github.com/btakita/lazily-zig) — Zig implementation
 - [lazily-py](https://github.com/btakita/lazily-py) — Python implementation
