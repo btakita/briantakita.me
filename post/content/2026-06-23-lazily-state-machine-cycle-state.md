@@ -41,7 +41,7 @@ That left two classes of bug:
 2. **Lost updates on the non-phase fields.** The rank guard protected the phase, but the cycle state carries ~30 other fields (pending ids, queue heads, capture hashes). A `mark_committed` racing a `record_pending_done_ids` did load → mutate → save on the same file with no coordination, and one writer's field could silently overwrite the other's.
 
 <figure>
-<svg viewBox="0 0 720 300" role="img" aria-label="Two concurrent writers both load the same cycle JSON sidecar, each mutate one field (one sets phase to Committed, the other appends a pending id), and each saves — the second save overwrites the first, losing the committed phase. A load-mutate-save cycle with no transition authority." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+<svg class="lz-sm-svg" viewBox="0 0 720 300" role="img" aria-label="Two concurrent writers both load the same cycle JSON sidecar, each mutate one field (one sets phase to Committed, the other appends a pending id), and each saves — the second save overwrites the first, losing the committed phase. A load-mutate-save cycle with no transition authority." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
   <defs>
     <marker id="sm1-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
@@ -55,6 +55,8 @@ That left two classes of bug:
     .sm1-mono{fill:rgb(var(--color-text-base));font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
     .sm1-edge{stroke:rgb(var(--color-text-base));stroke-opacity:.55;stroke-width:1.5;fill:none}
     .sm1-bad{stroke:rgb(220,38,38);stroke-opacity:.8;stroke-width:2;fill:none}
+    @media(prefers-color-scheme:dark){.lz-sm-svg{--color-card:108,128,180}}
+    [data-color-scheme="dark"] .lz-sm-svg{--color-card:108,128,180}
   </style>
   <rect class="sm1-json" x="270" y="22" width="180" height="48" rx="8"/>
   <text class="sm1-t" x="360" y="44" text-anchor="middle">cycle.json</text>
@@ -110,7 +112,7 @@ Three properties fall out for free, because the state lives in a reactive `Cell`
 - **The state is reactive.** `state_handle()` exposes the backing cell, so any `ctx.computed`, `ctx.signal`, or `ctx.effect` that reads it automatically recomputes when the machine transitions. No manual notification wiring.
 
 <figure>
-<svg viewBox="0 0 720 280" role="img" aria-label="A StateMachine holds a CellHandle for state and a pure transition function. send evaluates the transition; Some updates the cell and invalidates a reactive graph of dependents (a Slot, a Signal, an Effect), while None rejects the event with no graph churn. A duplicate Some(equal_state) is accepted but suppressed by the PartialEq cell guard." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
+<svg class="lz-sm-svg" viewBox="0 0 720 280" role="img" aria-label="A StateMachine holds a CellHandle for state and a pure transition function. send evaluates the transition; Some updates the cell and invalidates a reactive graph of dependents (a Slot, a Signal, an Effect), while None rejects the event with no graph churn. A duplicate Some(equal_state) is accepted but suppressed by the PartialEq cell guard." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:720px;font-family:ui-sans-serif,system-ui,sans-serif">
   <defs>
     <marker id="sm2-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
@@ -187,7 +189,7 @@ pub fn transition_phase(current: &CyclePhase, event: &CycleEvent) -> Option<Cycl
 Every public mutator now routes through that table *first*. A `mark_committed` that lands races-safter a `record_pending_done_ids` no longer fights over fields — both submit a `CycleEvent`, and the table is the sole arbiter of what the phase becomes. A bookkeeping event on an already-`Committed` cycle returns `None` and the mutator becomes a clean no-op, so terminal regressions are rejected at the boundary instead of papered over per-call.
 
 <figure>
-<svg viewBox="0 0 760 360" role="img" aria-label="The CyclePhase transition graph. StartPreflight forces PreflightStarted. ResponseCaptured, WriteApplied, and Committed each advance forward and are rejected from terminal states. Abandoned is reachable only from open states and is terminal. Committed is terminal. A duplicate Committed is a stable self-transition suppressed by the cell guard." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
+<svg class="lz-sm-svg" viewBox="0 0 760 360" role="img" aria-label="The CyclePhase transition graph. StartPreflight forces PreflightStarted. ResponseCaptured, WriteApplied, and Committed each advance forward and are rejected from terminal states. Abandoned is reachable only from open states and is terminal. Committed is terminal. A duplicate Committed is a stable self-transition suppressed by the cell guard." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
   <defs>
     <marker id="sm3-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
@@ -237,7 +239,7 @@ Every public mutator now routes through that table *first*. A `mark_committed` t
 The crucial design move is what the state machine is *not*. It is not the source of truth. The durable JSON sidecar remains the crash-recovery log — every process can replay it when the controller is absent, stale, or restarting. The state machine is the **pure transition authority**: it answers "is this event legal, and if so what's the next phase?" The sidecar is then appended in one serialized job. Crash recovery seeds the machine from the sidecar on startup; sidecar beats stale memory.
 
 <figure>
-<svg viewBox="0 0 760 320" role="img" aria-label="Architecture: a public mutator submits a CycleEvent to the CyclePhaseMachine (a ThreadSafeStateMachine in a ThreadSafeContext). The pure transition table accepts or rejects it. On accept, the in-memory projection updates and the durable sidecar is appended via atomic rename in one serialized job. On reject, the mutator is a clean no-op. On controller restart, the machine is seeded from the sidecar." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
+<svg class="lz-sm-svg" viewBox="0 0 760 320" role="img" aria-label="Architecture: a public mutator submits a CycleEvent to the CyclePhaseMachine (a ThreadSafeStateMachine in a ThreadSafeContext). The pure transition table accepts or rejects it. On accept, the in-memory projection updates and the durable sidecar is appended via atomic rename in one serialized job. On reject, the mutator is a clean no-op. On controller restart, the machine is seeded from the sidecar." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
   <defs>
     <marker id="sm4-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
