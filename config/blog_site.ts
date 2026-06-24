@@ -95,7 +95,7 @@ export const blog_site:blog_site_T = {
 			'--color-fill': '33,39,55',
 			'--color-text-base': '234,237,243',
 			'--color-accent': '255,107,1',
-			'--color-card': '52,63,96',
+			'--color-card': '92,110,158',
 			'--color-card-muted': '138,51,2',
 			'--color-border': '171,75,8',
 		},
