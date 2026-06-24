@@ -316,6 +316,26 @@ You can absolutely write `transition_phase` as a free function over a bare enum 
 - **Observers that stay correct under batching.** A `mark_committed` that lands inside a `ctx.batch(...)` settles with every other invalidation in one consistent flush. An `on_transition` effect doesn't fire mid-storm on a half-updated graph.
 - **Idempotency from the cell guard.** Terminals are sticky, and a duplicate `Committed` is accepted-but-suppressed because the `PartialEq` cell refuses to invalidate on an equal value. You don't hand-write "is this already the phase?" checks; the primitive does it.
 
+## It didn't stop at one machine: the state backbone
+
+The cycle phase was the *first* subdomain to get a spine. Once `ThreadSafeStateMachine` was in hand, the same pattern was applied to every other closed subdomain the controller tracks — and they compose into one event-sourced backbone.
+
+agent-doc's `state_backbone` is an append-only `EventLedger` of typed `StateFact`s — `PreflightStarted`, `ResponseCaptured`, `EditorPatchQueued`, `EditorAckObserved`, `IpcProofInsufficient`, `QueueHeadSelected`, and so on — folded by a deterministic `project()` reducer into a single `StateBackboneProjection`. Crash the controller, start a fresh one, replay the same facts, and you rebuild the same backbone state. No cached mutable globals — just a log and a fold.
+
+Guarding each closed subdomain inside that fold is a small local `ThreadSafeStateMachine`, the same primitive as `CyclePhaseMachine`:
+
+| Machine | Phases | What it guards |
+|---|---|---|
+| `QueueHeadMachine` | `Pending → Selected → Deferred → Completed` | One queue head's life; `Completed` is sticky-terminal. |
+| `TransportPatchMachine` | `Queued → Acked` · `InsufficientProof → Retrying` · `ForceDiskFallback` | Editor-IPC patch delivery: the ack / proof / retry / fallback ladder. |
+| `ActorLifecycleMachine` | `Starting → Ready → Busy → WaitingInput → Restarting → Stale → Closed` | A harness pane actor; `Closed` is terminal. |
+| `RouteReadinessMachine` | `Unknown → PaneKnown → PromptReady → DispatchAuthorized → DispatchAccepted → DispatchProven` · `Blocked` | The tmux dispatch-proof progression — accepted is not proven. |
+| `ProofGateMachine` | `Unknown → Observed` / `Disproved` (mutually sticky) | A proof-marker gate. |
+
+Each one reuses the same three properties for free: a pure transition table that's trivially exhaustively testable, the `PartialEq` cell guard that makes terminals idempotent, and reactive observation through the same graph. `RouteReadinessMachine` is the cleanest example of why the table shape matters — dispatch moves `PromptReady → DispatchAuthorized → DispatchAccepted → DispatchProven`, and the table refuses to collapse "the pane accepted the input" (`DispatchAccepted`) into "the agent proved it ran" (`DispatchProven`). That distinction — *accepted* versus *proven* — is a recurring bug class in agent dispatch loops, and here it is one line of `None`.
+
+The payoff isn't any single machine. It's that six closed subdomains — cycle phase, queue head, patch transport, actor life, route readiness, proof gate — now share one consistency model. A transition in any of them invalidates the same reactive graph; a reducer replaying the fact log rebuilds all six deterministically. The state machine isn't a special case you reach for once. It's the shape the whole controller takes when every subdomain needs to answer *"is this legal, and if so what's next?"*
+
 ## Takeaway
 
 The cycle-state bug wasn't really about a missing lock or a forgotten `if`. It was about a state machine that had no spine — legality was smeared across two dozen call sites, so it drifted. Giving it a spine meant:
