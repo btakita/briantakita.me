@@ -32,6 +32,7 @@ export const post_mod_a1:post_mod_T[] = await Promise.all([
 	import('./content/2024-02-18-tag-vector-interpreted-by-chat-gpt.md'),
 	import('./content/2017-06-11-when-we-become-a-muse-to-our-tools.md'),
 	import('./content/2013-09-08-re-doing-good-in-the-addiction-economy.md'),
+	import('./content/2026-06-26-lazily-cell-family-spreadsheet-scale.md'),
 	import('./content/2004-11-05-generic-query-analyzer-0-2-1-released.md'),
 	import('./content/2026-06-23-lazily-state-machine-cycle-state.md'),
 	import('./content/2024-03-05-squarespace-site-lighthouse-scores.md'),
