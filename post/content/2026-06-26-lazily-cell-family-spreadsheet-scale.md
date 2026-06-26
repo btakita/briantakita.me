@@ -233,8 +233,8 @@ The last row is the interesting one.
   <text class="lzcf3-s" x="260" y="126" text-anchor="middle">O(1) flag flip · no compute</text>
   <path class="lzcf3-edge" d="M350 100 H378 V52 H410" marker-end="url(#lzcf3-arr)"/>
   <path class="lzcf3-edge" d="M350 128 H378 V180 H410" marker-end="url(#lzcf3-arr)"/>
-  <text class="lzcf3-lbl" x="392" y="42" text-anchor="middle">focused</text>
-  <text class="lzcf3-lbl" x="392" y="200" text-anchor="middle">off-viewport</text>
+  <text class="lzcf3-lbl" x="372" y="48" text-anchor="end">focused</text>
+  <text class="lzcf3-lbl" x="372" y="188" text-anchor="end">off-viewport</text>
   <rect class="lzcf3-hot" x="410" y="24" width="338" height="60" rx="8"/>
   <text class="lzcf3-t" x="430" y="48">recompute on pull · ~11 ns/cell</text>
   <text class="lzcf3-s" x="430" y="68">1,000-cell viewport ≈ 11.4 µs (any sheet size)</text>
