@@ -15,6 +15,7 @@ import { server__relement } from 'relementjs/server'
 import { html_response__new, middleware_ } from 'rhonojs/server'
 import { blog_site } from '../config/index.js'
 import { briantakita_request_ctx__ensure } from '../ctx/index.js'
+import { llms_txt } from '../llms_txt.js'
 relement__use(server__relement)
 const robots_txt = `
 User-agent: *
@@ -32,6 +33,8 @@ export default middleware_(middleware_ctx=>{
 	})
 	app.get('/robots.txt', ()=>
 		text_response__new(robots_txt))
+	app.get('/llms.txt', ()=>
+		text_response__new(llms_txt))
 	app.get('/rss', async c=>
 		xml_response__new(blog__rss_xml_({
 			ctx: briantakita_request_ctx__ensure(
