@@ -30,7 +30,7 @@ This changes the unit of software process.
 The unit is no longer "write a ticket, implement it, review it." The unit is a live feedback loop where the spec, code, tests, logs, queue, and human attention keep updating each other.
 
 <figure>
-<svg viewBox="0 0 760 360" role="img" aria-label="Realtime agentic development loop: sense changes, select a queue head or goal, act with agent tools, verify with tests and checks, persist with commits and snapshots, learn into the spec, then continue." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
+<svg viewBox="0 0 760 360" role="img" aria-label="Realtime agentic development loop: sense changes, select the next action, act with agent tools, verify with tests and checks, persist with commits and snapshots, learn into the spec, then continue." xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:760px;font-family:ui-sans-serif,system-ui,sans-serif">
   <defs>
     <marker id="rad-loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="rgb(var(--color-accent))"/>
@@ -56,7 +56,7 @@ The unit is no longer "write a ticket, implement it, review it." The unit is a l
 
   <rect class="rad-loop-box" x="302" y="28" width="158" height="64" rx="8"/>
   <text class="rad-loop-label" x="322" y="54">SELECT</text>
-  <text class="rad-loop-sub" x="322" y="75">queue head or goal</text>
+  <text class="rad-loop-sub" x="322" y="75">next action</text>
 
   <rect class="rad-loop-box" x="568" y="56" width="158" height="64" rx="8"/>
   <text class="rad-loop-label" x="588" y="82">ACT</text>
