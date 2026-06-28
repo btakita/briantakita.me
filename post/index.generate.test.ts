@@ -30,12 +30,12 @@ Hello world.
 		await unlink(test_md_path)
 		await index__generate()
 	})
-	test('index.ts imports .md.ts as .md.js', async ()=>{
+	test('index.ts imports .md.ts as .md', async ()=>{
 		const { index__generate } = await import('./index.generate.js')
 		await index__generate()
 		const index = await readFile(join(dir, 'index.ts'), 'utf8')
-		// .md.ts files should import as .md.js
-		expect(index).toContain("import('./content/2026-03-05-introducing-agent-doc.md.js')")
+		// .md.ts files should import as .md (no .js suffix)
+		expect(index).toContain("import('./content/2026-03-05-introducing-agent-doc.md')")
 	})
 	test('raw .md files import without .js suffix', async ()=>{
 		const { index__generate } = await import('./index.generate.js')
