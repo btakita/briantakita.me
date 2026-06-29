@@ -7,7 +7,7 @@ This site covers software architecture, open-source libraries, AI agent workflow
 ## Core URLs
 
 - [Home](https://briantakita.me/): Profile, current writing, and featured posts.
-- [About](https://briantakita.me/about): Consulting focus, development philosophy, open source, product creation, and flat architecture/name systems.
+- [About](https://briantakita.me/about): Consulting focus, development philosophy, open source, product creation, and reactive real-time architectures/name systems.
 - [Portfolio](https://briantakita.me/portfolio): Client and product work, including web apps, portals, dashboards, and custom software systems.
 - [Open Source](https://briantakita.me/open-source): Open-source projects, libraries, and development tooling.
 - [Posts](https://briantakita.me/posts): Full archive of articles and blog posts.
