@@ -67,7 +67,7 @@ export const brian_takita = <author_T>{
 export const blog_site:blog_site_T = {
 	website,
 	author_a1: [brian_takita],
-	description: 'Full Stack Software, Design, Author, & SEO',
+	description: 'Full-stack AI systems, agent tooling, and realtime reactive web software',
 	title: title,
 	favicon: {
 		type: 'image/svg+xml',

@@ -1,8 +1,8 @@
 export const llms_txt = `# Brian Takita
 
-> Personal site for Brian Takita, a full-stack software developer building apps, libraries, and agentic development systems across desktop, mobile, web, and interoperable runtimes.
+> Personal site for Brian Takita, a full-stack and AI systems engineer building agentic nervous systems for the web, developer workflows, and interoperable runtimes.
 
-This site covers software architecture, open-source libraries, AI agent workflows, cross-runtime app platforms, FFI/IPC bridges, WebSocket/WebRTC coordination, reactive systems, web performance, domain modeling, naming systems, and consulting/project work. Brian focuses on top-down domain modeling, bottom-up deterministic primitives, realtime coordination, and systems that stay fast and legible across runtimes without unnecessary platform or framework bloat.
+This site covers software architecture, open-source libraries, AI agent workflows, agent tooling, FFI/IPC bridges, WebSocket/WebRTC coordination, reactive systems, web performance, domain modeling, naming systems, and consulting/project work. Brian focuses on realtime reactive primitives for coordinating agents, models, and software across the web, developer workflows, process boundaries, and network boundaries.
 
 ## Core URLs
 
